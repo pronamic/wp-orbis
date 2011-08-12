@@ -113,4 +113,62 @@
 			<?php echo number_format($numberProjects, 0, ',', '.'); ?> projecten
 		</li>
 	</ul>
+	
+	<h2>Domeinen</h2>
+	
+	<?php
+
+	$query = '
+		SELECT
+			COUNT(id) 
+		FROM
+			orbis_domain_names AS domain
+		WHERE
+			cancel_date IS NULL
+		;
+	';
+	
+	$numberDomains = $wpdb->get_var($query);
+
+	?>
+	<dl>
+		<dt><?php _e('Number domains', Orbis::TEXT_DOMAIN); ?></dt>
+		<dd><?php echo $numberDomains; ?></dd>
+	</dl>
+	
+	<h2>Abonnementen</h2>
+	
+	<?php
+
+	$query = '
+		SELECT
+			COUNT(id) 
+		FROM
+			orbis_subscriptions  AS subscription
+		;
+	';
+	
+	$numberSubscriptions = $wpdb->get_var($query);
+
+	$query = '
+		SELECT
+			SUM(price) 
+		FROM
+			orbis_subscriptions AS subscription
+				LEFT JOIN
+			orbis_subscription_types AS type
+					ON subscription.type_id = type.id
+		;
+	';
+	
+	$total = $wpdb->get_var($query);
+
+	?>
+	<dl>
+		<dt><?php _e('Number subscriptions', Orbis::TEXT_DOMAIN); ?></dt>
+		<dd><?php echo $numberSubscriptions; ?></dd>
+
+		<dt><?php _e('Annual Revenue', Orbis::TEXT_DOMAIN); ?></dt>
+		<dd>&euro;&nbsp;<?php echo number_format($total, 2, ',', '.'); ?></dd>
+	</dl>
 </div>

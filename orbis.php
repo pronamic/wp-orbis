@@ -39,6 +39,19 @@ class Orbis {
 		$relPath = dirname(plugin_basename(self::$file)) . '/languages/';
 
 		load_plugin_textdomain(self::TEXT_DOMAIN, false, $relPath);
+
+		/* register_post_type(
+			'orbis_subscription' , 
+			array(
+				'label' => __('Subscriptions', self::TEXT_DOMAIN) , 
+				'labels' => array(
+					'name' => __('Subscriptions', self::TEXT_DOMAIN) , 
+					'singular_name' => __('Subscription', self::TEXT_DOMAIN)
+				) ,
+				'public' => true ,
+				'menu_position' => 200
+			)
+		); */
 	}
 
 	public static function flushRules() {
@@ -96,7 +109,7 @@ class Orbis {
 			$pageTitle = 'Settings' , 
 			$menuTitle = 'Settings' , 
 			$capability = 'manage_options' , 
-			$menuSlug = 'orbis-settings' , 
+			$menuSlug = 'orbis_settings' , 
 			$function = array(__CLASS__, 'pageSettings')
 		);
 
@@ -107,8 +120,37 @@ class Orbis {
 			$pageTitle = 'Stats' , 
 			$menuTitle = 'Stats' , 
 			$capability = 'manage_options' , 
-			$menuSlug = 'orbis-stats' , 
+			$menuSlug = 'orbis_stats' , 
 			$function = array(__CLASS__, 'pageStats')
+		);
+		
+		// Domains
+		add_menu_page(
+			$pageTitle = __('Domains', self::TEXT_DOMAIN) , 
+			$menuTitle = __('Domains', self::TEXT_DOMAIN) , 
+			$capability = 'manage_options' , 
+			$menuSlug = 'orbis_domains' , 
+			$function = array(__CLASS__, 'pageDomains') , 
+			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
+		);
+
+		add_submenu_page(
+			$parentSlug = 'orbis_domains' , 
+			$pageTitle = __('Domains to invoice', self::TEXT_DOMAIN) , 
+			$menuTitle = __('To Invoice', self::TEXT_DOMAIN) , 
+			$capability = 'manage_options' , 
+			$menuSlug = 'orbis_domains_to_invoice' , 
+			$function = array(__CLASS__, 'pageDomainsToInvoice')
+		);
+		
+		// Subscriptions
+		add_menu_page(
+			$pageTitle = __('Subscriptions', self::TEXT_DOMAIN) , 
+			$menuTitle = __('Subscriptions', self::TEXT_DOMAIN) , 
+			$capability = 'manage_options' , 
+			$menuSlug = 'orbis_subscriptions' , 
+			$function = array(__CLASS__, 'pageSubscriptions') , 
+			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
 		);
 	}
 
@@ -122,6 +164,14 @@ class Orbis {
 
 	public static function pageStats() {
 		include 'views/stats.php';
+	}
+
+	public static function pageDomainsToInvoice() {
+		include 'views/domains-to-invoice.php';
+	}
+
+	public static function pageSubscriptions() {
+		include 'views/subscriptions.php';
 	}
 }
 
