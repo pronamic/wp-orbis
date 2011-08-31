@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 16:34+0100\n"
-"PO-Revision-Date: 2011-08-04 16:34+0100\n"
+"POT-Creation-Date: 2011-08-31 12:59+0100\n"
+"PO-Revision-Date: 2011-08-31 12:59+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,103 @@ msgstr ""
 "X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: NETHERLANDS\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: orbis.php:129
+#: orbis.php:130
+msgid "Domains"
+msgstr "Domeinen"
+
+#: orbis.php:139
+#: views/domains-to-invoice.php:5
+msgid "Domains to invoice"
+msgstr "Domeinen te facturen"
+
+#: orbis.php:140
+msgid "To Invoice"
+msgstr "Te factureren"
+
+#: orbis.php:148
+#: orbis.php:149
+#: views/subscriptions.php:20
+msgid "Subscriptions"
+msgstr "Abonnementen"
+
+#: views/settings.php:5
+msgid "Settings"
+msgstr "Instellingen"
+
+#: views/stats.php:5
+msgid "Stats"
+msgstr "Statistieken"
+
+#: views/stats.php:135
+msgid "Number domains"
+msgstr "Aantal domeinen"
+
+#: views/stats.php:168
+msgid "Number subscriptions"
+msgstr "Aantal abonnementen"
+
+#: views/stats.php:171
+msgid "Annual Revenue"
+msgstr "Jaaromzet"
+
+#: views/domains-to-invoice.php:38
+#: views/subscriptions.php:65
+msgid "ID"
+msgstr "ID"
+
+#: views/domains-to-invoice.php:39
+msgid "Domain Name"
+msgstr "Domeinnaam"
+
+#: views/domains-to-invoice.php:40
+msgid "Order Date"
+msgstr "Besteldatum"
+
+#: views/domains-to-invoice.php:41
+msgid "Notes"
+msgstr "Notitie"
+
+#: views/orbis.php:5
+msgid "Orbis"
+msgstr "Orbis"
+
+#: views/subscriptions.php:66
+msgid "Company"
+msgstr "Bedrijf"
+
+#: views/subscriptions.php:67
+msgid "Type"
+msgstr "Type"
+
+#: views/subscriptions.php:68
+msgid "Name"
+msgstr "Naam"
+
+#: views/subscriptions.php:69
+msgid "Activation Date"
+msgstr "Activatie datum"
+
+#: views/subscriptions.php:70
+msgid "Expiration Date"
+msgstr "Vervaldatum"
+
+#: views/subscriptions.php:71
+msgid "Update Date"
+msgstr "Update datum"
+
+#: views/subscriptions.php:72
+msgid "Price"
+msgstr "Prijs"
+
+#: views/subscriptions.php:73
+msgid "Actions"
+msgstr "Acties"
+
+#: views/subscriptions.php:128
+msgid "Update"
+msgstr "Update"
 
 #~ msgid "Username"
 #~ msgstr "Gebruikersnaam"
@@ -26,9 +123,6 @@ msgstr ""
 
 #~ msgid "Title"
 #~ msgstr "Titel"
-
-#~ msgid "Description"
-#~ msgstr "Beschrijving"
 
 #~ msgid "Latitude"
 #~ msgstr "Breedtegraad"
@@ -44,12 +138,6 @@ msgstr ""
 
 #~ msgid "Dynamic"
 #~ msgstr "Dynamisch"
-
-#~ msgid "Static"
-#~ msgstr "Statisch"
-
-#~ msgid "Active"
-#~ msgstr "Actief"
 
 #~ msgid "Show Google Maps"
 #~ msgstr "Google Maps weergeven"
@@ -77,9 +165,6 @@ msgstr ""
 
 #~ msgid "percent"
 #~ msgstr "procent"
-
-#~ msgid "Settings"
-#~ msgstr "Instellingen"
 
 #~ msgid "Pronamic Google Maps"
 #~ msgstr "Pronamic Google Maps"
