@@ -31,7 +31,15 @@ class Orbis {
 
 		add_filter('query_vars', array(__CLASS__, 'queryVars'));
 
-		add_filter('wp_loaded',array(__CLASS__, 'flushRules'));
+		add_filter('wp_loaded', array(__CLASS__, 'flushRules'));
+		
+		add_action('wp_ajax_orbis_test', array(__CLASS__, 'apiTest'));
+	}
+	
+	public static function apiTest() {
+		echo 'ok';
+		
+		die();
 	}
 
 	public static function initialize() {
@@ -64,6 +72,7 @@ class Orbis {
 		$rules = array();
 
 		$rules['project/([^/]+)$'] = 'index.php?project_id=' . $wpRewrite->preg_index(1);
+		$rules['api/([^/]+)$'] = 'wp-admin/admin-ajax.php?action=orbis_test&' . $wpRewrite->preg_index(1);
 
 		$wpRewrite->rules = $rules + $wpRewrite->rules;
 	}
