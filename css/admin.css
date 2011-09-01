@@ -1,3 +1,9 @@
 #icon-orbis {
 	background: url("../images/icon-32x32.png") no-repeat;	
 }
+
+tr.cancelled td {
+    color: #999;
+
+    text-decoration: line-through;
+}
