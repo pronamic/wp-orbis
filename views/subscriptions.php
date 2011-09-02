@@ -31,6 +31,7 @@ if(!empty($_POST) && check_admin_referer('orbis_update_subscription', 'orbis_non
 			subscription.expiration_date AS expirationDate ,
 			subscription.cancel_date AS cancelDate , 
 			subscription.update_date AS updateDate ,
+			subscription.license_key AS licenseKey , 
 			company.name AS companyName ,
 			type.name AS typeName , 
 			type.price AS price , 
@@ -71,6 +72,7 @@ if(!empty($_POST) && check_admin_referer('orbis_update_subscription', 'orbis_non
 					<th scope="col" class="manage-column"><?php _e('Expiration Date', Orbis::TEXT_DOMAIN) ?></th>
 					<th scope="col" class="manage-column"><?php _e('Update Date', Orbis::TEXT_DOMAIN) ?></th>
 					<th scope="col" class="manage-column"><?php _e('Price', Orbis::TEXT_DOMAIN) ?></th>
+					<th scope="col" class="manage-column"><?php _e('License Key', Orbis::TEXT_DOMAIN) ?></th>
 					<th scope="col" class="manage-column"><?php _e('Actions', Orbis::TEXT_DOMAIN) ?></th>
 				</tr>
 			</<?php echo $tag; ?>>
@@ -124,6 +126,9 @@ if(!empty($_POST) && check_admin_referer('orbis_update_subscription', 'orbis_non
 					</td>
 					<td>
 						&euro;&nbsp;<?php echo number_format($subscription->price, 2, ',', '.'); ?>
+					</td>
+					<td>
+						<?php echo $subscription->licenseKey; ?>
 					</td>
 					<td>
 						<button class="button-secondary" type="submit" name="update" value="<?php echo $subscription->id; ?>"><?php _e('Update', 'orbis'); ?></button>

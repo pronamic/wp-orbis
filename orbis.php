@@ -32,14 +32,6 @@ class Orbis {
 		add_filter('query_vars', array(__CLASS__, 'queryVars'));
 
 		add_filter('wp_loaded', array(__CLASS__, 'flushRules'));
-		
-		add_action('wp_ajax_orbis_test', array(__CLASS__, 'apiTest'));
-	}
-	
-	public static function apiTest() {
-		echo 'ok';
-		
-		die();
 	}
 
 	public static function initialize() {
@@ -72,13 +64,16 @@ class Orbis {
 		$rules = array();
 
 		$rules['project/([^/]+)$'] = 'index.php?project_id=' . $wpRewrite->preg_index(1);
-		$rules['api/([^/]+)$'] = 'wp-admin/admin-ajax.php?action=orbis_test&' . $wpRewrite->preg_index(1);
+		$rules['api/(.*)/(.*)$'] = 'index.php?api_call=true&api_object=' . $wpRewrite->preg_index(1) . '&api_method=' . $wpRewrite->preg_index(2);
 
 		$wpRewrite->rules = $rules + $wpRewrite->rules;
 	}
 
 	public static function queryVars($queryVars) {
 		$queryVars[] = 'project_id';
+		$queryVars[] = 'api_call';
+		$queryVars[] = 'api_object';
+		$queryVars[] = 'api_method';
 
 		return $queryVars;
 	}
@@ -87,7 +82,68 @@ class Orbis {
 		$id = get_query_var('project_id');
 
 		if(!empty($id)) {
+			var_dump($id);
+			die();
+		}
+		
+		$apiCall = get_query_var('api_call');
+		
+		if(!empty($apiCall)) {
+			$object = get_query_var('api_object');
+			$method = get_query_var('api_method');
 			
+			if($object == 'licenses' && $method == 'show') {
+				$key = filter_input(INPUT_POST, 'key', FILTER_SANITIZE_STRING);
+				$url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_STRING);
+				$domain = parse_url($url, PHP_URL_HOST);
+				if(substr($domain, 0, 4) == 'www.') {
+					$domain = substr($domain, 4);
+				}
+
+				$query = '
+					SELECT 
+						subscription.id ,  
+						subscription.name AS subscriptionName , 
+						subscription.activation_date AS activationDate , 
+						subscription.expiration_date AS expirationDate ,
+						subscription.cancel_date AS cancelDate , 
+						subscription.update_date AS updateDate ,
+						subscription.license_key AS licenseKey , 
+						subscription.expiration_date > NOW() AS isValid , 
+						company.name AS companyName ,
+						type.name AS typeName , 
+						type.price AS price , 
+						domain_name.domain_name AS domainName 
+					FROM 
+						orbis_subscriptions AS subscription
+							LEFT JOIN
+						orbis_companies AS company
+								ON subscription.company_id = company.id
+							LEFT JOIN
+						orbis_subscription_types AS type
+								ON subscription.type_id = type.id
+							LEFT JOIN
+						orbis_domain_names AS domain_name
+								ON subscription.domain_name_id = domain_name.id
+					WHERE
+						subscription.name = %s
+							AND
+						subscription.license_key_md5 = %s
+				';
+				
+				global $wpdb;
+
+				$subscription = $wpdb->get_row($wpdb->prepare($query, $domain, $key));
+				if($subscription != null) {
+					$subscription->isValid = filter_var($subscription->isValid, FILTER_VALIDATE_BOOLEAN);
+				}
+				
+				header('Content-Type: application/json');
+
+				echo json_encode($subscription);
+			}
+
+			die();
 		}
 	}
 
