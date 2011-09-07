@@ -25,7 +25,8 @@ class Orbis {
 
 		add_action('admin_menu', array(__CLASS__, 'adminMenu'));
 
-		add_action('template_redirect', array(__CLASS__, 'templateRedirect'));
+		// High priority because the API is public avaiable (members plugin)
+		add_action('template_redirect', array(__CLASS__, 'templateRedirect'), 0);
 
 		add_filter('generate_rewrite_rules', array(__CLASS__, 'generateRewriteRules'));
 
