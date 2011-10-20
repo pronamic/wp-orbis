@@ -41,6 +41,131 @@ class Orbis {
 
 		load_plugin_textdomain(self::TEXT_DOMAIN, false, $relPath);
 
+		register_post_type(
+			'orbis_domain_name' , 
+			array(
+				'label' => __('Domain Names', self::TEXT_DOMAIN) , 
+				'labels' => array(
+					'name' => __('Domain Names', self::TEXT_DOMAIN) , 
+					'singular_name' => __('Domain Name', self::TEXT_DOMAIN) , 
+					'add_new' => _x('Add New', 'domain_name', self::TEXT_DOMAIN) , 
+					'add_new_item' => __('Add New Domain Name', self::TEXT_DOMAIN)
+				) ,
+				'public' => true ,
+				'menu_position' => 30 , 
+				'menu_icon' => plugins_url('images/domain_name.png', __FILE__) ,
+				'supports' => array('title', 'comments') ,
+				'has_archive' => true , 
+				'rewrite' => array('slug' => 'domeinnamen') 
+			)
+		);
+
+		register_post_type(
+			'orbis_project' , 
+			array(
+				'label' => __('Projects', self::TEXT_DOMAIN) , 
+				'labels' => array(
+					'name' => __('Projects', self::TEXT_DOMAIN) , 
+					'singular_name' => __('Project', self::TEXT_DOMAIN), 
+					'add_new' => _x('Add New', 'project', self::TEXT_DOMAIN) , 
+					'add_new_item' => __('Add New Project', self::TEXT_DOMAIN)
+				) ,
+				'public' => true ,
+				'menu_position' => 30 , 
+				'menu_icon' => plugins_url('images/project.png', __FILE__) , 
+				'supports' => array('title', 'editor', 'author', 'comments') ,
+				'has_archive' => true , 
+				'rewrite' => array('slug' => 'projecten') 
+			)
+		);
+
+		register_taxonomy(
+			'orbis_project_category' , 
+			array('orbis_project') , 
+			array(
+				'hierarchical' => true , 
+				'labels' => array(
+					'name' => _x( 'Categories', 'taxonomy general name', self::TEXT_DOMAIN) , 
+					'singular_name' => _x( 'Category', 'taxonomy singular name', self::TEXT_DOMAIN) , 
+					'search_items' =>  __( 'Search Categories', self::TEXT_DOMAIN) , 
+					'all_items' => __( 'All Categories', self::TEXT_DOMAIN) , 
+					'parent_item' => __( 'Parent Category', self::TEXT_DOMAIN) , 
+					'parent_item_colon' => __( 'Parent Category:', self::TEXT_DOMAIN) , 
+					'edit_item' => __( 'Edit Category', self::TEXT_DOMAIN) , 
+					'update_item' => __( 'Update Category', self::TEXT_DOMAIN) , 
+					'add_new_item' => __( 'Add New Category', self::TEXT_DOMAIN) , 
+					'new_item_name' => __( 'New Category Name', self::TEXT_DOMAIN) , 
+					'menu_name' => __( 'Categories', self::TEXT_DOMAIN) 
+				) , 
+				'show_ui' => true , 
+				'query_var' => true , 
+				'rewrite' => array('slug' => 'project-categorie')
+			)
+		);
+
+		register_post_type(
+			'orbis_person' , 
+			array(
+				'label' => __('Persons', self::TEXT_DOMAIN) , 
+				'labels' => array(
+					'name' => __('Persons', self::TEXT_DOMAIN) , 
+					'singular_name' => __('Person', self::TEXT_DOMAIN)
+				) ,
+				'public' => true ,
+				'menu_position' => 30 , 
+				'menu_icon' => plugins_url('images/person.png', __FILE__) , 
+				'rewrite' => array('slug' => 'personen') 
+			)
+		);
+
+		register_taxonomy(
+			'orbis_gender' , 
+			array('orbis_person') , 
+			array(
+				'hierarchical' => true , 
+				'labels' => array(
+					'name' => _x( 'Genders', 'taxonomy general name', self::TEXT_DOMAIN) , 
+					'singular_name' => _x( 'Gender', 'taxonomy singular name', self::TEXT_DOMAIN) , 
+					'search_items' =>  __( 'Search Genders', self::TEXT_DOMAIN) , 
+					'all_items' => __( 'All Genders', self::TEXT_DOMAIN) , 
+					'parent_item' => __( 'Parent Gender', self::TEXT_DOMAIN) , 
+					'parent_item_colon' => __( 'Parent Gender:', self::TEXT_DOMAIN) , 
+					'edit_item' => __( 'Edit Gender', self::TEXT_DOMAIN) , 
+					'update_item' => __( 'Update Gender', self::TEXT_DOMAIN) , 
+					'add_new_item' => __( 'Add New Gender', self::TEXT_DOMAIN) , 
+					'new_item_name' => __( 'New Gender Name', self::TEXT_DOMAIN) , 
+					'menu_name' => __( 'Genders', self::TEXT_DOMAIN) 
+				) , 
+				'show_ui' => true , 
+				'query_var' => true , 
+				'rewrite' => array('slug' => 'geslacht')
+			)
+		);
+
+		register_taxonomy(
+			'orbis_person_category' , 
+			array('orbis_person') , 
+			array(
+				'hierarchical' => true , 
+				'labels' => array(
+					'name' => _x( 'Categories', 'taxonomy general name', self::TEXT_DOMAIN) , 
+					'singular_name' => _x( 'Category', 'taxonomy singular name', self::TEXT_DOMAIN) , 
+					'search_items' =>  __( 'Search Categories', self::TEXT_DOMAIN) , 
+					'all_items' => __( 'All Categories', self::TEXT_DOMAIN) , 
+					'parent_item' => __( 'Parent Category', self::TEXT_DOMAIN) , 
+					'parent_item_colon' => __( 'Parent Category:', self::TEXT_DOMAIN) , 
+					'edit_item' => __( 'Edit Category', self::TEXT_DOMAIN) , 
+					'update_item' => __( 'Update Category', self::TEXT_DOMAIN) , 
+					'add_new_item' => __( 'Add New Category', self::TEXT_DOMAIN) , 
+					'new_item_name' => __( 'New Category Name', self::TEXT_DOMAIN) , 
+					'menu_name' => __( 'Categories', self::TEXT_DOMAIN) 
+				) , 
+				'show_ui' => true , 
+				'query_var' => true , 
+				'rewrite' => array('slug' => 'persoon-categorie')
+			)
+		);
+
 		/* register_post_type(
 			'orbis_subscription' , 
 			array(
@@ -190,6 +315,16 @@ class Orbis {
 			$function = array(__CLASS__, 'pageStats')
 		);
 		
+		// Projects
+		add_menu_page(
+			$pageTitle = __('Projects', self::TEXT_DOMAIN) , 
+			$menuTitle = __('Projects', self::TEXT_DOMAIN) , 
+			$capability = 'manage_options' , 
+			$menuSlug = 'orbis_projects' , 
+			$function = array(__CLASS__, 'pageProjects') , 
+			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
+		);
+		
 		// Domains
 		add_menu_page(
 			$pageTitle = __('Domains', self::TEXT_DOMAIN) , 
@@ -230,6 +365,14 @@ class Orbis {
 
 	public static function pageStats() {
 		include 'views/stats.php';
+	}
+
+	public static function pageProjects() {
+		include 'views/projects.php';
+	}
+
+	public static function pageDomains() {
+		include 'views/domains.php';
 	}
 
 	public static function pageDomainsToInvoice() {

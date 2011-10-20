@@ -2,38 +2,223 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-31 12:59+0100\n"
-"PO-Revision-Date: 2011-08-31 12:59+0100\n"
+"POT-Creation-Date: 2011-10-20 13:59+0100\n"
+"PO-Revision-Date: 2011-10-20 13:59+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-KeywordsList: __;_e;_x:2c,1\n"
 "X-Poedit-Basepath: W:\\in.pronamic.nl.beta.pronamic.nl\\httpdocs\\wp-content\\plugins\\orbis\n"
 "X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: NETHERLANDS\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: orbis.php:47
+#: orbis.php:49
+#: views/domains.php:5
+msgid "Domain Names"
+msgstr "Domeinnamen"
+
+#: orbis.php:50
+#: views/domains-to-invoice.php:39
+#: views/domains.php:41
+msgid "Domain Name"
+msgstr "Domeinnaam"
+
+#: orbis.php:51
+msgctxt "domain_name"
+msgid "Add New"
+msgstr "Nieuwe domeinnaam"
+
+#: orbis.php:52
+msgid "Add New Domain Name"
+msgstr "Nieuwe domeinnaam"
+
+#: orbis.php:66
+#: orbis.php:68
+#: orbis.php:320
+#: orbis.php:321
+#: views/projects.php:5
+msgid "Projects"
+msgstr "Projecten"
+
+#: orbis.php:69
+msgid "Project"
+msgstr "Project"
+
+#: orbis.php:70
+msgctxt "project"
+msgid "Add New"
+msgstr "Nieuw project"
+
+#: orbis.php:71
+msgid "Add New Project"
+msgstr "Nieuw project"
+
+#: orbis.php:88
+#: orbis.php:151
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr "Categorieën"
+
+#: orbis.php:89
+#: orbis.php:152
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr "Categorie"
+
+#: orbis.php:90
+#: orbis.php:153
+msgid "Search Categories"
+msgstr "Zoek categorieën"
+
+#: orbis.php:91
+#: orbis.php:154
+msgid "All Categories"
+msgstr "Alle categorieën"
+
+#: orbis.php:92
+#: orbis.php:155
+msgid "Parent Category"
+msgstr "Bovenliggende categorie"
+
+#: orbis.php:93
+#: orbis.php:156
+msgid "Parent Category:"
+msgstr "Bovenliggende categorie:"
+
+#: orbis.php:94
+#: orbis.php:157
+msgid "Edit Category"
+msgstr "Bewerk categorie"
+
+#: orbis.php:95
+#: orbis.php:158
+msgid "Update Category"
+msgstr "Update categorie"
+
+#: orbis.php:96
+#: orbis.php:159
+msgid "Add New Category"
+msgstr "Nieuwe categorie"
+
+#: orbis.php:97
+#: orbis.php:160
+msgid "New Category Name"
+msgstr "Nieuwe categorie naam"
+
+#: orbis.php:98
+#: orbis.php:161
+msgid "Categories"
+msgstr "Categorieën"
+
+#: orbis.php:109
+#: orbis.php:111
+msgid "Persons"
+msgstr "Personen"
+
+#: orbis.php:112
+msgid "Person"
+msgstr "Persoon"
+
+#: orbis.php:127
+msgctxt "taxonomy general name"
+msgid "Genders"
+msgstr "Geslachten"
+
+#: orbis.php:128
+msgctxt "taxonomy singular name"
+msgid "Gender"
+msgstr "Geslacht"
+
 #: orbis.php:129
+msgid "Search Genders"
+msgstr "Zoek geslachten"
+
 #: orbis.php:130
+msgid "All Genders"
+msgstr "Alle geslachten"
+
+#: orbis.php:131
+msgid "Parent Gender"
+msgstr "Bovenliggend geslacht"
+
+#: orbis.php:132
+msgid "Parent Gender:"
+msgstr "Bovenliggend geslacht:"
+
+#: orbis.php:133
+msgid "Edit Gender"
+msgstr "Bewerk geslacht"
+
+#: orbis.php:134
+msgid "Update Gender"
+msgstr "Update geslacht"
+
+#: orbis.php:135
+msgid "Add New Gender"
+msgstr "Nieuw geslacht"
+
+#: orbis.php:136
+msgid "New Gender Name"
+msgstr "Nieuw geslacht naam"
+
+#: orbis.php:137
+msgid "Genders"
+msgstr "Geslachten"
+
+#: orbis.php:330
+#: orbis.php:331
 msgid "Domains"
 msgstr "Domeinen"
 
-#: orbis.php:139
+#: orbis.php:340
 #: views/domains-to-invoice.php:5
 msgid "Domains to invoice"
 msgstr "Domeinen te facturen"
 
-#: orbis.php:140
+#: orbis.php:341
 msgid "To Invoice"
 msgstr "Te factureren"
 
-#: orbis.php:148
-#: orbis.php:149
+#: orbis.php:349
+#: orbis.php:350
 #: views/subscriptions.php:20
 msgid "Subscriptions"
 msgstr "Abonnementen"
+
+#: views/projects.php:45
+msgid "No projects founds."
+msgstr "Geen projecten gevonden."
+
+#: views/projects.php:56
+#: views/domains-to-invoice.php:38
+#: views/domains.php:40
+#: views/subscriptions.php:67
+msgid "ID"
+msgstr "ID"
+
+#: views/projects.php:57
+#: views/subscriptions.php:68
+msgid "Company"
+msgstr "Bedrijf"
+
+#: views/projects.php:58
+#: views/subscriptions.php:70
+msgid "Name"
+msgstr "Naam"
+
+#: views/projects.php:59
+#: views/domains.php:42
+msgid "Post ID"
+msgstr "Bericht ID"
+
+#: views/projects.php:117
+msgid "Edit Project Post"
+msgstr "Bewerk project bericht"
 
 #: views/settings.php:5
 msgid "Settings"
@@ -55,15 +240,6 @@ msgstr "Aantal abonnementen"
 msgid "Annual Revenue"
 msgstr "Jaaromzet"
 
-#: views/domains-to-invoice.php:38
-#: views/subscriptions.php:65
-msgid "ID"
-msgstr "ID"
-
-#: views/domains-to-invoice.php:39
-msgid "Domain Name"
-msgstr "Domeinnaam"
-
 #: views/domains-to-invoice.php:40
 msgid "Order Date"
 msgstr "Besteldatum"
@@ -76,39 +252,43 @@ msgstr "Notitie"
 msgid "Orbis"
 msgstr "Orbis"
 
-#: views/subscriptions.php:66
-msgid "Company"
-msgstr "Bedrijf"
+#: views/domains.php:29
+msgid "No domain names founds."
+msgstr "Geen domeinnamen gevonden."
 
-#: views/subscriptions.php:67
+#: views/domains.php:86
+msgid "Edit Domain Name Post"
+msgstr "Bewerk domeinnaam bericht"
+
+#: views/subscriptions.php:69
 msgid "Type"
 msgstr "Type"
 
-#: views/subscriptions.php:68
-msgid "Name"
-msgstr "Naam"
-
-#: views/subscriptions.php:69
+#: views/subscriptions.php:71
 msgid "Activation Date"
 msgstr "Activatie datum"
 
-#: views/subscriptions.php:70
+#: views/subscriptions.php:72
 msgid "Expiration Date"
 msgstr "Vervaldatum"
 
-#: views/subscriptions.php:71
+#: views/subscriptions.php:73
 msgid "Update Date"
 msgstr "Update datum"
 
-#: views/subscriptions.php:72
+#: views/subscriptions.php:74
 msgid "Price"
 msgstr "Prijs"
 
-#: views/subscriptions.php:73
+#: views/subscriptions.php:75
+msgid "License Key"
+msgstr "Licentiesleutel"
+
+#: views/subscriptions.php:76
 msgid "Actions"
 msgstr "Acties"
 
-#: views/subscriptions.php:128
+#: views/subscriptions.php:134
 msgid "Update"
 msgstr "Update"
 
@@ -142,14 +322,8 @@ msgstr "Update"
 #~ msgid "Show Google Maps"
 #~ msgstr "Google Maps weergeven"
 
-#~ msgid "Search"
-#~ msgstr "Zoeken"
-
 #~ msgid "Configuration - Pronamic Google Maps"
 #~ msgstr "Configuratie - Pronamic Google Maps"
-
-#~ msgid "Post type"
-#~ msgstr "Bericht type"
 
 #~ msgid "Activate Google Maps"
 #~ msgstr "Activeer Google Maps"
