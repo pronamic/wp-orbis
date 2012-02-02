@@ -9,6 +9,8 @@ Author: Pronamic
 Author URI: http://pronamic.eu/
 */
 
+require_once 'functions/keychains.php';
+
 class Orbis {
 	const SLUG = 'orbis';
 
@@ -39,17 +41,17 @@ class Orbis {
 		// Load plugin text domain
 		$relPath = dirname(plugin_basename(self::$file)) . '/languages/';
 
-		load_plugin_textdomain(self::TEXT_DOMAIN, false, $relPath);
+		load_plugin_textdomain('orbis', false, $relPath);
 
 		register_post_type(
 			'orbis_domain_name' , 
 			array(
-				'label' => __('Domain Names', self::TEXT_DOMAIN) , 
+				'label' => __('Domain Names', 'orbis') , 
 				'labels' => array(
-					'name' => __('Domain Names', self::TEXT_DOMAIN) , 
-					'singular_name' => __('Domain Name', self::TEXT_DOMAIN) , 
-					'add_new' => _x('Add New', 'domain_name', self::TEXT_DOMAIN) , 
-					'add_new_item' => __('Add New Domain Name', self::TEXT_DOMAIN)
+					'name' => __('Domain Names', 'orbis') , 
+					'singular_name' => __('Domain Name', 'orbis') , 
+					'add_new' => _x('Add New', 'domain_name', 'orbis') , 
+					'add_new_item' => __('Add New Domain Name', 'orbis')
 				) ,
 				'public' => true ,
 				'menu_position' => 30 , 
@@ -63,12 +65,12 @@ class Orbis {
 		register_post_type(
 			'orbis_project' , 
 			array(
-				'label' => __('Projects', self::TEXT_DOMAIN) , 
+				'label' => __('Projects', 'orbis') , 
 				'labels' => array(
-					'name' => __('Projects', self::TEXT_DOMAIN) , 
-					'singular_name' => __('Project', self::TEXT_DOMAIN), 
-					'add_new' => _x('Add New', 'project', self::TEXT_DOMAIN) , 
-					'add_new_item' => __('Add New Project', self::TEXT_DOMAIN)
+					'name' => __('Projects', 'orbis') , 
+					'singular_name' => __('Project', 'orbis'), 
+					'add_new' => _x('Add New', 'project', 'orbis') , 
+					'add_new_item' => __('Add New Project', 'orbis')
 				) ,
 				'public' => true ,
 				'menu_position' => 30 , 
@@ -85,17 +87,17 @@ class Orbis {
 			array(
 				'hierarchical' => true , 
 				'labels' => array(
-					'name' => _x( 'Categories', 'taxonomy general name', self::TEXT_DOMAIN) , 
-					'singular_name' => _x( 'Category', 'taxonomy singular name', self::TEXT_DOMAIN) , 
-					'search_items' =>  __( 'Search Categories', self::TEXT_DOMAIN) , 
-					'all_items' => __( 'All Categories', self::TEXT_DOMAIN) , 
-					'parent_item' => __( 'Parent Category', self::TEXT_DOMAIN) , 
-					'parent_item_colon' => __( 'Parent Category:', self::TEXT_DOMAIN) , 
-					'edit_item' => __( 'Edit Category', self::TEXT_DOMAIN) , 
-					'update_item' => __( 'Update Category', self::TEXT_DOMAIN) , 
-					'add_new_item' => __( 'Add New Category', self::TEXT_DOMAIN) , 
-					'new_item_name' => __( 'New Category Name', self::TEXT_DOMAIN) , 
-					'menu_name' => __( 'Categories', self::TEXT_DOMAIN) 
+					'name' => _x( 'Categories', 'taxonomy general name', 'orbis') , 
+					'singular_name' => _x( 'Category', 'taxonomy singular name', 'orbis') , 
+					'search_items' =>  __( 'Search Categories', 'orbis') , 
+					'all_items' => __( 'All Categories', 'orbis') , 
+					'parent_item' => __( 'Parent Category', 'orbis') , 
+					'parent_item_colon' => __( 'Parent Category:', 'orbis') , 
+					'edit_item' => __( 'Edit Category', 'orbis') , 
+					'update_item' => __( 'Update Category', 'orbis') , 
+					'add_new_item' => __( 'Add New Category', 'orbis') , 
+					'new_item_name' => __( 'New Category Name', 'orbis') , 
+					'menu_name' => __( 'Categories', 'orbis') 
 				) , 
 				'show_ui' => true , 
 				'query_var' => true , 
@@ -104,12 +106,27 @@ class Orbis {
 		);
 
 		register_post_type(
+			'orbis_company' , 
+			array(
+				'label' => __('Companies', 'orbis') , 
+				'labels' => array(
+					'name' => __('Companies', 'orbis') , 
+					'singular_name' => __('Company', 'orbis')
+				) ,
+				'public' => true ,
+				'menu_position' => 30 , 
+				'menu_icon' => plugins_url('images/company.png', __FILE__) , 
+				'rewrite' => array('slug' => 'bedrijven') 
+			)
+		);
+
+		register_post_type(
 			'orbis_person' , 
 			array(
-				'label' => __('Persons', self::TEXT_DOMAIN) , 
+				'label' => __('Persons', 'orbis') , 
 				'labels' => array(
-					'name' => __('Persons', self::TEXT_DOMAIN) , 
-					'singular_name' => __('Person', self::TEXT_DOMAIN)
+					'name' => __('Persons', 'orbis') , 
+					'singular_name' => __('Person', 'orbis')
 				) ,
 				'public' => true ,
 				'menu_position' => 30 , 
@@ -124,17 +141,17 @@ class Orbis {
 			array(
 				'hierarchical' => true , 
 				'labels' => array(
-					'name' => _x( 'Genders', 'taxonomy general name', self::TEXT_DOMAIN) , 
-					'singular_name' => _x( 'Gender', 'taxonomy singular name', self::TEXT_DOMAIN) , 
-					'search_items' =>  __( 'Search Genders', self::TEXT_DOMAIN) , 
-					'all_items' => __( 'All Genders', self::TEXT_DOMAIN) , 
-					'parent_item' => __( 'Parent Gender', self::TEXT_DOMAIN) , 
-					'parent_item_colon' => __( 'Parent Gender:', self::TEXT_DOMAIN) , 
-					'edit_item' => __( 'Edit Gender', self::TEXT_DOMAIN) , 
-					'update_item' => __( 'Update Gender', self::TEXT_DOMAIN) , 
-					'add_new_item' => __( 'Add New Gender', self::TEXT_DOMAIN) , 
-					'new_item_name' => __( 'New Gender Name', self::TEXT_DOMAIN) , 
-					'menu_name' => __( 'Genders', self::TEXT_DOMAIN) 
+					'name' => _x( 'Genders', 'taxonomy general name', 'orbis') , 
+					'singular_name' => _x( 'Gender', 'taxonomy singular name', 'orbis') , 
+					'search_items' =>  __( 'Search Genders', 'orbis') , 
+					'all_items' => __( 'All Genders', 'orbis') , 
+					'parent_item' => __( 'Parent Gender', 'orbis') , 
+					'parent_item_colon' => __( 'Parent Gender:', 'orbis') , 
+					'edit_item' => __( 'Edit Gender', 'orbis') , 
+					'update_item' => __( 'Update Gender', 'orbis') , 
+					'add_new_item' => __( 'Add New Gender', 'orbis') , 
+					'new_item_name' => __( 'New Gender Name', 'orbis') , 
+					'menu_name' => __( 'Genders', 'orbis') 
 				) , 
 				'show_ui' => true , 
 				'query_var' => true , 
@@ -148,17 +165,17 @@ class Orbis {
 			array(
 				'hierarchical' => true , 
 				'labels' => array(
-					'name' => _x( 'Categories', 'taxonomy general name', self::TEXT_DOMAIN) , 
-					'singular_name' => _x( 'Category', 'taxonomy singular name', self::TEXT_DOMAIN) , 
-					'search_items' =>  __( 'Search Categories', self::TEXT_DOMAIN) , 
-					'all_items' => __( 'All Categories', self::TEXT_DOMAIN) , 
-					'parent_item' => __( 'Parent Category', self::TEXT_DOMAIN) , 
-					'parent_item_colon' => __( 'Parent Category:', self::TEXT_DOMAIN) , 
-					'edit_item' => __( 'Edit Category', self::TEXT_DOMAIN) , 
-					'update_item' => __( 'Update Category', self::TEXT_DOMAIN) , 
-					'add_new_item' => __( 'Add New Category', self::TEXT_DOMAIN) , 
-					'new_item_name' => __( 'New Category Name', self::TEXT_DOMAIN) , 
-					'menu_name' => __( 'Categories', self::TEXT_DOMAIN) 
+					'name' => _x( 'Categories', 'taxonomy general name', 'orbis') , 
+					'singular_name' => _x( 'Category', 'taxonomy singular name', 'orbis') , 
+					'search_items' =>  __( 'Search Categories', 'orbis') , 
+					'all_items' => __( 'All Categories', 'orbis') , 
+					'parent_item' => __( 'Parent Category', 'orbis') , 
+					'parent_item_colon' => __( 'Parent Category:', 'orbis') , 
+					'edit_item' => __( 'Edit Category', 'orbis') , 
+					'update_item' => __( 'Update Category', 'orbis') , 
+					'add_new_item' => __( 'Add New Category', 'orbis') , 
+					'new_item_name' => __( 'New Category Name', 'orbis') , 
+					'menu_name' => __( 'Categories', 'orbis') 
 				) , 
 				'show_ui' => true , 
 				'query_var' => true , 
@@ -166,13 +183,37 @@ class Orbis {
 			)
 		);
 
+		register_post_type(
+			'orbis_keychain' , 
+			array(
+				'label' => __('Keychains', 'orbis') , 
+				'labels' => array(
+					'name' => __('Keychains', 'orbis') , 
+					'singular_name' => __('Keychain', 'orbis') ,
+					'add_new' => _x('Add New', 'orbis_keychain', 'orbis') ,
+					'add_new_item' => __('Add New Keychain', 'orbis') ,
+					'edit_item' => __('Edit Keychain', 'orbis') ,
+					'new_item' => __('New Keychain', 'orbis') ,
+					'view_item' => __('View Keychain', 'orbis') ,
+					'search_items' => __('Search Keychains', 'orbis') ,
+					'not_found' => __('No keychains found', 'orbis') ,
+					'not_found_in_trash' => __('No keychains found in Trash', 'orbis') 
+				) ,
+				'public' => true ,
+				'menu_position' => 30 , 
+				'menu_icon' => plugins_url('images/keychain.png', __FILE__) , 
+				'rewrite' => array('slug' => _x('keychains', 'slug', 'orbis')) ,
+				'supports' => array('title', 'editor', 'author', 'comments')
+			)
+		);
+
 		/* register_post_type(
 			'orbis_subscription' , 
 			array(
-				'label' => __('Subscriptions', self::TEXT_DOMAIN) , 
+				'label' => __('Subscriptions', 'orbis') , 
 				'labels' => array(
-					'name' => __('Subscriptions', self::TEXT_DOMAIN) , 
-					'singular_name' => __('Subscription', self::TEXT_DOMAIN)
+					'name' => __('Subscriptions', 'orbis') , 
+					'singular_name' => __('Subscription', 'orbis')
 				) ,
 				'public' => true ,
 				'menu_position' => 200
@@ -317,8 +358,8 @@ class Orbis {
 		
 		// Projects
 		add_menu_page(
-			$pageTitle = __('Projects', self::TEXT_DOMAIN) , 
-			$menuTitle = __('Projects', self::TEXT_DOMAIN) , 
+			$pageTitle = __('Projects', 'orbis') , 
+			$menuTitle = __('Projects', 'orbis') , 
 			$capability = 'manage_options' , 
 			$menuSlug = 'orbis_projects' , 
 			$function = array(__CLASS__, 'pageProjects') , 
@@ -327,8 +368,8 @@ class Orbis {
 		
 		// Domains
 		add_menu_page(
-			$pageTitle = __('Domains', self::TEXT_DOMAIN) , 
-			$menuTitle = __('Domains', self::TEXT_DOMAIN) , 
+			$pageTitle = __('Domains', 'orbis') , 
+			$menuTitle = __('Domains', 'orbis') , 
 			$capability = 'manage_options' , 
 			$menuSlug = 'orbis_domains' , 
 			$function = array(__CLASS__, 'pageDomains') , 
@@ -337,8 +378,8 @@ class Orbis {
 
 		add_submenu_page(
 			$parentSlug = 'orbis_domains' , 
-			$pageTitle = __('Domains to invoice', self::TEXT_DOMAIN) , 
-			$menuTitle = __('To Invoice', self::TEXT_DOMAIN) , 
+			$pageTitle = __('Domains to invoice', 'orbis') , 
+			$menuTitle = __('To Invoice', 'orbis') , 
 			$capability = 'manage_options' , 
 			$menuSlug = 'orbis_domains_to_invoice' , 
 			$function = array(__CLASS__, 'pageDomainsToInvoice')
@@ -346,8 +387,8 @@ class Orbis {
 		
 		// Subscriptions
 		add_menu_page(
-			$pageTitle = __('Subscriptions', self::TEXT_DOMAIN) , 
-			$menuTitle = __('Subscriptions', self::TEXT_DOMAIN) , 
+			$pageTitle = __('Subscriptions', 'orbis') , 
+			$menuTitle = __('Subscriptions', 'orbis') , 
 			$capability = 'manage_options' , 
 			$menuSlug = 'orbis_subscriptions' , 
 			$function = array(__CLASS__, 'pageSubscriptions') , 

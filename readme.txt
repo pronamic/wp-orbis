@@ -25,12 +25,16 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 == Changelog ==
 
+= 0.2 =
+*	Added password manager support
+
 = 0.1 =
 *	Initial release
 
 
 == Links ==
 
+*	[WP-Admin Icons](http://wordpress.org/extend/plugins/wp-admin-icons/)
 *	[Pronamic](http://pronamic.eu/)
 *	[Remco Tolsma](http://remcotolsma.nl/)
 *	[Markdown's Syntax Documentation][markdown syntax]
