@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-02 16:37+0100\n"
-"PO-Revision-Date: 2012-02-02 16:38+0100\n"
+"POT-Creation-Date: 2012-02-03 11:05+0100\n"
+"PO-Revision-Date: 2012-02-03 11:05+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "MIME-Version: 1.0\n"
@@ -40,8 +40,8 @@ msgstr "Nieuwe domeinnaam"
 
 #: orbis.php:68
 #: orbis.php:70
-#: orbis.php:361
-#: orbis.php:362
+#: orbis.php:412
+#: orbis.php:413
 #: views/projects.php:5
 msgid "Projects"
 msgstr "Projecten"
@@ -60,191 +60,257 @@ msgid "Add New Project"
 msgstr "Nieuw project"
 
 #: orbis.php:90
-#: orbis.php:168
+#: orbis.php:170
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr "Categorieën"
 
 #: orbis.php:91
-#: orbis.php:169
+#: orbis.php:171
 msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr "Categorie"
 
 #: orbis.php:92
-#: orbis.php:170
+#: orbis.php:172
+#: orbis.php:221
 msgid "Search Categories"
 msgstr "Zoek categorieën"
 
 #: orbis.php:93
-#: orbis.php:171
+#: orbis.php:173
+#: orbis.php:222
 msgid "All Categories"
 msgstr "Alle categorieën"
 
 #: orbis.php:94
-#: orbis.php:172
+#: orbis.php:174
+#: orbis.php:223
 msgid "Parent Category"
 msgstr "Bovenliggende categorie"
 
 #: orbis.php:95
-#: orbis.php:173
+#: orbis.php:175
+#: orbis.php:224
 msgid "Parent Category:"
 msgstr "Bovenliggende categorie:"
 
 #: orbis.php:96
-#: orbis.php:174
+#: orbis.php:176
+#: orbis.php:225
 msgid "Edit Category"
 msgstr "Bewerk categorie"
 
 #: orbis.php:97
-#: orbis.php:175
+#: orbis.php:177
+#: orbis.php:226
 msgid "Update Category"
 msgstr "Update categorie"
 
 #: orbis.php:98
-#: orbis.php:176
+#: orbis.php:178
+#: orbis.php:227
 msgid "Add New Category"
 msgstr "Nieuwe categorie"
 
 #: orbis.php:99
-#: orbis.php:177
+#: orbis.php:179
+#: orbis.php:228
 msgid "New Category Name"
 msgstr "Nieuwe categorie naam"
 
 #: orbis.php:100
-#: orbis.php:178
+#: orbis.php:180
+#: orbis.php:229
+#: functions/keychains.php:231
 msgid "Categories"
 msgstr "Categorieën"
 
-#: orbis.php:111
-#: orbis.php:113
-msgid "Companies"
-msgstr "Bedrijven"
-
-#: orbis.php:114
-#: views/projects.php:57
-#: views/subscriptions.php:68
-msgid "Company"
-msgstr "Bedrijf"
-
-#: orbis.php:126
 #: orbis.php:128
+#: orbis.php:130
 msgid "Persons"
 msgstr "Personen"
 
-#: orbis.php:129
+#: orbis.php:131
 msgid "Person"
 msgstr "Persoon"
 
-#: orbis.php:144
+#: orbis.php:146
 msgctxt "taxonomy general name"
 msgid "Genders"
 msgstr "Geslachten"
 
-#: orbis.php:145
+#: orbis.php:147
 msgctxt "taxonomy singular name"
 msgid "Gender"
 msgstr "Geslacht"
 
-#: orbis.php:146
+#: orbis.php:148
 msgid "Search Genders"
 msgstr "Zoek geslachten"
 
-#: orbis.php:147
+#: orbis.php:149
 msgid "All Genders"
 msgstr "Alle geslachten"
 
-#: orbis.php:148
+#: orbis.php:150
 msgid "Parent Gender"
 msgstr "Bovenliggend geslacht"
 
-#: orbis.php:149
+#: orbis.php:151
 msgid "Parent Gender:"
 msgstr "Bovenliggend geslacht:"
 
-#: orbis.php:150
+#: orbis.php:152
 msgid "Edit Gender"
 msgstr "Bewerk geslacht"
 
-#: orbis.php:151
+#: orbis.php:153
 msgid "Update Gender"
 msgstr "Update geslacht"
 
-#: orbis.php:152
+#: orbis.php:154
 msgid "Add New Gender"
 msgstr "Nieuw geslacht toevoegen"
 
-#: orbis.php:153
+#: orbis.php:155
 msgid "New Gender Name"
 msgstr "Nieuw geslacht naam"
 
-#: orbis.php:154
+#: orbis.php:156
 msgid "Genders"
 msgstr "Geslachten"
 
-#: orbis.php:189
 #: orbis.php:191
+#: orbis.php:193
 msgid "Keychains"
 msgstr "Sleutelhangers"
 
-#: orbis.php:192
+#: orbis.php:194
 msgid "Keychain"
 msgstr "Sleutelhanger"
 
-#: orbis.php:193
+#: orbis.php:195
 msgctxt "orbis_keychain"
 msgid "Add New"
 msgstr "Nieuwe sleutelhanger"
 
-#: orbis.php:194
+#: orbis.php:196
 msgid "Add New Keychain"
 msgstr "Nieuw sleutelhanger toevoegen"
 
-#: orbis.php:195
+#: orbis.php:197
 msgid "Edit Keychain"
 msgstr "Sleutelhanger bewerken"
 
-#: orbis.php:196
+#: orbis.php:198
 msgid "New Keychain"
 msgstr "Nieuwe sleutelhanger"
 
-#: orbis.php:197
+#: orbis.php:199
 msgid "View Keychain"
 msgstr "Bekijk sleutelhanger"
 
-#: orbis.php:198
+#: orbis.php:200
 msgid "Search Keychains"
 msgstr "Sleutelhangers zoeken"
 
-#: orbis.php:199
+#: orbis.php:201
 msgid "No keychains found"
 msgstr "Geen sleutelhangers gevonden"
 
-#: orbis.php:200
+#: orbis.php:202
 msgid "No keychains found in Trash"
 msgstr "Geen sleutelhangers gevonden in prullenbak"
 
-#: orbis.php:205
+#: orbis.php:209
 msgctxt "slug"
 msgid "keychains"
 msgstr "sleutelhangers"
 
-#: orbis.php:371
-#: orbis.php:372
+#: orbis.php:219
+msgctxt "orbis_keychain_category"
+msgid "Categories"
+msgstr "Categorieën"
+
+#: orbis.php:220
+msgctxt "orbis_keychain_category"
+msgid "Category"
+msgstr "Categorie"
+
+#: orbis.php:233
+msgctxt "slug"
+msgid "keychain-categorie"
+msgstr "sleutelhanger-categorie"
+
+#: orbis.php:243
+msgctxt "orbis_keychain_category"
+msgid "Tags"
+msgstr "Tags"
+
+#: orbis.php:244
+msgctxt "orbis_keychain_category"
+msgid "Tag"
+msgstr "Tag"
+
+#: orbis.php:245
+msgid "Search Tags"
+msgstr "Zoek tags"
+
+#: orbis.php:246
+msgid "All Tags"
+msgstr "Alle tags"
+
+#: orbis.php:247
+msgid "Parent Tag"
+msgstr "Bovenliggende tag"
+
+#: orbis.php:248
+msgid "Parent Tag:"
+msgstr "Bovenliggende tag:"
+
+#: orbis.php:249
+msgid "Edit Tag"
+msgstr "Bewerk tag"
+
+#: orbis.php:250
+msgid "Update Tag"
+msgstr "Update tag"
+
+#: orbis.php:251
+msgid "Add New Tag"
+msgstr "Nieuwe tag"
+
+#: orbis.php:252
+msgid "New Tag Name"
+msgstr "Nieuwe tag naam"
+
+#: orbis.php:253
+#: functions/keychains.php:232
+msgid "Tags"
+msgstr "Tags"
+
+#: orbis.php:257
+msgctxt "slug"
+msgid "keychain-tag"
+msgstr "sleutelhanger-tag"
+
+#: orbis.php:422
+#: orbis.php:423
 msgid "Domains"
 msgstr "Domeinen"
 
-#: orbis.php:381
+#: orbis.php:432
 #: views/domains-to-invoice.php:5
 msgid "Domains to invoice"
 msgstr "Domeinen te facturen"
 
-#: orbis.php:382
+#: orbis.php:433
 msgid "To Invoice"
 msgstr "Te factureren"
 
-#: orbis.php:390
-#: orbis.php:391
+#: orbis.php:441
+#: orbis.php:442
 #: views/subscriptions.php:20
 msgid "Subscriptions"
 msgstr "Abonnementen"
@@ -253,34 +319,68 @@ msgstr "Abonnementen"
 msgid "Keychain Details"
 msgstr "Sleutelhanger details"
 
-#: functions/keychains.php:81
-msgid "Request password."
-msgstr "Verzoek wachtwoord."
+#: functions/keychains.php:74
+msgid "I changed the password of this keychain."
+msgstr "Ik heb het wachtwoord van deze sleutelhanger gewijzigd."
 
-#: functions/keychains.php:119
+#: functions/keychains.php:109
 #, php-format
-msgid "This comment was an password request, the user can view the password till %s"
-msgstr "Deze reactie was een wachtwoord verzoek, de gebruiker kan het wachtwoord bekijken tot %s"
+msgid "Request password, describe with at least <strong>%d words</strong> why you need this password."
+msgstr "Wachtwoord verzoek, beschrijf met minimaal <strong>%d woorden</strong> waarom je dit wachtwoord nodig hebt."
 
+#: functions/keychains.php:158
+#, php-format
+msgid "This comment was an password request, the user can view the password till <strong>%s</strong>."
+msgstr "Deze reactie was een wachtwoord verzoek, de gebruiker kan het wachtwoord bekijken tot <strong>%s</strong>."
+
+#: functions/keychains.php:162
+#, php-format
+msgid "This comment was met <strong>%d words</strong> not long enough to display the password, use at least <strong>%d words</strong>."
+msgstr "Deze reactie was met <strong>%d woorden</strong> niet lang genoeg om het wachtwoord weer te geven, gebruik minimaal <strong>%d woorden</strong>."
+
+#: functions/keychains.php:170
+#: functions/keychains.php:205
+#: admin/meta-box-keychain-details.php:26
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: functions/keychains.php:199
+#: functions/keychains.php:227
 #: admin/meta-box-keychain-details.php:9
 msgid "URL"
 msgstr "URL"
 
-#: admin/meta-box-keychain-details.php:13
-msgid "Use an full URL: for FTP <code>ftp://</code>, for HTTP <code>http://</code>, for SFTP <code>sftp://</code>"
-msgstr "Gebruik een volledige URL: voor FTP <code>ftp://</code>, voor HTTP <code>http://</code>, voor SFTP <code>sftp://</code>"
-
+#: functions/keychains.php:202
+#: functions/keychains.php:228
 #: admin/meta-box-keychain-details.php:18
-msgid "E-mail Address"
-msgstr "E-mailadres"
-
-#: admin/meta-box-keychain-details.php:26
 msgid "Username"
 msgstr "Gebruikersnaam"
 
+#: functions/keychains.php:208
+#: functions/keychains.php:229
 #: admin/meta-box-keychain-details.php:34
-msgid "Password"
-msgstr "Wachtwoord"
+msgid "E-mail Address"
+msgstr "E-mailadres"
+
+#: functions/keychains.php:226
+msgid "Title"
+msgstr "Titel"
+
+#: functions/keychains.php:230
+msgid "Author"
+msgstr "Auteur"
+
+#: functions/keychains.php:233
+msgid "Comments"
+msgstr "Reacties"
+
+#: functions/keychains.php:234
+msgid "Date"
+msgstr "Datum"
+
+#: admin/meta-box-keychain-details.php:13
+msgid "Use an full URL: for HTTP <code>http://</code>, for FTP <code>ftp://</code>, for SFTP <code>sftp://</code>"
+msgstr "Gebruik een volledige URL: voor HTTP <code>http://</code>, voor FTP <code>ftp://</code>, voor SFTP <code>sftp://</code>"
 
 #: views/projects.php:45
 msgid "No projects founds."
@@ -292,6 +392,11 @@ msgstr "Geen projecten gevonden."
 #: views/subscriptions.php:67
 msgid "ID"
 msgstr "ID"
+
+#: views/projects.php:57
+#: views/subscriptions.php:68
+msgid "Company"
+msgstr "Bedrijf"
 
 #: views/projects.php:58
 #: views/subscriptions.php:70
@@ -379,6 +484,12 @@ msgstr "Acties"
 msgid "Update"
 msgstr "Update"
 
+#~ msgid "Companies"
+#~ msgstr "Bedrijven"
+
+#~ msgid "Request password."
+#~ msgstr "Verzoek wachtwoord."
+
 #~ msgid "Password Details"
 #~ msgstr "Wachtwoord details"
 #~ msgctxt "orbis_password"
@@ -410,9 +521,6 @@ msgstr "Update"
 
 #~ msgid "Organisation"
 #~ msgstr "Organisatie"
-
-#~ msgid "Title"
-#~ msgstr "Titel"
 
 #~ msgid "Latitude"
 #~ msgstr "Breedtegraad"

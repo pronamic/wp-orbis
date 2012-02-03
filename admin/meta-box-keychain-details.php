@@ -10,7 +10,7 @@ wp_nonce_field('orbis_save_keychain_details', 'orbis_keychain_details_meta_box_n
 		</th>
 		<td>
 			<input id="orbis_keychain_url" name="_orbis_keychain_url" value="<?php echo get_post_meta($post->ID, '_orbis_keychain_url', true); ?>" type="url" class="regular-text" />
-			<span class="description"><br /><?php _e('Use an full URL: for FTP <code>ftp://</code>, for HTTP <code>http://</code>, for SFTP <code>sftp://</code>', 'orbis'); ?></span>
+			<span class="description"><br /><?php _e('Use an full URL: for HTTP <code>http://</code>, for FTP <code>ftp://</code>, for SFTP <code>sftp://</code>', 'orbis'); ?></span>
 		</td>
 	</tr>
 	<tr valign="top">

@@ -26,7 +26,7 @@ WordPress installation and then activate the Plugin from Plugins page.
 == Changelog ==
 
 = 0.2 =
-*	Added password manager support
+*	Added keychain manager support
 
 = 0.1 =
 *	Initial release
