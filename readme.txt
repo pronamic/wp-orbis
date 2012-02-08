@@ -3,7 +3,7 @@ Contributors: pronamic, remcotolsma
 Tags: orbis, intranet
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 0.1
+Stable tag: 0.2.1
 
 This plugin creates an intranet environment in WordPress
 
@@ -24,6 +24,9 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 
 == Changelog ==
+
+= 0.2.1 = 
+*	Added own capabilities for the keychain posts
 
 = 0.2 =
 *	Added keychain manager support

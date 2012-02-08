@@ -42,6 +42,15 @@ class Orbis {
 		$relPath = dirname(plugin_basename(self::$file)) . '/languages/';
 
 		load_plugin_textdomain('orbis', false, $relPath);
+	
+		$version = '0.1';
+		if(get_option('orbis_version') != $version) {
+			orbis_keychain_setup_roles();
+		
+			update_option('orbis_version', $version);
+		}
+
+		// Post types
 
 		register_post_type(
 			'orbis_domain_name' , 
@@ -204,6 +213,7 @@ class Orbis {
 				'public' => true ,
 				'menu_position' => 30 , 
 				'menu_icon' => plugins_url('images/keychain.png', __FILE__) , 
+				'capability_type' => array('keychain', 'keychains') , 
 				'supports' => array('title', 'editor', 'author', 'comments') , 
 				'has_archive' => true , 
 				'rewrite' => array('slug' => _x('keychains', 'slug', 'orbis')) 

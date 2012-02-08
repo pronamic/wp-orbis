@@ -1,5 +1,63 @@
 <?php
 
+function orbis_keychain_setup_roles() {
+	$defaultCapabilities = array(
+		'edit_keychain' => true , 
+		'read_keychain' => true , 
+		'delete_keychain' => true , 
+		'edit_keychains' => true , 
+		'edit_others_keychains' => true , 
+		'publish_keychains' => true ,
+		'read_private_keychains' => true , 
+		'delete_keychains' => true , 
+		'delete_private_keychains' => true , 
+		'delete_published_keychains' => true , 
+		'delete_other_keychains' => true , 
+		'edit_private_keychains' => true , 
+		'edit_published_keychains' => true 
+	);
+
+	$roles = array(
+		'administrator' => array(
+			'display_name' => __('Administrator', 'orbis') ,
+			'capabilities' => array_merge($defaultCapabilities, array(
+				
+			))
+		) , 
+		'editor' => array(
+			'display_name' => __('Editor', 'orbis') ,
+			'capabilities' => array_merge($defaultCapabilities, array(
+				'edit_others_keychains' => false ,
+			))
+		) 
+	);
+	
+	orbis_update_roles($roles);
+}
+
+function orbis_update_roles($roles) {
+	global $wp_roles;
+
+	if(!isset($wp_roles)) {
+		$wp_roles = new WP_Roles();
+	}
+
+	foreach($roles as $role => $data) {
+		if(isset($data['display_name'], $data['capabilities'])) {
+			$display_name = $data['display_name'];
+			$capabilities = $data['capabilities'];
+
+			if($wp_roles->is_role($role)) {
+				foreach($capabilities as $cap => $grant) {
+					$wp_roles->add_cap($role, $cap, $grant);
+				}
+			} else {
+				$wp_roles->add_role($role, $display_name, $capabilities);
+			}
+		}
+	}
+}
+
 /**
  * Add keychain meta boxes
  */
@@ -186,9 +244,9 @@ add_filter('comment_text', 'orbis_keychain_get_comment_text', 20, 2);
  * Keychain content
  */
 function orbis_keychain_the_content($content) {
-	$id = get_the_ID();
-	
 	if(get_post_type() == 'orbis_keychain') {
+		$id = get_the_ID();
+
 		$url = get_post_meta($id, '_orbis_keychain_url', true);
 		$email = get_post_meta($id, '_orbis_keychain_email', true);
 		$username = get_post_meta($id, '_orbis_keychain_username', true);
@@ -196,6 +254,7 @@ function orbis_keychain_the_content($content) {
 		$str  = '';
 
 		$str .= '<dl>';
+
 		$str .= '	<dt>' . __('URL', 'orbis') . '</dt>';
 		$str .= '	<dd>' . sprintf('<a href="%s">%s</a>', $url, $url) . '</dd>';
 
@@ -205,8 +264,11 @@ function orbis_keychain_the_content($content) {
 		$str .= '	<dt>' . __('Password', 'orbis') . '</dt>';
 		$str .= '	<dd>' . '********' . '</dd>';
 
-		$str .= '	<dt>' . __('E-mail Address', 'orbis') . '</dt>';
-		$str .= '	<dd>' . sprintf('<a href="mailto:%s">%s</a>', $email, $email) . '</dd>';
+		if(!empty($email)) {
+			$str .= '	<dt>' . __('E-mail Address', 'orbis') . '</dt>';
+			$str .= '	<dd>' . sprintf('<a href="mailto:%s">%s</a>', $email, $email) . '</dd>';
+		}
+
 		$str .= '</dl>';
 
 		$content .= $str;
