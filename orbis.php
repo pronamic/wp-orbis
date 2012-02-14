@@ -10,6 +10,7 @@ Author URI: http://pronamic.eu/
 */
 
 require_once 'functions/keychains.php';
+require_once 'functions/domain_names.php';
 
 class Orbis {
 	const SLUG = 'orbis';
