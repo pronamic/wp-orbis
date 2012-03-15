@@ -143,6 +143,8 @@ class Orbis {
 				'public' => true ,
 				'menu_position' => 30 , 
 				'menu_icon' => plugins_url('images/person.png', __FILE__) , 
+				'supports' => array('title', 'editor', 'author', 'comments', 'thumbnail') ,
+				'has_archive' => true , 
 				'rewrite' => array('slug' => 'personen') 
 			)
 		);
