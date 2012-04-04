@@ -392,7 +392,7 @@ class Orbis {
 		add_menu_page(
 			$pageTitle = 'Orbis' , 
 			$menuTitle = 'Orbis' , 
-			$capability = 'manage_options' , 
+			$capability = 'orbis_view' , 
 			$menuSlug = 'orbis' , 
 			$function = array(__CLASS__, 'page') , 
 			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
@@ -404,7 +404,7 @@ class Orbis {
 			$parentSlug = 'orbis' , 
 			$pageTitle = 'Settings' , 
 			$menuTitle = 'Settings' , 
-			$capability = 'manage_options' , 
+			$capability = 'orbis_view_settings' , 
 			$menuSlug = 'orbis_settings' , 
 			$function = array(__CLASS__, 'pageSettings')
 		);
@@ -415,7 +415,7 @@ class Orbis {
 			$parentSlug = 'orbis' , 
 			$pageTitle = 'Stats' , 
 			$menuTitle = 'Stats' , 
-			$capability = 'manage_options' , 
+			$capability = 'orbis_view_stats' , 
 			$menuSlug = 'orbis_stats' , 
 			$function = array(__CLASS__, 'pageStats')
 		);
@@ -424,7 +424,7 @@ class Orbis {
 		add_menu_page(
 			$pageTitle = __('Projects', 'orbis') , 
 			$menuTitle = __('Projects', 'orbis') , 
-			$capability = 'manage_options' , 
+			$capability = 'orbis_view_projects' , 
 			$menuSlug = 'orbis_projects' , 
 			$function = array(__CLASS__, 'pageProjects') , 
 			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
@@ -434,7 +434,7 @@ class Orbis {
 		add_menu_page(
 			$pageTitle = __('Domains', 'orbis') , 
 			$menuTitle = __('Domains', 'orbis') , 
-			$capability = 'manage_options' , 
+			$capability = 'orbis_view_domains' , 
 			$menuSlug = 'orbis_domains' , 
 			$function = array(__CLASS__, 'pageDomains') , 
 			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
@@ -444,7 +444,7 @@ class Orbis {
 			$parentSlug = 'orbis_domains' , 
 			$pageTitle = __('Domains to invoice', 'orbis') , 
 			$menuTitle = __('To Invoice', 'orbis') , 
-			$capability = 'manage_options' , 
+			$capability = 'orbis_view_domains_to_invoice' , 
 			$menuSlug = 'orbis_domains_to_invoice' , 
 			$function = array(__CLASS__, 'pageDomainsToInvoice')
 		);
@@ -453,7 +453,7 @@ class Orbis {
 		add_menu_page(
 			$pageTitle = __('Subscriptions', 'orbis') , 
 			$menuTitle = __('Subscriptions', 'orbis') , 
-			$capability = 'manage_options' , 
+			$capability = 'orbis_view_subscriptions' , 
 			$menuSlug = 'orbis_subscriptions' , 
 			$function = array(__CLASS__, 'pageSubscriptions') , 
 			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
