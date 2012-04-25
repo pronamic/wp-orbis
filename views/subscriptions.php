@@ -26,6 +26,7 @@ if(!empty($_POST) && check_admin_referer('orbis_update_subscription', 'orbis_non
 	$query = '
 		SELECT 
 			subscription.id ,  
+			subscription.post_id AS postId , 
 			subscription.name AS subscriptionName , 
 			subscription.activation_date AS activationDate , 
 			subscription.expiration_date AS expirationDate ,
@@ -74,6 +75,7 @@ if(!empty($_POST) && check_admin_referer('orbis_update_subscription', 'orbis_non
 					<th scope="col" class="manage-column"><?php _e('Price', Orbis::TEXT_DOMAIN) ?></th>
 					<th scope="col" class="manage-column"><?php _e('License Key', Orbis::TEXT_DOMAIN) ?></th>
 					<th scope="col" class="manage-column"><?php _e('Actions', Orbis::TEXT_DOMAIN) ?></th>
+					<th scope="col" class="manage-column"><?php _e('Post ID', Orbis::TEXT_DOMAIN) ?></th>
 				</tr>
 			</<?php echo $tag; ?>>
 	
@@ -132,6 +134,39 @@ if(!empty($_POST) && check_admin_referer('orbis_update_subscription', 'orbis_non
 					</td>
 					<td>
 						<button class="button-secondary" type="submit" name="update" value="<?php echo $subscription->id; ?>"><?php _e('Update', 'orbis'); ?></button>
+					</td>
+					<td>
+						<?php 
+						
+						if(empty($subscription->postId)) {
+							$title = $subscription->typeName . ' - ' . $subscription->subscriptionName;
+
+							$post = array(
+								'post_title' => $title , 
+								'post_status' => 'publish' , 
+								'post_type' => 'orbis_subscription'
+							);
+	
+							$result = wp_insert_post($post, true);
+							
+							if(is_wp_error($result)) {
+								echo $result;
+							} else {
+								$subscription->postId = $result;
+	
+								$updated = $wpdb->update(
+									'orbis_subscriptions' , 
+									array('post_id' => $subscription->postId) , 
+									array('id' => $subscription->id) , 
+									array('%d') , 
+									array('%d') 
+								);
+							}
+						}
+						
+						edit_post_link(__('Edit Subscription Post', Orbis::TEXT_DOMAIN), '', '', $subscription->postId);
+						
+						?>
 					</td>
 				</tr>
 	

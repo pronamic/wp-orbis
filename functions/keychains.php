@@ -197,8 +197,10 @@ function orbis_keychain_get_comment_text($text, $comment) {
 	$isPasswordRequest = get_comment_meta($comment->comment_ID, 'orbis_keychain_password_request', true);
 
 	if($isPasswordRequest) {
-		$visibleDate = new DateTime($comment->comment_date);
-		$visibleDate->modify('+1 hour');
+		$currentDate = new DateTime();
+
+		$visibleTillDate = new DateTime($comment->comment_date);
+		$visibleTillDate->modify('+2 days');
 
 		$str  = '';
 
@@ -210,18 +212,27 @@ function orbis_keychain_get_comment_text($text, $comment) {
 		$wordCount = str_word_count($comment->comment_content);
 		$wordCountRequired = orbis_keychain_get_password_required_word_count();
 		$isCommentEnough = $wordCount >= $wordCountRequired;
+		
+		$isWithinDate = $visibleTillDate->format('U') > $currentDate->format('U');
 
 		if($isCommentEnough) {
 			$str .= '<p>';
-			$str .= '	' . sprintf(__('This comment was an password request, the user can view the password till <strong>%s</strong>.', 'orbis'), $visibleDate->format(DATE_W3C));
+			$str .= '	' . sprintf(
+				__('This comment was an password request, the user can view the password till <strong>%s</strong>.', 'orbis') , 
+				$visibleTillDate->format(DATE_W3C)
+			);
 			$str .= '</p>';
 		} else {
 			$str .= '<p>';
-			$str .= '	' . sprintf(__('This comment was met <strong>%d words</strong> not long enough to display the password, use at least <strong>%d words</strong>.', 'orbis'), $wordCount, $wordCountRequired);
+			$str .= '	' . sprintf(
+				__('This comment was met <strong>%d words</strong> not long enough to display the password, use at least <strong>%d words</strong>.', 'orbis') , 
+				$wordCount , 
+				$wordCountRequired
+			);
 			$str .= '</p>';
 		}
 
-		if($isCurrentUser && $isCommentEnough) {
+		if($isCurrentUser && $isCommentEnough && $isWithinDate) {
 			$password = get_post_meta($comment->comment_post_ID, '_orbis_keychain_password', true);
 
 			$str .= '<p>';

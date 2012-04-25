@@ -115,7 +115,6 @@ class Orbis {
 			)
 		);
 
-		/*
 		register_post_type(
 			'orbis_company' , 
 			array(
@@ -127,10 +126,11 @@ class Orbis {
 				'public' => true ,
 				'menu_position' => 30 , 
 				'menu_icon' => plugins_url('images/company.png', __FILE__) , 
-				'rewrite' => array('slug' => 'bedrijven') 
+				'supports' => array('title', 'editor', 'author', 'comments', 'thumbnail') ,
+				'has_archive' => true , 
+				'rewrite' => array('slug' => _x('companies', 'slug', 'orbis')) 
 			)
 		);
-		*/
 
 		register_post_type(
 			'orbis_person' , 
@@ -145,7 +145,7 @@ class Orbis {
 				'menu_icon' => plugins_url('images/person.png', __FILE__) , 
 				'supports' => array('title', 'editor', 'author', 'comments', 'thumbnail') ,
 				'has_archive' => true , 
-				'rewrite' => array('slug' => 'personen') 
+				'rewrite' => array('slug' => _x('persons', 'slug', 'orbis')) 
 			)
 		);
 
@@ -271,7 +271,7 @@ class Orbis {
 			)
 		);
 
-		/* register_post_type(
+		register_post_type(
 			'orbis_subscription' , 
 			array(
 				'label' => __('Subscriptions', 'orbis') , 
@@ -280,9 +280,13 @@ class Orbis {
 					'singular_name' => __('Subscription', 'orbis')
 				) ,
 				'public' => true ,
-				'menu_position' => 200
+				'menu_position' => 30 , 
+				'menu_icon' => plugins_url('images/subscription.png', __FILE__) , 
+				'supports' => array('title', 'editor', 'author', 'comments', 'thumbnail') ,
+				'has_archive' => true , 
+				'rewrite' => array('slug' => _x('subscriptions', 'slug', 'orbis')) 
 			)
-		); */
+		);
 	}
 
 	public static function flushRules() {
@@ -449,6 +453,16 @@ class Orbis {
 			$function = array(__CLASS__, 'pageDomainsToInvoice')
 		);
 		
+		// Companies
+		add_menu_page(
+			$pageTitle = __('Companies', 'orbis') , 
+			$menuTitle = __('Companies', 'orbis') , 
+			$capability = 'orbis_view_companies' , 
+			$menuSlug = 'orbis_companies' , 
+			$function = array(__CLASS__, 'pageCompanies') , 
+			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
+		);
+		
 		// Subscriptions
 		add_menu_page(
 			$pageTitle = __('Subscriptions', 'orbis') , 
@@ -482,6 +496,10 @@ class Orbis {
 
 	public static function pageDomainsToInvoice() {
 		include 'views/domains-to-invoice.php';
+	}
+
+	public static function pageCompanies() {
+		include 'views/companies.php';
 	}
 
 	public static function pageSubscriptions() {
