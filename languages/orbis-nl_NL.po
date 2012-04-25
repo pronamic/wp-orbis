@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-25 14:46+0100\n"
-"PO-Revision-Date: 2012-04-25 16:04+0100\n"
+"POT-Creation-Date: 2012-04-25 16:05+0100\n"
+"PO-Revision-Date: 2012-04-25 16:05+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "MIME-Version: 1.0\n"
@@ -122,7 +122,7 @@ msgstr "Nieuwe categorie naam"
 #: orbis.php:110
 #: orbis.php:192
 #: orbis.php:242
-#: functions/keychains.php:297
+#: functions/keychains.php:304
 msgid "Categories"
 msgstr "Categorieën"
 
@@ -312,7 +312,7 @@ msgid "New Tag Name"
 msgstr "Nieuwe tag naam"
 
 #: orbis.php:266
-#: functions/keychains.php:298
+#: functions/keychains.php:305
 msgid "Tags"
 msgstr "Tags"
 
@@ -388,53 +388,53 @@ msgstr "Ik heb het wachtwoord van deze sleutelhanger gewijzigd."
 msgid "Request password, describe with at least <strong>%d words</strong> why you need this password."
 msgstr "Wachtwoord verzoek, beschrijf met minimaal <strong>%d woorden</strong> waarom je dit wachtwoord nodig hebt."
 
-#: functions/keychains.php:220
+#: functions/keychains.php:221
 #, php-format
 msgid "This comment was an password request, the user can view the password till <strong>%s</strong>."
 msgstr "Deze reactie was een wachtwoord verzoek, de gebruiker kan het wachtwoord bekijken tot <strong>%s</strong>."
 
-#: functions/keychains.php:224
+#: functions/keychains.php:228
 #, php-format
 msgid "This comment was met <strong>%d words</strong> not long enough to display the password, use at least <strong>%d words</strong>."
 msgstr "Deze reactie was met <strong>%d woorden</strong> niet lang genoeg om het wachtwoord weer te geven, gebruik minimaal <strong>%d woorden</strong>."
 
-#: functions/keychains.php:232
-#: functions/keychains.php:268
+#: functions/keychains.php:239
+#: functions/keychains.php:275
 #: admin/meta-box-keychain-details.php:26
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: functions/keychains.php:262
-#: functions/keychains.php:293
+#: functions/keychains.php:269
+#: functions/keychains.php:300
 #: admin/meta-box-keychain-details.php:9
 msgid "URL"
 msgstr "URL"
 
-#: functions/keychains.php:265
-#: functions/keychains.php:294
+#: functions/keychains.php:272
+#: functions/keychains.php:301
 #: admin/meta-box-keychain-details.php:18
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: functions/keychains.php:272
-#: functions/keychains.php:295
+#: functions/keychains.php:279
+#: functions/keychains.php:302
 #: admin/meta-box-keychain-details.php:34
 msgid "E-mail Address"
 msgstr "E-mailadres"
 
-#: functions/keychains.php:292
+#: functions/keychains.php:299
 msgid "Title"
 msgstr "Titel"
 
-#: functions/keychains.php:296
+#: functions/keychains.php:303
 msgid "Author"
 msgstr "Auteur"
 
-#: functions/keychains.php:299
+#: functions/keychains.php:306
 msgid "Comments"
 msgstr "Reacties"
 
-#: functions/keychains.php:300
+#: functions/keychains.php:307
 msgid "Date"
 msgstr "Datum"
 
