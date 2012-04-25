@@ -25,6 +25,11 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 == Changelog ==
 
+= 0.2.2 =
+*	Added company post type
+*	Added subscription post type
+*	Improved the keychain visibile till date functionality
+
 = 0.2.1 = 
 *	Added own capabilities for the keychain posts
 
