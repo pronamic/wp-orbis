@@ -161,9 +161,9 @@ function orbis_keychain_comment_form($post_id) {
 	if(get_post_type($post_id) == 'orbis_keychain') {
 		$str  = '';
 
-		$str .= '<p class="comment-subscription-form">';
-		$str .= '	<input type="checkbox" name="orbis_keychain_password_request" id="orbis_keychain_password_request" value="true" /> ';
-		$str .=	'	<label for="orbis_keychain_password_request">';
+		$str .= '<p>';
+		$str .=	'	<label class="checkbox">';
+		$str .= '		<input type="checkbox" name="orbis_keychain_password_request" value="true" /> ';
 		$str .= '		' . sprintf(__( 'Request password, describe with at least <strong>%d words</strong> why you need this password.', 'orbis'), orbis_keychain_get_password_required_word_count());
 		$str .= '	</label>';
 		$str .= '</p>';
@@ -233,12 +233,29 @@ function orbis_keychain_get_comment_text($text, $comment) {
 		}
 
 		if($isCurrentUser && $isCommentEnough && $isWithinDate) {
+			$url = get_post_meta($comment->comment_post_ID, '_orbis_keychain_url', true);
+			$username = get_post_meta($comment->comment_post_ID, '_orbis_keychain_username', true);
 			$password = get_post_meta($comment->comment_post_ID, '_orbis_keychain_password', true);
+			$email = get_post_meta($comment->comment_post_ID, '_orbis_keychain_email', true);
 
-			$str .= '<p>';
-			$str .= '	' . sprintf('<label for="password-field-%d">', $comment->comment_ID) . __('Password', 'orbis') . '</label>';
-			$str .= '	' . sprintf('<input id="password-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr($password));
-			$str .= '</p>';
+			$str .= '<dl>';
+	
+			$str .= '	<dt>' . sprintf('<label for="url-field-%d">%s</label>', $comment->comment_ID, __('URL', 'orbis')) . '</dt>';
+			$str .= '	<dd>' . sprintf('<a href="%s">%s</a>', $url, $url) . '</dd>'; 
+			$str .= '	<dd>' . sprintf('<input id="url-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr($url)) . '</dd>';
+
+			$str .= '	<dt>' . sprintf('<label for="username-field-%d">%s</label>', $comment->comment_ID, __('Username', 'orbis')) . '</dt>';
+			$str .= '	<dd>' . sprintf('<input id="username-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr($username)) . '</dd>';
+
+			$str .= '	<dt>' . sprintf('<label for="password-field-%d">%s</label>', $comment->comment_ID, __('Password', 'orbis')) . '</dt>';
+			$str .= '	<dd>' . sprintf('<input id="password-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr($password)) . '</dd>';
+
+			if(!empty($email)) {
+				$str .= '	<dt>' . sprintf('<label for="email-field-%d">%s</label>', $comment->comment_ID, __('E-mail Address', 'orbis')) . '</dt>';
+				$str .= '	<dd>' . sprintf('<input id="email-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr($email)) . '</dd>';
+			}
+
+			$str .= '</dl>';
 		}
 
 		$str .= '</div>';
