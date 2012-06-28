@@ -25,6 +25,9 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 == Changelog ==
 
+= 0.2.4 +
+*	Added support for wildcard domains in subscription / licenses API
+
 = 0.2.3 =
 *	Added the keychain URL, username and e-mail fields to an password request comment
 

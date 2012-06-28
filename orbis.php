@@ -328,8 +328,11 @@ class Orbis {
 			$method = get_query_var('api_method');
 			
 			if($object == 'licenses' && $method == 'show') {
-				$key = filter_input(INPUT_POST, 'key', FILTER_SANITIZE_STRING);
-				$url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_STRING);
+				$type = INPUT_POST;
+
+				$key = filter_input($type, 'key', FILTER_SANITIZE_STRING);
+				$url = filter_input($type, 'url', FILTER_SANITIZE_STRING);
+
 				$domain = parse_url($url, PHP_URL_HOST);
 				if(substr($domain, 0, 4) == 'www.') {
 					$domain = substr($domain, 4);
@@ -361,15 +364,22 @@ class Orbis {
 						orbis_domain_names AS domain_name
 								ON subscription.domain_name_id = domain_name.id
 					WHERE
-						subscription.name = %s
-							AND
 						subscription.license_key_md5 = %s
 				';
 				
 				global $wpdb;
 
-				$subscription = $wpdb->get_row($wpdb->prepare($query, $domain, $key));
+				$query = $wpdb->prepare($query, $key);
+
+				$subscription = $wpdb->get_row($query);
+
 				if($subscription != null) {
+					if($subscription->subscriptionName != '*') {
+						$isValidDomain = $subscription->subscriptionName == $domain;
+						
+						$subscription->isValid &= $isValidDomain;
+					}
+					
 					$subscription->isValid = filter_var($subscription->isValid, FILTER_VALIDATE_BOOLEAN);
 				}
 				
