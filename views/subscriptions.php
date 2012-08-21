@@ -17,7 +17,7 @@ if(!empty($_POST) && check_admin_referer('orbis_update_subscription', 'orbis_non
 	<?php screen_icon( 'orbis' ); ?>
 
 	<h2>
-		<?php _e('Subscriptions', Orbis::TEXT_DOMAIN); ?>
+		<?php _e('Subscriptions', 'orbis'); ?>
 	</h2>
 	
 	<?php 
@@ -65,17 +65,17 @@ if(!empty($_POST) && check_admin_referer('orbis_update_subscription', 'orbis_non
 	
 			<<?php echo $tag; ?>>
 				<tr>
-					<th scope="col" class="manage-column" style="width: 3em"><?php _e('ID', Orbis::TEXT_DOMAIN) ?></th>
-					<th scope="col" class="manage-column"><?php _e('Company', Orbis::TEXT_DOMAIN) ?></th>
-					<th scope="col" class="manage-column"><?php _e('Type', Orbis::TEXT_DOMAIN) ?></th>
-					<th scope="col" class="manage-column"><?php _e('Name', Orbis::TEXT_DOMAIN) ?></th>
-					<th scope="col" class="manage-column"><?php _e('Activation Date', Orbis::TEXT_DOMAIN) ?></th>
-					<th scope="col" class="manage-column"><?php _e('Expiration Date', Orbis::TEXT_DOMAIN) ?></th>
-					<th scope="col" class="manage-column"><?php _e('Update Date', Orbis::TEXT_DOMAIN) ?></th>
-					<th scope="col" class="manage-column"><?php _e('Price', Orbis::TEXT_DOMAIN) ?></th>
-					<th scope="col" class="manage-column"><?php _e('License Key', Orbis::TEXT_DOMAIN) ?></th>
-					<th scope="col" class="manage-column"><?php _e('Actions', Orbis::TEXT_DOMAIN) ?></th>
-					<th scope="col" class="manage-column"><?php _e('Post ID', Orbis::TEXT_DOMAIN) ?></th>
+					<th scope="col" class="manage-column" style="width: 3em"><?php _e('ID', 'orbis') ?></th>
+					<th scope="col" class="manage-column"><?php _e('Company', 'orbis') ?></th>
+					<th scope="col" class="manage-column"><?php _e('Type', 'orbis') ?></th>
+					<th scope="col" class="manage-column"><?php _e('Name', 'orbis') ?></th>
+					<th scope="col" class="manage-column"><?php _e('Activation Date', 'orbis') ?></th>
+					<th scope="col" class="manage-column"><?php _e('Expiration Date', 'orbis') ?></th>
+					<th scope="col" class="manage-column"><?php _e('Update Date', 'orbis') ?></th>
+					<th scope="col" class="manage-column"><?php _e('Price', 'orbis') ?></th>
+					<th scope="col" class="manage-column"><?php _e('License Key', 'orbis') ?></th>
+					<th scope="col" class="manage-column"><?php _e('Actions', 'orbis') ?></th>
+					<th scope="col" class="manage-column"><?php _e('Post ID', 'orbis') ?></th>
 				</tr>
 			</<?php echo $tag; ?>>
 	
@@ -164,7 +164,7 @@ if(!empty($_POST) && check_admin_referer('orbis_update_subscription', 'orbis_non
 							}
 						}
 						
-						edit_post_link(__('Edit Subscription Post', Orbis::TEXT_DOMAIN), '', '', $subscription->postId);
+						edit_post_link(__('Edit Subscription Post', 'orbis'), '', '', $subscription->postId);
 						
 						?>
 					</td>

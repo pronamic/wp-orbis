@@ -132,7 +132,7 @@
 
 	?>
 	<dl>
-		<dt><?php _e('Number domains', Orbis::TEXT_DOMAIN); ?></dt>
+		<dt><?php _e('Number domains', 'orbis'); ?></dt>
 		<dd><?php echo $numberDomains; ?></dd>
 	</dl>
 	
@@ -165,10 +165,10 @@
 
 	?>
 	<dl>
-		<dt><?php _e('Number subscriptions', Orbis::TEXT_DOMAIN); ?></dt>
+		<dt><?php _e('Number subscriptions', 'orbis'); ?></dt>
 		<dd><?php echo $numberSubscriptions; ?></dd>
 
-		<dt><?php _e('Annual Revenue', Orbis::TEXT_DOMAIN); ?></dt>
+		<dt><?php _e('Annual Revenue', 'orbis'); ?></dt>
 		<dd>&euro;&nbsp;<?php echo number_format($total, 2, ',', '.'); ?></dd>
 	</dl>
 </div>

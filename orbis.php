@@ -18,8 +18,6 @@ require_once 'functions/domain_names.php';
 require_once 'functions/persons.php';
 
 class Orbis {
-	const TEXT_DOMAIN = 'orbis';
-
 	public static $file;
 
 	public static function bootstrap( $file ) {
@@ -520,4 +518,4 @@ class Orbis {
 	}
 }
 
-Orbis::bootstrap(__FILE__);
+Orbis::bootstrap( __FILE__ );

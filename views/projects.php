@@ -42,7 +42,7 @@
 	if(empty($projects)): ?>
 	
 	<p>
-		<?php _e('No projects founds.', Orbis::TEXT_DOMAIN); ?>
+		<?php _e('No projects founds.', 'orbis'); ?>
 	</p>
 
 	<?php else: ?>
@@ -53,10 +53,10 @@
 
 		<<?php echo $tag; ?>>
 			<tr>
-				<th scope="col" class="manage-column"><?php _e('ID', Orbis::TEXT_DOMAIN) ?></th>
-				<th scope="col" class="manage-column"><?php _e('Company', Orbis::TEXT_DOMAIN) ?></th>
-				<th scope="col" class="manage-column"><?php _e('Name', Orbis::TEXT_DOMAIN) ?></th>
-				<th scope="col" class="manage-column"><?php _e('Post ID', Orbis::TEXT_DOMAIN) ?></th>
+				<th scope="col" class="manage-column"><?php _e('ID', 'orbis') ?></th>
+				<th scope="col" class="manage-column"><?php _e('Company', 'orbis') ?></th>
+				<th scope="col" class="manage-column"><?php _e('Name', 'orbis') ?></th>
+				<th scope="col" class="manage-column"><?php _e('Post ID', 'orbis') ?></th>
 			</tr>
 		</<?php echo $tag; ?>>
 
@@ -114,7 +114,7 @@
 						}
 					}
 					
-					edit_post_link(__('Edit Project Post', Orbis::TEXT_DOMAIN), '', '', $project->postId);
+					edit_post_link(__('Edit Project Post', 'orbis'), '', '', $project->postId);
 					
 					?>
 				</td>

@@ -1,8 +1,8 @@
 <div class="wrap">
-	<?php screen_icon(Orbis::SLUG); ?>
+	<?php screen_icon( 'orbis' ); ?>
 
 	<h2>
-		<?php _e('Companies', Orbis::TEXT_DOMAIN); ?>
+		<?php _e('Companies', 'orbis'); ?>
 	</h2>
 	
 	<?php 
@@ -27,7 +27,7 @@
 	if(empty($companies)): ?>
 	
 	<p>
-		<?php _e('No companies founds.', Orbis::TEXT_DOMAIN); ?>
+		<?php _e('No companies founds.', 'orbis'); ?>
 	</p>
 
 	<?php else: ?>
@@ -38,9 +38,9 @@
 
 		<<?php echo $tag; ?>>
 			<tr>
-				<th scope="col" class="manage-column"><?php _e('ID', Orbis::TEXT_DOMAIN) ?></th>
-				<th scope="col" class="manage-column"><?php _e('Name', Orbis::TEXT_DOMAIN) ?></th>
-				<th scope="col" class="manage-column"><?php _e('Post ID', Orbis::TEXT_DOMAIN) ?></th>
+				<th scope="col" class="manage-column"><?php _e('ID', 'orbis') ?></th>
+				<th scope="col" class="manage-column"><?php _e('Name', 'orbis') ?></th>
+				<th scope="col" class="manage-column"><?php _e('Post ID', 'orbis') ?></th>
 			</tr>
 		</<?php echo $tag; ?>>
 
@@ -85,7 +85,7 @@
 						}
 					}
 					
-					edit_post_link(__('Edit Company Post', Orbis::TEXT_DOMAIN), '', '', $company->postId);
+					edit_post_link(__('Edit Company Post', 'orbis'), '', '', $company->postId);
 					
 					?>
 				</td>

@@ -2,7 +2,7 @@
 	<?php screen_icon( 'orbis' ); ?>
 
 	<h2>
-		<?php _e('Domains to invoice', Orbis::TEXT_DOMAIN); ?>
+		<?php _e('Domains to invoice', 'orbis'); ?>
 	</h2>
 	
 	<?php 
@@ -35,10 +35,10 @@
 
 		<<?php echo $tag; ?>>
 			<tr>
-				<th scope="col" class="manage-column"><?php _e('ID', Orbis::TEXT_DOMAIN) ?></th>
-				<th scope="col" class="manage-column"><?php _e('Domain Name', Orbis::TEXT_DOMAIN) ?></th>
-				<th scope="col" class="manage-column"><?php _e('Order Date', Orbis::TEXT_DOMAIN) ?></th>
-				<th scope="col" class="manage-column"><?php _e('Notes', Orbis::TEXT_DOMAIN) ?></th>
+				<th scope="col" class="manage-column"><?php _e('ID', 'orbis') ?></th>
+				<th scope="col" class="manage-column"><?php _e('Domain Name', 'orbis') ?></th>
+				<th scope="col" class="manage-column"><?php _e('Order Date', 'orbis') ?></th>
+				<th scope="col" class="manage-column"><?php _e('Notes', 'orbis') ?></th>
 			</tr>
 		</<?php echo $tag; ?>>
 

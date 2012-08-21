@@ -2,7 +2,7 @@
 	<?php screen_icon( 'orbis' ); ?>
 
 	<h2>
-		<?php _e('Domain Names', Orbis::TEXT_DOMAIN); ?>
+		<?php _e('Domain Names', 'orbis'); ?>
 	</h2>
 	
 	<?php 
@@ -26,7 +26,7 @@
 	if(empty($domains)): ?>
 	
 	<p>
-		<?php _e('No domain names founds.', Orbis::TEXT_DOMAIN); ?>
+		<?php _e('No domain names founds.', 'orbis'); ?>
 	</p>
 
 	<?php else: ?>
@@ -37,9 +37,9 @@
 
 		<<?php echo $tag; ?>>
 			<tr>
-				<th scope="col" class="manage-column"><?php _e('ID', Orbis::TEXT_DOMAIN) ?></th>
-				<th scope="col" class="manage-column"><?php _e('Domain Name', Orbis::TEXT_DOMAIN) ?></th>
-				<th scope="col" class="manage-column"><?php _e('Post ID', Orbis::TEXT_DOMAIN) ?></th>
+				<th scope="col" class="manage-column"><?php _e('ID', 'orbis') ?></th>
+				<th scope="col" class="manage-column"><?php _e('Domain Name', 'orbis') ?></th>
+				<th scope="col" class="manage-column"><?php _e('Post ID', 'orbis') ?></th>
 			</tr>
 		</<?php echo $tag; ?>>
 
@@ -83,7 +83,7 @@
 						}
 					}
 					
-					edit_post_link(__('Edit Domain Name Post', Orbis::TEXT_DOMAIN), '', '', $domain->postId);
+					edit_post_link(__('Edit Domain Name Post', 'orbis'), '', '', $domain->postId);
 					
 					?>
 				</td>
