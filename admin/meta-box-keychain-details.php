@@ -1,6 +1,6 @@
 <?php 
 
-wp_nonce_field('orbis_save_keychain_details', 'orbis_keychain_details_meta_box_nonce');
+wp_nonce_field( 'orbis_save_keychain_details', 'orbis_keychain_details_meta_box_nonce' );
 
 ?>
 <table class="form-table">
