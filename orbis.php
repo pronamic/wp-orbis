@@ -27,7 +27,7 @@ class Orbis {
 
 		add_action('init',       array(__CLASS__, 'init'));
 
-		add_action('admin_init', array(__CLASS__, 'adminInitialize'));
+		add_action('admin_init', array(__CLASS__, 'admin_init'));
 
 		add_action('admin_menu', array(__CLASS__, 'adminMenu'));
 
