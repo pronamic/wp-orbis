@@ -25,7 +25,7 @@ class Orbis {
 	public static function bootstrap($file) {
 		self::$file = $file;
 
-		add_action('init',       array(__CLASS__, 'initialize'));
+		add_action('init',       array(__CLASS__, 'init'));
 
 		add_action('admin_init', array(__CLASS__, 'adminInitialize'));
 
@@ -41,7 +41,7 @@ class Orbis {
 		add_filter('wp_loaded', array(__CLASS__, 'flushRules'));
 	}
 
-	public static function initialize() {
+	public static function init() {
 		// Load plugin text domain
 		$relPath = dirname( plugin_basename( self::$file ) ) . '/languages/';
 
