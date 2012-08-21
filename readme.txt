@@ -1,4 +1,4 @@
-r=== Orbis ===
+=== Orbis ===
 Contributors: pronamic, remcotolsma 
 Tags: orbis, intranet
 Requires at least: 3.0
