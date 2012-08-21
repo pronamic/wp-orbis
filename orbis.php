@@ -18,8 +18,6 @@ require_once 'functions/domain_names.php';
 require_once 'functions/persons.php';
 
 class Orbis {
-	const SLUG = 'orbis';
-
 	const TEXT_DOMAIN = 'orbis';
 
 	public static $file;
@@ -27,7 +25,7 @@ class Orbis {
 	public static function bootstrap($file) {
 		self::$file = $file;
 
-		add_action('init', array(__CLASS__, 'initialize'));
+		add_action('init',       array(__CLASS__, 'initialize'));
 
 		add_action('admin_init', array(__CLASS__, 'adminInitialize'));
 
@@ -45,9 +43,9 @@ class Orbis {
 
 	public static function initialize() {
 		// Load plugin text domain
-		$relPath = dirname(plugin_basename(self::$file)) . '/languages/';
+		$relPath = dirname( plugin_basename( self::$file ) ) . '/languages/';
 
-		load_plugin_textdomain('orbis', false, $relPath);
+		load_plugin_textdomain( 'orbis', false, $relPath );
 	
 		$version = '0.1';
 		if(get_option('orbis_version') != $version) {

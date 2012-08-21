@@ -1,7 +1,7 @@
 <div class="wrap">
-	<?php screen_icon(Orbis::SLUG); ?>
+	<?php screen_icon( 'orbis' ); ?>
 
 	<h2>
-		<?php _e('Orbis', Orbis::TEXT_DOMAIN); ?>
+		<?php _e('Orbis', 'orbis' ); ?>
 	</h2>
 </div>

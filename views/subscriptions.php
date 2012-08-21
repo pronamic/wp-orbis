@@ -14,7 +14,7 @@ if(!empty($_POST) && check_admin_referer('orbis_update_subscription', 'orbis_non
 
 ?>
 <div class="wrap">
-	<?php screen_icon(Orbis::SLUG); ?>
+	<?php screen_icon( 'orbis' ); ?>
 
 	<h2>
 		<?php _e('Subscriptions', Orbis::TEXT_DOMAIN); ?>
