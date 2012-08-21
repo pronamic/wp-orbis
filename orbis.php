@@ -22,14 +22,14 @@ class Orbis {
 
 	public static $file;
 
-	public static function bootstrap($file) {
+	public static function bootstrap( $file ) {
 		self::$file = $file;
 
 		add_action('init',       array(__CLASS__, 'init'));
 
 		add_action('admin_init', array(__CLASS__, 'admin_init'));
 
-		add_action('admin_menu', array(__CLASS__, 'adminMenu'));
+		add_action('admin_menu', array(__CLASS__, 'admin_menu'));
 
 		// High priority because the API is public avaiable (members plugin)
 		add_action('template_redirect', array(__CLASS__, 'templateRedirect'), 0);
@@ -395,7 +395,7 @@ class Orbis {
 		}
 	}
 
-	public static function adminInitialize() {
+	public static function admin_init() {
 		
 
 		// Styles
@@ -405,7 +405,7 @@ class Orbis {
 		);
 	}
 
-	public static function adminMenu() {
+	public static function admin_menu() {
 		add_menu_page(
 			$pageTitle = 'Orbis' , 
 			$menuTitle = 'Orbis' , 
