@@ -2,7 +2,7 @@
 	<?php screen_icon( 'orbis' ); ?>
 
 	<h2>
-		<?php _e('Stats', 'orbis' ); ?>
+		<?php _e( 'Stats', 'orbis' ); ?>
 	</h2>
 	
 	<?php 
