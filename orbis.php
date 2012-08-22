@@ -476,16 +476,6 @@ class Orbis {
 			$function = array(__CLASS__, 'pageDomainsToInvoice')
 		);
 		
-		// Companies
-		add_menu_page(
-			$pageTitle = __('Companies', 'orbis') , 
-			$menuTitle = __('Companies', 'orbis') , 
-			$capability = 'orbis_view_companies' , 
-			$menuSlug = 'orbis_companies' , 
-			$function = array(__CLASS__, 'pageCompanies') , 
-			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
-		);
-		
 		// Subscriptions
 		add_menu_page(
 			$pageTitle = __('Subscriptions', 'orbis') , 
@@ -519,10 +509,6 @@ class Orbis {
 
 	public static function pageDomainsToInvoice() {
 		include 'views/domains-to-invoice.php';
-	}
-
-	public static function pageCompanies() {
-		include 'views/companies.php';
 	}
 
 	public static function pageSubscriptions() {
