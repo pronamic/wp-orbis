@@ -16,6 +16,7 @@ License: GPL
 require_once 'functions/keychains.php';
 require_once 'functions/domain_names.php';
 require_once 'functions/persons.php';
+require_once 'functions/companies.php';
 
 class Orbis {
 	public static $file;
