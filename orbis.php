@@ -58,107 +58,113 @@ class Orbis {
 		register_post_type(
 			'orbis_domain_name' , 
 			array(
-				'label' => __('Domain Names', 'orbis') , 
-				'labels' => array(
-					'name' => __('Domain Names', 'orbis') , 
+				'label'         => __('Domain Names', 'orbis') , 
+				'labels'        => array(
+					'name'          => __('Domain Names', 'orbis') , 
 					'singular_name' => __('Domain Name', 'orbis') , 
-					'add_new' => _x('Add New', 'domain_name', 'orbis') , 
-					'add_new_item' => __('Add New Domain Name', 'orbis')
+					'add_new'       => _x('Add New', 'domain_name', 'orbis') , 
+					'add_new_item'  => __('Add New Domain Name', 'orbis')
 				) ,
-				'public' => true ,
+				'public'        => true ,
 				'menu_position' => 30 , 
-				'menu_icon' => plugins_url('images/domain_name.png', __FILE__) ,
-				'supports' => array('title', 'comments') ,
-				'has_archive' => true , 
-				'rewrite' => array('slug' => 'domeinnamen') 
+				'menu_icon'     => plugins_url( 'images/domain_name.png', __FILE__ ) ,
+				'supports'      => array( 'title', 'comments' ) ,
+				'has_archive'   => true , 
+				'rewrite'       => array( 'slug' => 'domeinnamen' ) 
 			)
 		);
 
 		register_post_type(
 			'orbis_project' , 
 			array(
-				'label' => __('Projects', 'orbis') , 
-				'labels' => array(
-					'name' => __('Projects', 'orbis') , 
-					'singular_name' => __('Project', 'orbis'), 
-					'add_new' => _x('Add New', 'project', 'orbis') , 
-					'add_new_item' => __('Add New Project', 'orbis')
+				'label'         => __( 'Projects', 'orbis' ) , 
+				'labels'        => array(
+					'name'          => __( 'Projects', 'orbis' ) , 
+					'singular_name' => __( 'Project', 'orbis' ), 
+					'add_new'       => _x( 'Add New', 'project', 'orbis' ) , 
+					'add_new_item'  => __( 'Add New Project', 'orbis' )
 				) ,
-				'public' => true ,
+				'public'        => true ,
 				'menu_position' => 30 , 
-				'menu_icon' => plugins_url('images/project.png', __FILE__) , 
-				'supports' => array('title', 'editor', 'author', 'comments') ,
-				'has_archive' => true , 
-				'rewrite' => array('slug' => 'projecten') 
+				'menu_icon'     => plugins_url('images/project.png', __FILE__) , 
+				'supports'      => array('title', 'editor', 'author', 'comments') ,
+				'has_archive'   => true , 
+				'rewrite'       => array( 'slug' => 'projecten' ) 
 			)
 		);
 
 		register_taxonomy(
 			'orbis_project_category' , 
-			array('orbis_project') , 
+			array( 'orbis_project' ) , 
 			array(
 				'hierarchical' => true , 
-				'labels' => array(
-					'name' => _x( 'Categories', 'taxonomy general name', 'orbis') , 
-					'singular_name' => _x( 'Category', 'taxonomy singular name', 'orbis') , 
-					'search_items' =>  __( 'Search Categories', 'orbis') , 
-					'all_items' => __( 'All Categories', 'orbis') , 
-					'parent_item' => __( 'Parent Category', 'orbis') , 
+				'labels'       => array(
+					'name'              => _x( 'Categories', 'taxonomy general name', 'orbis') , 
+					'singular_name'     => _x( 'Category', 'taxonomy singular name', 'orbis') , 
+					'search_items'      => __( 'Search Categories', 'orbis') , 
+					'all_items'         => __( 'All Categories', 'orbis') , 
+					'parent_item'       => __( 'Parent Category', 'orbis') , 
 					'parent_item_colon' => __( 'Parent Category:', 'orbis') , 
-					'edit_item' => __( 'Edit Category', 'orbis') , 
-					'update_item' => __( 'Update Category', 'orbis') , 
-					'add_new_item' => __( 'Add New Category', 'orbis') , 
-					'new_item_name' => __( 'New Category Name', 'orbis') , 
-					'menu_name' => __( 'Categories', 'orbis') 
+					'edit_item'         => __( 'Edit Category', 'orbis') , 
+					'update_item'       => __( 'Update Category', 'orbis') , 
+					'add_new_item'      => __( 'Add New Category', 'orbis') , 
+					'new_item_name'     => __( 'New Category Name', 'orbis') , 
+					'menu_name'         => __( 'Categories', 'orbis') 
 				) , 
-				'show_ui' => true , 
-				'query_var' => true , 
-				'rewrite' => array('slug' => 'project-categorie')
+				'show_ui'      => true , 
+				'query_var'    => true , 
+				'rewrite'      => array(
+					'slug' => 'project-categorie'
+				)
 			)
 		);
 
 		register_post_type(
 			'orbis_company' , 
 			array(
-				'label' => __( 'Companies', 'orbis' ), 
-				'labels' => array(
-					'name' => __( 'Companies', 'orbis' ),
-					'singular_name' => __( 'Company', 'orbis' ),
-					'add_new' => _x( 'Add New', 'orbis_company', 'orbis' ),
-					'add_new_item' => __( 'Add New Company', 'orbis' ),
-					'edit_item' => __( 'Edit Company', 'orbis' ),
-					'new_item' => __( 'New Company', 'orbis' ),
-					'all_items' => __( 'All Companies', 'orbis' ),
-					'view_item' => __( 'View Company', 'orbis' ),
-					'search_items' => __( 'Search Companies', 'orbis' ),
-					'not_found' =>  __( 'No companies found.', 'orbis' ),
+				'label'         => __( 'Companies', 'orbis' ), 
+				'labels'        => array(
+					'name'               => __( 'Companies', 'orbis' ),
+					'singular_name'      => __( 'Company', 'orbis' ),
+					'add_new'            => _x( 'Add New', 'orbis_company', 'orbis' ),
+					'add_new_item'       => __( 'Add New Company', 'orbis' ),
+					'edit_item'          => __( 'Edit Company', 'orbis' ),
+					'new_item'           => __( 'New Company', 'orbis' ),
+					'all_items'          => __( 'All Companies', 'orbis' ),
+					'view_item'          => __( 'View Company', 'orbis' ),
+					'search_items'       => __( 'Search Companies', 'orbis' ),
+					'not_found'          => __( 'No companies found.', 'orbis' ),
 					'not_found_in_trash' => __( 'No companies found in Trash.', 'orbis' ), 
-					'parent_item_colon' => __( 'Parent Company:', 'orbis' ),
-					'menu_name' => __( 'Companies', 'orbis' )
+					'parent_item_colon'  => __( 'Parent Company:', 'orbis' ),
+					'menu_name'          => __( 'Companies', 'orbis' )
 				) ,
-				'public' => true ,
+				'public'        => true ,
 				'menu_position' => 30 , 
-				'menu_icon' => plugins_url('images/company.png', __FILE__) , 
-				'supports' => array('title', 'editor', 'author', 'comments', 'thumbnail') ,
-				'has_archive' => true , 
-				'rewrite' => array('slug' => _x('companies', 'slug', 'orbis')) 
+				'menu_icon'     => plugins_url('images/company.png', __FILE__) , 
+				'supports'      => array('title', 'editor', 'author', 'comments', 'thumbnail') ,
+				'has_archive'   => true , 
+				'rewrite'       => array(
+					'slug' => _x( 'companies', 'slug', 'orbis' )
+				) 
 			)
 		);
 
 		register_post_type(
 			'orbis_person' , 
 			array(
-				'label' => __('Persons', 'orbis') , 
-				'labels' => array(
-					'name' => __('Persons', 'orbis') , 
+				'label'         => __('Persons', 'orbis') , 
+				'labels'        => array(
+					'name'          => __('Persons', 'orbis') , 
 					'singular_name' => __('Person', 'orbis')
 				) ,
-				'public' => true ,
+				'public'        => true ,
 				'menu_position' => 30 , 
-				'menu_icon' => plugins_url('images/person.png', __FILE__) , 
-				'supports' => array('title', 'editor', 'author', 'comments', 'thumbnail') ,
-				'has_archive' => true , 
-				'rewrite' => array('slug' => _x('persons', 'slug', 'orbis')) 
+				'menu_icon'     => plugins_url('images/person.png', __FILE__) , 
+				'supports'      => array( 'title', 'editor', 'author', 'comments', 'thumbnail' ) ,
+				'has_archive'   => true , 
+				'rewrite'       => array( 
+					'slug' => _x( 'persons', 'slug', 'orbis' )
+				) 
 			)
 		);
 
@@ -167,22 +173,24 @@ class Orbis {
 			array('orbis_person') , 
 			array(
 				'hierarchical' => true , 
-				'labels' => array(
-					'name' => _x( 'Genders', 'taxonomy general name', 'orbis') , 
-					'singular_name' => _x( 'Gender', 'taxonomy singular name', 'orbis') , 
-					'search_items' =>  __( 'Search Genders', 'orbis') , 
-					'all_items' => __( 'All Genders', 'orbis') , 
-					'parent_item' => __( 'Parent Gender', 'orbis') , 
+				'labels'       => array(
+					'name'              => _x( 'Genders', 'taxonomy general name', 'orbis') , 
+					'singular_name'     => _x( 'Gender', 'taxonomy singular name', 'orbis') , 
+					'search_items'      => __( 'Search Genders', 'orbis') , 
+					'all_items'         => __( 'All Genders', 'orbis') , 
+					'parent_item'       => __( 'Parent Gender', 'orbis') , 
 					'parent_item_colon' => __( 'Parent Gender:', 'orbis') , 
-					'edit_item' => __( 'Edit Gender', 'orbis') , 
-					'update_item' => __( 'Update Gender', 'orbis') , 
-					'add_new_item' => __( 'Add New Gender', 'orbis') , 
-					'new_item_name' => __( 'New Gender Name', 'orbis') , 
-					'menu_name' => __( 'Genders', 'orbis') 
+					'edit_item'         => __( 'Edit Gender', 'orbis') , 
+					'update_item'       => __( 'Update Gender', 'orbis') , 
+					'add_new_item'      => __( 'Add New Gender', 'orbis') , 
+					'new_item_name'     => __( 'New Gender Name', 'orbis') , 
+					'menu_name'         => __( 'Genders', 'orbis') 
 				) , 
-				'show_ui' => true , 
-				'query_var' => true , 
-				'rewrite' => array('slug' => 'geslacht')
+				'show_ui'      => true , 
+				'query_var'    => true , 
+				'rewrite'      => array(
+					'slug' => 'geslacht'
+				)
 			)
 		);
 
@@ -191,48 +199,50 @@ class Orbis {
 			array('orbis_person') , 
 			array(
 				'hierarchical' => true , 
-				'labels' => array(
-					'name' => _x( 'Categories', 'taxonomy general name', 'orbis') , 
-					'singular_name' => _x( 'Category', 'taxonomy singular name', 'orbis') , 
-					'search_items' =>  __( 'Search Categories', 'orbis') , 
-					'all_items' => __( 'All Categories', 'orbis') , 
-					'parent_item' => __( 'Parent Category', 'orbis') , 
+				'labels'       => array(
+					'name'              => _x( 'Categories', 'taxonomy general name', 'orbis') , 
+					'singular_name'     => _x( 'Category', 'taxonomy singular name', 'orbis') , 
+					'search_items'      => __( 'Search Categories', 'orbis') , 
+					'all_items'         => __( 'All Categories', 'orbis') , 
+					'parent_item'       => __( 'Parent Category', 'orbis') , 
 					'parent_item_colon' => __( 'Parent Category:', 'orbis') , 
-					'edit_item' => __( 'Edit Category', 'orbis') , 
-					'update_item' => __( 'Update Category', 'orbis') , 
-					'add_new_item' => __( 'Add New Category', 'orbis') , 
-					'new_item_name' => __( 'New Category Name', 'orbis') , 
-					'menu_name' => __( 'Categories', 'orbis') 
+					'edit_item'         => __( 'Edit Category', 'orbis') , 
+					'update_item'       => __( 'Update Category', 'orbis') , 
+					'add_new_item'      => __( 'Add New Category', 'orbis') , 
+					'new_item_name'     => __( 'New Category Name', 'orbis') , 
+					'menu_name'         => __( 'Categories', 'orbis') 
 				) , 
-				'show_ui' => true , 
-				'query_var' => true , 
-				'rewrite' => array('slug' => 'persoon-categorie')
+				'show_ui'      => true , 
+				'query_var'    => true , 
+				'rewrite'      => array(
+					'slug' => 'persoon-categorie'
+				)
 			)
 		);
 
 		register_post_type(
 			'orbis_keychain' , 
 			array(
-				'label' => __('Keychains', 'orbis') , 
-				'labels' => array(
-					'name' => __('Keychains', 'orbis') , 
-					'singular_name' => __('Keychain', 'orbis') ,
-					'add_new' => _x('Add New', 'orbis_keychain', 'orbis') ,
-					'add_new_item' => __('Add New Keychain', 'orbis') ,
-					'edit_item' => __('Edit Keychain', 'orbis') ,
-					'new_item' => __('New Keychain', 'orbis') ,
-					'view_item' => __('View Keychain', 'orbis') ,
-					'search_items' => __('Search Keychains', 'orbis') ,
-					'not_found' => __('No keychains found', 'orbis') ,
+				'label'           => __('Keychains', 'orbis') , 
+				'labels'          => array(
+					'name'               => __('Keychains', 'orbis') , 
+					'singular_name'      => __('Keychain', 'orbis') ,
+					'add_new'            => _x('Add New', 'orbis_keychain', 'orbis') ,
+					'add_new_item'       => __('Add New Keychain', 'orbis') ,
+					'edit_item'          => __('Edit Keychain', 'orbis') ,
+					'new_item'           => __('New Keychain', 'orbis') ,
+					'view_item'          => __('View Keychain', 'orbis') ,
+					'search_items'       => __('Search Keychains', 'orbis') ,
+					'not_found'          => __('No keychains found', 'orbis') ,
 					'not_found_in_trash' => __('No keychains found in Trash', 'orbis') 
 				) ,
-				'public' => true ,
-				'menu_position' => 30 , 
-				'menu_icon' => plugins_url('images/keychain.png', __FILE__) , 
+				'public'          => true ,
+				'menu_position'   => 30 , 
+				'menu_icon'       => plugins_url('images/keychain.png', __FILE__) , 
 				'capability_type' => array('keychain', 'keychains') , 
-				'supports' => array('title', 'editor', 'author', 'comments') , 
-				'has_archive' => true , 
-				'rewrite' => array('slug' => _x('keychains', 'slug', 'orbis')) 
+				'supports'        => array('title', 'editor', 'author', 'comments') , 
+				'has_archive'     => true , 
+				'rewrite'         => array('slug' => _x('keychains', 'slug', 'orbis')) 
 			)
 		);
 
@@ -241,22 +251,24 @@ class Orbis {
 			array('orbis_keychain') , 
 			array(
 				'hierarchical' => true , 
-				'labels' => array(
-					'name' => _x( 'Categories', 'orbis_keychain_category', 'orbis') , 
-					'singular_name' => _x( 'Category', 'orbis_keychain_category', 'orbis') , 
-					'search_items' =>  __( 'Search Categories', 'orbis') , 
-					'all_items' => __( 'All Categories', 'orbis') , 
-					'parent_item' => __( 'Parent Category', 'orbis') , 
+				'labels'       => array(
+					'name'              => _x( 'Categories', 'orbis_keychain_category', 'orbis') , 
+					'singular_name'     => _x( 'Category', 'orbis_keychain_category', 'orbis') , 
+					'search_items'      => __( 'Search Categories', 'orbis') , 
+					'all_items'         => __( 'All Categories', 'orbis') , 
+					'parent_item'       => __( 'Parent Category', 'orbis') , 
 					'parent_item_colon' => __( 'Parent Category:', 'orbis') , 
-					'edit_item' => __( 'Edit Category', 'orbis') , 
-					'update_item' => __( 'Update Category', 'orbis') , 
-					'add_new_item' => __( 'Add New Category', 'orbis') , 
-					'new_item_name' => __( 'New Category Name', 'orbis') , 
-					'menu_name' => __( 'Categories', 'orbis') 
+					'edit_item'         => __( 'Edit Category', 'orbis') , 
+					'update_item'       => __( 'Update Category', 'orbis') , 
+					'add_new_item'      => __( 'Add New Category', 'orbis') , 
+					'new_item_name'     => __( 'New Category Name', 'orbis') , 
+					'menu_name'         => __( 'Categories', 'orbis') 
 				) , 
-				'show_ui' => true , 
-				'query_var' => true , 
-				'rewrite' => array('slug' => _x('keychain-categorie', 'slug', 'orbis'))
+				'show_ui'      => true , 
+				'query_var'    => true , 
+				'rewrite'      => array(
+					'slug' => _x( 'keychain-categorie', 'slug', 'orbis' )
+				)
 			)
 		);
 
@@ -265,39 +277,43 @@ class Orbis {
 			array('orbis_keychain') , 
 			array(
 				'hierarchical' => false , 
-				'labels' => array(
-					'name' => _x( 'Tags', 'orbis_keychain_category', 'orbis') , 
-					'singular_name' => _x( 'Tag', 'orbis_keychain_category', 'orbis') , 
-					'search_items' =>  __( 'Search Tags', 'orbis') , 
-					'all_items' => __( 'All Tags', 'orbis') , 
-					'parent_item' => __( 'Parent Tag', 'orbis') , 
+				'labels'       => array(
+					'name'              => _x( 'Tags', 'orbis_keychain_category', 'orbis') , 
+					'singular_name'     => _x( 'Tag', 'orbis_keychain_category', 'orbis') , 
+					'search_items'      => __( 'Search Tags', 'orbis') , 
+					'all_items'         => __( 'All Tags', 'orbis') , 
+					'parent_item'       => __( 'Parent Tag', 'orbis') , 
 					'parent_item_colon' => __( 'Parent Tag:', 'orbis') , 
-					'edit_item' => __( 'Edit Tag', 'orbis') , 
-					'update_item' => __( 'Update Tag', 'orbis') , 
-					'add_new_item' => __( 'Add New Tag', 'orbis') , 
-					'new_item_name' => __( 'New Tag Name', 'orbis') , 
-					'menu_name' => __( 'Tags', 'orbis') 
+					'edit_item'         => __( 'Edit Tag', 'orbis') , 
+					'update_item'       => __( 'Update Tag', 'orbis') , 
+					'add_new_item'      => __( 'Add New Tag', 'orbis') , 
+					'new_item_name'     => __( 'New Tag Name', 'orbis') , 
+					'menu_name'         => __( 'Tags', 'orbis') 
 				) , 
-				'show_ui' => true , 
-				'query_var' => true , 
-				'rewrite' => array('slug' => _x('keychain-tag', 'slug', 'orbis'))
+				'show_ui'      => true , 
+				'query_var'    => true , 
+				'rewrite'      => array(
+					'slug' => _x( 'keychain-tag', 'slug', 'orbis' )
+				)
 			)
 		);
 
 		register_post_type(
-			'orbis_subscription' , 
+			'orbis_subscription', 
 			array(
-				'label' => __('Subscriptions', 'orbis') , 
-				'labels' => array(
-					'name' => __('Subscriptions', 'orbis') , 
-					'singular_name' => __('Subscription', 'orbis')
+				'label'         => __( 'Subscriptions', 'orbis' ), 
+				'labels'        => array(
+					'name'          => __( 'Subscriptions', 'orbis' ), 
+					'singular_name' => __( 'Subscription', 'orbis' )
 				) ,
-				'public' => true ,
-				'menu_position' => 30 , 
-				'menu_icon' => plugins_url('images/subscription.png', __FILE__) , 
-				'supports' => array('title', 'editor', 'author', 'comments', 'thumbnail') ,
-				'has_archive' => true , 
-				'rewrite' => array('slug' => _x('subscriptions', 'slug', 'orbis')) 
+				'public'        => true,
+				'menu_position' => 30, 
+				'menu_icon'     => plugins_url( 'images/subscription.png', __FILE__ ), 
+				'supports'      => array( 'title', 'editor', 'author', 'comments', 'thumbnail' ),
+				'has_archive'   => true, 
+				'rewrite'       => array(
+					'slug' => _x( 'subscriptions', 'slug', 'orbis' )
+				) 
 			)
 		);
 	}
