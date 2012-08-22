@@ -88,12 +88,12 @@ function orbis_save_company_sync( $post_id, $post ) {
 			$result = $wpdb->insert( 
 				'orbis_companies' , 
 				array(
-					'name' => $post->post_title , 
-					'post_id' => $post_id 
+					'post_id' => $post_id ,
+					'name' => $post->post_title  
 				) , 
 				array(
-					'%s' , 
-					'%d' 
+					'%d' , 
+					'%s' 
 				)
 			);
 	
