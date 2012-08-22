@@ -67,10 +67,17 @@ add_action( 'save_post', 'orbis_save_company', 10, 2 );
  * Sync company with Orbis tables
  */
 function orbis_save_company_sync( $post_id, $post ) {
+	// Doing autosave
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) { 
+		return;
+	}
+
+	// Check post type
 	if ( ! ( $post->post_type == 'orbis_company' ) ) {
 		return;
 	}
 
+	// Not revision
 	if ( ! wp_is_post_revision( $post_id ) ) {
 		global $wpdb;
 
