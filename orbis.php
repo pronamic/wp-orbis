@@ -120,10 +120,21 @@ class Orbis {
 		register_post_type(
 			'orbis_company' , 
 			array(
-				'label' => __('Companies', 'orbis') , 
+				'label' => __( 'Companies', 'orbis' ), 
 				'labels' => array(
-					'name' => __('Companies', 'orbis') , 
-					'singular_name' => __('Company', 'orbis')
+					'name' => __( 'Companies', 'orbis' ),
+					'singular_name' => __( 'Company', 'orbis' ),
+					'add_new' => _x( 'Add New', 'orbis_company', 'orbis' ),
+					'add_new_item' => __( 'Add New Company', 'orbis' ),
+					'edit_item' => __( 'Edit Company', 'orbis' ),
+					'new_item' => __( 'New Company', 'orbis' ),
+					'all_items' => __( 'All Companies', 'orbis' ),
+					'view_item' => __( 'View Company', 'orbis' ),
+					'search_items' => __( 'Search Companies', 'orbis' ),
+					'not_found' =>  __( 'No companies found.', 'orbis' ),
+					'not_found_in_trash' => __( 'No companies found in Trash.', 'orbis' ), 
+					'parent_item_colon' => __( 'Parent Company:', 'orbis' ),
+					'menu_name' => __( 'Companies', 'orbis' )
 				) ,
 				'public' => true ,
 				'menu_position' => 30 , 
