@@ -44,7 +44,7 @@ function orbis_save_company( $post_id, $post ) {
 	if ( ! ( $post->post_type == 'orbis_company' && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
-
+	
 	// OK
 	$definition = array(
 		'_orbis_company_kvk_number' => FILTER_SANITIZE_STRING
@@ -77,40 +77,48 @@ function orbis_save_company_sync( $post_id, $post ) {
 		return;
 	}
 
-	// Not revision
-	if ( ! wp_is_post_revision( $post_id ) ) {
-		global $wpdb;
+	// Revision
+	if ( wp_is_post_revision( $post_id ) ) {
+		return;
+	}
 
-		// Orbis company ID
-		$orbis_id = get_post_meta( $post_id, '_orbis_company_id', true );
-	
-		if ( empty( $orbis_id ) ) {
-			$result = $wpdb->insert( 
-				'orbis_companies' , 
-				array(
-					'post_id' => $post_id ,
-					'name' => $post->post_title  
-				) , 
-				array(
-					'%d' , 
-					'%s' 
-				)
-			);
-	
-			if ( $result !== false ) {
-				$orbis_id = $wpdb->insert_id;
-	
-				update_post_meta( $post_id, '_orbis_company_id', $orbis_id );
-			}
-		} else {
-			$result = $wpdb->update(
-				'orbis_companies' , 
-				array( 'name' => $post->post_title ) , 
-				array( 'id' => $orbis_id ) , 
-				array( '%s' ) , 
-				array( '%d' ) 
-			);
+	// Publish
+	if ( $post->post_status != 'publish' ) {
+		return;
+	}
+
+	// OK
+	global $wpdb;
+
+	// Orbis company ID
+	$orbis_id = get_post_meta( $post_id, '_orbis_company_id', true );
+
+	if ( empty( $orbis_id ) ) {
+		$result = $wpdb->insert( 
+			'orbis_companies' , 
+			array(
+				'post_id' => $post_id ,
+				'name' => $post->post_title  
+			) , 
+			array(
+				'%d' , 
+				'%s' 
+			)
+		);
+
+		if ( $result !== false ) {
+			$orbis_id = $wpdb->insert_id;
+
+			update_post_meta( $post_id, '_orbis_company_id', $orbis_id );
 		}
+	} else {
+		$result = $wpdb->update(
+			'orbis_companies' , 
+			array( 'name' => $post->post_title ) , 
+			array( 'id' => $orbis_id ) , 
+			array( '%s' ) , 
+			array( '%d' ) 
+		);
 	}
 }
 
