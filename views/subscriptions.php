@@ -25,13 +25,13 @@ if(!empty($_POST) && check_admin_referer('orbis_update_subscription', 'orbis_non
 	// Subscriptions
 	$query = '
 		SELECT 
-			subscription.id ,  
+			subscription.id , 
 			subscription.post_id AS postId , 
 			subscription.name AS subscriptionName , 
 			subscription.activation_date AS activationDate , 
-			subscription.expiration_date AS expirationDate ,
+			subscription.expiration_date AS expirationDate , 
 			subscription.cancel_date AS cancelDate , 
-			subscription.update_date AS updateDate ,
+			subscription.update_date AS updateDate , 
 			subscription.license_key AS licenseKey , 
 			company.name AS companyName ,
 			type.name AS typeName , 
