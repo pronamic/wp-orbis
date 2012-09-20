@@ -17,6 +17,7 @@ require_once 'functions/keychains.php';
 require_once 'functions/domain_names.php';
 require_once 'functions/persons.php';
 require_once 'functions/companies.php';
+require_once 'functions/projects.php';
 
 class Orbis {
 	public static $file;
@@ -533,3 +534,79 @@ class Orbis {
 }
 
 Orbis::bootstrap( __FILE__ );
+
+function orbis_projects_posts_clauses( $pieces ) {
+	global $wp_query, $wpdb;
+
+	$post_type = $wp_query->get( 'post_type' );
+
+	if ( $post_type == 'orbis_project' ) {
+		$fields = ", 
+			project.number_seconds AS project_number_seconds , 
+			principal.id AS project_principal_id ,
+			principal.name AS project_principal_name 
+		";
+
+		$join = " 
+			LEFT JOIN 
+				orbis_projects AS project 
+					ON $wpdb->posts.ID = project.post_id 
+			LEFT JOIN
+				orbis_companies AS principal
+					ON project.principal_id = principal.id
+		";
+		
+		$pieces['join']   .= $join;
+		$pieces['fields'] .= $fields;
+	}
+
+    return $pieces;
+}
+
+add_filter( 'posts_clauses', 'orbis_projects_posts_clauses' );
+
+
+function orbis_format_seconds( $seconds, $format = 'H:m' ) {
+	$hours = $seconds / 3600;
+	$minutes = ( $seconds % 3600 ) / 60;
+
+	$search = array( 'H', 'm' );
+	$replace = array(
+		sprintf( '%02d', $hours ),
+		sprintf('%02d', $minutes )
+	);
+
+	return str_replace( $search, $replace, $format );
+}
+
+function orbis_project_get_the_time( $format = 'H:m' ) {
+	global $post;
+
+	$time = null;
+
+	if ( isset( $post->project_number_seconds ) ) {
+		$time = orbis_format_seconds( $post->project_number_seconds, $format );
+	} 
+
+	return $time;
+}
+
+function orbis_project_the_time( $format = 'H:m' ) {
+	echo orbis_project_get_the_time( $format );
+}
+
+function orbis_project_get_the_principal( ) {
+	global $post;
+
+	$principal = null;
+
+	if ( isset( $post->project_principal_name ) ) {
+		$principal = $post->project_principal_name;
+	} 
+
+	return $principal;
+}
+
+function orbis_project_the_principal( ) {
+	echo orbis_project_get_the_principal();
+}
