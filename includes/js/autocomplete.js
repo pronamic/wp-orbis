@@ -16,6 +16,11 @@ jQuery(document).ready(function($) {
 				});
 			},
 			minLength: 2,
+			focus: function( event, ui ) {
+				
+				
+				return false;
+			},
 			select: function( event, ui ) {
 				$field.val( ui.item.value );
 				
