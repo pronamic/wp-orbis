@@ -80,15 +80,24 @@ class Orbis {
 			array(
 				'label'         => __( 'Projects', 'orbis' ) , 
 				'labels'        => array(
-					'name'          => __( 'Projects', 'orbis' ) , 
-					'singular_name' => __( 'Project', 'orbis' ), 
-					'add_new'       => _x( 'Add New', 'project', 'orbis' ) , 
-					'add_new_item'  => __( 'Add New Project', 'orbis' )
+					'name'               => __( 'Projects', 'orbis' ),
+					'singular_name'      => __( 'Project', 'orbis' ),
+					'add_new'            => _x( 'Add New', 'orbis_project', 'orbis' ),
+					'add_new_item'       => __( 'Add New Project', 'orbis' ),
+					'edit_item'          => __( 'Edit Project', 'orbis' ),
+					'new_item'           => __( 'New Project', 'orbis' ),
+					'all_items'          => __( 'All Projects', 'orbis' ),
+					'view_item'          => __( 'View Project', 'orbis' ),
+					'search_items'       => __( 'Search Projects', 'orbis' ),
+					'not_found'          => __( 'No projects found.', 'orbis' ),
+					'not_found_in_trash' => __( 'No projects found in Trash.', 'orbis' ), 
+					'parent_item_colon'  => __( 'Parent Project:', 'orbis' ),
+					'menu_name'          => __( 'Projects', 'orbis' )
 				) ,
 				'public'        => true ,
 				'menu_position' => 30 , 
-				'menu_icon'     => plugins_url('images/project.png', __FILE__) , 
-				'supports'      => array('title', 'editor', 'author', 'comments') ,
+				'menu_icon'     => plugins_url( 'images/project.png', __FILE__ ) , 
+				'supports'      => array( 'title', 'editor', 'author', 'comments' ) ,
 				'has_archive'   => true , 
 				'rewrite'       => array( 'slug' => 'projecten' ) 
 			)
@@ -542,7 +551,8 @@ function orbis_projects_posts_clauses( $pieces ) {
 
 	if ( $post_type == 'orbis_project' ) {
 		$fields = ", 
-			project.number_seconds AS project_number_seconds , 
+			project.number_seconds AS project_number_seconds ,
+			project.finished AS project_is_finished ,  
 			principal.id AS project_principal_id ,
 			principal.name AS project_principal_name 
 		";

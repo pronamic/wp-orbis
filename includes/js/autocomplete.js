@@ -16,6 +16,7 @@ jQuery(document).ready(function($) {
 				});
 			},
 			minLength: 2,
+			delay: 60,
 			focus: function( event, ui ) {
 				
 				

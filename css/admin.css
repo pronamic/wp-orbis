@@ -7,3 +7,7 @@ tr.cancelled td {
 
     text-decoration: line-through;
 }
+
+th.column-orbis_project_id {
+	width: 5em;
+}
