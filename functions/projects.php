@@ -89,6 +89,25 @@ function orbis_projects_post_class( $classes ) {
 add_filter( 'post_class', 'orbis_projects_post_class' );
 
 
+function orbis_project_is_finished() {
+	$is_finished = false;
+
+	if ( isset( $post->project_is_finished ) ) {
+		$is_finished = $post->project_is_finished;
+	}
+	
+	return $is_finished;
+}
+
+function orbis_project_is_invoiced() {
+	$is_invoiced = false;
+
+	if ( isset( $post->project_is_invoiced ) ) {
+		$is_invoiced = $post->project_is_invoiced;
+	}
+	
+	return $is_invoiced;
+}
 
 /**
  * Sync project with Orbis tables

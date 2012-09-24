@@ -553,6 +553,7 @@ function orbis_projects_posts_clauses( $pieces ) {
 		$fields = ", 
 			project.number_seconds AS project_number_seconds ,
 			project.finished AS project_is_finished ,  
+			project.invoiced AS project_is_invoiced ,
 			principal.id AS project_principal_id ,
 			principal.name AS project_principal_name 
 		";
