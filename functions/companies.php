@@ -172,3 +172,28 @@ function orbis_company_column( $column, $post_id ) {
 }
 
 add_action( 'manage_posts_custom_column' , 'orbis_company_column', 10, 2 );
+
+function orbis_companies_suggest_company_id() {
+	global $wpdb;
+
+	$term = filter_input( INPUT_GET, 'term', FILTER_SANITIZE_STRING );
+
+	$query = $wpdb->prepare( "
+		SELECT 
+			company.id AS value , 
+			company.name label
+		FROM 
+			orbis_companies AS company
+		WHERE
+			company.name LIKE '%%%1\$s%%'
+		;", $term 
+	);
+	
+	$data = $wpdb->get_results( $query );
+
+	echo json_encode( $data );
+
+	die();
+}
+
+add_action( 'wp_ajax_company_id_suggest', 'orbis_companies_suggest_company_id' );

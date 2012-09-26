@@ -114,6 +114,52 @@ function orbis_project_is_invoiced() {
 }
 
 /**
+ * Save project details
+ */
+function orbis_save_project( $post_id, $post ) {
+	// Doing autosave
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) { 
+		return;
+	}
+
+	// Verify nonce
+	$nonce = filter_input( INPUT_POST, 'orbis_project_details_meta_box_nonce', FILTER_SANITIZE_STRING );
+	if( ! wp_verify_nonce( $nonce, 'orbis_save_project_details' ) ) {
+		return;
+	}
+
+	// Check permissions
+	if ( ! ( $post->post_type == 'orbis_project' && current_user_can( 'edit_post', $post_id ) ) ) {
+		return;
+	}
+	
+	// OK
+	$definition = array(
+		'_orbis_project_principal_id' => FILTER_VALIDATE_INT,
+		'_orbis_project_is_invoicable' => FILTER_VALIDATE_BOOLEAN,
+		'_orbis_project_is_invoiced' => FILTER_VALIDATE_BOOLEAN,
+		'_orbis_project_invoice_number' => FILTER_SANITIZE_STRING,
+		'_orbis_project_is_invoice_paid' => FILTER_VALIDATE_BOOLEAN,
+		'_orbis_project_is_finished' => FILTER_VALIDATE_BOOLEAN
+	);
+
+	$data = filter_input_array(INPUT_POST, $definition);
+	
+	$data['_orbis_project_available_seconds'] = orbis_filter_time_input( INPUT_POST, '_orbis_project_available_seconds' );
+var_dump($data);
+exit;
+	foreach ( $data as $key => $value ) {		
+		if ( empty( $value ) ) {
+			delete_post_meta( $post_id, $key);
+		} else {
+			update_post_meta( $post_id, $key, $value );
+		}
+	}
+}
+
+add_action( 'save_post', 'orbis_save_project', 10, 2 );
+
+/**
  * Sync project with Orbis tables
  */
 function orbis_save_project_sync( $post_id, $post ) {
@@ -142,19 +188,36 @@ function orbis_save_project_sync( $post_id, $post ) {
 
 	// Orbis project ID
 	$orbis_id = get_post_meta( $post_id, '_orbis_project_id', true );
+	$principal_id = get_post_meta( $post_id, '_orbis_project_principal_id', true );
+	$is_invoicable = get_post_meta( $post_id, '_orbis_project_is_invoicable', true );
+	$is_invoiced = get_post_meta( $post_id, '_orbis_project_is_invoiced', true );
+	$is_finished = get_post_meta( $post_id, '_orbis_project_is_finished', true );
+
+	$data = array();
+	$format = array();
+
+	$data['name']   = $post->post_title;
+	$format['name'] = '%s';
+
+	if ( ! empty( $principal_id ) ) {
+		$data['principal_id']   = $principal_id;
+		$format['principal_id'] = '%d';
+	}
+
+	$data['invoicable']   = $is_invoicable;
+	$format['invoicable'] = '%d';
+
+	$data['invoiced']   = $is_invoiced;
+	$format['invoiced'] = '%d';
+
+	$data['finished']   = $is_finished;
+	$format['finished'] = '%d';
 
 	if ( empty( $orbis_id ) ) {
-		$result = $wpdb->insert( 
-			'orbis_projects' , 
-			array(
-				'post_id' => $post_id ,
-				'name' => $post->post_title  
-			) , 
-			array(
-				'%d' , 
-				'%s' 
-			)
-		);
+		$data['post_id'] = $post_id;
+		$format['post_id'] = '%d';
+
+		$result = $wpdb->insert( 'orbis_projects', $data, $format );
 
 		if ( $result !== false ) {
 			$orbis_id = $wpdb->insert_id;
@@ -163,11 +226,11 @@ function orbis_save_project_sync( $post_id, $post ) {
 		}
 	} else {
 		$result = $wpdb->update(
-			'orbis_projects' , 
-			array( 'name' => $post->post_title ) , 
-			array( 'id' => $orbis_id ) , 
-			array( '%s' ) , 
-			array( '%d' ) 
+			'orbis_projects', 
+			$data, 
+			array( 'id' => $orbis_id ), 
+			$format, 
+			array( '%d' )
 		);
 	}
 }

@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 		$searchField.autocomplete({
 			source: function( request, response ) {
 				var data = {
-					action: "project_id_suggest",
+					action: "company_id_suggest",
 					term: request.term
 				};
 
