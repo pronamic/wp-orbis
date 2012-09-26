@@ -18,6 +18,7 @@ require_once 'functions/domain_names.php';
 require_once 'functions/persons.php';
 require_once 'functions/companies.php';
 require_once 'functions/projects.php';
+require_once 'functions/projects-template.php';
 
 class Orbis {
 	public static $file;
@@ -554,8 +555,9 @@ function orbis_projects_posts_clauses( $pieces ) {
 			project.number_seconds AS project_number_seconds ,
 			project.finished AS project_is_finished ,  
 			project.invoiced AS project_is_invoiced ,
-			principal.id AS project_principal_id ,
-			principal.name AS project_principal_name 
+			principal.id AS principal_id ,
+			principal.name AS principal_name , 
+			principal.post_id AS principal_post_id
 		";
 
 		$join = " 
@@ -604,20 +606,4 @@ function orbis_project_get_the_time( $format = 'H:m' ) {
 
 function orbis_project_the_time( $format = 'H:m' ) {
 	echo orbis_project_get_the_time( $format );
-}
-
-function orbis_project_get_the_principal( ) {
-	global $post;
-
-	$principal = null;
-
-	if ( isset( $post->project_principal_name ) ) {
-		$principal = $post->project_principal_name;
-	} 
-
-	return $principal;
-}
-
-function orbis_project_the_principal( ) {
-	echo orbis_project_get_the_principal();
 }

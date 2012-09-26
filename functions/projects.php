@@ -210,7 +210,13 @@ function orbis_project_column( $column, $post_id ) {
 
 			break;
 		case 'orbis_project_principal':
-			orbis_project_the_principal();
+			if ( orbis_project_has_principal() ) {
+				printf( 
+					'<a href="%s">%s</a>',
+					esc_attr( orbis_project_principal_get_permalink() ),
+					orbis_project_principel_get_the_name()
+				);
+			}
 
 			break;
 		case 'orbis_project_time':
@@ -221,4 +227,3 @@ function orbis_project_column( $column, $post_id ) {
 }
 
 add_action( 'manage_posts_custom_column' , 'orbis_project_column', 10, 2 );
-
