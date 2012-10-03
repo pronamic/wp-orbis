@@ -70,19 +70,6 @@ $seconds = get_post_meta( $post_id, '_orbis_project_seconds_available', true );
 		</tr>
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_project_is_invoice_paid">
-					<?php _e( 'Invoice Paid', 'orbis' ); ?>
-				</label>
-			</th>
-			<td>
-				<label for="orbis_project_is_invoice_paid">
-					<input type="checkbox" value="yes" id="orbis_project_is_invoice_paid" name="orbis_project_is_invoice_paid" />
-					<?php _e( 'Project invoice is paid', 'orbis' ); ?>
-				</label>
-			</td>
-		</tr>
-		<tr valign="top">
-			<th scope="row">
 				<label for="_orbis_project_is_finished">
 					<?php _e( 'Finished', 'orbis' ); ?>
 				</label>
