@@ -145,9 +145,8 @@ function orbis_save_project( $post_id, $post ) {
 
 	$data = filter_input_array(INPUT_POST, $definition);
 	
-	$data['_orbis_project_available_seconds'] = orbis_filter_time_input( INPUT_POST, '_orbis_project_available_seconds' );
-var_dump($data);
-exit;
+	$data['_orbis_project_seconds_available'] = orbis_filter_time_input( INPUT_POST, '_orbis_project_seconds_available' );
+
 	foreach ( $data as $key => $value ) {		
 		if ( empty( $value ) ) {
 			delete_post_meta( $post_id, $key);
@@ -192,6 +191,7 @@ function orbis_save_project_sync( $post_id, $post ) {
 	$is_invoicable = get_post_meta( $post_id, '_orbis_project_is_invoicable', true );
 	$is_invoiced = get_post_meta( $post_id, '_orbis_project_is_invoiced', true );
 	$is_finished = get_post_meta( $post_id, '_orbis_project_is_finished', true );
+	$seconds = get_post_meta( $post_id, '_orbis_project_seconds_available', true );
 
 	$data = array();
 	$format = array();
@@ -203,6 +203,9 @@ function orbis_save_project_sync( $post_id, $post ) {
 		$data['principal_id']   = $principal_id;
 		$format['principal_id'] = '%d';
 	}
+	
+	$data['number_seconds'] = $seconds;
+	$format['number_seconds'] = '%d';
 
 	$data['invoicable']   = $is_invoicable;
 	$format['invoicable'] = '%d';
