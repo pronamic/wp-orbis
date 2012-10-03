@@ -546,10 +546,10 @@ class Orbis {
 
 Orbis::bootstrap( __FILE__ );
 
-function orbis_projects_posts_clauses( $pieces ) {
-	global $wp_query, $wpdb;
+function orbis_projects_posts_clauses( $pieces, $query ) {
+	global $wpdb;
 
-	$post_type = $wp_query->get( 'post_type' );
+	$post_type = $query->get( 'post_type' );
 
 	if ( $post_type == 'orbis_project' ) {
 		$fields = ", 
@@ -577,7 +577,7 @@ function orbis_projects_posts_clauses( $pieces ) {
     return $pieces;
 }
 
-add_filter( 'posts_clauses', 'orbis_projects_posts_clauses' );
+add_filter( 'posts_clauses', 'orbis_projects_posts_clauses', 10, 2 );
 
 
 function orbis_format_seconds( $seconds, $format = 'H:m' ) {
