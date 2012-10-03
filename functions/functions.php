@@ -3,22 +3,26 @@
 function orbis_filter_time_input( $type, $variable_name ) {
 	$seconds = 0;
 
-	if ( isset( $_POST[ $variable_name ] ) ) {
-		$elements = array(
-			'hours'   => 3600,
-			'minutes' => 60
-		);
+	$value = filter_input( $type, $variable_name, FILTER_SANITIZE_STRING );
 
-		foreach ( $elements as $element => $seconds_in ) {
-			if ( isset( $_POST[ $variable_name ][ $element ] ) ) {
-				$var = $_POST[ $variable_name ][ $element ];
-				$int = filter_var( $var, FILTER_VALIDATE_INT );
-			
-				if ( $int !== false ) {
-					$seconds += $int * $seconds_in;
-				}
-			} 
-		}
+	$part_hours = $value;
+	$part_minutes = 0;
+
+	$position_colon = strpos( $value, ':' );
+
+	if ( $position_colon !== false ) {
+		$part_hours   = substr( $value, 0, $position_colon );
+		$part_minutes = substr( $value, $position_colon + 1 );
+	}
+
+	$var = filter_var( $part_hours, FILTER_VALIDATE_FLOAT );
+	if ( $var !== false ) {
+		$seconds += $var * 3600;
+	}
+	
+	$var = filter_var( $part_minutes, FILTER_VALIDATE_FLOAT );
+	if ( $var !== false ) {
+		$seconds += $var * 60;
 	}
 
 	return $seconds;

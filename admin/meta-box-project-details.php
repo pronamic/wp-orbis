@@ -4,11 +4,12 @@ global $post;
 
 wp_nonce_field( 'orbis_save_project_details', 'orbis_project_details_meta_box_nonce' );
 
-$principal_id  = get_post_meta( $post_id, '_orbis_project_principal_id', true );
-$is_invoicable = filter_var( get_post_meta( $post_id, '_orbis_project_is_invoicable', true ), FILTER_VALIDATE_BOOLEAN );
-$is_invoiced   = filter_var( get_post_meta( $post_id, '_orbis_project_is_invoiced', true )  , FILTER_VALIDATE_BOOLEAN );
-$is_finished   = filter_var( get_post_meta( $post_id, '_orbis_project_is_finished', true )  , FILTER_VALIDATE_BOOLEAN );
-$seconds = get_post_meta( $post_id, '_orbis_project_seconds_available', true );
+$principal_id  = get_post_meta( $post->ID, '_orbis_project_principal_id', true );
+$is_invoicable = filter_var( get_post_meta( $post->ID, '_orbis_project_is_invoicable', true ), FILTER_VALIDATE_BOOLEAN );
+$is_invoiced   = filter_var( get_post_meta( $post->ID, '_orbis_project_is_invoiced'  , true ), FILTER_VALIDATE_BOOLEAN );
+$invoice_number = get_post_meta( $post->ID, '_orbis_project_invoice_number', true );
+$is_finished   = filter_var( get_post_meta( $post->ID, '_orbis_project_is_finished'  , true ), FILTER_VALIDATE_BOOLEAN );
+$seconds = get_post_meta( $post->ID, '_orbis_project_seconds_available', true );
 
 ?>
 <table class="form-table">
@@ -22,14 +23,15 @@ $seconds = get_post_meta( $post_id, '_orbis_project_seconds_available', true );
 			</td>
 		</tr>
 		<tr valign="top">
-			<th scope="row"><?php _e( 'Time', 'orbis' ); ?></th>
+			<th scope="row">
+				<label for="_orbis_project_seconds_available"><?php _e( 'Time', 'orbis' ); ?></label>
+			</th>
 			<td>
-				<span class="duration-field">
-					<label for="orbis_project_hours_available">Uren</label>
-					<input size="2" id="orbis_project_hours_available" name="_orbis_project_seconds_available[hours]" value="" />
-					<label for="orbis_project_minutes_available">Minuten</label>
-					<input size="2" id="orbis_project_minutes_available" name="_orbis_project_seconds_available[minutes]" value="" />
-				</span>
+				<input size="5" id="_orbis_project_seconds_available" name="_orbis_project_seconds_available" value="<?php echo esc_attr( orbis_format_seconds( $seconds ) ); ?>" />
+
+				<p class="description">
+					<?php _e( 'You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes).', 'orbis' ); ?>
+				</p>
 			</td>
 		</tr>
 		<tr valign="top">
@@ -65,7 +67,7 @@ $seconds = get_post_meta( $post_id, '_orbis_project_seconds_available', true );
 				</label>
 			</th>
 			<td>
-				<input type="text" id="orbis_project_invoice_number" name="_orbis_project_invoice_number" value="" />
+				<input type="text" id="orbis_project_invoice_number" name="_orbis_project_invoice_number" value="<?php echo esc_attr( $invoice_number ); ?>" />
 			</td>
 		</tr>
 		<tr valign="top">

@@ -190,6 +190,7 @@ function orbis_save_project_sync( $post_id, $post ) {
 	$principal_id = get_post_meta( $post_id, '_orbis_project_principal_id', true );
 	$is_invoicable = get_post_meta( $post_id, '_orbis_project_is_invoicable', true );
 	$is_invoiced = get_post_meta( $post_id, '_orbis_project_is_invoiced', true );
+	$invoice_number = get_post_meta( $post_id, '_orbis_project_invoice_number', true );
 	$is_finished = get_post_meta( $post_id, '_orbis_project_is_finished', true );
 	$seconds = get_post_meta( $post_id, '_orbis_project_seconds_available', true );
 
@@ -212,6 +213,11 @@ function orbis_save_project_sync( $post_id, $post ) {
 
 	$data['invoiced']   = $is_invoiced;
 	$format['invoiced'] = '%d';
+
+	if ( ! empty( $invoice_number ) ) {
+		$data['invoice_number']   = $invoice_number;
+		$format['invoice_number'] = '%s';
+	}
 
 	$data['finished']   = $is_finished;
 	$format['finished'] = '%d';
