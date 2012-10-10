@@ -20,6 +20,7 @@ require_once 'functions/persons.php';
 require_once 'functions/companies.php';
 require_once 'functions/projects.php';
 require_once 'functions/projects-template.php';
+require_once 'functions/log.php';
 
 class Orbis {
 	public static $file;
