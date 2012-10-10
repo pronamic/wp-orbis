@@ -1,4 +1,18 @@
-jQuery(document).ready(function($) {   
+jQuery(document).ready(function($) {
+	var formatNoMatches = function() { return orbisl10n.noMatches; };
+	var formatInputTooShort = function(input, min) { 
+		return orbisl10n.inputTooShort.replace("{todo}", (min - input.length)); 
+	};
+	var formatSelectionTooBig = function(limit) {
+		if(limit == 1) {
+			return orbisl10n.selectionTooBigSingle.replace("{limit}", limit); 
+		} else {
+			return orbisl10n.selectionTooBigPlural.replace("{limit}", limit); 
+		}
+	};
+	var formatLoadMore = function(pageNumber) { return orbisl10n.loadMore; };
+	var formatSearching = function() { return orbisl10n.searching; };
+
 	$( ".orbis_company_id_field" ).select2({
         placeholder: "Search for a company",
         minimumInputLength: 2,
@@ -18,6 +32,11 @@ jQuery(document).ready(function($) {
                 // since we are using custom formatting functions we do not need to alter remote JSON data
                 return {results: data};
             }
-        }
+        },
+        formatNoMatches: formatNoMatches,
+        formatInputTooShort: formatInputTooShort,
+        formatSelectionTooBig: formatSelectionTooBig,
+        formatLoadMore: formatLoadMore,
+        formatSearching: formatSearching
     });
 });
