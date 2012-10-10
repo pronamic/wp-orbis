@@ -21,12 +21,31 @@ require_once 'functions/companies.php';
 require_once 'functions/projects.php';
 require_once 'functions/projects-template.php';
 require_once 'functions/log.php';
+require_once 'includes/scheme.php';
+require_once 'admin/includes/upgrade.php';
+
+class Orbis_Database {
+	private $wpdb;
+
+	public $projects;
+	public $companies;
+
+	public function __construct() {
+		global $wpdb;
+
+		$this->wpdb = $wpdb;
+		$this->projects = 'orbis_projects2';
+		$this->companies = 'orbis_companies2';
+	}
+}
 
 class Orbis {
 	public static $file;
 
 	public static function bootstrap( $file ) {
 		self::$file = $file;
+
+		$GLOBALS['orbisdb'] = new Orbis_Database();
 
 		add_action('init',       array(__CLASS__, 'init'));
 
@@ -50,9 +69,10 @@ class Orbis {
 
 		load_plugin_textdomain( 'orbis', false, $relPath );
 	
-		$version = '0.1';
+		$version = '0.1.1';
 		if(get_option('orbis_version') != $version) {
 			orbis_keychain_setup_roles();
+			orbis_make_db();
 		
 			update_option('orbis_version', $version);
 		}
