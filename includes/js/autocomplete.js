@@ -2,6 +2,9 @@ jQuery(document).ready(function($) {
 	$( ".orbis_company_id_field" ).select2({
         placeholder: "Search for a company",
         minimumInputLength: 2,
+        initSelection: function (element, callback) {
+            callback({id: element.val(), text: element.data("text")});
+        },
         ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
             url: ajaxurl,
             dataType: 'json',
