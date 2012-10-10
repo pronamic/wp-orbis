@@ -29,7 +29,7 @@ function orbis_enqueue_scripts() {
 	wp_enqueue_script(
 		'orbis-autocomplete',
 		plugins_url( '/includes/js/autocomplete.js', Orbis::$file ),
-		array( 'jquery', 'jquery-ui-autocomplete' )
+		array( 'jquery', 'jquery-ui-autocomplete', 'select2' )
 	);
 }
 

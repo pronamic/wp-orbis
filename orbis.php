@@ -434,9 +434,21 @@ class Orbis {
 	}
 
 	public static function admin_init() {
+		// Scripts
+		wp_enqueue_script(
+			'select2',
+			plugins_url( 'includes/select2/select2.js', __FILE__ ),
+			array( 'jquery' ),
+			'3.2'
+		);
 		
 
 		// Styles
+		wp_enqueue_style(
+			'orbis-select2' , 
+			plugins_url('includes/select2/select2.css', __FILE__)
+		);
+
 		wp_enqueue_style(
 			'orbis-admin' , 
 			plugins_url('css/admin.css', __FILE__)

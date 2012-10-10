@@ -19,7 +19,7 @@ $seconds = get_post_meta( $post->ID, '_orbis_project_seconds_available', true );
 				<label for="_orbis_project_principal_id"><?php _e( 'Principal ID', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input type="text" id="_orbis_project_principal_id" name="_orbis_project_principal_id" value="<?php echo esc_attr( $principal_id ); ?>" size="5" class="orbis_company_id_field" />
+				<input type="text" id="_orbis_project_principal_id" name="_orbis_project_principal_id" value="<?php echo esc_attr( $principal_id ); ?>" class="orbis_company_id_field regular-text" />
 			</td>
 		</tr>
 		<tr valign="top">

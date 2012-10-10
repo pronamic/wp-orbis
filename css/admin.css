@@ -11,3 +11,7 @@ tr.cancelled td {
 th.column-orbis_project_id {
 	width: 5em;
 }
+
+.orbis_company_id_field {
+	width: 300px;	
+}
