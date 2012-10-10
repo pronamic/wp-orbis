@@ -81,7 +81,7 @@ class Orbis_Log_Widget extends WP_Widget {
 		?>
 
 		<div class="content">
-			<ul>
+			<ul class="no-disc">
 				<?php foreach ( $logs as $log ): ?>
 				
 					<li>
@@ -155,7 +155,7 @@ function orbis_log_save_post( $post_id, $post ) {
 		__( '%s updated the "%s" post.', 'orbis' ),
 		$current_user->display_name,
 		sprintf( 
-			'<a href="%s" target="_blank">%s</a>',
+			'<a href="%s">%s</a>',
 			$url,
 			$post->post_title 
 		)
