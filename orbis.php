@@ -21,6 +21,7 @@ require_once 'functions/companies.php';
 require_once 'functions/projects.php';
 require_once 'functions/projects-template.php';
 require_once 'functions/log.php';
+require_once 'functions/subscriptions.php';
 require_once 'includes/scheme.php';
 require_once 'admin/includes/upgrade.php';
 
