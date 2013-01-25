@@ -9,7 +9,19 @@ This plugin creates an intranet environment in WordPress.
 
 == Description ==
 
-...
+
+
+== Functions ==
+
+*	General
+	*	orbis_format_seconds(  $seconds, $format = 'H:m' )
+
+*	Projects
+	*	orbis_project_get_the_time( $format = 'H:m' )
+	*	orbis_project_the_time( $format = 'H:m' )
+
+*	Flot
+	*	orbis_flot( $id, $data, $options )
 
 
 == Installation ==
