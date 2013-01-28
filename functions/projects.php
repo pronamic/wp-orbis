@@ -146,12 +146,12 @@ function orbis_save_project( $post_id, $post ) {
 	
 	// OK
 	$definition = array(
-		'_orbis_project_principal_id' => FILTER_VALIDATE_INT,
-		'_orbis_project_is_invoicable' => FILTER_VALIDATE_BOOLEAN,
-		'_orbis_project_is_invoiced' => FILTER_VALIDATE_BOOLEAN,
-		'_orbis_project_invoice_number' => FILTER_SANITIZE_STRING,
+		'_orbis_project_principal_id'    => FILTER_VALIDATE_INT,
+		'_orbis_project_is_invoicable'   => FILTER_VALIDATE_BOOLEAN,
+		'_orbis_project_is_invoiced'     => FILTER_VALIDATE_BOOLEAN,
+		'_orbis_project_invoice_number'  => FILTER_SANITIZE_STRING,
 		'_orbis_project_is_invoice_paid' => FILTER_VALIDATE_BOOLEAN,
-		'_orbis_project_is_finished' => FILTER_VALIDATE_BOOLEAN
+		'_orbis_project_is_finished'     => FILTER_VALIDATE_BOOLEAN
 	);
 
 	$data = filter_input_array(INPUT_POST, $definition);
@@ -197,15 +197,15 @@ function orbis_save_project_sync( $post_id, $post ) {
 	global $wpdb;
 
 	// Orbis project ID
-	$orbis_id = get_post_meta( $post_id, '_orbis_project_id', true );
-	$principal_id = get_post_meta( $post_id, '_orbis_project_principal_id', true );
-	$is_invoicable = get_post_meta( $post_id, '_orbis_project_is_invoicable', true );
-	$is_invoiced = get_post_meta( $post_id, '_orbis_project_is_invoiced', true );
+	$orbis_id       = get_post_meta( $post_id, '_orbis_project_id', true );
+	$principal_id   = get_post_meta( $post_id, '_orbis_project_principal_id', true );
+	$is_invoicable  = get_post_meta( $post_id, '_orbis_project_is_invoicable', true );
+	$is_invoiced    = get_post_meta( $post_id, '_orbis_project_is_invoiced', true );
 	$invoice_number = get_post_meta( $post_id, '_orbis_project_invoice_number', true );
-	$is_finished = get_post_meta( $post_id, '_orbis_project_is_finished', true );
-	$seconds = get_post_meta( $post_id, '_orbis_project_seconds_available', true );
+	$is_finished    = get_post_meta( $post_id, '_orbis_project_is_finished', true );
+	$seconds        = get_post_meta( $post_id, '_orbis_project_seconds_available', true );
 
-	$data = array();
+	$data   = array();
 	$format = array();
 
 	$data['name']   = $post->post_title;
