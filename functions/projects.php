@@ -255,7 +255,7 @@ function orbis_save_project_sync( $post_id, $post ) {
 	}
 }
 
-add_action( 'save_post', 'orbis_save_project_sync', 10, 2 );
+// add_action( 'save_post', 'orbis_save_project_sync', 10, 2 );
 
 /**
  * Keychain edit columns
