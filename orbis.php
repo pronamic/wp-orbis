@@ -14,7 +14,6 @@ License: GPL
 */
 
 require_once 'functions/functions.php';
-require_once 'functions/domain_names.php';
 require_once 'functions/persons.php';
 require_once 'functions/companies.php';
 require_once 'functions/projects.php';
@@ -78,25 +77,6 @@ class Orbis {
 		}
 
 		// Post types
-
-		register_post_type(
-			'orbis_domain_name' , 
-			array(
-				'label'         => __('Domain Names', 'orbis') , 
-				'labels'        => array(
-					'name'          => __('Domain Names', 'orbis') , 
-					'singular_name' => __('Domain Name', 'orbis') , 
-					'add_new'       => _x('Add New', 'domain_name', 'orbis') , 
-					'add_new_item'  => __('Add New Domain Name', 'orbis')
-				) ,
-				'public'        => true ,
-				'menu_position' => 30 , 
-				'menu_icon'     => plugins_url( 'images/domain_name.png', __FILE__ ) ,
-				'supports'      => array( 'title', 'comments' ) ,
-				'has_archive'   => true , 
-				'rewrite'       => array( 'slug' => 'domeinnamen' ) 
-			)
-		);
 
 		register_post_type(
 			'orbis_project' , 
