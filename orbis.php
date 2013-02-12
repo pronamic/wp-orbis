@@ -14,14 +14,12 @@ License: GPL
 */
 
 require_once 'functions/functions.php';
-require_once 'functions/keychains.php';
 require_once 'functions/domain_names.php';
 require_once 'functions/persons.php';
 require_once 'functions/companies.php';
 require_once 'functions/projects.php';
 require_once 'functions/projects-template.php';
 require_once 'functions/log.php';
-require_once 'functions/subscriptions.php';
 require_once 'functions/flot.php';
 require_once 'includes/scheme.php';
 require_once 'admin/includes/upgrade.php';
@@ -75,7 +73,7 @@ class Orbis {
 		if(get_option('orbis_version') != $version) {
 			orbis_keychain_setup_roles();
 			orbis_make_db();
-		
+
 			update_option('orbis_version', $version);
 		}
 
@@ -254,103 +252,6 @@ class Orbis {
 				)
 			)
 		);
-
-		register_post_type(
-			'orbis_keychain' , 
-			array(
-				'label'           => __('Keychains', 'orbis') , 
-				'labels'          => array(
-					'name'               => __('Keychains', 'orbis') , 
-					'singular_name'      => __('Keychain', 'orbis') ,
-					'add_new'            => _x('Add New', 'orbis_keychain', 'orbis') ,
-					'add_new_item'       => __('Add New Keychain', 'orbis') ,
-					'edit_item'          => __('Edit Keychain', 'orbis') ,
-					'new_item'           => __('New Keychain', 'orbis') ,
-					'view_item'          => __('View Keychain', 'orbis') ,
-					'search_items'       => __('Search Keychains', 'orbis') ,
-					'not_found'          => __('No keychains found', 'orbis') ,
-					'not_found_in_trash' => __('No keychains found in Trash', 'orbis') 
-				) ,
-				'public'          => true ,
-				'menu_position'   => 30 , 
-				'menu_icon'       => plugins_url('images/keychain.png', __FILE__) , 
-				'capability_type' => array('keychain', 'keychains') , 
-				'supports'        => array('title', 'editor', 'author', 'comments') , 
-				'has_archive'     => true , 
-				'rewrite'         => array('slug' => _x('keychains', 'slug', 'orbis')) 
-			)
-		);
-
-		register_taxonomy(
-			'orbis_keychain_category' , 
-			array('orbis_keychain') , 
-			array(
-				'hierarchical' => true , 
-				'labels'       => array(
-					'name'              => _x( 'Categories', 'orbis_keychain_category', 'orbis') , 
-					'singular_name'     => _x( 'Category', 'orbis_keychain_category', 'orbis') , 
-					'search_items'      => __( 'Search Categories', 'orbis') , 
-					'all_items'         => __( 'All Categories', 'orbis') , 
-					'parent_item'       => __( 'Parent Category', 'orbis') , 
-					'parent_item_colon' => __( 'Parent Category:', 'orbis') , 
-					'edit_item'         => __( 'Edit Category', 'orbis') , 
-					'update_item'       => __( 'Update Category', 'orbis') , 
-					'add_new_item'      => __( 'Add New Category', 'orbis') , 
-					'new_item_name'     => __( 'New Category Name', 'orbis') , 
-					'menu_name'         => __( 'Categories', 'orbis') 
-				) , 
-				'show_ui'      => true , 
-				'query_var'    => true , 
-				'rewrite'      => array(
-					'slug' => _x( 'keychain-categorie', 'slug', 'orbis' )
-				)
-			)
-		);
-
-		register_taxonomy(
-			'orbis_keychain_tag' , 
-			array('orbis_keychain') , 
-			array(
-				'hierarchical' => false , 
-				'labels'       => array(
-					'name'              => _x( 'Tags', 'orbis_keychain_category', 'orbis') , 
-					'singular_name'     => _x( 'Tag', 'orbis_keychain_category', 'orbis') , 
-					'search_items'      => __( 'Search Tags', 'orbis') , 
-					'all_items'         => __( 'All Tags', 'orbis') , 
-					'parent_item'       => __( 'Parent Tag', 'orbis') , 
-					'parent_item_colon' => __( 'Parent Tag:', 'orbis') , 
-					'edit_item'         => __( 'Edit Tag', 'orbis') , 
-					'update_item'       => __( 'Update Tag', 'orbis') , 
-					'add_new_item'      => __( 'Add New Tag', 'orbis') , 
-					'new_item_name'     => __( 'New Tag Name', 'orbis') , 
-					'menu_name'         => __( 'Tags', 'orbis') 
-				) , 
-				'show_ui'      => true , 
-				'query_var'    => true , 
-				'rewrite'      => array(
-					'slug' => _x( 'keychain-tag', 'slug', 'orbis' )
-				)
-			)
-		);
-
-		register_post_type(
-			'orbis_subscription', 
-			array(
-				'label'         => __( 'Subscriptions', 'orbis' ), 
-				'labels'        => array(
-					'name'          => __( 'Subscriptions', 'orbis' ), 
-					'singular_name' => __( 'Subscription', 'orbis' )
-				) ,
-				'public'        => true,
-				'menu_position' => 30, 
-				'menu_icon'     => plugins_url( 'images/subscription.png', __FILE__ ), 
-				'supports'      => array( 'title', 'editor', 'author', 'comments', 'thumbnail' ),
-				'has_archive'   => true, 
-				'rewrite'       => array(
-					'slug' => _x( 'subscriptions', 'slug', 'orbis' )
-				) 
-			)
-		);
 	}
 
 	public static function flushRules() {
@@ -382,76 +283,6 @@ class Orbis {
 
 		if(!empty($id)) {
 			var_dump($id);
-			die();
-		}
-		
-		$apiCall = get_query_var('api_call');
-		
-		if(!empty($apiCall)) {
-			$object = get_query_var('api_object');
-			$method = get_query_var('api_method');
-			
-			if($object == 'licenses' && $method == 'show') {
-				$type = INPUT_POST;
-
-				$key = filter_input($type, 'key', FILTER_SANITIZE_STRING);
-				$url = filter_input($type, 'url', FILTER_SANITIZE_STRING);
-
-				$domain = parse_url($url, PHP_URL_HOST);
-				if(substr($domain, 0, 4) == 'www.') {
-					$domain = substr($domain, 4);
-				}
-
-				$query = '
-					SELECT 
-						subscription.id ,  
-						subscription.name AS subscriptionName , 
-						subscription.activation_date AS activationDate , 
-						subscription.expiration_date AS expirationDate ,
-						subscription.cancel_date AS cancelDate , 
-						subscription.update_date AS updateDate ,
-						subscription.license_key AS licenseKey , 
-						subscription.expiration_date > NOW() AS isValid , 
-						company.name AS companyName ,
-						type.name AS typeName , 
-						type.price AS price , 
-						domain_name.domain_name AS domainName 
-					FROM 
-						orbis_subscriptions AS subscription
-							LEFT JOIN
-						orbis_companies AS company
-								ON subscription.company_id = company.id
-							LEFT JOIN
-						orbis_subscription_types AS type
-								ON subscription.type_id = type.id
-							LEFT JOIN
-						orbis_domain_names AS domain_name
-								ON subscription.domain_name_id = domain_name.id
-					WHERE
-						subscription.license_key_md5 = %s
-				';
-				
-				global $wpdb;
-
-				$query = $wpdb->prepare($query, $key);
-
-				$subscription = $wpdb->get_row($query);
-
-				if($subscription != null) {
-					if($subscription->subscriptionName != '*') {
-						$isValidDomain = $subscription->subscriptionName == $domain;
-						
-						$subscription->isValid &= $isValidDomain;
-					}
-					
-					$subscription->isValid = filter_var($subscription->isValid, FILTER_VALIDATE_BOOLEAN);
-				}
-				
-				header('Content-Type: application/json');
-
-				echo json_encode($subscription);
-			}
-
 			die();
 		}
 	}
