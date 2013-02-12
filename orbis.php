@@ -38,6 +38,25 @@ class Orbis_Database {
 	}
 }
 
+class Orbis_Plugin {
+	public $file;
+
+	public $dirname;
+
+	public function __construct( $file ) {
+		$this->file    = $file;
+		$this->dirname = dirname( $file );
+	}
+	
+	public function plugin_url( $path ) {
+		return plugins_url( $path, $this->file );
+	}
+	
+	public function plugin_include( $path ) {
+		include $this->dirname . '/' . $path;
+	}
+}
+
 class Orbis {
 	public static $file;
 
@@ -454,3 +473,6 @@ function orbis_project_get_the_time( $format = 'H:m' ) {
 function orbis_project_the_time( $format = 'H:m' ) {
 	echo orbis_project_get_the_time( $format );
 }
+
+
+do_action( 'orbis_init' );
