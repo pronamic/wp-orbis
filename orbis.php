@@ -481,4 +481,4 @@ function orbis_project_the_time( $format = 'H:m' ) {
 }
 
 
-do_action( 'orbis_init' );
+do_action( 'orbis_bootstrap' );
