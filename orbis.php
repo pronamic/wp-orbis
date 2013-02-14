@@ -46,6 +46,12 @@ class Orbis_Plugin {
 	public function __construct( $file ) {
 		$this->file    = $file;
 		$this->dirname = dirname( $file );
+
+		add_action( 'init', array( $this, 'init' ) );
+	}
+	
+	public function init() {
+		
 	}
 	
 	public function plugin_url( $path ) {
