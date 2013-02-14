@@ -55,6 +55,12 @@ class Orbis_Plugin {
 	public function plugin_include( $path ) {
 		include $this->dirname . '/' . $path;
 	}
+
+	public function load_textdomain( $domain, $path = '' ) {
+		$plugin_rel_path = dirname( plugin_basename( $this->file ) ) . $path;
+
+		load_plugin_textdomain( $domain, false, $plugin_rel_path );
+	}
 }
 
 class Orbis {
