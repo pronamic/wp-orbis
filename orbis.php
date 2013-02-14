@@ -47,10 +47,10 @@ class Orbis_Plugin {
 		$this->file    = $file;
 		$this->dirname = dirname( $file );
 
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'plugins_loaded', array( $this, 'loaded' ) );
 	}
 	
-	public function init() {
+	public function loaded() {
 		
 	}
 	
