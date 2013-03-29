@@ -43,10 +43,10 @@
 					</a>
 				</td>
 				<td>
-					<span style="color: <?php echo $project->failed ? 'Red' : 'Green'; ?>;"><?php echo $project->registeredSeconds; ?></span>
+					<span style="color: <?php echo $project->failed ? 'Red' : 'Green'; ?>;"><?php echo orbis_format_seconds( $project->registeredSeconds ); ?></span>
 				</td>
 				<td>
-					<?php echo $project->availableSeconds; ?>
+					<?php echo orbis_format_seconds( $project->availableSeconds ); ?>
 				</td>
 				<td>
 					<?php echo $project->invoicable ? 'Ja' : 'Nee'; ?>
