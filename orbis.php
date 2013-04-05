@@ -489,3 +489,14 @@ function orbis_project_the_time( $format = 'H:m' ) {
 
 
 do_action( 'orbis_bootstrap' );
+
+function orbis_price( $price ) {
+	$return = '';
+	
+	$return .= '&euro;';
+	$return .= '&nbsp;';
+
+	$return .= number_format( $price, 2, ',', '.' );
+
+	return $return;
+}
