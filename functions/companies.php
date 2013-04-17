@@ -5,11 +5,11 @@
  */
 function orbis_company_add_meta_boxes() {
     add_meta_box( 
-        'orbis_company',
+        'orbis_company_details',
         __( 'Company Details', 'orbis' ),
-        'orbis_company_meta_box',
+        'orbis_company_details_meta_box',
         'orbis_company' ,
-        'side' ,
+        'normal' ,
         'high'
     );
 }
@@ -21,7 +21,7 @@ add_action( 'add_meta_boxes', 'orbis_company_add_meta_boxes' );
  * 
  * @param array $post
  */
-function orbis_company_meta_box( $post ) {
+function orbis_company_details_meta_box( $post ) {
 	include dirname( Orbis::$file ) . '/admin/meta-box-company-details.php';
 }
 
@@ -47,7 +47,13 @@ function orbis_save_company( $post_id, $post ) {
 	
 	// OK
 	$definition = array(
-		'_orbis_company_kvk_number' => FILTER_SANITIZE_STRING
+		'_orbis_company_kvk_number' => FILTER_SANITIZE_STRING,
+		'_orbis_company_email'      => FILTER_VALIDATE_EMAIL,
+		'_orbis_company_website'    => FILTER_VALIDATE_URL,
+		'_orbis_company_address'    => FILTER_SANITIZE_STRING,
+		'_orbis_company_postcode'   => FILTER_SANITIZE_STRING,
+		'_orbis_company_city'       => FILTER_SANITIZE_STRING,
+		'_orbis_company_country'    => FILTER_SANITIZE_STRING
 	);
 	
 	$data = filter_input_array(INPUT_POST, $definition);

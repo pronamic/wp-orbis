@@ -15,3 +15,18 @@ th.column-orbis_project_id {
 .orbis_company_id_field {
 	width: 300px;	
 }
+
+/**
+ * Orbis company meta box
+ */
+#orbis_company_details .form-table .title {
+	margin: 0;
+}
+
+#orbis_company_details ::-webkit-input-placeholder {
+   color: #999;
+}
+
+#orbis_company_details :-moz-placeholder {
+	color: #999;
+}
