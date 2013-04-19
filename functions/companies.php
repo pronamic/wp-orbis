@@ -32,6 +32,8 @@ function orbis_company_details_meta_box( $post ) {
 	$city = get_post_meta( $post->ID, '_orbis_company_city', true );
 	$country = get_post_meta( $post->ID, '_orbis_company_country', true );
 	
+	$ebilling = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
+	
 	include dirname( Orbis::$file ) . '/admin/meta-box-company-details.php';
 }
 
@@ -63,7 +65,8 @@ function orbis_save_company( $post_id, $post ) {
 		'_orbis_company_address'    => FILTER_SANITIZE_STRING,
 		'_orbis_company_postcode'   => FILTER_SANITIZE_STRING,
 		'_orbis_company_city'       => FILTER_SANITIZE_STRING,
-		'_orbis_company_country'    => FILTER_SANITIZE_STRING
+		'_orbis_company_country'    => FILTER_SANITIZE_STRING,
+		'_orbis_company_ebilling'   => FILTER_VALIDATE_BOOLEAN
 	);
 	
 	$data = filter_input_array(INPUT_POST, $definition);
