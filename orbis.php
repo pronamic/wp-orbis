@@ -44,11 +44,38 @@ class Orbis_Plugin {
 
 	public $dirname;
 
+	public $db_version;
+
 	public function __construct( $file ) {
 		$this->file    = $file;
 		$this->dirname = dirname( $file );
 
+		add_action( 'admin_init',     array( $this, 'update' ) );
 		add_action( 'plugins_loaded', array( $this, 'loaded' ) );
+	}
+	
+	public function set_name( $name ) {
+		$this->name = $name;
+	}
+	
+	public function set_db_version( $version ) {
+		$this->db_version = $version;
+	}
+	
+	public function update() {
+		if ( ! empty( $this->name ) ) {
+			$option = $this->name . '_db_version';
+
+			if ( get_option( $option ) != $this->db_version ) {
+				$this->install();
+			}
+		}
+	}
+	
+	public function install() {
+		$option = $this->name . '_db_version';
+
+		update_option( $option, $this->db_version );
 	}
 	
 	public function loaded() {

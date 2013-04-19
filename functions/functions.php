@@ -27,3 +27,51 @@ function orbis_filter_time_input( $type, $variable_name ) {
 
 	return $seconds;
 }
+
+/**
+ * Register a table with $wpdb
+ *
+ * @param string $key The key to be used on the $wpdb object
+ * @param string $name The actual name of the table, without $wpdb->prefix
+ */
+function orbis_register_table( $key, $name = false, $prefix = false ) {
+	global $wpdb;
+
+	if ( $name === false ) {
+		$name = $key;
+	}
+
+	if ( $prefix === false ) {
+		$prefix = $wpdb->prefix;
+	}
+
+	$wpdb->tables[] = $name;
+	$wpdb->$key = $prefix . $name;
+}
+
+/**
+ * Orbis install table
+*/
+function orbis_install_table( $key, $columns ) {
+	global $wpdb;
+	
+	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+
+	$full_table_name = $wpdb->$key;
+
+	$charset_collate = '';
+
+	if ( $wpdb->has_cap( 'collation' ) ) {
+		if ( ! empty( $wpdb->charset ) ) {
+			$charset_collate .= "DEFAULT CHARACTER SET $wpdb->charset";
+		}
+
+		if ( ! empty( $wpdb->collate ) ) {
+			$charset_collate .= " COLLATE $wpdb->collate";
+		}
+	}
+	
+	$table_options = $charset_collate;
+
+	dbDelta( "CREATE TABLE $full_table_name ( $columns ) $table_options" );
+}
