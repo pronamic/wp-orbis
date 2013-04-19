@@ -23,6 +23,7 @@ require_once 'functions/flot.php';
 require_once 'includes/scheme.php';
 require_once 'includes/shortcodes.php';
 require_once 'admin/includes/upgrade.php';
+require_once 'classes/orbis-plugin.php';
 
 class Orbis_Database {
 	private $wpdb;
@@ -36,64 +37,6 @@ class Orbis_Database {
 		$this->wpdb = $wpdb;
 		$this->projects = 'orbis_projects2';
 		$this->companies = 'orbis_companies2';
-	}
-}
-
-class Orbis_Plugin {
-	public $file;
-
-	public $dirname;
-
-	public $db_version;
-
-	public function __construct( $file ) {
-		$this->file    = $file;
-		$this->dirname = dirname( $file );
-
-		add_action( 'admin_init',     array( $this, 'update' ) );
-		add_action( 'plugins_loaded', array( $this, 'loaded' ) );
-	}
-	
-	public function set_name( $name ) {
-		$this->name = $name;
-	}
-	
-	public function set_db_version( $version ) {
-		$this->db_version = $version;
-	}
-	
-	public function update() {
-		if ( ! empty( $this->name ) ) {
-			$option = $this->name . '_db_version';
-
-			if ( get_option( $option ) != $this->db_version ) {
-				$this->install();
-			}
-		}
-	}
-	
-	public function install() {
-		$option = $this->name . '_db_version';
-
-		update_option( $option, $this->db_version );
-	}
-	
-	public function loaded() {
-		
-	}
-	
-	public function plugin_url( $path ) {
-		return plugins_url( $path, $this->file );
-	}
-	
-	public function plugin_include( $path ) {
-		include $this->dirname . '/' . $path;
-	}
-
-	public function load_textdomain( $domain, $path = '' ) {
-		$plugin_rel_path = dirname( plugin_basename( $this->file ) ) . $path;
-
-		load_plugin_textdomain( $domain, false, $plugin_rel_path );
 	}
 }
 
