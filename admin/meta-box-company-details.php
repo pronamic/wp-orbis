@@ -33,7 +33,7 @@ wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_no
 		</tr>
 		<tr>
 			<th scope="col" colspan="2">
-				<h4 class="title"><?php _e( 'Addresses', 'orbis' ); ?></h3>
+				<h4 class="title"><?php _e( 'Addresses', 'orbis' ); ?></h4>
 			</th>
 		</tr>
 		<tr>
