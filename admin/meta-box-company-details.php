@@ -52,7 +52,7 @@ wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_no
 				<label for="orbis_company_ebilling"><?php _e( 'Ebilling?', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input id="orbis_company_ebilling" name="_orbis_company_ebilling" value="1" type="checkbox" <?php if ( (bool) $ebilling ) : ?> checked="checked" <?php endif; ?>/>
+				<input id="orbis_company_ebilling" name="_orbis_company_ebilling" value="1" type="checkbox" <?php checked( $ebilling ); ?> />
 			</td>
 		</tr>
 	</tbody>
