@@ -1,6 +1,4 @@
-<?php 
-
-
+<?php
 
 wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_nonce' );
 
