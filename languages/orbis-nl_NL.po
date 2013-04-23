@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-23 14:45+0100\n"
-"PO-Revision-Date: 2013-04-23 14:45+0100\n"
+"POT-Creation-Date: 2013-04-23 14:52+0100\n"
+"PO-Revision-Date: 2013-04-23 14:52+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -275,7 +275,7 @@ msgstr "Plaats"
 msgid "Country"
 msgstr "Land"
 
-#: admin/meta-box-company-details.php:52 functions/companies.php:225
+#: admin/meta-box-company-details.php:52
 msgid "Electronic billing"
 msgstr "Elektronische facturatie"
 
@@ -376,6 +376,18 @@ msgstr "Reacties"
 #: functions/companies.php:159 functions/projects.php:272
 msgid "Date"
 msgstr "Datum"
+
+#: functions/companies.php:226
+msgid "Electronic billing:"
+msgstr "Elektronische facturatie:"
+
+#: functions/companies.php:227
+msgid "Yes"
+msgstr "Ja"
+
+#: functions/companies.php:227
+msgid "No"
+msgstr "Nee"
 
 #: functions/log.php:60
 msgid "Orbis Log"

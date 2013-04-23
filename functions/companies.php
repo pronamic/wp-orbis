@@ -163,7 +163,7 @@ function orbis_company_edit_columns($columns) {
 add_filter( 'manage_edit-orbis_company_columns' , 'orbis_company_edit_columns' );
 
 /**
- * Keychain column
+ * Company column
  * 
  * @param string $column
  */
@@ -221,9 +221,11 @@ function orbis_company_column( $column, $post_id ) {
 		case 'orbis_company_administration':
 			$ebilling   = get_post_meta( $post_id, '_orbis_company_ebilling', true );
 
-			if ( $ebilling ) {
-				_e( 'Electronic billing', 'orbis' );
-			}
+			printf(
+				'<strong>%s</strong> %s',
+				__( 'Electronic billing:', 'orbis' ),
+				$ebilling ? __( 'Yes', 'orbis' ) : __( 'No', 'orbis' )
+			);
 
 			break;
 	}
