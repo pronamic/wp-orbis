@@ -147,14 +147,16 @@ add_action( 'save_post', 'orbis_save_company_sync', 10, 2 );
  */
 function orbis_company_edit_columns($columns) {
 	return array(
-        'cb'                       => '<input type="checkbox" />', 
-        'title'                    => __( 'Title', 'orbis' ),
-		// 'orbis_company_id'         => __( 'Orbis ID', 'orbis' ),
-		'orbis_company_address'    => __( 'Address', 'orbis' ),
-		'orbis_company_kvk_number' => __( 'KvK Number', 'orbis' ),
-		'author'                   => __( 'Author', 'orbis' ),
-		'comments'                 => __( 'Comments', 'orbis' ), 
-        'date'                     => __( 'Date', 'orbis' ),
+        'cb'                           => '<input type="checkbox" />', 
+        'title'                        => __( 'Title', 'orbis' ),
+		// 'orbis_company_id'          => __( 'Orbis ID', 'orbis' ),
+		'orbis_company_address'        => __( 'Address', 'orbis' ),
+		'orbis_company_online'         => __( 'Online', 'orbis' ),
+		'orbis_company_kvk_number'     => __( 'KvK Number', 'orbis' ),
+		'orbis_company_administration' => __( 'Administration', 'orbis' ),
+		'author'                       => __( 'Author', 'orbis' ),
+		'comments'                     => __( 'Comments', 'orbis' ), 
+        'date'                         => __( 'Date', 'orbis' ),
 	);
 }
 
@@ -177,6 +179,26 @@ function orbis_company_column( $column, $post_id ) {
 			}
 
 			break;
+		case 'orbis_company_online':
+			$br = '';
+
+			$website = get_post_meta( $post_id, '_orbis_company_website', true );
+			
+			if ( ! empty( $website ) ) {
+				printf( '<a href="%s" target="_blank">%s</a>', $website, $website );
+
+				$br = '<br />';
+			}
+
+			$email = get_post_meta( $post_id, '_orbis_company_email', true );
+			
+			if ( ! empty( $email ) ) {
+				echo $br;
+
+				printf( '<a href="mailto:%s" target="_blank">%s</a>', $email, $email );
+			}
+
+			break;
 		case 'orbis_company_address':
 			$address  = get_post_meta( $post_id, '_orbis_company_address', true );
 			$postcode = get_post_meta( $post_id, '_orbis_company_postcode', true );
@@ -193,6 +215,14 @@ function orbis_company_column( $column, $post_id ) {
 				$url = sprintf( 'http://www.openkvk.nl/%s', $kvk_number );
 
 				printf( '<a href="%s" target="_blank">%s</a>', $url, $kvk_number );
+			}
+
+			break;
+		case 'orbis_company_administration':
+			$ebilling   = get_post_meta( $post_id, '_orbis_company_ebilling', true );
+
+			if ( $ebilling ) {
+				_e( 'Electronic billing', 'orbis' );
 			}
 
 			break;

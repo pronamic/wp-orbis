@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-23 14:11+0100\n"
-"PO-Revision-Date: 2013-04-23 14:11+0100\n"
+"POT-Creation-Date: 2013-04-23 14:45+0100\n"
+"PO-Revision-Date: 2013-04-23 14:45+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -242,7 +242,7 @@ msgstr "Te factureren"
 msgid "Subscriptions"
 msgstr "Abonnementen"
 
-#: admin/meta-box-company-details.php:10 functions/companies.php:154
+#: admin/meta-box-company-details.php:10 functions/companies.php:155
 msgid "KvK Number"
 msgstr "KvK nummer"
 
@@ -275,7 +275,7 @@ msgstr "Plaats"
 msgid "Country"
 msgstr "Land"
 
-#: admin/meta-box-company-details.php:52
+#: admin/meta-box-company-details.php:52 functions/companies.php:225
 msgid "Electronic billing"
 msgstr "Elektronische facturatie"
 
@@ -357,15 +357,23 @@ msgstr "Bedrijf details"
 msgid "Title"
 msgstr "Titel"
 
-#: functions/companies.php:155 functions/projects.php:270
+#: functions/companies.php:154
+msgid "Online"
+msgstr "Online"
+
+#: functions/companies.php:156
+msgid "Administration"
+msgstr "Administratie"
+
+#: functions/companies.php:157 functions/projects.php:270
 msgid "Author"
 msgstr "Auteur"
 
-#: functions/companies.php:156 functions/projects.php:271
+#: functions/companies.php:158 functions/projects.php:271
 msgid "Comments"
 msgstr "Reacties"
 
-#: functions/companies.php:157 functions/projects.php:272
+#: functions/companies.php:159 functions/projects.php:272
 msgid "Date"
 msgstr "Datum"
 
@@ -638,9 +646,6 @@ msgstr "Bewerk abonnement bericht"
 
 #~ msgid "WordPress"
 #~ msgstr "WordPress"
-
-#~ msgid "Administrator"
-#~ msgstr "Beheerder"
 
 #~ msgid "Editor"
 #~ msgstr "Auteur"
