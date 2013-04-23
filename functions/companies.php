@@ -22,18 +22,17 @@ add_action( 'add_meta_boxes', 'orbis_company_add_meta_boxes' );
  * @param array $post
  */
 function orbis_company_details_meta_box( $post ) {
-	
 	$kvk_number = get_post_meta( $post->ID, '_orbis_company_kvk_number', true );
 	$email      = get_post_meta( $post->ID, '_orbis_company_email', true );
 	$website    = get_post_meta( $post->ID, '_orbis_company_website', true );
 	
-	$address = get_post_meta( $post->ID, '_orbis_company_address', true );
-	$postcode = get_post_meta( $post->ID, '_orbis_company_postcode', true );
-	$city = get_post_meta( $post->ID, '_orbis_company_city', true );
-	$country = get_post_meta( $post->ID, '_orbis_company_country', true );
+	$address    = get_post_meta( $post->ID, '_orbis_company_address', true );
+	$postcode   = get_post_meta( $post->ID, '_orbis_company_postcode', true );
+	$city       = get_post_meta( $post->ID, '_orbis_company_city', true );
+	$country    = get_post_meta( $post->ID, '_orbis_company_country', true );
 	
-	$ebilling = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
-	
+	$ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
+
 	include dirname( Orbis::$file ) . '/admin/meta-box-company-details.php';
 }
 
@@ -148,17 +147,18 @@ add_action( 'save_post', 'orbis_save_company_sync', 10, 2 );
  */
 function orbis_company_edit_columns($columns) {
 	return array(
-        'cb'                       => '<input type="checkbox" />' , 
-        'title'                    => __('Title', 'orbis') , 
-		'orbis_company_id'         => __('Orbis ID', 'orbis') , 
-		'orbis_company_kvk_number' => __('KvK Number', 'orbis') , 
-		'author'                   => __('Author', 'orbis') , 
-		'comments'                 => __('Comments', 'orbis') ,  
-        'date'                     => __('Date', 'orbis') , 
+        'cb'                       => '<input type="checkbox" />', 
+        'title'                    => __( 'Title', 'orbis' ),
+		// 'orbis_company_id'         => __( 'Orbis ID', 'orbis' ),
+		'orbis_company_address'    => __( 'Address', 'orbis' ),
+		'orbis_company_kvk_number' => __( 'KvK Number', 'orbis' ),
+		'author'                   => __( 'Author', 'orbis' ),
+		'comments'                 => __( 'Comments', 'orbis' ), 
+        'date'                     => __( 'Date', 'orbis' ),
 	);
 }
 
-add_filter('manage_edit-orbis_company_columns' , 'orbis_company_edit_columns');
+add_filter( 'manage_edit-orbis_company_columns' , 'orbis_company_edit_columns' );
 
 /**
  * Keychain column
@@ -175,6 +175,15 @@ function orbis_company_column( $column, $post_id ) {
 
 				printf( '<a href="%s" target="_blank">%s</a>', $url, $id );
 			}
+
+			break;
+		case 'orbis_company_address':
+			$address  = get_post_meta( $post_id, '_orbis_company_address', true );
+			$postcode = get_post_meta( $post_id, '_orbis_company_postcode', true );
+			$city     = get_post_meta( $post_id, '_orbis_company_city', true );
+			$country  = get_post_meta( $post_id, '_orbis_company_country', true );
+
+			printf( '%s<br />%s %s', $address, $postcode, $city );
 
 			break;
 		case 'orbis_company_kvk_number':
