@@ -72,7 +72,6 @@ class Orbis {
 	public static function init() {
 		$version = '0.1.1';
 		if(get_option('orbis_version') != $version) {
-			orbis_keychain_setup_roles();
 			orbis_make_db();
 
 			update_option('orbis_version', $version);
