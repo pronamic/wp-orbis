@@ -1,19 +1,20 @@
 <?php
 
 /**
- * Subscriptions to invoice shortcode
+ * Projects active shortcode
  * 
- * @param unknown $atts
+ * @param array $atts
  * @return string
  */
 function orbis_shortcode_projects_active( $atts ) {
 	global $wpdb;
+	global $orbis_plugin;
 
 	$return  = '';
 
 	ob_start();
 	
-	include dirname( __FILE__ ) . '/../templates/projects.php';
+	$orbis_plugin->plugin_include( 'templates/projects.php' );
 	
 	$return = ob_get_contents();
 	
