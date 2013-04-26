@@ -9,6 +9,12 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		$this->plugin_include( 'includes/template.php' );
 		$this->plugin_include( 'includes/project-template.php' );
+		
+		if ( is_admin() ) {
+			global $orbis_admin;
+			
+			$orbis_admin = new Orbis_Core_Admin( $this );
+		}
 	}
 
 	public function loaded() {

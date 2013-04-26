@@ -26,6 +26,7 @@ require_once 'admin/includes/upgrade.php';
 function orbis_bootstrap() {
 	// Classes
 	require_once 'classes/orbis-plugin.php';
+	require_once 'classes/orbis-core-admin.php';
 	require_once 'classes/orbis-core-plugin.php';
 	require_once 'classes/orbis-database.php';
 
@@ -53,10 +54,6 @@ class Orbis {
 		$GLOBALS['orbisdb'] = new Orbis_Database();
 
 		add_action('init',       array(__CLASS__, 'init'));
-
-		add_action('admin_init', array(__CLASS__, 'admin_init'));
-
-		add_action('admin_menu', array(__CLASS__, 'admin_menu'));
 
 		add_filter('generate_rewrite_rules', array(__CLASS__, 'generateRewriteRules'));
 
@@ -244,132 +241,6 @@ class Orbis {
 		$queryVars[] = 'api_method';
 
 		return $queryVars;
-	}
-
-	public static function templateRedirect() {
-
-	}
-
-	public static function admin_init() {
-		// Scripts
-		wp_enqueue_script(
-			'select2',
-			plugins_url( 'includes/select2/select2.js', __FILE__ ),
-			array( 'jquery' ),
-			'3.2'
-		);
-		
-
-		// Styles
-		wp_enqueue_style(
-			'orbis-select2' , 
-			plugins_url('includes/select2/select2.css', __FILE__)
-		);
-
-		wp_enqueue_style(
-			'orbis-admin' , 
-			plugins_url('css/admin.css', __FILE__)
-		);
-	}
-
-	public static function admin_menu() {
-		add_menu_page(
-			$pageTitle = 'Orbis' , 
-			$menuTitle = 'Orbis' , 
-			$capability = 'orbis_view' , 
-			$menuSlug = 'orbis' , 
-			$function = array(__CLASS__, 'page') , 
-			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
-		);
-
-		// @see _add_post_type_submenus()
-		// @see wp-admin/menu.php
-		add_submenu_page(
-			$parentSlug = 'orbis' , 
-			$pageTitle = 'Settings' , 
-			$menuTitle = 'Settings' , 
-			$capability = 'orbis_view_settings' , 
-			$menuSlug = 'orbis_settings' , 
-			$function = array(__CLASS__, 'pageSettings')
-		);
-
-		// @see _add_post_type_submenus()
-		// @see wp-admin/menu.php
-		add_submenu_page(
-			$parentSlug = 'orbis' , 
-			$pageTitle = 'Stats' , 
-			$menuTitle = 'Stats' , 
-			$capability = 'orbis_view_stats' , 
-			$menuSlug = 'orbis_stats' , 
-			$function = array(__CLASS__, 'pageStats')
-		);
-		
-		// Projects
-		add_menu_page(
-			$pageTitle = __('Projects', 'orbis') , 
-			$menuTitle = __('Projects', 'orbis') , 
-			$capability = 'orbis_view_projects' , 
-			$menuSlug = 'orbis_projects' , 
-			$function = array(__CLASS__, 'pageProjects') , 
-			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
-		);
-		
-		// Domains
-		add_menu_page(
-			$pageTitle = __('Domains', 'orbis') , 
-			$menuTitle = __('Domains', 'orbis') , 
-			$capability = 'orbis_view_domains' , 
-			$menuSlug = 'orbis_domains' , 
-			$function = array(__CLASS__, 'pageDomains') , 
-			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
-		);
-
-		add_submenu_page(
-			$parentSlug = 'orbis_domains' , 
-			$pageTitle = __('Domains to invoice', 'orbis') , 
-			$menuTitle = __('To Invoice', 'orbis') , 
-			$capability = 'orbis_view_domains_to_invoice' , 
-			$menuSlug = 'orbis_domains_to_invoice' , 
-			$function = array(__CLASS__, 'pageDomainsToInvoice')
-		);
-		
-		// Subscriptions
-		add_menu_page(
-			$pageTitle = __('Subscriptions', 'orbis') , 
-			$menuTitle = __('Subscriptions', 'orbis') , 
-			$capability = 'orbis_view_subscriptions' , 
-			$menuSlug = 'orbis_subscriptions' , 
-			$function = array(__CLASS__, 'pageSubscriptions') , 
-			$iconUrl = plugins_url('images/icon-16x16.png', __FILE__)
-		);
-	}
-
-	public static function page() {
-		include 'views/orbis.php';
-	}
-
-	public static function pageSettings() {
-		include 'views/settings.php';
-	}
-
-	public static function pageStats() {
-		include 'views/stats.php';
-	}
-
-	public static function pageProjects() {
-		include 'views/projects.php';
-	}
-
-	public static function pageDomains() {
-		include 'views/domains.php';
-	}
-
-	public static function pageDomainsToInvoice() {
-		include 'views/domains-to-invoice.php';
-	}
-
-	public static function pageSubscriptions() {
-		include 'views/subscriptions.php';
 	}
 }
 
