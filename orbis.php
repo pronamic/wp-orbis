@@ -17,7 +17,6 @@ require_once 'functions/functions.php';
 require_once 'functions/persons.php';
 require_once 'functions/companies.php';
 require_once 'functions/projects.php';
-require_once 'functions/projects-template.php';
 require_once 'functions/log.php';
 require_once 'functions/flot.php';
 require_once 'includes/scheme.php';
@@ -67,13 +66,6 @@ class Orbis {
 	}
 
 	public static function init() {
-		$version = '0.1.1';
-		if(get_option('orbis_version') != $version) {
-			orbis_make_db();
-
-			update_option('orbis_version', $version);
-		}
-
 		// Post types
 
 		register_post_type(
