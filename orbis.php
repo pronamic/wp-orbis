@@ -23,22 +23,27 @@ require_once 'functions/flot.php';
 require_once 'includes/scheme.php';
 require_once 'includes/shortcodes.php';
 require_once 'admin/includes/upgrade.php';
-require_once 'classes/orbis-plugin.php';
 
-class Orbis_Database {
-	private $wpdb;
+function orbis_bootstrap() {
+	// Classes
+	require_once 'classes/orbis-plugin.php';
+	require_once 'classes/orbis-core-plugin.php';
+	require_once 'classes/orbis-database.php';
 
-	public $projects;
-	public $companies;
+	// Initialize
+	global $orbis_plugin;
 
-	public function __construct() {
-		global $wpdb;
-
-		$this->wpdb = $wpdb;
-		$this->projects = 'orbis_projects2';
-		$this->companies = 'orbis_companies2';
-	}
+	$orbis_plugin = new Orbis_Core_Plugin( __FILE__ );
 }
+
+add_action( 'orbis_bootstrap', 'orbis_bootstrap', 1 );
+
+// Bootstrap
+do_action( 'orbis_bootstrap' );
+
+
+
+
 
 class Orbis {
 	public static $file;
@@ -65,11 +70,6 @@ class Orbis {
 	}
 
 	public static function init() {
-		// Load plugin text domain
-		$relPath = dirname( plugin_basename( self::$file ) ) . '/languages/';
-
-		load_plugin_textdomain( 'orbis', false, $relPath );
-	
 		$version = '0.1.1';
 		if(get_option('orbis_version') != $version) {
 			orbis_keychain_setup_roles();
@@ -426,47 +426,3 @@ function orbis_projects_posts_clauses( $pieces, $query ) {
 }
 
 add_filter( 'posts_clauses', 'orbis_projects_posts_clauses', 10, 2 );
-
-
-function orbis_format_seconds( $seconds, $format = 'H:m' ) {
-	$hours = $seconds / 3600;
-	$minutes = ( $seconds % 3600 ) / 60;
-
-	$search = array( 'H', 'm' );
-	$replace = array(
-		sprintf( '%02d', $hours ),
-		sprintf('%02d', $minutes )
-	);
-
-	return str_replace( $search, $replace, $format );
-}
-
-function orbis_project_get_the_time( $format = 'H:m' ) {
-	global $post;
-
-	$time = null;
-
-	if ( isset( $post->project_number_seconds ) ) {
-		$time = orbis_format_seconds( $post->project_number_seconds, $format );
-	} 
-
-	return $time;
-}
-
-function orbis_project_the_time( $format = 'H:m' ) {
-	echo orbis_project_get_the_time( $format );
-}
-
-
-do_action( 'orbis_bootstrap' );
-
-function orbis_price( $price ) {
-	$return = '';
-	
-	$return .= '&euro;';
-	$return .= '&nbsp;';
-
-	$return .= number_format( $price, 2, ',', '.' );
-
-	return $return;
-}
