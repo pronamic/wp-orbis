@@ -245,14 +245,12 @@ class Orbis {
 	public static function generateRewriteRules($wpRewrite) {
 		$rules = array();
 
-		$rules['project/([^/]+)$'] = 'index.php?project_id=' . $wpRewrite->preg_index(1);
 		$rules['api/(.*)/(.*)$'] = 'index.php?api_call=true&api_object=' . $wpRewrite->preg_index(1) . '&api_method=' . $wpRewrite->preg_index(2);
 
 		$wpRewrite->rules = $rules + $wpRewrite->rules;
 	}
 
 	public static function queryVars($queryVars) {
-		$queryVars[] = 'project_id';
 		$queryVars[] = 'api_call';
 		$queryVars[] = 'api_object';
 		$queryVars[] = 'api_method';
@@ -261,12 +259,7 @@ class Orbis {
 	}
 
 	public static function templateRedirect() {
-		$id = get_query_var('project_id');
 
-		if(!empty($id)) {
-			var_dump($id);
-			die();
-		}
 	}
 
 	public static function admin_init() {
