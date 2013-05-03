@@ -92,16 +92,6 @@ class Orbis_Core_Admin {
 			array( $this, 'pageStats' ) // function
 		);
 		
-		// Projects
-		add_menu_page(
-			__( 'Projects', 'orbis' ), // page_title
-			__( 'Projects', 'orbis' ), // menu_title
-			'orbis_view_projects', // capability
-			'orbis_projects', // menu_slug
-			array( $this, 'pageProjects' ), // function
-			$this->plugin->plugin_url( 'images/icon-16x16.png' ) // icon_url
-		);
-		
 		// Domains
 		add_menu_page(
 			__( 'Domains', 'orbis' ), // page_title
@@ -144,10 +134,6 @@ class Orbis_Core_Admin {
 	
 	public function pageStats() {
 		$this->plugin->plugin_include( 'views/stats.php' );
-	}
-	
-	public function pageProjects() {
-		$this->plugin->plugin_include( 'views/projects.php' );
 	}
 	
 	public function pageDomains() {
