@@ -146,15 +146,19 @@ function orbis_save_project( $post_id, $post ) {
 	
 	// OK
 	$definition = array(
-		'_orbis_project_principal_id'    => FILTER_VALIDATE_INT,
-		'_orbis_project_is_invoicable'   => FILTER_VALIDATE_BOOLEAN,
-		'_orbis_project_is_invoiced'     => FILTER_VALIDATE_BOOLEAN,
-		'_orbis_project_invoice_number'  => FILTER_SANITIZE_STRING,
-		'_orbis_project_is_invoice_paid' => FILTER_VALIDATE_BOOLEAN,
-		'_orbis_project_is_finished'     => FILTER_VALIDATE_BOOLEAN
+		'_orbis_project_principal_id' => FILTER_VALIDATE_INT,
+		'_orbis_project_agreement_id' => FILTER_VALIDATE_INT
 	);
 
-	$data = filter_input_array(INPUT_POST, $definition);
+	if ( current_user_can( 'edit_orbis_project_administration' ) ) {
+		$definition['_orbis_project_is_invoicable']   = FILTER_VALIDATE_BOOLEAN;
+		$definition['_orbis_project_is_invoiced']     = FILTER_VALIDATE_BOOLEAN;
+		$definition['_orbis_project_invoice_number']  = FILTER_SANITIZE_STRING;
+		$definition['_orbis_project_is_invoice_paid'] = FILTER_VALIDATE_BOOLEAN;
+		$definition['_orbis_project_is_finished']     = FILTER_VALIDATE_BOOLEAN;
+	}
+
+	$data = filter_input_array( INPUT_POST, $definition );
 	
 	$data['_orbis_project_seconds_available'] = orbis_filter_time_input( INPUT_POST, '_orbis_project_seconds_available' );
 
@@ -198,64 +202,75 @@ function orbis_save_project_sync( $post_id, $post ) {
 
 	// Orbis project ID
 	$orbis_id       = get_post_meta( $post_id, '_orbis_project_id', true );
+	$orbis_id       = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM $wpdb->orbis_projects WHERE post_id = %d;", $post_id ) );
+
 	$principal_id   = get_post_meta( $post_id, '_orbis_project_principal_id', true );
 	$is_invoicable  = get_post_meta( $post_id, '_orbis_project_is_invoicable', true );
 	$is_invoiced    = get_post_meta( $post_id, '_orbis_project_is_invoiced', true );
 	$invoice_number = get_post_meta( $post_id, '_orbis_project_invoice_number', true );
+	$invoice_paid   = get_post_meta( $post_id, '_orbis_project_is_invoice_paid', true );
 	$is_finished    = get_post_meta( $post_id, '_orbis_project_is_finished', true );
 	$seconds        = get_post_meta( $post_id, '_orbis_project_seconds_available', true );
 
-	$data   = array();
-	$format = array();
+	$data = array();
+	$form = array();
 
-	$data['name']   = $post->post_title;
-	$format['name'] = '%s';
+	$data['name'] = $post->post_title;
+	$form['name'] = '%s';
 
 	if ( ! empty( $principal_id ) ) {
-		$data['principal_id']   = $principal_id;
-		$format['principal_id'] = '%d';
+		$data['principal_id'] = $principal_id;
+		$form['principal_id'] = '%d';
 	}
-	
+
+	$data['start_date'] = get_the_time( 'Y-m-d', $post );
+	$form['start_date'] = '%s';
+
 	$data['number_seconds'] = $seconds;
-	$format['number_seconds'] = '%d';
+	$form['number_seconds'] = '%d';
 
-	$data['invoicable']   = $is_invoicable;
-	$format['invoicable'] = '%d';
-
-	$data['invoiced']   = $is_invoiced;
-	$format['invoiced'] = '%d';
-
-	if ( ! empty( $invoice_number ) ) {
-		$data['invoice_number']   = $invoice_number;
-		$format['invoice_number'] = '%s';
+	if ( current_user_can( 'edit_orbis_project_administration' ) ) {
+		$data['invoicable'] = $is_invoicable;
+		$form['invoicable'] = '%d';
+	
+		$data['invoiced'] = $is_invoiced;
+		$form['invoiced'] = '%d';
+	
+		if ( ! empty( $invoice_number ) ) {
+			$data['invoice_number'] = $invoice_number;
+			$form['invoice_number'] = '%s';
+		}
+	
+		$data['invoice_paid'] = $invoice_paid;
+		$form['invoice_paid'] = '%d';
+	
+		$data['finished'] = $is_finished;
+		$form['finished'] = '%d';
 	}
-
-	$data['finished']   = $is_finished;
-	$format['finished'] = '%d';
 
 	if ( empty( $orbis_id ) ) {
 		$data['post_id'] = $post_id;
-		$format['post_id'] = '%d';
+		$form['post_id'] = '%d';
 
-		$result = $wpdb->insert( 'orbis_projects', $data, $format );
+		$result = $wpdb->insert( $wpdb->orbis_projects, $data, $form );
 
 		if ( $result !== false ) {
 			$orbis_id = $wpdb->insert_id;
-
-			update_post_meta( $post_id, '_orbis_project_id', $orbis_id );
 		}
 	} else {
 		$result = $wpdb->update(
-			'orbis_projects', 
+			$wpdb->orbis_projects, 
 			$data, 
 			array( 'id' => $orbis_id ), 
-			$format, 
+			$form, 
 			array( '%d' )
 		);
 	}
+
+	update_post_meta( $post_id, '_orbis_project_id', $orbis_id );
 }
 
-// add_action( 'save_post', 'orbis_save_project_sync', 10, 2 );
+add_action( 'save_post', 'orbis_save_project_sync', 10, 2 );
 
 /**
  * Keychain edit columns
