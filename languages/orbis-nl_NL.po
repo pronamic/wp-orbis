@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-23 14:52+0100\n"
-"PO-Revision-Date: 2013-04-23 14:52+0100\n"
+"POT-Creation-Date: 2013-05-03 10:44+0100\n"
+"PO-Revision-Date: 2013-05-03 10:44+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -17,230 +17,214 @@ msgstr ""
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: orbis.php:86 orbis.php:88 orbis.php:100 orbis.php:328 orbis.php:329
-#: views/projects.php:5
+#: orbis.php:71 orbis.php:73 orbis.php:85 classes/orbis-core-admin.php:97
+#: classes/orbis-core-admin.php:98 views/projects.php:5
 msgid "Projects"
 msgstr "Projecten"
 
-#: orbis.php:89
+#: orbis.php:74
 msgid "Project"
 msgstr "Project"
 
-#: orbis.php:90
+#: orbis.php:75
 msgctxt "orbis_project"
 msgid "Add New"
 msgstr "Nieuw project"
 
-#: orbis.php:91
+#: orbis.php:76
 msgid "Add New Project"
 msgstr "Nieuw project"
 
-#: orbis.php:92
+#: orbis.php:77
 msgid "Edit Project"
 msgstr "Project bewerken"
 
-#: orbis.php:93
+#: orbis.php:78
 msgid "New Project"
 msgstr "Nieuw project"
 
-#: orbis.php:94
+#: orbis.php:79
 msgid "All Projects"
 msgstr "Alle projecten"
 
-#: orbis.php:95
+#: orbis.php:80
 msgid "View Project"
 msgstr "Bekijk project"
 
-#: orbis.php:96
+#: orbis.php:81
 msgid "Search Projects"
 msgstr "Projecten zoeken"
 
-#: orbis.php:97
+#: orbis.php:82
 msgid "No projects found."
 msgstr "Geen projecten gevonden."
 
-#: orbis.php:98
+#: orbis.php:83
 msgid "No projects found in Trash."
 msgstr "Geen projecten gevonden in prullenbak."
 
-#: orbis.php:99
+#: orbis.php:84
 msgid "Parent Project:"
 msgstr "Bovenliggend project:"
 
-#: orbis.php:117 orbis.php:218
+#: orbis.php:102 orbis.php:203
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr "Categorieën"
 
-#: orbis.php:118 orbis.php:219
+#: orbis.php:103 orbis.php:204
 msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr "Categorie"
 
-#: orbis.php:119 orbis.php:220
+#: orbis.php:104 orbis.php:205
 msgid "Search Categories"
 msgstr "Zoek categorieën"
 
-#: orbis.php:120 orbis.php:221
+#: orbis.php:105 orbis.php:206
 msgid "All Categories"
 msgstr "Alle categorieën"
 
-#: orbis.php:121 orbis.php:222
+#: orbis.php:106 orbis.php:207
 msgid "Parent Category"
 msgstr "Bovenliggende categorie"
 
-#: orbis.php:122 orbis.php:223
+#: orbis.php:107 orbis.php:208
 msgid "Parent Category:"
 msgstr "Bovenliggende categorie:"
 
-#: orbis.php:123 orbis.php:224
+#: orbis.php:108 orbis.php:209
 msgid "Edit Category"
 msgstr "Bewerk categorie"
 
-#: orbis.php:124 orbis.php:225
+#: orbis.php:109 orbis.php:210
 msgid "Update Category"
 msgstr "Update categorie"
 
-#: orbis.php:125 orbis.php:226
+#: orbis.php:110 orbis.php:211
 msgid "Add New Category"
 msgstr "Nieuwe categorie"
 
-#: orbis.php:126 orbis.php:227
+#: orbis.php:111 orbis.php:212
 msgid "New Category Name"
 msgstr "Nieuwe categorie naam"
 
-#: orbis.php:127 orbis.php:228
+#: orbis.php:112 orbis.php:213
 msgid "Categories"
 msgstr "Categorieën"
 
-#: orbis.php:140 orbis.php:142 orbis.php:154
+#: orbis.php:125 orbis.php:127 orbis.php:139
 msgid "Companies"
 msgstr "Bedrijven"
 
-#: orbis.php:143 views/projects.php:57 views/subscriptions.php:69
+#: orbis.php:128 views/projects.php:57 views/subscriptions.php:69
 msgid "Company"
 msgstr "Bedrijf"
 
-#: orbis.php:144
+#: orbis.php:129
 msgctxt "orbis_company"
 msgid "Add New"
 msgstr "Nieuw bedrijf"
 
-#: orbis.php:145
+#: orbis.php:130
 msgid "Add New Company"
 msgstr "Nieuwe bedrijf toevoegen"
 
-#: orbis.php:146
+#: orbis.php:131
 msgid "Edit Company"
 msgstr "Bedrijf bewerken"
 
-#: orbis.php:147
+#: orbis.php:132
 msgid "New Company"
 msgstr "Nieuw bedrijf"
 
-#: orbis.php:148
+#: orbis.php:133
 msgid "All Companies"
 msgstr "Alle bedrijven"
 
-#: orbis.php:149
+#: orbis.php:134
 msgid "View Company"
 msgstr "Bekijk bedrijf"
 
-#: orbis.php:150
+#: orbis.php:135
 msgid "Search Companies"
 msgstr "Zoek bedrijven"
 
-#: orbis.php:151
+#: orbis.php:136
 msgid "No companies found."
 msgstr "Geen bedrijven gevonden."
 
-#: orbis.php:152
+#: orbis.php:137
 msgid "No companies found in Trash."
 msgstr "Geen bedrijven gevonden in prullenbak."
 
-#: orbis.php:153
+#: orbis.php:138
 msgid "Parent Company:"
 msgstr "Bovenliggend bedrijf:"
 
-#: orbis.php:162
+#: orbis.php:147
 msgctxt "slug"
 msgid "companies"
 msgstr "bedrijven"
 
-#: orbis.php:170 orbis.php:172
+#: orbis.php:155 orbis.php:157
 msgid "Persons"
 msgstr "Personen"
 
-#: orbis.php:173
+#: orbis.php:158
 msgid "Person"
 msgstr "Persoon"
 
-#: orbis.php:181
+#: orbis.php:166
 msgctxt "slug"
 msgid "persons"
 msgstr "personen"
 
-#: orbis.php:192
+#: orbis.php:177
 msgctxt "taxonomy general name"
 msgid "Genders"
 msgstr "Geslachten"
 
-#: orbis.php:193
+#: orbis.php:178
 msgctxt "taxonomy singular name"
 msgid "Gender"
 msgstr "Geslacht"
 
-#: orbis.php:194
+#: orbis.php:179
 msgid "Search Genders"
 msgstr "Zoek geslachten"
 
-#: orbis.php:195
+#: orbis.php:180
 msgid "All Genders"
 msgstr "Alle geslachten"
 
-#: orbis.php:196
+#: orbis.php:181
 msgid "Parent Gender"
 msgstr "Bovenliggend geslacht"
 
-#: orbis.php:197
+#: orbis.php:182
 msgid "Parent Gender:"
 msgstr "Bovenliggend geslacht:"
 
-#: orbis.php:198
+#: orbis.php:183
 msgid "Edit Gender"
 msgstr "Bewerk geslacht"
 
-#: orbis.php:199
+#: orbis.php:184
 msgid "Update Gender"
 msgstr "Update geslacht"
 
-#: orbis.php:200
+#: orbis.php:185
 msgid "Add New Gender"
 msgstr "Nieuw geslacht toevoegen"
 
-#: orbis.php:201
+#: orbis.php:186
 msgid "New Gender Name"
 msgstr "Nieuw geslacht naam"
 
-#: orbis.php:202
+#: orbis.php:187
 msgid "Genders"
 msgstr "Geslachten"
-
-#: orbis.php:338 orbis.php:339
-msgid "Domains"
-msgstr "Domeinen"
-
-#: orbis.php:348 views/domains-to-invoice.php:5
-msgid "Domains to invoice"
-msgstr "Domeinen te facturen"
-
-#: orbis.php:349
-msgid "To Invoice"
-msgstr "Te factureren"
-
-#: orbis.php:357 orbis.php:358 views/subscriptions.php:20
-msgid "Subscriptions"
-msgstr "Abonnementen"
 
 #: admin/meta-box-company-details.php:10 functions/companies.php:155
 msgid "KvK Number"
@@ -307,53 +291,127 @@ msgstr "Facebook:"
 msgid "LinkedIn:"
 msgstr "LinkedIn:"
 
-#: admin/meta-box-project-details.php:19
+#: admin/meta-box-project-details.php:37
 msgid "Principal ID"
 msgstr "Opdrachtgever ID"
 
-#: admin/meta-box-project-details.php:27 functions/projects.php:269
+#: admin/meta-box-project-details.php:45 functions/projects.php:284
 msgid "Time"
 msgstr "Tijd"
 
-#: admin/meta-box-project-details.php:33
+#: admin/meta-box-project-details.php:51
 msgid ""
 "You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
 msgstr ""
 "Je kunt de tijd invoeren als 1.5 of 1:30 (beide zijn 1 uur en 30 minuten)."
 
-#: admin/meta-box-project-details.php:40
+#: admin/meta-box-project-details.php:61
 msgid "Invoicable"
 msgstr "Factureerbaar"
 
-#: admin/meta-box-project-details.php:46
+#: admin/meta-box-project-details.php:67
 msgid "Project is invoicable"
 msgstr "Project is factureerbaar"
 
-#: admin/meta-box-project-details.php:53
+#: admin/meta-box-project-details.php:74
 msgid "Invoiced"
 msgstr "Gefactureerd"
 
-#: admin/meta-box-project-details.php:59
+#: admin/meta-box-project-details.php:80
 msgid "Project is invoiced"
 msgstr "Project is gefactureerd"
 
-#: admin/meta-box-project-details.php:66
+#: admin/meta-box-project-details.php:87
 msgid "Invoice Number"
 msgstr "Factuurnummer"
 
-#: admin/meta-box-project-details.php:76
+#: admin/meta-box-project-details.php:97
+msgid "Invoice Paid"
+msgstr "Factuur betaald"
+
+#: admin/meta-box-project-details.php:103
+msgid "Invoice is paid"
+msgstr "Factuur is betaald"
+
+#: admin/meta-box-project-details.php:110
 msgid "Finished"
 msgstr "Afgerond"
 
-#: admin/meta-box-project-details.php:82
+#: admin/meta-box-project-details.php:116
 msgid "Project is finished"
 msgstr "Project is afgerond"
+
+#: admin/meta-box-project-details.php:126
+msgid "Agreement ID"
+msgstr "Akkoord ID"
+
+#: admin/meta-box-project-details.php:133
+#: admin/meta-box-project-details.php:136
+msgid "Choose a Agreement"
+msgstr "Kies een akkoord"
+
+#: admin/meta-box-project-details.php:136
+msgid "Set as Agreement"
+msgstr "Stel in als akkoord"
+
+#: admin/meta-box-project-details.php:139
+msgid "You can select an .PDF or .TXT file from the WordPress media library."
+msgstr ""
+"Je kunt een .PDF of .TXT bestand selecteren uit de WordPress media "
+"bibliotheek."
+
+#: admin/meta-box-project-details.php:140
+msgid ""
+"If you received the agreement by mail print the complete mail conversation "
+"with an PDF printer."
+msgstr ""
+"Als je een akkoord per e-mail hebt ontvangen print dan de complete e-mail "
+"conversatie uit met een PDF-printer."
+
+#: classes/orbis-core-admin.php:67 classes/orbis-core-admin.php:68
+#: views/orbis.php:5
+msgid "Orbis"
+msgstr "Orbis"
+
+#: classes/orbis-core-admin.php:79
+msgid "Orbis Settings"
+msgstr "Orbis instellingen"
+
+#: classes/orbis-core-admin.php:80 views/settings.php:5
+msgid "Settings"
+msgstr "Instellingen"
+
+#: classes/orbis-core-admin.php:88
+msgid "Orbis Stats"
+msgstr "Orbis statistieken"
+
+#: classes/orbis-core-admin.php:89 views/stats.php:5
+msgid "Stats"
+msgstr "Statistieken"
+
+#: classes/orbis-core-admin.php:107 classes/orbis-core-admin.php:108
+msgid "Domains"
+msgstr "Domeinen"
+
+#: classes/orbis-core-admin.php:117 views/domains-to-invoice.php:5
+msgid "Domains to invoice"
+msgstr "Domeinen te facturen"
+
+#: classes/orbis-core-admin.php:118
+msgid "To Invoice"
+msgstr "Te factureren"
+
+#: classes/orbis-core-admin.php:126 classes/orbis-core-admin.php:127
+#: views/subscriptions.php:20
+msgid "Subscriptions"
+msgstr "Abonnementen"
 
 #: functions/companies.php:9
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: functions/companies.php:151 functions/projects.php:268
+#: functions/companies.php:151 functions/projects.php:283
+#: templates/projects-without-agreement.php:32
 msgid "Title"
 msgstr "Titel"
 
@@ -365,15 +423,15 @@ msgstr "Online"
 msgid "Administration"
 msgstr "Administratie"
 
-#: functions/companies.php:157 functions/projects.php:270
+#: functions/companies.php:157 functions/projects.php:285
 msgid "Author"
 msgstr "Auteur"
 
-#: functions/companies.php:158 functions/projects.php:271
+#: functions/companies.php:158 functions/projects.php:286
 msgid "Comments"
 msgstr "Reacties"
 
-#: functions/companies.php:159 functions/projects.php:272
+#: functions/companies.php:159 functions/projects.php:287
 msgid "Date"
 msgstr "Datum"
 
@@ -437,13 +495,21 @@ msgstr "Meer resultaten laden..."
 msgid "Searching..."
 msgstr "Zoeken...."
 
-#: functions/projects.php:266
+#: functions/projects.php:281 templates/projects-without-agreement.php:31
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
-#: functions/projects.php:267
+#: functions/projects.php:282
 msgid "Principal"
 msgstr "Opdrachtgever"
+
+#: templates/projects-without-agreement.php:33 views/subscriptions.php:77
+msgid "Actions"
+msgstr "Acties"
+
+#: templates/projects-without-agreement.php:52
+msgid "Edit"
+msgstr "Bewerken"
 
 #: views/domains-to-invoice.php:38 views/domains.php:40 views/projects.php:56
 #: views/subscriptions.php:68
@@ -478,10 +544,6 @@ msgstr "Bericht ID"
 msgid "Edit Domain Name Post"
 msgstr "Bewerk domeinnaam bericht"
 
-#: views/orbis.php:5
-msgid "Orbis"
-msgstr "Orbis"
-
 #: views/projects.php:45
 msgid "No projects founds."
 msgstr "Geen projecten gevonden."
@@ -493,14 +555,6 @@ msgstr "Naam"
 #: views/projects.php:117
 msgid "Edit Project Post"
 msgstr "Bewerk project bericht"
-
-#: views/settings.php:5
-msgid "Settings"
-msgstr "Instellingen"
-
-#: views/stats.php:5
-msgid "Stats"
-msgstr "Statistieken"
 
 #: views/stats.php:135
 msgid "Number domains"
@@ -537,10 +591,6 @@ msgstr "Prijs"
 #: views/subscriptions.php:76
 msgid "License Key"
 msgstr "Licentiesleutel"
-
-#: views/subscriptions.php:77
-msgid "Actions"
-msgstr "Acties"
 
 #: views/subscriptions.php:136
 msgid "Update"
@@ -659,9 +709,6 @@ msgstr "Bewerk abonnement bericht"
 #~ msgid "WordPress"
 #~ msgstr "WordPress"
 
-#~ msgid "Editor"
-#~ msgstr "Auteur"
-
 #~ msgid "Keychain Details"
 #~ msgstr "Sleutelhanger details"
 
@@ -707,9 +754,6 @@ msgstr "Bewerk abonnement bericht"
 #~ msgstr ""
 #~ "Gebruik een volledige URL: voor HTTP <code>http://</code>, voor FTP "
 #~ "<code>ftp://</code>, voor SFTP <code>sftp://</code>"
-
-#~ msgid "Invoice Paid"
-#~ msgstr "Factuur betaald"
 
 #~ msgid "Project invoice is paid"
 #~ msgstr "Project factuur is betaald"
