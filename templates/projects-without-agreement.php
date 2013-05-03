@@ -16,6 +16,10 @@ $query = new WP_Query( array(
 		array(
 			'key'     => '_orbis_project_agreement_id',
 			'compare' => 'NOT EXISTS'
+		),
+		array(
+			'key'     => '_orbis_project_is_invoicable',
+			'compare' => 'EXISTS'
 		)
 	)
 ) );

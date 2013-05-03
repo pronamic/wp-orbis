@@ -124,4 +124,25 @@ class Orbis_Plugin {
 
 		load_plugin_textdomain( $domain, false, $plugin_rel_path );
 	}
+
+	//////////////////////////////////////////////////
+
+	/**
+	 * Update the specified roles
+	 * 
+	 * @param array $roles
+	 */
+	public function update_roles( $roles ) {
+		global $wp_roles;
+	
+		if ( ! isset( $wp_roles ) ) {
+			$wp_roles = new WP_Roles();
+		}
+	
+		foreach ( $roles as $role => $capabilities ) {
+			foreach  ( $capabilities as $cap => $grant ) {
+				$wp_roles->add_cap( $role, $cap, $grant );
+			}
+		}
+	}
 }

@@ -7,6 +7,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$this->set_name( 'orbis' );
 		$this->set_db_version( '1.0' );
 
+		$this->plugin_include( 'includes/post.php' );
 		$this->plugin_include( 'includes/template.php' );
 		$this->plugin_include( 'includes/project-template.php' );
 
@@ -24,6 +25,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	}
 
 	public function install() {
+		// Tables
 		orbis_install_table( 'orbis_projects', '
 			id BIGINT(16) UNSIGNED NOT NULL AUTO_INCREMENT,
 			name VARCHAR(128) NOT NULL,
@@ -48,5 +50,85 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			KEY contact_id_1 (contact_id_1),
 			KEY contact_id_2 (contact_id_2)
 		' );
+		
+		// Roles
+		$roles = $this->get_roles();
+
+		$this->update_roles( $roles );
+		
+		// Parent
+		parent::install();
+	}
+
+	//////////////////////////////////////////////////
+
+	/**
+	 * Get roles
+	 * 
+	 * @return array
+	 */
+	public function get_roles() {
+		// @see http://codex.wordpress.org/Function_Reference/register_post_type
+		global $wp_post_types;
+
+		// Default roles
+		$roles = array(
+			'super_administrator' => array(
+				'edit_orbis_project_administration' => true
+			),
+			'administrator' => array(
+				
+			),
+			'editor' => array(
+				
+			),
+			'employee' => array(
+				
+			)
+		);
+
+		// Roles post capabilities
+		$roles_post_cap = array(
+			'super_administrator' => array(
+				'orbis_company' => orbis_post_type_capabilities( true, array(
+
+				) ),
+				'orbis_project' => orbis_post_type_capabilities( true, array(
+
+				) )
+			),
+			'administrator' => array(
+				'orbis_company' => orbis_post_type_capabilities( true, array(
+					'delete_post' => false
+				) ),
+				'orbis_project' => orbis_post_type_capabilities( true, array(
+					'delete_post' => false
+				) )
+			),
+			'editor' => array(
+				'orbis_company' => orbis_post_type_capabilities( false, array(
+					'read_post' => true
+				) ),
+				'orbis_project' => orbis_post_type_capabilities( false, array(
+					'read_post' => true
+				) )
+			),
+			'employee' => array(
+				'orbis_company' => orbis_post_type_capabilities( false, array(
+					'read_post' => true
+				) ),
+				'orbis_project' => orbis_post_type_capabilities( false, array(
+					'read_post' => true
+				) )
+			)
+		);
+
+		foreach ( $roles_post_cap as $role => $post_types ) {
+			foreach ( $post_types as $post_type => $capabilities ) {
+				orbis_translate_post_type_capabilities( $post_type, $capabilities, $roles[$role] );
+			}
+		}
+
+		return $roles;
 	}
 }

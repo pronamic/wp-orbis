@@ -52,22 +52,22 @@ if ( true ) {
 				</p>
 			</td>
 		</tr>
+		<tr valign="top">
+			<th scope="row">
+				<label for="_orbis_project_is_invoicable">
+					<?php _e( 'Invoicable', 'orbis' ); ?>
+				</label>
+			</th>
+			<td>
+				<label for="_orbis_project_is_invoicable">
+					<input type="checkbox" value="yes" id="_orbis_project_is_invoicable" name="_orbis_project_is_invoicable" <?php checked( $is_invoicable ); ?> />
+					<?php _e( 'Project is invoicable', 'orbis' ); ?>
+				</label>
+			</td>
+		</tr>
 
 		<?php if ( current_user_can( 'edit_orbis_project_administration' ) ) : ?>
 
-			<tr valign="top">
-				<th scope="row">
-					<label for="_orbis_project_is_invoicable">
-						<?php _e( 'Invoicable', 'orbis' ); ?>
-					</label>
-				</th>
-				<td>
-					<label for="_orbis_project_is_invoicable">
-						<input type="checkbox" value="yes" id="_orbis_project_is_invoicable" name="_orbis_project_is_invoicable" <?php checked( $is_invoicable ); ?> />
-						<?php _e( 'Project is invoicable', 'orbis' ); ?>
-					</label>
-				</td>
-			</tr>
 			<tr valign="top">
 				<th scope="row">
 					<label for="_orbis_project_is_invoiced">

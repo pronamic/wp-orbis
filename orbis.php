@@ -66,10 +66,10 @@ class Orbis {
 		// Post types
 
 		register_post_type(
-			'orbis_project' , 
+			'orbis_project',
 			array(
-				'label'         => __( 'Projects', 'orbis' ) , 
-				'labels'        => array(
+				'label'           => __( 'Projects', 'orbis' ), 
+				'labels'          => array(
 					'name'               => __( 'Projects', 'orbis' ),
 					'singular_name'      => __( 'Project', 'orbis' ),
 					'add_new'            => _x( 'Add New', 'orbis_project', 'orbis' ),
@@ -84,12 +84,13 @@ class Orbis {
 					'parent_item_colon'  => __( 'Parent Project:', 'orbis' ),
 					'menu_name'          => __( 'Projects', 'orbis' )
 				) ,
-				'public'        => true ,
-				'menu_position' => 30 , 
-				'menu_icon'     => plugins_url( 'images/project.png', __FILE__ ) , 
-				'supports'      => array( 'title', 'editor', 'author', 'comments' ) ,
-				'has_archive'   => true , 
-				'rewrite'       => array( 'slug' => 'projecten' ) 
+				'public'          => true,
+				'menu_position'   => 30,
+				'menu_icon'       => plugins_url( 'images/project.png', __FILE__ ),
+				'capability_type' => 'orbis_project',
+				'supports'        => array( 'title', 'editor', 'author', 'comments' ),
+				'has_archive'     => true, 
+				'rewrite'         => array( 'slug' => 'projecten' ) 
 			)
 		);
 
@@ -122,8 +123,8 @@ class Orbis {
 		register_post_type(
 			'orbis_company' , 
 			array(
-				'label'         => __( 'Companies', 'orbis' ), 
-				'labels'        => array(
+				'label'           => __( 'Companies', 'orbis' ), 
+				'labels'          => array(
 					'name'               => __( 'Companies', 'orbis' ),
 					'singular_name'      => __( 'Company', 'orbis' ),
 					'add_new'            => _x( 'Add New', 'orbis_company', 'orbis' ),
@@ -138,12 +139,13 @@ class Orbis {
 					'parent_item_colon'  => __( 'Parent Company:', 'orbis' ),
 					'menu_name'          => __( 'Companies', 'orbis' )
 				) ,
-				'public'        => true ,
-				'menu_position' => 30 , 
-				'menu_icon'     => plugins_url('images/company.png', __FILE__) , 
-				'supports'      => array('title', 'editor', 'author', 'comments', 'thumbnail') ,
-				'has_archive'   => true , 
-				'rewrite'       => array(
+				'public'          => true ,
+				'menu_position'   => 30 , 
+				'menu_icon'       => plugins_url('images/company.png', __FILE__) , 
+				'capability_type' => array( 'orbis_company', 'orbis_companies' ),
+				'supports'        => array('title', 'editor', 'author', 'comments', 'thumbnail') ,
+				'has_archive'     => true , 
+				'rewrite'         => array(
 					'slug' => _x( 'companies', 'slug', 'orbis' )
 				) 
 			)
