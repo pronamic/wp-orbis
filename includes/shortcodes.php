@@ -48,4 +48,4 @@ function orbis_shortcode_projects_without_agreement( $atts ) {
 	return $return;
 }
 
-add_shortcode( 'projects_without_agreement', 'orbis_shortcode_projects_without_agreement' );
+add_shortcode( 'orbis_projects_without_agreement', 'orbis_shortcode_projects_without_agreement' );
