@@ -5,7 +5,7 @@ function orbis_filter_time_input( $type, $variable_name ) {
 
 	$value = filter_input( $type, $variable_name, FILTER_SANITIZE_STRING );
 
-	$part_hours = $value;
+	$part_hours   = $value;
 	$part_minutes = 0;
 
 	$position_colon = strpos( $value, ':' );
