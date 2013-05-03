@@ -134,31 +134,31 @@ class Orbis_Core_Admin {
 
 	//////////////////////////////////////////////////
 	
-	public static function page() {
+	public function page() {
 		$this->plugin->plugin_include( 'views/orbis.php' );
 	}
 	
-	public static function pageSettings() {
+	public function pageSettings() {
 		$this->plugin->plugin_include( 'views/settings.php' );
 	}
 	
-	public static function pageStats() {
+	public function pageStats() {
 		$this->plugin->plugin_include( 'views/stats.php' );
 	}
 	
-	public static function pageProjects() {
+	public function pageProjects() {
 		$this->plugin->plugin_include( 'views/projects.php' );
 	}
 	
-	public static function pageDomains() {
+	public function pageDomains() {
 		$this->plugin->plugin_include( 'views/domains.php' );
 	}
 	
-	public static function pageDomainsToInvoice() {
+	public function pageDomainsToInvoice() {
 		$this->plugin->plugin_include( 'views/domains-to-invoice.php' );
 	}
 	
-	public static function pageSubscriptions() {
+	public function pageSubscriptions() {
 		$this->plugin->plugin_include( 'views/subscriptions.php' );
 	}
 }
