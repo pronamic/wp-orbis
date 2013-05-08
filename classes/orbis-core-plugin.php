@@ -7,6 +7,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$this->set_name( 'orbis' );
 		$this->set_db_version( '1.0' );
 
+		$this->plugin_include( 'includes/administration.php' );
 		$this->plugin_include( 'includes/post.php' );
 		$this->plugin_include( 'includes/template.php' );
 		$this->plugin_include( 'includes/project-template.php' );
@@ -16,7 +17,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		
 		if ( is_admin() ) {
 			global $orbis_admin;
-			
+
 			$orbis_admin = new Orbis_Core_Admin( $this );
 		}
 	}
