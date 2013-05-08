@@ -11,6 +11,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$this->plugin_include( 'includes/template.php' );
 		$this->plugin_include( 'includes/project-template.php' );
 
+		orbis_register_table( 'orbis_companies', false, '' );
 		orbis_register_table( 'orbis_projects', false, '' );
 		
 		if ( is_admin() ) {

@@ -255,20 +255,20 @@ function orbis_projects_posts_clauses( $pieces, $query ) {
 
 	if ( $post_type == 'orbis_project' ) {
 		$fields = ", 
-			project.number_seconds AS project_number_seconds ,
-			project.finished AS project_is_finished ,  
-			project.invoiced AS project_is_invoiced ,
-			principal.id AS principal_id ,
-			principal.name AS principal_name , 
+			project.number_seconds AS project_number_seconds,
+			project.finished AS project_is_finished,
+			project.invoiced AS project_is_invoiced,
+			principal.id AS principal_id,
+			principal.name AS principal_name,
 			principal.post_id AS principal_post_id
 		";
 
 		$join = " 
 			LEFT JOIN 
-				orbis_projects AS project 
+				$wpdb->orbis_projects AS project 
 					ON $wpdb->posts.ID = project.post_id 
 			LEFT JOIN
-				orbis_companies AS principal
+				$wpdb->orbis_companies AS principal
 					ON project.principal_id = principal.id
 		";
 		
