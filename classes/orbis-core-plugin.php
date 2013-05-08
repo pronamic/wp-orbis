@@ -43,7 +43,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			invoicable BOOLEAN NOT NULL DEFAULT TRUE,
 			invoiced BOOLEAN NOT NULL DEFAULT FALSE,
 			invoice_number VARCHAR(128) DEFAULT NULL,
-			invoice_paid BOOLEAN NOT NULL DEFAULT FALSE,
 			finished BOOLEAN NOT NULL DEFAULT FALSE,
 			PRIMARY KEY  (id),
 			KEY principal_id (principal_id),

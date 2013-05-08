@@ -154,7 +154,6 @@ function orbis_save_project( $post_id, $post ) {
 	if ( current_user_can( 'edit_orbis_project_administration' ) ) {
 		$definition['_orbis_project_is_invoiced']     = FILTER_VALIDATE_BOOLEAN;
 		$definition['_orbis_project_invoice_number']  = FILTER_SANITIZE_STRING;
-		$definition['_orbis_project_is_invoice_paid'] = FILTER_VALIDATE_BOOLEAN;
 		$definition['_orbis_project_is_finished']     = FILTER_VALIDATE_BOOLEAN;
 	}
 
@@ -208,7 +207,6 @@ function orbis_save_project_sync( $post_id, $post ) {
 	$is_invoicable  = get_post_meta( $post_id, '_orbis_project_is_invoicable', true );
 	$is_invoiced    = get_post_meta( $post_id, '_orbis_project_is_invoiced', true );
 	$invoice_number = get_post_meta( $post_id, '_orbis_project_invoice_number', true );
-	$invoice_paid   = get_post_meta( $post_id, '_orbis_project_is_invoice_paid', true );
 	$is_finished    = get_post_meta( $post_id, '_orbis_project_is_finished', true );
 	$seconds        = get_post_meta( $post_id, '_orbis_project_seconds_available', true );
 
@@ -239,9 +237,6 @@ function orbis_save_project_sync( $post_id, $post ) {
 		$data['invoice_number'] = $invoice_number;
 		$form['invoice_number'] = '%s';
 	}
-	
-	$data['invoice_paid'] = $invoice_paid;
-	$form['invoice_paid'] = '%d';
 	
 	$data['finished'] = $is_finished;
 	$form['finished'] = '%d';

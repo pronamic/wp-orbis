@@ -9,7 +9,6 @@ $principal_id   = get_post_meta( $post->ID, '_orbis_project_principal_id', true 
 $is_invoicable  = filter_var( get_post_meta( $post->ID, '_orbis_project_is_invoicable', true ), FILTER_VALIDATE_BOOLEAN );
 $is_invoiced    = filter_var( get_post_meta( $post->ID, '_orbis_project_is_invoiced', true ), FILTER_VALIDATE_BOOLEAN );
 $invoice_number = get_post_meta( $post->ID, '_orbis_project_invoice_number', true );
-$invoice_paid   = filter_var( get_post_meta( $post->ID, '_orbis_project_is_invoice_paid', true ), FILTER_VALIDATE_BOOLEAN );
 $is_finished    = filter_var( get_post_meta( $post->ID, '_orbis_project_is_finished', true ), FILTER_VALIDATE_BOOLEAN );
 $seconds        = get_post_meta( $post->ID, '_orbis_project_seconds_available', true );
 $agreement_id   = get_post_meta( $post->ID, '_orbis_project_agreement_id', true );
@@ -23,7 +22,6 @@ if ( true ) {
 		$is_invoicable  = $project->invoicable;
 		$is_invoiced    = $project->invoiced;
 		$invoice_number = $project->invoice_number;
-		$invoice_paid   = $project->invoice_paid;
 		$is_finished    = $project->finished;
 		$seconds        = $project->number_seconds;
 	}
@@ -89,19 +87,6 @@ if ( true ) {
 				</th>
 				<td>
 					<input type="text" id="orbis_project_invoice_number" name="_orbis_project_invoice_number" value="<?php echo esc_attr( $invoice_number ); ?>" />
-				</td>
-			</tr>
-			<tr valign="top">
-				<th scope="row">
-					<label for="_orbis_project_is_invoice_paid">
-						<?php _e( 'Invoice Paid', 'orbis' ); ?>
-					</label>
-				</th>
-				<td>
-					<label for="_orbis_project_is_invoice_paid">
-						<input type="checkbox" value="yes" id="_orbis_project_is_invoice_paid" name="_orbis_project_is_invoice_paid" <?php checked( $invoice_paid ); ?> />
-						<?php _e( 'Invoice is paid', 'orbis' ); ?>
-					</label>
 				</td>
 			</tr>
 			<tr valign="top">
