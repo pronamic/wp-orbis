@@ -18,13 +18,13 @@ function orbis_price( $price ) {
 }
 
 /**
- * Format seconds
+ * Format time
  * 
  * @param int $seconds
  * @param string $format
  * @return mixed
  */
-function orbis_format_seconds( $seconds, $format = 'H:m' ) {
+function orbis_time( $seconds, $format = 'H:m' ) {
 	$hours   = $seconds / 3600;
 	$minutes = ( $seconds % 3600 ) / 60;
 

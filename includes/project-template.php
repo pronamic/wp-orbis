@@ -48,7 +48,7 @@ function orbis_project_get_the_time( $format = 'H:m' ) {
 	$time = null;
 
 	if ( isset( $post->project_number_seconds ) ) {
-		$time = orbis_format_seconds( $post->project_number_seconds, $format );
+		$time = orbis_time( $post->project_number_seconds, $format );
 	}
 
 	return $time;

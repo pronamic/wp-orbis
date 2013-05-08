@@ -7,6 +7,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$this->set_name( 'orbis' );
 		$this->set_db_version( '1.0' );
 
+		$this->plugin_include( 'includes/deprecated.php' );
 		$this->plugin_include( 'includes/administration.php' );
 		$this->plugin_include( 'includes/post.php' );
 		$this->plugin_include( 'includes/template.php' );
