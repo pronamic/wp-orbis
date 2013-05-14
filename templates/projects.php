@@ -16,8 +16,10 @@ $sql = '
 		project.number_seconds AS availableSeconds , 
 		project.invoice_number AS invoiceNumber , 
 		project.invoicable , 
+		project.post_id AS project_post_id,
 		principal.id AS principalId , 
-		principal.name AS principalName , 
+		principal.name AS principalName ,
+		principal.post_id AS principal_post_id, 
 		manager.id AS managerId ,  
 		manager.first_name AS managerName , 
 		SUM(registration.number_seconds) AS registeredSeconds 
