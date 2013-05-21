@@ -8,8 +8,10 @@ $password = DB_PASSWORD;
 $pdo = new PDO($dsn, $user, $password);
 $pdo->exec('SET CHARACTER SET utf8');
 
+global $wpdb;
+
 // Managers
-$sql = '
+$sql = "
 	SELECT
 		project.id , 
 		project.name , 
@@ -17,20 +19,23 @@ $sql = '
 		project.invoice_number AS invoiceNumber , 
 		project.invoicable , 
 		project.post_id AS project_post_id,
+		manager.ID AS project_manager_id,
+		manager.display_name AS project_manager_name,
 		principal.id AS principalId , 
 		principal.name AS principalName ,
 		principal.post_id AS principal_post_id, 
-		manager.id AS managerId ,  
-		manager.first_name AS managerName , 
 		SUM(registration.number_seconds) AS registeredSeconds 
 	FROM
 		orbis_projects AS project
 			LEFT JOIN
+		$wpdb->posts AS post
+				ON project.post_id = post.ID
+			LEFT JOIN
+		$wpdb->users AS manager
+				ON	post.post_author = manager.ID
+			LEFT JOIN
 		orbis_companies AS principal
 				ON project.principal_id = principal.id
-			LEFT JOIN
-		orbis_persons AS manager
-				ON project.contact_id_1 = manager.id
 			LEFT JOIN
 		orbis_hours_registration AS registration
 				ON project.id = registration.project_id 
@@ -41,7 +46,7 @@ $sql = '
 		project.id 
 	ORDER BY
 		%s ;
-';
+";
 
 // Order by
 $orderBy = 'principal.name , project.name';
@@ -78,10 +83,10 @@ $managers = array();
 // Projects and managers
 foreach($projects as $project) {
 	// Find manager
-	if(!isset($managers[$project->managerId])) {
-		$manager = new stdClass();
-		$manager->id = $project->managerId;
-		$manager->name = $project->managerName;
+	if(!isset($managers[$project->project_manager_id])) {
+		$manager           = new stdClass();
+		$manager->id       = $project->project_manager_id;
+		$manager->name     = $project->project_manager_name;
 		$manager->projects = array();
 
 		$managers[$manager->id] = $manager;
@@ -91,7 +96,7 @@ foreach($projects as $project) {
 	$project->availableSeconds = $project->availableSeconds;
 	$project->registeredSeconds = $project->registeredSeconds;
 
-	$manager = $managers[$project->managerId];
+	$manager = $managers[$project->project_manager_id];
 	$manager->projects[] = $project;
 }
 

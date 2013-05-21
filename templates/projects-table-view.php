@@ -43,7 +43,7 @@
 							</a>
 						</td>
 						<td>
-							<span style="color: <?php echo $project->failed ? 'Red' : 'Green'; ?>;"><?php echo orbis_format_seconds( $project->registeredSeconds ); ?></span>
+							<span style="color: <?php echo $project->failed ? 'Red' : 'Green'; ?>;"><?php echo orbis_time( $project->registeredSeconds ); ?></span>
 						</td>
 						<td>
 							<?php echo orbis_time( $project->availableSeconds ); ?>
@@ -55,7 +55,7 @@
 							<?php echo $project->invoiceNumber; ?>
 						</td>
 						<td>
-							<?php edit_post_link( __( 'Edit', 'orbis' ), '', '', $project->post_id ); ?>
+							<?php edit_post_link( __( 'Edit', 'orbis' ), '', '', $project->project_post_id ); ?>
 						</td>
 					</tr>
 		
