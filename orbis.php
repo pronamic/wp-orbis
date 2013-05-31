@@ -247,36 +247,3 @@ class Orbis {
 }
 
 Orbis::bootstrap( __FILE__ );
-
-function orbis_projects_posts_clauses( $pieces, $query ) {
-	global $wpdb;
-
-	$post_type = $query->get( 'post_type' );
-
-	if ( $post_type == 'orbis_project' ) {
-		$fields = ", 
-			project.number_seconds AS project_number_seconds,
-			project.finished AS project_is_finished,
-			project.invoiced AS project_is_invoiced,
-			principal.id AS principal_id,
-			principal.name AS principal_name,
-			principal.post_id AS principal_post_id
-		";
-
-		$join = " 
-			LEFT JOIN 
-				$wpdb->orbis_projects AS project 
-					ON $wpdb->posts.ID = project.post_id 
-			LEFT JOIN
-				$wpdb->orbis_companies AS principal
-					ON project.principal_id = principal.id
-		";
-		
-		$pieces['join']   .= $join;
-		$pieces['fields'] .= $fields;
-	}
-
-    return $pieces;
-}
-
-add_filter( 'posts_clauses', 'orbis_projects_posts_clauses', 10, 2 );
