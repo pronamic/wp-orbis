@@ -33,6 +33,8 @@ if ( $query->have_posts() ) : ?>
 			<thead>
 				<tr>
 					<th scope="col"><?php _e( 'Orbis ID', 'orbis' ); ?></th>
+					<th scope="col"><?php _e( 'Project Manager', 'orbis' ); ?></th>
+					<th scope="col"><?php _e( 'Principal', 'orbis' ); ?></th>
 					<th scope="col"><?php _e( 'Title', 'orbis' ); ?></th>
 					<th scope="col"><?php _e( 'Actions', 'orbis' ); ?></th>
 				</tr>
@@ -45,6 +47,25 @@ if ( $query->have_posts() ) : ?>
 					<tr>
 						<td>
 							<?php echo get_post_meta( get_the_ID(), '_orbis_project_id', true ); ?>
+						</td>
+						<td>
+							<?php the_author(); ?>
+						</td>
+						<td>
+							<?php 
+							
+							if ( orbis_project_has_principal() ) {
+								printf( 
+									'<a href="%s">%s</a>',
+									esc_attr( orbis_project_principal_get_permalink() ),
+									orbis_project_principel_get_the_name()
+								);
+							}
+		
+							?>
+						</td>
+						<td>
+							<?php the_author(); ?>
 						</td>
 						<td>
 							<a href="<?php the_permalink(); ?>">
