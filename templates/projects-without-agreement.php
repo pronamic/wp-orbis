@@ -65,9 +65,6 @@ if ( $query->have_posts() ) : ?>
 							?>
 						</td>
 						<td>
-							<?php the_author(); ?>
-						</td>
-						<td>
 							<a href="<?php the_permalink(); ?>">
 								<?php the_title(); ?>
 							</a>
