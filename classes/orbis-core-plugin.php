@@ -9,6 +9,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		$this->plugin_include( 'includes/deprecated.php' );
 		$this->plugin_include( 'includes/administration.php' );
+		$this->plugin_include( 'includes/email.php' );
 		$this->plugin_include( 'includes/post.php' );
 		$this->plugin_include( 'includes/project.php' );
 		$this->plugin_include( 'includes/template.php' );
