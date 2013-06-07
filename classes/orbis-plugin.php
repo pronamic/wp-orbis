@@ -13,6 +13,8 @@ class Orbis_Plugin {
 
 	public $dirname;
 
+	public $dir_path;
+
 	public $db_version;
 
 	//////////////////////////////////////////////////
@@ -23,8 +25,9 @@ class Orbis_Plugin {
 	 * @param string $file
 	 */
 	public function __construct( $file ) {
-		$this->file    = $file;
-		$this->dirname = dirname( $file );
+		$this->file     = $file;
+		$this->dirname  = dirname( $file );
+		$this->dir_path = plugin_dir_path( $file );
 
 		add_action( 'admin_init',     array( $this, 'update' ) );
 		add_action( 'plugins_loaded', array( $this, 'loaded' ) );
@@ -143,6 +146,34 @@ class Orbis_Plugin {
 			foreach  ( $capabilities as $cap => $grant ) {
 				$wp_roles->add_cap( $role, $cap, $grant );
 			}
+		}
+	}
+
+	//////////////////////////////////////////////////
+
+	public function locate_template( $template_name ) {
+		$template = locate_template( array(
+			$template_name
+		) );
+
+		if ( ! $template ) {
+			$template = $this->dir_path . 'templates/' . $template_name;
+		}
+
+		return $template;
+	}
+
+	public function get_template( $template_name, $echo = true ) {
+		if ( ! $echo ) {
+			ob_start();
+		}
+
+		$located = $this->locate_template( $template_name );
+
+		include $located;
+		
+		if ( ! $echo ) {
+			return ob_get_clean();
 		}
 	}
 }
