@@ -91,15 +91,6 @@ class Orbis_Core_Admin {
 			'orbis_stats', // menu_slug
 			array( $this, 'pageStats' ) // function
 		);
-		
-		add_submenu_page(
-			'orbis_domains', // parent_slug 
-			__( 'Domains to invoice', 'orbis' ), // page_title
-			__( 'To Invoice', 'orbis' ), // menu_title
-			'orbis_view_domains_to_invoice', // capability
-			'orbis_domains_to_invoice', // menu_slug
-			array( $this, 'pageDomainsToInvoice' ) // function
-		);
 	}
 
 	//////////////////////////////////////////////////
@@ -114,9 +105,5 @@ class Orbis_Core_Admin {
 	
 	public function pageStats() {
 		$this->plugin->plugin_include( 'views/stats.php' );
-	}
-	
-	public function pageDomainsToInvoice() {
-		$this->plugin->plugin_include( 'views/domains-to-invoice.php' );
 	}
 }
