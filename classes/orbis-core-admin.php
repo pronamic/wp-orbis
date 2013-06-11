@@ -100,16 +100,6 @@ class Orbis_Core_Admin {
 			'orbis_domains_to_invoice', // menu_slug
 			array( $this, 'pageDomainsToInvoice' ) // function
 		);
-		
-		// Subscriptions
-		add_menu_page(
-			__( 'Subscriptions', 'orbis' ), // page_title
-			__( 'Subscriptions', 'orbis'), // menu_title
-			'orbis_view_subscriptions', // capability
-			'orbis_subscriptions', // menu_slug
-			array( $this, 'pageSubscriptions'), // function
-			$this->plugin->plugin_url( 'images/icon-16x16.png' ) // icon_url
-		);
 	}
 
 	//////////////////////////////////////////////////
@@ -128,9 +118,5 @@ class Orbis_Core_Admin {
 	
 	public function pageDomainsToInvoice() {
 		$this->plugin->plugin_include( 'views/domains-to-invoice.php' );
-	}
-	
-	public function pageSubscriptions() {
-		$this->plugin->plugin_include( 'views/subscriptions.php' );
 	}
 }
