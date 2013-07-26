@@ -13,12 +13,12 @@ Author URI: http://pronamic.eu/
 License: GPL
 */
 
-require_once 'functions/functions.php';
-require_once 'functions/persons.php';
-require_once 'functions/companies.php';
-require_once 'functions/projects.php';
-require_once 'functions/log.php';
-require_once 'functions/flot.php';
+require_once 'includes/functions.php';
+require_once 'includes/persons.php';
+require_once 'includes/companies.php';
+require_once 'includes/projects.php';
+require_once 'includes/log.php';
+require_once 'includes/flot.php';
 require_once 'includes/scheme.php';
 require_once 'includes/shortcodes.php';
 require_once 'admin/includes/upgrade.php';
