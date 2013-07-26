@@ -1,10 +1,12 @@
-<?php 
+<?php
+
+global $post;
 
 $person_email_address = get_post_meta( $post->ID, '_orbis_person_email_address', true );
-$person_phone_number = get_post_meta( $post->ID, '_orbis_person_phone_number', true );
+$person_phone_number  = get_post_meta( $post->ID, '_orbis_person_phone_number', true );
 $person_mobile_number = get_post_meta( $post->ID, '_orbis_person_mobile_number', true );
 
-$person_twitter = get_post_meta( $post->ID, '_orbis_person_twitter', true );
+$person_twitter  = get_post_meta( $post->ID, '_orbis_person_twitter', true );
 $person_facebook = get_post_meta( $post->ID, '_orbis_person_facebook', true );
 $person_linkedin = get_post_meta( $post->ID, '_orbis_person_linkedin', true );
 

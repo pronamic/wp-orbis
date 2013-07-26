@@ -1,5 +1,18 @@
 <?php
 
+global $post;
+
+$kvk_number = get_post_meta( $post->ID, '_orbis_company_kvk_number', true );
+$email      = get_post_meta( $post->ID, '_orbis_company_email', true );
+$website    = get_post_meta( $post->ID, '_orbis_company_website', true );
+
+$address    = get_post_meta( $post->ID, '_orbis_company_address', true );
+$postcode   = get_post_meta( $post->ID, '_orbis_company_postcode', true );
+$city       = get_post_meta( $post->ID, '_orbis_company_city', true );
+$country    = get_post_meta( $post->ID, '_orbis_company_country', true );
+
+$ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
+
 wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_nonce' );
 
 ?>
@@ -51,7 +64,7 @@ wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_no
 			<th scope="row">
 				<label for="orbis_company_ebilling"><?php _e( 'Electronic billing', 'orbis' ); ?></label>
 			</th>
-			<td>		
+			<td>
 				<label for="orbis_company_ebilling">
 					<input id="orbis_company_ebilling" name="_orbis_company_ebilling" value="1" type="checkbox" <?php checked( $ebilling ); ?> />
 					<?php _e( 'Send bills electronically', 'orbis' ); ?>

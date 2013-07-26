@@ -4,7 +4,7 @@
  * Add person meta boxes
  */
 function orbis_company_add_meta_boxes() {
-    add_meta_box( 
+    add_meta_box(
         'orbis_company_details',
         __( 'Company Details', 'orbis' ),
         'orbis_company_details_meta_box',
@@ -18,22 +18,13 @@ add_action( 'add_meta_boxes', 'orbis_company_add_meta_boxes' );
 
 /**
  * Peron details meta box
- * 
+ *
  * @param array $post
  */
 function orbis_company_details_meta_box( $post ) {
-	$kvk_number = get_post_meta( $post->ID, '_orbis_company_kvk_number', true );
-	$email      = get_post_meta( $post->ID, '_orbis_company_email', true );
-	$website    = get_post_meta( $post->ID, '_orbis_company_website', true );
-	
-	$address    = get_post_meta( $post->ID, '_orbis_company_address', true );
-	$postcode   = get_post_meta( $post->ID, '_orbis_company_postcode', true );
-	$city       = get_post_meta( $post->ID, '_orbis_company_city', true );
-	$country    = get_post_meta( $post->ID, '_orbis_company_country', true );
-	
-	$ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
+	global $orbis_plugin;
 
-	include dirname( Orbis::$file ) . '/admin/meta-box-company-details.php';
+	$orbis_plugin->plugin_include( 'admin/meta-box-company-details.php' );
 }
 
 /**
@@ -41,7 +32,7 @@ function orbis_company_details_meta_box( $post ) {
  */
 function orbis_save_company( $post_id, $post ) {
 	// Doing autosave
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) { 
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) {
 		return;
 	}
 
@@ -55,7 +46,7 @@ function orbis_save_company( $post_id, $post ) {
 	if ( ! ( $post->post_type == 'orbis_company' && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
-	
+
 	// OK
 	$definition = array(
 		'_orbis_company_kvk_number' => FILTER_SANITIZE_STRING,
@@ -67,10 +58,10 @@ function orbis_save_company( $post_id, $post ) {
 		'_orbis_company_country'    => FILTER_SANITIZE_STRING,
 		'_orbis_company_ebilling'   => FILTER_VALIDATE_BOOLEAN
 	);
-	
+
 	$data = filter_input_array(INPUT_POST, $definition);
 
-	foreach ( $data as $key => $value ) {		
+	foreach ( $data as $key => $value ) {
 		if ( empty( $value ) ) {
 			delete_post_meta( $post_id, $key);
 		} else {
@@ -86,7 +77,7 @@ add_action( 'save_post', 'orbis_save_company', 10, 2 );
  */
 function orbis_save_company_sync( $post_id, $post ) {
 	// Doing autosave
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) { 
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) {
 		return;
 	}
 
@@ -112,15 +103,15 @@ function orbis_save_company_sync( $post_id, $post ) {
 	$orbis_id = get_post_meta( $post_id, '_orbis_company_id', true );
 
 	if ( empty( $orbis_id ) ) {
-		$result = $wpdb->insert( 
-			'orbis_companies' , 
+		$result = $wpdb->insert(
+			'orbis_companies' ,
 			array(
 				'post_id' => $post_id ,
-				'name' => $post->post_title  
-			) , 
+				'name' => $post->post_title
+			) ,
 			array(
-				'%d' , 
-				'%s' 
+				'%d' ,
+				'%s'
 			)
 		);
 
@@ -131,11 +122,11 @@ function orbis_save_company_sync( $post_id, $post ) {
 		}
 	} else {
 		$result = $wpdb->update(
-			'orbis_companies' , 
-			array( 'name' => $post->post_title ) , 
-			array( 'id' => $orbis_id ) , 
-			array( '%s' ) , 
-			array( '%d' ) 
+			'orbis_companies' ,
+			array( 'name' => $post->post_title ) ,
+			array( 'id' => $orbis_id ) ,
+			array( '%s' ) ,
+			array( '%d' )
 		);
 	}
 }
@@ -147,7 +138,7 @@ add_action( 'save_post', 'orbis_save_company_sync', 10, 2 );
  */
 function orbis_company_edit_columns($columns) {
 	return array(
-        'cb'                           => '<input type="checkbox" />', 
+        'cb'                           => '<input type="checkbox" />',
         'title'                        => __( 'Title', 'orbis' ),
 		// 'orbis_company_id'          => __( 'Orbis ID', 'orbis' ),
 		'orbis_company_address'        => __( 'Address', 'orbis' ),
@@ -155,7 +146,7 @@ function orbis_company_edit_columns($columns) {
 		'orbis_company_kvk_number'     => __( 'KvK Number', 'orbis' ),
 		'orbis_company_administration' => __( 'Administration', 'orbis' ),
 		'author'                       => __( 'Author', 'orbis' ),
-		'comments'                     => __( 'Comments', 'orbis' ), 
+		'comments'                     => __( 'Comments', 'orbis' ),
         'date'                         => __( 'Date', 'orbis' ),
 	);
 }
@@ -164,7 +155,7 @@ add_filter( 'manage_edit-orbis_company_columns' , 'orbis_company_edit_columns' )
 
 /**
  * Company column
- * 
+ *
  * @param string $column
  */
 function orbis_company_column( $column, $post_id ) {
@@ -183,7 +174,7 @@ function orbis_company_column( $column, $post_id ) {
 			$br = '';
 
 			$website = get_post_meta( $post_id, '_orbis_company_website', true );
-			
+
 			if ( ! empty( $website ) ) {
 				printf( '<a href="%s" target="_blank">%s</a>', $website, $website );
 
@@ -191,7 +182,7 @@ function orbis_company_column( $column, $post_id ) {
 			}
 
 			$email = get_post_meta( $post_id, '_orbis_company_email', true );
-			
+
 			if ( ! empty( $email ) ) {
 				echo $br;
 
@@ -239,16 +230,16 @@ function orbis_companies_suggest_company_id() {
 	$term = filter_input( INPUT_GET, 'term', FILTER_SANITIZE_STRING );
 
 	$query = $wpdb->prepare( "
-		SELECT 
-			company.id AS id, 
+		SELECT
+			company.id AS id,
 			company.name text
-		FROM 
+		FROM
 			orbis_companies AS company
 		WHERE
 			company.name LIKE '%%%1\$s%%'
-		;", $term 
+		;", $term
 	);
-	
+
 	$data = $wpdb->get_results( $query );
 
 	echo json_encode( $data );

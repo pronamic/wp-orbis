@@ -4,7 +4,7 @@
  * Add person meta boxes
  */
 function orbis_project_add_meta_boxes() {
-    add_meta_box( 
+    add_meta_box(
         'orbis_project',
         __('Project Information', 'orbis'),
         'orbis_project_meta_box',
@@ -18,22 +18,26 @@ add_action( 'add_meta_boxes', 'orbis_project_add_meta_boxes' );
 
 /**
  * Peron details meta box
- * 
+ *
  * @param array $post
  */
 function orbis_project_meta_box( $post ) {
-	include dirname(Orbis::$file) . '/admin/meta-box-project-details.php';
+	global $orbis_plugin;
+
+	$orbis_plugin->plugin_include( 'admin/meta-box-project-details.php' );
 }
 
 function orbis_enqueue_scripts() {
+	global $orbis_plugin;
+
 	wp_enqueue_script(
 		'orbis-autocomplete',
-		plugins_url( '/includes/js/autocomplete.js', Orbis::$file ),
+		$orbis_plugin->plugin_url( 'includes/js/autocomplete.js' ),
 		array( 'jquery', 'jquery-ui-autocomplete', 'select2' )
 	);
 
-	$translation_array = array( 
-		'noMatches'             => __( 'No matches found', 'orbis' ), 
+	$translation_array = array(
+		'noMatches'             => __( 'No matches found', 'orbis' ),
 		'inputTooShort'         => sprintf( __( 'Please enter %s more characters', 'orbis' ), '{todo}' ),
 		'selectionTooBigSingle' => sprintf( __( 'You can only select %s item', 'orbis' ), '{limit}' ),
 		'selectionTooBigPlural' => sprintf( __( 'You can only select %s items', 'orbis' ), '{limit}' ),
@@ -54,10 +58,10 @@ function orbis_projects_suggest_project_id() {
 	$term = filter_input( INPUT_GET, 'term', FILTER_SANITIZE_STRING );
 
 	$query = $wpdb->prepare( "
-		SELECT 
-			project.id AS value , 
+		SELECT
+			project.id AS value ,
 			CONCAT(project.id, '. ', principal.name, ' - ', project.name) AS label
-		FROM 
+		FROM
 			orbis_projects AS project
 				LEFT JOIN
 			orbis_companies AS principal
@@ -66,13 +70,13 @@ function orbis_projects_suggest_project_id() {
 			project.finished = 0
 				AND
 			(
-				project.name LIKE '%%%1\$s%%' 
+				project.name LIKE '%%%1\$s%%'
 					OR
 				principal.name LIKE '%%%1\$s%%'
 			)
-		", $term 
+		", $term
 	);
-	
+
 	$data = $wpdb->get_results( $query );
 
 	echo json_encode( $data );
@@ -84,7 +88,7 @@ add_action( 'wp_ajax_project_id_suggest', 'orbis_projects_suggest_project_id' );
 
 /**
  * Orbis projects post class
- * 
+ *
  * @param array $classes
  */
 function orbis_projects_post_class( $classes ) {
@@ -108,7 +112,7 @@ function orbis_project_is_finished() {
 	if ( isset( $post->project_is_finished ) ) {
 		$is_finished = (boolean) $post->project_is_finished;
 	}
-	
+
 	return $is_finished;
 }
 
@@ -120,7 +124,7 @@ function orbis_project_is_invoiced() {
 	if ( isset( $post->project_is_invoiced ) ) {
 		$is_invoiced = (boolean) $post->project_is_invoiced;
 	}
-	
+
 	return $is_invoiced;
 }
 
@@ -129,7 +133,7 @@ function orbis_project_is_invoiced() {
  */
 function orbis_save_project( $post_id, $post ) {
 	// Doing autosave
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) { 
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) {
 		return;
 	}
 
@@ -143,7 +147,7 @@ function orbis_save_project( $post_id, $post ) {
 	if ( ! ( $post->post_type == 'orbis_project' && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
-	
+
 	// OK
 	$definition = array();
 
@@ -158,10 +162,10 @@ function orbis_save_project( $post_id, $post ) {
 	}
 
 	$data = filter_input_array( INPUT_POST, $definition );
-	
+
 	$data['_orbis_project_seconds_available'] = orbis_filter_time_input( INPUT_POST, '_orbis_project_seconds_available' );
 
-	foreach ( $data as $key => $value ) {		
+	foreach ( $data as $key => $value ) {
 		if ( empty( $value ) ) {
 			delete_post_meta( $post_id, $key);
 		} else {
@@ -177,7 +181,7 @@ add_action( 'save_post', 'orbis_save_project', 10, 2 );
  */
 function orbis_save_project_sync( $post_id, $post ) {
 	// Doing autosave
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) { 
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) {
 		return;
 	}
 
@@ -232,12 +236,12 @@ function orbis_save_project_sync( $post_id, $post ) {
 
 	$data['invoiced'] = $is_invoiced;
 	$form['invoiced'] = '%d';
-	
+
 	if ( ! empty( $invoice_number ) ) {
 		$data['invoice_number'] = $invoice_number;
 		$form['invoice_number'] = '%s';
 	}
-	
+
 	$data['finished'] = $is_finished;
 	$form['finished'] = '%d';
 
@@ -252,10 +256,10 @@ function orbis_save_project_sync( $post_id, $post ) {
 		}
 	} else {
 		$result = $wpdb->update(
-			$wpdb->orbis_projects, 
-			$data, 
-			array( 'id' => $orbis_id ), 
-			$form, 
+			$wpdb->orbis_projects,
+			$data,
+			array( 'id' => $orbis_id ),
+			$form,
 			array( '%d' )
 		);
 	}
@@ -270,14 +274,14 @@ add_action( 'save_post', 'orbis_save_project_sync', 20, 2 );
  */
 function orbis_project_edit_columns($columns) {
 	return array(
-        'cb'                       => '<input type="checkbox" />' , 
-		'orbis_project_id'         => __( 'Orbis ID', 'orbis' ) , 
-        'orbis_project_principal'  => __( 'Principal', 'orbis' ) , 
-        'title'                    => __( 'Title', 'orbis' ) , 
-		'orbis_project_time'       => __( 'Time', 'orbis' ) , 
-		'author'                   => __( 'Author', 'orbis' ) , 
-		'comments'                 => __( 'Comments', 'orbis' ) ,  
-        'date'                     => __( 'Date', 'orbis' ) , 
+        'cb'                       => '<input type="checkbox" />' ,
+		'orbis_project_id'         => __( 'Orbis ID', 'orbis' ) ,
+        'orbis_project_principal'  => __( 'Principal', 'orbis' ) ,
+        'title'                    => __( 'Title', 'orbis' ) ,
+		'orbis_project_time'       => __( 'Time', 'orbis' ) ,
+		'author'                   => __( 'Author', 'orbis' ) ,
+		'comments'                 => __( 'Comments', 'orbis' ) ,
+        'date'                     => __( 'Date', 'orbis' ) ,
 	);
 }
 
@@ -285,7 +289,7 @@ add_filter( 'manage_edit-orbis_project_columns' , 'orbis_project_edit_columns' )
 
 /**
  * Project column
- * 
+ *
  * @param string $column
  */
 function orbis_project_column( $column, $post_id ) {
@@ -302,7 +306,7 @@ function orbis_project_column( $column, $post_id ) {
 			break;
 		case 'orbis_project_principal':
 			if ( orbis_project_has_principal() ) {
-				printf( 
+				printf(
 					'<a href="%s">%s</a>',
 					esc_attr( orbis_project_principal_get_permalink() ),
 					orbis_project_principel_get_the_name()

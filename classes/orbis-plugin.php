@@ -21,13 +21,15 @@ class Orbis_Plugin {
 
 	/**
 	 * Constructs and initialize an Orbis plugin
-	 * 
+	 *
 	 * @param string $file
 	 */
 	public function __construct( $file ) {
 		$this->file     = $file;
 		$this->dirname  = dirname( $file );
 		$this->dir_path = plugin_dir_path( $file );
+
+		$this->api      = new Orbis_API();
 
 		add_action( 'admin_init',     array( $this, 'update' ) );
 		add_action( 'plugins_loaded', array( $this, 'loaded' ) );
@@ -37,7 +39,7 @@ class Orbis_Plugin {
 
 	/**
 	 * Set the name of this plugin
-	 * 
+	 *
 	 * @param string $name
 	 */
 	public function set_name( $name ) {
@@ -48,7 +50,7 @@ class Orbis_Plugin {
 
 	/**
 	 * Set database version
-	 * 
+	 *
 	 * @param string $version
 	 */
 	public function set_db_version( $version ) {
@@ -96,7 +98,7 @@ class Orbis_Plugin {
 
 	/**
 	 * Plugin URL
-	 * 
+	 *
 	 * @param string $path
 	 */
 	public function plugin_url( $path ) {
@@ -107,7 +109,7 @@ class Orbis_Plugin {
 
 	/**
 	 * Plugin include
-	 * 
+	 *
 	 * @param string $path
 	 */
 	public function plugin_include( $path ) {
@@ -118,7 +120,7 @@ class Orbis_Plugin {
 
 	/**
 	 * Load text domain
-	 * 
+	 *
 	 * @param string $domain
 	 * @param string $path
 	 */
@@ -132,16 +134,16 @@ class Orbis_Plugin {
 
 	/**
 	 * Update the specified roles
-	 * 
+	 *
 	 * @param array $roles
 	 */
 	public function update_roles( $roles ) {
 		global $wp_roles;
-	
+
 		if ( ! isset( $wp_roles ) ) {
 			$wp_roles = new WP_Roles();
 		}
-	
+
 		foreach ( $roles as $role => $capabilities ) {
 			foreach  ( $capabilities as $cap => $grant ) {
 				$wp_roles->add_cap( $role, $cap, $grant );
@@ -171,7 +173,7 @@ class Orbis_Plugin {
 		$located = $this->locate_template( $template_name );
 
 		include $located;
-		
+
 		if ( ! $echo ) {
 			return ob_get_clean();
 		}

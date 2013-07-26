@@ -4,7 +4,7 @@
  * Add person meta boxes
  */
 function orbis_person_add_meta_boxes() {
-    add_meta_box( 
+    add_meta_box(
         'orbis_person',
         __('Contact information', 'orbis'),
         'orbis_person_meta_box',
@@ -18,11 +18,13 @@ add_action( 'add_meta_boxes', 'orbis_person_add_meta_boxes' );
 
 /**
  * Peron details meta box
- * 
+ *
  * @param array $post
  */
 function orbis_person_meta_box( $post ) {
-	include dirname(Orbis::$file) . '/admin/meta-box-person-details.php';
+	global $orbis_plugin;
+
+	$orbis_plugin->plugin_include( 'admin/meta-box-person-details.php' );
 }
 
 /**
@@ -30,7 +32,7 @@ function orbis_person_meta_box( $post ) {
  */
 function orbis_save_person( $post_id, $post ) {
 	// Doing autosave
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) { 
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) {
 		return;
 	}
 
@@ -47,17 +49,17 @@ function orbis_save_person( $post_id, $post ) {
 
 	// OK
 	$definition = array(
-		'_orbis_person_email_address' => FILTER_VALIDATE_EMAIL , 
-		'_orbis_person_phone_number' => FILTER_SANITIZE_STRING , 
+		'_orbis_person_email_address' => FILTER_VALIDATE_EMAIL ,
+		'_orbis_person_phone_number' => FILTER_SANITIZE_STRING ,
 		'_orbis_person_mobile_number' => FILTER_SANITIZE_STRING ,
-		'_orbis_person_twitter' => FILTER_SANITIZE_STRING , 
+		'_orbis_person_twitter' => FILTER_SANITIZE_STRING ,
 		'_orbis_person_facebook' => FILTER_SANITIZE_STRING ,
-		'_orbis_person_linkedin' => FILTER_SANITIZE_STRING ,  
+		'_orbis_person_linkedin' => FILTER_SANITIZE_STRING ,
 	);
-	
+
 	$data = filter_input_array(INPUT_POST, $definition);
 
-	foreach ( $data as $key => $value ) {		
+	foreach ( $data as $key => $value ) {
 		if ( empty( $value ) ) {
 			delete_post_meta( $post_id, $key);
 		} else {
