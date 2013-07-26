@@ -49,15 +49,15 @@ function orbis_save_person( $post_id, $post ) {
 
 	// OK
 	$definition = array(
-		'_orbis_person_email_address' => FILTER_VALIDATE_EMAIL ,
-		'_orbis_person_phone_number' => FILTER_SANITIZE_STRING ,
-		'_orbis_person_mobile_number' => FILTER_SANITIZE_STRING ,
-		'_orbis_person_twitter' => FILTER_SANITIZE_STRING ,
-		'_orbis_person_facebook' => FILTER_SANITIZE_STRING ,
-		'_orbis_person_linkedin' => FILTER_SANITIZE_STRING ,
+		'_orbis_person_email_address' => FILTER_VALIDATE_EMAIL,
+		'_orbis_person_phone_number'  => FILTER_SANITIZE_STRING,
+		'_orbis_person_mobile_number' => FILTER_SANITIZE_STRING,
+		'_orbis_person_twitter'       => FILTER_SANITIZE_STRING,
+		'_orbis_person_facebook'      => FILTER_SANITIZE_STRING,
+		'_orbis_person_linkedin'      => FILTER_SANITIZE_STRING
 	);
 
-	$data = filter_input_array(INPUT_POST, $definition);
+	$data = filter_input_array( INPUT_POST, $definition );
 
 	foreach ( $data as $key => $value ) {
 		if ( empty( $value ) ) {
@@ -67,6 +67,5 @@ function orbis_save_person( $post_id, $post ) {
 		}
 	}
 }
-
 
 add_action( 'save_post', 'orbis_save_person', 10, 2 );
