@@ -29,8 +29,6 @@ class Orbis_Plugin {
 		$this->dirname  = dirname( $file );
 		$this->dir_path = plugin_dir_path( $file );
 
-		$this->api      = new Orbis_API();
-
 		add_action( 'admin_init',     array( $this, 'update' ) );
 		add_action( 'plugins_loaded', array( $this, 'loaded' ) );
 	}

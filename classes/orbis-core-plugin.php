@@ -17,7 +17,9 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		orbis_register_table( 'orbis_companies', false, '' );
 		orbis_register_table( 'orbis_projects', false, '' );
-		
+
+		$this->api = new Orbis_API();
+
 		if ( is_admin() ) {
 			global $orbis_admin;
 
@@ -54,12 +56,12 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			KEY contact_id_1 (contact_id_1),
 			KEY contact_id_2 (contact_id_2)
 		' );
-		
+
 		// Roles
 		$roles = $this->get_roles();
 
 		$this->update_roles( $roles );
-		
+
 		// Parent
 		parent::install();
 	}
@@ -68,7 +70,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 	/**
 	 * Get roles
-	 * 
+	 *
 	 * @return array
 	 */
 	public function get_roles() {
@@ -81,13 +83,13 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 				'edit_orbis_project_administration' => true
 			),
 			'administrator' => array(
-				
+
 			),
 			'editor' => array(
-				
+
 			),
 			'employee' => array(
-				
+
 			)
 		);
 
