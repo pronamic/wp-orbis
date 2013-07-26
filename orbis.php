@@ -28,7 +28,6 @@ function orbis_bootstrap() {
 	require_once 'classes/orbis-plugin.php';
 	require_once 'classes/orbis-core-admin.php';
 	require_once 'classes/orbis-core-plugin.php';
-	require_once 'classes/orbis-database.php';
 
 	// Initialize
 	global $orbis_plugin;
@@ -51,8 +50,6 @@ class Orbis {
 	public static function bootstrap( $file ) {
 		self::$file = $file;
 
-		$GLOBALS['orbisdb'] = new Orbis_Database();
-
 		add_action('init',       array(__CLASS__, 'init'));
 
 		add_filter('generate_rewrite_rules', array(__CLASS__, 'generateRewriteRules'));
@@ -68,7 +65,7 @@ class Orbis {
 		register_post_type(
 			'orbis_project',
 			array(
-				'label'           => __( 'Projects', 'orbis' ), 
+				'label'           => __( 'Projects', 'orbis' ),
 				'labels'          => array(
 					'name'               => __( 'Projects', 'orbis' ),
 					'singular_name'      => __( 'Project', 'orbis' ),
@@ -80,7 +77,7 @@ class Orbis {
 					'view_item'          => __( 'View Project', 'orbis' ),
 					'search_items'       => __( 'Search Projects', 'orbis' ),
 					'not_found'          => __( 'No projects found.', 'orbis' ),
-					'not_found_in_trash' => __( 'No projects found in Trash.', 'orbis' ), 
+					'not_found_in_trash' => __( 'No projects found in Trash.', 'orbis' ),
 					'parent_item_colon'  => __( 'Parent Project:', 'orbis' ),
 					'menu_name'          => __( 'Projects', 'orbis' )
 				) ,
@@ -89,31 +86,31 @@ class Orbis {
 				'menu_icon'       => plugins_url( 'images/project.png', __FILE__ ),
 				'capability_type' => 'orbis_project',
 				'supports'        => array( 'title', 'editor', 'author', 'comments' ),
-				'has_archive'     => true, 
-				'rewrite'         => array( 'slug' => 'projecten' ) 
+				'has_archive'     => true,
+				'rewrite'         => array( 'slug' => 'projecten' )
 			)
 		);
 
 		register_taxonomy(
-			'orbis_project_category' , 
-			array( 'orbis_project' ) , 
+			'orbis_project_category' ,
+			array( 'orbis_project' ) ,
 			array(
-				'hierarchical' => true , 
+				'hierarchical' => true ,
 				'labels'       => array(
-					'name'              => _x( 'Categories', 'taxonomy general name', 'orbis') , 
-					'singular_name'     => _x( 'Category', 'taxonomy singular name', 'orbis') , 
-					'search_items'      => __( 'Search Categories', 'orbis') , 
-					'all_items'         => __( 'All Categories', 'orbis') , 
-					'parent_item'       => __( 'Parent Category', 'orbis') , 
-					'parent_item_colon' => __( 'Parent Category:', 'orbis') , 
-					'edit_item'         => __( 'Edit Category', 'orbis') , 
-					'update_item'       => __( 'Update Category', 'orbis') , 
-					'add_new_item'      => __( 'Add New Category', 'orbis') , 
-					'new_item_name'     => __( 'New Category Name', 'orbis') , 
-					'menu_name'         => __( 'Categories', 'orbis') 
-				) , 
-				'show_ui'      => true , 
-				'query_var'    => true , 
+					'name'              => _x( 'Categories', 'taxonomy general name', 'orbis') ,
+					'singular_name'     => _x( 'Category', 'taxonomy singular name', 'orbis') ,
+					'search_items'      => __( 'Search Categories', 'orbis') ,
+					'all_items'         => __( 'All Categories', 'orbis') ,
+					'parent_item'       => __( 'Parent Category', 'orbis') ,
+					'parent_item_colon' => __( 'Parent Category:', 'orbis') ,
+					'edit_item'         => __( 'Edit Category', 'orbis') ,
+					'update_item'       => __( 'Update Category', 'orbis') ,
+					'add_new_item'      => __( 'Add New Category', 'orbis') ,
+					'new_item_name'     => __( 'New Category Name', 'orbis') ,
+					'menu_name'         => __( 'Categories', 'orbis')
+				) ,
+				'show_ui'      => true ,
+				'query_var'    => true ,
 				'rewrite'      => array(
 					'slug' => 'project-categorie'
 				)
@@ -121,9 +118,9 @@ class Orbis {
 		);
 
 		register_post_type(
-			'orbis_company' , 
+			'orbis_company' ,
 			array(
-				'label'           => __( 'Companies', 'orbis' ), 
+				'label'           => __( 'Companies', 'orbis' ),
 				'labels'          => array(
 					'name'               => __( 'Companies', 'orbis' ),
 					'singular_name'      => __( 'Company', 'orbis' ),
@@ -135,61 +132,61 @@ class Orbis {
 					'view_item'          => __( 'View Company', 'orbis' ),
 					'search_items'       => __( 'Search Companies', 'orbis' ),
 					'not_found'          => __( 'No companies found.', 'orbis' ),
-					'not_found_in_trash' => __( 'No companies found in Trash.', 'orbis' ), 
+					'not_found_in_trash' => __( 'No companies found in Trash.', 'orbis' ),
 					'parent_item_colon'  => __( 'Parent Company:', 'orbis' ),
 					'menu_name'          => __( 'Companies', 'orbis' )
 				) ,
 				'public'          => true ,
-				'menu_position'   => 30 , 
-				'menu_icon'       => plugins_url('images/company.png', __FILE__) , 
+				'menu_position'   => 30 ,
+				'menu_icon'       => plugins_url('images/company.png', __FILE__) ,
 				'capability_type' => array( 'orbis_company', 'orbis_companies' ),
 				'supports'        => array('title', 'editor', 'author', 'comments', 'thumbnail') ,
-				'has_archive'     => true , 
+				'has_archive'     => true ,
 				'rewrite'         => array(
 					'slug' => _x( 'companies', 'slug', 'orbis' )
-				) 
+				)
 			)
 		);
 
 		register_post_type(
-			'orbis_person' , 
+			'orbis_person' ,
 			array(
-				'label'         => __('Persons', 'orbis') , 
+				'label'         => __('Persons', 'orbis') ,
 				'labels'        => array(
-					'name'          => __('Persons', 'orbis') , 
+					'name'          => __('Persons', 'orbis') ,
 					'singular_name' => __('Person', 'orbis')
 				) ,
 				'public'        => true ,
-				'menu_position' => 30 , 
-				'menu_icon'     => plugins_url('images/person.png', __FILE__) , 
+				'menu_position' => 30 ,
+				'menu_icon'     => plugins_url('images/person.png', __FILE__) ,
 				'supports'      => array( 'title', 'editor', 'author', 'comments', 'thumbnail' ) ,
-				'has_archive'   => true , 
-				'rewrite'       => array( 
+				'has_archive'   => true ,
+				'rewrite'       => array(
 					'slug' => _x( 'persons', 'slug', 'orbis' )
-				) 
+				)
 			)
 		);
 
 		register_taxonomy(
-			'orbis_gender' , 
-			array('orbis_person') , 
+			'orbis_gender' ,
+			array('orbis_person') ,
 			array(
-				'hierarchical' => true , 
+				'hierarchical' => true ,
 				'labels'       => array(
-					'name'              => _x( 'Genders', 'taxonomy general name', 'orbis') , 
-					'singular_name'     => _x( 'Gender', 'taxonomy singular name', 'orbis') , 
-					'search_items'      => __( 'Search Genders', 'orbis') , 
-					'all_items'         => __( 'All Genders', 'orbis') , 
-					'parent_item'       => __( 'Parent Gender', 'orbis') , 
-					'parent_item_colon' => __( 'Parent Gender:', 'orbis') , 
-					'edit_item'         => __( 'Edit Gender', 'orbis') , 
-					'update_item'       => __( 'Update Gender', 'orbis') , 
-					'add_new_item'      => __( 'Add New Gender', 'orbis') , 
-					'new_item_name'     => __( 'New Gender Name', 'orbis') , 
-					'menu_name'         => __( 'Genders', 'orbis') 
-				) , 
-				'show_ui'      => true , 
-				'query_var'    => true , 
+					'name'              => _x( 'Genders', 'taxonomy general name', 'orbis') ,
+					'singular_name'     => _x( 'Gender', 'taxonomy singular name', 'orbis') ,
+					'search_items'      => __( 'Search Genders', 'orbis') ,
+					'all_items'         => __( 'All Genders', 'orbis') ,
+					'parent_item'       => __( 'Parent Gender', 'orbis') ,
+					'parent_item_colon' => __( 'Parent Gender:', 'orbis') ,
+					'edit_item'         => __( 'Edit Gender', 'orbis') ,
+					'update_item'       => __( 'Update Gender', 'orbis') ,
+					'add_new_item'      => __( 'Add New Gender', 'orbis') ,
+					'new_item_name'     => __( 'New Gender Name', 'orbis') ,
+					'menu_name'         => __( 'Genders', 'orbis')
+				) ,
+				'show_ui'      => true ,
+				'query_var'    => true ,
 				'rewrite'      => array(
 					'slug' => 'geslacht'
 				)
@@ -197,25 +194,25 @@ class Orbis {
 		);
 
 		register_taxonomy(
-			'orbis_person_category' , 
-			array('orbis_person') , 
+			'orbis_person_category' ,
+			array('orbis_person') ,
 			array(
-				'hierarchical' => true , 
+				'hierarchical' => true ,
 				'labels'       => array(
-					'name'              => _x( 'Categories', 'taxonomy general name', 'orbis') , 
-					'singular_name'     => _x( 'Category', 'taxonomy singular name', 'orbis') , 
-					'search_items'      => __( 'Search Categories', 'orbis') , 
-					'all_items'         => __( 'All Categories', 'orbis') , 
-					'parent_item'       => __( 'Parent Category', 'orbis') , 
-					'parent_item_colon' => __( 'Parent Category:', 'orbis') , 
-					'edit_item'         => __( 'Edit Category', 'orbis') , 
-					'update_item'       => __( 'Update Category', 'orbis') , 
-					'add_new_item'      => __( 'Add New Category', 'orbis') , 
-					'new_item_name'     => __( 'New Category Name', 'orbis') , 
-					'menu_name'         => __( 'Categories', 'orbis') 
-				) , 
-				'show_ui'      => true , 
-				'query_var'    => true , 
+					'name'              => _x( 'Categories', 'taxonomy general name', 'orbis') ,
+					'singular_name'     => _x( 'Category', 'taxonomy singular name', 'orbis') ,
+					'search_items'      => __( 'Search Categories', 'orbis') ,
+					'all_items'         => __( 'All Categories', 'orbis') ,
+					'parent_item'       => __( 'Parent Category', 'orbis') ,
+					'parent_item_colon' => __( 'Parent Category:', 'orbis') ,
+					'edit_item'         => __( 'Edit Category', 'orbis') ,
+					'update_item'       => __( 'Update Category', 'orbis') ,
+					'add_new_item'      => __( 'Add New Category', 'orbis') ,
+					'new_item_name'     => __( 'New Category Name', 'orbis') ,
+					'menu_name'         => __( 'Categories', 'orbis')
+				) ,
+				'show_ui'      => true ,
+				'query_var'    => true ,
 				'rewrite'      => array(
 					'slug' => 'persoon-categorie'
 				)
@@ -225,7 +222,7 @@ class Orbis {
 
 	public static function flushRules() {
 		global $wp_rewrite;
-	
+
 		$wp_rewrite->flush_rules();
 	}
 
