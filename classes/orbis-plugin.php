@@ -113,7 +113,7 @@ class Orbis_Plugin {
 	 * @param string $path
 	 */
 	public function plugin_include( $path ) {
-		include $this->dirname . '/' . $path;
+		include $this->dir_path . '/' . $path;
 	}
 
 	//////////////////////////////////////////////////
