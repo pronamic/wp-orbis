@@ -14,7 +14,6 @@ jQuery(document).ready(function($) {
 	var formatSearching = function() { return orbisl10n.searching; };
 
 	$( ".orbis_company_id_field" ).select2({
-        placeholder: "Search for a company",
         minimumInputLength: 2,
         initSelection: function (element, callback) {
             callback({id: element.val(), text: element.data("text")});

@@ -30,22 +30,7 @@ function orbis_project_meta_box( $post ) {
 function orbis_enqueue_scripts() {
 	global $orbis_plugin;
 
-	wp_enqueue_script(
-		'orbis-autocomplete',
-		$orbis_plugin->plugin_url( 'includes/js/autocomplete.js' ),
-		array( 'jquery', 'jquery-ui-autocomplete', 'select2' )
-	);
-
-	$translation_array = array(
-		'noMatches'             => __( 'No matches found', 'orbis' ),
-		'inputTooShort'         => sprintf( __( 'Please enter %s more characters', 'orbis' ), '{todo}' ),
-		'selectionTooBigSingle' => sprintf( __( 'You can only select %s item', 'orbis' ), '{limit}' ),
-		'selectionTooBigPlural' => sprintf( __( 'You can only select %s items', 'orbis' ), '{limit}' ),
-		'loadMore'              => __( 'Loading more results...', 'orbis' ),
-		'searching'             => __( 'Searching...', 'orbis' )
-	);
-
-	wp_localize_script( 'orbis-autocomplete', 'orbisl10n', $translation_array );
+	wp_enqueue_script( 'orbis-autocomplete' );
 }
 
 add_action( 'admin_enqueue_scripts', 'orbis_enqueue_scripts' );
