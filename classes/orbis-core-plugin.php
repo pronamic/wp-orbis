@@ -40,13 +40,14 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'select2',
 			$this->plugin_url( 'includes/select2/select2.js' ),
 			array( 'jquery' ),
-			'3.2'
+			'3.4.1'
 		);
 
 		wp_register_script(
 			'orbis-autocomplete',
 			$this->plugin_url( 'includes/js/autocomplete.js' ),
-			array( 'jquery', 'jquery-ui-autocomplete', 'select2' )
+			array( 'jquery', 'jquery-ui-autocomplete', 'select2' ),
+			'1.0.0'
 		);
 
 		$translation_array = array(
@@ -63,7 +64,9 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		// Styles
 		wp_register_style(
 			'select2',
-			$this->plugin_url( 'includes/select2/select2.css' )
+			$this->plugin_url( 'includes/select2/select2.css' ),
+			array(),
+			'3.4.1'
 		);
 	}
 
