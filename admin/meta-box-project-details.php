@@ -35,7 +35,7 @@ if ( true ) {
 				<label for="_orbis_project_principal_id"><?php _e( 'Principal ID', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input type="text" id="_orbis_project_principal_id" name="_orbis_project_principal_id" value="<?php echo esc_attr( $principal_id ); ?>" class="orbis_company_id_field regular-text" data-text="<?php echo esc_attr( $principal_id ); ?>" />
+				<input type="text" id="_orbis_project_principal_id" name="_orbis_project_principal_id" value="<?php echo esc_attr( $principal_id ); ?>" class="orbis_company_id_field regular-text" data-text="<?php echo esc_attr( $principal_id ); ?>" placeholder="<?php _e( 'Select Principal', 'orbis' ); ?>" />
 			</td>
 		</tr>
 		<tr valign="top">
@@ -129,7 +129,7 @@ if ( true ) {
 	</tbody>
 </table>
 
-<?php 
+<?php
 
 // @see https://github.com/WordPress/WordPress/blob/master/wp-admin/js/custom-background.js#L23
 
@@ -172,16 +172,16 @@ wp_enqueue_media();
 						close: false
 					}
 				} );
-	
+
 				// When an image is selected, run a callback.
 				frame.on( 'select', function() {
 					// Grab the selected attachment.
 					var attachment = frame.state().get( 'selection' ).first();
-	
+
 					var element_id = $el.data( 'element' );
 
 					$( "#" + element_id ).val( attachment.id );
-	
+
 					frame.close();
 				} );
 

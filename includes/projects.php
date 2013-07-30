@@ -31,6 +31,7 @@ function orbis_enqueue_scripts() {
 	global $orbis_plugin;
 
 	wp_enqueue_script( 'orbis-autocomplete' );
+	wp_enqueue_style( 'select2' );
 }
 
 add_action( 'admin_enqueue_scripts', 'orbis_enqueue_scripts' );
