@@ -232,7 +232,7 @@ function orbis_companies_suggest_company_id() {
 	$query = $wpdb->prepare( "
 		SELECT
 			company.id AS id,
-			company.name text
+			company.name AS text
 		FROM
 			orbis_companies AS company
 		WHERE

@@ -17,7 +17,21 @@ jQuery( document ).ready( function( $ ) {
 
 	var formatSearching = function() { return orbisl10n.searching; };
 
-	$( '.orbis_company_id_field' ).select2( {
+	var wpAction = function( item ) {
+		if ( item.hasClass( 'orbis_company_id_field' ) ) {
+			return 'company_id_suggest';
+		}
+		
+		if ( item.hasClass( 'orbis-project-id-control' ) ) {
+			return 'project_id_suggest';
+		}
+		
+		if ( item.hasClass( 'orbis-person-id-control' ) ) {
+			return 'person_id_suggest';
+		}
+	};
+	
+	$( '.orbis-id-control' ).select2( {
         minimumInputLength: 2,
         initSelection: function ( element, callback ) {
             callback( { id: element.val(), text: element.data( 'text' ) } );
@@ -27,7 +41,7 @@ jQuery( document ).ready( function( $ ) {
             dataType: 'json',
             data: function( term, page ) {
                 return {
-                	action: 'company_id_suggest',
+                	action: wpAction( this ),
 					term: term
                 };
             },

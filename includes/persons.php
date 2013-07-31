@@ -69,3 +69,29 @@ function orbis_save_person( $post_id, $post ) {
 }
 
 add_action( 'save_post', 'orbis_save_person', 10, 2 );
+
+function orbis_persons_suggest_person_id() {
+	global $wpdb;
+
+	$term = filter_input( INPUT_GET, 'term', FILTER_SANITIZE_STRING );
+
+	$query = $wpdb->prepare( "
+		SELECT
+			person.id AS id,
+			person.first_name AS text
+		FROM
+			orbis_persons AS person
+		WHERE
+			person.first_name LIKE '%%%1\$s%%'
+		;", $term
+	);
+
+	$data = $wpdb->get_results( $query );
+
+	echo json_encode( $data );
+
+	die();
+}
+
+add_action( 'wp_ajax_person_id_suggest', 'orbis_persons_suggest_person_id' );
+

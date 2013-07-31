@@ -45,8 +45,8 @@ function orbis_projects_suggest_project_id() {
 
 	$query = $wpdb->prepare( "
 		SELECT
-			project.id AS value ,
-			CONCAT(project.id, '. ', principal.name, ' - ', project.name) AS label
+			project.id AS id,
+			CONCAT(project.id, '. ', principal.name, ' - ', project.name) AS text
 		FROM
 			orbis_projects AS project
 				LEFT JOIN
