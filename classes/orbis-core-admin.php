@@ -29,6 +29,8 @@ class Orbis_Core_Admin {
 		// Actions
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+
+		add_filter( 'menu_order', array( $this, 'menu_order' ) );
 	}
 
 	//////////////////////////////////////////////////
@@ -55,13 +57,22 @@ class Orbis_Core_Admin {
 	 * Admin menu
 	 */
 	public function admin_menu() {
+		/*
+		 * @see https://github.com/woothemes/woocommerce/blob/v2.0.13/admin/woocommerce-admin-init.php#L62
+		 * @see http://codex.wordpress.org/Function_Reference/add_menu_page
+		 */
+		global $menu;
+
+		$menu['54.orbis.1'] = array( '', 'read', 'separator-orbis', '', 'wp-menu-separator orbis' );
+
 		add_menu_page(
 			__( 'Orbis', 'orbis' ), // page_title
 			__( 'Orbis', 'orbis' ), // menu_title
 			'orbis_view', // capability
 			'orbis', // menu_slug
 			array( $this, 'page') , // function
-			$this->plugin->plugin_url( 'images/icon-16x16.png' ) // icon_url
+			$this->plugin->plugin_url( 'images/icon-16x16.png' ), // icon_url
+			'54.orbis.2'
 		);
 
 		// @see _add_post_type_submenus()
@@ -83,6 +94,38 @@ class Orbis_Core_Admin {
 			'orbis_stats', // menu_slug
 			array( $this, 'pageStats' ) // function
 		);
+	}
+
+	/**
+	 * Reorder the WC menu items in admin.
+	 *
+	 * @param mixed $menu_order
+	 * @return array
+	 */
+	public function menu_order( $menu_order ) {
+		// Initialize our custom order array
+		$orbis_menu_order = array();
+
+		$orbis_items = array();
+		$other_items = array();
+
+		foreach ( $menu_order as $index => $item ) {
+			if ( strpos( $item, 'orbis_' ) !== false ) {
+				$orbis_items[] = $item;
+			} else {
+				$other_items[] = $item;
+			}
+		}
+
+		$orbis_index = array_search( 'orbis', $other_items ) + 1;
+
+		$before = array_slice( $other_items, 0, $orbis_index );
+		$after  = array_slice( $other_items, $orbis_index );
+
+		$orbis_menu_order = array_merge( $before, $orbis_items, $after );
+
+		// Return order
+		return $orbis_menu_order;
 	}
 
 	//////////////////////////////////////////////////
