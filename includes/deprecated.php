@@ -10,7 +10,7 @@
 
 /*
  * Deprecated functions come here to die.
-*/
+ */
 
 /**
  * Format seconds
