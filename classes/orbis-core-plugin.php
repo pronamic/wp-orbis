@@ -134,7 +134,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			),
 			'employee' => array(
 
-			)
+			),
 		);
 
 		// Roles post capabilities
@@ -145,31 +145,31 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 				) ),
 				'orbis_project' => orbis_post_type_capabilities( true, array(
 
-				) )
+				) ),
 			),
 			'administrator' => array(
 				'orbis_company' => orbis_post_type_capabilities( true, array(
-					'delete_post' => false
+					'delete_post' => false,
 				) ),
 				'orbis_project' => orbis_post_type_capabilities( true, array(
-					'delete_post' => false
-				) )
+					'delete_post' => false,
+				) ),
 			),
 			'editor' => array(
 				'orbis_company' => orbis_post_type_capabilities( false, array(
-					'read_post' => true
+					'read_post' => true,
 				) ),
 				'orbis_project' => orbis_post_type_capabilities( false, array(
-					'read_post' => true
-				) )
+					'read_post' => true,
+				) ),
 			),
 			'employee' => array(
 				'orbis_company' => orbis_post_type_capabilities( false, array(
-					'read_post' => true
+					'read_post' => true,
 				) ),
 				'orbis_project' => orbis_post_type_capabilities( false, array(
-					'read_post' => true
-				) )
+					'read_post' => true,
+				) ),
 			)
 		);
 
