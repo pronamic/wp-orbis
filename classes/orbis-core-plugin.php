@@ -20,8 +20,8 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$this->plugin_include( 'includes/project-template.php' );
 
 		// Tables
-		orbis_register_table( 'orbis_companies', false, '' );
-		orbis_register_table( 'orbis_projects', false, '' );
+		orbis_register_table( 'orbis_companies' );
+		orbis_register_table( 'orbis_projects' );
 
 		// API
 		$this->api = new Orbis_API();
