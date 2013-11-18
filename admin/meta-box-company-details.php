@@ -11,8 +11,6 @@ $postcode   = get_post_meta( $post->ID, '_orbis_company_postcode', true );
 $city       = get_post_meta( $post->ID, '_orbis_company_city', true );
 $country    = get_post_meta( $post->ID, '_orbis_company_country', true );
 
-$ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
-
 wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_nonce' );
 
 ?>
@@ -58,17 +56,6 @@ wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_no
 				<input id="orbis_company_city" name="_orbis_company_city" placeholder="<?php esc_attr_e( 'City', 'orbis' ); ?>" value="<?php echo esc_attr( $city ); ?>" type="text" size="25" />
 				<br />
 				<input id="orbis_company_country" name="_orbis_company_country" placeholder="<?php esc_attr_e( 'Country', 'orbis' ); ?>" value="<?php echo esc_attr( $country ); ?>" type="text" size="42" />
-			</td>
-		</tr>
-		<tr>
-			<th scope="row">
-				<label for="orbis_company_ebilling"><?php _e( 'Electronic billing', 'orbis' ); ?></label>
-			</th>
-			<td>
-				<label for="orbis_company_ebilling">
-					<input id="orbis_company_ebilling" name="_orbis_company_ebilling" value="1" type="checkbox" <?php checked( $ebilling ); ?> />
-					<?php _e( 'Send bills electronically', 'orbis' ); ?>
-				</label>
 			</td>
 		</tr>
 	</tbody>

@@ -144,7 +144,6 @@ function orbis_company_edit_columns($columns) {
 		'orbis_company_address'        => __( 'Address', 'orbis' ),
 		'orbis_company_online'         => __( 'Online', 'orbis' ),
 		'orbis_company_kvk_number'     => __( 'KvK Number', 'orbis' ),
-		'orbis_company_administration' => __( 'Administration', 'orbis' ),
 		'author'                       => __( 'Author', 'orbis' ),
 		'comments'                     => __( 'Comments', 'orbis' ),
         'date'                         => __( 'Date', 'orbis' ),
@@ -207,16 +206,6 @@ function orbis_company_column( $column, $post_id ) {
 
 				printf( '<a href="%s" target="_blank">%s</a>', $url, $kvk_number );
 			}
-
-			break;
-		case 'orbis_company_administration':
-			$ebilling   = get_post_meta( $post_id, '_orbis_company_ebilling', true );
-
-			printf(
-				'<strong>%s</strong> %s',
-				__( 'Electronic billing:', 'orbis' ),
-				$ebilling ? __( 'Yes', 'orbis' ) : __( 'No', 'orbis' )
-			);
 
 			break;
 	}

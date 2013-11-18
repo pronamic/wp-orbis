@@ -139,13 +139,6 @@ function orbis_save_project( $post_id, $post ) {
 
 	$definition['_orbis_project_principal_id'] = FILTER_VALIDATE_INT;
 	$definition['_orbis_project_agreement_id'] = FILTER_VALIDATE_INT;
-	$definition['_orbis_project_is_invoicable']   = FILTER_VALIDATE_BOOLEAN;
-
-	if ( current_user_can( 'edit_orbis_project_administration' ) ) {
-		$definition['_orbis_project_is_invoiced']     = FILTER_VALIDATE_BOOLEAN;
-		$definition['_orbis_project_invoice_number']  = FILTER_SANITIZE_STRING;
-		$definition['_orbis_project_is_finished']     = FILTER_VALIDATE_BOOLEAN;
-	}
 
 	$data = filter_input_array( INPUT_POST, $definition );
 
@@ -253,7 +246,7 @@ function orbis_save_project_sync( $post_id, $post ) {
 	update_post_meta( $post_id, '_orbis_project_id', $orbis_id );
 }
 
-add_action( 'save_post', 'orbis_save_project_sync', 20, 2 );
+add_action( 'save_post', 'orbis_save_project_sync', 500, 2 );
 
 /**
  * Keychain edit columns
