@@ -34,7 +34,7 @@ function orbis_filter_time_input( $type, $variable_name ) {
  * @param string $key The key to be used on the $wpdb object
  * @param string $name The actual name of the table, without $wpdb->prefix
  */
-function orbis_register_table( $key, $name = false ) {
+function orbis_register_table( $key, $name = false, $prefix = false ) {
 	global $wpdb;
 
 	if ( $name === false ) {
