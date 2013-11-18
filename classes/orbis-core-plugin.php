@@ -86,29 +86,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		orbis_install_table( 'orbis_companies', '
 			id BIGINT(16) UNSIGNED NOT NULL AUTO_INCREMENT,
 			post_id BIGINT(20) UNSIGNED DEFAULT NULL,
-			added_by_id BIGINT(16) UNSIGNED DEFAULT NULL,
-			added_on_date INT(11) UNSIGNED DEFAULT NULL,
-			modified_by_id BIGINT(16) UNSIGNED DEFAULT NULL,
-			modified_on_date INT(11) UNSIGNED DEFAULT NULL,
 			name VARCHAR(128) NOT NULL,
-			contact_id_1 BIGINT(16) UNSIGNED DEFAULT NULL,
-			contact_id_2 BIGINT(16) UNSIGNED DEFAULT NULL,
-			address varchar(128) DEFAULT NULL,
-			address_house_number int(8) DEFAULT NULL,
-			address_house_number_addition VARCHAR(8) DEFAULT NULL,
-			address_postal_code VARCHAR(16) DEFAULT NULL,
-			address_home VARCHAR(128) DEFAULT NULL,
-			address_county VARCHAR(128) DEFAULT NULL,
-			address_country VARCHAR(128) DEFAULT NULL,
-			telephone_voice VARCHAR(32) DEFAULT NULL,
-			telephone_fax VARCHAR(32) DEFAULT NULL,
-			telephone_cell_voice VARCHAR(32) DEFAULT NULL,
-			postoffice_box VARCHAR(32) DEFAULT NULL,
-			kvk_number VARCHAR(32) DEFAULT NULL,
-			btw_number VARCHAR(32) DEFAULT NULL,
-			e_mail VARCHAR(128) DEFAULT NULL,
-			website VARCHAR(128) DEFAULT NULL,
-			notes TEXT DEFAULT NULL,
 			PRIMARY KEY  (id)
 		' );
 
@@ -117,24 +95,14 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			post_id BIGINT(20) UNSIGNED DEFAULT NULL,
 			name VARCHAR(128) NOT NULL,
 			principal_id BIGINT(16) UNSIGNED DEFAULT NULL,
-			contact_id_1 BIGINT(16) UNSIGNED DEFAULT NULL,
-			contact_id_2 BIGINT(16) UNSIGNED DEFAULT NULL,
-			description VARCHAR(128) NOT NULL,
 			start_date DATE NOT NULL DEFAULT "0000-00-00",
-			end_date DATE NOT NULL DEFAULT "0000-00-00",
-			actual_end_date DATE NOT NULL DEFAULT "0000-00-00",
-			percentage_completed INT(3) UNSIGNED NOT NULL DEFAULT 0,
-			priority INT(3) UNSIGNED NOT NULL DEFAULT 0,
-			comments TEXT,
 			number_seconds INT(16) NOT NULL DEFAULT 0,
 			invoicable BOOLEAN NOT NULL DEFAULT TRUE,
 			invoiced BOOLEAN NOT NULL DEFAULT FALSE,
 			invoice_number VARCHAR(128) DEFAULT NULL,
 			finished BOOLEAN NOT NULL DEFAULT FALSE,
 			PRIMARY KEY  (id),
-			KEY principal_id (principal_id),
-			KEY contact_id_1 (contact_id_1),
-			KEY contact_id_2 (contact_id_2)
+			KEY principal_id (principal_id)
 		' );
 
 		// Roles
