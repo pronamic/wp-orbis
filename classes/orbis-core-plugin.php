@@ -74,10 +74,47 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$this->load_textdomain( 'orbis', '/languages/' );
 	}
 
+	/**
+	 * Install
+	 * 
+	 * @mysql UPDATE wp_options SET option_value = 0 WHERE option_name = 'orbis_db_version';
+	 * 
+	 * @see Orbis_Plugin::install()
+	 */
 	public function install() {
 		// Tables
+		orbis_install_table( 'orbis_companies', '
+			id BIGINT(16) UNSIGNED NOT NULL AUTO_INCREMENT,
+			post_id BIGINT(20) UNSIGNED DEFAULT NULL,
+			added_by_id BIGINT(16) UNSIGNED DEFAULT NULL,
+			added_on_date INT(11) UNSIGNED DEFAULT NULL,
+			modified_by_id BIGINT(16) UNSIGNED DEFAULT NULL,
+			modified_on_date INT(11) UNSIGNED DEFAULT NULL,
+			name VARCHAR(128) NOT NULL,
+			contact_id_1 BIGINT(16) UNSIGNED DEFAULT NULL,
+			contact_id_2 BIGINT(16) UNSIGNED DEFAULT NULL,
+			address varchar(128) DEFAULT NULL,
+			address_house_number int(8) DEFAULT NULL,
+			address_house_number_addition VARCHAR(8) DEFAULT NULL,
+			address_postal_code VARCHAR(16) DEFAULT NULL,
+			address_home VARCHAR(128) DEFAULT NULL,
+			address_county VARCHAR(128) DEFAULT NULL,
+			address_country VARCHAR(128) DEFAULT NULL,
+			telephone_voice VARCHAR(32) DEFAULT NULL,
+			telephone_fax VARCHAR(32) DEFAULT NULL,
+			telephone_cell_voice VARCHAR(32) DEFAULT NULL,
+			postoffice_box VARCHAR(32) DEFAULT NULL,
+			kvk_number VARCHAR(32) DEFAULT NULL,
+			btw_number VARCHAR(32) DEFAULT NULL,
+			e_mail VARCHAR(128) DEFAULT NULL,
+			website VARCHAR(128) DEFAULT NULL,
+			notes TEXT DEFAULT NULL,
+			PRIMARY KEY  (id)
+		' );
+
 		orbis_install_table( 'orbis_projects', '
 			id BIGINT(16) UNSIGNED NOT NULL AUTO_INCREMENT,
+			post_id BIGINT(20) UNSIGNED DEFAULT NULL,
 			name VARCHAR(128) NOT NULL,
 			principal_id BIGINT(16) UNSIGNED DEFAULT NULL,
 			contact_id_1 BIGINT(16) UNSIGNED DEFAULT NULL,
