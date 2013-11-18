@@ -123,10 +123,11 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		// Default roles
 		$roles = array(
 			'super_administrator' => array(
-				'edit_orbis_project_administration' => true
+				'manage_orbis'                      => true,
+				'edit_orbis_project_administration' => true,
 			),
 			'administrator' => array(
-
+				'manage_orbis'                      => true,
 			),
 			'editor' => array(
 

@@ -31,6 +31,7 @@ class Orbis_Core_Admin {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 
 		add_filter( 'menu_order', array( $this, 'menu_order' ) );
+		add_filter( 'custom_menu_order', array( $this, 'custom_menu_order' ) );
 	}
 
 	//////////////////////////////////////////////////
@@ -68,11 +69,11 @@ class Orbis_Core_Admin {
 		add_menu_page(
 			__( 'Orbis', 'orbis' ), // page_title
 			__( 'Orbis', 'orbis' ), // menu_title
-			'orbis_view', // capability
+			'manage_orbis', // capability
 			'orbis', // menu_slug
 			array( $this, 'page') , // function
 			$this->plugin->plugin_url( 'images/icon-16x16.png' ), // icon_url
-			'54.orbis.2'
+			'55.orbis.2'
 		);
 
 		// @see _add_post_type_submenus()
@@ -126,6 +127,15 @@ class Orbis_Core_Admin {
 
 		// Return order
 		return $orbis_menu_order;
+	}
+
+	/**
+	 * Custom menu order
+	 * 
+	 * @return boolean
+	 */
+	public function custom_menu_order() {
+		return true;
 	}
 
 	//////////////////////////////////////////////////
