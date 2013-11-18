@@ -260,14 +260,14 @@ add_action( 'save_post', 'orbis_save_project_sync', 20, 2 );
  */
 function orbis_project_edit_columns($columns) {
 	return array(
-        'cb'                       => '<input type="checkbox" />' ,
-        'title'                    => __( 'Title', 'orbis' ) ,
-        'orbis_project_principal'  => __( 'Principal', 'orbis' ) ,
-		'orbis_project_id'         => __( 'Orbis ID', 'orbis' ) ,
-		'orbis_project_time'       => __( 'Time', 'orbis' ) ,
-		'author'                   => __( 'Author', 'orbis' ) ,
-		'comments'                 => __( 'Comments', 'orbis' ) ,
-        'date'                     => __( 'Date', 'orbis' ) ,
+        'cb'                       => '<input type="checkbox" />',
+        'title'                    => __( 'Title', 'orbis' ),
+        'orbis_project_principal'  => __( 'Principal', 'orbis' ),
+		'orbis_project_id'         => __( 'Orbis ID', 'orbis' ),
+		'orbis_project_time'       => __( 'Time', 'orbis' ),
+		'author'                   => __( 'Author', 'orbis' ),
+		'comments'                 => __( 'Comments', 'orbis' ),
+        'date'                     => __( 'Date', 'orbis' ),
 	);
 }
 
