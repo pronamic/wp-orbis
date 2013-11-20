@@ -29,8 +29,10 @@ class Orbis_Plugin {
 		$this->dirname  = dirname( $file );
 		$this->dir_path = plugin_dir_path( $file );
 
-		add_action( 'admin_init',     array( $this, 'update' ) );
 		add_action( 'plugins_loaded', array( $this, 'loaded' ) );
+
+		add_action( 'admin_init', array( $this, 'update' ), 5 );
+		add_action( 'admin_init', array( $this, 'install_redirect' ) );
 	}
 
 	//////////////////////////////////////////////////
@@ -61,11 +63,13 @@ class Orbis_Plugin {
 	 * Update
 	 */
 	public function update() {
-		if ( ! empty( $this->name ) ) {
+		if ( is_admin() && ! empty( $this->name ) ) {
 			$option = $this->name . '_db_version';
 
 			if ( get_option( $option ) != $this->db_version ) {
 				$this->install();
+
+				update_option( $option, $this->db_version );
 			}
 		}
 	}
@@ -76,11 +80,32 @@ class Orbis_Plugin {
 	 * Install
 	 */
 	public function install() {
-		if ( ! empty( $this->name ) ) {
-			$option = $this->name . '_db_version';
+		// Flush rewrite rules
+		flush_rewrite_rules();
 
-			update_option( $option, $this->db_version );
-		}
+		// Redirect to welcome screen
+		set_transient( '_orbis_activation_redirect', 1, 60 * 60 );
+	}
+
+	/**
+	 * Install redirect
+	 */
+	public function install_redirect() {
+		if ( ! get_transient( '_orbis_activation_redirect' ) )
+			return;
+
+		// Delete the redirect transient
+		delete_transient( '_orbis_activation_redirect' );
+
+		if ( is_network_admin() || isset( $_GET['activate-multi'] ) || defined( 'IFRAME_REQUEST' ) )
+			return;
+		
+		if ( ( isset( $_GET['action'] ) && 'upgrade-plugin' == $_GET['action'] ) && ( isset( $_GET['plugin'] ) && strstr( $_GET['plugin'], 'orbis' ) ) )
+			return;
+
+		wp_safe_redirect( admin_url( '/' ) );
+
+		exit;
 	}
 
 	//////////////////////////////////////////////////
