@@ -1,0 +1,432 @@
+# Copyright (C) 2013 Orbis
+# This file is distributed under the same license as the Orbis package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Orbis 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/orbis\n"
+"POT-Creation-Date: 2013-11-20 13:12:08+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin/meta-box-company-details.php:21 includes/companies.php:146
+msgid "KvK Number"
+msgstr ""
+
+#: admin/meta-box-company-details.php:29
+msgid "E-Mail"
+msgstr ""
+
+#: admin/meta-box-company-details.php:37
+msgid "Website"
+msgstr ""
+
+#: admin/meta-box-company-details.php:45
+msgid "Addresses"
+msgstr ""
+
+#: admin/meta-box-company-details.php:50 admin/meta-box-company-details.php:53
+#: includes/companies.php:144
+msgid "Address"
+msgstr ""
+
+#: admin/meta-box-company-details.php:55
+msgid "Postcode"
+msgstr ""
+
+#: admin/meta-box-company-details.php:56
+msgid "City"
+msgstr ""
+
+#: admin/meta-box-company-details.php:58
+msgid "Country"
+msgstr ""
+
+#: admin/meta-box-person-details.php:17
+msgid "Email Address:"
+msgstr ""
+
+#: admin/meta-box-person-details.php:23
+msgid "Phone Number:"
+msgstr ""
+
+#: admin/meta-box-person-details.php:29
+msgid "Mobile Number:"
+msgstr ""
+
+#: admin/meta-box-person-details.php:35
+msgid "Twitter Username:"
+msgstr ""
+
+#: admin/meta-box-person-details.php:41
+msgid "Facebook:"
+msgstr ""
+
+#: admin/meta-box-person-details.php:47
+msgid "LinkedIn:"
+msgstr ""
+
+#: admin/meta-box-project-details.php:29
+msgid "Client"
+msgstr ""
+
+#: admin/meta-box-project-details.php:32
+msgid "Select Client"
+msgstr ""
+
+#: admin/meta-box-project-details.php:37 includes/projects.php:259
+msgid "Time"
+msgstr ""
+
+#: admin/meta-box-project-details.php:43
+msgid ""
+"You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
+msgstr ""
+
+#: admin/meta-box-project-details.php:50
+msgid "Agreement ID"
+msgstr ""
+
+#: admin/meta-box-project-details.php:57 admin/meta-box-project-details.php:60
+msgid "Choose a Agreement"
+msgstr ""
+
+#: admin/meta-box-project-details.php:60
+msgid "Set as Agreement"
+msgstr ""
+
+#: admin/meta-box-project-details.php:63
+msgid "You can select an .PDF or .TXT file from the WordPress media library."
+msgstr ""
+
+#: admin/meta-box-project-details.php:64
+msgid ""
+"If you received the agreement by mail print the complete mail conversation "
+"with an PDF printer."
+msgstr ""
+
+#. #-#-#-#-#  orbis.pot (Orbis 1.0.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: classes/orbis-core-admin.php:70 classes/orbis-core-admin.php:71
+msgid "Orbis"
+msgstr ""
+
+#: classes/orbis-core-admin.php:83
+msgid "Orbis Settings"
+msgstr ""
+
+#: classes/orbis-core-admin.php:84 views/settings.php:5
+msgid "Settings"
+msgstr ""
+
+#: classes/orbis-core-admin.php:92
+msgid "Orbis Stats"
+msgstr ""
+
+#: classes/orbis-core-admin.php:93 views/stats.php:5
+msgid "Stats"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:54
+msgid "No matches found"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:55
+msgid "Please enter %s more characters"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:56
+msgid "You can only select %s item"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:57
+msgid "You can only select %s items"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:58
+msgid "Loading more results..."
+msgstr ""
+
+#: classes/orbis-core-plugin.php:59
+msgid "Searching..."
+msgstr ""
+
+#: includes/companies.php:9
+msgid "Company Details"
+msgstr ""
+
+#: includes/companies.php:142 includes/projects.php:257
+#: templates/projects-without-agreement.php:38
+msgid "Title"
+msgstr ""
+
+#: includes/companies.php:145
+msgid "Online"
+msgstr ""
+
+#: includes/companies.php:147 includes/projects.php:261
+msgid "Author"
+msgstr ""
+
+#: includes/companies.php:148 includes/projects.php:262
+msgid "Comments"
+msgstr ""
+
+#: includes/companies.php:149 includes/projects.php:263
+msgid "Date"
+msgstr ""
+
+#: includes/log.php:60
+msgid "Orbis Log"
+msgstr ""
+
+#: includes/log.php:118
+msgid "Title:"
+msgstr ""
+
+#: includes/log.php:155
+msgid "%s updated the \"%s\" post."
+msgstr ""
+
+#: includes/persons.php:9
+msgid "Contact information"
+msgstr ""
+
+#: includes/post.php:9 includes/post.php:11 includes/post.php:23
+msgid "Projects"
+msgstr ""
+
+#: includes/post.php:12
+msgid "Project"
+msgstr ""
+
+#: includes/post.php:13
+msgctxt "orbis_project"
+msgid "Add New"
+msgstr ""
+
+#: includes/post.php:14
+msgid "Add New Project"
+msgstr ""
+
+#: includes/post.php:15
+msgid "Edit Project"
+msgstr ""
+
+#: includes/post.php:16
+msgid "New Project"
+msgstr ""
+
+#: includes/post.php:17
+msgid "All Projects"
+msgstr ""
+
+#: includes/post.php:18
+msgid "View Project"
+msgstr ""
+
+#: includes/post.php:19
+msgid "Search Projects"
+msgstr ""
+
+#: includes/post.php:20
+msgid "No projects found."
+msgstr ""
+
+#: includes/post.php:21
+msgid "No projects found in Trash."
+msgstr ""
+
+#: includes/post.php:22
+msgid "Parent Project:"
+msgstr ""
+
+#: includes/post.php:41 includes/post.php:117
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr ""
+
+#: includes/post.php:42 includes/post.php:118
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr ""
+
+#: includes/post.php:43 includes/post.php:119
+msgid "Search Categories"
+msgstr ""
+
+#: includes/post.php:44 includes/post.php:120
+msgid "All Categories"
+msgstr ""
+
+#: includes/post.php:45 includes/post.php:121
+msgid "Parent Category"
+msgstr ""
+
+#: includes/post.php:46 includes/post.php:122
+msgid "Parent Category:"
+msgstr ""
+
+#: includes/post.php:47 includes/post.php:123
+msgid "Edit Category"
+msgstr ""
+
+#: includes/post.php:48 includes/post.php:124
+msgid "Update Category"
+msgstr ""
+
+#: includes/post.php:49 includes/post.php:125
+msgid "Add New Category"
+msgstr ""
+
+#: includes/post.php:50 includes/post.php:126
+msgid "New Category Name"
+msgstr ""
+
+#: includes/post.php:51 includes/post.php:127
+msgid "Categories"
+msgstr ""
+
+#: includes/post.php:64 includes/post.php:66 includes/post.php:78
+msgid "Companies"
+msgstr ""
+
+#: includes/post.php:67
+msgid "Company"
+msgstr ""
+
+#: includes/post.php:68
+msgctxt "orbis_company"
+msgid "Add New"
+msgstr ""
+
+#: includes/post.php:69
+msgid "Add New Company"
+msgstr ""
+
+#: includes/post.php:70
+msgid "Edit Company"
+msgstr ""
+
+#: includes/post.php:71
+msgid "New Company"
+msgstr ""
+
+#: includes/post.php:72
+msgid "All Companies"
+msgstr ""
+
+#: includes/post.php:73
+msgid "View Company"
+msgstr ""
+
+#: includes/post.php:74
+msgid "Search Companies"
+msgstr ""
+
+#: includes/post.php:75
+msgid "No companies found."
+msgstr ""
+
+#: includes/post.php:76
+msgid "No companies found in Trash."
+msgstr ""
+
+#: includes/post.php:77
+msgid "Parent Company:"
+msgstr ""
+
+#: includes/post.php:87
+msgctxt "slug"
+msgid "companies"
+msgstr ""
+
+#: includes/post.php:95 includes/post.php:97
+msgid "Persons"
+msgstr ""
+
+#: includes/post.php:98
+msgid "Person"
+msgstr ""
+
+#: includes/post.php:106
+msgctxt "slug"
+msgid "persons"
+msgstr ""
+
+#: includes/projects.php:9
+msgid "Project Information"
+msgstr ""
+
+#: includes/projects.php:258 templates/projects-without-agreement.php:37
+msgid "Principal"
+msgstr ""
+
+#: includes/projects.php:260 templates/projects-without-agreement.php:35
+msgid "Orbis ID"
+msgstr ""
+
+#: templates/projects-table-view.php:58
+#: templates/projects-without-agreement.php:74
+msgid "Edit"
+msgstr ""
+
+#: templates/projects-without-agreement.php:36
+msgid "Project Manager"
+msgstr ""
+
+#: templates/projects-without-agreement.php:39
+msgid "Actions"
+msgstr ""
+
+#: views/orbis.php:11
+msgid "Recent Projects"
+msgstr ""
+
+#: views/orbis.php:24
+msgid "No recent projects found."
+msgstr ""
+
+#. translators: comment date format. See http:php.net/date
+#: views/orbis.php:49
+msgid "c"
+msgstr ""
+
+#: views/orbis.php:71 views/orbis.php:79
+msgid "Pronamic News"
+msgstr ""
+
+#. #-#-#-#-#  orbis.pot (Orbis 1.0.0)  #-#-#-#-#
+#. Author URI of the plugin/theme
+#: views/orbis.php:77
+msgid "http://www.pronamic.eu/"
+msgstr ""
+
+#: views/stats.php:135
+msgid "Number domains"
+msgstr ""
+
+#: views/stats.php:168
+msgid "Number subscriptions"
+msgstr ""
+
+#: views/stats.php:171
+msgid "Annual Revenue"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://wp.pronamic.eu/plugins/orbis/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Orbis is a powerful, extendable plugin to boost up your business. Project "
+"Management, Customer Relation Management & More..."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Pronamic"
+msgstr ""
