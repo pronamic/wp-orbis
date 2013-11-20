@@ -2,7 +2,7 @@
 /*
 Plugin Name: Orbis
 Plugin URI: http://pronamic.eu/wordpress/orbis/
-Description: This plugin creates an intranet environment in WordPress
+Description: Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More...
 
 Version: 1.0.0
 Requires at least: 3.0
