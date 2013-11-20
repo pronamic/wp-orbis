@@ -2,8 +2,8 @@
 Contributors: pronamic, remcotolsma 
 Tags: orbis, intranet
 Requires at least: 3.0
-Tested up to: 3.0
-Stable tag: 0.2.3
+Tested up to: 3.7.1
+Stable tag: 1.0.0
 
 This plugin creates an intranet environment in WordPress.
 
