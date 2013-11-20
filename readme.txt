@@ -1,5 +1,5 @@
 === Orbis ===
-Contributors: pronamic, remcotolsma 
+Contributors: pronamic, remcotolsma , kjtolsma
 Tags: orbis, intranet
 Requires at least: 3.0
 Tested up to: 3.7.1
