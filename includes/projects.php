@@ -48,9 +48,9 @@ function orbis_projects_suggest_project_id() {
 			project.id AS id,
 			CONCAT(project.id, '. ', principal.name, ' - ', project.name) AS text
 		FROM
-			orbis_projects AS project
+			$wpdb->orbis_projects AS project
 				LEFT JOIN
-			orbis_companies AS principal
+			$wpdb->orbis_companies AS principal
 					ON project.principal_id = principal.id
 		WHERE
 			project.finished = 0

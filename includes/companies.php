@@ -104,7 +104,7 @@ function orbis_save_company_sync( $post_id, $post ) {
 
 	if ( empty( $orbis_id ) ) {
 		$result = $wpdb->insert(
-			'orbis_companies' ,
+			$wpdb->orbis_companies,
 			array(
 				'post_id' => $post_id ,
 				'name' => $post->post_title
@@ -122,7 +122,7 @@ function orbis_save_company_sync( $post_id, $post ) {
 		}
 	} else {
 		$result = $wpdb->update(
-			'orbis_companies' ,
+			$wpdb->orbis_companies,
 			array( 'name' => $post->post_title ) ,
 			array( 'id' => $orbis_id ) ,
 			array( '%s' ) ,
@@ -223,7 +223,7 @@ function orbis_companies_suggest_company_id() {
 			company.id AS id,
 			company.name AS text
 		FROM
-			orbis_companies AS company
+			$wpdb->orbis_companies AS company
 		WHERE
 			company.name LIKE '%%%1\$s%%'
 		;", $term
