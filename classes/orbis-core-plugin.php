@@ -9,6 +9,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		// Actions
 		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'p2p_init', array( $this, 'p2p_init' ) );
 
 		// Includes
 		$this->plugin_include( 'includes/deprecated.php' );
@@ -68,6 +69,17 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			array(),
 			'3.4.1'
 		);
+	}
+
+	/**
+	 * Posts to posts initialize
+	 */
+	public function p2p_init() {
+		p2p_register_connection_type( array(
+			'name' => 'orbis_person_to_company',
+			'from' => 'orbis_person',
+			'to'   => 'orbis_company'
+		) );
 	}
 
 	public function loaded() {
