@@ -76,7 +76,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	 */
 	public function p2p_init() {
 		p2p_register_connection_type( array(
-			'name' => 'orbis_person_to_company',
+			'name' => 'orbis_persons_to_companies',
 			'from' => 'orbis_person',
 			'to'   => 'orbis_company'
 		) );
