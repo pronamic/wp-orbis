@@ -38,7 +38,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 </p>
 
 <p>
-	<label for="orbis_person_facebook"><?php _e('Facebook:', 'orbis'); ?></label> <br />
+	<label for="orbis_person_facebook"><?php _e('Facebook URL:', 'orbis'); ?></label> <br />
 
 	<input type="text" id="orbis_person_facebook" name="_orbis_person_facebook" value="<?php echo esc_attr( $person_facebook ); ?>" size="30" />
 </p>
