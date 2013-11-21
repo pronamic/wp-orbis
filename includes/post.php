@@ -28,7 +28,9 @@ function orbis_create_initial_post_types() {
 			'capability_type' => 'orbis_project',
 			'supports'        => array( 'title', 'editor', 'author', 'comments' ),
 			'has_archive'     => true,
-			'rewrite'         => array( 'slug' => 'projecten' ),
+			'rewrite'         => array(
+				'slug' => _x( 'projects', 'slug', 'orbis' ),
+			),
 		)
 	);
 
@@ -53,7 +55,7 @@ function orbis_create_initial_post_types() {
 			'show_ui'      => true,
 			'query_var'    => true,
 			'rewrite'      => array(
-				'slug' => 'project-categorie'
+				'slug' => _x( 'project-category', 'slug', 'orbis' ),
 			),
 		)
 	);
@@ -129,7 +131,7 @@ function orbis_create_initial_post_types() {
 			'show_ui'      => true,
 			'query_var'    => true,
 			'rewrite'      => array(
-				'slug' => 'persoon-categorie'
+				'slug' => _x( 'person-category', 'slug', 'orbis' ),
 			),
 		)
 	);
