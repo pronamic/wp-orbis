@@ -133,6 +133,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			),
 			'administrator' => array(
 				'manage_orbis'                      => true,
+				'edit_orbis_project_administration' => true,
 			),
 			'editor' => array(
 
