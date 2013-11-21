@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/orbis\n"
 "POT-Creation-Date: 2013-11-21 15:29:06+00:00\n"
-"PO-Revision-Date: 2013-11-21 16:29+0100\n"
+"PO-Revision-Date: 2013-11-21 16:48+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -407,7 +407,7 @@ msgstr "Acties"
 
 #: views/orbis.php:11
 msgid "Recent Projects"
-msgstr "Recente projecten:"
+msgstr "Recente projecten"
 
 #: views/orbis.php:24
 msgid "No recent projects found."
