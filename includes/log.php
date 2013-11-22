@@ -146,6 +146,12 @@ function orbis_log_save_post( $post_id, $post ) {
 
 	// Ok
 	$current_user = wp_get_current_user();
+	
+	if ( 0 == $current_user->ID ) {
+		$name = __( 'Anonymous', 'orbis' );
+	} else {
+		$name = $current_user->display_name;
+	}
 
 	if ( $post->post_status != 'publish' ) {
 		$url = get_edit_post_link( $post_id );
@@ -155,7 +161,7 @@ function orbis_log_save_post( $post_id, $post ) {
 
 	$message = sprintf(
 		__( '%s updated the "%s" post.', 'orbis' ),
-		$current_user->display_name,
+		$name,
 		sprintf( 
 			'<a href="%s">%s</a>',
 			$url,
