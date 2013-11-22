@@ -73,7 +73,7 @@ class Orbis_Core_Admin {
 			'orbis', // menu_slug
 			array( $this, 'page') , // function
 			$this->plugin->plugin_url( 'images/icon-16x16.png' ), // icon_url
-			'55.orbis.2'
+			'54.orbis.2'
 		);
 
 		// @see _add_post_type_submenus()
