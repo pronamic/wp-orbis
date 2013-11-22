@@ -5,10 +5,59 @@ Requires at least: 3.0
 Tested up to: 3.7.1
 Stable tag: 1.0.0
 
-This plugin creates an intranet environment in WordPress.
+Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More...
 
 == Description ==
 
+This plugin transforms your WordPress environment into a fully operating 
+business tool. Orbis has some nice basic Project Management, Customer Relation 
+Management & Intranet functionalities. Make Orbis even more powerfull with some 
+cool additional plugins.
+
+This plugin is built with idea to make business tools extendable. Every 
+bussiness is different. We believe in the power of WordPress and although 
+WordPress may not be your first idea to serve as a framework for such a tool, 
+we feel it has shown many advantages, particularly with extendability and 
+control. 
+
+Orbis comes with a front-end theme with the very orginal name, Orbis. This 
+theme is based on Bootstrap and gives you all the front-end functionality you 
+need. Easely extend this theme with child themes. We’ll try to release more
+ themes.
+
+[Download the Orbis theme for free.](https://github.com/pronamic/wt-orbis/releases)
+
+= Benefits at a glance =
+
+*	Easily extendable with plugins
+*	Fully translatable
+*	The Orbis Framework is available for FREE
+*	Various high quality themes
+*	Fully manageable
+*	Use you own hosting environment
+*	Built on WordPress
+
+= Core Features =
+
+*	Manage Projects - Add projects and connect them to companies
+*	Manage Persons - Add persons and connect them to companies
+*	Manage Companies - Add companies
+*	Pages - Use the standard WordPress functionality to add pages
+*	Posts - Use posts for your intranet
+*	Comments - Comment on Pages, Projects, Persons & Companies
+
+= Extend =
+
+The power of Orbis lays in the extendability and flexibility. Use plugins to 
+add the functionality you need.
+
+*	[Orbis Tasks](http://www.orbiswp.com/plugins/) - Add tasks to Persons and connect them to Projects
+*	[Orbis Keychains](http://www.orbiswp.com/plugins/) - Alle your passwords im a save place
+*	[Orbis Timesheets](http://www.orbiswp.com/plugins/) - Submit your time en connect them to Projects.
+
+= Get involved =
+
+Want to contribute? Checkout the source code on the Orbis GitHub Repository.
 
 
 == Functions ==
@@ -43,25 +92,8 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 == Changelog ==
 
-= 0.2.4 =
-*	Added support for wildcard domains in subscription / licenses API
-
-= 0.2.3 =
-*	Added the keychain URL, username and e-mail fields to an password request comment
-
-= 0.2.2 =
-*	Added company post type
-*	Added subscription post type
-*	Improved the keychain visibile till date functionality
-
-= 0.2.1 = 
-*	Added own capabilities for the keychain posts
-
-= 0.2 =
-*	Added keychain manager support
-
-= 0.1 =
-*	Initial release
+= 1.0.0 =
+*	Initial release.
 
 
 == Developers ==
