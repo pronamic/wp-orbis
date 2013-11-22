@@ -32,7 +32,13 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 == Screenshots ==
 
-1.	Orbis
+1.	Home
+2.	News
+3.	Person
+4.	Persons
+5.	Project
+6.	Projects
+7.	WordPress
 
 
 == Changelog ==
