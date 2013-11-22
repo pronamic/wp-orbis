@@ -1,19 +1,20 @@
 <?php
 
 /**
- * Subscriptions to invoice shortcode
+ * Projects active shortcode
  * 
- * @param unknown $atts
+ * @param array $atts
  * @return string
  */
 function orbis_shortcode_projects_active( $atts ) {
 	global $wpdb;
+	global $orbis_plugin;
 
 	$return  = '';
 
 	ob_start();
 	
-	include dirname( __FILE__ ) . '/../templates/projects.php';
+	$orbis_plugin->plugin_include( 'templates/projects.php' );
 	
 	$return = ob_get_contents();
 	
@@ -23,3 +24,53 @@ function orbis_shortcode_projects_active( $atts ) {
 }
 
 add_shortcode( 'orbis_projects_active', 'orbis_shortcode_projects_active' );
+
+/**
+ * Projects without agreement
+*
+* @param array $atts
+* @return string
+*/
+function orbis_shortcode_projects_without_agreement( $atts ) {
+	global $wpdb;
+	global $orbis_plugin;
+
+	$return  = '';
+
+	ob_start();
+
+	$orbis_plugin->plugin_include( 'templates/projects-without-agreement.php' );
+
+	$return = ob_get_contents();
+
+	ob_end_clean();
+
+	return $return;
+}
+
+add_shortcode( 'orbis_projects_without_agreement', 'orbis_shortcode_projects_without_agreement' );
+
+/**
+ * Projects to invoice
+ * 
+ * @param array $atts
+ * @return string
+ */
+function orbis_shortcode_projects_to_invoice( $atts ) {
+	global $wpdb;
+	global $orbis_plugin;
+
+	$return  = '';
+
+	ob_start();
+	
+	$orbis_plugin->plugin_include( 'templates/projects-to-invoice.php' );
+	
+	$return = ob_get_contents();
+	
+	ob_end_clean();
+	
+	return $return;
+}
+
+add_shortcode( 'orbis_projects_to_invoice', 'orbis_shortcode_projects_to_invoice' );

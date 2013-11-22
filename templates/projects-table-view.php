@@ -18,50 +18,48 @@
 	
 			<?php foreach($managers as $manager): ?>
 	
-			<tr>
-				<th rowspan="<?php echo count($manager->projects) + 1; ?>">
-					<?php echo $manager->name; ?>
-				</th>
-			</tr>
+				<tr>
+					<th rowspan="<?php echo count($manager->projects) + 1; ?>">
+						<?php echo $manager->name; ?>
+					</th>
+				</tr>
 	
-			<?php foreach($manager->projects as $project): ?>
-	
-			<tr>
-				<td>
-					<a href="http://orbis.pronamic.nl/projecten/details/<?php echo $project->id; ?>/" style="color: #000;">
-						<?php echo $project->id; ?>
-					</a>
-				</td>
-				<td>
-					<a href="http://orbis.pronamic.nl/bedrijven/details/<?php echo $project->principalId ?>/" style="color: #000;">
-						<?php echo $project->principalName; ?>
-					</a>
-				</td>
-				<td>
-					<a href="http://orbis.pronamic.nl/projecten/details/<?php echo $project->id; ?>/" style="color: #000;">
-						<?php echo $project->name; ?>
-					</a>
-				</td>
-				<td>
-					<span style="color: <?php echo $project->failed ? 'Red' : 'Green'; ?>;"><?php echo orbis_format_seconds( $project->registeredSeconds ); ?></span>
-				</td>
-				<td>
-					<?php echo orbis_format_seconds( $project->availableSeconds ); ?>
-				</td>
-				<td>
-					<?php echo $project->invoicable ? 'Ja' : 'Nee'; ?>
-				</td>
-				<td>
-					<?php echo $project->invoiceNumber; ?>
-				</td>
-				<td>
-					<a href="http://orbis.pronamic.nl/projecten/wijzigen/<?php echo $project->id; ?>/" style="color: #000;">
-						Wijzigen
-					</a>
-				</td>
-			</tr>
-	
-			<?php endforeach; ?>
+				<?php foreach($manager->projects as $project): ?>
+		
+					<tr>
+						<td>
+							<a href="<?php echo get_permalink( $project->project_post_id ); ?>" style="color: #000;">
+								<?php echo $project->id; ?>
+							</a>
+						</td>
+						<td>
+							<a href="<?php echo get_permalink( $project->principal_post_id ); ?>" style="color: #000;">
+								<?php echo $project->principalName; ?>
+							</a>
+						</td>
+						<td>
+							<a href="<?php echo get_permalink( $project->project_post_id ); ?>" style="color: #000;">
+								<?php echo $project->name; ?>
+							</a>
+						</td>
+						<td>
+							<span style="color: <?php echo $project->failed ? 'Red' : 'Green'; ?>;"><?php echo orbis_time( $project->registeredSeconds ); ?></span>
+						</td>
+						<td>
+							<?php echo orbis_time( $project->availableSeconds ); ?>
+						</td>
+						<td>
+							<?php echo $project->invoicable ? 'Ja' : 'Nee'; ?>
+						</td>
+						<td>
+							<?php echo $project->invoiceNumber; ?>
+						</td>
+						<td>
+							<?php edit_post_link( __( 'Edit', 'orbis' ), '', '', $project->project_post_id ); ?>
+						</td>
+					</tr>
+		
+				<?php endforeach; ?>
 	
 			<?php endforeach; ?>
 	
