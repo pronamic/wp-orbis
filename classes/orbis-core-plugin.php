@@ -5,7 +5,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		parent::__construct( $file );
 
 		$this->set_name( 'orbis' );
-		$this->set_db_version( '1.0.0' );
+		$this->set_db_version( '1.0.1' );
 
 		// Actions
 		add_action( 'init', array( $this, 'init' ) );
@@ -21,6 +21,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$this->plugin_include( 'includes/project-template.php' );
 
 		// Tables
+		orbis_register_table( 'orbis_log' );
 		orbis_register_table( 'orbis_companies' );
 		orbis_register_table( 'orbis_projects' );
 
@@ -95,6 +96,14 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	 */
 	public function install() {
 		// Tables
+		orbis_install_table( 'orbis_log', '
+			id BIGINT(16) UNSIGNED NOT NULL AUTO_INCREMENT,
+			created DATETIME NOT NULL,
+			user_id BIGINT(20) UNSIGNED DEFAULT NULL,
+			message VARCHAR(512) NOT NULL,
+			PRIMARY KEY  (id)
+		' );
+
 		orbis_install_table( 'orbis_companies', '
 			id BIGINT(16) UNSIGNED NOT NULL AUTO_INCREMENT,
 			post_id BIGINT(20) UNSIGNED DEFAULT NULL,

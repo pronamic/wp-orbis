@@ -5,15 +5,17 @@ function orbis_log( $message ) {
 
 	$data = array(
 		'created' => current_time( 'mysql' ),
-		'message' => $message
+		'user_id' => get_current_user_id(),
+		'message' => $message,
 	);
 	
 	$format = array(
 		'created' => '%s',
-		'message' => '%s'
+		'user_id' => '%d',
+		'message' => '%s',
 	);
 
-	$result = $wpdb->insert( 'orbis_log', $data, $format );
+	$result = $wpdb->insert( $wpdb->orbis_log, $data, $format );
 
 	return $result;
 }
@@ -21,17 +23,17 @@ function orbis_log( $message ) {
 function orbis_get_logs() {
 	global $wpdb;
 
-	$query = '
+	$query = "
 		SELECT
 			created,
 			message
 		FROM
-			orbis_log
+			$wpdb->orbis_log
 		ORDER BY
 			created DESC
 		LIMIT
 			0, 10
-	';
+	";
 
 	$logs = $wpdb->get_results( $query );
 	
