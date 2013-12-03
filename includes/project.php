@@ -8,6 +8,7 @@
  */
 function orbis_project_query_vars( $query_vars ) {
 	$query_vars[] = 'orbis_project_principal';
+	$query_vars[] = 'orbis_project_client_id';
 	$query_vars[] = 'orbis_project_invoice_number';
 
 	return $query_vars;
@@ -73,7 +74,13 @@ function orbis_projects_posts_clauses( $pieces, $query ) {
 			$n    = '%';
 			$term = esc_sql( like_escape( $principal ) );
 
-			$where = "AND principal.name LIKE '{$n}{$term}{$n}'";
+			$where .= " AND principal.name LIKE '{$n}{$term}{$n}' ";
+		}
+
+		$client_id = $query->get( 'orbis_project_client_id' );
+
+		if ( ! empty( $client_id ) ) {
+			$where .= $wpdb->prepare( " AND principal.post_id LIKE %d ", $client_id );
 		}
 
 		$invoice_number = $query->get( 'orbis_project_invoice_number' );
@@ -82,7 +89,7 @@ function orbis_projects_posts_clauses( $pieces, $query ) {
 			$n    = '%';
 			$term = esc_sql( like_escape( $invoice_number ) );
 
-			$where = "AND project.invoice_number LIKE '{$n}{$term}{$n}'";
+			$where .= " AND project.invoice_number LIKE '{$n}{$term}{$n}' ";
 		}
 
 		$pieces['join']   .= $join;
