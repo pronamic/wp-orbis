@@ -186,7 +186,7 @@ class Orbis_Core_Admin {
 		
 		check_ajax_referer( 'install-plugin-' . $plugin_slug, 'nonce' );
 		
-		$plugin_installer = new Orbis_Plugin_Installer( $this->plugin );
+		$plugin_installer = new Orbis_Plugin_Manager( $this->plugin );
 		
 		$result = $plugin_installer->install_plugin( $plugin_slug );
 		
@@ -209,7 +209,7 @@ class Orbis_Core_Admin {
 
         check_ajax_referer( 'activate-plugin-' . $plugin_slug, 'nonce' );
 
-        $plugin_installer = new Orbis_Plugin_Installer( $this->plugin );
+        $plugin_installer = new Orbis_Plugin_Manager( $this->plugin );
 
         $result = $plugin_installer->activate_plugin( $plugin_slug );
 

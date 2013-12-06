@@ -8,10 +8,12 @@ orbis_plugins_script = function()
 	 */
 	self.init = function()
 	{
-		self.$pluginsTable         = $('table.orbis-plugins');
-		self.$installPluginButtons = self.$pluginsTable.find('.orbis-install-plugin');
+		self.$pluginsTable          = $('table.orbis-plugins');
+		self.$installPluginButtons  = self.$pluginsTable.find('.orbis-install-plugin');
+        self.$activatePluginButtons = self.$pluginsTable.find('.orbis-activate-plugin');
 		
 		self.$installPluginButtons.on('click', function(event){ self.onInstallPluginButtonClick(event); });
+        self.$activatePluginButtons.on('click', function(event){ self.onActivatePluginButtonClick(event); });
 	};
 	
 	/**
@@ -33,9 +35,9 @@ orbis_plugins_script = function()
 				'plugin_slug': $button.data('pluginSlug')
 			}
 		)
-		.done(function(result)
+		.done(function(data)
 		{
-			console.log(result);
+			console.log(data);
 			
 //			if ( '1' === result ) {
 //				$( button )
@@ -53,9 +55,9 @@ orbis_plugins_script = function()
 //				$( button ).after( '<span class="a8c-developer-action-result error">' + result + '</span>' );
 //			}
 		})
-		.fail(function(response)
+		.fail(function(data)
 		{
-			console.log(response);
+			console.log(data);
 			
 //			$( button )
 //				.html( a8c_developer_i18n.ERROR )
@@ -65,6 +67,29 @@ orbis_plugins_script = function()
 //			$( button ).after( '<span class="a8c-developer-action-result error">' + response.statusText + ': ' + response.responseText + '</span>' );
 		});
 	};
+
+    /**
+     * Handle activate plugin button click
+     *
+     * @param event
+     */
+    self.onActivatePluginButtonClick = function(event)
+    {
+        event.preventDefault();
+
+        var $button = $(event.currentTarget);
+
+        $.post(
+            ajaxurl,
+            {
+                'action'     : 'orbis_activate_plugin',
+                'nonce'      : $button.data('nonce'),
+                'plugin_slug': $button.data('pluginSlug')
+            }
+        )
+        .done(function(data){ console.log(data); })
+        .fail(function(data){ console.log(data); });
+    };
 	
 	$(document).ready(function()
 	{

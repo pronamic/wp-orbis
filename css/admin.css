@@ -30,3 +30,14 @@ th.column-orbis_project_id {
 #orbis_company_details :-moz-placeholder {
 	color: #999;
 }
+
+/**
+ * Orbis plugins page
+ */
+table.orbis-plugins th, td {
+    padding: 0 10px 5px 0;
+}
+
+table.orbis-plugins th {
+    text-align: left;
+}

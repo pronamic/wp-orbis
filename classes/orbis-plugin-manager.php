@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Title: Orbis plugin installer
+ * Title: Orbis plugin manager
  * Description: 
  * Copyright: Copyright (c) 2005 - 2013
  * Company: Pronamic
  * @author Stefan Boonstra
  * @version 1.0
  */
-class Orbis_Plugin_Installer {
+class Orbis_Plugin_Manager {
 	/**
 	 * Plugin
 	 *
@@ -16,9 +16,17 @@ class Orbis_Plugin_Installer {
 	 */
 	private $plugin;
 
-	//////////////////////////////////////////////////
+    /**
+     * List of recommended plugins
+     */
+    public static $recommended_plugins = array(
+        'members'        => array( 'title' => 'Members'      , 'plugin_file_name' => null ),
+        'posts-to-posts' => array( 'title' => 'Posts 2 Posts', 'plugin_file_name' => null )
+    );
 
-	/**
+    //////////////////////////////////////////////////
+
+    /**
 	 * Constructs and initialize an Orbis plugin installer
 	 *
 	 * @param Orbis_Plugin $plugin
@@ -28,6 +36,46 @@ class Orbis_Plugin_Installer {
 	}
 	
 	//////////////////////////////////////////////////
+
+    /**
+     * Checks if the plugin with the passed slug (and file name) is installed.
+     *
+     * @param string $plugin_slug
+     * @param string $plugin_file_name (Optional, defaults to null)
+     *
+     * @return bool $is_plugin_installed
+     */
+    public static function is_plugin_installed( $plugin_slug, $plugin_file_name = null ) {
+        global $orbis_plugin;
+
+        if ( strlen( $plugin_file_name ) > 0 ) {
+            $file = dirname( $orbis_plugin->dirname ) . DIRECTORY_SEPARATOR . $plugin_slug . DIRECTORY_SEPARATOR . $plugin_file_name;
+        } else {
+            $file = dirname( $orbis_plugin->dirname ) . DIRECTORY_SEPARATOR . $plugin_slug . DIRECTORY_SEPARATOR . $plugin_slug . '.php';
+        }
+
+        return file_exists( $file );
+    }
+
+    //////////////////////////////////////////////////
+
+    /**
+     * Checks if the plugin with the passed slug (and file name) is active.
+     *
+     * @param string $plugin_slug
+     * @param string $plugin_file_name (Optional, defaults to null)
+     *
+     * @return bool $is_plugin_active
+     */
+    public static function is_plugin_active( $plugin_slug, $plugin_file_name = null ) {
+        if ( strlen( $plugin_file_name ) > 0 ) {
+            return is_plugin_active( $plugin_slug . '/' . $plugin_file_name );
+        }
+
+        return is_plugin_active( $plugin_slug . '/' . $plugin_slug . '.php' );
+    }
+
+    //////////////////////////////////////////////////
 	
 	/**
 	 * Installs and activates the plugin that matches the passed $plugin_slug.
