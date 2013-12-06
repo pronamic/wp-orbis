@@ -34,10 +34,24 @@ th.column-orbis_project_id {
 /**
  * Orbis plugins page
  */
+.orbis-plugins-message {
+    height: 0;
+
+    overflow: hidden;
+}
+
 table.orbis-plugins th, td {
     padding: 0 10px 5px 0;
 }
 
 table.orbis-plugins th {
     text-align: left;
+}
+
+.loading-icon {
+    display: none;
+}
+
+.loading-icon.loading {
+    display: block;
 }
