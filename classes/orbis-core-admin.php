@@ -202,7 +202,7 @@ class Orbis_Core_Admin {
 		$plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_SANITIZE_STRING );
 		
 		if ( ! $plugin_slug ) {
-			die( json_encode( array( 'success' => false, 'message' => __( 'Plugin could not be found', 'orbis' ) ) ) );
+			die( json_encode( array( 'success' => false, 'message' => __( 'The plugin could not be found', 'orbis' ) ) ) );
 		}
 		
 		check_ajax_referer( 'manage-plugin-' . $plugin_slug, 'nonce' );
@@ -215,7 +215,7 @@ class Orbis_Core_Admin {
 			die( json_encode( array( 'success' => false, 'error_code' => $result->get_error_code(), 'message' => $result->get_error_message() ) ) );
 		}
 		
-		die( json_encode( array( 'success' => true, 'message' => __( 'Plugin successfully installed and activated', 'orbis' ) ) ) );
+		die( json_encode( array( 'success' => true, 'message' => __( 'The plugin was installed and activated successfully', 'orbis' ) ) ) );
 	}
 	
 	/**
@@ -225,7 +225,7 @@ class Orbis_Core_Admin {
         $plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_SANITIZE_STRING );
 
         if ( ! $plugin_slug ) {
-            die( __( 'Error 1', 'orbis' ) );
+            die( json_encode( array( 'success' => false, 'message' => __( 'The plugin could not be found', 'orbis' ) ) ) );
         }
 
         check_ajax_referer( 'manage-plugin-' . $plugin_slug, 'nonce' );
@@ -238,6 +238,6 @@ class Orbis_Core_Admin {
             die( json_encode( array( 'success' => false, 'error_code' => $result->get_error_code(), 'message' => $result->get_error_message() ) ) );
         }
 
-        die( json_encode( array( 'success' => true, 'message' => __( 'Plugin successfully activated', 'orbis' ) ) ) );
+        die( json_encode( array( 'success' => true, 'message' => __( 'The plugin was activated successfully', 'orbis' ) ) ) );
 	}
 }
