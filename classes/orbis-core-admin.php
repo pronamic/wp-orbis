@@ -21,7 +21,7 @@ class Orbis_Core_Admin {
 	/**
 	 * Constructs and initialize an Orbis core admin
 	 *
-	 * @param string $file
+	 * @param Orbis_Plugin $plugin
 	 */
 	public function __construct( $plugin ) {
 		$this->plugin = $plugin;
@@ -32,6 +32,9 @@ class Orbis_Core_Admin {
 
 		add_filter( 'menu_order', array( $this, 'menu_order' ) );
 		add_filter( 'custom_menu_order', array( $this, 'custom_menu_order' ) );
+		
+		add_action( 'wp_ajax_orbis_install_plugin' , array( $this, 'orbis_install_plugin' ) );
+		add_action( 'wp_ajax_orbis_activate_plugin', array( $this, 'orbis_activate_plugin' ) );
 	}
 
 	//////////////////////////////////////////////////
@@ -42,6 +45,12 @@ class Orbis_Core_Admin {
 	public function admin_init() {
 		// Scripts
 		wp_enqueue_script( 'select2' );
+		
+		wp_enqueue_script(
+			'orbis-plugins-script',
+			$this->plugin->plugin_url( 'includes/js/orbis-plugins.js' ),
+			array( 'jquery' )
+		);
 
 		// Styles
 		wp_enqueue_style( 'orbis-select2' );
@@ -94,6 +103,15 @@ class Orbis_Core_Admin {
 			'orbis_view_stats', // capability
 			'orbis_stats', // menu_slug
 			array( $this, 'pageStats' ) // function
+		);
+		
+		add_submenu_page(
+			'orbis', // parent_slug
+			__( 'Orbis Plugins', 'orbis' ), // page_title
+			__( 'Plugins', 'orbis' ), // menu_title
+			'manage_orbis', // capability // TODO Ask about this privilege
+			'orbis_plugins', // menu_slug
+			array( $this, 'pagePlugins' ) // function
 		);
 	}
 
@@ -150,5 +168,55 @@ class Orbis_Core_Admin {
 
 	public function pageStats() {
 		$this->plugin->plugin_include( 'views/stats.php' );
+	}
+	
+	public function pagePlugins() {
+		$this->plugin->plugin_include( 'views/plugins.php' );
+	}
+	
+	/**
+	 * Called through the WordPress AJAX hook. Installs a plugin that matches the slug passed through the $_POST variable.
+	 */
+	public function orbis_install_plugin() {
+		$plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_SANITIZE_STRING );
+		
+		if ( ! $plugin_slug ) {
+			die( __( 'Error 1', 'orbis' ) );
+		}
+		
+		check_ajax_referer( 'install-plugin-' . $plugin_slug, 'nonce' );
+		
+		$plugin_installer = new Orbis_Plugin_Installer( $this->plugin );
+		
+		$result = $plugin_installer->install_plugin( $plugin_slug );
+		
+		if ( is_wp_error( $result ) ) {
+			die( json_encode( array( 'success' => false, 'error_code' => $result->get_error_code(), 'message' => $result->get_error_message() ) ) );
+		}
+		
+		die( json_encode( array( 'success' => true ) ) );
+	}
+	
+	/**
+     * Called through the WordPress AJAX hook. Activates a plugin that matches the slug passed through the $_POST variable.
+	 */
+	public function orbis_activate_plugin() {
+        $plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_SANITIZE_STRING );
+
+        if ( ! $plugin_slug ) {
+            die( __( 'Error 1', 'orbis' ) );
+        }
+
+        check_ajax_referer( 'activate-plugin-' . $plugin_slug, 'nonce' );
+
+        $plugin_installer = new Orbis_Plugin_Installer( $this->plugin );
+
+        $result = $plugin_installer->activate_plugin( $plugin_slug );
+
+        if ( is_wp_error( $result ) ) {
+            die( json_encode( array( 'success' => false, 'error_code' => $result->get_error_code(), 'message' => $result->get_error_message() ) ) );
+        }
+
+        die( json_encode( array( 'success' => true ) ) );
 	}
 }

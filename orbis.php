@@ -29,6 +29,7 @@ function orbis_bootstrap() {
 	require_once 'classes/orbis-core-admin.php';
 	require_once 'classes/orbis-core-plugin.php';
 	require_once 'classes/orbis-api.php';
+	require_once 'classes/orbis-plugin-installer.php';
 
 	// Initialize
 	global $orbis_plugin;
