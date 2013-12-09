@@ -3,4 +3,10 @@ jQuery( document ).ready( function( $ ) {
 		numberOfMonths: 3,
 		showButtonPanel: true,
 	} );
+	
+	$( '.orbis-confirm' ).click( function() {
+		var result = confirm( 'Are you sure?' );
+
+		return result;
+	} );
 } );
