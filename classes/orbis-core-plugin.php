@@ -63,6 +63,20 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		wp_localize_script( 'orbis-autocomplete', 'orbisl10n', $translation_array );
 
+		// jQuery UI datepicker
+		wp_enqueue_script( 'jquery-ui-datepicker' );
+		
+		wp_enqueue_style( 'jquery-ui-datepicker', $this->plugin_url( '/jquery-ui/themes/base/jquery.ui.all.css' ) );
+		
+		self::enqueue_jquery_ui_i18n_path( 'datepicker' );
+
+		wp_enqueue_script(
+			'orbis',
+			$this->plugin_url( 'includes/js/orbis.js' ),
+			array( 'jquery', 'jquery-ui-datepicker' ),
+			'1.0.0'
+		);
+
 		// Styles
 		wp_register_style(
 			'select2',
@@ -71,6 +85,49 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'3.4.1'
 		);
 	}
+
+	//////////////////////////////////////////////////
+	
+	/**
+	 * Get jQuery UI i18n file
+	 * https://github.com/jquery/jquery-ui/tree/master/ui/i18n
+	 *
+	 * @param string $module
+	 */
+	private function enqueue_jquery_ui_i18n_path( $module ) {
+		$result = false;
+	
+		// Retrive the WordPress locale, for example 'en_GB'
+		$locale = get_locale();
+	
+		// jQuery UI uses 'en-GB' notation, replace underscore with hyphen
+		$locale = str_replace( '_', '-', $locale );
+	
+		// Create an search array with two variants 'en-GB' and 'en'
+		$search = array(
+				$locale, // en-GB
+				substr( $locale, 0, 2 ) // en
+		);
+	
+		foreach ( $search as $name ) {
+			$path = sprintf( '/jquery-ui/languages/jquery.ui.%s-%s.js', $module, $name );
+	
+			$file = $this->dir_path . '/' . $path;
+	
+			if ( is_readable( $file ) ) {
+				wp_enqueue_script(
+					'jquery-ui-' . $module . '-' . $name,
+					$this->plugin_url( $path )
+				);
+	
+				break;
+			}
+		}
+	
+		return $result;
+	}
+
+	//////////////////////////////////////////////////
 
 	/**
 	 * Posts to posts initialize
