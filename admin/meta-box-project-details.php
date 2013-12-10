@@ -26,6 +26,14 @@ if ( true ) {
 	<tbody>
 		<tr valign="top">
 			<th scope="row">
+				<label for="orbis_project_id"><?php _e( 'Orbis ID', 'orbis' ); ?></label>
+			</th>
+			<td>
+				<input id="orbis_project_id" name="_orbis_project_id" value="<?php echo esc_attr( $orbis_id ); ?>" type="text" class="regular-text" readonly="readonly" />
+			</td>
+		</tr>
+		<tr valign="top">
+			<th scope="row">
 				<label for="_orbis_project_principal_id"><?php _e( 'Client', 'orbis' ); ?></label>
 			</th>
 			<td>
@@ -37,7 +45,7 @@ if ( true ) {
 				<label for="_orbis_project_seconds_available"><?php _e( 'Time', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input size="5" id="_orbis_project_seconds_available" name="_orbis_project_seconds_available" value="<?php echo esc_attr( orbis_time( $seconds ) ); ?>" />
+				<input size="5" id="_orbis_project_seconds_available" name="_orbis_project_seconds_available" value="<?php echo esc_attr( orbis_time( $seconds ) ); ?>" type="text"  class="small-text" />
 
 				<p class="description">
 					<?php _e( 'You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes).', 'orbis' ); ?>
