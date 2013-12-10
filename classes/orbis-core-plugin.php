@@ -156,7 +156,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		orbis_install_table( 'orbis_log', '
 			id BIGINT(16) UNSIGNED NOT NULL AUTO_INCREMENT,
 			created DATETIME NOT NULL,
-			user_id BIGINT(20) UNSIGNED DEFAULT NULL,
+			wp_user_id BIGINT(20) UNSIGNED DEFAULT NULL,
 			message VARCHAR(512) NOT NULL,
 			PRIMARY KEY  (id)
 		' );
