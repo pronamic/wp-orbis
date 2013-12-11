@@ -10,7 +10,12 @@ Requires at least: 3.0
 Author: Pronamic
 Author URI: http://www.pronamic.eu/
 
+Text Domain: orbis
+Domain Path: /languages/
+
 License: GPL
+
+GitHub URI: https://github.com/pronamic/wp-orbis
 */
 
 require_once 'includes/functions.php';

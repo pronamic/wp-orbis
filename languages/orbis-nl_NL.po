@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/orbis\n"
-"POT-Creation-Date: 2013-12-06 16:29+0100\n"
-"PO-Revision-Date: 2013-12-06 16:31+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2013-12-11 08:54:19+00:00\n"
+"PO-Revision-Date: 2013-12-11 09:57+0100\n"
+"Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
@@ -13,40 +13,43 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x:2c,1;esc_attr_e\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.5\n"
-"X-Poedit-Basepath: ../\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Generator: Poedit 1.6.2\n"
 
-#: admin/meta-box-company-details.php:21 includes/companies.php:146
+#: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:29
+#: includes/projects.php:260 templates/projects-without-agreement.php:35
+msgid "Orbis ID"
+msgstr "Orbis ID"
+
+#: admin/meta-box-company-details.php:31 includes/companies.php:146
 msgid "KvK Number"
 msgstr "KvK nummer"
 
-#: admin/meta-box-company-details.php:29
+#: admin/meta-box-company-details.php:39
 msgid "E-Mail"
 msgstr "E-mailadres"
 
-#: admin/meta-box-company-details.php:37
+#: admin/meta-box-company-details.php:47
 msgid "Website"
 msgstr "Website"
 
-#: admin/meta-box-company-details.php:45
+#: admin/meta-box-company-details.php:55
 msgid "Addresses"
 msgstr "Adressen"
 
-#: admin/meta-box-company-details.php:50 admin/meta-box-company-details.php:53
+#: admin/meta-box-company-details.php:60 admin/meta-box-company-details.php:63
 #: includes/companies.php:144
 msgid "Address"
 msgstr "Adres"
 
-#: admin/meta-box-company-details.php:55
+#: admin/meta-box-company-details.php:65
 msgid "Postcode"
 msgstr "Postcode"
 
-#: admin/meta-box-company-details.php:56
+#: admin/meta-box-company-details.php:66
 msgid "City"
 msgstr "Plaats"
 
-#: admin/meta-box-company-details.php:58
+#: admin/meta-box-company-details.php:68
 msgid "Country"
 msgstr "Land"
 
@@ -74,43 +77,43 @@ msgstr "Facebook URL:"
 msgid "LinkedIn:"
 msgstr "LinkedIn:"
 
-#: admin/meta-box-project-details.php:29
+#: admin/meta-box-project-details.php:37
 msgid "Client"
 msgstr "Klant"
 
-#: admin/meta-box-project-details.php:32
+#: admin/meta-box-project-details.php:40
 msgid "Select Client"
 msgstr "Selecteer klant"
 
-#: admin/meta-box-project-details.php:37 includes/projects.php:259
+#: admin/meta-box-project-details.php:45 includes/projects.php:259
 msgid "Time"
 msgstr "Tijd"
 
-#: admin/meta-box-project-details.php:43
+#: admin/meta-box-project-details.php:51
 msgid ""
 "You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
 msgstr ""
 "Je kunt de tijd invoeren als 1.5 of 1:30 (beide zijn 1 uur en 30 minuten)."
 
-#: admin/meta-box-project-details.php:50
+#: admin/meta-box-project-details.php:58
 msgid "Agreement ID"
 msgstr "Akkoord ID"
 
-#: admin/meta-box-project-details.php:57 admin/meta-box-project-details.php:60
+#: admin/meta-box-project-details.php:65 admin/meta-box-project-details.php:68
 msgid "Choose a Agreement"
 msgstr "Kies een akkoord"
 
-#: admin/meta-box-project-details.php:60
+#: admin/meta-box-project-details.php:68
 msgid "Set as Agreement"
 msgstr "Stel in als akkoord"
 
-#: admin/meta-box-project-details.php:63
+#: admin/meta-box-project-details.php:71
 msgid "You can select an .PDF or .TXT file from the WordPress media library."
 msgstr ""
 "Je kunt een .PDF of .TXT bestand selecteren uit de WordPress media "
 "bibliotheek."
 
-#: admin/meta-box-project-details.php:64
+#: admin/meta-box-project-details.php:72
 msgid ""
 "If you received the agreement by mail print the complete mail conversation "
 "with an PDF printer."
@@ -138,6 +141,7 @@ msgstr "Een onbekende fout is opgetreden"
 msgid "Could not connect to the server"
 msgstr "Een verbinding met de server kon niet worden gemaakt"
 
+#. Plugin Name of the plugin/theme
 #: classes/orbis-core-admin.php:100 classes/orbis-core-admin.php:101
 msgid "Orbis"
 msgstr "Orbis"
@@ -183,17 +187,14 @@ msgid "No matches found"
 msgstr "Geen overeenkomsten gevonden"
 
 #: classes/orbis-core-plugin.php:57
-#, php-format
 msgid "Please enter %s more characters"
 msgstr "Voer nog %s tekens in."
 
 #: classes/orbis-core-plugin.php:58
-#, php-format
 msgid "You can only select %s item"
 msgstr "Je kunt slechts %s item selecteren"
 
 #: classes/orbis-core-plugin.php:59
-#, php-format
 msgid "You can only select %s items"
 msgstr "Je kunt slechts %s items selecteren"
 
@@ -255,7 +256,6 @@ msgid "Anonymous"
 msgstr "Anoniem"
 
 #: includes/log.php:163
-#, php-format
 msgid "%s updated the \"%s\" post."
 msgstr "%s heeft het \"%s\" bericht bijgewerkt."
 
@@ -448,10 +448,6 @@ msgstr "Project informatie"
 msgid "Principal"
 msgstr "Opdrachtgever"
 
-#: includes/projects.php:260 templates/projects-without-agreement.php:35
-msgid "Orbis ID"
-msgstr "Orbis ID"
-
 #: templates/projects-table-view.php:58
 #: templates/projects-without-agreement.php:74
 msgid "Edit"
@@ -473,6 +469,7 @@ msgstr "Recente projecten"
 msgid "No recent projects found."
 msgstr "Geen recente projecten gevonden."
 
+#. translators: comment date format. See http:php.net/date
 #: views/orbis.php:49
 msgid "c"
 msgstr "c"
@@ -481,6 +478,7 @@ msgstr "c"
 msgid "Pronamic News"
 msgstr "Pronamic nieuws"
 
+#. Author URI of the plugin/theme
 #: views/orbis.php:77
 msgid "http://www.pronamic.eu/"
 msgstr "http://www.pronamic.nl/"
@@ -501,18 +499,21 @@ msgstr "Aantal abonnementen"
 msgid "Annual Revenue"
 msgstr "Jaaromzet"
 
-#~ msgid "http://wp.pronamic.eu/plugins/orbis/"
-#~ msgstr "http://wp.pronamic.eu/plugins/orbis/"
+#. Plugin URI of the plugin/theme
+msgid "http://wp.pronamic.eu/plugins/orbis/"
+msgstr "http://wp.pronamic.eu/plugins/orbis/"
 
-#~ msgid ""
-#~ "Orbis is a powerful, extendable plugin to boost up your business. Project "
-#~ "Management, Customer Relation Management & More..."
-#~ msgstr ""
-#~ "Orbis is een krachtige en uitbreidbare plugin om je bedrijf een boost te "
-#~ "geven. Projectmanagement, klanten relatiebeheer & meer..."
+#. Description of the plugin/theme
+msgid ""
+"Orbis is a powerful, extendable plugin to boost up your business. Project "
+"Management, Customer Relation Management & More..."
+msgstr ""
+"Orbis is een krachtige en uitbreidbare plugin om je bedrijf een boost te "
+"geven. Projectmanagement, klanten relatiebeheer & meer…"
 
-#~ msgid "Pronamic"
-#~ msgstr "Pronamic"
+#. Author of the plugin/theme
+msgid "Pronamic"
+msgstr "Pronamic"
 
 #~ msgid "http://pronamic.eu/"
 #~ msgstr "http://pronamic.eu/"
