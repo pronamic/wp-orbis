@@ -41,7 +41,7 @@ function orbis_parse_time( $value ) {
 function orbis_register_table( $key, $name = false, $prefix = false ) {
 	global $wpdb;
 
-	if ( $name === false ) {
+	if ( false === $name ) {
 		$name = $key;
 	}
 
