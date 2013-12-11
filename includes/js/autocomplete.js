@@ -18,7 +18,7 @@ jQuery( document ).ready( function( $ ) {
 	var formatSearching = function() { return orbisl10n.searching; };
 
 	var wpAction = function( item ) {
-		if ( item.hasClass( 'orbis_company_id_field' ) ) {
+		if ( item.hasClass( 'orbis_company_id_field' ) || item.hasClass( 'orbis-company-id-control' ) ) {
 			return 'company_id_suggest';
 		}
 		
@@ -30,7 +30,9 @@ jQuery( document ).ready( function( $ ) {
 			return 'person_id_suggest';
 		}
 	};
-	
+
+	$( '.select2' ).select2();
+
 	$( '.orbis-id-control' ).select2( {
         minimumInputLength: 2,
         initSelection: function ( element, callback ) {
