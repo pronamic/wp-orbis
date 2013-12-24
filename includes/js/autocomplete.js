@@ -52,6 +52,7 @@ jQuery( document ).ready( function( $ ) {
                 return { results: data };
             }
         },
+        allowClear: true,
         formatNoMatches: formatNoMatches,
         formatInputTooShort: formatInputTooShort,
         formatSelectionTooBig: formatSelectionTooBig,
