@@ -26,6 +26,10 @@ jQuery( document ).ready( function( $ ) {
 			return 'project_id_suggest';
 		}
 		
+		if ( item.hasClass( 'orbis-subscription-id-control' ) ) {
+			return 'subscription_id_suggest';
+		}
+		
 		if ( item.hasClass( 'orbis-person-id-control' ) ) {
 			return 'person_id_suggest';
 		}
