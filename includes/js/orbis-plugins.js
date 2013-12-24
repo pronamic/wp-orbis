@@ -44,7 +44,7 @@ orbis_plugins_script = function()
         $loadingIcon.addClass('loading');
 
 		$.post(
-			ajaxurl,
+			orbis.ajaxUrl,
 			{
 				'action'     : 'orbis_' + action + '_plugin',
 				'nonce'      : $button.data('nonce'),

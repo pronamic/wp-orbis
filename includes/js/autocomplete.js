@@ -39,7 +39,7 @@ jQuery( document ).ready( function( $ ) {
             callback( { id: element.val(), text: element.data( 'text' ) } );
         },
         ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-            url: ajaxurl,
+            url: orbis.ajaxUrl,
             dataType: 'json',
             data: function( term, page ) {
                 return {

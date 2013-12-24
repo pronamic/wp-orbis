@@ -77,6 +77,12 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'1.0.0'
 		);
 
+		$orbis_vars = array(
+			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+		);
+
+		wp_localize_script( 'orbis', 'orbis', $orbis_vars );
+
 		// Styles
 		wp_register_style(
 			'select2',
