@@ -42,7 +42,7 @@ function orbis_project_principal_the_permalink() {
 	echo orbis_project_principal_get_permalink();
 }
 
-function orbis_project_get_the_time( $format = 'H:m' ) {
+function orbis_project_get_the_time( $format = 'HH:MM' ) {
 	global $post;
 
 	$time = null;
@@ -54,6 +54,6 @@ function orbis_project_get_the_time( $format = 'H:m' ) {
 	return $time;
 }
 
-function orbis_project_the_time( $format = 'H:m' ) {
+function orbis_project_the_time( $format = 'HH:MM' ) {
 	echo orbis_project_get_the_time( $format );
 }

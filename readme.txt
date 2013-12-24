@@ -63,11 +63,11 @@ Want to contribute? Checkout the source code on the Orbis GitHub Repository.
 == Functions ==
 
 *	General
-	*	orbis_format_seconds(  $seconds, $format = 'H:m' )
+	*	orbis_format_seconds(  $seconds, $format = 'HH:MM' )
 
 *	Projects
-	*	orbis_project_get_the_time( $format = 'H:m' )
-	*	orbis_project_the_time( $format = 'H:m' )
+	*	orbis_project_get_the_time( $format = 'HH:MM' )
+	*	orbis_project_the_time( $format = 'HH:MM' )
 
 *	Flot
 	*	orbis_flot( $id, $data, $options )
