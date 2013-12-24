@@ -42,7 +42,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'select2',
 			$this->plugin_url( 'includes/select2/select2.js' ),
 			array( 'jquery' ),
-			'3.4.2'
+			'3.4.5'
 		);
 
 		wp_register_script(
@@ -58,7 +58,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'selectionTooBigSingle' => sprintf( __( 'You can only select %s item', 'orbis' ), '{limit}' ),
 			'selectionTooBigPlural' => sprintf( __( 'You can only select %s items', 'orbis' ), '{limit}' ),
 			'loadMore'              => __( 'Loading more results...', 'orbis' ),
-			'searching'             => __( 'Searching...', 'orbis' )
+			'searching'             => __( 'Searching...', 'orbis' ),
 		);
 
 		wp_localize_script( 'orbis-autocomplete', 'orbisl10n', $translation_array );
@@ -88,7 +88,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'select2',
 			$this->plugin_url( 'includes/select2/select2.css' ),
 			array(),
-			'3.4.1'
+			'3.4.5'
 		);
 	}
 
