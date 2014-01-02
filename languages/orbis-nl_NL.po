@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/orbis\n"
 "POT-Creation-Date: 2014-01-02 12:11:47+00:00\n"
-"PO-Revision-Date: 2014-01-02 13:12+0100\n"
+"PO-Revision-Date: 2014-01-02 13:14+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -22,7 +22,7 @@ msgstr "Orbis ID"
 
 #: admin/meta-box-company-details.php:31 includes/companies.php:146
 msgid "KvK Number"
-msgstr "KvK nummer"
+msgstr "KvK-nummer"
 
 #: admin/meta-box-company-details.php:39
 msgid "E-Mail"
@@ -172,7 +172,7 @@ msgstr "Statistieken"
 
 #: classes/orbis-core-admin.php:131
 msgid "Orbis Plugins"
-msgstr "Orbis Plugins"
+msgstr "Orbis plugins"
 
 #: classes/orbis-core-admin.php:132 views/plugins.php:5
 msgid "Plugins"
@@ -253,7 +253,7 @@ msgstr "Datum"
 
 #: includes/log.php:62
 msgid "Orbis Log"
-msgstr "Orbis Logboek"
+msgstr "Orbis logboek"
 
 #: includes/log.php:120
 msgid "Title:"
@@ -450,7 +450,7 @@ msgstr "persoon-categorie"
 
 #: includes/projects.php:9
 msgid "Project Information"
-msgstr "Project informatie"
+msgstr "Projectinformatie"
 
 #: includes/projects.php:315 templates/projects-without-agreement.php:37
 msgid "Principal"
