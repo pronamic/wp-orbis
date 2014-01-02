@@ -5,7 +5,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		parent::__construct( $file );
 
 		$this->set_name( 'orbis' );
-		$this->set_db_version( '1.0.1' );
+		$this->set_db_version( '1.0.2' );
 
 		// Actions
 		add_action( 'init', array( $this, 'init' ) );
@@ -143,12 +143,52 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'name' => 'orbis_persons_to_companies',
 			'from' => 'orbis_person',
 			'to'   => 'orbis_company',
+			'title'       => array(
+				'from' => __( 'Companies', 'orbis' ),
+				'to'   => __( 'Persons', 'orbis' ),
+			),
+			'from_labels' => array(
+				'singular_name' => __( 'Person', 'orbis' ),
+				'search_items'  => __( 'Search person', 'orbis' ),
+				'not_found'     => __( 'No persons found.', 'orbis' ),
+				'create'        => __( 'Add Person', 'orbis' ),
+				'new_item'      => __( 'New Person', 'orbis' ),
+				'add_new_item'  => __( 'Add New Person', 'orbis' ),
+			),
+			'to_labels'   => array(
+				'singular_name' => __( 'Company', 'orbis' ),
+				'search_items'  => __( 'Search company', 'orbis' ),
+				'not_found'     => __( 'No companies found.', 'orbis' ),
+				'create'        => __( 'Add Company', 'orbis' ),
+				'new_item'      => __( 'New Company', 'orbis' ),
+				'add_new_item'  => __( 'Add New Company', 'orbis' ),
+			),
 		) );
 
 		p2p_register_connection_type( array(
-			'name' => 'orbis_projects_to_persons',
-			'from' => 'orbis_project',
-			'to'   => 'orbis_person',
+			'name'        => 'orbis_projects_to_persons',
+			'from'        => 'orbis_project',
+			'to'          => 'orbis_person',
+			'title'       => array(
+				'from' => __( 'Involved Persons', 'orbis' ),
+				'to'   => __( 'Projects', 'orbis' ),
+			),
+			'from_labels' => array(
+				'singular_name' => __( 'Project', 'orbis' ),
+				'search_items'  => __( 'Search project', 'orbis' ),
+				'not_found'     => __( 'No projects found.', 'orbis' ),
+				'create'        => __( 'Add Project', 'orbis' ),
+				'new_item'      => __( 'New Project', 'orbis' ),
+				'add_new_item'  => __( 'Add New Project', 'orbis' ),
+			),
+			'to_labels'   => array(
+				'singular_name' => __( 'Person', 'orbis' ),
+				'search_items'  => __( 'Search person', 'orbis' ),
+				'not_found'     => __( 'No persons found.', 'orbis' ),
+				'create'        => __( 'Add Person', 'orbis' ),
+				'new_item'      => __( 'New Person', 'orbis' ),
+				'add_new_item'  => __( 'Add New Person', 'orbis' ),
+			),
 		) );
 	}
 
