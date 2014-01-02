@@ -1,47 +1,52 @@
-# Copyright (C) 2013 Orbis
+# Copyright (C) 2014 Orbis
 # This file is distributed under the same license as the Orbis package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orbis 1.0.0\n"
+"Project-Id-Version: Orbis 1.0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/orbis\n"
-"POT-Creation-Date: 2013-11-21 15:29:06+00:00\n"
+"POT-Creation-Date: 2014-01-02 12:11:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: admin/meta-box-company-details.php:21 includes/companies.php:146
+#: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
+#: includes/projects.php:317 templates/projects-without-agreement.php:35
+msgid "Orbis ID"
+msgstr ""
+
+#: admin/meta-box-company-details.php:31 includes/companies.php:146
 msgid "KvK Number"
 msgstr ""
 
-#: admin/meta-box-company-details.php:29
+#: admin/meta-box-company-details.php:39
 msgid "E-Mail"
 msgstr ""
 
-#: admin/meta-box-company-details.php:37
+#: admin/meta-box-company-details.php:47
 msgid "Website"
 msgstr ""
 
-#: admin/meta-box-company-details.php:45
+#: admin/meta-box-company-details.php:55
 msgid "Addresses"
 msgstr ""
 
-#: admin/meta-box-company-details.php:50 admin/meta-box-company-details.php:53
+#: admin/meta-box-company-details.php:60 admin/meta-box-company-details.php:63
 #: includes/companies.php:144
 msgid "Address"
 msgstr ""
 
-#: admin/meta-box-company-details.php:55
+#: admin/meta-box-company-details.php:65
 msgid "Postcode"
 msgstr ""
 
-#: admin/meta-box-company-details.php:56
+#: admin/meta-box-company-details.php:66
 msgid "City"
 msgstr ""
 
-#: admin/meta-box-company-details.php:58
+#: admin/meta-box-company-details.php:68
 msgid "Country"
 msgstr ""
 
@@ -69,96 +74,156 @@ msgstr ""
 msgid "LinkedIn:"
 msgstr ""
 
-#: admin/meta-box-project-details.php:29
+#: admin/meta-box-project-details.php:39
 msgid "Client"
 msgstr ""
 
-#: admin/meta-box-project-details.php:32
+#: admin/meta-box-project-details.php:42
 msgid "Select Client"
 msgstr ""
 
-#: admin/meta-box-project-details.php:37 includes/projects.php:259
+#: admin/meta-box-project-details.php:47 includes/projects.php:316
 msgid "Time"
 msgstr ""
 
-#: admin/meta-box-project-details.php:43
+#: admin/meta-box-project-details.php:53
 msgid ""
 "You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
 msgstr ""
 
-#: admin/meta-box-project-details.php:50
+#: admin/meta-box-project-details.php:60
 msgid "Agreement ID"
 msgstr ""
 
-#: admin/meta-box-project-details.php:57 admin/meta-box-project-details.php:60
+#: admin/meta-box-project-details.php:67 admin/meta-box-project-details.php:70
 msgid "Choose a Agreement"
 msgstr ""
 
-#: admin/meta-box-project-details.php:60
+#: admin/meta-box-project-details.php:70
 msgid "Set as Agreement"
 msgstr ""
 
-#: admin/meta-box-project-details.php:63
+#: admin/meta-box-project-details.php:73
 msgid "You can select an .PDF or .TXT file from the WordPress media library."
 msgstr ""
 
-#: admin/meta-box-project-details.php:64
+#: admin/meta-box-project-details.php:74
 msgid ""
 "If you received the agreement by mail print the complete mail conversation "
 "with an PDF printer."
 msgstr ""
 
-#. #-#-#-#-#  orbis.pot (Orbis 1.0.0)  #-#-#-#-#
+#: admin/meta-box-project-details.php:84
+msgid "Finished"
+msgstr ""
+
+#: admin/meta-box-project-details.php:90
+msgid "Project is finished"
+msgstr ""
+
+#: classes/orbis-core-admin.php:74 views/plugins.php:22
+msgid "Install"
+msgstr ""
+
+#: classes/orbis-core-admin.php:75 views/plugins.php:26
+msgid "Activate"
+msgstr ""
+
+#: classes/orbis-core-admin.php:76 views/plugins.php:30
+msgid "Active"
+msgstr ""
+
+#: classes/orbis-core-admin.php:77
+msgid "An unknown error occurred"
+msgstr ""
+
+#: classes/orbis-core-admin.php:78
+msgid "Could not connect to the server"
+msgstr ""
+
+#. #-#-#-#-#  orbis.pot (Orbis 1.0.1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: classes/orbis-core-admin.php:70 classes/orbis-core-admin.php:71
+#: classes/orbis-core-admin.php:100 classes/orbis-core-admin.php:101
 msgid "Orbis"
 msgstr ""
 
-#: classes/orbis-core-admin.php:83
+#: classes/orbis-core-admin.php:113
 msgid "Orbis Settings"
 msgstr ""
 
-#: classes/orbis-core-admin.php:84 views/settings.php:5
+#: classes/orbis-core-admin.php:114 views/settings.php:5
 msgid "Settings"
 msgstr ""
 
-#: classes/orbis-core-admin.php:92
+#: classes/orbis-core-admin.php:122
 msgid "Orbis Stats"
 msgstr ""
 
-#: classes/orbis-core-admin.php:93 views/stats.php:5
+#: classes/orbis-core-admin.php:123 views/stats.php:5
 msgid "Stats"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:55
-msgid "No matches found"
+#: classes/orbis-core-admin.php:131
+msgid "Orbis Plugins"
+msgstr ""
+
+#: classes/orbis-core-admin.php:132 views/plugins.php:5
+msgid "Plugins"
+msgstr ""
+
+#: classes/orbis-core-admin.php:205 classes/orbis-core-admin.php:228
+msgid "The plugin could not be found"
+msgstr ""
+
+#: classes/orbis-core-admin.php:218
+msgid "The plugin was installed and activated successfully"
+msgstr ""
+
+#: classes/orbis-core-admin.php:241
+msgid "The plugin was activated successfully"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:56
-msgid "Please enter %s more characters"
+msgid "No matches found"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:57
-msgid "You can only select %s item"
+msgid "Please enter %s more characters"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:58
-msgid "You can only select %s items"
+msgid "You can only select %s item"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:59
-msgid "Loading more results..."
+msgid "You can only select %s items"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:60
+msgid "Loading more results..."
+msgstr ""
+
+#: classes/orbis-core-plugin.php:61
 msgid "Searching..."
+msgstr ""
+
+#: classes/orbis-plugin-manager.php:58
+msgid "You don't have the required permissions to install a plugin"
+msgstr ""
+
+#: classes/orbis-plugin-manager.php:89
+msgid "Please ensure the file system is writable"
+msgstr ""
+
+#: classes/orbis-plugin-manager.php:113
+msgid "You don't have the required permissions to activate a plugin"
 msgstr ""
 
 #: includes/companies.php:9
 msgid "Company Details"
 msgstr ""
 
-#: includes/companies.php:142 includes/projects.php:257
+#: includes/companies.php:142 includes/projects.php:314
 #: templates/projects-without-agreement.php:38
 msgid "Title"
 msgstr ""
@@ -167,27 +232,31 @@ msgstr ""
 msgid "Online"
 msgstr ""
 
-#: includes/companies.php:147 includes/projects.php:261
+#: includes/companies.php:147 includes/projects.php:318
 msgid "Author"
 msgstr ""
 
-#: includes/companies.php:148 includes/projects.php:262
+#: includes/companies.php:148 includes/projects.php:319
 msgid "Comments"
 msgstr ""
 
-#: includes/companies.php:149 includes/projects.php:263
+#: includes/companies.php:149 includes/projects.php:320
 msgid "Date"
 msgstr ""
 
-#: includes/log.php:60
+#: includes/log.php:62
 msgid "Orbis Log"
 msgstr ""
 
-#: includes/log.php:118
+#: includes/log.php:120
 msgid "Title:"
 msgstr ""
 
-#: includes/log.php:155
+#: includes/log.php:151
+msgid "Anonymous"
+msgstr ""
+
+#: includes/log.php:163
 msgid "%s updated the \"%s\" post."
 msgstr ""
 
@@ -376,12 +445,8 @@ msgstr ""
 msgid "Project Information"
 msgstr ""
 
-#: includes/projects.php:258 templates/projects-without-agreement.php:37
+#: includes/projects.php:315 templates/projects-without-agreement.php:37
 msgid "Principal"
-msgstr ""
-
-#: includes/projects.php:260 templates/projects-without-agreement.php:35
-msgid "Orbis ID"
 msgstr ""
 
 #: templates/projects-table-view.php:58
@@ -414,10 +479,14 @@ msgstr ""
 msgid "Pronamic News"
 msgstr ""
 
-#. #-#-#-#-#  orbis.pot (Orbis 1.0.0)  #-#-#-#-#
+#. #-#-#-#-#  orbis.pot (Orbis 1.0.1)  #-#-#-#-#
 #. Author URI of the plugin/theme
 #: views/orbis.php:77
 msgid "http://www.pronamic.eu/"
+msgstr ""
+
+#: views/plugins.php:18
+msgid "Details"
 msgstr ""
 
 #: views/stats.php:135

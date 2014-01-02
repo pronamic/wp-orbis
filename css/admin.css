@@ -12,7 +12,7 @@ th.column-orbis_project_id {
 	width: 5em;
 }
 
-.orbis_company_id_field {
+.orbis-id-control {
 	width: 300px;	
 }
 
@@ -29,4 +29,29 @@ th.column-orbis_project_id {
 
 #orbis_company_details :-moz-placeholder {
 	color: #999;
+}
+
+/**
+ * Orbis plugins page
+ */
+.orbis-plugins-message {
+    height: 0;
+
+    overflow: hidden;
+}
+
+table.orbis-plugins th, td {
+    padding: 0 10px 5px 0;
+}
+
+table.orbis-plugins th {
+    text-align: left;
+}
+
+.loading-icon {
+    display: none;
+}
+
+.loading-icon.loading {
+    display: block;
 }

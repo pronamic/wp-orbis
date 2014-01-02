@@ -18,7 +18,7 @@ jQuery( document ).ready( function( $ ) {
 	var formatSearching = function() { return orbisl10n.searching; };
 
 	var wpAction = function( item ) {
-		if ( item.hasClass( 'orbis_company_id_field' ) ) {
+		if ( item.hasClass( 'orbis_company_id_field' ) || item.hasClass( 'orbis-company-id-control' ) ) {
 			return 'company_id_suggest';
 		}
 		
@@ -26,18 +26,24 @@ jQuery( document ).ready( function( $ ) {
 			return 'project_id_suggest';
 		}
 		
+		if ( item.hasClass( 'orbis-subscription-id-control' ) ) {
+			return 'subscription_id_suggest';
+		}
+		
 		if ( item.hasClass( 'orbis-person-id-control' ) ) {
 			return 'person_id_suggest';
 		}
 	};
-	
+
+	$( '.select2' ).select2();
+
 	$( '.orbis-id-control' ).select2( {
         minimumInputLength: 2,
         initSelection: function ( element, callback ) {
             callback( { id: element.val(), text: element.data( 'text' ) } );
         },
         ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-            url: ajaxurl,
+            url: orbis.ajaxUrl,
             dataType: 'json',
             data: function( term, page ) {
                 return {
@@ -50,6 +56,7 @@ jQuery( document ).ready( function( $ ) {
                 return { results: data };
             }
         },
+        allowClear: true,
         formatNoMatches: formatNoMatches,
         formatInputTooShort: formatInputTooShort,
         formatSelectionTooBig: formatSelectionTooBig,

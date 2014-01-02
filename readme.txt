@@ -3,7 +3,7 @@ Contributors: pronamic, remcotolsma , kjtolsma
 Tags: orbis, intranet
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More...
 
@@ -63,11 +63,11 @@ Want to contribute? Checkout the source code on the Orbis GitHub Repository.
 == Functions ==
 
 *	General
-	*	orbis_format_seconds(  $seconds, $format = 'H:m' )
+	*	orbis_format_seconds(  $seconds, $format = 'HH:MM' )
 
 *	Projects
-	*	orbis_project_get_the_time( $format = 'H:m' )
-	*	orbis_project_the_time( $format = 'H:m' )
+	*	orbis_project_get_the_time( $format = 'HH:MM' )
+	*	orbis_project_the_time( $format = 'HH:MM' )
 
 *	Flot
 	*	orbis_flot( $id, $data, $options )
@@ -91,6 +91,9 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 
 == Changelog ==
+
+= 1.0.1 =
+*	Added project finished field.
 
 = 1.0.0 =
 *	Initial release.

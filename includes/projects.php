@@ -43,15 +43,34 @@ function orbis_projects_suggest_project_id() {
 
 	$term = filter_input( INPUT_GET, 'term', FILTER_SANITIZE_STRING );
 
+	$extra_select = '';
+	$extra_join   = '';
+	
+	if ( isset( $wpdb->orbis_timesheets ) ) {
+		$extra_select .= ',
+			SUM( entry.number_seconds ) AS project_logged_time	
+		';
+
+		$extra_join = "
+			LEFT JOIN
+				$wpdb->orbis_timesheets AS entry
+					ON entry.project_id = project.id
+		";
+	}
+
 	$query = $wpdb->prepare( "
 		SELECT
-			project.id AS id,
-			CONCAT(project.id, '. ', principal.name, ' - ', project.name) AS text
+			project.id AS project_id,
+			principal.name AS principal_name, 
+			project.name AS project_name,
+			project.number_seconds AS project_time
+			$extra_select
 		FROM
 			$wpdb->orbis_projects AS project
 				LEFT JOIN
 			$wpdb->orbis_companies AS principal
 					ON project.principal_id = principal.id
+			$extra_join
 		WHERE
 			project.finished = 0
 				AND
@@ -60,10 +79,44 @@ function orbis_projects_suggest_project_id() {
 					OR
 				principal.name LIKE '%%%1\$s%%'
 			)
+		GROUP BY
+			project.id
+		ORDER BY
+			project.id
 		", $term
 	);
 
-	$data = $wpdb->get_results( $query );
+	$projects = $wpdb->get_results( $query );
+
+	$data = array();
+	
+	foreach ( $projects as $project ) {
+		$result = new stdClass();
+		$result->id   = $project->project_id;
+		
+		$text = sprintf(
+			'%s. %s - %s ( %s )',
+			$project->project_id, 
+			$project->principal_name, 
+			$project->project_name,
+			orbis_time( $project->project_time )
+		);
+
+		if ( isset( $project->project_logged_time ) ) {
+			$text = sprintf(
+				'%s. %s - %s ( %s / %s )',
+				$project->project_id,
+				$project->principal_name,
+				$project->project_name,
+				orbis_time( $project->project_logged_time ),
+				orbis_time( $project->project_time )
+			);
+		}
+
+		$result->text = $text;
+		
+		$data[] = $result;
+	}
 
 	echo json_encode( $data );
 
@@ -139,6 +192,10 @@ function orbis_save_project( $post_id, $post ) {
 
 	$definition['_orbis_project_principal_id'] = FILTER_VALIDATE_INT;
 	$definition['_orbis_project_agreement_id'] = FILTER_VALIDATE_INT;
+
+	if ( current_user_can( 'edit_orbis_project_administration' ) ) {
+		$definition['_orbis_project_is_finished'] = FILTER_VALIDATE_BOOLEAN;
+	}
 
 	$data = filter_input_array( INPUT_POST, $definition );
 

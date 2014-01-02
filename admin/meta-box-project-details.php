@@ -9,6 +9,7 @@ $principal_id   = get_post_meta( $post->ID, '_orbis_project_principal_id', true 
 $is_finished    = filter_var( get_post_meta( $post->ID, '_orbis_project_is_finished', true ), FILTER_VALIDATE_BOOLEAN );
 $seconds        = get_post_meta( $post->ID, '_orbis_project_seconds_available', true );
 $agreement_id   = get_post_meta( $post->ID, '_orbis_project_agreement_id', true );
+$is_finished    = filter_var( get_post_meta( $post->ID, '_orbis_project_is_finished', true ), FILTER_VALIDATE_BOOLEAN );
 
 if ( true ) {
 	$project = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->orbis_projects WHERE post_id = %d;", $post->ID ) );
@@ -18,12 +19,21 @@ if ( true ) {
 		$principal_id   = $project->principal_id;
 		$is_finished    = $project->finished;
 		$seconds        = $project->number_seconds;
+		$is_finished    = $project->finished;
 	}
 }
 
 ?>
 <table class="form-table">
 	<tbody>
+		<tr valign="top">
+			<th scope="row">
+				<label for="orbis_project_id"><?php _e( 'Orbis ID', 'orbis' ); ?></label>
+			</th>
+			<td>
+				<input id="orbis_project_id" name="_orbis_project_id" value="<?php echo esc_attr( $orbis_id ); ?>" type="text" class="regular-text" readonly="readonly" />
+			</td>
+		</tr>
 		<tr valign="top">
 			<th scope="row">
 				<label for="_orbis_project_principal_id"><?php _e( 'Client', 'orbis' ); ?></label>
@@ -37,7 +47,7 @@ if ( true ) {
 				<label for="_orbis_project_seconds_available"><?php _e( 'Time', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input size="5" id="_orbis_project_seconds_available" name="_orbis_project_seconds_available" value="<?php echo esc_attr( orbis_time( $seconds ) ); ?>" />
+				<input size="5" id="_orbis_project_seconds_available" name="_orbis_project_seconds_available" value="<?php echo esc_attr( orbis_time( $seconds ) ); ?>" type="text"  class="small-text" />
 
 				<p class="description">
 					<?php _e( 'You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes).', 'orbis' ); ?>
@@ -65,6 +75,24 @@ if ( true ) {
 				</p>
 			</td>
 		</tr>
+
+		<?php if ( current_user_can( 'edit_orbis_project_administration' ) ) : ?>
+
+			<tr valign="top">
+				<th scope="row">
+					<label for="_orbis_project_is_finished">
+						<?php _e( 'Finished', 'orbis' ); ?>
+					</label>
+				</th>
+				<td>
+					<label for="_orbis_project_is_finished">
+						<input type="checkbox" value="yes" id="_orbis_project_is_finished" name="_orbis_project_is_finished" <?php checked( $is_finished ); ?> />
+						<?php _e( 'Project is finished', 'orbis' ); ?>
+					</label>
+				</td>
+			</tr>
+
+		<?php endif; ?>
 	</tbody>
 </table>
 

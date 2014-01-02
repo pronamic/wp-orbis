@@ -20,7 +20,7 @@
  * @return mixed
  * @deprecated
  */
-function orbis_format_seconds( $seconds, $format = 'H:m' ) {
+function orbis_format_seconds( $seconds, $format = 'HH:MM' ) {
 	_deprecated_function( __FUNCTION__, '1.0', 'orbis_time()' );
 
 	return orbis_time( $seconds, $format );

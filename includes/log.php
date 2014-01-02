@@ -5,7 +5,7 @@ function orbis_log( $message ) {
 
 	$data = array(
 		'created' => current_time( 'mysql' ),
-		'user_id' => get_current_user_id(),
+		'wp_user_id' => get_current_user_id(),
 		'message' => $message,
 	);
 	

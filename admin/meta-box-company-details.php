@@ -2,6 +2,8 @@
 
 global $post;
 
+$orbis_id   = get_post_meta( $post->ID, '_orbis_company_id', true );
+
 $kvk_number = get_post_meta( $post->ID, '_orbis_company_kvk_number', true );
 $email      = get_post_meta( $post->ID, '_orbis_company_email', true );
 $website    = get_post_meta( $post->ID, '_orbis_company_website', true );
@@ -16,6 +18,14 @@ wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_no
 ?>
 <table class="form-table">
 	<tbody>
+		<tr valign="top">
+			<th scope="row">
+				<label for="orbis_company_id"><?php _e( 'Orbis ID', 'orbis' ); ?></label>
+			</th>
+			<td>
+				<input id="orbis_company_id" name="_orbis_company_id" value="<?php echo esc_attr( $orbis_id ); ?>" type="text" class="regular-text" readonly="readonly" />
+			</td>
+		</tr>
 		<tr>
 			<th scope="row">
 				<label for="orbis_company_kvk_number"><?php _e( 'KvK Number', 'orbis' ); ?></label>
