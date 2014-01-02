@@ -193,6 +193,10 @@ function orbis_save_project( $post_id, $post ) {
 	$definition['_orbis_project_principal_id'] = FILTER_VALIDATE_INT;
 	$definition['_orbis_project_agreement_id'] = FILTER_VALIDATE_INT;
 
+	if ( current_user_can( 'edit_orbis_project_administration' ) ) {
+		$definition['_orbis_project_is_finished'] = FILTER_VALIDATE_BOOLEAN;
+	}
+
 	$data = filter_input_array( INPUT_POST, $definition );
 
 	$data['_orbis_project_seconds_available'] = orbis_filter_time_input( INPUT_POST, '_orbis_project_seconds_available' );

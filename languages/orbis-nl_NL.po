@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/orbis\n"
-"POT-Creation-Date: 2013-12-11 08:54:19+00:00\n"
-"PO-Revision-Date: 2013-12-11 09:57+0100\n"
+"POT-Creation-Date: 2014-01-02 12:11:47+00:00\n"
+"PO-Revision-Date: 2014-01-02 13:12+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -13,10 +13,10 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x:2c,1;esc_attr_e\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.2\n"
+"X-Generator: Poedit 1.6.3\n"
 
-#: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:29
-#: includes/projects.php:260 templates/projects-without-agreement.php:35
+#: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
+#: includes/projects.php:317 templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
@@ -77,49 +77,57 @@ msgstr "Facebook URL:"
 msgid "LinkedIn:"
 msgstr "LinkedIn:"
 
-#: admin/meta-box-project-details.php:37
+#: admin/meta-box-project-details.php:39
 msgid "Client"
 msgstr "Klant"
 
-#: admin/meta-box-project-details.php:40
+#: admin/meta-box-project-details.php:42
 msgid "Select Client"
 msgstr "Selecteer klant"
 
-#: admin/meta-box-project-details.php:45 includes/projects.php:259
+#: admin/meta-box-project-details.php:47 includes/projects.php:316
 msgid "Time"
 msgstr "Tijd"
 
-#: admin/meta-box-project-details.php:51
+#: admin/meta-box-project-details.php:53
 msgid ""
 "You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
 msgstr ""
 "Je kunt de tijd invoeren als 1.5 of 1:30 (beide zijn 1 uur en 30 minuten)."
 
-#: admin/meta-box-project-details.php:58
+#: admin/meta-box-project-details.php:60
 msgid "Agreement ID"
 msgstr "Akkoord ID"
 
-#: admin/meta-box-project-details.php:65 admin/meta-box-project-details.php:68
+#: admin/meta-box-project-details.php:67 admin/meta-box-project-details.php:70
 msgid "Choose a Agreement"
 msgstr "Kies een akkoord"
 
-#: admin/meta-box-project-details.php:68
+#: admin/meta-box-project-details.php:70
 msgid "Set as Agreement"
 msgstr "Stel in als akkoord"
 
-#: admin/meta-box-project-details.php:71
+#: admin/meta-box-project-details.php:73
 msgid "You can select an .PDF or .TXT file from the WordPress media library."
 msgstr ""
 "Je kunt een .PDF of .TXT bestand selecteren uit de WordPress media "
 "bibliotheek."
 
-#: admin/meta-box-project-details.php:72
+#: admin/meta-box-project-details.php:74
 msgid ""
 "If you received the agreement by mail print the complete mail conversation "
 "with an PDF printer."
 msgstr ""
 "Als je een akkoord per e-mail hebt ontvangen print dan de complete e-mail "
 "conversatie uit met een PDF-printer."
+
+#: admin/meta-box-project-details.php:84
+msgid "Finished"
+msgstr "Afgerond"
+
+#: admin/meta-box-project-details.php:90
+msgid "Project is finished"
+msgstr "Project is afgerond"
 
 #: classes/orbis-core-admin.php:74 views/plugins.php:22
 msgid "Install"
@@ -222,7 +230,7 @@ msgstr "Je hebt niet genoeg rechten om een plugin te activeren"
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: includes/companies.php:142 includes/projects.php:257
+#: includes/companies.php:142 includes/projects.php:314
 #: templates/projects-without-agreement.php:38
 msgid "Title"
 msgstr "Titel"
@@ -231,15 +239,15 @@ msgstr "Titel"
 msgid "Online"
 msgstr "Online"
 
-#: includes/companies.php:147 includes/projects.php:261
+#: includes/companies.php:147 includes/projects.php:318
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/companies.php:148 includes/projects.php:262
+#: includes/companies.php:148 includes/projects.php:319
 msgid "Comments"
 msgstr "Reacties"
 
-#: includes/companies.php:149 includes/projects.php:263
+#: includes/companies.php:149 includes/projects.php:320
 msgid "Date"
 msgstr "Datum"
 
@@ -444,7 +452,7 @@ msgstr "persoon-categorie"
 msgid "Project Information"
 msgstr "Project informatie"
 
-#: includes/projects.php:258 templates/projects-without-agreement.php:37
+#: includes/projects.php:315 templates/projects-without-agreement.php:37
 msgid "Principal"
 msgstr "Opdrachtgever"
 
@@ -576,12 +584,6 @@ msgstr "Pronamic"
 
 #~ msgid "Invoice Number"
 #~ msgstr "Factuurnummer"
-
-#~ msgid "Finished"
-#~ msgstr "Afgerond"
-
-#~ msgid "Project is finished"
-#~ msgstr "Project is afgerond"
 
 #~ msgid "Domains"
 #~ msgstr "Domeinen"
