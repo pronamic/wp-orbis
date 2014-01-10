@@ -5,7 +5,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		parent::__construct( $file );
 
 		$this->set_name( 'orbis' );
-		$this->set_db_version( '1.0.2' );
+		$this->set_db_version( '1.0.3' );
 
 		// Actions
 		add_action( 'init', array( $this, 'init' ) );
@@ -217,6 +217,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			id BIGINT(16) UNSIGNED NOT NULL AUTO_INCREMENT,
 			post_id BIGINT(20) UNSIGNED DEFAULT NULL,
 			name VARCHAR(128) NOT NULL,
+			e_mail VARCHAR(128) DEFAULT NULL,
 			PRIMARY KEY  (id)
 		' );
 
