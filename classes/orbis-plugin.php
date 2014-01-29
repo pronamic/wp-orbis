@@ -191,12 +191,14 @@ class Orbis_Plugin {
 		return $template;
 	}
 
-	public function get_template( $template_name, $echo = true ) {
+	public function get_template( $template_name, $echo = true, $args = array() ) {
 		if ( ! $echo ) {
 			ob_start();
 		}
 
 		$located = $this->locate_template( $template_name );
+
+		extract( $args );
 
 		include $located;
 
