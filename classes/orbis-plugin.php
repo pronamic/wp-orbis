@@ -134,8 +134,11 @@ class Orbis_Plugin {
 	 * Plugin include
 	 *
 	 * @param string $path
+	 * @param array  $args (optional, defaults to an empty array)
 	 */
-	public function plugin_include( $path ) {
+	public function plugin_include( $path, $args = array() ) {
+		extract( $args );
+
 		include $this->dir_path . '/' . $path;
 	}
 
