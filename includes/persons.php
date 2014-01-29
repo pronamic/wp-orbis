@@ -77,12 +77,14 @@ function orbis_persons_suggest_person_id() {
 
 	$query = $wpdb->prepare( "
 		SELECT
-			person.id AS id,
-			person.first_name AS text
+			post.ID AS id,
+			post.post_title AS text
 		FROM
-			orbis_persons AS person
+			$wpdb->posts AS post
 		WHERE
-			person.first_name LIKE '%%%1\$s%%'
+			post.post_type = 'orbis_person'
+				AND
+			post.post_title LIKE '%%%1\$s%%'
 		;", $term
 	);
 
@@ -94,4 +96,3 @@ function orbis_persons_suggest_person_id() {
 }
 
 add_action( 'wp_ajax_person_id_suggest', 'orbis_persons_suggest_person_id' );
-
