@@ -5,7 +5,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		parent::__construct( $file );
 
 		$this->set_name( 'orbis' );
-		$this->set_db_version( '1.0.3' );
+		$this->set_db_version( '1.0.4' );
 
 		// Actions
 		add_action( 'init', array( $this, 'init' ) );
