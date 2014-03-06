@@ -2,11 +2,11 @@
 # This file is distributed under the same license as the Orbis package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orbis 1.0.4\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/orbis\n"
-"POT-Creation-Date: 2014-02-05 13:57:16+00:00\n"
+"Project-Id-Version: Orbis 1.0.5\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
+"POT-Creation-Date: 2014-03-06 08:40:09+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -87,8 +87,7 @@ msgid "Time"
 msgstr ""
 
 #: admin/meta-box-project-details.php:53
-msgid ""
-"You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
+msgid "You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
 msgstr ""
 
 #: admin/meta-box-project-details.php:60
@@ -141,9 +140,7 @@ msgstr ""
 msgid "Could not connect to the server"
 msgstr ""
 
-#. #-#-#-#-#  orbis.pot (Orbis 1.0.4)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: classes/orbis-core-admin.php:100 classes/orbis-core-admin.php:101
 msgid "Orbis"
 msgstr ""
 
@@ -355,11 +352,6 @@ msgstr ""
 msgid "Contact information"
 msgstr ""
 
-#: includes/post.php:13
-msgctxt "orbis_project"
-msgid "Add New"
-msgstr ""
-
 #: includes/post.php:15
 msgid "Edit Project"
 msgstr ""
@@ -382,21 +374,6 @@ msgstr ""
 
 #: includes/post.php:22
 msgid "Parent Project:"
-msgstr ""
-
-#: includes/post.php:32
-msgctxt "slug"
-msgid "projects"
-msgstr ""
-
-#: includes/post.php:43 includes/post.php:119
-msgctxt "taxonomy general name"
-msgid "Categories"
-msgstr ""
-
-#: includes/post.php:44 includes/post.php:120
-msgctxt "taxonomy singular name"
-msgid "Category"
 msgstr ""
 
 #: includes/post.php:45 includes/post.php:121
@@ -435,16 +412,6 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: includes/post.php:58
-msgctxt "slug"
-msgid "project-category"
-msgstr ""
-
-#: includes/post.php:70
-msgctxt "orbis_company"
-msgid "Add New"
-msgstr ""
-
 #: includes/post.php:72
 msgid "Edit Company"
 msgstr ""
@@ -467,21 +434,6 @@ msgstr ""
 
 #: includes/post.php:79
 msgid "Parent Company:"
-msgstr ""
-
-#: includes/post.php:89
-msgctxt "slug"
-msgid "companies"
-msgstr ""
-
-#: includes/post.php:108
-msgctxt "slug"
-msgid "persons"
-msgstr ""
-
-#: includes/post.php:134
-msgctxt "slug"
-msgid "person-category"
 msgstr ""
 
 #: includes/projects.php:9
@@ -513,8 +465,8 @@ msgstr ""
 msgid "No recent projects found."
 msgstr ""
 
-#. translators: comment date format. See http:php.net/date
 #: views/orbis.php:49
+#. translators: comment date format. See http:php.net/date
 msgid "c"
 msgstr ""
 
@@ -522,9 +474,7 @@ msgstr ""
 msgid "Pronamic News"
 msgstr ""
 
-#. #-#-#-#-#  orbis.pot (Orbis 1.0.4)  #-#-#-#-#
 #. Author URI of the plugin/theme
-#: views/orbis.php:77
 msgid "http://www.pronamic.eu/"
 msgstr ""
 
@@ -556,4 +506,49 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Pronamic"
+msgstr ""
+
+#: includes/post.php:13
+msgctxt "orbis_project"
+msgid "Add New"
+msgstr ""
+
+#: includes/post.php:32
+msgctxt "slug"
+msgid "projects"
+msgstr ""
+
+#: includes/post.php:58
+msgctxt "slug"
+msgid "project-category"
+msgstr ""
+
+#: includes/post.php:89
+msgctxt "slug"
+msgid "companies"
+msgstr ""
+
+#: includes/post.php:108
+msgctxt "slug"
+msgid "persons"
+msgstr ""
+
+#: includes/post.php:134
+msgctxt "slug"
+msgid "person-category"
+msgstr ""
+
+#: includes/post.php:43 includes/post.php:119
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr ""
+
+#: includes/post.php:44 includes/post.php:120
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr ""
+
+#: includes/post.php:70
+msgctxt "orbis_company"
+msgid "Add New"
 msgstr ""
