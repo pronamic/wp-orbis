@@ -18,10 +18,10 @@ $wpdb->query( "DROP TABLE IF EXISTS {$prefix}orbis_projects" );
 // Delete posts
 //////////////////////////////////////////////////
 
-$wpdb->query( "DELETE FROM wp_posts WHERE post_type = 'orbis_project';" );
-$wpdb->query( "DELETE FROM wp_posts WHERE post_type = 'orbis_company';" );
+$wpdb->query( "DELETE FROM $wpdb->posts WHERE post_type = 'orbis_project';" );
+$wpdb->query( "DELETE FROM $wpdb->posts WHERE post_type = 'orbis_company';" );
 
-$wpdb->query( "DELETE FROM wp_postmeta WHERE post_id NOT IN ( SELECT ID FROM wp_posts );" );
+$wpdb->query( "DELETE FROM $wpdb->postmeta WHERE post_id NOT IN ( SELECT ID FROM $wpdb->posts );" );
 
 //////////////////////////////////////////////////
 // Delete options

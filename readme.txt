@@ -94,6 +94,7 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 = 1.0.5 =
 *	Improved the orbis_price() template function.
+*	Improved uninstall script.
 
 = 1.0.4 =
 *	Added support for an Orbis persons suggest field.
