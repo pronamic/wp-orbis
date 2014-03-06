@@ -9,11 +9,13 @@ if ( ! function_exists( 'orbis_price' ) ) {
 	 */
 	function orbis_price( $price ) {
 		$return = '';
-	
-		$return .= '&euro;';
-		$return .= '&nbsp;';
-	
-		$return .= number_format( $price, 2, ',', '.' );
+
+		if ( is_numeric( $price ) ) {
+			$return .= '&euro;';
+			$return .= '&nbsp;';
+
+			$return .= number_format( $price, 2, ',', '.' );
+		}
 	
 		return $return;
 	}
