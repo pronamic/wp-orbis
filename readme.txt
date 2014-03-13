@@ -92,6 +92,9 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 == Changelog ==
 
+= 1.0.6 =
+*	Tweak - Switched from custom menu icons to the new WordPress [Dashicons](http://melchoyce.github.io/dashicons/).
+
 = 1.0.5 =
 *	Improved the orbis_price() template function.
 *	Improved uninstall script.
