@@ -92,8 +92,10 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 == Changelog ==
 
-= 1.0.6 =
+= 1.1.0 =
 *	Tweak - Switched from custom menu icons to the new WordPress [Dashicons](http://melchoyce.github.io/dashicons/).
+*	Tweak - Everyone can now finish projects, the WordPress comment system is used to keep track of changes.
+*	Tweak - Moved the person contact information meta box from the side to the normal edit area.
 
 = 1.0.5 =
 *	Improved the orbis_price() template function.
