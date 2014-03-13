@@ -6,10 +6,10 @@
 function orbis_project_add_meta_boxes() {
     add_meta_box(
         'orbis_project',
-        __('Project Information', 'orbis'),
+        __( 'Project Information', 'orbis' ),
         'orbis_project_meta_box',
-        'orbis_project' ,
-        'normal' ,
+        'orbis_project',
+        'normal',
         'high'
     );
 }
