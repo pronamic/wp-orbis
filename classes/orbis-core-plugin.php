@@ -5,7 +5,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		parent::__construct( $file );
 
 		$this->set_name( 'orbis' );
-		$this->set_db_version( '1.0.5' );
+		$this->set_db_version( '1.1.0' );
 
 		// Actions
 		add_action( 'init', array( $this, 'init' ) );
@@ -260,11 +260,9 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$roles = array(
 			'super_administrator' => array(
 				'manage_orbis'                      => true,
-				'edit_orbis_project_administration' => true,
 			),
 			'administrator' => array(
 				'manage_orbis'                      => true,
-				'edit_orbis_project_administration' => true,
 			),
 			'editor' => array(
 

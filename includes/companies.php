@@ -8,8 +8,8 @@ function orbis_company_add_meta_boxes() {
         'orbis_company_details',
         __( 'Company Details', 'orbis' ),
         'orbis_company_details_meta_box',
-        'orbis_company' ,
-        'normal' ,
+        'orbis_company',
+        'normal',
         'high'
     );
 }

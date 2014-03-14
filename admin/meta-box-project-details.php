@@ -75,24 +75,19 @@ if ( true ) {
 				</p>
 			</td>
 		</tr>
-
-		<?php if ( current_user_can( 'edit_orbis_project_administration' ) ) : ?>
-
-			<tr valign="top">
-				<th scope="row">
-					<label for="_orbis_project_is_finished">
-						<?php _e( 'Finished', 'orbis' ); ?>
-					</label>
-				</th>
-				<td>
-					<label for="_orbis_project_is_finished">
-						<input type="checkbox" value="yes" id="_orbis_project_is_finished" name="_orbis_project_is_finished" <?php checked( $is_finished ); ?> />
-						<?php _e( 'Project is finished', 'orbis' ); ?>
-					</label>
-				</td>
-			</tr>
-
-		<?php endif; ?>
+		<tr valign="top">
+			<th scope="row">
+				<label for="_orbis_project_is_finished">
+					<?php _e( 'Finished', 'orbis' ); ?>
+				</label>
+			</th>
+			<td>
+				<label for="_orbis_project_is_finished">
+					<input type="checkbox" value="yes" id="_orbis_project_is_finished" name="_orbis_project_is_finished" <?php checked( $is_finished ); ?> />
+					<?php _e( 'Project is finished', 'orbis' ); ?>
+				</label>
+			</td>
+		</tr>
 	</tbody>
 </table>
 

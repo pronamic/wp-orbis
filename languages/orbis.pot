@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Orbis package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orbis 1.0.5\n"
+"Project-Id-Version: Orbis 1.1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-03-06 08:40:09+00:00\n"
+"POT-Creation-Date: 2014-03-14 14:47:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
-#: includes/projects.php:317 templates/projects-without-agreement.php:35
+#: includes/projects.php:351 templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr ""
 
@@ -50,27 +50,27 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: admin/meta-box-person-details.php:17
+#: admin/meta-box-person-details.php:20
 msgid "Email Address:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:23
+#: admin/meta-box-person-details.php:28
 msgid "Phone Number:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:29
+#: admin/meta-box-person-details.php:36
 msgid "Mobile Number:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:35
+#: admin/meta-box-person-details.php:44
 msgid "Twitter Username:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:41
+#: admin/meta-box-person-details.php:52
 msgid "Facebook URL:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:47
+#: admin/meta-box-person-details.php:60
 msgid "LinkedIn:"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Select Client"
 msgstr ""
 
-#: admin/meta-box-project-details.php:47 includes/projects.php:316
+#: admin/meta-box-project-details.php:47 includes/projects.php:350
 msgid "Time"
 msgstr ""
 
@@ -112,11 +112,11 @@ msgid ""
 "with an PDF printer."
 msgstr ""
 
-#: admin/meta-box-project-details.php:84
+#: admin/meta-box-project-details.php:81
 msgid "Finished"
 msgstr ""
 
-#: admin/meta-box-project-details.php:90
+#: admin/meta-box-project-details.php:87
 msgid "Project is finished"
 msgstr ""
 
@@ -311,7 +311,7 @@ msgstr ""
 msgid "Company Details"
 msgstr ""
 
-#: includes/companies.php:142 includes/projects.php:314
+#: includes/companies.php:142 includes/projects.php:348
 #: templates/projects-without-agreement.php:38
 msgid "Title"
 msgstr ""
@@ -320,15 +320,15 @@ msgstr ""
 msgid "Online"
 msgstr ""
 
-#: includes/companies.php:147 includes/projects.php:318
+#: includes/companies.php:147 includes/projects.php:352
 msgid "Author"
 msgstr ""
 
-#: includes/companies.php:148 includes/projects.php:319
+#: includes/companies.php:148 includes/projects.php:353
 msgid "Comments"
 msgstr ""
 
-#: includes/companies.php:149 includes/projects.php:320
+#: includes/companies.php:149 includes/projects.php:354
 msgid "Date"
 msgstr ""
 
@@ -440,7 +440,19 @@ msgstr ""
 msgid "Project Information"
 msgstr ""
 
-#: includes/projects.php:315 templates/projects-without-agreement.php:37
+#: includes/projects.php:231
+msgid "This '%s' project is just '%s' by %s."
+msgstr ""
+
+#: includes/projects.php:232 includes/projects.php:233
+msgid "opened"
+msgstr ""
+
+#: includes/projects.php:232 includes/projects.php:233
+msgid "completed"
+msgstr ""
+
+#: includes/projects.php:349 templates/projects-without-agreement.php:37
 msgid "Principal"
 msgstr ""
 

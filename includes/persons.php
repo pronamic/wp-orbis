@@ -6,10 +6,10 @@
 function orbis_person_add_meta_boxes() {
     add_meta_box(
         'orbis_person',
-        __('Contact information', 'orbis'),
+        __( 'Contact information', 'orbis' ),
         'orbis_person_meta_box',
-        'orbis_person' ,
-        'side' ,
+        'orbis_person',
+        'normal',
         'high'
     );
 }

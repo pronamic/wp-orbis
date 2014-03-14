@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-03-06 08:40:09+00:00\n"
-"PO-Revision-Date: 2014-03-06 09:40+0100\n"
+"POT-Creation-Date: 2014-03-14 14:47:09+00:00\n"
+"PO-Revision-Date: 2014-03-14 15:47+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Generator: Poedit 1.6.4\n"
 
 #: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
-#: includes/projects.php:317 templates/projects-without-agreement.php:35
+#: includes/projects.php:351 templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
@@ -53,27 +53,27 @@ msgstr "Plaats"
 msgid "Country"
 msgstr "Land"
 
-#: admin/meta-box-person-details.php:17
+#: admin/meta-box-person-details.php:20
 msgid "Email Address:"
 msgstr "E-mailadres:"
 
-#: admin/meta-box-person-details.php:23
+#: admin/meta-box-person-details.php:28
 msgid "Phone Number:"
 msgstr "Telefoonnummer:"
 
-#: admin/meta-box-person-details.php:29
+#: admin/meta-box-person-details.php:36
 msgid "Mobile Number:"
 msgstr "Mobielnummer:"
 
-#: admin/meta-box-person-details.php:35
+#: admin/meta-box-person-details.php:44
 msgid "Twitter Username:"
 msgstr "Twitter gebruikersnaam:"
 
-#: admin/meta-box-person-details.php:41
+#: admin/meta-box-person-details.php:52
 msgid "Facebook URL:"
 msgstr "Facebook URL:"
 
-#: admin/meta-box-person-details.php:47
+#: admin/meta-box-person-details.php:60
 msgid "LinkedIn:"
 msgstr "LinkedIn:"
 
@@ -85,7 +85,7 @@ msgstr "Klant"
 msgid "Select Client"
 msgstr "Selecteer klant"
 
-#: admin/meta-box-project-details.php:47 includes/projects.php:316
+#: admin/meta-box-project-details.php:47 includes/projects.php:350
 msgid "Time"
 msgstr "Tijd"
 
@@ -121,11 +121,11 @@ msgstr ""
 "Als je een akkoord per e-mail hebt ontvangen print dan de complete e-mail "
 "conversatie uit met een PDF-printer."
 
-#: admin/meta-box-project-details.php:84
+#: admin/meta-box-project-details.php:81
 msgid "Finished"
 msgstr "Afgerond"
 
-#: admin/meta-box-project-details.php:90
+#: admin/meta-box-project-details.php:87
 msgid "Project is finished"
 msgstr "Project is afgerond"
 
@@ -320,7 +320,7 @@ msgstr "Je hebt niet genoeg rechten om een plugin te activeren"
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: includes/companies.php:142 includes/projects.php:314
+#: includes/companies.php:142 includes/projects.php:348
 #: templates/projects-without-agreement.php:38
 msgid "Title"
 msgstr "Titel"
@@ -329,15 +329,15 @@ msgstr "Titel"
 msgid "Online"
 msgstr "Online"
 
-#: includes/companies.php:147 includes/projects.php:318
+#: includes/companies.php:147 includes/projects.php:352
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/companies.php:148 includes/projects.php:319
+#: includes/companies.php:148 includes/projects.php:353
 msgid "Comments"
 msgstr "Reacties"
 
-#: includes/companies.php:149 includes/projects.php:320
+#: includes/companies.php:149 includes/projects.php:354
 msgid "Date"
 msgstr "Datum"
 
@@ -359,7 +359,7 @@ msgstr "%s heeft het \"%s\" bericht bijgewerkt."
 
 #: includes/persons.php:9
 msgid "Contact information"
-msgstr "Contact informatie"
+msgstr "Contactinformatie"
 
 #: includes/post.php:15
 msgid "Edit Project"
@@ -449,7 +449,19 @@ msgstr "Bovenliggend bedrijf:"
 msgid "Project Information"
 msgstr "Projectinformatie"
 
-#: includes/projects.php:315 templates/projects-without-agreement.php:37
+#: includes/projects.php:231
+msgid "This '%s' project is just '%s' by %s."
+msgstr "Dit '%s' project is zojuist '%s' door %s."
+
+#: includes/projects.php:232 includes/projects.php:233
+msgid "opened"
+msgstr "geopend"
+
+#: includes/projects.php:232 includes/projects.php:233
+msgid "completed"
+msgstr "afgerond"
+
+#: includes/projects.php:349 templates/projects-without-agreement.php:37
 msgid "Principal"
 msgstr "Opdrachtgever"
 

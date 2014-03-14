@@ -6,10 +6,10 @@
 function orbis_project_add_meta_boxes() {
     add_meta_box(
         'orbis_project',
-        __('Project Information', 'orbis'),
+        __( 'Project Information', 'orbis' ),
         'orbis_project_meta_box',
-        'orbis_project' ,
-        'normal' ,
+        'orbis_project',
+        'normal',
         'high'
     );
 }
@@ -188,19 +188,20 @@ function orbis_save_project( $post_id, $post ) {
 	}
 
 	// OK
-	$definition = array();
-
-	$definition['_orbis_project_principal_id'] = FILTER_VALIDATE_INT;
-	$definition['_orbis_project_agreement_id'] = FILTER_VALIDATE_INT;
-
-	if ( current_user_can( 'edit_orbis_project_administration' ) ) {
-		$definition['_orbis_project_is_finished'] = FILTER_VALIDATE_BOOLEAN;
-	}
+	$definition = array(
+		'_orbis_project_principal_id' => FILTER_VALIDATE_INT,
+		'_orbis_project_agreement_id' => FILTER_VALIDATE_INT,
+		'_orbis_project_is_finished'  => FILTER_VALIDATE_BOOLEAN,
+	);
 
 	$data = filter_input_array( INPUT_POST, $definition );
 
 	$data['_orbis_project_seconds_available'] = orbis_filter_time_input( INPUT_POST, '_orbis_project_seconds_available' );
 
+	// Finished
+	$is_finished_old = get_post_meta( $post_id, '_orbis_project_is_finished', true );
+	$is_finished_new = $data['_orbis_project_is_finished'] ;
+	
 	foreach ( $data as $key => $value ) {
 		if ( empty( $value ) ) {
 			delete_post_meta( $post_id, $key);
@@ -208,9 +209,42 @@ function orbis_save_project( $post_id, $post ) {
 			update_post_meta( $post_id, $key, $value );
 		}
 	}
+
+	// Action
+	if ( $post->post_status == 'publish' && $is_finished_old != $is_finished_new ) {
+		// @see https://github.com/woothemes/woocommerce/blob/v2.1.4/includes/class-wc-order.php#L1274
+		do_action( 'orbis_project_finished_update', $post_id, $is_finished_new );
+	}
 }
 
 add_action( 'save_post', 'orbis_save_project', 10, 2 );
+
+/**
+ * Project finished update
+ *
+ * @param int $post_id
+ */
+function orbis_project_finished_update( $post_id, $is_finished ) {
+	$user = wp_get_current_user();
+
+	$comment_content = sprintf(
+		__( "This '%s' project is just '%s' by %s.", 'orbis' ),
+		$is_finished ? __( 'opened', 'orbis' ) : __( 'completed', 'orbis' ),
+		$is_finished ? __( 'completed', 'orbis' ) : __( 'opened', 'orbis' ),
+		$user->display_name
+	);
+
+	$data = array(
+		'comment_post_ID' => $post_id,
+		'comment_content' => $comment_content,
+		'comment_author'  => 'Orbis',
+		'comment_type'    => 'orbis_comment',
+	);
+
+	$comment_id = wp_insert_comment( $data );
+}
+
+add_action( 'orbis_project_finished_update', 'orbis_project_finished_update', 10, 2 );
 
 /**
  * Sync project with Orbis tables
