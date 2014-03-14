@@ -26,7 +26,7 @@ function orbis_create_initial_post_types() {
 			'menu_position'   => 30,
 			'menu_icon'       => 'dashicons-portfolio',
 			'capability_type' => 'orbis_project',
-			'supports'        => array( 'title', 'editor', 'author', 'comments' ),
+			'supports'        => array( 'title', 'editor', 'author', 'comments', 'custom-fields' ),
 			'has_archive'     => true,
 			'rewrite'         => array(
 				'slug' => _x( 'projects', 'slug', 'orbis' ),
@@ -83,7 +83,7 @@ function orbis_create_initial_post_types() {
 			'menu_position'   => 30,
 			'menu_icon'       => 'dashicons-networking',
 			'capability_type' => array( 'orbis_company', 'orbis_companies' ),
-			'supports'        => array('title', 'editor', 'author', 'comments', 'thumbnail') ,
+			'supports'        => array('title', 'editor', 'author', 'comments', 'thumbnail', 'custom-fields' ) ,
 			'has_archive'     => true,
 			'rewrite'         => array(
 				'slug' => _x( 'companies', 'slug', 'orbis' ),
@@ -102,7 +102,7 @@ function orbis_create_initial_post_types() {
 			'public'        => true,
 			'menu_position' => 30,
 			'menu_icon'     => 'dashicons-businessman',
-			'supports'      => array( 'title', 'editor', 'author', 'comments', 'thumbnail' ),
+			'supports'      => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'custom-fields' ),
 			'has_archive'   => true,
 			'rewrite'       => array(
 				'slug' => _x( 'persons', 'slug', 'orbis' ),
