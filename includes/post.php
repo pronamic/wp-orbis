@@ -83,7 +83,7 @@ function orbis_create_initial_post_types() {
 			'menu_position'   => 30,
 			'menu_icon'       => 'dashicons-networking',
 			'capability_type' => array( 'orbis_company', 'orbis_companies' ),
-			'supports'        => array('title', 'editor', 'author', 'comments', 'thumbnail', 'custom-fields' ) ,
+			'supports'        => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'custom-fields' ),
 			'has_archive'     => true,
 			'rewrite'         => array(
 				'slug' => _x( 'companies', 'slug', 'orbis' ),
