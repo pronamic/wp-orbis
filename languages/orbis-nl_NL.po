@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-03-14 14:47:09+00:00\n"
-"PO-Revision-Date: 2014-03-14 15:47+0100\n"
+"POT-Creation-Date: 2014-03-28 20:12:27+00:00\n"
+"PO-Revision-Date: 2014-03-28 21:12+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Generator: Poedit 1.6.4\n"
 
 #: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
-#: includes/projects.php:351 templates/projects-without-agreement.php:35
+#: includes/projects.php:355 templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
@@ -85,7 +85,7 @@ msgstr "Klant"
 msgid "Select Client"
 msgstr "Selecteer klant"
 
-#: admin/meta-box-project-details.php:47 includes/projects.php:350
+#: admin/meta-box-project-details.php:47 includes/projects.php:354
 msgid "Time"
 msgstr "Tijd"
 
@@ -320,7 +320,7 @@ msgstr "Je hebt niet genoeg rechten om een plugin te activeren"
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: includes/companies.php:142 includes/projects.php:348
+#: includes/companies.php:142 includes/projects.php:352
 #: templates/projects-without-agreement.php:38
 msgid "Title"
 msgstr "Titel"
@@ -329,15 +329,15 @@ msgstr "Titel"
 msgid "Online"
 msgstr "Online"
 
-#: includes/companies.php:147 includes/projects.php:352
+#: includes/companies.php:147 includes/projects.php:356
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/companies.php:148 includes/projects.php:353
+#: includes/companies.php:148 includes/projects.php:357
 msgid "Comments"
 msgstr "Reacties"
 
-#: includes/companies.php:149 includes/projects.php:354
+#: includes/companies.php:149 includes/projects.php:358
 msgid "Date"
 msgstr "Datum"
 
@@ -449,19 +449,19 @@ msgstr "Bovenliggend bedrijf:"
 msgid "Project Information"
 msgstr "Projectinformatie"
 
-#: includes/projects.php:231
+#: includes/projects.php:235
 msgid "This '%s' project is just '%s' by %s."
 msgstr "Dit '%s' project is zojuist '%s' door %s."
 
-#: includes/projects.php:232 includes/projects.php:233
+#: includes/projects.php:236 includes/projects.php:237
 msgid "opened"
 msgstr "geopend"
 
-#: includes/projects.php:232 includes/projects.php:233
+#: includes/projects.php:236 includes/projects.php:237
 msgid "completed"
 msgstr "afgerond"
 
-#: includes/projects.php:349 templates/projects-without-agreement.php:37
+#: includes/projects.php:353 templates/projects-without-agreement.php:37
 msgid "Principal"
 msgstr "Opdrachtgever"
 

@@ -225,6 +225,10 @@ add_action( 'save_post', 'orbis_save_project', 10, 2 );
  * @param int $post_id
  */
 function orbis_project_finished_update( $post_id, $is_finished ) {
+	// Date
+	update_post_meta( $post_id, '_orbis_project_finished_modified', time() );
+
+	// Comment
 	$user = wp_get_current_user();
 
 	$comment_content = sprintf(
@@ -392,3 +396,18 @@ function orbis_project_column( $column, $post_id ) {
 }
 
 add_action( 'manage_posts_custom_column' , 'orbis_project_column', 10, 2 );
+
+/**
+ * Pre get posts
+ * @param WP_Query $query
+ */
+function orbis_projects_pre_get_posts( $query ) {
+	$orderby = $query->get( 'orderby' );
+
+	if ( 'project_finished_modified' == $orderby ) {
+		$query->set( 'orderby', 'meta_value_num' );
+		$query->set( 'meta_key', '_orbis_project_finished_modified' );
+	}
+}
+
+add_action( 'pre_get_posts', 'orbis_projects_pre_get_posts' );
