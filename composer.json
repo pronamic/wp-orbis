@@ -1,0 +1,36 @@
+{
+	"name": "orbis",
+	"description": "Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More...",
+	"version": "1.1.1",
+	"keywords": [
+		"orbis",
+		"wordpress",
+		"plugin",
+		"bootstrap"
+	],
+	"homepage": "http://www.happywp.com/plugins/orbis/",
+	"authors": [
+		{
+			"name": "Remco Tolsma",
+			"email": "info@remcotolsma.nl",
+			"homepage": "http://www.remcotolsma.nl",
+			"role": "Developer"
+        },
+		{
+			"name": "Karel-Jan Tolsma",
+			"email": "info@kareljantolsma.nl",
+			"homepage": "http://www.kareljantolsma.nl",
+			"role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@pronamic.nl",
+        "issues": "https://github.com/pronamic/wp-orbis/issues",
+        "source": "https://github.com/pronamic/wp-orbis"
+    },
+	"type": "wordpress-plugin",
+	"require": {
+		"components/jqueryui": "1.10.4",
+		"ivaynberg/select2": "3.4.6"
+	}
+}
