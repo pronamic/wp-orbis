@@ -30,7 +30,6 @@
     },
 	"type": "wordpress-plugin",
 	"require": {
-		"components/jqueryui": "1.10.4",
-		"ivaynberg/select2": "3.4.6"
+		
 	}
 }

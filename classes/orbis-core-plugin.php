@@ -37,14 +37,22 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	}
 
 	public function init() {
-		// Scripts
+		// Select2
 		wp_register_script(
 			'select2',
-			$this->plugin_url( 'includes/select2/select2.js' ),
+			$this->plugin_url( 'bower_components/select2/select2.js' ),
 			array( 'jquery' ),
-			'3.4.5'
+			'3.4.6'
+		);
+		
+		wp_register_style(
+			'select2',
+			$this->plugin_url( 'bower_components/select2/select2.css' ),
+			array(),
+			'3.4.6'
 		);
 
+		// Orbis
 		wp_register_script(
 			'orbis-autocomplete',
 			$this->plugin_url( 'includes/js/autocomplete.js' ),
@@ -84,12 +92,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		wp_localize_script( 'orbis', 'orbis', $orbis_vars );
 
 		// Styles
-		wp_register_style(
-			'select2',
-			$this->plugin_url( 'includes/select2/select2.css' ),
-			array(),
-			'3.4.5'
-		);
+
 	}
 
 	//////////////////////////////////////////////////
