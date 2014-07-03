@@ -47,12 +47,16 @@ class Orbis_Settings {
 		add_action( 'admin_init', array( $this, 'orbis_settings_init' ) );
 
 		if(get_option('orbis_currency')) {
-		
-			function orbis_currency() {
-			   
+			
+			$currency_setting = get_option( 'orbis_currency' );
+			switch ($currency_setting) {
+	    case 'eur':
+	        $currency = '&euro;';
+	        break;
+	    case 'usd':
+	        $currency = '$';
+	        break;
 			}
-			add_action('admin_head', 'orbis_currency');
-		
 		}
 		
 		function remove_page_analysis_from_publish_box() { return false; }
@@ -164,11 +168,12 @@ class Orbis_Settings {
 		register_setting( 'orbis', 'orbis_currency' );
 	}
 
-	/*	 Uncomment to add help text
+	
 	public function orbis_general_callback() {
+		/*	 Uncomment to add help text
 	    echo 'Some help text goes here.';
+	    */
 	}
-	*/
 
 	public function orbis_currency_callback() {
 	    echo '<select name="orbis_currency" id="orbis_currency" class="code">';

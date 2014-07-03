@@ -161,6 +161,19 @@
 	';
 	
 	$total = $wpdb->get_var($query);
+	
+	$currency_setting = get_option( 'orbis_currency' );
+	switch ($currency_setting) {
+	    case 'eur':
+	        $currency = '&euro;';
+	        $format = number_format($total, 2, ',', '.');
+	        break;
+	    case 'usd':
+	        $currency = '$';
+	        $format = number_format($total, 2, '.', ',');
+	        break;
+	}
+
 
 	?>
 	<dl>
@@ -168,6 +181,6 @@
 		<dd><?php echo $numberSubscriptions; ?></dd>
 
 		<dt><?php _e('Annual Revenue', 'orbis'); ?></dt>
-		<dd>&euro;&nbsp;<?php echo number_format($total, 2, ',', '.'); ?></dd>
+		<dd><?php echo $currency.' '.$format; ?></dd>
 	</dl>
 </div>
