@@ -10,7 +10,7 @@
 	
 	?>
 	
-	<h2>Werk registraties</h2>
+	<h2>Work records</h2>
 	
 	<?php
 	
@@ -31,26 +31,26 @@
 	
 	<ul>
 		<li>
-			<?php echo number_format($numberRegistrations, 0, ',', '.'); ?> registraties
+			<?php echo number_format($numberRegistrations, 0, ',', '.'); ?> registrations
 		</li>
 		<li>
-			<?php echo number_format($totalSeconds, 0, ',', '.'); ?> seconden
+			<?php echo number_format($totalSeconds, 0, ',', '.'); ?> seconds
 		</li>
 		<li>
-			<?php echo number_format($totalSeconds / 60, 0, ',', '.'); ?> minuten
+			<?php echo number_format($totalSeconds / 60, 0, ',', '.'); ?> minutes
 		</li>
 		<li>
-			<?php echo number_format($totalSeconds / 3600, 0, ',', '.'); ?> uren
+			<?php echo number_format($totalSeconds / 3600, 0, ',', '.'); ?> hours
 		</li>
 		<li>
-			<?php echo number_format($totalSeconds / (3600 * 24), 0, ',', '.'); ?> dagen
+			<?php echo number_format($totalSeconds / (3600 * 24), 0, ',', '.'); ?> days
 		</li>
 		<li>
-			<?php echo number_format($totalSeconds / (3600 * 24 * 7), 0, ',', '.'); ?> weken
+			<?php echo number_format($totalSeconds / (3600 * 24 * 7), 0, ',', '.'); ?> weeks
 		</li>
 	</ul>
 	
-	<h2>Taken</h2>
+	<h2>Tasks</h2>
 	
 	<?php
 
@@ -67,11 +67,11 @@
 	
 	<ul>
 		<li>
-			<?php echo number_format($numberTasks, 0, ',', '.'); ?> taken
+			<?php echo number_format($numberTasks, 0, ',', '.'); ?> tasks
 		</li>
 	</ul>
 	
-	<h2>Bedrijven</h2>
+	<h2>Companies</h2>
 	
 	<?php
 
@@ -88,11 +88,11 @@
 	
 	<ul>
 		<li>
-			<?php echo number_format($numberCompanies, 0, ',', '.'); ?> bedrijven
+			<?php echo number_format($numberCompanies, 0, ',', '.'); ?> companies
 		</li>
 	</ul>
 	
-	<h2>Projecten</h2>
+	<h2>Projects</h2>
 	
 	<?php
 
@@ -109,11 +109,11 @@
 	
 	<ul>
 		<li>
-			<?php echo number_format($numberProjects, 0, ',', '.'); ?> projecten
+			<?php echo number_format($numberProjects, 0, ',', '.'); ?> projects
 		</li>
 	</ul>
 	
-	<h2>Domeinen</h2>
+	<h2>Domains</h2>
 	
 	<?php
 
@@ -135,7 +135,7 @@
 		<dd><?php echo $numberDomains; ?></dd>
 	</dl>
 	
-	<h2>Abonnementen</h2>
+	<h2>Subscriptions</h2>
 	
 	<?php
 
