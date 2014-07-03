@@ -10,11 +10,24 @@ if ( ! function_exists( 'orbis_price' ) ) {
 	function orbis_price( $price ) {
 		$return = '';
 
+		$currency_setting = get_option( 'orbis_currency' );
+		switch ($currency_setting) {
+	    case 'eur':
+	        $currency = '&euro;';
+	        $format = number_format($price, 2, ',', '.');
+	        break;
+	    case 'usd':
+	        $currency = '$';
+	        $format = number_format($price, 2, '.', ',');
+	        break;
+		}
+
+
 		if ( is_numeric( $price ) ) {
-			$return .= '&euro;';
+			$return .= $currency;
 			$return .= '&nbsp;';
 
-			$return .= number_format( $price, 2, ',', '.' );
+			$return .= $format;
 		}
 	
 		return $return;
