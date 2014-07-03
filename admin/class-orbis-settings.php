@@ -49,17 +49,7 @@ class Orbis_Settings {
 		if(get_option('orbis_currency')) {
 		
 			function orbis_currency() {
-			   echo '<style type="text/css">
-			           body.toplevel_page_wpseo_dashboard #sidebar-container { display: none; }
-			           body.seo_page_wpseo_titles #sidebar-container { display: none; }
-			           body.seo_page_wpseo_social #sidebar-container { display: none; }
-			           body.seo_page_wpseo_xml #sidebar-container { display: none; }
-			           body.seo_page_wpseo_permalinks #sidebar-container { display: none; }
-			           body.seo_page_wpseo_internal-links #sidebar-container { display: none; }
-			           body.seo_page_wpseo_rss #sidebar-container { display: none; }
-			           body.seo_page_wpseo_import #sidebar-container { display: none; }
-			           body.seo_page_wpseo_files #sidebar-container { display: none; }
-			         </style>';
+			   
 			}
 			add_action('admin_head', 'orbis_currency');
 		
