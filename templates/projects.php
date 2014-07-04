@@ -5,8 +5,8 @@ $dsn = sprintf( 'mysql:dbname=%s;host=%s', DB_NAME, DB_HOST );
 $user = DB_USER;
 $password = DB_PASSWORD;
 
-$pdo = new PDO($dsn, $user, $password);
-$pdo->exec('SET CHARACTER SET utf8');
+$pdo = new PDO( $dsn, $user, $password );
+$pdo->exec( 'SET CHARACTER SET utf8' );
 
 global $wpdb;
 
@@ -50,9 +50,9 @@ $sql = "
 
 // Order by
 $orderBy = 'principal.name , project.name';
-if(isset($_GET['order'])) {
-	switch($_GET['order']) {
-		case 'id':
+if ( isset( $_GET['order'] ) ) {
+	switch ( $_GET['order'] ) {
+		case 'id' :
 			$orderBy = 'project.id DESC';
 			break;
 	}
@@ -60,47 +60,47 @@ if(isset($_GET['order'])) {
 
 // Filter
 $filter = "AND project.name NOT LIKE '%Strippenkaart%'";
-if(isset($_GET['filter'])) {
-	switch($_GET['filter']) {
-		case 'false':
+if ( isset( $_GET['filter'] ) ) {
+	switch ( $_GET['filter'] ) {
+		case 'false' :
 			$filter = '';
             break;
 	}
 }
 
 // Build query
-$sql = sprintf($sql, $filter, $orderBy);
+$sql = sprintf( $sql, $filter, $orderBy );
 
-$statement = $pdo->prepare($sql);
+$statement = $pdo->prepare( $sql );
 $statement->execute();
 
 // Projects
-$projects = $statement->fetchAll(PDO::FETCH_CLASS);
+$projects = $statement->fetchAll( PDO::FETCH_CLASS );
 
 // Managers
 $managers = array();
 
 // Projects and managers
-foreach($projects as $project) {
+foreach ( $projects as $project ) {
 	// Find manager
-	if(!isset($managers[$project->project_manager_id])) {
+	if ( ! isset( $managers[ $project->project_manager_id ] ) ) {
 		$manager           = new stdClass();
 		$manager->id       = $project->project_manager_id;
 		$manager->name     = $project->project_manager_name;
 		$manager->projects = array();
 
-		$managers[$manager->id] = $manager;
+		$managers[ $manager->id ] = $manager;
 	}
 
 	$project->failed = $project->registeredSeconds > $project->availableSeconds;
 	$project->availableSeconds = $project->availableSeconds;
 	$project->registeredSeconds = $project->registeredSeconds;
 
-	$manager = $managers[$project->project_manager_id];
+	$manager = $managers[ $project->project_manager_id ];
 	$manager->projects[] = $project;
 }
 
-ksort($managers);
+ksort( $managers );
 
 $parameters = $_GET;
 
