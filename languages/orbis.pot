@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-07-04 07:23:11+00:00\n"
+"POT-Creation-Date: 2014-07-04 07:30:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -162,37 +162,73 @@ msgstr ""
 msgid "Timesheets"
 msgstr ""
 
-#: admin/page-stats.php:50
+#: admin/page-stats.php:33
+msgid "%d registrations"
+msgstr ""
+
+#: admin/page-stats.php:36
+msgid "%d seconds"
+msgstr ""
+
+#: admin/page-stats.php:39
+msgid "%d minutes"
+msgstr ""
+
+#: admin/page-stats.php:42
+msgid "%d hours"
+msgstr ""
+
+#: admin/page-stats.php:45
+msgid "%d days"
+msgstr ""
+
+#: admin/page-stats.php:48
+msgid "%d weeks"
+msgstr ""
+
+#: admin/page-stats.php:52
 msgid "Tasks"
 msgstr ""
 
-#: admin/page-stats.php:71 classes/orbis-core-plugin.php:150
+#: admin/page-stats.php:69
+msgid "%d tasks"
+msgstr ""
+
+#: admin/page-stats.php:73 classes/orbis-core-plugin.php:150
 #: includes/post.php:66 includes/post.php:68 includes/post.php:80
 msgid "Companies"
 msgstr ""
 
-#: admin/page-stats.php:92 classes/orbis-core-plugin.php:177
+#: admin/page-stats.php:90
+msgid "%d companies"
+msgstr ""
+
+#: admin/page-stats.php:94 classes/orbis-core-plugin.php:177
 #: includes/post.php:9 includes/post.php:11 includes/post.php:23
 msgid "Projects"
 msgstr ""
 
-#: admin/page-stats.php:113
+#: admin/page-stats.php:111
+msgid "%d projects"
+msgstr ""
+
+#: admin/page-stats.php:115
 msgid "Domains"
 msgstr ""
 
-#: admin/page-stats.php:131
+#: admin/page-stats.php:133
 msgid "Number domains"
 msgstr ""
 
-#: admin/page-stats.php:135
+#: admin/page-stats.php:137
 msgid "Subscriptions"
 msgstr ""
 
-#: admin/page-stats.php:164
+#: admin/page-stats.php:166
 msgid "Number subscriptions"
 msgstr ""
 
-#: admin/page-stats.php:167
+#: admin/page-stats.php:169
 msgid "Annual Revenue"
 msgstr ""
 

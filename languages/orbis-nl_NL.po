@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-07-04 07:23:11+00:00\n"
-"PO-Revision-Date: 2014-07-04 09:23+0100\n"
+"POT-Creation-Date: 2014-07-04 07:30:27+00:00\n"
+"PO-Revision-Date: 2014-07-04 09:31+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -170,37 +170,73 @@ msgstr "Actief"
 msgid "Timesheets"
 msgstr "Werkregistraties"
 
-#: admin/page-stats.php:50
+#: admin/page-stats.php:33
+msgid "%d registrations"
+msgstr "%d registraties"
+
+#: admin/page-stats.php:36
+msgid "%d seconds"
+msgstr "%d seconden"
+
+#: admin/page-stats.php:39
+msgid "%d minutes"
+msgstr "%d minuten"
+
+#: admin/page-stats.php:42
+msgid "%d hours"
+msgstr "%d uren"
+
+#: admin/page-stats.php:45
+msgid "%d days"
+msgstr "%d dagen"
+
+#: admin/page-stats.php:48
+msgid "%d weeks"
+msgstr "%d weken"
+
+#: admin/page-stats.php:52
 msgid "Tasks"
 msgstr "Taken"
 
-#: admin/page-stats.php:71 classes/orbis-core-plugin.php:150
+#: admin/page-stats.php:69
+msgid "%d tasks"
+msgstr "%d taken"
+
+#: admin/page-stats.php:73 classes/orbis-core-plugin.php:150
 #: includes/post.php:66 includes/post.php:68 includes/post.php:80
 msgid "Companies"
 msgstr "Bedrijven"
 
-#: admin/page-stats.php:92 classes/orbis-core-plugin.php:177
+#: admin/page-stats.php:90
+msgid "%d companies"
+msgstr "%d bedrijven"
+
+#: admin/page-stats.php:94 classes/orbis-core-plugin.php:177
 #: includes/post.php:9 includes/post.php:11 includes/post.php:23
 msgid "Projects"
 msgstr "Projecten"
 
-#: admin/page-stats.php:113
+#: admin/page-stats.php:111
+msgid "%d projects"
+msgstr "%d projecten"
+
+#: admin/page-stats.php:115
 msgid "Domains"
 msgstr "Domeinen"
 
-#: admin/page-stats.php:131
+#: admin/page-stats.php:133
 msgid "Number domains"
 msgstr "Aantal domeinen"
 
-#: admin/page-stats.php:135
+#: admin/page-stats.php:137
 msgid "Subscriptions"
 msgstr "Abonnementen"
 
-#: admin/page-stats.php:164
+#: admin/page-stats.php:166
 msgid "Number subscriptions"
 msgstr "Aantal abonnementen"
 
-#: admin/page-stats.php:167
+#: admin/page-stats.php:169
 msgid "Annual Revenue"
 msgstr "Jaaromzet"
 
@@ -659,9 +695,6 @@ msgstr "Nieuw bedrijf"
 
 #~ msgid "To Invoice"
 #~ msgstr "Te factureren"
-
-#~ msgid "Administration"
-#~ msgstr "Administratie"
 
 #~ msgid "Electronic billing:"
 #~ msgstr "Elektronische facturatie:"

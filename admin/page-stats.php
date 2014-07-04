@@ -14,36 +14,38 @@
 	// Registrations
 	$query = '
 		SELECT
-			COUNT(id) AS numberRegistrations ,
-			SUM(number_seconds) AS totalSeconds
+			COUNT(id) AS number_registrations,
+			SUM(number_seconds) AS total_seconds
 		FROM
 			orbis_hours_registration ;
 	';
 
-	$result = $wpdb->get_row($query);
-	$numberRegistrations = $result->numberRegistrations;
-	$totalSeconds = $result->totalSeconds;
+	$result = $wpdb->get_row( $query );
+
+	$number_registrations = $result->number_registrations;
+
+	$total_seconds = $result->total_seconds;
 
 	?>
 
 	<ul>
 		<li>
-			<?php echo number_format($numberRegistrations, 0, ',', '.'); ?> registraties
+			<?php printf( __( '%d registrations', 'orbis' ), number_format_i18n( $number_registrations ) ); ?>
 		</li>
 		<li>
-			<?php echo number_format($totalSeconds, 0, ',', '.'); ?> seconden
+			<?php printf( __( '%d seconds', 'orbis' ), number_format_i18n( $total_seconds ) ); ?>
 		</li>
 		<li>
-			<?php echo number_format($totalSeconds / 60, 0, ',', '.'); ?> minuten
+			<?php printf( __( '%d minutes', 'orbis' ), number_format_i18n( $total_seconds / MINUTE_IN_SECONDS ) ); ?>
 		</li>
 		<li>
-			<?php echo number_format($totalSeconds / 3600, 0, ',', '.'); ?> uren
+			<?php printf( __( '%d hours', 'orbis' ), number_format_i18n( $total_seconds / HOUR_IN_SECONDS ) ); ?>
 		</li>
 		<li>
-			<?php echo number_format($totalSeconds / (3600 * 24), 0, ',', '.'); ?> dagen
+			<?php printf( __( '%d days', 'orbis' ), number_format_i18n( $total_seconds / DAY_IN_SECONDS ) ); ?>
 		</li>
 		<li>
-			<?php echo number_format($totalSeconds / (3600 * 24 * 7), 0, ',', '.'); ?> weken
+			<?php printf( __( '%d weeks', 'orbis' ), number_format_i18n( $total_seconds / WEEK_IN_SECONDS ) ); ?>
 		</li>
 	</ul>
 
@@ -58,13 +60,13 @@
 			orbis_tasks ;
 	';
 
-	$numberTasks = $wpdb->get_var($query);
+	$number_tasks = $wpdb->get_var($query);
 
 	?>
 
 	<ul>
 		<li>
-			<?php echo number_format($numberTasks, 0, ',', '.'); ?> taken
+			<?php printf( __( '%d tasks', 'orbis' ), number_format_i18n( $number_tasks ) ); ?>
 		</li>
 	</ul>
 
@@ -79,13 +81,13 @@
 			orbis_companies ;
 	';
 
-	$numberCompanies = $wpdb->get_var($query);
+	$number_companies = $wpdb->get_var($query);
 
 	?>
 
 	<ul>
 		<li>
-			<?php echo number_format($numberCompanies, 0, ',', '.'); ?> bedrijven
+			<?php printf( __( '%d companies', 'orbis' ), number_format_i18n( $number_companies ) ); ?>
 		</li>
 	</ul>
 
@@ -100,13 +102,13 @@
 			orbis_projects ;
 	';
 
-	$numberProjects = $wpdb->get_var($query);
+	$number_projects = $wpdb->get_var( $query );
 
 	?>
 
 	<ul>
 		<li>
-			<?php echo number_format($numberProjects, 0, ',', '.'); ?> projecten
+			<?php printf( __( '%d projects', 'orbis' ), number_format_i18n( $number_projects ) ); ?>
 		</li>
 	</ul>
 
