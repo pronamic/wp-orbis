@@ -112,7 +112,7 @@ class Orbis_Core_Admin {
 			'orbis', // parent_slug
 			__( 'Orbis Settings', 'orbis' ), // page_title
 			__( 'Settings', 'orbis' ), // menu_title
-			'orbis_view_settings', // capability
+			'manage_options', // capability
 			'orbis_settings', // menu_slug
 			array( $this, 'pageSettings' ) // function
 		);
@@ -121,7 +121,7 @@ class Orbis_Core_Admin {
 			'orbis', // parent_slug
 			__( 'Orbis Stats', 'orbis' ), // page_title
 			__( 'Stats', 'orbis' ), // menu_title
-			'orbis_view_stats', // capability
+			'manage_options', // capability
 			'orbis_stats', // menu_slug
 			array( $this, 'pageStats' ) // function
 		);
@@ -130,7 +130,7 @@ class Orbis_Core_Admin {
 			'orbis', // parent_slug
 			__( 'Orbis Plugins', 'orbis' ), // page_title
 			__( 'Plugins', 'orbis' ), // menu_title
-			'manage_orbis', // capability // TODO Ask about this privilege
+			'manage_options', // capability
 			'orbis_plugins', // menu_slug
 			array( $this, 'pagePlugins' ) // function
 		);
