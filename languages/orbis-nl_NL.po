@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-07-04 07:30:27+00:00\n"
-"PO-Revision-Date: 2014-07-04 09:31+0100\n"
+"POT-Creation-Date: 2014-07-04 08:20:31+00:00\n"
+"PO-Revision-Date: 2014-07-04 10:21+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -154,15 +154,15 @@ msgstr "http://www.pronamic.nl/"
 msgid "Details"
 msgstr "Details"
 
-#: admin/page-plugins.php:18 classes/orbis-core-admin.php:74
+#: admin/page-plugins.php:18 classes/orbis-core-admin.php:77
 msgid "Install"
 msgstr "Installeer"
 
-#: admin/page-plugins.php:22 classes/orbis-core-admin.php:75
+#: admin/page-plugins.php:22 classes/orbis-core-admin.php:78
 msgid "Activate"
 msgstr "Activeer"
 
-#: admin/page-plugins.php:26 classes/orbis-core-admin.php:76
+#: admin/page-plugins.php:26 classes/orbis-core-admin.php:79
 msgid "Active"
 msgstr "Actief"
 
@@ -240,11 +240,11 @@ msgstr "Aantal abonnementen"
 msgid "Annual Revenue"
 msgstr "Jaaromzet"
 
-#: classes/orbis-core-admin.php:77
+#: classes/orbis-core-admin.php:80
 msgid "An unknown error occurred"
 msgstr "Een onbekende fout is opgetreden"
 
-#: classes/orbis-core-admin.php:78
+#: classes/orbis-core-admin.php:81
 msgid "Could not connect to the server"
 msgstr "Een verbinding met de server kon niet worden gemaakt"
 
@@ -252,39 +252,39 @@ msgstr "Een verbinding met de server kon niet worden gemaakt"
 msgid "Orbis"
 msgstr "Orbis"
 
-#: classes/orbis-core-admin.php:113
+#: classes/orbis-core-admin.php:116
 msgid "Orbis Settings"
 msgstr "Orbis instellingen"
 
-#: classes/orbis-core-admin.php:114
+#: classes/orbis-core-admin.php:117
 msgid "Settings"
 msgstr "Instellingen"
 
-#: classes/orbis-core-admin.php:122
+#: classes/orbis-core-admin.php:125
 msgid "Orbis Stats"
 msgstr "Orbis statistieken"
 
-#: classes/orbis-core-admin.php:123
+#: classes/orbis-core-admin.php:126
 msgid "Stats"
 msgstr "Statistieken"
 
-#: classes/orbis-core-admin.php:131
+#: classes/orbis-core-admin.php:134
 msgid "Orbis Plugins"
 msgstr "Orbis plugins"
 
-#: classes/orbis-core-admin.php:132
+#: classes/orbis-core-admin.php:135
 msgid "Plugins"
 msgstr "Plugins"
 
-#: classes/orbis-core-admin.php:205 classes/orbis-core-admin.php:228
+#: classes/orbis-core-admin.php:208 classes/orbis-core-admin.php:231
 msgid "The plugin could not be found"
 msgstr "De plugin kon niet worden gevonden"
 
-#: classes/orbis-core-admin.php:218
+#: classes/orbis-core-admin.php:221
 msgid "The plugin was installed and activated successfully"
 msgstr "De plugin is succesvol geïnstalleerd en geactiveerd"
 
-#: classes/orbis-core-admin.php:241
+#: classes/orbis-core-admin.php:244
 msgid "The plugin was activated successfully"
 msgstr "De plugin is succesvol geactiveerd"
 
@@ -392,6 +392,22 @@ msgstr "Nieuw project"
 #: classes/orbis-core-plugin.php:185 includes/post.php:14
 msgid "Add New Project"
 msgstr "Nieuw project toevoegen"
+
+#: classes/orbis-core-settings.php:12 classes/orbis-core-settings.php:19
+msgid "Currency"
+msgstr "Valuta"
+
+#: classes/orbis-core-settings.php:30
+msgid "Euros"
+msgstr "Euro"
+
+#: classes/orbis-core-settings.php:31
+msgid "US Dollars"
+msgstr "Amerikaanse dollar"
+
+#: classes/orbis-core-settings.php:50
+msgid "Example: %s"
+msgstr "Voorbeeld: %s"
 
 #: classes/orbis-plugin-manager.php:58
 msgid "You don't have the required permissions to install a plugin"

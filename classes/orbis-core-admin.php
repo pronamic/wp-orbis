@@ -40,6 +40,9 @@ class Orbis_Core_Admin {
 
 		add_action( 'wp_ajax_orbis_install_plugin' , array( $this, 'orbis_install_plugin' ) );
 		add_action( 'wp_ajax_orbis_activate_plugin', array( $this, 'orbis_activate_plugin' ) );
+
+		// Settings
+		$this->settings = new Orbis_Core_Settings();
 	}
 
 	//////////////////////////////////////////////////

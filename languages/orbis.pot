@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-07-04 07:30:27+00:00\n"
+"POT-Creation-Date: 2014-07-04 08:20:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -146,15 +146,15 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: admin/page-plugins.php:18 classes/orbis-core-admin.php:74
+#: admin/page-plugins.php:18 classes/orbis-core-admin.php:77
 msgid "Install"
 msgstr ""
 
-#: admin/page-plugins.php:22 classes/orbis-core-admin.php:75
+#: admin/page-plugins.php:22 classes/orbis-core-admin.php:78
 msgid "Activate"
 msgstr ""
 
-#: admin/page-plugins.php:26 classes/orbis-core-admin.php:76
+#: admin/page-plugins.php:26 classes/orbis-core-admin.php:79
 msgid "Active"
 msgstr ""
 
@@ -232,11 +232,11 @@ msgstr ""
 msgid "Annual Revenue"
 msgstr ""
 
-#: classes/orbis-core-admin.php:77
+#: classes/orbis-core-admin.php:80
 msgid "An unknown error occurred"
 msgstr ""
 
-#: classes/orbis-core-admin.php:78
+#: classes/orbis-core-admin.php:81
 msgid "Could not connect to the server"
 msgstr ""
 
@@ -244,39 +244,39 @@ msgstr ""
 msgid "Orbis"
 msgstr ""
 
-#: classes/orbis-core-admin.php:113
+#: classes/orbis-core-admin.php:116
 msgid "Orbis Settings"
 msgstr ""
 
-#: classes/orbis-core-admin.php:114
+#: classes/orbis-core-admin.php:117
 msgid "Settings"
 msgstr ""
 
-#: classes/orbis-core-admin.php:122
+#: classes/orbis-core-admin.php:125
 msgid "Orbis Stats"
 msgstr ""
 
-#: classes/orbis-core-admin.php:123
+#: classes/orbis-core-admin.php:126
 msgid "Stats"
 msgstr ""
 
-#: classes/orbis-core-admin.php:131
+#: classes/orbis-core-admin.php:134
 msgid "Orbis Plugins"
 msgstr ""
 
-#: classes/orbis-core-admin.php:132
+#: classes/orbis-core-admin.php:135
 msgid "Plugins"
 msgstr ""
 
-#: classes/orbis-core-admin.php:205 classes/orbis-core-admin.php:228
+#: classes/orbis-core-admin.php:208 classes/orbis-core-admin.php:231
 msgid "The plugin could not be found"
 msgstr ""
 
-#: classes/orbis-core-admin.php:218
+#: classes/orbis-core-admin.php:221
 msgid "The plugin was installed and activated successfully"
 msgstr ""
 
-#: classes/orbis-core-admin.php:241
+#: classes/orbis-core-admin.php:244
 msgid "The plugin was activated successfully"
 msgstr ""
 
@@ -383,6 +383,22 @@ msgstr ""
 
 #: classes/orbis-core-plugin.php:185 includes/post.php:14
 msgid "Add New Project"
+msgstr ""
+
+#: classes/orbis-core-settings.php:12 classes/orbis-core-settings.php:19
+msgid "Currency"
+msgstr ""
+
+#: classes/orbis-core-settings.php:30
+msgid "Euros"
+msgstr ""
+
+#: classes/orbis-core-settings.php:31
+msgid "US Dollars"
+msgstr ""
+
+#: classes/orbis-core-settings.php:50
+msgid "Example: %s"
 msgstr ""
 
 #: classes/orbis-plugin-manager.php:58

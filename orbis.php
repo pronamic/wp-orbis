@@ -33,6 +33,7 @@ function orbis_bootstrap() {
 	require_once 'classes/orbis-plugin.php';
 	require_once 'classes/orbis-core-admin.php';
 	require_once 'classes/orbis-core-plugin.php';
+	require_once 'classes/orbis-core-settings.php';
 	require_once 'classes/orbis-api.php';
 	require_once 'classes/orbis-plugin-manager.php';
 
