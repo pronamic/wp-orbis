@@ -11,24 +11,24 @@ function orbis_parse_time( $value ) {
 
 	$part_hours   = $value;
 	$part_minutes = 0;
-	
+
 	$position_colon = strpos( $value, ':' );
-	
+
 	if ( $position_colon !== false ) {
 		$part_hours   = substr( $value, 0, $position_colon );
 		$part_minutes = substr( $value, $position_colon + 1 );
 	}
-	
+
 	$var = filter_var( $part_hours, FILTER_VALIDATE_FLOAT );
 	if ( $var !== false ) {
 		$seconds += $var * 3600;
 	}
-	
+
 	$var = filter_var( $part_minutes, FILTER_VALIDATE_FLOAT );
 	if ( $var !== false ) {
 		$seconds += $var * 60;
 	}
-	
+
 	return $seconds;
 }
 
@@ -56,7 +56,7 @@ function orbis_register_table( $key, $name = false, $prefix = false ) {
 */
 function orbis_install_table( $key, $columns ) {
 	global $wpdb;
-	
+
 	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 
 	$full_table_name = $wpdb->$key;
@@ -72,7 +72,7 @@ function orbis_install_table( $key, $columns ) {
 			$charset_collate .= " COLLATE $wpdb->collate";
 		}
 	}
-	
+
 	$table_options = $charset_collate;
 
 	dbDelta( "CREATE TABLE $full_table_name ( $columns ) $table_options" );

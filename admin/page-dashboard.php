@@ -1,5 +1,5 @@
 <div class="wrap">
-	<h2><?php echo get_admin_page_title(); ?></h2>
+	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 	<div id="dashboard-widgets-wrap">
 		<div id="dashboard-widgets" class="metabox-holder columns-2">
@@ -13,7 +13,7 @@
 
 							$projects = get_posts( array(
 								'post_type'      => 'pronamic_project',
-								'posts_per_page' => 5
+								'posts_per_page' => 5,
 							) );
 
 							if ( empty( $projects ) ) : ?>
@@ -75,7 +75,7 @@
 								'link'  => __( 'http://www.pronamic.eu/', 'pronamic_ideal' ),
 								'url'   => 'http://feeds.feedburner.com/pronamic',
 								'title' => __( 'Pronamic News', 'pronamic_ideal' ),
-								'items' => 5
+								'items' => 5,
 							) );
 
 							?>

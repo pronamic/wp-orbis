@@ -16,14 +16,14 @@ class Orbis_Core_Admin {
 	 */
 	private $plugin;
 
-    /**
-     * Orbis plugins page slug
-     */
-    public static $ORBIS_PLUGINS_SLUG = 'orbis_plugins';
+	/**
+	 * Orbis plugins page slug
+	 */
+	public static $ORBIS_PLUGINS_SLUG = 'orbis_plugins';
 
-    //////////////////////////////////////////////////
+	//////////////////////////////////////////////////
 
-    /**
+	/**
 	 * Constructs and initialize an Orbis core admin
 	 *
 	 * @param Orbis_Plugin $plugin
@@ -51,7 +51,7 @@ class Orbis_Core_Admin {
 	 * Admin initialize
 	 */
 	public function admin_init() {
-        global $pagenow;
+		global $pagenow;
 
 		// Scripts
 		wp_enqueue_script( 'select2' );
@@ -64,25 +64,24 @@ class Orbis_Core_Admin {
 			$this->plugin->plugin_url( 'css/admin.css' )
 		);
 
-        // Exclusively enqueue these scripts and styles on the orbis plugins page
-        if ( $pagenow === 'admin.php' &&
-            filter_input( INPUT_GET, 'page', FILTER_SANITIZE_STRING ) === self::$ORBIS_PLUGINS_SLUG ) {
-            wp_enqueue_script(
-                'orbis-plugins-script',
-                $this->plugin->plugin_url( 'includes/js/orbis-plugins.js' ),
-                array( 'jquery', 'thickbox' )
-            );
+		// Exclusively enqueue these scripts and styles on the orbis plugins page
+		if ( $pagenow === 'admin.php' && filter_input( INPUT_GET, 'page', FILTER_SANITIZE_STRING ) === self::$ORBIS_PLUGINS_SLUG ) {
+			wp_enqueue_script(
+				'orbis-plugins-script',
+				$this->plugin->plugin_url( 'includes/js/orbis-plugins.js' ),
+				array( 'jquery', 'thickbox' )
+			);
 
-            wp_localize_script( 'orbis-plugins-script', 'orbis_plugins_script_strings', array(
-                'install_button_text'      => __( 'Install', 'orbis'),
-                'activate_button_text'     => __( 'Activate', 'orbis'),
-                'active_button_text'       => __( 'Active', 'orbis'),
-                'error_message_unknown'    => __( 'An unknown error occurred', 'orbis' ),
-                'error_message_connection' => __( 'Could not connect to the server', 'orbis' )
-            ) );
+			wp_localize_script( 'orbis-plugins-script', 'orbis_plugins_script_strings', array(
+				'install_button_text'      => __( 'Install', 'orbis' ),
+				'activate_button_text'     => __( 'Activate', 'orbis' ),
+				'active_button_text'       => __( 'Active', 'orbis' ),
+				'error_message_unknown'    => __( 'An unknown error occurred', 'orbis' ),
+				'error_message_connection' => __( 'Could not connect to the server', 'orbis' ),
+			) );
 
-            wp_enqueue_style( 'thickbox' );
-        }
+			wp_enqueue_style( 'thickbox' );
+		}
 	}
 
 	//////////////////////////////////////////////////
@@ -104,7 +103,7 @@ class Orbis_Core_Admin {
 			__( 'Orbis', 'orbis' ), // menu_title
 			'manage_orbis', // capability
 			'orbis', // menu_slug
-			array( $this, 'page') , // function
+			array( $this, 'page' ) , // function
 			$this->plugin->plugin_url( 'images/icon-16x16.png' ), // icon_url
 			'54.orbis.2'
 		);
@@ -152,7 +151,7 @@ class Orbis_Core_Admin {
 		$orbis_items = array();
 		$other_items = array();
 
-		foreach ( $menu_order as $index => $item ) {
+		foreach ( $menu_order as $item ) {
 			if ( strpos( $item, 'orbis_' ) !== false ) {
 				$orbis_items[] = $item;
 			} else {
@@ -225,22 +224,22 @@ class Orbis_Core_Admin {
      * Called through the WordPress AJAX hook. Activates a plugin that matches the slug passed through the $_POST variable.
 	 */
 	public function orbis_activate_plugin() {
-        $plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_SANITIZE_STRING );
+		$plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_SANITIZE_STRING );
 
-        if ( ! $plugin_slug ) {
-            die( json_encode( array( 'success' => false, 'message' => __( 'The plugin could not be found', 'orbis' ) ) ) );
-        }
+		if ( ! $plugin_slug ) {
+			die( json_encode( array( 'success' => false, 'message' => __( 'The plugin could not be found', 'orbis' ) ) ) );
+		}
 
-        check_ajax_referer( 'manage-plugin-' . $plugin_slug, 'nonce' );
+		check_ajax_referer( 'manage-plugin-' . $plugin_slug, 'nonce' );
 
-        $plugin_installer = new Orbis_Plugin_Manager( $this->plugin );
+		$plugin_installer = new Orbis_Plugin_Manager( $this->plugin );
 
-        $result = $plugin_installer->activate_plugin( $plugin_slug );
+		$result = $plugin_installer->activate_plugin( $plugin_slug );
 
-        if ( is_wp_error( $result ) ) {
-            die( json_encode( array( 'success' => false, 'error_code' => $result->get_error_code(), 'message' => $result->get_error_message() ) ) );
-        }
+		if ( is_wp_error( $result ) ) {
+			die( json_encode( array( 'success' => false, 'error_code' => $result->get_error_code(), 'message' => $result->get_error_message() ) ) );
+		}
 
-        die( json_encode( array( 'success' => true, 'message' => __( 'The plugin was activated successfully', 'orbis' ) ) ) );
+		die( json_encode( array( 'success' => true, 'message' => __( 'The plugin was activated successfully', 'orbis' ) ) ) );
 	}
 }

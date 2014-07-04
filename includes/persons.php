@@ -4,14 +4,14 @@
  * Add person meta boxes
  */
 function orbis_person_add_meta_boxes() {
-    add_meta_box(
-        'orbis_person',
-        __( 'Contact information', 'orbis' ),
-        'orbis_person_meta_box',
-        'orbis_person',
-        'normal',
-        'high'
-    );
+	add_meta_box(
+		'orbis_person',
+		__( 'Contact information', 'orbis' ),
+		'orbis_person_meta_box',
+		'orbis_person',
+		'normal',
+		'high'
+	);
 }
 
 add_action( 'add_meta_boxes', 'orbis_person_add_meta_boxes' );
@@ -21,7 +21,7 @@ add_action( 'add_meta_boxes', 'orbis_person_add_meta_boxes' );
  *
  * @param array $post
  */
-function orbis_person_meta_box( $post ) {
+function orbis_person_meta_box() {
 	global $orbis_plugin;
 
 	$orbis_plugin->plugin_include( 'admin/meta-box-person-details.php' );
@@ -32,13 +32,13 @@ function orbis_person_meta_box( $post ) {
  */
 function orbis_save_person( $post_id, $post ) {
 	// Doing autosave
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 
 	// Verify nonce
 	$nonce = filter_input( INPUT_POST, 'orbis_person_details_meta_box_nonce', FILTER_SANITIZE_STRING );
-	if( ! wp_verify_nonce( $nonce, 'orbis_save_person_details' ) ) {
+	if ( ! wp_verify_nonce( $nonce, 'orbis_save_person_details' ) ) {
 		return;
 	}
 
@@ -54,14 +54,14 @@ function orbis_save_person( $post_id, $post ) {
 		'_orbis_person_mobile_number' => FILTER_SANITIZE_STRING,
 		'_orbis_person_twitter'       => FILTER_SANITIZE_STRING,
 		'_orbis_person_facebook'      => FILTER_SANITIZE_STRING,
-		'_orbis_person_linkedin'      => FILTER_SANITIZE_STRING
+		'_orbis_person_linkedin'      => FILTER_SANITIZE_STRING,
 	);
 
 	$data = filter_input_array( INPUT_POST, $definition );
 
 	foreach ( $data as $key => $value ) {
 		if ( empty( $value ) ) {
-			delete_post_meta( $post_id, $key);
+			delete_post_meta( $post_id, $key );
 		} else {
 			update_post_meta( $post_id, $key, $value );
 		}

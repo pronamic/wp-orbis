@@ -2,7 +2,7 @@
 
 /**
  * Query vars
- * 
+ *
  * @param array $query_vars
  * @return array
  */
@@ -17,17 +17,6 @@ function orbis_project_query_vars( $query_vars ) {
 add_filter( 'query_vars', 'orbis_project_query_vars' );
 
 //////////////////////////////////////////////////
-
-/**
- * Parse query
- *
- * @param WP_Query $query
- */
-function orbis_project_parse_query( $query ) {
-	
-}
-
-add_action( 'parse_query', 'orbis_project_parse_query' );
 
 /**
  * Posts clauses
@@ -46,14 +35,14 @@ function orbis_projects_posts_clauses( $pieces, $query ) {
 
 	if ( $post_type == 'orbis_project' ) {
 		// Fields
-		$fields = ",
+		$fields = ',
 			project.number_seconds AS project_number_seconds,
 			project.finished AS project_is_finished,
 			project.invoiced AS project_is_invoiced,
 			principal.id AS principal_id,
 			principal.name AS principal_name,
 			principal.post_id AS principal_post_id
-		";
+		';
 
 		// Join
 		$join = "
@@ -71,25 +60,25 @@ function orbis_projects_posts_clauses( $pieces, $query ) {
 		$principal = $query->get( 'orbis_project_principal' );
 
 		if ( ! empty( $principal ) ) {
-			$n    = '%';
+			$wildcard = '%';
 			$term = esc_sql( like_escape( $principal ) );
 
-			$where .= " AND principal.name LIKE '{$n}{$term}{$n}' ";
+			$where .= " AND principal.name LIKE '{$wildcard}{$term}{$wildcard}' ";
 		}
 
 		$client_id = $query->get( 'orbis_project_client_id' );
 
 		if ( ! empty( $client_id ) ) {
-			$where .= $wpdb->prepare( " AND principal.post_id LIKE %d ", $client_id );
+			$where .= $wpdb->prepare( ' AND principal.post_id LIKE %d ', $client_id );
 		}
 
 		$invoice_number = $query->get( 'orbis_project_invoice_number' );
 
 		if ( ! empty( $invoice_number ) ) {
-			$n    = '%';
+			$wildcard = '%';
 			$term = esc_sql( like_escape( $invoice_number ) );
 
-			$where .= " AND project.invoice_number LIKE '{$n}{$term}{$n}' ";
+			$where .= " AND project.invoice_number LIKE '{$wildcard}{$term}{$wildcard}' ";
 		}
 
 		$pieces['join']   .= $join;

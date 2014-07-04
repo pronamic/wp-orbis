@@ -44,7 +44,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			array( 'jquery' ),
 			'3.4.6'
 		);
-		
+
 		wp_register_style(
 			'select2',
 			$this->plugin_url( 'bower_components/select2/select2.css' ),
@@ -73,9 +73,9 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		// jQuery UI datepicker
 		wp_enqueue_script( 'jquery-ui-datepicker' );
-		
+
 		wp_enqueue_style( 'jquery-ui-datepicker', $this->plugin_url( '/jquery-ui/themes/base/jquery.ui.all.css' ) );
-		
+
 		self::enqueue_jquery_ui_i18n_path( 'datepicker' );
 
 		wp_enqueue_script(
@@ -96,7 +96,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	}
 
 	//////////////////////////////////////////////////
-	
+
 	/**
 	 * Get jQuery UI i18n file
 	 * https://github.com/jquery/jquery-ui/tree/master/ui/i18n
@@ -105,34 +105,36 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	 */
 	private function enqueue_jquery_ui_i18n_path( $module ) {
 		$result = false;
-	
+
 		// Retrive the WordPress locale, for example 'en_GB'
 		$locale = get_locale();
-	
+
 		// jQuery UI uses 'en-GB' notation, replace underscore with hyphen
 		$locale = str_replace( '_', '-', $locale );
-	
+
 		// Create an search array with two variants 'en-GB' and 'en'
 		$search = array(
-				$locale, // en-GB
-				substr( $locale, 0, 2 ) // en
+			// en-GB
+			$locale,
+			// en
+			substr( $locale, 0, 2 ),
 		);
-	
+
 		foreach ( $search as $name ) {
 			$path = sprintf( '/jquery-ui/languages/jquery.ui.%s-%s.js', $module, $name );
-	
+
 			$file = $this->dir_path . '/' . $path;
-	
+
 			if ( is_readable( $file ) ) {
 				wp_enqueue_script(
 					'jquery-ui-' . $module . '-' . $name,
 					$this->plugin_url( $path )
 				);
-	
+
 				break;
 			}
 		}
-	
+
 		return $result;
 	}
 
@@ -201,9 +203,9 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 	/**
 	 * Install
-	 * 
+	 *
 	 * @mysql UPDATE wp_options SET option_value = 0 WHERE option_name = 'orbis_db_version';
-	 * 
+	 *
 	 * @see Orbis_Plugin::install()
 	 */
 	public function install() {
@@ -256,34 +258,23 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	 * @return array
 	 */
 	public function get_roles() {
-		// @see http://codex.wordpress.org/Function_Reference/register_post_type
-		global $wp_post_types;
-
 		// Default roles
 		$roles = array(
 			'super_administrator' => array(
-				'manage_orbis'                      => true,
+				'manage_orbis' => true,
 			),
-			'administrator' => array(
-				'manage_orbis'                      => true,
+			'administrator'       => array(
+				'manage_orbis' => true,
 			),
-			'editor' => array(
-
-			),
-			'employee' => array(
-
-			),
+			'editor'              => array(),
+			'employee'            => array(),
 		);
 
 		// Roles post capabilities
 		$roles_post_cap = array(
 			'super_administrator' => array(
-				'orbis_company' => orbis_post_type_capabilities( true, array(
-
-				) ),
-				'orbis_project' => orbis_post_type_capabilities( true, array(
-
-				) ),
+				'orbis_company' => orbis_post_type_capabilities( true, array() ),
+				'orbis_project' => orbis_post_type_capabilities( true, array() ),
 			),
 			'administrator' => array(
 				'orbis_company' => orbis_post_type_capabilities( true, array(
@@ -313,7 +304,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		foreach ( $roles_post_cap as $role => $post_types ) {
 			foreach ( $post_types as $post_type => $capabilities ) {
-				orbis_translate_post_type_capabilities( $post_type, $capabilities, $roles[$role] );
+				orbis_translate_post_type_capabilities( $post_type, $capabilities, $roles[ $role ] );
 			}
 		}
 

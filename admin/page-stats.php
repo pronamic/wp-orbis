@@ -1,5 +1,5 @@
 <div class="wrap">
-	<h2><?php echo get_admin_page_title(); ?></h2>
+	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 	<?php
 
@@ -60,7 +60,7 @@
 			orbis_tasks ;
 	';
 
-	$number_tasks = $wpdb->get_var($query);
+	$number_tasks = $wpdb->get_var( $query );
 
 	?>
 
@@ -81,7 +81,7 @@
 			orbis_companies ;
 	';
 
-	$number_companies = $wpdb->get_var($query);
+	$number_companies = $wpdb->get_var( $query );
 
 	?>
 
@@ -126,12 +126,12 @@
 		;
 	';
 
-	$numberDomains = $wpdb->get_var($query);
+	$number_domains = $wpdb->get_var( $query );
 
 	?>
 	<dl>
-		<dt><?php _e('Number domains', 'orbis'); ?></dt>
-		<dd><?php echo $numberDomains; ?></dd>
+		<dt><?php _e( 'Number domains', 'orbis' ); ?></dt>
+		<dd><?php echo esc_html( $number_domains ); ?></dd>
 	</dl>
 
 	<h3><?php _e( 'Subscriptions', 'orbis' ); ?></h3>
@@ -142,11 +142,11 @@
 		SELECT
 			COUNT(id)
 		FROM
-			orbis_subscriptions  AS subscription
+			orbis_subscriptions AS subscription
 		;
 	';
 
-	$numberSubscriptions = $wpdb->get_var($query);
+	$number_subscriptions = $wpdb->get_var( $query );
 
 	$query = '
 		SELECT
@@ -159,14 +159,14 @@
 		;
 	';
 
-	$total = $wpdb->get_var($query);
+	$total = $wpdb->get_var( $query );
 
 	?>
 	<dl>
-		<dt><?php _e('Number subscriptions', 'orbis'); ?></dt>
-		<dd><?php echo $numberSubscriptions; ?></dd>
+		<dt><?php _e( 'Number subscriptions', 'orbis' ); ?></dt>
+		<dd><?php echo esc_html( $number_subscriptions ); ?></dd>
 
-		<dt><?php _e('Annual Revenue', 'orbis'); ?></dt>
-		<dd><?php echo orbis_price( $total ); ?></dd>
+		<dt><?php _e( 'Annual Revenue', 'orbis' ); ?></dt>
+		<dd><?php echo esc_html( orbis_price( $total ) ); ?></dd>
 	</dl>
 </div>

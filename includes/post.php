@@ -1,8 +1,6 @@
 <?php
 
 function orbis_create_initial_post_types() {
-	global $orbis_plugin;
-
 	register_post_type(
 		'orbis_project',
 		array(
@@ -38,7 +36,7 @@ function orbis_create_initial_post_types() {
 		'orbis_project_category',
 		array( 'orbis_project' ),
 		array(
-			'hierarchical' => true ,
+			'hierarchical' => true,
 			'labels'       => array(
 				'name'              => _x( 'Categories', 'taxonomy general name', 'orbis' ),
 				'singular_name'     => _x( 'Category', 'taxonomy singular name', 'orbis' ),
@@ -116,17 +114,17 @@ function orbis_create_initial_post_types() {
 		array(
 			'hierarchical' => true,
 			'labels'       => array(
-				'name'              => _x( 'Categories', 'taxonomy general name', 'orbis') ,
-				'singular_name'     => _x( 'Category', 'taxonomy singular name', 'orbis') ,
-				'search_items'      => __( 'Search Categories', 'orbis') ,
-				'all_items'         => __( 'All Categories', 'orbis') ,
-				'parent_item'       => __( 'Parent Category', 'orbis') ,
-				'parent_item_colon' => __( 'Parent Category:', 'orbis') ,
-				'edit_item'         => __( 'Edit Category', 'orbis') ,
-				'update_item'       => __( 'Update Category', 'orbis') ,
-				'add_new_item'      => __( 'Add New Category', 'orbis') ,
-				'new_item_name'     => __( 'New Category Name', 'orbis') ,
-				'menu_name'         => __( 'Categories', 'orbis'),
+				'name'              => _x( 'Categories', 'taxonomy general name', 'orbis' ),
+				'singular_name'     => _x( 'Category', 'taxonomy singular name', 'orbis' ),
+				'search_items'      => __( 'Search Categories', 'orbis' ),
+				'all_items'         => __( 'All Categories', 'orbis' ),
+				'parent_item'       => __( 'Parent Category', 'orbis' ),
+				'parent_item_colon' => __( 'Parent Category:', 'orbis' ),
+				'edit_item'         => __( 'Edit Category', 'orbis' ),
+				'update_item'       => __( 'Update Category', 'orbis' ),
+				'add_new_item'      => __( 'Add New Category', 'orbis' ),
+				'new_item_name'     => __( 'New Category Name', 'orbis' ),
+				'menu_name'         => __( 'Categories', 'orbis' ),
 			),
 			'show_ui'      => true,
 			'query_var'    => true,
@@ -160,7 +158,7 @@ function orbis_post_type_capabilities( $grant, array $capabilities ) {
 		'delete_published_posts' => $grant,
 		'delete_others_posts'    => $grant,
 		'edit_private_posts'     => $grant,
-		'edit_published_posts'   => $grant
+		'edit_published_posts'   => $grant,
 	);
 
 	return array_merge( $default_capabilties, $capabilities );
@@ -176,12 +174,12 @@ function orbis_post_type_capabilities( $grant, array $capabilities ) {
 function orbis_translate_post_type_capabilities( $post_type, $capabilities, &$result = array() ) {
 	global $wp_post_types;
 
-	if ( isset( $wp_post_types[$post_type] ) ) {
-		$cap = $wp_post_types[$post_type]->cap;
+	if ( isset( $wp_post_types[ $post_type ] ) ) {
+		$cap = $wp_post_types[ $post_type ]->cap;
 
 		foreach ( $capabilities as $capability => $grant ) {
 			if ( isset( $cap->$capability ) ) {
-				$result[$cap->$capability] = $grant;
+				$result[ $cap->$capability ] = $grant;
 			}
 		}
 	}

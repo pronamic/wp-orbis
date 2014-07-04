@@ -3,7 +3,7 @@
 function orbis_the_email_title() {
 	global $orbis_email_title;
 
-	echo $orbis_email_title;
+	echo esc_html( $orbis_email_title );
 }
 
 function orbis_email_header() {

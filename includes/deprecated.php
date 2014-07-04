@@ -36,20 +36,20 @@ function orbis_get_current_person_id() {
 	$person_id = null;
 
 	$persons = array(
-		1 =>  null, // pronamic
-		2 =>  6, // remco
-		3 =>  5, // kj
-		4 =>  1, // jelke
-		5 =>  4, // jl
-		6 =>  2, // martijn cordes
-		7 =>  3, // leo
-		8 => 24, // martijn duker
-		9 => 25, // stefan
+		1  => null, // pronamic
+		2  => 6, // remco
+		3  => 5, // kj
+		4  => 1, // jelke
+		5  => 4, // jl
+		6  => 2, // martijn cordes
+		7  => 3, // leo
+		8  => 24, // martijn duker
+		9  => 25, // stefan
 		10 => 26, // leon
 	);
 
-	if ( isset( $persons[$user_id] ) ) {
-		$person_id = $persons[$user_id];
+	if ( isset( $persons[ $user_id ] ) ) {
+		$person_id = $persons[ $user_id ];
 	}
 
 	return $person_id;

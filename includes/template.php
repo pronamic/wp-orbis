@@ -64,7 +64,7 @@ if ( ! function_exists( 'orbis_time' ) ) {
 			sprintf( '%02d', $minutes ),
 			$minutes,
 			sprintf( '%02d', $seconds ),
-			$seconds
+			$seconds,
 		);
 
 		return str_replace( $search, $replace, $format );
