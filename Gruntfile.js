@@ -1,5 +1,5 @@
 module.exports = function( grunt ) {
-	// Project configuration.
+	// Project configuration
 	grunt.initConfig( {
 		// Package
 		pkg: grunt.file.readJSON( 'package.json' ),
@@ -50,4 +50,5 @@ module.exports = function( grunt ) {
 
 	// Default task(s).
 	grunt.registerTask( 'default', [ 'phplint', 'checkwpversion', 'makepot' ] );
+	grunt.registerTask( 'pot', [ 'makepot' ] );
 };
