@@ -13,18 +13,18 @@ global $wpdb;
 // Managers
 $sql = "
 	SELECT
-		project.id , 
-		project.name , 
-		project.number_seconds AS availableSeconds , 
-		project.invoice_number AS invoiceNumber , 
-		project.invoicable , 
+		project.id ,
+		project.name ,
+		project.number_seconds AS availableSeconds ,
+		project.invoice_number AS invoiceNumber ,
+		project.invoicable ,
 		project.post_id AS project_post_id,
 		manager.ID AS project_manager_id,
 		manager.display_name AS project_manager_name,
-		principal.id AS principalId , 
+		principal.id AS principalId ,
 		principal.name AS principalName ,
-		principal.post_id AS principal_post_id, 
-		SUM(registration.number_seconds) AS registeredSeconds 
+		principal.post_id AS principal_post_id,
+		SUM(registration.number_seconds) AS registeredSeconds
 	FROM
 		orbis_projects AS project
 			LEFT JOIN
@@ -38,12 +38,12 @@ $sql = "
 				ON project.principal_id = principal.id
 			LEFT JOIN
 		orbis_hours_registration AS registration
-				ON project.id = registration.project_id 
+				ON project.id = registration.project_id
 	WHERE
 		NOT project.finished
 			%s
 	GROUP BY
-		project.id 
+		project.id
 	ORDER BY
 		%s ;
 ";
@@ -112,6 +112,6 @@ $parameters = $_GET;
 	Filter: <a href="?filter=strippenkaart">Strippenkaart</a> | <a href="?filter=false">Geen</a><br />
 </p>
 
-<?php 
+<?php
 
 include 'projects-table-view.php';
