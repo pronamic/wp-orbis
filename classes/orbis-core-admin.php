@@ -37,7 +37,7 @@ class Orbis_Core_Admin {
 
 		add_filter( 'menu_order', array( $this, 'menu_order' ) );
 		add_filter( 'custom_menu_order', array( $this, 'custom_menu_order' ) );
-		
+
 		add_action( 'wp_ajax_orbis_install_plugin' , array( $this, 'orbis_install_plugin' ) );
 		add_action( 'wp_ajax_orbis_activate_plugin', array( $this, 'orbis_activate_plugin' ) );
 	}
@@ -125,7 +125,7 @@ class Orbis_Core_Admin {
 			'orbis_stats', // menu_slug
 			array( $this, 'pageStats' ) // function
 		);
-		
+
 		add_submenu_page(
 			'orbis', // parent_slug
 			__( 'Orbis Plugins', 'orbis' ), // page_title
@@ -170,7 +170,7 @@ class Orbis_Core_Admin {
 
 	/**
 	 * Custom menu order
-	 * 
+	 *
 	 * @return boolean
 	 */
 	public function custom_menu_order() {
@@ -190,34 +190,34 @@ class Orbis_Core_Admin {
 	public function pageStats() {
 		$this->plugin->plugin_include( 'views/stats.php' );
 	}
-	
+
 	public function pagePlugins() {
 		$this->plugin->plugin_include( 'views/plugins.php' );
 	}
-	
+
 	/**
 	 * Called through the WordPress AJAX hook. Installs a plugin that matches the slug passed through the $_POST variable.
 	 */
 	public function orbis_install_plugin() {
 		$plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_SANITIZE_STRING );
-		
+
 		if ( ! $plugin_slug ) {
 			die( json_encode( array( 'success' => false, 'message' => __( 'The plugin could not be found', 'orbis' ) ) ) );
 		}
-		
+
 		check_ajax_referer( 'manage-plugin-' . $plugin_slug, 'nonce' );
-		
+
 		$plugin_installer = new Orbis_Plugin_Manager( $this->plugin );
-		
+
 		$result = $plugin_installer->install_plugin( $plugin_slug );
-		
+
 		if ( is_wp_error( $result ) ) {
 			die( json_encode( array( 'success' => false, 'error_code' => $result->get_error_code(), 'message' => $result->get_error_message() ) ) );
 		}
-		
+
 		die( json_encode( array( 'success' => true, 'message' => __( 'The plugin was installed and activated successfully', 'orbis' ) ) ) );
 	}
-	
+
 	/**
      * Called through the WordPress AJAX hook. Activates a plugin that matches the slug passed through the $_POST variable.
 	 */
