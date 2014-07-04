@@ -1,7 +1,5 @@
 <div class="wrap">
-	<h2>
-		<?php _e( 'Plugins', 'orbis' ); ?>
-	</h2>
+	<h2><?php echo get_admin_page_title(); ?></h2>
 
     <div class="orbis-plugins-message below-h2"></div>
 
