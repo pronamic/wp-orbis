@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-07-04 08:20:31+00:00\n"
-"PO-Revision-Date: 2014-07-04 10:21+0100\n"
+"POT-Creation-Date: 2014-07-04 10:48:54+00:00\n"
+"PO-Revision-Date: 2014-07-04 12:49+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Generator: Poedit 1.6.4\n"
 
 #: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
-#: includes/projects.php:355 templates/projects-without-agreement.php:35
+#: includes/projects.php:353 templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
@@ -85,7 +85,7 @@ msgstr "Klant"
 msgid "Select Client"
 msgstr "Selecteer klant"
 
-#: admin/meta-box-project-details.php:47 includes/projects.php:354
+#: admin/meta-box-project-details.php:47 includes/projects.php:352
 msgid "Time"
 msgstr "Tijd"
 
@@ -150,19 +150,19 @@ msgstr "Pronamic nieuws"
 msgid "http://www.pronamic.eu/"
 msgstr "http://www.pronamic.nl/"
 
-#: admin/page-plugins.php:14
+#: admin/page-plugins.php:15
 msgid "Details"
 msgstr "Details"
 
-#: admin/page-plugins.php:18 classes/orbis-core-admin.php:77
+#: admin/page-plugins.php:24 classes/orbis-core-admin.php:76
 msgid "Install"
 msgstr "Installeer"
 
-#: admin/page-plugins.php:22 classes/orbis-core-admin.php:78
+#: admin/page-plugins.php:32 classes/orbis-core-admin.php:77
 msgid "Activate"
 msgstr "Activeer"
 
-#: admin/page-plugins.php:26 classes/orbis-core-admin.php:79
+#: admin/page-plugins.php:39 classes/orbis-core-admin.php:78
 msgid "Active"
 msgstr "Actief"
 
@@ -202,8 +202,8 @@ msgstr "Taken"
 msgid "%d tasks"
 msgstr "%d taken"
 
-#: admin/page-stats.php:73 classes/orbis-core-plugin.php:150
-#: includes/post.php:66 includes/post.php:68 includes/post.php:80
+#: admin/page-stats.php:73 classes/orbis-core-plugin.php:152
+#: includes/post.php:64 includes/post.php:66 includes/post.php:78
 msgid "Companies"
 msgstr "Bedrijven"
 
@@ -211,8 +211,8 @@ msgstr "Bedrijven"
 msgid "%d companies"
 msgstr "%d bedrijven"
 
-#: admin/page-stats.php:94 classes/orbis-core-plugin.php:177
-#: includes/post.php:9 includes/post.php:11 includes/post.php:23
+#: admin/page-stats.php:94 classes/orbis-core-plugin.php:179
+#: includes/post.php:7 includes/post.php:9 includes/post.php:21
 msgid "Projects"
 msgstr "Projecten"
 
@@ -240,11 +240,11 @@ msgstr "Aantal abonnementen"
 msgid "Annual Revenue"
 msgstr "Jaaromzet"
 
-#: classes/orbis-core-admin.php:80
+#: classes/orbis-core-admin.php:79
 msgid "An unknown error occurred"
 msgstr "Een onbekende fout is opgetreden"
 
-#: classes/orbis-core-admin.php:81
+#: classes/orbis-core-admin.php:80
 msgid "Could not connect to the server"
 msgstr "Een verbinding met de server kon niet worden gemaakt"
 
@@ -252,39 +252,39 @@ msgstr "Een verbinding met de server kon niet worden gemaakt"
 msgid "Orbis"
 msgstr "Orbis"
 
-#: classes/orbis-core-admin.php:116
+#: classes/orbis-core-admin.php:115
 msgid "Orbis Settings"
 msgstr "Orbis instellingen"
 
-#: classes/orbis-core-admin.php:117
+#: classes/orbis-core-admin.php:116
 msgid "Settings"
 msgstr "Instellingen"
 
-#: classes/orbis-core-admin.php:125
+#: classes/orbis-core-admin.php:124
 msgid "Orbis Stats"
 msgstr "Orbis statistieken"
 
-#: classes/orbis-core-admin.php:126
+#: classes/orbis-core-admin.php:125
 msgid "Stats"
 msgstr "Statistieken"
 
-#: classes/orbis-core-admin.php:134
+#: classes/orbis-core-admin.php:133
 msgid "Orbis Plugins"
 msgstr "Orbis plugins"
 
-#: classes/orbis-core-admin.php:135
+#: classes/orbis-core-admin.php:134
 msgid "Plugins"
 msgstr "Plugins"
 
-#: classes/orbis-core-admin.php:208 classes/orbis-core-admin.php:231
+#: classes/orbis-core-admin.php:207 classes/orbis-core-admin.php:230
 msgid "The plugin could not be found"
 msgstr "De plugin kon niet worden gevonden"
 
-#: classes/orbis-core-admin.php:221
+#: classes/orbis-core-admin.php:220
 msgid "The plugin was installed and activated successfully"
 msgstr "De plugin is succesvol geïnstalleerd en geactiveerd"
 
-#: classes/orbis-core-admin.php:244
+#: classes/orbis-core-admin.php:243
 msgid "The plugin was activated successfully"
 msgstr "De plugin is succesvol geactiveerd"
 
@@ -312,84 +312,84 @@ msgstr "Meer resultaten laden..."
 msgid "Searching..."
 msgstr "Zoeken...."
 
-#: classes/orbis-core-plugin.php:151 includes/post.php:97 includes/post.php:99
+#: classes/orbis-core-plugin.php:153 includes/post.php:95 includes/post.php:97
 msgid "Persons"
 msgstr "Personen"
 
-#: classes/orbis-core-plugin.php:154 classes/orbis-core-plugin.php:188
-#: includes/post.php:100
+#: classes/orbis-core-plugin.php:156 classes/orbis-core-plugin.php:190
+#: includes/post.php:98
 msgid "Person"
 msgstr "Persoon"
 
-#: classes/orbis-core-plugin.php:155 classes/orbis-core-plugin.php:189
+#: classes/orbis-core-plugin.php:157 classes/orbis-core-plugin.php:191
 msgid "Search person"
 msgstr "Zoek persoon"
 
-#: classes/orbis-core-plugin.php:156 classes/orbis-core-plugin.php:190
+#: classes/orbis-core-plugin.php:158 classes/orbis-core-plugin.php:192
 msgid "No persons found."
 msgstr "Geen personen gevonden."
 
-#: classes/orbis-core-plugin.php:157 classes/orbis-core-plugin.php:191
+#: classes/orbis-core-plugin.php:159 classes/orbis-core-plugin.php:193
 msgid "Add Person"
 msgstr "Persoon toevoegen"
 
-#: classes/orbis-core-plugin.php:158 classes/orbis-core-plugin.php:192
+#: classes/orbis-core-plugin.php:160 classes/orbis-core-plugin.php:194
 msgid "New Person"
 msgstr "Nieuw persoon"
 
-#: classes/orbis-core-plugin.php:159 classes/orbis-core-plugin.php:193
+#: classes/orbis-core-plugin.php:161 classes/orbis-core-plugin.php:195
 msgid "Add New Person"
 msgstr "Nieuw persoon toevoegen"
 
-#: classes/orbis-core-plugin.php:162 includes/post.php:69
+#: classes/orbis-core-plugin.php:164 includes/post.php:67
 msgid "Company"
 msgstr "Bedrijf"
 
-#: classes/orbis-core-plugin.php:163
+#: classes/orbis-core-plugin.php:165
 msgid "Search company"
 msgstr "Zoek bedrijf"
 
-#: classes/orbis-core-plugin.php:164 includes/post.php:77
+#: classes/orbis-core-plugin.php:166 includes/post.php:75
 msgid "No companies found."
 msgstr "Geen bedrijven gevonden."
 
-#: classes/orbis-core-plugin.php:165
+#: classes/orbis-core-plugin.php:167
 msgid "Add Company"
 msgstr "Bedrijf toevoegen"
 
-#: classes/orbis-core-plugin.php:166 includes/post.php:73
+#: classes/orbis-core-plugin.php:168 includes/post.php:71
 msgid "New Company"
 msgstr "Nieuw bedrijf"
 
-#: classes/orbis-core-plugin.php:167 includes/post.php:71
+#: classes/orbis-core-plugin.php:169 includes/post.php:69
 msgid "Add New Company"
 msgstr "Nieuwe bedrijf toevoegen"
 
-#: classes/orbis-core-plugin.php:176
+#: classes/orbis-core-plugin.php:178
 msgid "Involved Persons"
 msgstr "Betrokken personen"
 
-#: classes/orbis-core-plugin.php:180 includes/post.php:12
+#: classes/orbis-core-plugin.php:182 includes/post.php:10
 msgid "Project"
 msgstr "Project"
 
-#: classes/orbis-core-plugin.php:181
+#: classes/orbis-core-plugin.php:183
 msgid "Search project"
 msgstr "Zoek project"
 
-#: classes/orbis-core-plugin.php:182 includes/post.php:20
+#: classes/orbis-core-plugin.php:184 includes/post.php:18
 msgid "No projects found."
 msgstr "Geen projecten gevonden."
 
-#: classes/orbis-core-plugin.php:183
+#: classes/orbis-core-plugin.php:185
 msgid "Add Project"
 msgstr "Project toevoegen"
 
-#: classes/orbis-core-plugin.php:184 includes/post.php:16
+#: classes/orbis-core-plugin.php:186 includes/post.php:14
 msgid "New Project"
 msgstr "Nieuw project"
 
-#: classes/orbis-core-plugin.php:185 includes/post.php:14
+#: classes/orbis-core-plugin.php:187 includes/post.php:12
 msgid "Add New Project"
 msgstr "Nieuw project toevoegen"
 
@@ -409,15 +409,15 @@ msgstr "Amerikaanse dollar"
 msgid "Example: %s"
 msgstr "Voorbeeld: %s"
 
-#: classes/orbis-plugin-manager.php:58
+#: classes/orbis-plugin-manager.php:66
 msgid "You don't have the required permissions to install a plugin"
 msgstr "Je hebt niet genoeg rechten om een plugin the installeren"
 
-#: classes/orbis-plugin-manager.php:89
+#: classes/orbis-plugin-manager.php:102
 msgid "Please ensure the file system is writable"
 msgstr "Zorg ervoor dat het bestandsysteem schrijfbaar is"
 
-#: classes/orbis-plugin-manager.php:113
+#: classes/orbis-plugin-manager.php:126
 msgid "You don't have the required permissions to activate a plugin"
 msgstr "Je hebt niet genoeg rechten om een plugin te activeren"
 
@@ -425,7 +425,7 @@ msgstr "Je hebt niet genoeg rechten om een plugin te activeren"
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: includes/companies.php:142 includes/projects.php:352
+#: includes/companies.php:142 includes/projects.php:350
 #: templates/projects-without-agreement.php:38
 msgid "Title"
 msgstr "Titel"
@@ -434,19 +434,19 @@ msgstr "Titel"
 msgid "Online"
 msgstr "Online"
 
-#: includes/companies.php:147 includes/projects.php:356
+#: includes/companies.php:147 includes/projects.php:354
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/companies.php:148 includes/projects.php:357
+#: includes/companies.php:148 includes/projects.php:355
 msgid "Comments"
 msgstr "Reacties"
 
-#: includes/companies.php:149 includes/projects.php:358
+#: includes/companies.php:149 includes/projects.php:356
 msgid "Date"
 msgstr "Datum"
 
-#: includes/log.php:62
+#: includes/log.php:60
 msgid "Orbis Log"
 msgstr "Orbis logboek"
 
@@ -466,87 +466,87 @@ msgstr "%s heeft het \"%s\" bericht bijgewerkt."
 msgid "Contact information"
 msgstr "Contactinformatie"
 
-#: includes/post.php:15
+#: includes/post.php:13
 msgid "Edit Project"
 msgstr "Project bewerken"
 
-#: includes/post.php:17
+#: includes/post.php:15
 msgid "All Projects"
 msgstr "Alle projecten"
 
-#: includes/post.php:18
+#: includes/post.php:16
 msgid "View Project"
 msgstr "Bekijk project"
 
-#: includes/post.php:19
+#: includes/post.php:17
 msgid "Search Projects"
 msgstr "Projecten zoeken"
 
-#: includes/post.php:21
+#: includes/post.php:19
 msgid "No projects found in Trash."
 msgstr "Geen projecten gevonden in prullenbak."
 
-#: includes/post.php:22
+#: includes/post.php:20
 msgid "Parent Project:"
 msgstr "Bovenliggend project:"
 
-#: includes/post.php:45 includes/post.php:121
+#: includes/post.php:43 includes/post.php:119
 msgid "Search Categories"
 msgstr "Zoek categorieën"
 
-#: includes/post.php:46 includes/post.php:122
+#: includes/post.php:44 includes/post.php:120
 msgid "All Categories"
 msgstr "Alle categorieën"
 
-#: includes/post.php:47 includes/post.php:123
+#: includes/post.php:45 includes/post.php:121
 msgid "Parent Category"
 msgstr "Bovenliggende categorie"
 
-#: includes/post.php:48 includes/post.php:124
+#: includes/post.php:46 includes/post.php:122
 msgid "Parent Category:"
 msgstr "Bovenliggende categorie:"
 
-#: includes/post.php:49 includes/post.php:125
+#: includes/post.php:47 includes/post.php:123
 msgid "Edit Category"
 msgstr "Bewerk categorie"
 
-#: includes/post.php:50 includes/post.php:126
+#: includes/post.php:48 includes/post.php:124
 msgid "Update Category"
 msgstr "Update categorie"
 
-#: includes/post.php:51 includes/post.php:127
+#: includes/post.php:49 includes/post.php:125
 msgid "Add New Category"
 msgstr "Nieuwe categorie"
 
-#: includes/post.php:52 includes/post.php:128
+#: includes/post.php:50 includes/post.php:126
 msgid "New Category Name"
 msgstr "Nieuwe categorie naam"
 
-#: includes/post.php:53 includes/post.php:129
+#: includes/post.php:51 includes/post.php:127
 msgid "Categories"
 msgstr "Categorieën"
 
-#: includes/post.php:72
+#: includes/post.php:70
 msgid "Edit Company"
 msgstr "Bedrijf bewerken"
 
-#: includes/post.php:74
+#: includes/post.php:72
 msgid "All Companies"
 msgstr "Alle bedrijven"
 
-#: includes/post.php:75
+#: includes/post.php:73
 msgid "View Company"
 msgstr "Bekijk bedrijf"
 
-#: includes/post.php:76
+#: includes/post.php:74
 msgid "Search Companies"
 msgstr "Zoek bedrijven"
 
-#: includes/post.php:78
+#: includes/post.php:76
 msgid "No companies found in Trash."
 msgstr "Geen bedrijven gevonden in prullenbak."
 
-#: includes/post.php:79
+#: includes/post.php:77
 msgid "Parent Company:"
 msgstr "Bovenliggend bedrijf:"
 
@@ -554,19 +554,19 @@ msgstr "Bovenliggend bedrijf:"
 msgid "Project Information"
 msgstr "Projectinformatie"
 
-#: includes/projects.php:235
+#: includes/projects.php:233
 msgid "This '%s' project is just '%s' by %s."
 msgstr "Dit '%s' project is zojuist '%s' door %s."
 
-#: includes/projects.php:236 includes/projects.php:237
+#: includes/projects.php:234 includes/projects.php:235
 msgid "opened"
 msgstr "geopend"
 
-#: includes/projects.php:236 includes/projects.php:237
+#: includes/projects.php:234 includes/projects.php:235
 msgid "completed"
 msgstr "afgerond"
 
-#: includes/projects.php:353 templates/projects-without-agreement.php:37
+#: includes/projects.php:351 templates/projects-without-agreement.php:37
 msgid "Principal"
 msgstr "Opdrachtgever"
 
@@ -599,47 +599,47 @@ msgstr ""
 msgid "Pronamic"
 msgstr "Pronamic"
 
-#: includes/post.php:13
+#: includes/post.php:11
 msgctxt "orbis_project"
 msgid "Add New"
 msgstr "Nieuw project"
 
-#: includes/post.php:32
+#: includes/post.php:30
 msgctxt "slug"
 msgid "projects"
 msgstr "projecten"
 
-#: includes/post.php:58
+#: includes/post.php:56
 msgctxt "slug"
 msgid "project-category"
 msgstr "project-categorie"
 
-#: includes/post.php:89
+#: includes/post.php:87
 msgctxt "slug"
 msgid "companies"
 msgstr "bedrijven"
 
-#: includes/post.php:108
+#: includes/post.php:106
 msgctxt "slug"
 msgid "persons"
 msgstr "personen"
 
-#: includes/post.php:134
+#: includes/post.php:132
 msgctxt "slug"
 msgid "person-category"
 msgstr "persoon-categorie"
 
-#: includes/post.php:43 includes/post.php:119
+#: includes/post.php:41 includes/post.php:117
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr "Categorieën"
 
-#: includes/post.php:44 includes/post.php:120
+#: includes/post.php:42 includes/post.php:118
 msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr "Categorie"
 
-#: includes/post.php:70
+#: includes/post.php:68
 msgctxt "orbis_company"
 msgid "Add New"
 msgstr "Nieuw bedrijf"
