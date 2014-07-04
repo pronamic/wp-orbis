@@ -64,7 +64,7 @@ if ( isset( $_GET['filter'] ) ) {
 	switch ( $_GET['filter'] ) {
 		case 'false' :
 			$filter = '';
-            break;
+			break;
 	}
 }
 
