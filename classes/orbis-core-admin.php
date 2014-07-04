@@ -114,7 +114,7 @@ class Orbis_Core_Admin {
 			__( 'Settings', 'orbis' ), // menu_title
 			'manage_options', // capability
 			'orbis_settings', // menu_slug
-			array( $this, 'pageSettings' ) // function
+			array( $this, 'page_settings' ) // function
 		);
 
 		add_submenu_page(
@@ -123,7 +123,7 @@ class Orbis_Core_Admin {
 			__( 'Stats', 'orbis' ), // menu_title
 			'manage_options', // capability
 			'orbis_stats', // menu_slug
-			array( $this, 'pageStats' ) // function
+			array( $this, 'page_stats' ) // function
 		);
 
 		add_submenu_page(
@@ -132,7 +132,7 @@ class Orbis_Core_Admin {
 			__( 'Plugins', 'orbis' ), // menu_title
 			'manage_options', // capability
 			'orbis_plugins', // menu_slug
-			array( $this, 'pagePlugins' ) // function
+			array( $this, 'page_plugins' ) // function
 		);
 	}
 
@@ -180,19 +180,19 @@ class Orbis_Core_Admin {
 	//////////////////////////////////////////////////
 
 	public function page() {
-		$this->plugin->plugin_include( 'views/orbis.php' );
+		$this->plugin->plugin_include( 'admin/page-dashboard.php' );
 	}
 
-	public function pageSettings() {
-		$this->plugin->plugin_include( 'views/settings.php' );
+	public function page_settings() {
+		$this->plugin->plugin_include( 'admin/page-settings.php' );
 	}
 
-	public function pageStats() {
-		$this->plugin->plugin_include( 'views/stats.php' );
+	public function page_stats() {
+		$this->plugin->plugin_include( 'admin/page-stats.php' );
 	}
 
-	public function pagePlugins() {
-		$this->plugin->plugin_include( 'views/plugins.php' );
+	public function page_plugins() {
+		$this->plugin->plugin_include( 'admin/page-plugins.php' );
 	}
 
 	/**
