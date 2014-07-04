@@ -167,6 +167,6 @@
 		<dd><?php echo $numberSubscriptions; ?></dd>
 
 		<dt><?php _e('Annual Revenue', 'orbis'); ?></dt>
-		<dd>&euro;&nbsp;<?php echo number_format($total, 2, ',', '.'); ?></dd>
+		<dd><?php echo orbis_price( $total ); ?></dd>
 	</dl>
 </div>
