@@ -7,7 +7,7 @@
 
 	?>
 
-	<h2>Werk registraties</h2>
+	<h3><?php _e( 'Timesheets', 'orbis' ); ?></h3>
 
 	<?php
 
@@ -47,7 +47,7 @@
 		</li>
 	</ul>
 
-	<h2>Taken</h2>
+	<h3><?php _e( 'Tasks', 'orbis' ); ?></h3>
 
 	<?php
 
@@ -68,7 +68,7 @@
 		</li>
 	</ul>
 
-	<h2>Bedrijven</h2>
+	<h3><?php _e( 'Companies', 'orbis' ); ?></h3>
 
 	<?php
 
@@ -89,7 +89,7 @@
 		</li>
 	</ul>
 
-	<h2>Projecten</h2>
+	<h3><?php _e( 'Projects', 'orbis' ); ?></h3>
 
 	<?php
 
@@ -110,7 +110,7 @@
 		</li>
 	</ul>
 
-	<h2>Domeinen</h2>
+	<h3><?php _e( 'Domains', 'orbis' ); ?></h3>
 
 	<?php
 
@@ -132,7 +132,7 @@
 		<dd><?php echo $numberDomains; ?></dd>
 	</dl>
 
-	<h2>Abonnementen</h2>
+	<h3><?php _e( 'Subscriptions', 'orbis' ); ?></h3>
 
 	<?php
 

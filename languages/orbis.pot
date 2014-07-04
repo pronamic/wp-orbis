@@ -1,16 +1,17 @@
-# Copyright (C) 2014 Orbis
-# This file is distributed under the same license as the Orbis package.
+# Copyright (C) 2014 Pronamic
+# This file is distributed under the GPL.
 msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-03-28 20:12:27+00:00\n"
+"POT-Creation-Date: 2014-07-04 07:23:11+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.5\n"
 
 #: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
 #: includes/projects.php:355 templates/projects-without-agreement.php:35
@@ -120,16 +121,79 @@ msgstr ""
 msgid "Project is finished"
 msgstr ""
 
-#: classes/orbis-core-admin.php:74 views/plugins.php:22
+#: admin/page-dashboard.php:9
+msgid "Recent Projects"
+msgstr ""
+
+#: admin/page-dashboard.php:22
+msgid "No recent projects found."
+msgstr ""
+
+#: admin/page-dashboard.php:47
+#. translators: comment date format. See http:php.net/date
+msgid "c"
+msgstr ""
+
+#: admin/page-dashboard.php:69 admin/page-dashboard.php:77
+msgid "Pronamic News"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.pronamic.eu/"
+msgstr ""
+
+#: admin/page-plugins.php:14
+msgid "Details"
+msgstr ""
+
+#: admin/page-plugins.php:18 classes/orbis-core-admin.php:74
 msgid "Install"
 msgstr ""
 
-#: classes/orbis-core-admin.php:75 views/plugins.php:26
+#: admin/page-plugins.php:22 classes/orbis-core-admin.php:75
 msgid "Activate"
 msgstr ""
 
-#: classes/orbis-core-admin.php:76 views/plugins.php:30
+#: admin/page-plugins.php:26 classes/orbis-core-admin.php:76
 msgid "Active"
+msgstr ""
+
+#: admin/page-stats.php:10
+msgid "Timesheets"
+msgstr ""
+
+#: admin/page-stats.php:50
+msgid "Tasks"
+msgstr ""
+
+#: admin/page-stats.php:71 classes/orbis-core-plugin.php:150
+#: includes/post.php:66 includes/post.php:68 includes/post.php:80
+msgid "Companies"
+msgstr ""
+
+#: admin/page-stats.php:92 classes/orbis-core-plugin.php:177
+#: includes/post.php:9 includes/post.php:11 includes/post.php:23
+msgid "Projects"
+msgstr ""
+
+#: admin/page-stats.php:113
+msgid "Domains"
+msgstr ""
+
+#: admin/page-stats.php:131
+msgid "Number domains"
+msgstr ""
+
+#: admin/page-stats.php:135
+msgid "Subscriptions"
+msgstr ""
+
+#: admin/page-stats.php:164
+msgid "Number subscriptions"
+msgstr ""
+
+#: admin/page-stats.php:167
+msgid "Annual Revenue"
 msgstr ""
 
 #: classes/orbis-core-admin.php:77
@@ -148,7 +212,7 @@ msgstr ""
 msgid "Orbis Settings"
 msgstr ""
 
-#: classes/orbis-core-admin.php:114 views/settings.php:5
+#: classes/orbis-core-admin.php:114
 msgid "Settings"
 msgstr ""
 
@@ -156,7 +220,7 @@ msgstr ""
 msgid "Orbis Stats"
 msgstr ""
 
-#: classes/orbis-core-admin.php:123 views/stats.php:5
+#: classes/orbis-core-admin.php:123
 msgid "Stats"
 msgstr ""
 
@@ -164,7 +228,7 @@ msgstr ""
 msgid "Orbis Plugins"
 msgstr ""
 
-#: classes/orbis-core-admin.php:132 views/plugins.php:5
+#: classes/orbis-core-admin.php:132
 msgid "Plugins"
 msgstr ""
 
@@ -180,118 +244,108 @@ msgstr ""
 msgid "The plugin was activated successfully"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:56
+#: classes/orbis-core-plugin.php:64
 msgid "No matches found"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:57
+#: classes/orbis-core-plugin.php:65
 msgid "Please enter %s more characters"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:58
+#: classes/orbis-core-plugin.php:66
 msgid "You can only select %s item"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:59
+#: classes/orbis-core-plugin.php:67
 msgid "You can only select %s items"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:60
+#: classes/orbis-core-plugin.php:68
 msgid "Loading more results..."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:61
+#: classes/orbis-core-plugin.php:69
 msgid "Searching..."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:147 includes/post.php:66 includes/post.php:68
-#: includes/post.php:80
-msgid "Companies"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:148 includes/post.php:97 includes/post.php:99
+#: classes/orbis-core-plugin.php:151 includes/post.php:97 includes/post.php:99
 msgid "Persons"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:151 classes/orbis-core-plugin.php:185
+#: classes/orbis-core-plugin.php:154 classes/orbis-core-plugin.php:188
 #: includes/post.php:100
 msgid "Person"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:152 classes/orbis-core-plugin.php:186
+#: classes/orbis-core-plugin.php:155 classes/orbis-core-plugin.php:189
 msgid "Search person"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:153 classes/orbis-core-plugin.php:187
+#: classes/orbis-core-plugin.php:156 classes/orbis-core-plugin.php:190
 msgid "No persons found."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:154 classes/orbis-core-plugin.php:188
+#: classes/orbis-core-plugin.php:157 classes/orbis-core-plugin.php:191
 msgid "Add Person"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:155 classes/orbis-core-plugin.php:189
+#: classes/orbis-core-plugin.php:158 classes/orbis-core-plugin.php:192
 msgid "New Person"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:156 classes/orbis-core-plugin.php:190
+#: classes/orbis-core-plugin.php:159 classes/orbis-core-plugin.php:193
 msgid "Add New Person"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:159 includes/post.php:69
+#: classes/orbis-core-plugin.php:162 includes/post.php:69
 msgid "Company"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:160
+#: classes/orbis-core-plugin.php:163
 msgid "Search company"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:161 includes/post.php:77
+#: classes/orbis-core-plugin.php:164 includes/post.php:77
 msgid "No companies found."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:162
+#: classes/orbis-core-plugin.php:165
 msgid "Add Company"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:163 includes/post.php:73
+#: classes/orbis-core-plugin.php:166 includes/post.php:73
 msgid "New Company"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:164 includes/post.php:71
+#: classes/orbis-core-plugin.php:167 includes/post.php:71
 msgid "Add New Company"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:173
+#: classes/orbis-core-plugin.php:176
 msgid "Involved Persons"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:174 includes/post.php:9 includes/post.php:11
-#: includes/post.php:23
-msgid "Projects"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:177 includes/post.php:12
+#: classes/orbis-core-plugin.php:180 includes/post.php:12
 msgid "Project"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:178
+#: classes/orbis-core-plugin.php:181
 msgid "Search project"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:179 includes/post.php:20
+#: classes/orbis-core-plugin.php:182 includes/post.php:20
 msgid "No projects found."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:180
+#: classes/orbis-core-plugin.php:183
 msgid "Add Project"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:181 includes/post.php:16
+#: classes/orbis-core-plugin.php:184 includes/post.php:16
 msgid "New Project"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:182 includes/post.php:14
+#: classes/orbis-core-plugin.php:185 includes/post.php:14
 msgid "Add New Project"
 msgstr ""
 
@@ -467,43 +521,6 @@ msgstr ""
 
 #: templates/projects-without-agreement.php:39
 msgid "Actions"
-msgstr ""
-
-#: views/orbis.php:11
-msgid "Recent Projects"
-msgstr ""
-
-#: views/orbis.php:24
-msgid "No recent projects found."
-msgstr ""
-
-#: views/orbis.php:49
-#. translators: comment date format. See http:php.net/date
-msgid "c"
-msgstr ""
-
-#: views/orbis.php:71 views/orbis.php:79
-msgid "Pronamic News"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "http://www.pronamic.eu/"
-msgstr ""
-
-#: views/plugins.php:18
-msgid "Details"
-msgstr ""
-
-#: views/stats.php:135
-msgid "Number domains"
-msgstr ""
-
-#: views/stats.php:168
-msgid "Number subscriptions"
-msgstr ""
-
-#: views/stats.php:171
-msgid "Annual Revenue"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
