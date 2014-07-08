@@ -1,17 +1,16 @@
-# Copyright (C) 2014 Pronamic
-# This file is distributed under the GPL.
+# Copyright (C) 2014 Orbis
+# This file is distributed under the same license as the Orbis package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-07-04 10:48:54+00:00\n"
+"POT-Creation-Date: 2014-07-08 09:14:08+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.4.5\n"
 
 #: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
 #: includes/projects.php:353 templates/projects-without-agreement.php:35
@@ -304,12 +303,11 @@ msgstr ""
 msgid "Searching..."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:153 includes/post.php:95 includes/post.php:97
+#: classes/orbis-core-plugin.php:153 includes/post.php:95
 msgid "Persons"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:156 classes/orbis-core-plugin.php:190
-#: includes/post.php:98
 msgid "Person"
 msgstr ""
 
@@ -318,6 +316,7 @@ msgid "Search person"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:158 classes/orbis-core-plugin.php:192
+#: includes/post.php:109
 msgid "No persons found."
 msgstr ""
 
@@ -326,10 +325,12 @@ msgid "Add Person"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:160 classes/orbis-core-plugin.php:194
+#: includes/post.php:103
 msgid "New Person"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:161 classes/orbis-core-plugin.php:195
+#: includes/post.php:102
 msgid "Add New Person"
 msgstr ""
 
@@ -482,39 +483,39 @@ msgstr ""
 msgid "Parent Project:"
 msgstr ""
 
-#: includes/post.php:43 includes/post.php:119
+#: includes/post.php:43 includes/post.php:131
 msgid "Search Categories"
 msgstr ""
 
-#: includes/post.php:44 includes/post.php:120
+#: includes/post.php:44 includes/post.php:132
 msgid "All Categories"
 msgstr ""
 
-#: includes/post.php:45 includes/post.php:121
+#: includes/post.php:45 includes/post.php:133
 msgid "Parent Category"
 msgstr ""
 
-#: includes/post.php:46 includes/post.php:122
+#: includes/post.php:46 includes/post.php:134
 msgid "Parent Category:"
 msgstr ""
 
-#: includes/post.php:47 includes/post.php:123
+#: includes/post.php:47 includes/post.php:135
 msgid "Edit Category"
 msgstr ""
 
-#: includes/post.php:48 includes/post.php:124
+#: includes/post.php:48 includes/post.php:136
 msgid "Update Category"
 msgstr ""
 
-#: includes/post.php:49 includes/post.php:125
+#: includes/post.php:49 includes/post.php:137
 msgid "Add New Category"
 msgstr ""
 
-#: includes/post.php:50 includes/post.php:126
+#: includes/post.php:50 includes/post.php:138
 msgid "New Category Name"
 msgstr ""
 
-#: includes/post.php:51 includes/post.php:127
+#: includes/post.php:51 includes/post.php:139
 msgid "Categories"
 msgstr ""
 
@@ -540,6 +541,30 @@ msgstr ""
 
 #: includes/post.php:77
 msgid "Parent Company:"
+msgstr ""
+
+#: includes/post.php:104
+msgid "Edit Person"
+msgstr ""
+
+#: includes/post.php:105
+msgid "View Person"
+msgstr ""
+
+#: includes/post.php:106
+msgid "All Persons"
+msgstr ""
+
+#: includes/post.php:107
+msgid "Search Persons"
+msgstr ""
+
+#: includes/post.php:108
+msgid "Parent Person:"
+msgstr ""
+
+#: includes/post.php:110
+msgid "No persons found in Trash."
 msgstr ""
 
 #: includes/projects.php:9
@@ -609,27 +634,52 @@ msgctxt "slug"
 msgid "companies"
 msgstr ""
 
-#: includes/post.php:106
+#: includes/post.php:118
 msgctxt "slug"
 msgid "persons"
 msgstr ""
 
-#: includes/post.php:132
+#: includes/post.php:144
 msgctxt "slug"
 msgid "person-category"
 msgstr ""
 
-#: includes/post.php:41 includes/post.php:117
+#: includes/post.php:41 includes/post.php:129
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr ""
 
-#: includes/post.php:42 includes/post.php:118
+#: includes/post.php:42 includes/post.php:130
 msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr ""
 
 #: includes/post.php:68
 msgctxt "orbis_company"
+msgid "Add New"
+msgstr ""
+
+#: includes/post.php:97
+msgctxt "post type general name"
+msgid "Persons"
+msgstr ""
+
+#: includes/post.php:98
+msgctxt "post type singular name"
+msgid "Person"
+msgstr ""
+
+#: includes/post.php:99
+msgctxt "admin menu"
+msgid "Persons"
+msgstr ""
+
+#: includes/post.php:100
+msgctxt "add new on admin bar"
+msgid "Person"
+msgstr ""
+
+#: includes/post.php:101
+msgctxt "person"
 msgid "Add New"
 msgstr ""

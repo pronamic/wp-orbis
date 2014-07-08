@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-07-04 10:48:54+00:00\n"
-"PO-Revision-Date: 2014-07-04 12:49+0100\n"
-"Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
+"POT-Creation-Date: 2014-07-08 09:14:08+00:00\n"
+"PO-Revision-Date: 2014-07-08 11:14+0100\n"
+"Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x:2c,1;esc_attr_e\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.6\n"
 
 #: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
 #: includes/projects.php:353 templates/projects-without-agreement.php:35
@@ -312,12 +312,11 @@ msgstr "Meer resultaten laden..."
 msgid "Searching..."
 msgstr "Zoeken...."
 
-#: classes/orbis-core-plugin.php:153 includes/post.php:95 includes/post.php:97
+#: classes/orbis-core-plugin.php:153 includes/post.php:95
 msgid "Persons"
 msgstr "Personen"
 
 #: classes/orbis-core-plugin.php:156 classes/orbis-core-plugin.php:190
-#: includes/post.php:98
 msgid "Person"
 msgstr "Persoon"
 
@@ -326,6 +325,7 @@ msgid "Search person"
 msgstr "Zoek persoon"
 
 #: classes/orbis-core-plugin.php:158 classes/orbis-core-plugin.php:192
+#: includes/post.php:109
 msgid "No persons found."
 msgstr "Geen personen gevonden."
 
@@ -334,10 +334,12 @@ msgid "Add Person"
 msgstr "Persoon toevoegen"
 
 #: classes/orbis-core-plugin.php:160 classes/orbis-core-plugin.php:194
+#: includes/post.php:103
 msgid "New Person"
 msgstr "Nieuw persoon"
 
 #: classes/orbis-core-plugin.php:161 classes/orbis-core-plugin.php:195
+#: includes/post.php:102
 msgid "Add New Person"
 msgstr "Nieuw persoon toevoegen"
 
@@ -490,39 +492,39 @@ msgstr "Geen projecten gevonden in prullenbak."
 msgid "Parent Project:"
 msgstr "Bovenliggend project:"
 
-#: includes/post.php:43 includes/post.php:119
+#: includes/post.php:43 includes/post.php:131
 msgid "Search Categories"
 msgstr "Zoek categorieën"
 
-#: includes/post.php:44 includes/post.php:120
+#: includes/post.php:44 includes/post.php:132
 msgid "All Categories"
 msgstr "Alle categorieën"
 
-#: includes/post.php:45 includes/post.php:121
+#: includes/post.php:45 includes/post.php:133
 msgid "Parent Category"
 msgstr "Bovenliggende categorie"
 
-#: includes/post.php:46 includes/post.php:122
+#: includes/post.php:46 includes/post.php:134
 msgid "Parent Category:"
 msgstr "Bovenliggende categorie:"
 
-#: includes/post.php:47 includes/post.php:123
+#: includes/post.php:47 includes/post.php:135
 msgid "Edit Category"
 msgstr "Bewerk categorie"
 
-#: includes/post.php:48 includes/post.php:124
+#: includes/post.php:48 includes/post.php:136
 msgid "Update Category"
 msgstr "Update categorie"
 
-#: includes/post.php:49 includes/post.php:125
+#: includes/post.php:49 includes/post.php:137
 msgid "Add New Category"
 msgstr "Nieuwe categorie"
 
-#: includes/post.php:50 includes/post.php:126
+#: includes/post.php:50 includes/post.php:138
 msgid "New Category Name"
 msgstr "Nieuwe categorie naam"
 
-#: includes/post.php:51 includes/post.php:127
+#: includes/post.php:51 includes/post.php:139
 msgid "Categories"
 msgstr "Categorieën"
 
@@ -549,6 +551,30 @@ msgstr "Geen bedrijven gevonden in prullenbak."
 #: includes/post.php:77
 msgid "Parent Company:"
 msgstr "Bovenliggend bedrijf:"
+
+#: includes/post.php:104
+msgid "Edit Person"
+msgstr "Persoon bewerken"
+
+#: includes/post.php:105
+msgid "View Person"
+msgstr "Persoon bekijken"
+
+#: includes/post.php:106
+msgid "All Persons"
+msgstr "Alle personen"
+
+#: includes/post.php:107
+msgid "Search Persons"
+msgstr "Personen zoeken"
+
+#: includes/post.php:108
+msgid "Parent Person:"
+msgstr "Bovenliggend persoon:"
+
+#: includes/post.php:110
+msgid "No persons found in Trash."
+msgstr "Geen personen gevonden in prullenbak."
 
 #: includes/projects.php:9
 msgid "Project Information"
@@ -619,22 +645,22 @@ msgctxt "slug"
 msgid "companies"
 msgstr "bedrijven"
 
-#: includes/post.php:106
+#: includes/post.php:118
 msgctxt "slug"
 msgid "persons"
 msgstr "personen"
 
-#: includes/post.php:132
+#: includes/post.php:144
 msgctxt "slug"
 msgid "person-category"
 msgstr "persoon-categorie"
 
-#: includes/post.php:41 includes/post.php:117
+#: includes/post.php:41 includes/post.php:129
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr "Categorieën"
 
-#: includes/post.php:42 includes/post.php:118
+#: includes/post.php:42 includes/post.php:130
 msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr "Categorie"
@@ -643,6 +669,31 @@ msgstr "Categorie"
 msgctxt "orbis_company"
 msgid "Add New"
 msgstr "Nieuw bedrijf"
+
+#: includes/post.php:97
+msgctxt "post type general name"
+msgid "Persons"
+msgstr "Personen"
+
+#: includes/post.php:98
+msgctxt "post type singular name"
+msgid "Person"
+msgstr "Persoon"
+
+#: includes/post.php:99
+msgctxt "admin menu"
+msgid "Persons"
+msgstr "Personen"
+
+#: includes/post.php:100
+msgctxt "add new on admin bar"
+msgid "Person"
+msgstr "Persoon"
+
+#: includes/post.php:101
+msgctxt "person"
+msgid "Add New"
+msgstr "Nieuw persoon"
 
 #~ msgid "Involved Projects"
 #~ msgstr "Betrokken projecten"
