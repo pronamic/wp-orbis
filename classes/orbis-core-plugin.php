@@ -12,6 +12,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		add_action( 'p2p_init', array( $this, 'p2p_init' ) );
 
 		// Includes
+		$this->plugin_include( 'includes/angular.php' );
 		$this->plugin_include( 'includes/deprecated.php' );
 		$this->plugin_include( 'includes/administration.php' );
 		$this->plugin_include( 'includes/email.php' );
@@ -42,14 +43,16 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'angular',
 			$this->plugin_url( 'assets/angular/angular.js' ),
 			array(),
-			'1.2.23'
+			'1.2.23',
+			true
 		);
 
 		wp_register_style(
 			'angular-csp',
 			$this->plugin_url( 'assets/angular/angular-csp.css' ),
 			array(),
-			'1.2.23'
+			'1.2.23',
+			true
 		);
 
 		// Select2
@@ -57,7 +60,8 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'select2',
 			$this->plugin_url( 'assets/select2/select2.js' ),
 			array( 'jquery' ),
-			'3.5.1'
+			'3.5.1',
+			true
 		);
 
 		wp_register_style(
@@ -69,10 +73,19 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		// Orbis
 		wp_register_script(
+			'orbis-angular-app',
+			$this->plugin_url( 'src/orbis-angular/orbis-angular.js' ),
+			array( 'angular' ),
+			'1.0.0',
+			true
+		);
+
+		wp_register_script(
 			'orbis-autocomplete',
 			$this->plugin_url( 'includes/js/autocomplete.js' ),
 			array( 'jquery', 'jquery-ui-autocomplete', 'select2' ),
-			'1.0.0'
+			'1.0.0',
+			true
 		);
 
 		$translation_array = array(
@@ -97,7 +110,8 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'orbis',
 			$this->plugin_url( 'includes/js/orbis.js' ),
 			array( 'jquery', 'jquery-ui-datepicker' ),
-			'1.0.0'
+			'1.0.0',
+			true
 		);
 
 		$orbis_vars = array(
