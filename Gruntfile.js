@@ -75,9 +75,15 @@ module.exports = function( grunt ) {
 		copy: {
 			main: {
 				files: [
-					{ // Bootstrap
+					{ // AngularJS
 						expand: true,
-						cwd: 'bower_components/select2/',
+						cwd: 'bower_components/angular',
+						src: [ 'angular-csp.css', 'angular.js', 'angular.min.js', 'angular.min.js.map' ],
+						dest: 'assets/angular'
+					},
+					{ // Select2
+						expand: true,
+						cwd: 'bower_components/select2',
 						src: [ 'select2.js', 'select2.css', 'select2-bootstrap.css', 'select2-spinner.gif', 'select2.png', 'select2x2.png' ],
 						dest: 'assets/select2'
 					},

@@ -37,6 +37,21 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	}
 
 	public function init() {
+		// AngularJS
+		wp_register_script(
+			'angular',
+			$this->plugin_url( 'assets/angular/angular.js' ),
+			array(),
+			'1.2.23'
+		);
+
+		wp_register_style(
+			'angular-csp',
+			$this->plugin_url( 'assets/angular/angular-csp.css' ),
+			array(),
+			'1.2.23'
+		);
+
 		// Select2
 		wp_register_script(
 			'select2',
