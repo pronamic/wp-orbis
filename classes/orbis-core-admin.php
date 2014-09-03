@@ -60,8 +60,8 @@ class Orbis_Core_Admin {
 		wp_enqueue_style( 'orbis-select2' );
 
 		wp_enqueue_style(
-			'orbis-admin',
-			$this->plugin->plugin_url( 'css/admin.css' )
+			'wp-orbis-admin',
+			$this->plugin->plugin_url( 'admin/css/orbis.css' )
 		);
 
 		// Exclusively enqueue these scripts and styles on the orbis plugins page
