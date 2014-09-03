@@ -40,16 +40,16 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		// Select2
 		wp_register_script(
 			'select2',
-			$this->plugin_url( 'bower_components/select2/select2.js' ),
+			$this->plugin_url( 'assets/select2/select2.js' ),
 			array( 'jquery' ),
-			'3.4.6'
+			'3.5.1'
 		);
 
 		wp_register_style(
 			'select2',
-			$this->plugin_url( 'bower_components/select2/select2.css' ),
+			$this->plugin_url( 'assets/select2/select2.css' ),
 			array(),
-			'3.4.6'
+			'3.5.1'
 		);
 
 		// Orbis

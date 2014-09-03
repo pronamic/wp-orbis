@@ -92,6 +92,9 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 == Changelog ==
 
+= 1.2.0 =
+*	Tweak - Updates Select2 from v3.4.6 to v3.5.1.
+
 = 1.1.1 =
 *	Tweak - Project finish modification dates are now stored in meta data for order by.  
 
