@@ -1,0 +1,13 @@
+# Bower
+/bower_components/
+
+# Eclipse
+/.settings/
+/.buildpath
+/.project
+
+# Grunt
+/node_modules/
+
+# Node
+/node_modules/
