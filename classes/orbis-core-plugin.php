@@ -12,7 +12,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		add_action( 'p2p_init', array( $this, 'p2p_init' ) );
 
 		// Includes
-		$this->plugin_include( 'includes/angular.php' );
 		$this->plugin_include( 'includes/deprecated.php' );
 		$this->plugin_include( 'includes/administration.php' );
 		$this->plugin_include( 'includes/email.php' );
@@ -35,26 +34,11 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 			$orbis_admin = new Orbis_Core_Admin( $this );
 		}
+
+		$this->angularjs = new Orbis_Core_AngularJS( $this );
 	}
 
 	public function init() {
-		// AngularJS
-		wp_register_script(
-			'angular',
-			$this->plugin_url( 'assets/angular/angular.js' ),
-			array(),
-			'1.2.23',
-			true
-		);
-
-		wp_register_style(
-			'angular-csp',
-			$this->plugin_url( 'assets/angular/angular-csp.css' ),
-			array(),
-			'1.2.23',
-			true
-		);
-
 		// Select2
 		wp_register_script(
 			'select2',
@@ -72,14 +56,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		);
 
 		// Orbis
-		wp_register_script(
-			'orbis-angular-app',
-			$this->plugin_url( 'src/orbis-angular/orbis-angular.js' ),
-			array( 'angular' ),
-			'1.0.0',
-			true
-		);
-
 		wp_register_script(
 			'orbis-autocomplete',
 			$this->plugin_url( 'includes/js/autocomplete.js' ),
