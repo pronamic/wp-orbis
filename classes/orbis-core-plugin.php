@@ -11,6 +11,10 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		add_action( 'init', array( $this, 'init' ) );
 		add_action( 'p2p_init', array( $this, 'p2p_init' ) );
 
+		add_action( 'init', array( $this, 'register_scripts' ) );
+
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+
 		// Includes
 		$this->plugin_include( 'includes/deprecated.php' );
 		$this->plugin_include( 'includes/administration.php' );
@@ -38,7 +42,21 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$this->angularjs = new Orbis_Core_AngularJS( $this );
 	}
 
+	//////////////////////////////////////////////////
+
+	/**
+	 * Initialize
+	 */
 	public function init() {
+
+	}
+
+	//////////////////////////////////////////////////
+
+	/**
+	 * Register scripts
+	 */
+	public function register_scripts() {
 		// Select2
 		wp_register_script(
 			'select2',
@@ -55,11 +73,29 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'3.5.1'
 		);
 
+		// jQuery UI datepicker
+		wp_register_style( 'jquery-ui-datepicker', $this->plugin_url( '/jquery-ui/themes/base/jquery.ui.all.css' ) );
+
 		// Orbis
+		wp_register_script(
+			'orbis',
+			$this->plugin_url( 'includes/js/orbis.js' ),
+			array( 'jquery', 'jquery-ui-datepicker' ),
+			'1.0.0',
+			true
+		);
+
+		$orbis_vars = array(
+			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+		);
+
+		wp_localize_script( 'orbis', 'orbis', $orbis_vars );
+
+		// Orbis - Autocomplete
 		wp_register_script(
 			'orbis-autocomplete',
 			$this->plugin_url( 'includes/js/autocomplete.js' ),
-			array( 'jquery', 'jquery-ui-autocomplete', 'select2' ),
+			array( 'jquery', 'jquery-ui-autocomplete', 'select2', 'orbis' ),
 			'1.0.0',
 			true
 		);
@@ -74,30 +110,29 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		);
 
 		wp_localize_script( 'orbis-autocomplete', 'orbisl10n', $translation_array );
+	}
 
+	/**
+	 * Enqueue scripts
+	 */
+	public function enqueue_scripts() {
+		$this->enqueue_jquery_datepicker();
+
+		// Orbis
+		wp_enqueue_script( 'orbis' );
+	}
+
+	//////////////////////////////////////////////////
+
+	/**
+	 * Enqueue jQuery datepicker
+	 */
+	public function enqueue_jquery_datepicker() {
 		// jQuery UI datepicker
 		wp_enqueue_script( 'jquery-ui-datepicker' );
+		wp_enqueue_style( 'jquery-ui-datepicker' );
 
-		wp_enqueue_style( 'jquery-ui-datepicker', $this->plugin_url( '/jquery-ui/themes/base/jquery.ui.all.css' ) );
-
-		self::enqueue_jquery_ui_i18n_path( 'datepicker' );
-
-		wp_enqueue_script(
-			'orbis',
-			$this->plugin_url( 'includes/js/orbis.js' ),
-			array( 'jquery', 'jquery-ui-datepicker' ),
-			'1.0.0',
-			true
-		);
-
-		$orbis_vars = array(
-			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-		);
-
-		wp_localize_script( 'orbis', 'orbis', $orbis_vars );
-
-		// Styles
-
+		$this->enqueue_jquery_ui_i18n_path( 'datepicker' );
 	}
 
 	//////////////////////////////////////////////////

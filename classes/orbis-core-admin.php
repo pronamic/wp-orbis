@@ -35,6 +35,8 @@ class Orbis_Core_Admin {
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+
 		add_filter( 'menu_order', array( $this, 'menu_order' ) );
 		add_filter( 'custom_menu_order', array( $this, 'custom_menu_order' ) );
 
@@ -51,21 +53,36 @@ class Orbis_Core_Admin {
 	 * Admin initialize
 	 */
 	public function admin_init() {
-		global $pagenow;
 
-		// Scripts
-		wp_enqueue_script( 'select2' );
+	}
 
-		// Styles
-		wp_enqueue_style( 'orbis-select2' );
+	//////////////////////////////////////////////////
 
-		wp_enqueue_style(
-			'wp-orbis-admin',
-			$this->plugin->plugin_url( 'admin/css/orbis.css' )
-		);
+	/**
+	 * Admin enqueue scripts
+	 */
+	public function admin_enqueue_scripts() {
+		$screen = get_current_screen();
 
-		// Exclusively enqueue these scripts and styles on the orbis plugins page
-		if ( $pagenow === 'admin.php' && filter_input( INPUT_GET, 'page', FILTER_SANITIZE_STRING ) === self::$ORBIS_PLUGINS_SLUG ) {
+		// Orbis screen
+		if ( strpos( $screen->id, 'orbis' ) !== false ) {
+			// Select2
+			wp_enqueue_script( 'select2' );
+
+			wp_enqueue_style( 'orbis-select2' );
+
+			// jQuery datepicker
+			$this->plugin->enqueue_jquery_datepicker();
+
+			// General
+			wp_enqueue_style(
+				'wp-orbis-admin',
+				$this->plugin->plugin_url( 'admin/css/orbis.css' )
+			);
+		}
+
+		// Orbis plugins screen
+		if ( 'orbis_page_orbis_plugins' == $screen->id ) {
 			wp_enqueue_script(
 				'orbis-plugins-script',
 				$this->plugin->plugin_url( 'includes/js/orbis-plugins.js' ),
