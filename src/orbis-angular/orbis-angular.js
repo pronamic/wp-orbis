@@ -14,4 +14,4 @@ angular.module( 'orbisFilters', [] ).filter( 'orbis_time', function() {
 	};
 } );
 
-var orbisApp = angular.module( 'orbisApp', [ 'orbisFilters' ] );
+var orbisApp = angular.module( 'orbisApp', [ 'orbisFilters', 'ui.date' ] );
