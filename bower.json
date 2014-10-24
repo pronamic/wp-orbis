@@ -4,6 +4,7 @@
   "dependencies": {
     "jquery-ui": "~1.10.4",
     "select2": "~3.5.1",
-    "angular": "~1.2.23"
+    "angular": "~1.2.23",
+    "angular-ui-date": "latest"
   }
 }
