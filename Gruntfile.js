@@ -87,6 +87,12 @@ module.exports = function( grunt ) {
 						src: [ 'date.js' ],
 						dest: 'assets/angular-ui-date'
 					},
+					{ // AngularJS ui-select
+						expand: true,
+						cwd: 'bower_components/angular-ui-select/dist',
+						src: [ 'select.css', 'select.js' ],
+						dest: 'assets/angular-ui-select'
+					},
 					{ // Select2
 						expand: true,
 						cwd: 'bower_components/select2',
