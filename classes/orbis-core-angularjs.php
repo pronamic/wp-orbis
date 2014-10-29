@@ -58,7 +58,7 @@ class Orbis_Core_AngularJS {
 		// AngularJS ui-date directive
 		wp_register_script(
 			'angular-ui-date',
-			$this->plugin->plugin_url( 'bower_components/angular-ui-date/src/date.js' ),
+			$this->plugin->plugin_url( 'assets/angular-ui-date/date.js' ),
 			array( 'angular', 'jquery' ),
 			false,
 			true

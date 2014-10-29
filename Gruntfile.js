@@ -81,6 +81,12 @@ module.exports = function( grunt ) {
 						src: [ 'angular-csp.css', 'angular.js', 'angular.min.js', 'angular.min.js.map' ],
 						dest: 'assets/angular'
 					},
+					{ // AngularJS jQuery UI Datepicker
+						expand: true,
+						cwd: 'bower_components/angular-ui-date/src',
+						src: [ 'date.js' ],
+						dest: 'assets/angular-ui-date'
+					},
 					{ // Select2
 						expand: true,
 						cwd: 'bower_components/select2',
