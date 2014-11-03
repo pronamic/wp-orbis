@@ -64,6 +64,23 @@ class Orbis_Core_AngularJS {
 			true
 		);
 
+		// AngularJS ui-select
+		wp_register_script(
+			'angular-ui-select',
+			$this->plugin->plugin_url( 'assets/angular-ui-select/select.js' ),
+			array(),
+			'0.8.3',
+			true
+		);
+
+		wp_register_style(
+			'angular-ui-select',
+			$this->plugin->plugin_url( 'assets/angular-ui-select/select.css' ),
+			array(),
+			'0.8.3',
+			true
+		);
+
 		// Orbis
 		wp_register_script(
 			'orbis-angular-app',
