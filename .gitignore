@@ -1,14 +1,17 @@
 # Bower
 /bower_components/
 
+# Deploy
+/deploy/
+
 # Eclipse
 /.externalToolBuilders/
 /.settings/
 /.buildpath
 /.project
 
-# Grunt
-/node_modules/
-
 # Node
 /node_modules/
+
+# WordPress SVN
+/wp-svn/

@@ -100,8 +100,45 @@ module.exports = function( grunt ) {
 						dest: 'assets/select2'
 					},
 				]
+			},
+
+			deploy: {
+				src: [
+					'**',
+					'!bower.json',
+					'!composer.json',
+					'!Gruntfile.js',
+					'!package.json',
+					'!phpcs.ruleset.xml',
+					'!phpmd.ruleset.xml',
+					'!bower_components/**',
+					'!node_modules/**',
+					'!wp-svn/**',
+				],
+				dest: 'deploy',
+				expand: true
+			},
+		},
+
+		// Clean
+		clean: {
+			deploy: {
+				src: [ 'deploy' ]
+			},
+		},
+
+		// WordPress deploy
+		rt_wp_deploy: {
+			app: {
+				options: {
+					svnUrl: 'http://plugins.svn.wordpress.org/orbis/',
+					svnDir: 'wp-svn',
+					svnUsername: 'pronamic',
+					deployDir: 'deploy',
+					version: '<%= pkg.version %>',
+				}
 			}
-		}
+		},
 	} );
 
 	grunt.loadNpmTasks( 'grunt-phpcs' );
@@ -109,12 +146,25 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-phpmd' );
 	grunt.loadNpmTasks( 'grunt-checkwpversion' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
+	grunt.loadNpmTasks( 'grunt-contrib-clean' );
 	grunt.loadNpmTasks( 'grunt-contrib-copy' );
 	grunt.loadNpmTasks( 'grunt-contrib-concat' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	grunt.loadNpmTasks( 'grunt-rt-wp-deploy' );
 
 	// Default task(s).
 	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'checkwpversion', 'copy' ] );
 	grunt.registerTask( 'pot', [ 'makepot' ] );
+	
+	grunt.registerTask( 'deploy', [
+		'default',
+		'clean:deploy',
+		'copy:deploy'
+	] );
+
+   	grunt.registerTask( 'wp-deploy', [
+   		'deploy',
+   		'rt_wp_deploy'
+   	] );
 };
