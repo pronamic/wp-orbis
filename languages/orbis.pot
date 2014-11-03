@@ -1,488 +1,174 @@
-# Copyright (C) 2014 Orbis
-# This file is distributed under the same license as the Orbis package.
+# Copyright (C) 2014 Pronamic
+# This file is distributed under the GPL.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orbis 1.1.1\n"
+"Project-Id-Version: Orbis 1.2.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-03-28 20:12:27+00:00\n"
+"POT-Creation-Date: 2014-11-03 08:39:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.7\n"
 
 #: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
-#: includes/projects.php:355 templates/projects-without-agreement.php:35
+#: deploy/admin/meta-box-company-details.php:23
+#: deploy/admin/meta-box-project-details.php:31
+#: deploy/includes/projects.php:353
+#: deploy/templates/projects-without-agreement.php:35 includes/projects.php:353
+#: templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr ""
 
-#: admin/meta-box-company-details.php:31 includes/companies.php:146
+#: admin/meta-box-company-details.php:31
+#: deploy/admin/meta-box-company-details.php:31
+#: deploy/includes/companies.php:146 includes/companies.php:146
 msgid "KvK Number"
 msgstr ""
 
 #: admin/meta-box-company-details.php:39
+#: deploy/admin/meta-box-company-details.php:39
 msgid "E-Mail"
 msgstr ""
 
 #: admin/meta-box-company-details.php:47
+#: deploy/admin/meta-box-company-details.php:47
 msgid "Website"
 msgstr ""
 
 #: admin/meta-box-company-details.php:55
+#: deploy/admin/meta-box-company-details.php:55
 msgid "Addresses"
 msgstr ""
 
 #: admin/meta-box-company-details.php:60 admin/meta-box-company-details.php:63
-#: includes/companies.php:144
+#: deploy/admin/meta-box-company-details.php:60
+#: deploy/admin/meta-box-company-details.php:63
+#: deploy/includes/companies.php:144 includes/companies.php:144
 msgid "Address"
 msgstr ""
 
 #: admin/meta-box-company-details.php:65
+#: deploy/admin/meta-box-company-details.php:65
 msgid "Postcode"
 msgstr ""
 
 #: admin/meta-box-company-details.php:66
+#: deploy/admin/meta-box-company-details.php:66
 msgid "City"
 msgstr ""
 
 #: admin/meta-box-company-details.php:68
+#: deploy/admin/meta-box-company-details.php:68
 msgid "Country"
 msgstr ""
 
 #: admin/meta-box-person-details.php:20
+#: deploy/admin/meta-box-person-details.php:20
 msgid "Email Address:"
 msgstr ""
 
 #: admin/meta-box-person-details.php:28
+#: deploy/admin/meta-box-person-details.php:28
 msgid "Phone Number:"
 msgstr ""
 
 #: admin/meta-box-person-details.php:36
+#: deploy/admin/meta-box-person-details.php:36
 msgid "Mobile Number:"
 msgstr ""
 
 #: admin/meta-box-person-details.php:44
+#: deploy/admin/meta-box-person-details.php:44
 msgid "Twitter Username:"
 msgstr ""
 
 #: admin/meta-box-person-details.php:52
+#: deploy/admin/meta-box-person-details.php:52
 msgid "Facebook URL:"
 msgstr ""
 
 #: admin/meta-box-person-details.php:60
+#: deploy/admin/meta-box-person-details.php:60
 msgid "LinkedIn:"
 msgstr ""
 
 #: admin/meta-box-project-details.php:39
+#: deploy/admin/meta-box-project-details.php:39
 msgid "Client"
 msgstr ""
 
 #: admin/meta-box-project-details.php:42
+#: deploy/admin/meta-box-project-details.php:42
 msgid "Select Client"
 msgstr ""
 
-#: admin/meta-box-project-details.php:47 includes/projects.php:354
+#: admin/meta-box-project-details.php:47
+#: deploy/admin/meta-box-project-details.php:47
+#: deploy/includes/projects.php:352 includes/projects.php:352
 msgid "Time"
 msgstr ""
 
 #: admin/meta-box-project-details.php:53
+#: deploy/admin/meta-box-project-details.php:53
 msgid "You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
 msgstr ""
 
 #: admin/meta-box-project-details.php:60
+#: deploy/admin/meta-box-project-details.php:60
 msgid "Agreement ID"
 msgstr ""
 
 #: admin/meta-box-project-details.php:67 admin/meta-box-project-details.php:70
+#: deploy/admin/meta-box-project-details.php:67
+#: deploy/admin/meta-box-project-details.php:70
 msgid "Choose a Agreement"
 msgstr ""
 
 #: admin/meta-box-project-details.php:70
+#: deploy/admin/meta-box-project-details.php:70
 msgid "Set as Agreement"
 msgstr ""
 
 #: admin/meta-box-project-details.php:73
+#: deploy/admin/meta-box-project-details.php:73
 msgid "You can select an .PDF or .TXT file from the WordPress media library."
 msgstr ""
 
 #: admin/meta-box-project-details.php:74
+#: deploy/admin/meta-box-project-details.php:74
 msgid ""
 "If you received the agreement by mail print the complete mail conversation "
 "with an PDF printer."
 msgstr ""
 
 #: admin/meta-box-project-details.php:81
+#: deploy/admin/meta-box-project-details.php:81
 msgid "Finished"
 msgstr ""
 
 #: admin/meta-box-project-details.php:87
+#: deploy/admin/meta-box-project-details.php:87
 msgid "Project is finished"
 msgstr ""
 
-#: classes/orbis-core-admin.php:74 views/plugins.php:22
-msgid "Install"
-msgstr ""
-
-#: classes/orbis-core-admin.php:75 views/plugins.php:26
-msgid "Activate"
-msgstr ""
-
-#: classes/orbis-core-admin.php:76 views/plugins.php:30
-msgid "Active"
-msgstr ""
-
-#: classes/orbis-core-admin.php:77
-msgid "An unknown error occurred"
-msgstr ""
-
-#: classes/orbis-core-admin.php:78
-msgid "Could not connect to the server"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Orbis"
-msgstr ""
-
-#: classes/orbis-core-admin.php:113
-msgid "Orbis Settings"
-msgstr ""
-
-#: classes/orbis-core-admin.php:114 views/settings.php:5
-msgid "Settings"
-msgstr ""
-
-#: classes/orbis-core-admin.php:122
-msgid "Orbis Stats"
-msgstr ""
-
-#: classes/orbis-core-admin.php:123 views/stats.php:5
-msgid "Stats"
-msgstr ""
-
-#: classes/orbis-core-admin.php:131
-msgid "Orbis Plugins"
-msgstr ""
-
-#: classes/orbis-core-admin.php:132 views/plugins.php:5
-msgid "Plugins"
-msgstr ""
-
-#: classes/orbis-core-admin.php:205 classes/orbis-core-admin.php:228
-msgid "The plugin could not be found"
-msgstr ""
-
-#: classes/orbis-core-admin.php:218
-msgid "The plugin was installed and activated successfully"
-msgstr ""
-
-#: classes/orbis-core-admin.php:241
-msgid "The plugin was activated successfully"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:56
-msgid "No matches found"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:57
-msgid "Please enter %s more characters"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:58
-msgid "You can only select %s item"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:59
-msgid "You can only select %s items"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:60
-msgid "Loading more results..."
-msgstr ""
-
-#: classes/orbis-core-plugin.php:61
-msgid "Searching..."
-msgstr ""
-
-#: classes/orbis-core-plugin.php:147 includes/post.php:66 includes/post.php:68
-#: includes/post.php:80
-msgid "Companies"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:148 includes/post.php:97 includes/post.php:99
-msgid "Persons"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:151 classes/orbis-core-plugin.php:185
-#: includes/post.php:100
-msgid "Person"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:152 classes/orbis-core-plugin.php:186
-msgid "Search person"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:153 classes/orbis-core-plugin.php:187
-msgid "No persons found."
-msgstr ""
-
-#: classes/orbis-core-plugin.php:154 classes/orbis-core-plugin.php:188
-msgid "Add Person"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:155 classes/orbis-core-plugin.php:189
-msgid "New Person"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:156 classes/orbis-core-plugin.php:190
-msgid "Add New Person"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:159 includes/post.php:69
-msgid "Company"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:160
-msgid "Search company"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:161 includes/post.php:77
-msgid "No companies found."
-msgstr ""
-
-#: classes/orbis-core-plugin.php:162
-msgid "Add Company"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:163 includes/post.php:73
-msgid "New Company"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:164 includes/post.php:71
-msgid "Add New Company"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:173
-msgid "Involved Persons"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:174 includes/post.php:9 includes/post.php:11
-#: includes/post.php:23
-msgid "Projects"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:177 includes/post.php:12
-msgid "Project"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:178
-msgid "Search project"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:179 includes/post.php:20
-msgid "No projects found."
-msgstr ""
-
-#: classes/orbis-core-plugin.php:180
-msgid "Add Project"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:181 includes/post.php:16
-msgid "New Project"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:182 includes/post.php:14
-msgid "Add New Project"
-msgstr ""
-
-#: classes/orbis-plugin-manager.php:58
-msgid "You don't have the required permissions to install a plugin"
-msgstr ""
-
-#: classes/orbis-plugin-manager.php:89
-msgid "Please ensure the file system is writable"
-msgstr ""
-
-#: classes/orbis-plugin-manager.php:113
-msgid "You don't have the required permissions to activate a plugin"
-msgstr ""
-
-#: includes/companies.php:9
-msgid "Company Details"
-msgstr ""
-
-#: includes/companies.php:142 includes/projects.php:352
-#: templates/projects-without-agreement.php:38
-msgid "Title"
-msgstr ""
-
-#: includes/companies.php:145
-msgid "Online"
-msgstr ""
-
-#: includes/companies.php:147 includes/projects.php:356
-msgid "Author"
-msgstr ""
-
-#: includes/companies.php:148 includes/projects.php:357
-msgid "Comments"
-msgstr ""
-
-#: includes/companies.php:149 includes/projects.php:358
-msgid "Date"
-msgstr ""
-
-#: includes/log.php:62
-msgid "Orbis Log"
-msgstr ""
-
-#: includes/log.php:120
-msgid "Title:"
-msgstr ""
-
-#: includes/log.php:151
-msgid "Anonymous"
-msgstr ""
-
-#: includes/log.php:163
-msgid "%s updated the \"%s\" post."
-msgstr ""
-
-#: includes/persons.php:9
-msgid "Contact information"
-msgstr ""
-
-#: includes/post.php:15
-msgid "Edit Project"
-msgstr ""
-
-#: includes/post.php:17
-msgid "All Projects"
-msgstr ""
-
-#: includes/post.php:18
-msgid "View Project"
-msgstr ""
-
-#: includes/post.php:19
-msgid "Search Projects"
-msgstr ""
-
-#: includes/post.php:21
-msgid "No projects found in Trash."
-msgstr ""
-
-#: includes/post.php:22
-msgid "Parent Project:"
-msgstr ""
-
-#: includes/post.php:45 includes/post.php:121
-msgid "Search Categories"
-msgstr ""
-
-#: includes/post.php:46 includes/post.php:122
-msgid "All Categories"
-msgstr ""
-
-#: includes/post.php:47 includes/post.php:123
-msgid "Parent Category"
-msgstr ""
-
-#: includes/post.php:48 includes/post.php:124
-msgid "Parent Category:"
-msgstr ""
-
-#: includes/post.php:49 includes/post.php:125
-msgid "Edit Category"
-msgstr ""
-
-#: includes/post.php:50 includes/post.php:126
-msgid "Update Category"
-msgstr ""
-
-#: includes/post.php:51 includes/post.php:127
-msgid "Add New Category"
-msgstr ""
-
-#: includes/post.php:52 includes/post.php:128
-msgid "New Category Name"
-msgstr ""
-
-#: includes/post.php:53 includes/post.php:129
-msgid "Categories"
-msgstr ""
-
-#: includes/post.php:72
-msgid "Edit Company"
-msgstr ""
-
-#: includes/post.php:74
-msgid "All Companies"
-msgstr ""
-
-#: includes/post.php:75
-msgid "View Company"
-msgstr ""
-
-#: includes/post.php:76
-msgid "Search Companies"
-msgstr ""
-
-#: includes/post.php:78
-msgid "No companies found in Trash."
-msgstr ""
-
-#: includes/post.php:79
-msgid "Parent Company:"
-msgstr ""
-
-#: includes/projects.php:9
-msgid "Project Information"
-msgstr ""
-
-#: includes/projects.php:235
-msgid "This '%s' project is just '%s' by %s."
-msgstr ""
-
-#: includes/projects.php:236 includes/projects.php:237
-msgid "opened"
-msgstr ""
-
-#: includes/projects.php:236 includes/projects.php:237
-msgid "completed"
-msgstr ""
-
-#: includes/projects.php:353 templates/projects-without-agreement.php:37
-msgid "Principal"
-msgstr ""
-
-#: templates/projects-table-view.php:58
-#: templates/projects-without-agreement.php:74
-msgid "Edit"
-msgstr ""
-
-#: templates/projects-without-agreement.php:36
-msgid "Project Manager"
-msgstr ""
-
-#: templates/projects-without-agreement.php:39
-msgid "Actions"
-msgstr ""
-
-#: views/orbis.php:11
+#: admin/page-dashboard.php:9 deploy/admin/page-dashboard.php:9
 msgid "Recent Projects"
 msgstr ""
 
-#: views/orbis.php:24
+#: admin/page-dashboard.php:22 deploy/admin/page-dashboard.php:22
 msgid "No recent projects found."
 msgstr ""
 
-#: views/orbis.php:49
+#: admin/page-dashboard.php:47 deploy/admin/page-dashboard.php:47
 #. translators: comment date format. See http:php.net/date
 msgid "c"
 msgstr ""
 
-#: views/orbis.php:71 views/orbis.php:79
+#: admin/page-dashboard.php:69 admin/page-dashboard.php:77
+#: deploy/admin/page-dashboard.php:69 deploy/admin/page-dashboard.php:77
 msgid "Pronamic News"
 msgstr ""
 
@@ -490,20 +176,522 @@ msgstr ""
 msgid "http://www.pronamic.eu/"
 msgstr ""
 
-#: views/plugins.php:18
+#: admin/page-plugins.php:15 deploy/admin/page-plugins.php:15
 msgid "Details"
 msgstr ""
 
-#: views/stats.php:135
+#: admin/page-plugins.php:24 classes/orbis-core-admin.php:93
+#: deploy/admin/page-plugins.php:24 deploy/classes/orbis-core-admin.php:93
+msgid "Install"
+msgstr ""
+
+#: admin/page-plugins.php:32 classes/orbis-core-admin.php:94
+#: deploy/admin/page-plugins.php:32 deploy/classes/orbis-core-admin.php:94
+msgid "Activate"
+msgstr ""
+
+#: admin/page-plugins.php:39 classes/orbis-core-admin.php:95
+#: deploy/admin/page-plugins.php:39 deploy/classes/orbis-core-admin.php:95
+msgid "Active"
+msgstr ""
+
+#: admin/page-stats.php:10 deploy/admin/page-stats.php:10
+msgid "Timesheets"
+msgstr ""
+
+#: admin/page-stats.php:33 deploy/admin/page-stats.php:33
+msgid "%d registrations"
+msgstr ""
+
+#: admin/page-stats.php:36 deploy/admin/page-stats.php:36
+msgid "%d seconds"
+msgstr ""
+
+#: admin/page-stats.php:39 deploy/admin/page-stats.php:39
+msgid "%d minutes"
+msgstr ""
+
+#: admin/page-stats.php:42 deploy/admin/page-stats.php:42
+msgid "%d hours"
+msgstr ""
+
+#: admin/page-stats.php:45 deploy/admin/page-stats.php:45
+msgid "%d days"
+msgstr ""
+
+#: admin/page-stats.php:48 deploy/admin/page-stats.php:48
+msgid "%d weeks"
+msgstr ""
+
+#: admin/page-stats.php:52 deploy/admin/page-stats.php:52
+msgid "Tasks"
+msgstr ""
+
+#: admin/page-stats.php:69 deploy/admin/page-stats.php:69
+msgid "%d tasks"
+msgstr ""
+
+#: admin/page-stats.php:73 classes/orbis-core-plugin.php:192
+#: deploy/admin/page-stats.php:73 deploy/classes/orbis-core-plugin.php:192
+#: deploy/includes/post.php:64 deploy/includes/post.php:66
+#: deploy/includes/post.php:78 includes/post.php:64 includes/post.php:66
+#: includes/post.php:78
+msgid "Companies"
+msgstr ""
+
+#: admin/page-stats.php:90 deploy/admin/page-stats.php:90
+msgid "%d companies"
+msgstr ""
+
+#: admin/page-stats.php:94 classes/orbis-core-plugin.php:219
+#: deploy/admin/page-stats.php:94 deploy/classes/orbis-core-plugin.php:219
+#: deploy/includes/post.php:7 deploy/includes/post.php:9
+#: deploy/includes/post.php:21 includes/post.php:7 includes/post.php:9
+#: includes/post.php:21
+msgid "Projects"
+msgstr ""
+
+#: admin/page-stats.php:111 deploy/admin/page-stats.php:111
+msgid "%d projects"
+msgstr ""
+
+#: admin/page-stats.php:115 deploy/admin/page-stats.php:115
+msgid "Domains"
+msgstr ""
+
+#: admin/page-stats.php:133 deploy/admin/page-stats.php:133
 msgid "Number domains"
 msgstr ""
 
-#: views/stats.php:168
+#: admin/page-stats.php:137 deploy/admin/page-stats.php:137
+msgid "Subscriptions"
+msgstr ""
+
+#: admin/page-stats.php:166 deploy/admin/page-stats.php:166
 msgid "Number subscriptions"
 msgstr ""
 
-#: views/stats.php:171
+#: admin/page-stats.php:169 deploy/admin/page-stats.php:169
 msgid "Annual Revenue"
+msgstr ""
+
+#: classes/orbis-core-admin.php:96 deploy/classes/orbis-core-admin.php:96
+msgid "An unknown error occurred"
+msgstr ""
+
+#: classes/orbis-core-admin.php:97 deploy/classes/orbis-core-admin.php:97
+msgid "Could not connect to the server"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Orbis"
+msgstr ""
+
+#: classes/orbis-core-admin.php:132 deploy/classes/orbis-core-admin.php:132
+msgid "Orbis Settings"
+msgstr ""
+
+#: classes/orbis-core-admin.php:133 deploy/classes/orbis-core-admin.php:133
+msgid "Settings"
+msgstr ""
+
+#: classes/orbis-core-admin.php:141 deploy/classes/orbis-core-admin.php:141
+msgid "Orbis Stats"
+msgstr ""
+
+#: classes/orbis-core-admin.php:142 deploy/classes/orbis-core-admin.php:142
+msgid "Stats"
+msgstr ""
+
+#: classes/orbis-core-admin.php:150 deploy/classes/orbis-core-admin.php:150
+msgid "Orbis Plugins"
+msgstr ""
+
+#: classes/orbis-core-admin.php:151 deploy/classes/orbis-core-admin.php:151
+msgid "Plugins"
+msgstr ""
+
+#: classes/orbis-core-admin.php:224 classes/orbis-core-admin.php:247
+#: deploy/classes/orbis-core-admin.php:224
+#: deploy/classes/orbis-core-admin.php:247
+msgid "The plugin could not be found"
+msgstr ""
+
+#: classes/orbis-core-admin.php:237 deploy/classes/orbis-core-admin.php:237
+msgid "The plugin was installed and activated successfully"
+msgstr ""
+
+#: classes/orbis-core-admin.php:260 deploy/classes/orbis-core-admin.php:260
+msgid "The plugin was activated successfully"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:104 deploy/classes/orbis-core-plugin.php:104
+msgid "No matches found"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:105 deploy/classes/orbis-core-plugin.php:105
+msgid "Please enter %s more characters"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:106 deploy/classes/orbis-core-plugin.php:106
+msgid "You can only select %s item"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:107 deploy/classes/orbis-core-plugin.php:107
+msgid "You can only select %s items"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:108 deploy/classes/orbis-core-plugin.php:108
+msgid "Loading more results..."
+msgstr ""
+
+#: classes/orbis-core-plugin.php:109 deploy/classes/orbis-core-plugin.php:109
+msgid "Searching..."
+msgstr ""
+
+#: classes/orbis-core-plugin.php:193 deploy/classes/orbis-core-plugin.php:193
+#: deploy/includes/post.php:95 includes/post.php:95
+msgid "Persons"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:196 classes/orbis-core-plugin.php:230
+#: deploy/classes/orbis-core-plugin.php:196
+#: deploy/classes/orbis-core-plugin.php:230
+msgid "Person"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:197 classes/orbis-core-plugin.php:231
+#: deploy/classes/orbis-core-plugin.php:197
+#: deploy/classes/orbis-core-plugin.php:231
+msgid "Search person"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:198 classes/orbis-core-plugin.php:232
+#: deploy/classes/orbis-core-plugin.php:198
+#: deploy/classes/orbis-core-plugin.php:232 deploy/includes/post.php:109
+#: includes/post.php:109
+msgid "No persons found."
+msgstr ""
+
+#: classes/orbis-core-plugin.php:199 classes/orbis-core-plugin.php:233
+#: deploy/classes/orbis-core-plugin.php:199
+#: deploy/classes/orbis-core-plugin.php:233
+msgid "Add Person"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:200 classes/orbis-core-plugin.php:234
+#: deploy/classes/orbis-core-plugin.php:200
+#: deploy/classes/orbis-core-plugin.php:234 deploy/includes/post.php:103
+#: includes/post.php:103
+msgid "New Person"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:201 classes/orbis-core-plugin.php:235
+#: deploy/classes/orbis-core-plugin.php:201
+#: deploy/classes/orbis-core-plugin.php:235 deploy/includes/post.php:102
+#: includes/post.php:102
+msgid "Add New Person"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:204 deploy/classes/orbis-core-plugin.php:204
+#: deploy/includes/post.php:67 includes/post.php:67
+msgid "Company"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:205 deploy/classes/orbis-core-plugin.php:205
+msgid "Search company"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:206 deploy/classes/orbis-core-plugin.php:206
+#: deploy/includes/post.php:75 includes/post.php:75
+msgid "No companies found."
+msgstr ""
+
+#: classes/orbis-core-plugin.php:207 deploy/classes/orbis-core-plugin.php:207
+msgid "Add Company"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:208 deploy/classes/orbis-core-plugin.php:208
+#: deploy/includes/post.php:71 includes/post.php:71
+msgid "New Company"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:209 deploy/classes/orbis-core-plugin.php:209
+#: deploy/includes/post.php:69 includes/post.php:69
+msgid "Add New Company"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:218 deploy/classes/orbis-core-plugin.php:218
+msgid "Involved Persons"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:222 deploy/classes/orbis-core-plugin.php:222
+#: deploy/includes/post.php:10 includes/post.php:10
+msgid "Project"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:223 deploy/classes/orbis-core-plugin.php:223
+msgid "Search project"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:224 deploy/classes/orbis-core-plugin.php:224
+#: deploy/includes/post.php:18 includes/post.php:18
+msgid "No projects found."
+msgstr ""
+
+#: classes/orbis-core-plugin.php:225 deploy/classes/orbis-core-plugin.php:225
+msgid "Add Project"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:226 deploy/classes/orbis-core-plugin.php:226
+#: deploy/includes/post.php:14 includes/post.php:14
+msgid "New Project"
+msgstr ""
+
+#: classes/orbis-core-plugin.php:227 deploy/classes/orbis-core-plugin.php:227
+#: deploy/includes/post.php:12 includes/post.php:12
+msgid "Add New Project"
+msgstr ""
+
+#: classes/orbis-core-settings.php:12 classes/orbis-core-settings.php:19
+#: deploy/classes/orbis-core-settings.php:12
+#: deploy/classes/orbis-core-settings.php:19
+msgid "Currency"
+msgstr ""
+
+#: classes/orbis-core-settings.php:30 deploy/classes/orbis-core-settings.php:30
+msgid "Euros"
+msgstr ""
+
+#: classes/orbis-core-settings.php:31 deploy/classes/orbis-core-settings.php:31
+msgid "US Dollars"
+msgstr ""
+
+#: classes/orbis-core-settings.php:50 deploy/classes/orbis-core-settings.php:50
+msgid "Example: %s"
+msgstr ""
+
+#: classes/orbis-plugin-manager.php:66
+#: deploy/classes/orbis-plugin-manager.php:66
+msgid "You don't have the required permissions to install a plugin"
+msgstr ""
+
+#: classes/orbis-plugin-manager.php:102
+#: deploy/classes/orbis-plugin-manager.php:102
+msgid "Please ensure the file system is writable"
+msgstr ""
+
+#: classes/orbis-plugin-manager.php:126
+#: deploy/classes/orbis-plugin-manager.php:126
+msgid "You don't have the required permissions to activate a plugin"
+msgstr ""
+
+#: deploy/includes/companies.php:9 includes/companies.php:9
+msgid "Company Details"
+msgstr ""
+
+#: deploy/includes/companies.php:142 deploy/includes/projects.php:350
+#: deploy/templates/projects-without-agreement.php:38
+#: includes/companies.php:142 includes/projects.php:350
+#: templates/projects-without-agreement.php:38
+msgid "Title"
+msgstr ""
+
+#: deploy/includes/companies.php:145 includes/companies.php:145
+msgid "Online"
+msgstr ""
+
+#: deploy/includes/companies.php:147 deploy/includes/projects.php:354
+#: includes/companies.php:147 includes/projects.php:354
+msgid "Author"
+msgstr ""
+
+#: deploy/includes/companies.php:148 deploy/includes/projects.php:355
+#: includes/companies.php:148 includes/projects.php:355
+msgid "Comments"
+msgstr ""
+
+#: deploy/includes/companies.php:149 deploy/includes/projects.php:356
+#: includes/companies.php:149 includes/projects.php:356
+msgid "Date"
+msgstr ""
+
+#: deploy/includes/log.php:60 includes/log.php:60
+msgid "Orbis Log"
+msgstr ""
+
+#: deploy/includes/log.php:120 includes/log.php:120
+msgid "Title:"
+msgstr ""
+
+#: deploy/includes/log.php:151 includes/log.php:151
+msgid "Anonymous"
+msgstr ""
+
+#: deploy/includes/log.php:163 includes/log.php:163
+msgid "%s updated the \"%s\" post."
+msgstr ""
+
+#: deploy/includes/persons.php:9 includes/persons.php:9
+msgid "Contact information"
+msgstr ""
+
+#: deploy/includes/post.php:13 includes/post.php:13
+msgid "Edit Project"
+msgstr ""
+
+#: deploy/includes/post.php:15 includes/post.php:15
+msgid "All Projects"
+msgstr ""
+
+#: deploy/includes/post.php:16 includes/post.php:16
+msgid "View Project"
+msgstr ""
+
+#: deploy/includes/post.php:17 includes/post.php:17
+msgid "Search Projects"
+msgstr ""
+
+#: deploy/includes/post.php:19 includes/post.php:19
+msgid "No projects found in Trash."
+msgstr ""
+
+#: deploy/includes/post.php:20 includes/post.php:20
+msgid "Parent Project:"
+msgstr ""
+
+#: deploy/includes/post.php:43 deploy/includes/post.php:131
+#: includes/post.php:43 includes/post.php:131
+msgid "Search Categories"
+msgstr ""
+
+#: deploy/includes/post.php:44 deploy/includes/post.php:132
+#: includes/post.php:44 includes/post.php:132
+msgid "All Categories"
+msgstr ""
+
+#: deploy/includes/post.php:45 deploy/includes/post.php:133
+#: includes/post.php:45 includes/post.php:133
+msgid "Parent Category"
+msgstr ""
+
+#: deploy/includes/post.php:46 deploy/includes/post.php:134
+#: includes/post.php:46 includes/post.php:134
+msgid "Parent Category:"
+msgstr ""
+
+#: deploy/includes/post.php:47 deploy/includes/post.php:135
+#: includes/post.php:47 includes/post.php:135
+msgid "Edit Category"
+msgstr ""
+
+#: deploy/includes/post.php:48 deploy/includes/post.php:136
+#: includes/post.php:48 includes/post.php:136
+msgid "Update Category"
+msgstr ""
+
+#: deploy/includes/post.php:49 deploy/includes/post.php:137
+#: includes/post.php:49 includes/post.php:137
+msgid "Add New Category"
+msgstr ""
+
+#: deploy/includes/post.php:50 deploy/includes/post.php:138
+#: includes/post.php:50 includes/post.php:138
+msgid "New Category Name"
+msgstr ""
+
+#: deploy/includes/post.php:51 deploy/includes/post.php:139
+#: includes/post.php:51 includes/post.php:139
+msgid "Categories"
+msgstr ""
+
+#: deploy/includes/post.php:70 includes/post.php:70
+msgid "Edit Company"
+msgstr ""
+
+#: deploy/includes/post.php:72 includes/post.php:72
+msgid "All Companies"
+msgstr ""
+
+#: deploy/includes/post.php:73 includes/post.php:73
+msgid "View Company"
+msgstr ""
+
+#: deploy/includes/post.php:74 includes/post.php:74
+msgid "Search Companies"
+msgstr ""
+
+#: deploy/includes/post.php:76 includes/post.php:76
+msgid "No companies found in Trash."
+msgstr ""
+
+#: deploy/includes/post.php:77 includes/post.php:77
+msgid "Parent Company:"
+msgstr ""
+
+#: deploy/includes/post.php:104 includes/post.php:104
+msgid "Edit Person"
+msgstr ""
+
+#: deploy/includes/post.php:105 includes/post.php:105
+msgid "View Person"
+msgstr ""
+
+#: deploy/includes/post.php:106 includes/post.php:106
+msgid "All Persons"
+msgstr ""
+
+#: deploy/includes/post.php:107 includes/post.php:107
+msgid "Search Persons"
+msgstr ""
+
+#: deploy/includes/post.php:108 includes/post.php:108
+msgid "Parent Person:"
+msgstr ""
+
+#: deploy/includes/post.php:110 includes/post.php:110
+msgid "No persons found in Trash."
+msgstr ""
+
+#: deploy/includes/projects.php:9 includes/projects.php:9
+msgid "Project Information"
+msgstr ""
+
+#: deploy/includes/projects.php:233 includes/projects.php:233
+msgid "This '%s' project is just '%s' by %s."
+msgstr ""
+
+#: deploy/includes/projects.php:234 deploy/includes/projects.php:235
+#: includes/projects.php:234 includes/projects.php:235
+msgid "opened"
+msgstr ""
+
+#: deploy/includes/projects.php:234 deploy/includes/projects.php:235
+#: includes/projects.php:234 includes/projects.php:235
+msgid "completed"
+msgstr ""
+
+#: deploy/includes/projects.php:351
+#: deploy/templates/projects-without-agreement.php:37 includes/projects.php:351
+#: templates/projects-without-agreement.php:37
+msgid "Principal"
+msgstr ""
+
+#: deploy/templates/projects-table-view.php:58
+#: deploy/templates/projects-without-agreement.php:74
+#: templates/projects-table-view.php:58
+#: templates/projects-without-agreement.php:74
+msgid "Edit"
+msgstr ""
+
+#: deploy/templates/projects-without-agreement.php:36
+#: templates/projects-without-agreement.php:36
+msgid "Project Manager"
+msgstr ""
+
+#: deploy/templates/projects-without-agreement.php:39
+#: templates/projects-without-agreement.php:39
+msgid "Actions"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -520,47 +708,74 @@ msgstr ""
 msgid "Pronamic"
 msgstr ""
 
-#: includes/post.php:13
+#: deploy/includes/post.php:11 includes/post.php:11
 msgctxt "orbis_project"
 msgid "Add New"
 msgstr ""
 
-#: includes/post.php:32
+#: deploy/includes/post.php:30 includes/post.php:30
 msgctxt "slug"
 msgid "projects"
 msgstr ""
 
-#: includes/post.php:58
+#: deploy/includes/post.php:56 includes/post.php:56
 msgctxt "slug"
 msgid "project-category"
 msgstr ""
 
-#: includes/post.php:89
+#: deploy/includes/post.php:87 includes/post.php:87
 msgctxt "slug"
 msgid "companies"
 msgstr ""
 
-#: includes/post.php:108
+#: deploy/includes/post.php:118 includes/post.php:118
 msgctxt "slug"
 msgid "persons"
 msgstr ""
 
-#: includes/post.php:134
+#: deploy/includes/post.php:144 includes/post.php:144
 msgctxt "slug"
 msgid "person-category"
 msgstr ""
 
-#: includes/post.php:43 includes/post.php:119
+#: deploy/includes/post.php:41 deploy/includes/post.php:129
+#: includes/post.php:41 includes/post.php:129
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr ""
 
-#: includes/post.php:44 includes/post.php:120
+#: deploy/includes/post.php:42 deploy/includes/post.php:130
+#: includes/post.php:42 includes/post.php:130
 msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr ""
 
-#: includes/post.php:70
+#: deploy/includes/post.php:68 includes/post.php:68
 msgctxt "orbis_company"
+msgid "Add New"
+msgstr ""
+
+#: deploy/includes/post.php:97 includes/post.php:97
+msgctxt "post type general name"
+msgid "Persons"
+msgstr ""
+
+#: deploy/includes/post.php:98 includes/post.php:98
+msgctxt "post type singular name"
+msgid "Person"
+msgstr ""
+
+#: deploy/includes/post.php:99 includes/post.php:99
+msgctxt "admin menu"
+msgid "Persons"
+msgstr ""
+
+#: deploy/includes/post.php:100 includes/post.php:100
+msgctxt "add new on admin bar"
+msgid "Person"
+msgstr ""
+
+#: deploy/includes/post.php:101 includes/post.php:101
+msgctxt "person"
 msgid "Add New"
 msgstr ""

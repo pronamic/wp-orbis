@@ -4,11 +4,11 @@ function orbis_log( $message ) {
 	global $wpdb;
 
 	$data = array(
-		'created' => current_time( 'mysql' ),
+		'created'    => current_time( 'mysql' ),
 		'wp_user_id' => get_current_user_id(),
-		'message' => $message,
+		'message'    => $message,
 	);
-	
+
 	$format = array(
 		'created' => '%s',
 		'user_id' => '%d',
@@ -36,11 +36,9 @@ function orbis_get_logs() {
 	";
 
 	$logs = $wpdb->get_results( $query );
-	
+
 	return $logs;
 }
-
-
 
 /**
  * Log widget
@@ -63,43 +61,45 @@ class Orbis_Log_Widget extends WP_Widget {
 	}
 
 	function widget( $args, $instance ) {
-		extract( $args );
+		$defaults = array(
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '',
+			'after_title'   => '',
+		);
+
+		$args = wp_parse_args( $args, $defaults );
 
 		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
-		?>
+		echo $args['before_widget'];
 
-		<?php echo $before_widget; ?>
-
-		<?php if ( ! empty( $title ) ) : ?>
-
-			<?php echo $before_title . $title . $after_title; ?>
-
-		<?php endif; ?>
-
-		<?php
+		if ( ! empty( $title ) ) {
+			echo $args['before_title'];
+			echo $title;
+			echo $args['after_title'];
+		}
 
 		$logs = orbis_get_logs();
-		?>
 
+		?>
 		<div class="content">
 			<ul class="no-disc">
-				<?php foreach ( $logs as $log ): ?>
-				
+				<?php foreach ( $logs as $log ) : ?>
+
 					<li>
-						<?php /* <span class="label label-success">Werk</span> */ ?> 
-						<span><?php echo mysql2date( 'H:i', $log->created ); ?></span> 
-						<?php echo $log->message; ?>  
+						<?php /* <span class="label label-success">Werk</span> */ ?>
+						<span><?php echo mysql2date( 'H:i', $log->created ); ?></span>
+						<?php echo $log->message; ?>
 						<?php /* <span>?</span> */ ?>
 					</li>
-				
+
 				<?php endforeach; ?>
 			</ul>
 		</div>
-
-		<?php echo $after_widget; ?>
-		
 		<?php
+
+		echo $args['after_widget'];
 	}
 
 	function update( $new_instance, $old_instance ) {
@@ -111,8 +111,8 @@ class Orbis_Log_Widget extends WP_Widget {
 	}
 
 	function form( $instance ) {
-		$title = isset( $instance['title'] ) ? esc_attr($instance['title'] ) : '';
-		
+		$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+
 		?>
 
 		<p>
@@ -122,7 +122,7 @@ class Orbis_Log_Widget extends WP_Widget {
 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
-		
+
 		<?php
 	}
 }
@@ -135,7 +135,7 @@ add_action( 'widgets_init', 'orbis_log_widget_init' );
 
 function orbis_log_save_post( $post_id, $post ) {
 	// Doing autosave
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) { 
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 
@@ -146,7 +146,7 @@ function orbis_log_save_post( $post_id, $post ) {
 
 	// Ok
 	$current_user = wp_get_current_user();
-	
+
 	if ( 0 == $current_user->ID ) {
 		$name = __( 'Anonymous', 'orbis' );
 	} else {
@@ -162,10 +162,10 @@ function orbis_log_save_post( $post_id, $post ) {
 	$message = sprintf(
 		__( '%s updated the "%s" post.', 'orbis' ),
 		$name,
-		sprintf( 
+		sprintf(
 			'<a href="%s">%s</a>',
 			$url,
-			$post->post_title 
+			$post->post_title
 		)
 	);
 

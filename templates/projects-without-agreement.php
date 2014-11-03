@@ -15,13 +15,13 @@ $query = new WP_Query( array(
 	'meta_query' => array(
 		array(
 			'key'     => '_orbis_project_agreement_id',
-			'compare' => 'NOT EXISTS'
+			'compare' => 'NOT EXISTS',
 		),
 		array(
 			'key'     => '_orbis_project_is_invoicable',
-			'compare' => 'EXISTS'
-		)
-	)
+			'compare' => 'EXISTS',
+		),
+	),
 ) );
 
 remove_filter( 'posts_where', 'filter_where' );
@@ -39,29 +39,29 @@ if ( $query->have_posts() ) : ?>
 					<th scope="col"><?php _e( 'Actions', 'orbis' ); ?></th>
 				</tr>
 			</thead>
-			
+
 			<tbody>
-	
+
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-				
+
 					<tr>
 						<td>
-							<?php echo get_post_meta( get_the_ID(), '_orbis_project_id', true ); ?>
+							<?php echo esc_html( get_post_meta( get_the_ID(), '_orbis_project_id', true ) ); ?>
 						</td>
 						<td>
 							<?php the_author(); ?>
 						</td>
 						<td>
-							<?php 
-							
+							<?php
+
 							if ( orbis_project_has_principal() ) {
-								printf( 
+								printf(
 									'<a href="%s">%s</a>',
 									esc_attr( orbis_project_principal_get_permalink() ),
 									orbis_project_principel_get_the_name()
 								);
 							}
-		
+
 							?>
 						</td>
 						<td>
@@ -70,17 +70,17 @@ if ( $query->have_posts() ) : ?>
 							</a>
 						</td>
 						<td>
-							<a href="<?php echo get_edit_post_link( get_the_ID() ); ?>">
+							<a href="<?php echo esc_attr( get_edit_post_link( get_the_ID() ) ); ?>">
 								<?php _e( 'Edit', 'orbis' ); ?>
 							</a>
 						</td>
 					</tr>
-		
+
 				<?php endwhile; ?>
-			
+
 			</tbody>
 		</table>
 	</div>
-	
+
 
 <?php endif; ?>

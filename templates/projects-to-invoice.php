@@ -14,7 +14,7 @@ $sql = "
 		manager.display_name AS project_manager_name,
 		principal.id AS principalId ,
 		principal.name AS principalName ,
-		principal.post_id AS principal_post_id, 
+		principal.post_id AS principal_post_id,
 		SUM(registration.number_seconds) AS registeredSeconds
 	FROM
 		orbis_projects AS project
@@ -62,23 +62,23 @@ $projects = $wpdb->get_results( $sql );
 $managers = array();
 
 // Projects and managers
-foreach($projects as $project) {
+foreach ( $projects as $project ) {
 	// Find manager
-	if(!isset($managers[$project->project_manager_id])) {
+	if ( ! isset( $managers[ $project->project_manager_id ] ) ) {
 		$manager           = new stdClass();
 		$manager->id       = $project->project_manager_id;
 		$manager->name     = $project->project_manager_name;
 		$manager->projects = array();
 
-		$managers[$manager->id] = $manager;
+		$managers[ $manager->id ] = $manager;
 	}
 
 	$project->failed = $project->registeredSeconds > $project->availableSeconds;
 
-	$manager = $managers[$project->project_manager_id];
+	$manager = $managers[ $project->project_manager_id ];
 	$manager->projects[] = $project;
 }
 
-ksort($managers);
+ksort( $managers );
 
 include 'projects-table-view.php';

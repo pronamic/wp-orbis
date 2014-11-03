@@ -1,0 +1,11 @@
+{
+  "name": "orbis",
+  "version": "1.2.0",
+  "dependencies": {
+    "jquery-ui": "~1.10.4",
+    "select2": "~3.5.1",
+    "angular": "~1.2.23",
+    "angular-ui-date": "latest",
+    "angular-ui-select": "~0.8.3"
+  }
+}

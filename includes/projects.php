@@ -4,14 +4,14 @@
  * Add person meta boxes
  */
 function orbis_project_add_meta_boxes() {
-    add_meta_box(
-        'orbis_project',
-        __( 'Project Information', 'orbis' ),
-        'orbis_project_meta_box',
-        'orbis_project',
-        'normal',
-        'high'
-    );
+	add_meta_box(
+		'orbis_project',
+		__( 'Project Information', 'orbis' ),
+		'orbis_project_meta_box',
+		'orbis_project',
+		'normal',
+		'high'
+	);
 }
 
 add_action( 'add_meta_boxes', 'orbis_project_add_meta_boxes' );
@@ -21,15 +21,13 @@ add_action( 'add_meta_boxes', 'orbis_project_add_meta_boxes' );
  *
  * @param array $post
  */
-function orbis_project_meta_box( $post ) {
+function orbis_project_meta_box() {
 	global $orbis_plugin;
 
 	$orbis_plugin->plugin_include( 'admin/meta-box-project-details.php' );
 }
 
 function orbis_enqueue_scripts() {
-	global $orbis_plugin;
-
 	wp_enqueue_script( 'orbis-autocomplete' );
 	wp_enqueue_style( 'select2' );
 }
@@ -45,10 +43,10 @@ function orbis_projects_suggest_project_id() {
 
 	$extra_select = '';
 	$extra_join   = '';
-	
+
 	if ( isset( $wpdb->orbis_timesheets ) ) {
 		$extra_select .= ',
-			SUM( entry.number_seconds ) AS project_logged_time	
+			SUM( entry.number_seconds ) AS project_logged_time
 		';
 
 		$extra_join = "
@@ -61,7 +59,7 @@ function orbis_projects_suggest_project_id() {
 	$query = $wpdb->prepare( "
 		SELECT
 			project.id AS project_id,
-			principal.name AS principal_name, 
+			principal.name AS principal_name,
 			project.name AS project_name,
 			project.number_seconds AS project_time
 			$extra_select
@@ -89,15 +87,15 @@ function orbis_projects_suggest_project_id() {
 	$projects = $wpdb->get_results( $query );
 
 	$data = array();
-	
+
 	foreach ( $projects as $project ) {
 		$result = new stdClass();
 		$result->id   = $project->project_id;
-		
+
 		$text = sprintf(
 			'%s. %s - %s ( %s )',
-			$project->project_id, 
-			$project->principal_name, 
+			$project->project_id,
+			$project->principal_name,
 			$project->project_name,
 			orbis_time( $project->project_time )
 		);
@@ -114,7 +112,7 @@ function orbis_projects_suggest_project_id() {
 		}
 
 		$result->text = $text;
-		
+
 		$data[] = $result;
 	}
 
@@ -172,13 +170,13 @@ function orbis_project_is_invoiced() {
  */
 function orbis_save_project( $post_id, $post ) {
 	// Doing autosave
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 
 	// Verify nonce
 	$nonce = filter_input( INPUT_POST, 'orbis_project_details_meta_box_nonce', FILTER_SANITIZE_STRING );
-	if( ! wp_verify_nonce( $nonce, 'orbis_save_project_details' ) ) {
+	if ( ! wp_verify_nonce( $nonce, 'orbis_save_project_details' ) ) {
 		return;
 	}
 
@@ -201,10 +199,10 @@ function orbis_save_project( $post_id, $post ) {
 	// Finished
 	$is_finished_old = get_post_meta( $post_id, '_orbis_project_is_finished', true );
 	$is_finished_new = $data['_orbis_project_is_finished'] ;
-	
+
 	foreach ( $data as $key => $value ) {
 		if ( empty( $value ) ) {
-			delete_post_meta( $post_id, $key);
+			delete_post_meta( $post_id, $key );
 		} else {
 			update_post_meta( $post_id, $key, $value );
 		}
@@ -245,7 +243,7 @@ function orbis_project_finished_update( $post_id, $is_finished ) {
 		'comment_type'    => 'orbis_comment',
 	);
 
-	$comment_id = wp_insert_comment( $data );
+	wp_insert_comment( $data );
 }
 
 add_action( 'orbis_project_finished_update', 'orbis_project_finished_update', 10, 2 );
@@ -255,7 +253,7 @@ add_action( 'orbis_project_finished_update', 'orbis_project_finished_update', 10
  */
 function orbis_save_project_sync( $post_id, $post ) {
 	// Doing autosave
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 
@@ -346,17 +344,19 @@ add_action( 'save_post', 'orbis_save_project_sync', 500, 2 );
 /**
  * Keychain edit columns
  */
-function orbis_project_edit_columns($columns) {
-	return array(
-        'cb'                       => '<input type="checkbox" />',
-        'title'                    => __( 'Title', 'orbis' ),
-        'orbis_project_principal'  => __( 'Principal', 'orbis' ),
-		'orbis_project_time'       => __( 'Time', 'orbis' ),
-		'orbis_project_id'         => __( 'Orbis ID', 'orbis' ),
-		'author'                   => __( 'Author', 'orbis' ),
-		'comments'                 => __( 'Comments', 'orbis' ),
-        'date'                     => __( 'Date', 'orbis' ),
+function orbis_project_edit_columns( $columns ) {
+	$columns = array(
+		'cb'                      => '<input type="checkbox" />',
+		'title'                   => __( 'Title', 'orbis' ),
+		'orbis_project_principal' => __( 'Principal', 'orbis' ),
+		'orbis_project_time'      => __( 'Time', 'orbis' ),
+		'orbis_project_id'        => __( 'Orbis ID', 'orbis' ),
+		'author'                  => __( 'Author', 'orbis' ),
+		'comments'                => __( 'Comments', 'orbis' ),
+		'date'                    => __( 'Date', 'orbis' ),
 	);
+
+	return $columns;
 }
 
 add_filter( 'manage_edit-orbis_project_columns' , 'orbis_project_edit_columns' );
@@ -369,12 +369,12 @@ add_filter( 'manage_edit-orbis_project_columns' , 'orbis_project_edit_columns' )
 function orbis_project_column( $column, $post_id ) {
 	switch ( $column ) {
 		case 'orbis_project_id':
-			$id = get_post_meta( $post_id, '_orbis_project_id', true );
+			$orbis_id = get_post_meta( $post_id, '_orbis_project_id', true );
 
-			if ( ! empty( $id ) ) {
-				$url = sprintf( 'http://orbis.pronamic.nl/projecten/details/%s/', $id );
+			if ( ! empty( $orbis_id ) ) {
+				$url = sprintf( 'http://orbis.pronamic.nl/projecten/details/%s/', $orbis_id );
 
-				printf( '<a href="%s" target="_blank">%s</a>', $url, $id );
+				printf( '<a href="%s" target="_blank">%s</a>', $url, $orbis_id );
 			}
 
 			break;

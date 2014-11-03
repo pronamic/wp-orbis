@@ -5,26 +5,26 @@ $dsn = sprintf( 'mysql:dbname=%s;host=%s', DB_NAME, DB_HOST );
 $user = DB_USER;
 $password = DB_PASSWORD;
 
-$pdo = new PDO($dsn, $user, $password);
-$pdo->exec('SET CHARACTER SET utf8');
+$pdo = new PDO( $dsn, $user, $password );
+$pdo->exec( 'SET CHARACTER SET utf8' );
 
 global $wpdb;
 
 // Managers
 $sql = "
 	SELECT
-		project.id , 
-		project.name , 
-		project.number_seconds AS availableSeconds , 
-		project.invoice_number AS invoiceNumber , 
-		project.invoicable , 
+		project.id ,
+		project.name ,
+		project.number_seconds AS availableSeconds ,
+		project.invoice_number AS invoiceNumber ,
+		project.invoicable ,
 		project.post_id AS project_post_id,
 		manager.ID AS project_manager_id,
 		manager.display_name AS project_manager_name,
-		principal.id AS principalId , 
+		principal.id AS principalId ,
 		principal.name AS principalName ,
-		principal.post_id AS principal_post_id, 
-		SUM(registration.number_seconds) AS registeredSeconds 
+		principal.post_id AS principal_post_id,
+		SUM(registration.number_seconds) AS registeredSeconds
 	FROM
 		orbis_projects AS project
 			LEFT JOIN
@@ -38,21 +38,21 @@ $sql = "
 				ON project.principal_id = principal.id
 			LEFT JOIN
 		orbis_hours_registration AS registration
-				ON project.id = registration.project_id 
+				ON project.id = registration.project_id
 	WHERE
 		NOT project.finished
 			%s
 	GROUP BY
-		project.id 
+		project.id
 	ORDER BY
 		%s ;
 ";
 
 // Order by
 $orderBy = 'principal.name , project.name';
-if(isset($_GET['order'])) {
-	switch($_GET['order']) {
-		case 'id':
+if ( isset( $_GET['order'] ) ) {
+	switch ( $_GET['order'] ) {
+		case 'id' :
 			$orderBy = 'project.id DESC';
 			break;
 	}
@@ -60,47 +60,47 @@ if(isset($_GET['order'])) {
 
 // Filter
 $filter = "AND project.name NOT LIKE '%Strippenkaart%'";
-if(isset($_GET['filter'])) {
-	switch($_GET['filter']) {
-		case 'false':
+if ( isset( $_GET['filter'] ) ) {
+	switch ( $_GET['filter'] ) {
+		case 'false' :
 			$filter = '';
-            break;
+			break;
 	}
 }
 
 // Build query
-$sql = sprintf($sql, $filter, $orderBy);
+$sql = sprintf( $sql, $filter, $orderBy );
 
-$statement = $pdo->prepare($sql);
+$statement = $pdo->prepare( $sql );
 $statement->execute();
 
 // Projects
-$projects = $statement->fetchAll(PDO::FETCH_CLASS);
+$projects = $statement->fetchAll( PDO::FETCH_CLASS );
 
 // Managers
 $managers = array();
 
 // Projects and managers
-foreach($projects as $project) {
+foreach ( $projects as $project ) {
 	// Find manager
-	if(!isset($managers[$project->project_manager_id])) {
+	if ( ! isset( $managers[ $project->project_manager_id ] ) ) {
 		$manager           = new stdClass();
 		$manager->id       = $project->project_manager_id;
 		$manager->name     = $project->project_manager_name;
 		$manager->projects = array();
 
-		$managers[$manager->id] = $manager;
+		$managers[ $manager->id ] = $manager;
 	}
 
 	$project->failed = $project->registeredSeconds > $project->availableSeconds;
 	$project->availableSeconds = $project->availableSeconds;
 	$project->registeredSeconds = $project->registeredSeconds;
 
-	$manager = $managers[$project->project_manager_id];
+	$manager = $managers[ $project->project_manager_id ];
 	$manager->projects[] = $project;
 }
 
-ksort($managers);
+ksort( $managers );
 
 $parameters = $_GET;
 
@@ -112,6 +112,6 @@ $parameters = $_GET;
 	Filter: <a href="?filter=strippenkaart">Strippenkaart</a> | <a href="?filter=false">Geen</a><br />
 </p>
 
-<?php 
+<?php
 
 include 'projects-table-view.php';

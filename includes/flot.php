@@ -10,10 +10,10 @@
  * @see https://github.com/flot/flot/
  * @see http://www.yiiframework.com/extension/flot/
  */
-function orbis_flot( $id, $data, $options ) {
+function orbis_flot( $element_id, $data, $options ) {
 	printf(
 		'<script type="text/javascript">jQuery.plot("#%s", %s, %s);</script>',
-		$id,
+		$element_id,
 		json_encode( $data ),
 		json_encode( $options )
 	);

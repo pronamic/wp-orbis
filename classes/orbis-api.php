@@ -13,32 +13,32 @@ class Orbis_API {
 	 * Constructs and initialize an Orbis API
 	 */
 	public function __construct() {
-		add_filter( 'generate_rewrite_rules', array( $this, 'generateRewriteRules' ) );
+		add_filter( 'generate_rewrite_rules', array( $this, 'generate_rewrite_rules' ) );
 
-		add_filter( 'query_vars', array( $this, 'queryVars' ) );
+		add_filter( 'query_vars', array( $this, 'query_vars' ) );
 
-		add_filter( 'wp_loaded', array( $this, 'flushRules' ) );
+		add_filter( 'wp_loaded', array( $this, 'flush_rules' ) );
 	}
 
-	public function flushRules() {
+	public function flush_rules() {
 		global $wp_rewrite;
 
 		$wp_rewrite->flush_rules();
 	}
 
-	public function generateRewriteRules($wpRewrite) {
+	public function generate_rewrite_rules( $wp_rewrite ) {
 		$rules = array();
 
-		$rules['api/(.*)/(.*)$'] = 'index.php?api_call=true&api_object=' . $wpRewrite->preg_index(1) . '&api_method=' . $wpRewrite->preg_index(2);
+		$rules['api/(.*)/(.*)$'] = 'index.php?api_call=true&api_object=' . $wp_rewrite->preg_index( 1 ) . '&api_method=' . $wp_rewrite->preg_index( 2 );
 
-		$wpRewrite->rules = $rules + $wpRewrite->rules;
+		$wp_rewrite->rules = $rules + $wp_rewrite->rules;
 	}
 
-	public function queryVars($queryVars) {
-		$queryVars[] = 'api_call';
-		$queryVars[] = 'api_object';
-		$queryVars[] = 'api_method';
+	public function query_vars( $query_vars ) {
+		$query_vars[] = 'api_call';
+		$query_vars[] = 'api_object';
+		$query_vars[] = 'api_method';
 
-		return $queryVars;
+		return $query_vars;
 	}
 }

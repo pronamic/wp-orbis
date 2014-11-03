@@ -91,17 +91,20 @@ class Orbis_Plugin {
 	 * Install redirect
 	 */
 	public function install_redirect() {
-		if ( ! get_transient( '_orbis_activation_redirect' ) )
+		if ( ! get_transient( '_orbis_activation_redirect' ) ) {
 			return;
+		}
 
 		// Delete the redirect transient
 		delete_transient( '_orbis_activation_redirect' );
 
-		if ( is_network_admin() || isset( $_GET['activate-multi'] ) || defined( 'IFRAME_REQUEST' ) )
+		if ( is_network_admin() || isset( $_GET['activate-multi'] ) || defined( 'IFRAME_REQUEST' ) ) {
 			return;
-		
-		if ( ( isset( $_GET['action'] ) && 'upgrade-plugin' == $_GET['action'] ) && ( isset( $_GET['plugin'] ) && strstr( $_GET['plugin'], 'orbis' ) ) )
+		}
+
+		if ( ( isset( $_GET['action'] ) && 'upgrade-plugin' == $_GET['action'] ) && ( isset( $_GET['plugin'] ) && strstr( $_GET['plugin'], 'orbis' ) ) ) {
 			return;
+		}
 
 		wp_safe_redirect( admin_url( '/' ) );
 
@@ -137,7 +140,9 @@ class Orbis_Plugin {
 	 * @param array  $args (optional, defaults to an empty array)
 	 */
 	public function plugin_include( $path, $args = array() ) {
+		// @codingStandardsIgnoreStart
 		extract( $args );
+		// @codingStandardsIgnoreEnd
 
 		include $this->dir_path . '/' . $path;
 	}
@@ -198,7 +203,9 @@ class Orbis_Plugin {
 
 		$located = $this->locate_template( $template_name );
 
+		// @codingStandardsIgnoreStart
 		extract( $args );
+		// @codingStandardsIgnoreEnd
 
 		include $located;
 
