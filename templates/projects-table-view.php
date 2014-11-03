@@ -43,7 +43,7 @@
 							</a>
 						</td>
 						<td>
-							<span style="color: <?php echo esc_attr( $project->failed ? 'Red' : 'Green' ); ?>;"><?php echo esc_html( rbis_time( $project->registeredSeconds ) ); ?></span>
+							<span style="color: <?php echo esc_attr( $project->failed ? 'Red' : 'Green' ); ?>;"><?php echo esc_html( orbis_time( $project->registeredSeconds ) ); ?></span>
 						</td>
 						<td>
 							<?php echo esc_html( orbis_time( $project->availableSeconds ) ); ?>
