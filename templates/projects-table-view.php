@@ -6,11 +6,10 @@
 				<th scope="col">ID</th>
 				<th scope="col">Opdrachtgever</th>
 				<th scope="col">Project</th>
-				<th scope="col">Geregistreerde uren</th>
-				<th scope="col">Beschikbare uren</th>
+				<th scope="col">Datum</th>
+				<th scope="col">Uren</th>
 				<th scope="col">Factureerbaar</th>
 				<th scope="col">Factuurnummer</th>
-				<th scope="col">Acties</th>
 			</tr>
 		</thead>
 
@@ -42,20 +41,25 @@
 								<?php echo esc_html( $project->name ); ?>
 							</a>
 						</td>
-						<td>
-							<span style="color: <?php echo esc_attr( $project->failed ? 'Red' : 'Green' ); ?>;"><?php echo esc_html( rbis_time( $project->registeredSeconds ) ); ?></span>
+						<td style="white-space: nowrap;">
+							<?php echo esc_html( get_the_time( 'j M Y', $project->project_post_id ) ); ?>
 						</td>
-						<td>
+						<td style="white-space: nowrap;">
+							<span style="color: <?php echo esc_attr( $project->failed ? 'Red' : 'Green' ); ?>;"><?php echo esc_html( orbis_time( $project->registeredSeconds ) ); ?></span>
+							/
 							<?php echo esc_html( orbis_time( $project->availableSeconds ) ); ?>
 						</td>
 						<td>
 							<?php echo esc_html( $project->invoicable ? 'Ja' : 'Nee' ); ?>
 						</td>
 						<td>
-							<?php echo esc_html( $project->invoiceNumber ); ?>
-						</td>
-						<td>
-							<?php edit_post_link( __( 'Edit', 'orbis' ), '', '', $project->project_post_id ); ?>
+							<div class="actions">
+								<?php echo esc_html( $project->invoiceNumber ); ?>
+
+								<div class="nubbin">
+									<?php edit_post_link( __( 'Edit', 'orbis' ), '', '', $project->project_post_id ); ?>
+								</div>
+							</div>
 						</td>
 					</tr>
 
