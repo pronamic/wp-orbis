@@ -30,6 +30,10 @@ class Orbis_Plugin_Manager {
 			'title'     => 'Posts 2 Posts',
 			'file_name' => null,
 		),
+		'post-type-archive-links' => array(
+			'title'     => 'Post Type Archive Link',
+			'file_name' => null,
+		),
 	);
 
 	//////////////////////////////////////////////////
