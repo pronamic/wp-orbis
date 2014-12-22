@@ -2,7 +2,7 @@
 Contributors: pronamic, remcotolsma, kjtolsma
 Tags: orbis, intranet
 Requires at least: 3.0
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: 1.2.1
 
 Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More...
