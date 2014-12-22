@@ -133,11 +133,6 @@ WordPress installation and then activate the Plugin from Plugins page.
 *	Initial release.
 
 
-== Developers ==
-
-*	php ~/wp/svn/i18n-tools/makepot.php wp-plugin ~/wp/git/orbis ~/wp/git/orbis/languages/orbis.pot
-
-
 == Links ==
 
 *	[WP-Admin Icons](http://wordpress.org/extend/plugins/wp-admin-icons/)
