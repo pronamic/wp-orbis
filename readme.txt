@@ -25,7 +25,7 @@ theme is based on Bootstrap and gives you all the front-end functionality you
 need. Easely extend this theme with child themes. We’ll try to release more
  themes.
 
-[Download the Orbis theme for free.](https://github.com/pronamic/wt-orbis/releases)
+[Download the Orbis theme for free.](https://www.pronamic.eu/themes/orbis/)
 
 = Benefits at a glance =
 
@@ -51,9 +51,9 @@ need. Easely extend this theme with child themes. We’ll try to release more
 The power of Orbis lays in the extendability and flexibility. Use plugins to 
 add the functionality you need.
 
-*	[Orbis Tasks](http://www.orbiswp.com/plugins/) - Add tasks to Persons and connect them to Projects
-*	[Orbis Keychains](http://www.orbiswp.com/plugins/) - Alle your passwords im a save place
-*	[Orbis Timesheets](http://www.orbiswp.com/plugins/) - Submit your time en connect them to Projects.
+*	[Orbis Tasks](http://www.pronamic.eu/plugins/orbis-tasks/) - Add tasks to Persons and connect them to Projects
+*	[Orbis Keychains](http://www.pronamic.eu/plugins/orbis-keychains/) - Alle your passwords im a save place
+*	[Orbis Timesheets](http://www.pronamic.eu/plugins/orbis-timesheets/) - Submit your time en connect them to Projects.
 
 = Get involved =
 
