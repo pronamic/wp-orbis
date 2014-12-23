@@ -43,7 +43,7 @@ function orbis_save_company( $post_id, $post ) {
 	}
 
 	// Check permissions
-	if ( ! ( $post->post_type == 'orbis_company' && current_user_can( 'edit_post', $post_id ) ) ) {
+	if ( ! ( 'orbis_company' == $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
 
@@ -82,7 +82,7 @@ function orbis_save_company_sync( $post_id, $post ) {
 	}
 
 	// Check post type
-	if ( ! ( $post->post_type == 'orbis_company' ) ) {
+	if ( ! ( 'orbis_company' == $post->post_type ) ) {
 		return;
 	}
 
@@ -92,7 +92,7 @@ function orbis_save_company_sync( $post_id, $post ) {
 	}
 
 	// Publish
-	if ( $post->post_status != 'publish' ) {
+	if ( 'publish' != $post->post_status ) {
 		return;
 	}
 
@@ -115,7 +115,7 @@ function orbis_save_company_sync( $post_id, $post ) {
 			)
 		);
 
-		if ( $result !== false ) {
+		if ( false !== $result ) {
 			$orbis_id = $wpdb->insert_id;
 
 			update_post_meta( $post_id, '_orbis_company_id', $orbis_id );

@@ -44,7 +44,7 @@
 
 													printf( '<abbr title="%s">%s</abbr>',
 														/* translators: comment date format. See http://php.net/date */
-														get_the_time( __( 'c' ), $project ),
+														get_the_time( __( 'c', 'orbis' ), $project ),
 														get_the_time( get_option( 'date_format' ), $project )
 													);
 
@@ -72,9 +72,9 @@
 							<?php
 
 							wp_widget_rss_output( 'http://feeds.feedburner.com/pronamic', array(
-								'link'  => __( 'http://www.pronamic.eu/', 'pronamic_ideal' ),
+								'link'  => __( 'http://www.pronamic.eu/', 'orbis' ),
 								'url'   => 'http://feeds.feedburner.com/pronamic',
-								'title' => __( 'Pronamic News', 'pronamic_ideal' ),
+								'title' => __( 'Pronamic News', 'orbis' ),
 								'items' => 5,
 							) );
 

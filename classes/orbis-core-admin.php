@@ -43,6 +43,13 @@ class Orbis_Core_Admin {
 		add_action( 'wp_ajax_orbis_install_plugin' , array( $this, 'orbis_install_plugin' ) );
 		add_action( 'wp_ajax_orbis_activate_plugin', array( $this, 'orbis_activate_plugin' ) );
 
+		// Users
+		add_action( 'show_user_profile', array( $this, 'user_profile' ) );
+		add_action( 'edit_user_profile', array( $this, 'user_profile' ) );
+
+		add_action( 'personal_options_update', array( $this, 'user_update' ) );
+		add_action( 'edit_user_profile_update', array( $this, 'user_update' ) );
+
 		// Settings
 		$this->settings = new Orbis_Core_Settings();
 	}
@@ -65,7 +72,7 @@ class Orbis_Core_Admin {
 		$screen = get_current_screen();
 
 		// Orbis screen
-		if ( strpos( $screen->id, 'orbis' ) !== false ) {
+		if ( false !== strpos( $screen->id, 'orbis' ) ) {
 			// Select2
 			wp_enqueue_script( 'select2' );
 
@@ -169,7 +176,7 @@ class Orbis_Core_Admin {
 		$other_items = array();
 
 		foreach ( $menu_order as $item ) {
-			if ( strpos( $item, 'orbis_' ) !== false ) {
+			if ( false !== strpos( $item, 'orbis_' ) ) {
 				$orbis_items[] = $item;
 			} else {
 				$other_items[] = $item;
@@ -213,6 +220,53 @@ class Orbis_Core_Admin {
 	public function page_plugins() {
 		$this->plugin->plugin_include( 'admin/page-plugins.php' );
 	}
+
+	//////////////////////////////////////////////////
+
+	/**
+	 * User update
+	 */
+	function user_update( $user_id ) {
+		$orbis_user = filter_input( INPUT_POST, 'orbis_user', FILTER_VALIDATE_BOOLEAN );
+
+		update_user_meta( $user_id, '_orbis_user', $orbis_user ? 'true' : 'false' );
+	}
+
+	//////////////////////////////////////////////////
+
+	/**
+	 * User profile
+	 */
+	public function user_profile( $user ) {
+		$orbis_user = get_user_meta( $user->ID, '_orbis_user', true );
+
+		?>
+		<h3><?php _e( 'Orbis', 'orbis' ); ?></h3>
+
+		<table class="form-table">
+			<tr>
+				<th>
+					<label for="orbis_user">
+						<?php _e( 'Orbis User', 'orbis' ); ?>
+					</label>
+				</th>
+				<td>
+					<fieldset>
+						<legend class="screen-reader-text"><span><?php _e( 'Orbis User', 'orbis' ); ?></span></legend>
+
+						<label for="orbis_user">
+							<input name="orbis_user" type="checkbox" id="orbis_user" value="1" <?php checked( 'true' == $orbis_user ); ?> />
+
+							<?php _e( 'Show user in Orbis.', 'orbis' ); ?>
+						</label><br />
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+		<?php
+	}
+
+	//////////////////////////////////////////////////
 
 	/**
 	 * Called through the WordPress AJAX hook. Installs a plugin that matches the slug passed through the $_POST variable.

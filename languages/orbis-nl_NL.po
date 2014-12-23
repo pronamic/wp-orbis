@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-11-07 14:02:15+00:00\n"
-"PO-Revision-Date: 2014-11-07 15:02+0100\n"
+"POT-Creation-Date: 2014-12-23 10:02:36+00:00\n"
+"PO-Revision-Date: 2014-12-23 11:08+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -13,456 +13,107 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x:2c,1;esc_attr_e\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.1\n"
 
 #: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
-#: deploy/admin/meta-box-company-details.php:23
-#: deploy/admin/meta-box-project-details.php:31
-#: deploy/deploy/admin/meta-box-company-details.php:23
-#: deploy/deploy/admin/meta-box-project-details.php:31
-#: deploy/deploy/includes/projects.php:353
-#: deploy/deploy/templates/projects-without-agreement.php:35
-#: deploy/includes/projects.php:353
-#: deploy/templates/projects-without-agreement.php:35
 #: includes/projects.php:353 templates/projects-without-agreement.php:35
-#: wp-svn/tags/1.0.0/includes/projects.php:260
-#: wp-svn/tags/1.0.0/templates/projects-without-agreement.php:35
-#: wp-svn/tags/1.0.1/admin/meta-box-company-details.php:23
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:31
-#: wp-svn/tags/1.0.1/includes/projects.php:317
-#: wp-svn/tags/1.0.1/templates/projects-without-agreement.php:35
-#: wp-svn/tags/1.0.2/admin/meta-box-company-details.php:23
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:31
-#: wp-svn/tags/1.0.2/includes/projects.php:317
-#: wp-svn/tags/1.0.2/templates/projects-without-agreement.php:35
-#: wp-svn/tags/1.0.3/admin/meta-box-company-details.php:23
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:31
-#: wp-svn/tags/1.0.3/includes/projects.php:317
-#: wp-svn/tags/1.0.3/templates/projects-without-agreement.php:35
-#: wp-svn/tags/1.0.4/admin/meta-box-company-details.php:23
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:31
-#: wp-svn/tags/1.0.4/includes/projects.php:317
-#: wp-svn/tags/1.0.4/templates/projects-without-agreement.php:35
-#: wp-svn/tags/1.1.0/admin/meta-box-company-details.php:23
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:31
-#: wp-svn/tags/1.1.0/includes/projects.php:351
-#: wp-svn/tags/1.1.0/templates/projects-without-agreement.php:35
-#: wp-svn/tags/1.1.1/admin/meta-box-company-details.php:23
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:31
-#: wp-svn/tags/1.1.1/includes/projects.php:355
-#: wp-svn/tags/1.1.1/templates/projects-without-agreement.php:35
-#: wp-svn/tags/1.2.0/admin/meta-box-company-details.php:23
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:31
-#: wp-svn/tags/1.2.0/includes/projects.php:353
-#: wp-svn/tags/1.2.0/templates/projects-without-agreement.php:35
-#: wp-svn/trunk/admin/meta-box-company-details.php:23
-#: wp-svn/trunk/admin/meta-box-project-details.php:31
-#: wp-svn/trunk/includes/projects.php:353
-#: wp-svn/trunk/templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
-#: admin/meta-box-company-details.php:31
-#: deploy/admin/meta-box-company-details.php:31
-#: deploy/deploy/admin/meta-box-company-details.php:31
-#: deploy/deploy/includes/companies.php:146 deploy/includes/companies.php:146
-#: includes/companies.php:146
-#: wp-svn/tags/1.0.0/admin/meta-box-company-details.php:21
-#: wp-svn/tags/1.0.0/includes/companies.php:146
-#: wp-svn/tags/1.0.1/admin/meta-box-company-details.php:31
-#: wp-svn/tags/1.0.1/includes/companies.php:146
-#: wp-svn/tags/1.0.2/admin/meta-box-company-details.php:31
-#: wp-svn/tags/1.0.2/includes/companies.php:146
-#: wp-svn/tags/1.0.3/admin/meta-box-company-details.php:31
-#: wp-svn/tags/1.0.3/includes/companies.php:146
-#: wp-svn/tags/1.0.4/admin/meta-box-company-details.php:31
-#: wp-svn/tags/1.0.4/includes/companies.php:146
-#: wp-svn/tags/1.1.0/admin/meta-box-company-details.php:31
-#: wp-svn/tags/1.1.0/includes/companies.php:146
-#: wp-svn/tags/1.1.1/admin/meta-box-company-details.php:31
-#: wp-svn/tags/1.1.1/includes/companies.php:146
-#: wp-svn/tags/1.2.0/admin/meta-box-company-details.php:31
-#: wp-svn/tags/1.2.0/includes/companies.php:146
-#: wp-svn/trunk/admin/meta-box-company-details.php:31
-#: wp-svn/trunk/includes/companies.php:146
+#: admin/meta-box-company-details.php:31 includes/companies.php:146
 msgid "KvK Number"
 msgstr "KvK-nummer"
 
 #: admin/meta-box-company-details.php:39
-#: deploy/admin/meta-box-company-details.php:39
-#: deploy/deploy/admin/meta-box-company-details.php:39
-#: wp-svn/tags/1.0.0/admin/meta-box-company-details.php:29
-#: wp-svn/tags/1.0.1/admin/meta-box-company-details.php:39
-#: wp-svn/tags/1.0.2/admin/meta-box-company-details.php:39
-#: wp-svn/tags/1.0.3/admin/meta-box-company-details.php:39
-#: wp-svn/tags/1.0.4/admin/meta-box-company-details.php:39
-#: wp-svn/tags/1.1.0/admin/meta-box-company-details.php:39
-#: wp-svn/tags/1.1.1/admin/meta-box-company-details.php:39
-#: wp-svn/tags/1.2.0/admin/meta-box-company-details.php:39
-#: wp-svn/trunk/admin/meta-box-company-details.php:39
 msgid "E-Mail"
 msgstr "E-mailadres"
 
 #: admin/meta-box-company-details.php:47
-#: deploy/admin/meta-box-company-details.php:47
-#: deploy/deploy/admin/meta-box-company-details.php:47
-#: wp-svn/tags/1.0.0/admin/meta-box-company-details.php:37
-#: wp-svn/tags/1.0.1/admin/meta-box-company-details.php:47
-#: wp-svn/tags/1.0.2/admin/meta-box-company-details.php:47
-#: wp-svn/tags/1.0.3/admin/meta-box-company-details.php:47
-#: wp-svn/tags/1.0.4/admin/meta-box-company-details.php:47
-#: wp-svn/tags/1.1.0/admin/meta-box-company-details.php:47
-#: wp-svn/tags/1.1.1/admin/meta-box-company-details.php:47
-#: wp-svn/tags/1.2.0/admin/meta-box-company-details.php:47
-#: wp-svn/trunk/admin/meta-box-company-details.php:47
 msgid "Website"
 msgstr "Website"
 
 #: admin/meta-box-company-details.php:55
-#: deploy/admin/meta-box-company-details.php:55
-#: deploy/deploy/admin/meta-box-company-details.php:55
-#: wp-svn/tags/1.0.0/admin/meta-box-company-details.php:45
-#: wp-svn/tags/1.0.1/admin/meta-box-company-details.php:55
-#: wp-svn/tags/1.0.2/admin/meta-box-company-details.php:55
-#: wp-svn/tags/1.0.3/admin/meta-box-company-details.php:55
-#: wp-svn/tags/1.0.4/admin/meta-box-company-details.php:55
-#: wp-svn/tags/1.1.0/admin/meta-box-company-details.php:55
-#: wp-svn/tags/1.1.1/admin/meta-box-company-details.php:55
-#: wp-svn/tags/1.2.0/admin/meta-box-company-details.php:55
-#: wp-svn/trunk/admin/meta-box-company-details.php:55
 msgid "Addresses"
 msgstr "Adressen"
 
 #: admin/meta-box-company-details.php:60 admin/meta-box-company-details.php:63
-#: deploy/admin/meta-box-company-details.php:60
-#: deploy/admin/meta-box-company-details.php:63
-#: deploy/deploy/admin/meta-box-company-details.php:60
-#: deploy/deploy/admin/meta-box-company-details.php:63
-#: deploy/deploy/includes/companies.php:144 deploy/includes/companies.php:144
 #: includes/companies.php:144
-#: wp-svn/tags/1.0.0/admin/meta-box-company-details.php:50
-#: wp-svn/tags/1.0.0/admin/meta-box-company-details.php:53
-#: wp-svn/tags/1.0.0/includes/companies.php:144
-#: wp-svn/tags/1.0.1/admin/meta-box-company-details.php:60
-#: wp-svn/tags/1.0.1/admin/meta-box-company-details.php:63
-#: wp-svn/tags/1.0.1/includes/companies.php:144
-#: wp-svn/tags/1.0.2/admin/meta-box-company-details.php:60
-#: wp-svn/tags/1.0.2/admin/meta-box-company-details.php:63
-#: wp-svn/tags/1.0.2/includes/companies.php:144
-#: wp-svn/tags/1.0.3/admin/meta-box-company-details.php:60
-#: wp-svn/tags/1.0.3/admin/meta-box-company-details.php:63
-#: wp-svn/tags/1.0.3/includes/companies.php:144
-#: wp-svn/tags/1.0.4/admin/meta-box-company-details.php:60
-#: wp-svn/tags/1.0.4/admin/meta-box-company-details.php:63
-#: wp-svn/tags/1.0.4/includes/companies.php:144
-#: wp-svn/tags/1.1.0/admin/meta-box-company-details.php:60
-#: wp-svn/tags/1.1.0/admin/meta-box-company-details.php:63
-#: wp-svn/tags/1.1.0/includes/companies.php:144
-#: wp-svn/tags/1.1.1/admin/meta-box-company-details.php:60
-#: wp-svn/tags/1.1.1/admin/meta-box-company-details.php:63
-#: wp-svn/tags/1.1.1/includes/companies.php:144
-#: wp-svn/tags/1.2.0/admin/meta-box-company-details.php:60
-#: wp-svn/tags/1.2.0/admin/meta-box-company-details.php:63
-#: wp-svn/tags/1.2.0/includes/companies.php:144
-#: wp-svn/trunk/admin/meta-box-company-details.php:60
-#: wp-svn/trunk/admin/meta-box-company-details.php:63
-#: wp-svn/trunk/includes/companies.php:144
 msgid "Address"
 msgstr "Adres"
 
 #: admin/meta-box-company-details.php:65
-#: deploy/admin/meta-box-company-details.php:65
-#: deploy/deploy/admin/meta-box-company-details.php:65
-#: wp-svn/tags/1.0.0/admin/meta-box-company-details.php:55
-#: wp-svn/tags/1.0.1/admin/meta-box-company-details.php:65
-#: wp-svn/tags/1.0.2/admin/meta-box-company-details.php:65
-#: wp-svn/tags/1.0.3/admin/meta-box-company-details.php:65
-#: wp-svn/tags/1.0.4/admin/meta-box-company-details.php:65
-#: wp-svn/tags/1.1.0/admin/meta-box-company-details.php:65
-#: wp-svn/tags/1.1.1/admin/meta-box-company-details.php:65
-#: wp-svn/tags/1.2.0/admin/meta-box-company-details.php:65
-#: wp-svn/trunk/admin/meta-box-company-details.php:65
 msgid "Postcode"
 msgstr "Postcode"
 
 #: admin/meta-box-company-details.php:66
-#: deploy/admin/meta-box-company-details.php:66
-#: deploy/deploy/admin/meta-box-company-details.php:66
-#: wp-svn/tags/1.0.0/admin/meta-box-company-details.php:56
-#: wp-svn/tags/1.0.1/admin/meta-box-company-details.php:66
-#: wp-svn/tags/1.0.2/admin/meta-box-company-details.php:66
-#: wp-svn/tags/1.0.3/admin/meta-box-company-details.php:66
-#: wp-svn/tags/1.0.4/admin/meta-box-company-details.php:66
-#: wp-svn/tags/1.1.0/admin/meta-box-company-details.php:66
-#: wp-svn/tags/1.1.1/admin/meta-box-company-details.php:66
-#: wp-svn/tags/1.2.0/admin/meta-box-company-details.php:66
-#: wp-svn/trunk/admin/meta-box-company-details.php:66
 msgid "City"
 msgstr "Plaats"
 
 #: admin/meta-box-company-details.php:68
-#: deploy/admin/meta-box-company-details.php:68
-#: deploy/deploy/admin/meta-box-company-details.php:68
-#: wp-svn/tags/1.0.0/admin/meta-box-company-details.php:58
-#: wp-svn/tags/1.0.1/admin/meta-box-company-details.php:68
-#: wp-svn/tags/1.0.2/admin/meta-box-company-details.php:68
-#: wp-svn/tags/1.0.3/admin/meta-box-company-details.php:68
-#: wp-svn/tags/1.0.4/admin/meta-box-company-details.php:68
-#: wp-svn/tags/1.1.0/admin/meta-box-company-details.php:68
-#: wp-svn/tags/1.1.1/admin/meta-box-company-details.php:68
-#: wp-svn/tags/1.2.0/admin/meta-box-company-details.php:68
-#: wp-svn/trunk/admin/meta-box-company-details.php:68
 msgid "Country"
 msgstr "Land"
 
 #: admin/meta-box-person-details.php:20
-#: deploy/admin/meta-box-person-details.php:20
-#: deploy/deploy/admin/meta-box-person-details.php:20
-#: wp-svn/tags/1.0.0/admin/meta-box-person-details.php:17
-#: wp-svn/tags/1.0.1/admin/meta-box-person-details.php:17
-#: wp-svn/tags/1.0.2/admin/meta-box-person-details.php:17
-#: wp-svn/tags/1.0.3/admin/meta-box-person-details.php:17
-#: wp-svn/tags/1.0.4/admin/meta-box-person-details.php:17
-#: wp-svn/tags/1.1.0/admin/meta-box-person-details.php:20
-#: wp-svn/tags/1.1.1/admin/meta-box-person-details.php:20
-#: wp-svn/tags/1.2.0/admin/meta-box-person-details.php:20
-#: wp-svn/trunk/admin/meta-box-person-details.php:20
 msgid "Email Address:"
 msgstr "E-mailadres:"
 
 #: admin/meta-box-person-details.php:28
-#: deploy/admin/meta-box-person-details.php:28
-#: deploy/deploy/admin/meta-box-person-details.php:28
-#: wp-svn/tags/1.0.0/admin/meta-box-person-details.php:23
-#: wp-svn/tags/1.0.1/admin/meta-box-person-details.php:23
-#: wp-svn/tags/1.0.2/admin/meta-box-person-details.php:23
-#: wp-svn/tags/1.0.3/admin/meta-box-person-details.php:23
-#: wp-svn/tags/1.0.4/admin/meta-box-person-details.php:23
-#: wp-svn/tags/1.1.0/admin/meta-box-person-details.php:28
-#: wp-svn/tags/1.1.1/admin/meta-box-person-details.php:28
-#: wp-svn/tags/1.2.0/admin/meta-box-person-details.php:28
-#: wp-svn/trunk/admin/meta-box-person-details.php:28
 msgid "Phone Number:"
 msgstr "Telefoonnummer:"
 
 #: admin/meta-box-person-details.php:36
-#: deploy/admin/meta-box-person-details.php:36
-#: deploy/deploy/admin/meta-box-person-details.php:36
-#: wp-svn/tags/1.0.0/admin/meta-box-person-details.php:29
-#: wp-svn/tags/1.0.1/admin/meta-box-person-details.php:29
-#: wp-svn/tags/1.0.2/admin/meta-box-person-details.php:29
-#: wp-svn/tags/1.0.3/admin/meta-box-person-details.php:29
-#: wp-svn/tags/1.0.4/admin/meta-box-person-details.php:29
-#: wp-svn/tags/1.1.0/admin/meta-box-person-details.php:36
-#: wp-svn/tags/1.1.1/admin/meta-box-person-details.php:36
-#: wp-svn/tags/1.2.0/admin/meta-box-person-details.php:36
-#: wp-svn/trunk/admin/meta-box-person-details.php:36
 msgid "Mobile Number:"
 msgstr "Mobielnummer:"
 
 #: admin/meta-box-person-details.php:44
-#: deploy/admin/meta-box-person-details.php:44
-#: deploy/deploy/admin/meta-box-person-details.php:44
-#: wp-svn/tags/1.0.0/admin/meta-box-person-details.php:35
-#: wp-svn/tags/1.0.1/admin/meta-box-person-details.php:35
-#: wp-svn/tags/1.0.2/admin/meta-box-person-details.php:35
-#: wp-svn/tags/1.0.3/admin/meta-box-person-details.php:35
-#: wp-svn/tags/1.0.4/admin/meta-box-person-details.php:35
-#: wp-svn/tags/1.1.0/admin/meta-box-person-details.php:44
-#: wp-svn/tags/1.1.1/admin/meta-box-person-details.php:44
-#: wp-svn/tags/1.2.0/admin/meta-box-person-details.php:44
-#: wp-svn/trunk/admin/meta-box-person-details.php:44
 msgid "Twitter Username:"
 msgstr "Twitter gebruikersnaam:"
 
 #: admin/meta-box-person-details.php:52
-#: deploy/admin/meta-box-person-details.php:52
-#: deploy/deploy/admin/meta-box-person-details.php:52
-#: wp-svn/tags/1.0.0/admin/meta-box-person-details.php:41
-#: wp-svn/tags/1.0.1/admin/meta-box-person-details.php:41
-#: wp-svn/tags/1.0.2/admin/meta-box-person-details.php:41
-#: wp-svn/tags/1.0.3/admin/meta-box-person-details.php:41
-#: wp-svn/tags/1.0.4/admin/meta-box-person-details.php:41
-#: wp-svn/tags/1.1.0/admin/meta-box-person-details.php:52
-#: wp-svn/tags/1.1.1/admin/meta-box-person-details.php:52
-#: wp-svn/tags/1.2.0/admin/meta-box-person-details.php:52
-#: wp-svn/trunk/admin/meta-box-person-details.php:52
 msgid "Facebook URL:"
 msgstr "Facebook URL:"
 
 #: admin/meta-box-person-details.php:60
-#: deploy/admin/meta-box-person-details.php:60
-#: deploy/deploy/admin/meta-box-person-details.php:60
-#: wp-svn/tags/1.0.0/admin/meta-box-person-details.php:47
-#: wp-svn/tags/1.0.1/admin/meta-box-person-details.php:47
-#: wp-svn/tags/1.0.2/admin/meta-box-person-details.php:47
-#: wp-svn/tags/1.0.3/admin/meta-box-person-details.php:47
-#: wp-svn/tags/1.0.4/admin/meta-box-person-details.php:47
-#: wp-svn/tags/1.1.0/admin/meta-box-person-details.php:60
-#: wp-svn/tags/1.1.1/admin/meta-box-person-details.php:60
-#: wp-svn/tags/1.2.0/admin/meta-box-person-details.php:60
-#: wp-svn/trunk/admin/meta-box-person-details.php:60
 msgid "LinkedIn:"
 msgstr "LinkedIn:"
 
 #: admin/meta-box-project-details.php:39
-#: deploy/admin/meta-box-project-details.php:39
-#: deploy/deploy/admin/meta-box-project-details.php:39
-#: wp-svn/tags/1.0.0/admin/meta-box-project-details.php:29
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:39
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:39
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:39
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:39
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:39
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:39
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:39
-#: wp-svn/trunk/admin/meta-box-project-details.php:39
 msgid "Client"
 msgstr "Klant"
 
 #: admin/meta-box-project-details.php:42
-#: deploy/admin/meta-box-project-details.php:42
-#: deploy/deploy/admin/meta-box-project-details.php:42
-#: wp-svn/tags/1.0.0/admin/meta-box-project-details.php:32
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:42
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:42
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:42
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:42
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:42
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:42
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:42
-#: wp-svn/trunk/admin/meta-box-project-details.php:42
 msgid "Select Client"
 msgstr "Selecteer klant"
 
-#: admin/meta-box-project-details.php:47
-#: deploy/admin/meta-box-project-details.php:47
-#: deploy/deploy/admin/meta-box-project-details.php:47
-#: deploy/deploy/includes/projects.php:352 deploy/includes/projects.php:352
-#: includes/projects.php:352
-#: wp-svn/tags/1.0.0/admin/meta-box-project-details.php:37
-#: wp-svn/tags/1.0.0/includes/projects.php:259
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:47
-#: wp-svn/tags/1.0.1/includes/projects.php:316
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:47
-#: wp-svn/tags/1.0.2/includes/projects.php:316
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:47
-#: wp-svn/tags/1.0.3/includes/projects.php:316
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:47
-#: wp-svn/tags/1.0.4/includes/projects.php:316
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:47
-#: wp-svn/tags/1.1.0/includes/projects.php:350
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:47
-#: wp-svn/tags/1.1.1/includes/projects.php:354
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:47
-#: wp-svn/tags/1.2.0/includes/projects.php:352
-#: wp-svn/trunk/admin/meta-box-project-details.php:47
-#: wp-svn/trunk/includes/projects.php:352
+#: admin/meta-box-project-details.php:47 includes/projects.php:352
 msgid "Time"
 msgstr "Tijd"
 
 #: admin/meta-box-project-details.php:53
-#: deploy/admin/meta-box-project-details.php:53
-#: deploy/deploy/admin/meta-box-project-details.php:53
-#: wp-svn/tags/1.0.0/admin/meta-box-project-details.php:43
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:53
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:53
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:53
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:53
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:53
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:53
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:53
-#: wp-svn/trunk/admin/meta-box-project-details.php:53
 msgid ""
 "You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
 msgstr ""
 "Je kunt de tijd invoeren als 1.5 of 1:30 (beide zijn 1 uur en 30 minuten)."
 
 #: admin/meta-box-project-details.php:60
-#: deploy/admin/meta-box-project-details.php:60
-#: deploy/deploy/admin/meta-box-project-details.php:60
-#: wp-svn/tags/1.0.0/admin/meta-box-project-details.php:50
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:60
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:60
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:60
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:60
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:60
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:60
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:60
-#: wp-svn/trunk/admin/meta-box-project-details.php:60
 msgid "Agreement ID"
 msgstr "Akkoord ID"
 
 #: admin/meta-box-project-details.php:67 admin/meta-box-project-details.php:70
-#: deploy/admin/meta-box-project-details.php:67
-#: deploy/admin/meta-box-project-details.php:70
-#: deploy/deploy/admin/meta-box-project-details.php:67
-#: deploy/deploy/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.0.0/admin/meta-box-project-details.php:57
-#: wp-svn/tags/1.0.0/admin/meta-box-project-details.php:60
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:67
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:67
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:67
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:67
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:67
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:67
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:67
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:70
-#: wp-svn/trunk/admin/meta-box-project-details.php:67
-#: wp-svn/trunk/admin/meta-box-project-details.php:70
 msgid "Choose a Agreement"
 msgstr "Kies een akkoord"
 
 #: admin/meta-box-project-details.php:70
-#: deploy/admin/meta-box-project-details.php:70
-#: deploy/deploy/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.0.0/admin/meta-box-project-details.php:60
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:70
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:70
-#: wp-svn/trunk/admin/meta-box-project-details.php:70
 msgid "Set as Agreement"
 msgstr "Stel in als akkoord"
 
 #: admin/meta-box-project-details.php:73
-#: deploy/admin/meta-box-project-details.php:73
-#: deploy/deploy/admin/meta-box-project-details.php:73
-#: wp-svn/tags/1.0.0/admin/meta-box-project-details.php:63
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:73
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:73
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:73
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:73
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:73
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:73
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:73
-#: wp-svn/trunk/admin/meta-box-project-details.php:73
 msgid "You can select an .PDF or .TXT file from the WordPress media library."
 msgstr ""
 "Je kunt een .PDF of .TXT bestand selecteren uit de WordPress media "
 "bibliotheek."
 
 #: admin/meta-box-project-details.php:74
-#: deploy/admin/meta-box-project-details.php:74
-#: deploy/deploy/admin/meta-box-project-details.php:74
-#: wp-svn/tags/1.0.0/admin/meta-box-project-details.php:64
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:74
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:74
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:74
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:74
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:74
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:74
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:74
-#: wp-svn/trunk/admin/meta-box-project-details.php:74
 msgid ""
 "If you received the agreement by mail print the complete mail conversation "
 "with an PDF printer."
@@ -471,82 +122,27 @@ msgstr ""
 "conversatie uit met een PDF-printer."
 
 #: admin/meta-box-project-details.php:81
-#: deploy/admin/meta-box-project-details.php:81
-#: deploy/deploy/admin/meta-box-project-details.php:81
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:84
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:84
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:84
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:84
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:81
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:81
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:81
-#: wp-svn/trunk/admin/meta-box-project-details.php:81
 msgid "Finished"
 msgstr "Afgerond"
 
 #: admin/meta-box-project-details.php:87
-#: deploy/admin/meta-box-project-details.php:87
-#: deploy/deploy/admin/meta-box-project-details.php:87
-#: wp-svn/tags/1.0.1/admin/meta-box-project-details.php:90
-#: wp-svn/tags/1.0.2/admin/meta-box-project-details.php:90
-#: wp-svn/tags/1.0.3/admin/meta-box-project-details.php:90
-#: wp-svn/tags/1.0.4/admin/meta-box-project-details.php:90
-#: wp-svn/tags/1.1.0/admin/meta-box-project-details.php:87
-#: wp-svn/tags/1.1.1/admin/meta-box-project-details.php:87
-#: wp-svn/tags/1.2.0/admin/meta-box-project-details.php:87
-#: wp-svn/trunk/admin/meta-box-project-details.php:87
 msgid "Project is finished"
 msgstr "Project is afgerond"
 
-#: admin/page-dashboard.php:9 deploy/admin/page-dashboard.php:9
-#: deploy/deploy/admin/page-dashboard.php:9
-#: wp-svn/tags/1.0.0/views/orbis.php:11 wp-svn/tags/1.0.1/views/orbis.php:11
-#: wp-svn/tags/1.0.2/views/orbis.php:11 wp-svn/tags/1.0.3/views/orbis.php:11
-#: wp-svn/tags/1.0.4/views/orbis.php:11 wp-svn/tags/1.1.0/views/orbis.php:11
-#: wp-svn/tags/1.1.1/views/orbis.php:11
-#: wp-svn/tags/1.2.0/admin/page-dashboard.php:9
-#: wp-svn/trunk/admin/page-dashboard.php:9
+#: admin/page-dashboard.php:9
 msgid "Recent Projects"
 msgstr "Recente projecten"
 
-#: admin/page-dashboard.php:22 deploy/admin/page-dashboard.php:22
-#: deploy/deploy/admin/page-dashboard.php:22
-#: wp-svn/tags/1.0.0/views/orbis.php:24 wp-svn/tags/1.0.1/views/orbis.php:24
-#: wp-svn/tags/1.0.2/views/orbis.php:24 wp-svn/tags/1.0.3/views/orbis.php:24
-#: wp-svn/tags/1.0.4/views/orbis.php:24 wp-svn/tags/1.1.0/views/orbis.php:24
-#: wp-svn/tags/1.1.1/views/orbis.php:24
-#: wp-svn/tags/1.2.0/admin/page-dashboard.php:22
-#: wp-svn/trunk/admin/page-dashboard.php:22
+#: admin/page-dashboard.php:22
 msgid "No recent projects found."
 msgstr "Geen recente projecten gevonden."
 
 #. translators: comment date format. See http:php.net/date
-#: admin/page-dashboard.php:47 deploy/admin/page-dashboard.php:47
-#: deploy/deploy/admin/page-dashboard.php:47
-#: wp-svn/tags/1.0.0/views/orbis.php:49 wp-svn/tags/1.0.1/views/orbis.php:49
-#: wp-svn/tags/1.0.2/views/orbis.php:49 wp-svn/tags/1.0.3/views/orbis.php:49
-#: wp-svn/tags/1.0.4/views/orbis.php:49 wp-svn/tags/1.1.0/views/orbis.php:49
-#: wp-svn/tags/1.1.1/views/orbis.php:49
-#: wp-svn/tags/1.2.0/admin/page-dashboard.php:47
-#: wp-svn/trunk/admin/page-dashboard.php:47
+#: admin/page-dashboard.php:47
 msgid "c"
 msgstr "c"
 
 #: admin/page-dashboard.php:69 admin/page-dashboard.php:77
-#: deploy/admin/page-dashboard.php:69 deploy/admin/page-dashboard.php:77
-#: deploy/deploy/admin/page-dashboard.php:69
-#: deploy/deploy/admin/page-dashboard.php:77
-#: wp-svn/tags/1.0.0/views/orbis.php:71 wp-svn/tags/1.0.0/views/orbis.php:79
-#: wp-svn/tags/1.0.1/views/orbis.php:71 wp-svn/tags/1.0.1/views/orbis.php:79
-#: wp-svn/tags/1.0.2/views/orbis.php:71 wp-svn/tags/1.0.2/views/orbis.php:79
-#: wp-svn/tags/1.0.3/views/orbis.php:71 wp-svn/tags/1.0.3/views/orbis.php:79
-#: wp-svn/tags/1.0.4/views/orbis.php:71 wp-svn/tags/1.0.4/views/orbis.php:79
-#: wp-svn/tags/1.1.0/views/orbis.php:71 wp-svn/tags/1.1.0/views/orbis.php:79
-#: wp-svn/tags/1.1.1/views/orbis.php:71 wp-svn/tags/1.1.1/views/orbis.php:79
-#: wp-svn/tags/1.2.0/admin/page-dashboard.php:69
-#: wp-svn/tags/1.2.0/admin/page-dashboard.php:77
-#: wp-svn/trunk/admin/page-dashboard.php:69
-#: wp-svn/trunk/admin/page-dashboard.php:77
 msgid "Pronamic News"
 msgstr "Pronamic nieuws"
 
@@ -554,324 +150,101 @@ msgstr "Pronamic nieuws"
 msgid "http://www.pronamic.eu/"
 msgstr "http://www.pronamic.nl/"
 
-#: admin/page-plugins.php:15 deploy/admin/page-plugins.php:15
-#: deploy/deploy/admin/page-plugins.php:15
-#: wp-svn/tags/1.0.1/views/plugins.php:18
-#: wp-svn/tags/1.0.2/views/plugins.php:18
-#: wp-svn/tags/1.0.3/views/plugins.php:18
-#: wp-svn/tags/1.0.4/views/plugins.php:18
-#: wp-svn/tags/1.1.0/views/plugins.php:18
-#: wp-svn/tags/1.1.1/views/plugins.php:18
-#: wp-svn/tags/1.2.0/admin/page-plugins.php:15
-#: wp-svn/trunk/admin/page-plugins.php:15
+#: admin/page-plugins.php:15
 msgid "Details"
 msgstr "Details"
 
-#: admin/page-plugins.php:24 classes/orbis-core-admin.php:93
-#: deploy/admin/page-plugins.php:24 deploy/classes/orbis-core-admin.php:93
-#: deploy/deploy/admin/page-plugins.php:24
-#: deploy/deploy/classes/orbis-core-admin.php:93
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:74
-#: wp-svn/tags/1.0.1/views/plugins.php:22
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:74
-#: wp-svn/tags/1.0.2/views/plugins.php:22
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:74
-#: wp-svn/tags/1.0.3/views/plugins.php:22
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:74
-#: wp-svn/tags/1.0.4/views/plugins.php:22
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:74
-#: wp-svn/tags/1.1.0/views/plugins.php:22
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:74
-#: wp-svn/tags/1.1.1/views/plugins.php:22
-#: wp-svn/tags/1.2.0/admin/page-plugins.php:24
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:93
-#: wp-svn/trunk/admin/page-plugins.php:24
-#: wp-svn/trunk/classes/orbis-core-admin.php:93
+#: admin/page-plugins.php:24 classes/orbis-core-admin.php:100
 msgid "Install"
 msgstr "Installeer"
 
-#: admin/page-plugins.php:32 classes/orbis-core-admin.php:94
-#: deploy/admin/page-plugins.php:32 deploy/classes/orbis-core-admin.php:94
-#: deploy/deploy/admin/page-plugins.php:32
-#: deploy/deploy/classes/orbis-core-admin.php:94
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:75
-#: wp-svn/tags/1.0.1/views/plugins.php:26
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:75
-#: wp-svn/tags/1.0.2/views/plugins.php:26
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:75
-#: wp-svn/tags/1.0.3/views/plugins.php:26
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:75
-#: wp-svn/tags/1.0.4/views/plugins.php:26
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:75
-#: wp-svn/tags/1.1.0/views/plugins.php:26
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:75
-#: wp-svn/tags/1.1.1/views/plugins.php:26
-#: wp-svn/tags/1.2.0/admin/page-plugins.php:32
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:94
-#: wp-svn/trunk/admin/page-plugins.php:32
-#: wp-svn/trunk/classes/orbis-core-admin.php:94
+#: admin/page-plugins.php:32 classes/orbis-core-admin.php:101
 msgid "Activate"
 msgstr "Activeer"
 
-#: admin/page-plugins.php:39 classes/orbis-core-admin.php:95
-#: deploy/admin/page-plugins.php:39 deploy/classes/orbis-core-admin.php:95
-#: deploy/deploy/admin/page-plugins.php:39
-#: deploy/deploy/classes/orbis-core-admin.php:95
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:76
-#: wp-svn/tags/1.0.1/views/plugins.php:30
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:76
-#: wp-svn/tags/1.0.2/views/plugins.php:30
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:76
-#: wp-svn/tags/1.0.3/views/plugins.php:30
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:76
-#: wp-svn/tags/1.0.4/views/plugins.php:30
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:76
-#: wp-svn/tags/1.1.0/views/plugins.php:30
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:76
-#: wp-svn/tags/1.1.1/views/plugins.php:30
-#: wp-svn/tags/1.2.0/admin/page-plugins.php:39
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:95
-#: wp-svn/trunk/admin/page-plugins.php:39
-#: wp-svn/trunk/classes/orbis-core-admin.php:95
+#: admin/page-plugins.php:39 classes/orbis-core-admin.php:102
 msgid "Active"
 msgstr "Actief"
 
-#: admin/page-stats.php:10 deploy/admin/page-stats.php:10
-#: deploy/deploy/admin/page-stats.php:10
-#: wp-svn/tags/1.2.0/admin/page-stats.php:10
-#: wp-svn/trunk/admin/page-stats.php:10
+#: admin/page-stats.php:10
 msgid "Timesheets"
 msgstr "Werkregistraties"
 
-#: admin/page-stats.php:33 deploy/admin/page-stats.php:33
-#: deploy/deploy/admin/page-stats.php:33
-#: wp-svn/tags/1.2.0/admin/page-stats.php:33
-#: wp-svn/trunk/admin/page-stats.php:33
+#: admin/page-stats.php:33
 msgid "%d registrations"
 msgstr "%d registraties"
 
-#: admin/page-stats.php:36 deploy/admin/page-stats.php:36
-#: deploy/deploy/admin/page-stats.php:36
-#: wp-svn/tags/1.2.0/admin/page-stats.php:36
-#: wp-svn/trunk/admin/page-stats.php:36
+#: admin/page-stats.php:36
 msgid "%d seconds"
 msgstr "%d seconden"
 
-#: admin/page-stats.php:39 deploy/admin/page-stats.php:39
-#: deploy/deploy/admin/page-stats.php:39
-#: wp-svn/tags/1.2.0/admin/page-stats.php:39
-#: wp-svn/trunk/admin/page-stats.php:39
+#: admin/page-stats.php:39
 msgid "%d minutes"
 msgstr "%d minuten"
 
-#: admin/page-stats.php:42 deploy/admin/page-stats.php:42
-#: deploy/deploy/admin/page-stats.php:42
-#: wp-svn/tags/1.2.0/admin/page-stats.php:42
-#: wp-svn/trunk/admin/page-stats.php:42
+#: admin/page-stats.php:42
 msgid "%d hours"
 msgstr "%d uren"
 
-#: admin/page-stats.php:45 deploy/admin/page-stats.php:45
-#: deploy/deploy/admin/page-stats.php:45
-#: wp-svn/tags/1.2.0/admin/page-stats.php:45
-#: wp-svn/trunk/admin/page-stats.php:45
+#: admin/page-stats.php:45
 msgid "%d days"
 msgstr "%d dagen"
 
-#: admin/page-stats.php:48 deploy/admin/page-stats.php:48
-#: deploy/deploy/admin/page-stats.php:48
-#: wp-svn/tags/1.2.0/admin/page-stats.php:48
-#: wp-svn/trunk/admin/page-stats.php:48
+#: admin/page-stats.php:48
 msgid "%d weeks"
 msgstr "%d weken"
 
-#: admin/page-stats.php:52 deploy/admin/page-stats.php:52
-#: deploy/deploy/admin/page-stats.php:52
-#: wp-svn/tags/1.2.0/admin/page-stats.php:52
-#: wp-svn/trunk/admin/page-stats.php:52
+#: admin/page-stats.php:52
 msgid "Tasks"
 msgstr "Taken"
 
-#: admin/page-stats.php:69 deploy/admin/page-stats.php:69
-#: deploy/deploy/admin/page-stats.php:69
-#: wp-svn/tags/1.2.0/admin/page-stats.php:69
-#: wp-svn/trunk/admin/page-stats.php:69
+#: admin/page-stats.php:69
 msgid "%d tasks"
 msgstr "%d taken"
 
 #: admin/page-stats.php:73 classes/orbis-core-plugin.php:192
-#: deploy/admin/page-stats.php:73 deploy/classes/orbis-core-plugin.php:192
-#: deploy/deploy/admin/page-stats.php:73
-#: deploy/deploy/classes/orbis-core-plugin.php:192
-#: deploy/deploy/includes/post.php:64 deploy/deploy/includes/post.php:66
-#: deploy/deploy/includes/post.php:78 deploy/includes/post.php:64
-#: deploy/includes/post.php:66 deploy/includes/post.php:78
 #: includes/post.php:64 includes/post.php:66 includes/post.php:78
-#: wp-svn/tags/1.0.0/includes/post.php:66
-#: wp-svn/tags/1.0.0/includes/post.php:68
-#: wp-svn/tags/1.0.0/includes/post.php:80
-#: wp-svn/tags/1.0.1/includes/post.php:66
-#: wp-svn/tags/1.0.1/includes/post.php:68
-#: wp-svn/tags/1.0.1/includes/post.php:80
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:147
-#: wp-svn/tags/1.0.2/includes/post.php:66
-#: wp-svn/tags/1.0.2/includes/post.php:68
-#: wp-svn/tags/1.0.2/includes/post.php:80
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:147
-#: wp-svn/tags/1.0.3/includes/post.php:66
-#: wp-svn/tags/1.0.3/includes/post.php:68
-#: wp-svn/tags/1.0.3/includes/post.php:80
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:147
-#: wp-svn/tags/1.0.4/includes/post.php:66
-#: wp-svn/tags/1.0.4/includes/post.php:68
-#: wp-svn/tags/1.0.4/includes/post.php:80
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:147
-#: wp-svn/tags/1.1.0/includes/post.php:66
-#: wp-svn/tags/1.1.0/includes/post.php:68
-#: wp-svn/tags/1.1.0/includes/post.php:80
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:147
-#: wp-svn/tags/1.1.1/includes/post.php:66
-#: wp-svn/tags/1.1.1/includes/post.php:68
-#: wp-svn/tags/1.1.1/includes/post.php:80
-#: wp-svn/tags/1.2.0/admin/page-stats.php:73
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:192
-#: wp-svn/tags/1.2.0/includes/post.php:64
-#: wp-svn/tags/1.2.0/includes/post.php:66
-#: wp-svn/tags/1.2.0/includes/post.php:78 wp-svn/trunk/admin/page-stats.php:73
-#: wp-svn/trunk/classes/orbis-core-plugin.php:192
-#: wp-svn/trunk/includes/post.php:64 wp-svn/trunk/includes/post.php:66
-#: wp-svn/trunk/includes/post.php:78
 msgid "Companies"
 msgstr "Bedrijven"
 
-#: admin/page-stats.php:90 deploy/admin/page-stats.php:90
-#: deploy/deploy/admin/page-stats.php:90
-#: wp-svn/tags/1.2.0/admin/page-stats.php:90
-#: wp-svn/trunk/admin/page-stats.php:90
+#: admin/page-stats.php:90
 msgid "%d companies"
 msgstr "%d bedrijven"
 
 #: admin/page-stats.php:94 classes/orbis-core-plugin.php:219
-#: deploy/admin/page-stats.php:94 deploy/classes/orbis-core-plugin.php:219
-#: deploy/deploy/admin/page-stats.php:94
-#: deploy/deploy/classes/orbis-core-plugin.php:219
-#: deploy/deploy/includes/post.php:7 deploy/deploy/includes/post.php:9
-#: deploy/deploy/includes/post.php:21 deploy/includes/post.php:7
-#: deploy/includes/post.php:9 deploy/includes/post.php:21 includes/post.php:7
-#: includes/post.php:9 includes/post.php:21
-#: wp-svn/tags/1.0.0/includes/post.php:9
-#: wp-svn/tags/1.0.0/includes/post.php:11
-#: wp-svn/tags/1.0.0/includes/post.php:23
-#: wp-svn/tags/1.0.1/includes/post.php:9
-#: wp-svn/tags/1.0.1/includes/post.php:11
-#: wp-svn/tags/1.0.1/includes/post.php:23
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:174
-#: wp-svn/tags/1.0.2/includes/post.php:9
-#: wp-svn/tags/1.0.2/includes/post.php:11
-#: wp-svn/tags/1.0.2/includes/post.php:23
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:174
-#: wp-svn/tags/1.0.3/includes/post.php:9
-#: wp-svn/tags/1.0.3/includes/post.php:11
-#: wp-svn/tags/1.0.3/includes/post.php:23
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:174
-#: wp-svn/tags/1.0.4/includes/post.php:9
-#: wp-svn/tags/1.0.4/includes/post.php:11
-#: wp-svn/tags/1.0.4/includes/post.php:23
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:174
-#: wp-svn/tags/1.1.0/includes/post.php:9
-#: wp-svn/tags/1.1.0/includes/post.php:11
-#: wp-svn/tags/1.1.0/includes/post.php:23
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:174
-#: wp-svn/tags/1.1.1/includes/post.php:9
-#: wp-svn/tags/1.1.1/includes/post.php:11
-#: wp-svn/tags/1.1.1/includes/post.php:23
-#: wp-svn/tags/1.2.0/admin/page-stats.php:94
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:219
-#: wp-svn/tags/1.2.0/includes/post.php:7 wp-svn/tags/1.2.0/includes/post.php:9
-#: wp-svn/tags/1.2.0/includes/post.php:21 wp-svn/trunk/admin/page-stats.php:94
-#: wp-svn/trunk/classes/orbis-core-plugin.php:219
-#: wp-svn/trunk/includes/post.php:7 wp-svn/trunk/includes/post.php:9
-#: wp-svn/trunk/includes/post.php:21
+#: includes/post.php:7 includes/post.php:9 includes/post.php:21
 msgid "Projects"
 msgstr "Projecten"
 
-#: admin/page-stats.php:111 deploy/admin/page-stats.php:111
-#: deploy/deploy/admin/page-stats.php:111
-#: wp-svn/tags/1.2.0/admin/page-stats.php:111
-#: wp-svn/trunk/admin/page-stats.php:111
+#: admin/page-stats.php:111
 msgid "%d projects"
 msgstr "%d projecten"
 
-#: admin/page-stats.php:115 deploy/admin/page-stats.php:115
-#: deploy/deploy/admin/page-stats.php:115
-#: wp-svn/tags/1.2.0/admin/page-stats.php:115
-#: wp-svn/trunk/admin/page-stats.php:115
+#: admin/page-stats.php:115
 msgid "Domains"
 msgstr "Domeinen"
 
-#: admin/page-stats.php:133 deploy/admin/page-stats.php:133
-#: deploy/deploy/admin/page-stats.php:133
-#: wp-svn/tags/1.0.0/views/stats.php:135 wp-svn/tags/1.0.1/views/stats.php:135
-#: wp-svn/tags/1.0.2/views/stats.php:135 wp-svn/tags/1.0.3/views/stats.php:135
-#: wp-svn/tags/1.0.4/views/stats.php:135 wp-svn/tags/1.1.0/views/stats.php:135
-#: wp-svn/tags/1.1.1/views/stats.php:135
-#: wp-svn/tags/1.2.0/admin/page-stats.php:133
-#: wp-svn/trunk/admin/page-stats.php:133
+#: admin/page-stats.php:133
 msgid "Number domains"
 msgstr "Aantal domeinen"
 
-#: admin/page-stats.php:137 deploy/admin/page-stats.php:137
-#: deploy/deploy/admin/page-stats.php:137
-#: wp-svn/tags/1.2.0/admin/page-stats.php:137
-#: wp-svn/trunk/admin/page-stats.php:137
+#: admin/page-stats.php:137
 msgid "Subscriptions"
 msgstr "Abonnementen"
 
-#: admin/page-stats.php:166 deploy/admin/page-stats.php:166
-#: deploy/deploy/admin/page-stats.php:166
-#: wp-svn/tags/1.0.0/views/stats.php:168 wp-svn/tags/1.0.1/views/stats.php:168
-#: wp-svn/tags/1.0.2/views/stats.php:168 wp-svn/tags/1.0.3/views/stats.php:168
-#: wp-svn/tags/1.0.4/views/stats.php:168 wp-svn/tags/1.1.0/views/stats.php:168
-#: wp-svn/tags/1.1.1/views/stats.php:168
-#: wp-svn/tags/1.2.0/admin/page-stats.php:166
-#: wp-svn/trunk/admin/page-stats.php:166
+#: admin/page-stats.php:166
 msgid "Number subscriptions"
 msgstr "Aantal abonnementen"
 
-#: admin/page-stats.php:169 deploy/admin/page-stats.php:169
-#: deploy/deploy/admin/page-stats.php:169
-#: wp-svn/tags/1.0.0/views/stats.php:171 wp-svn/tags/1.0.1/views/stats.php:171
-#: wp-svn/tags/1.0.2/views/stats.php:171 wp-svn/tags/1.0.3/views/stats.php:171
-#: wp-svn/tags/1.0.4/views/stats.php:171 wp-svn/tags/1.1.0/views/stats.php:171
-#: wp-svn/tags/1.1.1/views/stats.php:171
-#: wp-svn/tags/1.2.0/admin/page-stats.php:169
-#: wp-svn/trunk/admin/page-stats.php:169
+#: admin/page-stats.php:169
 msgid "Annual Revenue"
 msgstr "Jaaromzet"
 
-#: classes/orbis-core-admin.php:96 deploy/classes/orbis-core-admin.php:96
-#: deploy/deploy/classes/orbis-core-admin.php:96
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:77
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:77
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:77
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:77
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:77
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:77
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:96
-#: wp-svn/trunk/classes/orbis-core-admin.php:96
+#: classes/orbis-core-admin.php:103
 msgid "An unknown error occurred"
 msgstr "Een onbekende fout is opgetreden"
 
-#: classes/orbis-core-admin.php:97 deploy/classes/orbis-core-admin.php:97
-#: deploy/deploy/classes/orbis-core-admin.php:97
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:78
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:78
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:78
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:78
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:78
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:78
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:97
-#: wp-svn/trunk/classes/orbis-core-admin.php:97
+#: classes/orbis-core-admin.php:104
 msgid "Could not connect to the server"
 msgstr "Een verbinding met de server kon niet worden gemaakt"
 
@@ -879,1448 +252,374 @@ msgstr "Een verbinding met de server kon niet worden gemaakt"
 msgid "Orbis"
 msgstr "Orbis"
 
-#: classes/orbis-core-admin.php:132 deploy/classes/orbis-core-admin.php:132
-#: deploy/deploy/classes/orbis-core-admin.php:132
-#: wp-svn/tags/1.0.0/classes/orbis-core-admin.php:83
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:113
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:113
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:113
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:113
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:113
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:113
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:132
-#: wp-svn/trunk/classes/orbis-core-admin.php:132
+#: classes/orbis-core-admin.php:139
 msgid "Orbis Settings"
 msgstr "Orbis instellingen"
 
-#: classes/orbis-core-admin.php:133 deploy/classes/orbis-core-admin.php:133
-#: deploy/deploy/classes/orbis-core-admin.php:133
-#: wp-svn/tags/1.0.0/classes/orbis-core-admin.php:84
-#: wp-svn/tags/1.0.0/views/settings.php:5
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:114
-#: wp-svn/tags/1.0.1/views/settings.php:5
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:114
-#: wp-svn/tags/1.0.2/views/settings.php:5
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:114
-#: wp-svn/tags/1.0.3/views/settings.php:5
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:114
-#: wp-svn/tags/1.0.4/views/settings.php:5
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:114
-#: wp-svn/tags/1.1.0/views/settings.php:5
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:114
-#: wp-svn/tags/1.1.1/views/settings.php:5
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:133
-#: wp-svn/trunk/classes/orbis-core-admin.php:133
+#: classes/orbis-core-admin.php:140
 msgid "Settings"
 msgstr "Instellingen"
 
-#: classes/orbis-core-admin.php:141 deploy/classes/orbis-core-admin.php:141
-#: deploy/deploy/classes/orbis-core-admin.php:141
-#: wp-svn/tags/1.0.0/classes/orbis-core-admin.php:92
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:122
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:122
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:122
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:122
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:122
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:122
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:141
-#: wp-svn/trunk/classes/orbis-core-admin.php:141
+#: classes/orbis-core-admin.php:148
 msgid "Orbis Stats"
 msgstr "Orbis statistieken"
 
-#: classes/orbis-core-admin.php:142 deploy/classes/orbis-core-admin.php:142
-#: deploy/deploy/classes/orbis-core-admin.php:142
-#: wp-svn/tags/1.0.0/classes/orbis-core-admin.php:93
-#: wp-svn/tags/1.0.0/views/stats.php:5
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:123
-#: wp-svn/tags/1.0.1/views/stats.php:5
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:123
-#: wp-svn/tags/1.0.2/views/stats.php:5
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:123
-#: wp-svn/tags/1.0.3/views/stats.php:5
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:123
-#: wp-svn/tags/1.0.4/views/stats.php:5
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:123
-#: wp-svn/tags/1.1.0/views/stats.php:5
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:123
-#: wp-svn/tags/1.1.1/views/stats.php:5
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:142
-#: wp-svn/trunk/classes/orbis-core-admin.php:142
+#: classes/orbis-core-admin.php:149
 msgid "Stats"
 msgstr "Statistieken"
 
-#: classes/orbis-core-admin.php:150 deploy/classes/orbis-core-admin.php:150
-#: deploy/deploy/classes/orbis-core-admin.php:150
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:131
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:131
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:131
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:131
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:131
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:131
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:150
-#: wp-svn/trunk/classes/orbis-core-admin.php:150
+#: classes/orbis-core-admin.php:157
 msgid "Orbis Plugins"
 msgstr "Orbis plugins"
 
-#: classes/orbis-core-admin.php:151 deploy/classes/orbis-core-admin.php:151
-#: deploy/deploy/classes/orbis-core-admin.php:151
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:132
-#: wp-svn/tags/1.0.1/views/plugins.php:5
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:132
-#: wp-svn/tags/1.0.2/views/plugins.php:5
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:132
-#: wp-svn/tags/1.0.3/views/plugins.php:5
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:132
-#: wp-svn/tags/1.0.4/views/plugins.php:5
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:132
-#: wp-svn/tags/1.1.0/views/plugins.php:5
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:132
-#: wp-svn/tags/1.1.1/views/plugins.php:5
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:151
-#: wp-svn/trunk/classes/orbis-core-admin.php:151
+#: classes/orbis-core-admin.php:158
 msgid "Plugins"
 msgstr "Plugins"
 
-#: classes/orbis-core-admin.php:224 classes/orbis-core-admin.php:247
-#: deploy/classes/orbis-core-admin.php:224
-#: deploy/classes/orbis-core-admin.php:247
-#: deploy/deploy/classes/orbis-core-admin.php:224
-#: deploy/deploy/classes/orbis-core-admin.php:247
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:205
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:228
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:205
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:228
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:205
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:228
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:205
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:228
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:205
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:228
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:205
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:228
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:224
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:247
-#: wp-svn/trunk/classes/orbis-core-admin.php:224
-#: wp-svn/trunk/classes/orbis-core-admin.php:247
+#: classes/orbis-core-admin.php:250 classes/orbis-core-admin.php:255
+msgid "Orbis User"
+msgstr "Orbis gebruiker"
+
+#: classes/orbis-core-admin.php:260
+msgid "Show user in Orbis."
+msgstr "Toon gebruiker in Orbis."
+
+#: classes/orbis-core-admin.php:278 classes/orbis-core-admin.php:301
 msgid "The plugin could not be found"
 msgstr "De plugin kon niet worden gevonden"
 
-#: classes/orbis-core-admin.php:237 deploy/classes/orbis-core-admin.php:237
-#: deploy/deploy/classes/orbis-core-admin.php:237
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:218
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:218
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:218
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:218
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:218
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:218
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:237
-#: wp-svn/trunk/classes/orbis-core-admin.php:237
+#: classes/orbis-core-admin.php:291
 msgid "The plugin was installed and activated successfully"
 msgstr "De plugin is succesvol geïnstalleerd en geactiveerd"
 
-#: classes/orbis-core-admin.php:260 deploy/classes/orbis-core-admin.php:260
-#: deploy/deploy/classes/orbis-core-admin.php:260
-#: wp-svn/tags/1.0.1/classes/orbis-core-admin.php:241
-#: wp-svn/tags/1.0.2/classes/orbis-core-admin.php:241
-#: wp-svn/tags/1.0.3/classes/orbis-core-admin.php:241
-#: wp-svn/tags/1.0.4/classes/orbis-core-admin.php:241
-#: wp-svn/tags/1.1.0/classes/orbis-core-admin.php:241
-#: wp-svn/tags/1.1.1/classes/orbis-core-admin.php:241
-#: wp-svn/tags/1.2.0/classes/orbis-core-admin.php:260
-#: wp-svn/trunk/classes/orbis-core-admin.php:260
+#: classes/orbis-core-admin.php:314
 msgid "The plugin was activated successfully"
 msgstr "De plugin is succesvol geactiveerd"
 
-#: classes/orbis-core-plugin.php:104 deploy/classes/orbis-core-plugin.php:104
-#: deploy/deploy/classes/orbis-core-plugin.php:104
-#: wp-svn/tags/1.0.0/classes/orbis-core-plugin.php:56
-#: wp-svn/tags/1.0.1/classes/orbis-core-plugin.php:56
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:56
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:56
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:56
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:56
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:56
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:104
-#: wp-svn/trunk/classes/orbis-core-plugin.php:104
+#: classes/orbis-core-plugin.php:104
 msgid "No matches found"
 msgstr "Geen overeenkomsten gevonden"
 
-#: classes/orbis-core-plugin.php:105 deploy/classes/orbis-core-plugin.php:105
-#: deploy/deploy/classes/orbis-core-plugin.php:105
-#: wp-svn/tags/1.0.0/classes/orbis-core-plugin.php:57
-#: wp-svn/tags/1.0.1/classes/orbis-core-plugin.php:57
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:57
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:57
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:57
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:57
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:57
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:105
-#: wp-svn/trunk/classes/orbis-core-plugin.php:105
+#: classes/orbis-core-plugin.php:105
 msgid "Please enter %s more characters"
 msgstr "Voer nog %s tekens in."
 
-#: classes/orbis-core-plugin.php:106 deploy/classes/orbis-core-plugin.php:106
-#: deploy/deploy/classes/orbis-core-plugin.php:106
-#: wp-svn/tags/1.0.0/classes/orbis-core-plugin.php:58
-#: wp-svn/tags/1.0.1/classes/orbis-core-plugin.php:58
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:58
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:58
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:58
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:58
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:58
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:106
-#: wp-svn/trunk/classes/orbis-core-plugin.php:106
+#: classes/orbis-core-plugin.php:106
 msgid "You can only select %s item"
 msgstr "Je kunt slechts %s item selecteren"
 
-#: classes/orbis-core-plugin.php:107 deploy/classes/orbis-core-plugin.php:107
-#: deploy/deploy/classes/orbis-core-plugin.php:107
-#: wp-svn/tags/1.0.0/classes/orbis-core-plugin.php:59
-#: wp-svn/tags/1.0.1/classes/orbis-core-plugin.php:59
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:59
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:59
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:59
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:59
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:59
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:107
-#: wp-svn/trunk/classes/orbis-core-plugin.php:107
+#: classes/orbis-core-plugin.php:107
 msgid "You can only select %s items"
 msgstr "Je kunt slechts %s items selecteren"
 
-#: classes/orbis-core-plugin.php:108 deploy/classes/orbis-core-plugin.php:108
-#: deploy/deploy/classes/orbis-core-plugin.php:108
-#: wp-svn/tags/1.0.0/classes/orbis-core-plugin.php:60
-#: wp-svn/tags/1.0.1/classes/orbis-core-plugin.php:60
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:60
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:60
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:60
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:60
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:60
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:108
-#: wp-svn/trunk/classes/orbis-core-plugin.php:108
+#: classes/orbis-core-plugin.php:108
 msgid "Loading more results..."
 msgstr "Meer resultaten laden..."
 
-#: classes/orbis-core-plugin.php:109 deploy/classes/orbis-core-plugin.php:109
-#: deploy/deploy/classes/orbis-core-plugin.php:109
-#: wp-svn/tags/1.0.0/classes/orbis-core-plugin.php:61
-#: wp-svn/tags/1.0.1/classes/orbis-core-plugin.php:61
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:61
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:61
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:61
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:61
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:61
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:109
-#: wp-svn/trunk/classes/orbis-core-plugin.php:109
+#: classes/orbis-core-plugin.php:109
 msgid "Searching..."
 msgstr "Zoeken...."
 
-#: classes/orbis-core-plugin.php:193 deploy/classes/orbis-core-plugin.php:193
-#: deploy/deploy/classes/orbis-core-plugin.php:193
-#: deploy/deploy/includes/post.php:95 deploy/includes/post.php:95
-#: includes/post.php:95 wp-svn/tags/1.0.0/includes/post.php:97
-#: wp-svn/tags/1.0.0/includes/post.php:99
-#: wp-svn/tags/1.0.1/includes/post.php:97
-#: wp-svn/tags/1.0.1/includes/post.php:99
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:148
-#: wp-svn/tags/1.0.2/includes/post.php:97
-#: wp-svn/tags/1.0.2/includes/post.php:99
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:148
-#: wp-svn/tags/1.0.3/includes/post.php:97
-#: wp-svn/tags/1.0.3/includes/post.php:99
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:148
-#: wp-svn/tags/1.0.4/includes/post.php:97
-#: wp-svn/tags/1.0.4/includes/post.php:99
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:148
-#: wp-svn/tags/1.1.0/includes/post.php:97
-#: wp-svn/tags/1.1.0/includes/post.php:99
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:148
-#: wp-svn/tags/1.1.1/includes/post.php:97
-#: wp-svn/tags/1.1.1/includes/post.php:99
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:193
-#: wp-svn/tags/1.2.0/includes/post.php:95
-#: wp-svn/trunk/classes/orbis-core-plugin.php:193
-#: wp-svn/trunk/includes/post.php:95
+#: classes/orbis-core-plugin.php:193 includes/post.php:95
 msgid "Persons"
 msgstr "Personen"
 
 #: classes/orbis-core-plugin.php:196 classes/orbis-core-plugin.php:230
-#: deploy/classes/orbis-core-plugin.php:196
-#: deploy/classes/orbis-core-plugin.php:230
-#: deploy/deploy/classes/orbis-core-plugin.php:196
-#: deploy/deploy/classes/orbis-core-plugin.php:230
-#: wp-svn/tags/1.0.0/includes/post.php:100
-#: wp-svn/tags/1.0.1/includes/post.php:100
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:151
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:185
-#: wp-svn/tags/1.0.2/includes/post.php:100
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:151
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:185
-#: wp-svn/tags/1.0.3/includes/post.php:100
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:151
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:185
-#: wp-svn/tags/1.0.4/includes/post.php:100
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:151
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:185
-#: wp-svn/tags/1.1.0/includes/post.php:100
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:151
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:185
-#: wp-svn/tags/1.1.1/includes/post.php:100
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:196
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:230
-#: wp-svn/trunk/classes/orbis-core-plugin.php:196
-#: wp-svn/trunk/classes/orbis-core-plugin.php:230
 msgid "Person"
 msgstr "Persoon"
 
 #: classes/orbis-core-plugin.php:197 classes/orbis-core-plugin.php:231
-#: deploy/classes/orbis-core-plugin.php:197
-#: deploy/classes/orbis-core-plugin.php:231
-#: deploy/deploy/classes/orbis-core-plugin.php:197
-#: deploy/deploy/classes/orbis-core-plugin.php:231
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:152
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:186
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:152
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:186
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:152
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:186
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:152
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:186
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:152
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:186
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:197
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:231
-#: wp-svn/trunk/classes/orbis-core-plugin.php:197
-#: wp-svn/trunk/classes/orbis-core-plugin.php:231
 msgid "Search person"
 msgstr "Zoek persoon"
 
 #: classes/orbis-core-plugin.php:198 classes/orbis-core-plugin.php:232
-#: deploy/classes/orbis-core-plugin.php:198
-#: deploy/classes/orbis-core-plugin.php:232
-#: deploy/deploy/classes/orbis-core-plugin.php:198
-#: deploy/deploy/classes/orbis-core-plugin.php:232
-#: deploy/deploy/includes/post.php:109 deploy/includes/post.php:109
-#: includes/post.php:109 wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:153
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:187
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:153
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:187
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:153
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:187
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:153
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:187
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:153
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:187
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:198
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:232
-#: wp-svn/tags/1.2.0/includes/post.php:109
-#: wp-svn/trunk/classes/orbis-core-plugin.php:198
-#: wp-svn/trunk/classes/orbis-core-plugin.php:232
-#: wp-svn/trunk/includes/post.php:109
+#: includes/post.php:109
 msgid "No persons found."
 msgstr "Geen personen gevonden."
 
 #: classes/orbis-core-plugin.php:199 classes/orbis-core-plugin.php:233
-#: deploy/classes/orbis-core-plugin.php:199
-#: deploy/classes/orbis-core-plugin.php:233
-#: deploy/deploy/classes/orbis-core-plugin.php:199
-#: deploy/deploy/classes/orbis-core-plugin.php:233
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:154
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:188
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:154
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:188
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:154
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:188
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:154
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:188
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:154
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:188
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:199
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:233
-#: wp-svn/trunk/classes/orbis-core-plugin.php:199
-#: wp-svn/trunk/classes/orbis-core-plugin.php:233
 msgid "Add Person"
 msgstr "Persoon toevoegen"
 
 #: classes/orbis-core-plugin.php:200 classes/orbis-core-plugin.php:234
-#: deploy/classes/orbis-core-plugin.php:200
-#: deploy/classes/orbis-core-plugin.php:234
-#: deploy/deploy/classes/orbis-core-plugin.php:200
-#: deploy/deploy/classes/orbis-core-plugin.php:234
-#: deploy/deploy/includes/post.php:103 deploy/includes/post.php:103
-#: includes/post.php:103 wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:155
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:189
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:155
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:189
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:155
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:189
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:155
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:189
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:155
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:189
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:200
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:234
-#: wp-svn/tags/1.2.0/includes/post.php:103
-#: wp-svn/trunk/classes/orbis-core-plugin.php:200
-#: wp-svn/trunk/classes/orbis-core-plugin.php:234
-#: wp-svn/trunk/includes/post.php:103
+#: includes/post.php:103
 msgid "New Person"
 msgstr "Nieuw persoon"
 
 #: classes/orbis-core-plugin.php:201 classes/orbis-core-plugin.php:235
-#: deploy/classes/orbis-core-plugin.php:201
-#: deploy/classes/orbis-core-plugin.php:235
-#: deploy/deploy/classes/orbis-core-plugin.php:201
-#: deploy/deploy/classes/orbis-core-plugin.php:235
-#: deploy/deploy/includes/post.php:102 deploy/includes/post.php:102
-#: includes/post.php:102 wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:156
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:190
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:156
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:190
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:156
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:190
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:156
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:190
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:156
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:190
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:201
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:235
-#: wp-svn/tags/1.2.0/includes/post.php:102
-#: wp-svn/trunk/classes/orbis-core-plugin.php:201
-#: wp-svn/trunk/classes/orbis-core-plugin.php:235
-#: wp-svn/trunk/includes/post.php:102
+#: includes/post.php:102
 msgid "Add New Person"
 msgstr "Nieuw persoon toevoegen"
 
-#: classes/orbis-core-plugin.php:204 deploy/classes/orbis-core-plugin.php:204
-#: deploy/deploy/classes/orbis-core-plugin.php:204
-#: deploy/deploy/includes/post.php:67 deploy/includes/post.php:67
-#: includes/post.php:67 wp-svn/tags/1.0.0/includes/post.php:69
-#: wp-svn/tags/1.0.1/includes/post.php:69
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:159
-#: wp-svn/tags/1.0.2/includes/post.php:69
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:159
-#: wp-svn/tags/1.0.3/includes/post.php:69
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:159
-#: wp-svn/tags/1.0.4/includes/post.php:69
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:159
-#: wp-svn/tags/1.1.0/includes/post.php:69
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:159
-#: wp-svn/tags/1.1.1/includes/post.php:69
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:204
-#: wp-svn/tags/1.2.0/includes/post.php:67
-#: wp-svn/trunk/classes/orbis-core-plugin.php:204
-#: wp-svn/trunk/includes/post.php:67
+#: classes/orbis-core-plugin.php:204 includes/post.php:67
 msgid "Company"
 msgstr "Bedrijf"
 
-#: classes/orbis-core-plugin.php:205 deploy/classes/orbis-core-plugin.php:205
-#: deploy/deploy/classes/orbis-core-plugin.php:205
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:160
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:160
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:160
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:160
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:160
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:205
-#: wp-svn/trunk/classes/orbis-core-plugin.php:205
+#: classes/orbis-core-plugin.php:205
 msgid "Search company"
 msgstr "Zoek bedrijf"
 
-#: classes/orbis-core-plugin.php:206 deploy/classes/orbis-core-plugin.php:206
-#: deploy/deploy/classes/orbis-core-plugin.php:206
-#: deploy/deploy/includes/post.php:75 deploy/includes/post.php:75
-#: includes/post.php:75 wp-svn/tags/1.0.0/includes/post.php:77
-#: wp-svn/tags/1.0.1/includes/post.php:77
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:161
-#: wp-svn/tags/1.0.2/includes/post.php:77
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:161
-#: wp-svn/tags/1.0.3/includes/post.php:77
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:161
-#: wp-svn/tags/1.0.4/includes/post.php:77
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:161
-#: wp-svn/tags/1.1.0/includes/post.php:77
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:161
-#: wp-svn/tags/1.1.1/includes/post.php:77
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:206
-#: wp-svn/tags/1.2.0/includes/post.php:75
-#: wp-svn/trunk/classes/orbis-core-plugin.php:206
-#: wp-svn/trunk/includes/post.php:75
+#: classes/orbis-core-plugin.php:206 includes/post.php:75
 msgid "No companies found."
 msgstr "Geen bedrijven gevonden."
 
-#: classes/orbis-core-plugin.php:207 deploy/classes/orbis-core-plugin.php:207
-#: deploy/deploy/classes/orbis-core-plugin.php:207
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:162
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:162
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:162
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:162
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:162
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:207
-#: wp-svn/trunk/classes/orbis-core-plugin.php:207
+#: classes/orbis-core-plugin.php:207
 msgid "Add Company"
 msgstr "Bedrijf toevoegen"
 
-#: classes/orbis-core-plugin.php:208 deploy/classes/orbis-core-plugin.php:208
-#: deploy/deploy/classes/orbis-core-plugin.php:208
-#: deploy/deploy/includes/post.php:71 deploy/includes/post.php:71
-#: includes/post.php:71 wp-svn/tags/1.0.0/includes/post.php:73
-#: wp-svn/tags/1.0.1/includes/post.php:73
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:163
-#: wp-svn/tags/1.0.2/includes/post.php:73
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:163
-#: wp-svn/tags/1.0.3/includes/post.php:73
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:163
-#: wp-svn/tags/1.0.4/includes/post.php:73
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:163
-#: wp-svn/tags/1.1.0/includes/post.php:73
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:163
-#: wp-svn/tags/1.1.1/includes/post.php:73
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:208
-#: wp-svn/tags/1.2.0/includes/post.php:71
-#: wp-svn/trunk/classes/orbis-core-plugin.php:208
-#: wp-svn/trunk/includes/post.php:71
+#: classes/orbis-core-plugin.php:208 includes/post.php:71
 msgid "New Company"
 msgstr "Nieuw bedrijf"
 
-#: classes/orbis-core-plugin.php:209 deploy/classes/orbis-core-plugin.php:209
-#: deploy/deploy/classes/orbis-core-plugin.php:209
-#: deploy/deploy/includes/post.php:69 deploy/includes/post.php:69
-#: includes/post.php:69 wp-svn/tags/1.0.0/includes/post.php:71
-#: wp-svn/tags/1.0.1/includes/post.php:71
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:164
-#: wp-svn/tags/1.0.2/includes/post.php:71
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:164
-#: wp-svn/tags/1.0.3/includes/post.php:71
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:164
-#: wp-svn/tags/1.0.4/includes/post.php:71
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:164
-#: wp-svn/tags/1.1.0/includes/post.php:71
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:164
-#: wp-svn/tags/1.1.1/includes/post.php:71
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:209
-#: wp-svn/tags/1.2.0/includes/post.php:69
-#: wp-svn/trunk/classes/orbis-core-plugin.php:209
-#: wp-svn/trunk/includes/post.php:69
+#: classes/orbis-core-plugin.php:209 includes/post.php:69
 msgid "Add New Company"
 msgstr "Nieuwe bedrijf toevoegen"
 
-#: classes/orbis-core-plugin.php:218 deploy/classes/orbis-core-plugin.php:218
-#: deploy/deploy/classes/orbis-core-plugin.php:218
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:173
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:173
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:173
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:173
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:173
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:218
-#: wp-svn/trunk/classes/orbis-core-plugin.php:218
+#: classes/orbis-core-plugin.php:218
 msgid "Involved Persons"
 msgstr "Betrokken personen"
 
-#: classes/orbis-core-plugin.php:222 deploy/classes/orbis-core-plugin.php:222
-#: deploy/deploy/classes/orbis-core-plugin.php:222
-#: deploy/deploy/includes/post.php:10 deploy/includes/post.php:10
-#: includes/post.php:10 wp-svn/tags/1.0.0/includes/post.php:12
-#: wp-svn/tags/1.0.1/includes/post.php:12
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:177
-#: wp-svn/tags/1.0.2/includes/post.php:12
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:177
-#: wp-svn/tags/1.0.3/includes/post.php:12
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:177
-#: wp-svn/tags/1.0.4/includes/post.php:12
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:177
-#: wp-svn/tags/1.1.0/includes/post.php:12
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:177
-#: wp-svn/tags/1.1.1/includes/post.php:12
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:222
-#: wp-svn/tags/1.2.0/includes/post.php:10
-#: wp-svn/trunk/classes/orbis-core-plugin.php:222
-#: wp-svn/trunk/includes/post.php:10
+#: classes/orbis-core-plugin.php:222 includes/post.php:10
 msgid "Project"
 msgstr "Project"
 
-#: classes/orbis-core-plugin.php:223 deploy/classes/orbis-core-plugin.php:223
-#: deploy/deploy/classes/orbis-core-plugin.php:223
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:178
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:178
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:178
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:178
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:178
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:223
-#: wp-svn/trunk/classes/orbis-core-plugin.php:223
+#: classes/orbis-core-plugin.php:223
 msgid "Search project"
 msgstr "Zoek project"
 
-#: classes/orbis-core-plugin.php:224 deploy/classes/orbis-core-plugin.php:224
-#: deploy/deploy/classes/orbis-core-plugin.php:224
-#: deploy/deploy/includes/post.php:18 deploy/includes/post.php:18
-#: includes/post.php:18 wp-svn/tags/1.0.0/includes/post.php:20
-#: wp-svn/tags/1.0.1/includes/post.php:20
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:179
-#: wp-svn/tags/1.0.2/includes/post.php:20
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:179
-#: wp-svn/tags/1.0.3/includes/post.php:20
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:179
-#: wp-svn/tags/1.0.4/includes/post.php:20
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:179
-#: wp-svn/tags/1.1.0/includes/post.php:20
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:179
-#: wp-svn/tags/1.1.1/includes/post.php:20
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:224
-#: wp-svn/tags/1.2.0/includes/post.php:18
-#: wp-svn/trunk/classes/orbis-core-plugin.php:224
-#: wp-svn/trunk/includes/post.php:18
+#: classes/orbis-core-plugin.php:224 includes/post.php:18
 msgid "No projects found."
 msgstr "Geen projecten gevonden."
 
-#: classes/orbis-core-plugin.php:225 deploy/classes/orbis-core-plugin.php:225
-#: deploy/deploy/classes/orbis-core-plugin.php:225
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:180
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:180
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:180
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:180
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:180
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:225
-#: wp-svn/trunk/classes/orbis-core-plugin.php:225
+#: classes/orbis-core-plugin.php:225
 msgid "Add Project"
 msgstr "Project toevoegen"
 
-#: classes/orbis-core-plugin.php:226 deploy/classes/orbis-core-plugin.php:226
-#: deploy/deploy/classes/orbis-core-plugin.php:226
-#: deploy/deploy/includes/post.php:14 deploy/includes/post.php:14
-#: includes/post.php:14 wp-svn/tags/1.0.0/includes/post.php:16
-#: wp-svn/tags/1.0.1/includes/post.php:16
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:181
-#: wp-svn/tags/1.0.2/includes/post.php:16
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:181
-#: wp-svn/tags/1.0.3/includes/post.php:16
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:181
-#: wp-svn/tags/1.0.4/includes/post.php:16
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:181
-#: wp-svn/tags/1.1.0/includes/post.php:16
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:181
-#: wp-svn/tags/1.1.1/includes/post.php:16
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:226
-#: wp-svn/tags/1.2.0/includes/post.php:14
-#: wp-svn/trunk/classes/orbis-core-plugin.php:226
-#: wp-svn/trunk/includes/post.php:14
+#: classes/orbis-core-plugin.php:226 includes/post.php:14
 msgid "New Project"
 msgstr "Nieuw project"
 
-#: classes/orbis-core-plugin.php:227 deploy/classes/orbis-core-plugin.php:227
-#: deploy/deploy/classes/orbis-core-plugin.php:227
-#: deploy/deploy/includes/post.php:12 deploy/includes/post.php:12
-#: includes/post.php:12 wp-svn/tags/1.0.0/includes/post.php:14
-#: wp-svn/tags/1.0.1/includes/post.php:14
-#: wp-svn/tags/1.0.2/classes/orbis-core-plugin.php:182
-#: wp-svn/tags/1.0.2/includes/post.php:14
-#: wp-svn/tags/1.0.3/classes/orbis-core-plugin.php:182
-#: wp-svn/tags/1.0.3/includes/post.php:14
-#: wp-svn/tags/1.0.4/classes/orbis-core-plugin.php:182
-#: wp-svn/tags/1.0.4/includes/post.php:14
-#: wp-svn/tags/1.1.0/classes/orbis-core-plugin.php:182
-#: wp-svn/tags/1.1.0/includes/post.php:14
-#: wp-svn/tags/1.1.1/classes/orbis-core-plugin.php:182
-#: wp-svn/tags/1.1.1/includes/post.php:14
-#: wp-svn/tags/1.2.0/classes/orbis-core-plugin.php:227
-#: wp-svn/tags/1.2.0/includes/post.php:12
-#: wp-svn/trunk/classes/orbis-core-plugin.php:227
-#: wp-svn/trunk/includes/post.php:12
+#: classes/orbis-core-plugin.php:227 includes/post.php:12
 msgid "Add New Project"
 msgstr "Nieuw project toevoegen"
 
 #: classes/orbis-core-settings.php:12 classes/orbis-core-settings.php:19
-#: deploy/classes/orbis-core-settings.php:12
-#: deploy/classes/orbis-core-settings.php:19
-#: deploy/deploy/classes/orbis-core-settings.php:12
-#: deploy/deploy/classes/orbis-core-settings.php:19
-#: wp-svn/tags/1.2.0/classes/orbis-core-settings.php:12
-#: wp-svn/tags/1.2.0/classes/orbis-core-settings.php:19
-#: wp-svn/trunk/classes/orbis-core-settings.php:12
-#: wp-svn/trunk/classes/orbis-core-settings.php:19
 msgid "Currency"
 msgstr "Valuta"
 
 #: classes/orbis-core-settings.php:30
-#: deploy/classes/orbis-core-settings.php:30
-#: deploy/deploy/classes/orbis-core-settings.php:30
-#: wp-svn/tags/1.2.0/classes/orbis-core-settings.php:30
-#: wp-svn/trunk/classes/orbis-core-settings.php:30
 msgid "Euros"
 msgstr "Euro"
 
 #: classes/orbis-core-settings.php:31
-#: deploy/classes/orbis-core-settings.php:31
-#: deploy/deploy/classes/orbis-core-settings.php:31
-#: wp-svn/tags/1.2.0/classes/orbis-core-settings.php:31
-#: wp-svn/trunk/classes/orbis-core-settings.php:31
 msgid "US Dollars"
 msgstr "Amerikaanse dollar"
 
 #: classes/orbis-core-settings.php:50
-#: deploy/classes/orbis-core-settings.php:50
-#: deploy/deploy/classes/orbis-core-settings.php:50
-#: wp-svn/tags/1.2.0/classes/orbis-core-settings.php:50
-#: wp-svn/trunk/classes/orbis-core-settings.php:50
 msgid "Example: %s"
 msgstr "Voorbeeld: %s"
 
-#: classes/orbis-plugin-manager.php:66
-#: deploy/classes/orbis-plugin-manager.php:66
-#: deploy/deploy/classes/orbis-plugin-manager.php:66
-#: wp-svn/tags/1.0.1/classes/orbis-plugin-manager.php:58
-#: wp-svn/tags/1.0.2/classes/orbis-plugin-manager.php:58
-#: wp-svn/tags/1.0.3/classes/orbis-plugin-manager.php:58
-#: wp-svn/tags/1.0.4/classes/orbis-plugin-manager.php:58
-#: wp-svn/tags/1.1.0/classes/orbis-plugin-manager.php:58
-#: wp-svn/tags/1.1.1/classes/orbis-plugin-manager.php:58
-#: wp-svn/tags/1.2.0/classes/orbis-plugin-manager.php:66
-#: wp-svn/trunk/classes/orbis-plugin-manager.php:66
+#: classes/orbis-plugin-manager.php:70
 msgid "You don't have the required permissions to install a plugin"
 msgstr "Je hebt niet genoeg rechten om een plugin the installeren"
 
-#: classes/orbis-plugin-manager.php:102
-#: deploy/classes/orbis-plugin-manager.php:102
-#: deploy/deploy/classes/orbis-plugin-manager.php:102
-#: wp-svn/tags/1.0.1/classes/orbis-plugin-manager.php:89
-#: wp-svn/tags/1.0.2/classes/orbis-plugin-manager.php:89
-#: wp-svn/tags/1.0.3/classes/orbis-plugin-manager.php:89
-#: wp-svn/tags/1.0.4/classes/orbis-plugin-manager.php:89
-#: wp-svn/tags/1.1.0/classes/orbis-plugin-manager.php:89
-#: wp-svn/tags/1.1.1/classes/orbis-plugin-manager.php:89
-#: wp-svn/tags/1.2.0/classes/orbis-plugin-manager.php:102
-#: wp-svn/trunk/classes/orbis-plugin-manager.php:102
+#: classes/orbis-plugin-manager.php:106
 msgid "Please ensure the file system is writable"
 msgstr "Zorg ervoor dat het bestandsysteem schrijfbaar is"
 
-#: classes/orbis-plugin-manager.php:126
-#: deploy/classes/orbis-plugin-manager.php:126
-#: deploy/deploy/classes/orbis-plugin-manager.php:126
-#: wp-svn/tags/1.0.1/classes/orbis-plugin-manager.php:113
-#: wp-svn/tags/1.0.2/classes/orbis-plugin-manager.php:113
-#: wp-svn/tags/1.0.3/classes/orbis-plugin-manager.php:113
-#: wp-svn/tags/1.0.4/classes/orbis-plugin-manager.php:113
-#: wp-svn/tags/1.1.0/classes/orbis-plugin-manager.php:113
-#: wp-svn/tags/1.1.1/classes/orbis-plugin-manager.php:113
-#: wp-svn/tags/1.2.0/classes/orbis-plugin-manager.php:126
-#: wp-svn/trunk/classes/orbis-plugin-manager.php:126
+#: classes/orbis-plugin-manager.php:130
 msgid "You don't have the required permissions to activate a plugin"
 msgstr "Je hebt niet genoeg rechten om een plugin te activeren"
 
-#: deploy/deploy/includes/companies.php:9 deploy/includes/companies.php:9
-#: includes/companies.php:9 wp-svn/tags/1.0.0/includes/companies.php:9
-#: wp-svn/tags/1.0.1/includes/companies.php:9
-#: wp-svn/tags/1.0.2/includes/companies.php:9
-#: wp-svn/tags/1.0.3/includes/companies.php:9
-#: wp-svn/tags/1.0.4/includes/companies.php:9
-#: wp-svn/tags/1.1.0/includes/companies.php:9
-#: wp-svn/tags/1.1.1/includes/companies.php:9
-#: wp-svn/tags/1.2.0/includes/companies.php:9
-#: wp-svn/trunk/includes/companies.php:9
+#: includes/companies.php:9
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: deploy/deploy/includes/companies.php:142
-#: deploy/deploy/includes/projects.php:350
-#: deploy/deploy/templates/projects-without-agreement.php:38
-#: deploy/includes/companies.php:142 deploy/includes/projects.php:350
-#: deploy/templates/projects-without-agreement.php:38
 #: includes/companies.php:142 includes/projects.php:350
 #: templates/projects-without-agreement.php:38
-#: wp-svn/tags/1.0.0/includes/companies.php:142
-#: wp-svn/tags/1.0.0/includes/projects.php:257
-#: wp-svn/tags/1.0.0/templates/projects-without-agreement.php:38
-#: wp-svn/tags/1.0.1/includes/companies.php:142
-#: wp-svn/tags/1.0.1/includes/projects.php:314
-#: wp-svn/tags/1.0.1/templates/projects-without-agreement.php:38
-#: wp-svn/tags/1.0.2/includes/companies.php:142
-#: wp-svn/tags/1.0.2/includes/projects.php:314
-#: wp-svn/tags/1.0.2/templates/projects-without-agreement.php:38
-#: wp-svn/tags/1.0.3/includes/companies.php:142
-#: wp-svn/tags/1.0.3/includes/projects.php:314
-#: wp-svn/tags/1.0.3/templates/projects-without-agreement.php:38
-#: wp-svn/tags/1.0.4/includes/companies.php:142
-#: wp-svn/tags/1.0.4/includes/projects.php:314
-#: wp-svn/tags/1.0.4/templates/projects-without-agreement.php:38
-#: wp-svn/tags/1.1.0/includes/companies.php:142
-#: wp-svn/tags/1.1.0/includes/projects.php:348
-#: wp-svn/tags/1.1.0/templates/projects-without-agreement.php:38
-#: wp-svn/tags/1.1.1/includes/companies.php:142
-#: wp-svn/tags/1.1.1/includes/projects.php:352
-#: wp-svn/tags/1.1.1/templates/projects-without-agreement.php:38
-#: wp-svn/tags/1.2.0/includes/companies.php:142
-#: wp-svn/tags/1.2.0/includes/projects.php:350
-#: wp-svn/tags/1.2.0/templates/projects-without-agreement.php:38
-#: wp-svn/trunk/includes/companies.php:142
-#: wp-svn/trunk/includes/projects.php:350
-#: wp-svn/trunk/templates/projects-without-agreement.php:38
 msgid "Title"
 msgstr "Titel"
 
-#: deploy/deploy/includes/companies.php:145 deploy/includes/companies.php:145
-#: includes/companies.php:145 wp-svn/tags/1.0.0/includes/companies.php:145
-#: wp-svn/tags/1.0.1/includes/companies.php:145
-#: wp-svn/tags/1.0.2/includes/companies.php:145
-#: wp-svn/tags/1.0.3/includes/companies.php:145
-#: wp-svn/tags/1.0.4/includes/companies.php:145
-#: wp-svn/tags/1.1.0/includes/companies.php:145
-#: wp-svn/tags/1.1.1/includes/companies.php:145
-#: wp-svn/tags/1.2.0/includes/companies.php:145
-#: wp-svn/trunk/includes/companies.php:145
+#: includes/companies.php:145
 msgid "Online"
 msgstr "Online"
 
-#: deploy/deploy/includes/companies.php:147
-#: deploy/deploy/includes/projects.php:354 deploy/includes/companies.php:147
-#: deploy/includes/projects.php:354 includes/companies.php:147
-#: includes/projects.php:354 wp-svn/tags/1.0.0/includes/companies.php:147
-#: wp-svn/tags/1.0.0/includes/projects.php:261
-#: wp-svn/tags/1.0.1/includes/companies.php:147
-#: wp-svn/tags/1.0.1/includes/projects.php:318
-#: wp-svn/tags/1.0.2/includes/companies.php:147
-#: wp-svn/tags/1.0.2/includes/projects.php:318
-#: wp-svn/tags/1.0.3/includes/companies.php:147
-#: wp-svn/tags/1.0.3/includes/projects.php:318
-#: wp-svn/tags/1.0.4/includes/companies.php:147
-#: wp-svn/tags/1.0.4/includes/projects.php:318
-#: wp-svn/tags/1.1.0/includes/companies.php:147
-#: wp-svn/tags/1.1.0/includes/projects.php:352
-#: wp-svn/tags/1.1.1/includes/companies.php:147
-#: wp-svn/tags/1.1.1/includes/projects.php:356
-#: wp-svn/tags/1.2.0/includes/companies.php:147
-#: wp-svn/tags/1.2.0/includes/projects.php:354
-#: wp-svn/trunk/includes/companies.php:147
-#: wp-svn/trunk/includes/projects.php:354
+#: includes/companies.php:147 includes/projects.php:354
 msgid "Author"
 msgstr "Auteur"
 
-#: deploy/deploy/includes/companies.php:148
-#: deploy/deploy/includes/projects.php:355 deploy/includes/companies.php:148
-#: deploy/includes/projects.php:355 includes/companies.php:148
-#: includes/projects.php:355 wp-svn/tags/1.0.0/includes/companies.php:148
-#: wp-svn/tags/1.0.0/includes/projects.php:262
-#: wp-svn/tags/1.0.1/includes/companies.php:148
-#: wp-svn/tags/1.0.1/includes/projects.php:319
-#: wp-svn/tags/1.0.2/includes/companies.php:148
-#: wp-svn/tags/1.0.2/includes/projects.php:319
-#: wp-svn/tags/1.0.3/includes/companies.php:148
-#: wp-svn/tags/1.0.3/includes/projects.php:319
-#: wp-svn/tags/1.0.4/includes/companies.php:148
-#: wp-svn/tags/1.0.4/includes/projects.php:319
-#: wp-svn/tags/1.1.0/includes/companies.php:148
-#: wp-svn/tags/1.1.0/includes/projects.php:353
-#: wp-svn/tags/1.1.1/includes/companies.php:148
-#: wp-svn/tags/1.1.1/includes/projects.php:357
-#: wp-svn/tags/1.2.0/includes/companies.php:148
-#: wp-svn/tags/1.2.0/includes/projects.php:355
-#: wp-svn/trunk/includes/companies.php:148
-#: wp-svn/trunk/includes/projects.php:355
+#: includes/companies.php:148 includes/projects.php:355
 msgid "Comments"
 msgstr "Reacties"
 
-#: deploy/deploy/includes/companies.php:149
-#: deploy/deploy/includes/projects.php:356 deploy/includes/companies.php:149
-#: deploy/includes/projects.php:356 includes/companies.php:149
-#: includes/projects.php:356 wp-svn/tags/1.0.0/includes/companies.php:149
-#: wp-svn/tags/1.0.0/includes/projects.php:263
-#: wp-svn/tags/1.0.1/includes/companies.php:149
-#: wp-svn/tags/1.0.1/includes/projects.php:320
-#: wp-svn/tags/1.0.2/includes/companies.php:149
-#: wp-svn/tags/1.0.2/includes/projects.php:320
-#: wp-svn/tags/1.0.3/includes/companies.php:149
-#: wp-svn/tags/1.0.3/includes/projects.php:320
-#: wp-svn/tags/1.0.4/includes/companies.php:149
-#: wp-svn/tags/1.0.4/includes/projects.php:320
-#: wp-svn/tags/1.1.0/includes/companies.php:149
-#: wp-svn/tags/1.1.0/includes/projects.php:354
-#: wp-svn/tags/1.1.1/includes/companies.php:149
-#: wp-svn/tags/1.1.1/includes/projects.php:358
-#: wp-svn/tags/1.2.0/includes/companies.php:149
-#: wp-svn/tags/1.2.0/includes/projects.php:356
-#: wp-svn/trunk/includes/companies.php:149
-#: wp-svn/trunk/includes/projects.php:356
+#: includes/companies.php:149 includes/projects.php:356
 msgid "Date"
 msgstr "Datum"
 
-#: deploy/deploy/includes/log.php:60 deploy/includes/log.php:60
-#: includes/log.php:60 wp-svn/tags/1.0.0/includes/log.php:62
-#: wp-svn/tags/1.0.1/includes/log.php:62 wp-svn/tags/1.0.2/includes/log.php:62
-#: wp-svn/tags/1.0.3/includes/log.php:62 wp-svn/tags/1.0.4/includes/log.php:62
-#: wp-svn/tags/1.1.0/includes/log.php:62 wp-svn/tags/1.1.1/includes/log.php:62
-#: wp-svn/tags/1.2.0/includes/log.php:60 wp-svn/trunk/includes/log.php:60
+#: includes/log.php:60
 msgid "Orbis Log"
 msgstr "Orbis logboek"
 
-#: deploy/deploy/includes/log.php:120 deploy/includes/log.php:120
-#: includes/log.php:120 wp-svn/tags/1.0.0/includes/log.php:120
-#: wp-svn/tags/1.0.1/includes/log.php:120
-#: wp-svn/tags/1.0.2/includes/log.php:120
-#: wp-svn/tags/1.0.3/includes/log.php:120
-#: wp-svn/tags/1.0.4/includes/log.php:120
-#: wp-svn/tags/1.1.0/includes/log.php:120
-#: wp-svn/tags/1.1.1/includes/log.php:120
-#: wp-svn/tags/1.2.0/includes/log.php:120 wp-svn/trunk/includes/log.php:120
+#: includes/log.php:120
 msgid "Title:"
 msgstr "Titel:"
 
-#: deploy/deploy/includes/log.php:151 deploy/includes/log.php:151
-#: includes/log.php:151 wp-svn/tags/1.0.0/includes/log.php:151
-#: wp-svn/tags/1.0.1/includes/log.php:151
-#: wp-svn/tags/1.0.2/includes/log.php:151
-#: wp-svn/tags/1.0.3/includes/log.php:151
-#: wp-svn/tags/1.0.4/includes/log.php:151
-#: wp-svn/tags/1.1.0/includes/log.php:151
-#: wp-svn/tags/1.1.1/includes/log.php:151
-#: wp-svn/tags/1.2.0/includes/log.php:151 wp-svn/trunk/includes/log.php:151
+#: includes/log.php:151
 msgid "Anonymous"
 msgstr "Anoniem"
 
-#: deploy/deploy/includes/log.php:163 deploy/includes/log.php:163
-#: includes/log.php:163 wp-svn/tags/1.0.0/includes/log.php:163
-#: wp-svn/tags/1.0.1/includes/log.php:163
-#: wp-svn/tags/1.0.2/includes/log.php:163
-#: wp-svn/tags/1.0.3/includes/log.php:163
-#: wp-svn/tags/1.0.4/includes/log.php:163
-#: wp-svn/tags/1.1.0/includes/log.php:163
-#: wp-svn/tags/1.1.1/includes/log.php:163
-#: wp-svn/tags/1.2.0/includes/log.php:163 wp-svn/trunk/includes/log.php:163
+#: includes/log.php:163
 msgid "%s updated the \"%s\" post."
 msgstr "%s heeft het \"%s\" bericht bijgewerkt."
 
-#: deploy/deploy/includes/persons.php:9 deploy/includes/persons.php:9
-#: includes/persons.php:9 wp-svn/tags/1.0.0/includes/persons.php:9
-#: wp-svn/tags/1.0.1/includes/persons.php:9
-#: wp-svn/tags/1.0.2/includes/persons.php:9
-#: wp-svn/tags/1.0.3/includes/persons.php:9
-#: wp-svn/tags/1.0.4/includes/persons.php:9
-#: wp-svn/tags/1.1.0/includes/persons.php:9
-#: wp-svn/tags/1.1.1/includes/persons.php:9
-#: wp-svn/tags/1.2.0/includes/persons.php:9
-#: wp-svn/trunk/includes/persons.php:9
+#: includes/persons.php:9
 msgid "Contact information"
 msgstr "Contactinformatie"
 
-#: deploy/deploy/includes/post.php:13 deploy/includes/post.php:13
-#: includes/post.php:13 wp-svn/tags/1.0.0/includes/post.php:15
-#: wp-svn/tags/1.0.1/includes/post.php:15
-#: wp-svn/tags/1.0.2/includes/post.php:15
-#: wp-svn/tags/1.0.3/includes/post.php:15
-#: wp-svn/tags/1.0.4/includes/post.php:15
-#: wp-svn/tags/1.1.0/includes/post.php:15
-#: wp-svn/tags/1.1.1/includes/post.php:15
-#: wp-svn/tags/1.2.0/includes/post.php:13 wp-svn/trunk/includes/post.php:13
+#: includes/post.php:13
 msgid "Edit Project"
 msgstr "Project bewerken"
 
-#: deploy/deploy/includes/post.php:15 deploy/includes/post.php:15
-#: includes/post.php:15 wp-svn/tags/1.0.0/includes/post.php:17
-#: wp-svn/tags/1.0.1/includes/post.php:17
-#: wp-svn/tags/1.0.2/includes/post.php:17
-#: wp-svn/tags/1.0.3/includes/post.php:17
-#: wp-svn/tags/1.0.4/includes/post.php:17
-#: wp-svn/tags/1.1.0/includes/post.php:17
-#: wp-svn/tags/1.1.1/includes/post.php:17
-#: wp-svn/tags/1.2.0/includes/post.php:15 wp-svn/trunk/includes/post.php:15
+#: includes/post.php:15
 msgid "All Projects"
 msgstr "Alle projecten"
 
-#: deploy/deploy/includes/post.php:16 deploy/includes/post.php:16
-#: includes/post.php:16 wp-svn/tags/1.0.0/includes/post.php:18
-#: wp-svn/tags/1.0.1/includes/post.php:18
-#: wp-svn/tags/1.0.2/includes/post.php:18
-#: wp-svn/tags/1.0.3/includes/post.php:18
-#: wp-svn/tags/1.0.4/includes/post.php:18
-#: wp-svn/tags/1.1.0/includes/post.php:18
-#: wp-svn/tags/1.1.1/includes/post.php:18
-#: wp-svn/tags/1.2.0/includes/post.php:16 wp-svn/trunk/includes/post.php:16
+#: includes/post.php:16
 msgid "View Project"
 msgstr "Bekijk project"
 
-#: deploy/deploy/includes/post.php:17 deploy/includes/post.php:17
-#: includes/post.php:17 wp-svn/tags/1.0.0/includes/post.php:19
-#: wp-svn/tags/1.0.1/includes/post.php:19
-#: wp-svn/tags/1.0.2/includes/post.php:19
-#: wp-svn/tags/1.0.3/includes/post.php:19
-#: wp-svn/tags/1.0.4/includes/post.php:19
-#: wp-svn/tags/1.1.0/includes/post.php:19
-#: wp-svn/tags/1.1.1/includes/post.php:19
-#: wp-svn/tags/1.2.0/includes/post.php:17 wp-svn/trunk/includes/post.php:17
+#: includes/post.php:17
 msgid "Search Projects"
 msgstr "Projecten zoeken"
 
-#: deploy/deploy/includes/post.php:19 deploy/includes/post.php:19
-#: includes/post.php:19 wp-svn/tags/1.0.0/includes/post.php:21
-#: wp-svn/tags/1.0.1/includes/post.php:21
-#: wp-svn/tags/1.0.2/includes/post.php:21
-#: wp-svn/tags/1.0.3/includes/post.php:21
-#: wp-svn/tags/1.0.4/includes/post.php:21
-#: wp-svn/tags/1.1.0/includes/post.php:21
-#: wp-svn/tags/1.1.1/includes/post.php:21
-#: wp-svn/tags/1.2.0/includes/post.php:19 wp-svn/trunk/includes/post.php:19
+#: includes/post.php:19
 msgid "No projects found in Trash."
 msgstr "Geen projecten gevonden in prullenbak."
 
-#: deploy/deploy/includes/post.php:20 deploy/includes/post.php:20
-#: includes/post.php:20 wp-svn/tags/1.0.0/includes/post.php:22
-#: wp-svn/tags/1.0.1/includes/post.php:22
-#: wp-svn/tags/1.0.2/includes/post.php:22
-#: wp-svn/tags/1.0.3/includes/post.php:22
-#: wp-svn/tags/1.0.4/includes/post.php:22
-#: wp-svn/tags/1.1.0/includes/post.php:22
-#: wp-svn/tags/1.1.1/includes/post.php:22
-#: wp-svn/tags/1.2.0/includes/post.php:20 wp-svn/trunk/includes/post.php:20
+#: includes/post.php:20
 msgid "Parent Project:"
 msgstr "Bovenliggend project:"
 
-#: deploy/deploy/includes/post.php:43 deploy/deploy/includes/post.php:131
-#: deploy/includes/post.php:43 deploy/includes/post.php:131
 #: includes/post.php:43 includes/post.php:131
-#: wp-svn/tags/1.0.0/includes/post.php:45
-#: wp-svn/tags/1.0.0/includes/post.php:121
-#: wp-svn/tags/1.0.1/includes/post.php:45
-#: wp-svn/tags/1.0.1/includes/post.php:121
-#: wp-svn/tags/1.0.2/includes/post.php:45
-#: wp-svn/tags/1.0.2/includes/post.php:121
-#: wp-svn/tags/1.0.3/includes/post.php:45
-#: wp-svn/tags/1.0.3/includes/post.php:121
-#: wp-svn/tags/1.0.4/includes/post.php:45
-#: wp-svn/tags/1.0.4/includes/post.php:121
-#: wp-svn/tags/1.1.0/includes/post.php:45
-#: wp-svn/tags/1.1.0/includes/post.php:121
-#: wp-svn/tags/1.1.1/includes/post.php:45
-#: wp-svn/tags/1.1.1/includes/post.php:121
-#: wp-svn/tags/1.2.0/includes/post.php:43
-#: wp-svn/tags/1.2.0/includes/post.php:131 wp-svn/trunk/includes/post.php:43
-#: wp-svn/trunk/includes/post.php:131
 msgid "Search Categories"
 msgstr "Zoek categorieën"
 
-#: deploy/deploy/includes/post.php:44 deploy/deploy/includes/post.php:132
-#: deploy/includes/post.php:44 deploy/includes/post.php:132
 #: includes/post.php:44 includes/post.php:132
-#: wp-svn/tags/1.0.0/includes/post.php:46
-#: wp-svn/tags/1.0.0/includes/post.php:122
-#: wp-svn/tags/1.0.1/includes/post.php:46
-#: wp-svn/tags/1.0.1/includes/post.php:122
-#: wp-svn/tags/1.0.2/includes/post.php:46
-#: wp-svn/tags/1.0.2/includes/post.php:122
-#: wp-svn/tags/1.0.3/includes/post.php:46
-#: wp-svn/tags/1.0.3/includes/post.php:122
-#: wp-svn/tags/1.0.4/includes/post.php:46
-#: wp-svn/tags/1.0.4/includes/post.php:122
-#: wp-svn/tags/1.1.0/includes/post.php:46
-#: wp-svn/tags/1.1.0/includes/post.php:122
-#: wp-svn/tags/1.1.1/includes/post.php:46
-#: wp-svn/tags/1.1.1/includes/post.php:122
-#: wp-svn/tags/1.2.0/includes/post.php:44
-#: wp-svn/tags/1.2.0/includes/post.php:132 wp-svn/trunk/includes/post.php:44
-#: wp-svn/trunk/includes/post.php:132
 msgid "All Categories"
 msgstr "Alle categorieën"
 
-#: deploy/deploy/includes/post.php:45 deploy/deploy/includes/post.php:133
-#: deploy/includes/post.php:45 deploy/includes/post.php:133
 #: includes/post.php:45 includes/post.php:133
-#: wp-svn/tags/1.0.0/includes/post.php:47
-#: wp-svn/tags/1.0.0/includes/post.php:123
-#: wp-svn/tags/1.0.1/includes/post.php:47
-#: wp-svn/tags/1.0.1/includes/post.php:123
-#: wp-svn/tags/1.0.2/includes/post.php:47
-#: wp-svn/tags/1.0.2/includes/post.php:123
-#: wp-svn/tags/1.0.3/includes/post.php:47
-#: wp-svn/tags/1.0.3/includes/post.php:123
-#: wp-svn/tags/1.0.4/includes/post.php:47
-#: wp-svn/tags/1.0.4/includes/post.php:123
-#: wp-svn/tags/1.1.0/includes/post.php:47
-#: wp-svn/tags/1.1.0/includes/post.php:123
-#: wp-svn/tags/1.1.1/includes/post.php:47
-#: wp-svn/tags/1.1.1/includes/post.php:123
-#: wp-svn/tags/1.2.0/includes/post.php:45
-#: wp-svn/tags/1.2.0/includes/post.php:133 wp-svn/trunk/includes/post.php:45
-#: wp-svn/trunk/includes/post.php:133
 msgid "Parent Category"
 msgstr "Bovenliggende categorie"
 
-#: deploy/deploy/includes/post.php:46 deploy/deploy/includes/post.php:134
-#: deploy/includes/post.php:46 deploy/includes/post.php:134
 #: includes/post.php:46 includes/post.php:134
-#: wp-svn/tags/1.0.0/includes/post.php:48
-#: wp-svn/tags/1.0.0/includes/post.php:124
-#: wp-svn/tags/1.0.1/includes/post.php:48
-#: wp-svn/tags/1.0.1/includes/post.php:124
-#: wp-svn/tags/1.0.2/includes/post.php:48
-#: wp-svn/tags/1.0.2/includes/post.php:124
-#: wp-svn/tags/1.0.3/includes/post.php:48
-#: wp-svn/tags/1.0.3/includes/post.php:124
-#: wp-svn/tags/1.0.4/includes/post.php:48
-#: wp-svn/tags/1.0.4/includes/post.php:124
-#: wp-svn/tags/1.1.0/includes/post.php:48
-#: wp-svn/tags/1.1.0/includes/post.php:124
-#: wp-svn/tags/1.1.1/includes/post.php:48
-#: wp-svn/tags/1.1.1/includes/post.php:124
-#: wp-svn/tags/1.2.0/includes/post.php:46
-#: wp-svn/tags/1.2.0/includes/post.php:134 wp-svn/trunk/includes/post.php:46
-#: wp-svn/trunk/includes/post.php:134
 msgid "Parent Category:"
 msgstr "Bovenliggende categorie:"
 
-#: deploy/deploy/includes/post.php:47 deploy/deploy/includes/post.php:135
-#: deploy/includes/post.php:47 deploy/includes/post.php:135
 #: includes/post.php:47 includes/post.php:135
-#: wp-svn/tags/1.0.0/includes/post.php:49
-#: wp-svn/tags/1.0.0/includes/post.php:125
-#: wp-svn/tags/1.0.1/includes/post.php:49
-#: wp-svn/tags/1.0.1/includes/post.php:125
-#: wp-svn/tags/1.0.2/includes/post.php:49
-#: wp-svn/tags/1.0.2/includes/post.php:125
-#: wp-svn/tags/1.0.3/includes/post.php:49
-#: wp-svn/tags/1.0.3/includes/post.php:125
-#: wp-svn/tags/1.0.4/includes/post.php:49
-#: wp-svn/tags/1.0.4/includes/post.php:125
-#: wp-svn/tags/1.1.0/includes/post.php:49
-#: wp-svn/tags/1.1.0/includes/post.php:125
-#: wp-svn/tags/1.1.1/includes/post.php:49
-#: wp-svn/tags/1.1.1/includes/post.php:125
-#: wp-svn/tags/1.2.0/includes/post.php:47
-#: wp-svn/tags/1.2.0/includes/post.php:135 wp-svn/trunk/includes/post.php:47
-#: wp-svn/trunk/includes/post.php:135
 msgid "Edit Category"
 msgstr "Bewerk categorie"
 
-#: deploy/deploy/includes/post.php:48 deploy/deploy/includes/post.php:136
-#: deploy/includes/post.php:48 deploy/includes/post.php:136
 #: includes/post.php:48 includes/post.php:136
-#: wp-svn/tags/1.0.0/includes/post.php:50
-#: wp-svn/tags/1.0.0/includes/post.php:126
-#: wp-svn/tags/1.0.1/includes/post.php:50
-#: wp-svn/tags/1.0.1/includes/post.php:126
-#: wp-svn/tags/1.0.2/includes/post.php:50
-#: wp-svn/tags/1.0.2/includes/post.php:126
-#: wp-svn/tags/1.0.3/includes/post.php:50
-#: wp-svn/tags/1.0.3/includes/post.php:126
-#: wp-svn/tags/1.0.4/includes/post.php:50
-#: wp-svn/tags/1.0.4/includes/post.php:126
-#: wp-svn/tags/1.1.0/includes/post.php:50
-#: wp-svn/tags/1.1.0/includes/post.php:126
-#: wp-svn/tags/1.1.1/includes/post.php:50
-#: wp-svn/tags/1.1.1/includes/post.php:126
-#: wp-svn/tags/1.2.0/includes/post.php:48
-#: wp-svn/tags/1.2.0/includes/post.php:136 wp-svn/trunk/includes/post.php:48
-#: wp-svn/trunk/includes/post.php:136
 msgid "Update Category"
 msgstr "Update categorie"
 
-#: deploy/deploy/includes/post.php:49 deploy/deploy/includes/post.php:137
-#: deploy/includes/post.php:49 deploy/includes/post.php:137
 #: includes/post.php:49 includes/post.php:137
-#: wp-svn/tags/1.0.0/includes/post.php:51
-#: wp-svn/tags/1.0.0/includes/post.php:127
-#: wp-svn/tags/1.0.1/includes/post.php:51
-#: wp-svn/tags/1.0.1/includes/post.php:127
-#: wp-svn/tags/1.0.2/includes/post.php:51
-#: wp-svn/tags/1.0.2/includes/post.php:127
-#: wp-svn/tags/1.0.3/includes/post.php:51
-#: wp-svn/tags/1.0.3/includes/post.php:127
-#: wp-svn/tags/1.0.4/includes/post.php:51
-#: wp-svn/tags/1.0.4/includes/post.php:127
-#: wp-svn/tags/1.1.0/includes/post.php:51
-#: wp-svn/tags/1.1.0/includes/post.php:127
-#: wp-svn/tags/1.1.1/includes/post.php:51
-#: wp-svn/tags/1.1.1/includes/post.php:127
-#: wp-svn/tags/1.2.0/includes/post.php:49
-#: wp-svn/tags/1.2.0/includes/post.php:137 wp-svn/trunk/includes/post.php:49
-#: wp-svn/trunk/includes/post.php:137
 msgid "Add New Category"
 msgstr "Nieuwe categorie"
 
-#: deploy/deploy/includes/post.php:50 deploy/deploy/includes/post.php:138
-#: deploy/includes/post.php:50 deploy/includes/post.php:138
 #: includes/post.php:50 includes/post.php:138
-#: wp-svn/tags/1.0.0/includes/post.php:52
-#: wp-svn/tags/1.0.0/includes/post.php:128
-#: wp-svn/tags/1.0.1/includes/post.php:52
-#: wp-svn/tags/1.0.1/includes/post.php:128
-#: wp-svn/tags/1.0.2/includes/post.php:52
-#: wp-svn/tags/1.0.2/includes/post.php:128
-#: wp-svn/tags/1.0.3/includes/post.php:52
-#: wp-svn/tags/1.0.3/includes/post.php:128
-#: wp-svn/tags/1.0.4/includes/post.php:52
-#: wp-svn/tags/1.0.4/includes/post.php:128
-#: wp-svn/tags/1.1.0/includes/post.php:52
-#: wp-svn/tags/1.1.0/includes/post.php:128
-#: wp-svn/tags/1.1.1/includes/post.php:52
-#: wp-svn/tags/1.1.1/includes/post.php:128
-#: wp-svn/tags/1.2.0/includes/post.php:50
-#: wp-svn/tags/1.2.0/includes/post.php:138 wp-svn/trunk/includes/post.php:50
-#: wp-svn/trunk/includes/post.php:138
 msgid "New Category Name"
 msgstr "Nieuwe categorie naam"
 
-#: deploy/deploy/includes/post.php:51 deploy/deploy/includes/post.php:139
-#: deploy/includes/post.php:51 deploy/includes/post.php:139
 #: includes/post.php:51 includes/post.php:139
-#: wp-svn/tags/1.0.0/includes/post.php:53
-#: wp-svn/tags/1.0.0/includes/post.php:129
-#: wp-svn/tags/1.0.1/includes/post.php:53
-#: wp-svn/tags/1.0.1/includes/post.php:129
-#: wp-svn/tags/1.0.2/includes/post.php:53
-#: wp-svn/tags/1.0.2/includes/post.php:129
-#: wp-svn/tags/1.0.3/includes/post.php:53
-#: wp-svn/tags/1.0.3/includes/post.php:129
-#: wp-svn/tags/1.0.4/includes/post.php:53
-#: wp-svn/tags/1.0.4/includes/post.php:129
-#: wp-svn/tags/1.1.0/includes/post.php:53
-#: wp-svn/tags/1.1.0/includes/post.php:129
-#: wp-svn/tags/1.1.1/includes/post.php:53
-#: wp-svn/tags/1.1.1/includes/post.php:129
-#: wp-svn/tags/1.2.0/includes/post.php:51
-#: wp-svn/tags/1.2.0/includes/post.php:139 wp-svn/trunk/includes/post.php:51
-#: wp-svn/trunk/includes/post.php:139
 msgid "Categories"
 msgstr "Categorieën"
 
-#: deploy/deploy/includes/post.php:70 deploy/includes/post.php:70
-#: includes/post.php:70 wp-svn/tags/1.0.0/includes/post.php:72
-#: wp-svn/tags/1.0.1/includes/post.php:72
-#: wp-svn/tags/1.0.2/includes/post.php:72
-#: wp-svn/tags/1.0.3/includes/post.php:72
-#: wp-svn/tags/1.0.4/includes/post.php:72
-#: wp-svn/tags/1.1.0/includes/post.php:72
-#: wp-svn/tags/1.1.1/includes/post.php:72
-#: wp-svn/tags/1.2.0/includes/post.php:70 wp-svn/trunk/includes/post.php:70
+#: includes/post.php:70
 msgid "Edit Company"
 msgstr "Bedrijf bewerken"
 
-#: deploy/deploy/includes/post.php:72 deploy/includes/post.php:72
-#: includes/post.php:72 wp-svn/tags/1.0.0/includes/post.php:74
-#: wp-svn/tags/1.0.1/includes/post.php:74
-#: wp-svn/tags/1.0.2/includes/post.php:74
-#: wp-svn/tags/1.0.3/includes/post.php:74
-#: wp-svn/tags/1.0.4/includes/post.php:74
-#: wp-svn/tags/1.1.0/includes/post.php:74
-#: wp-svn/tags/1.1.1/includes/post.php:74
-#: wp-svn/tags/1.2.0/includes/post.php:72 wp-svn/trunk/includes/post.php:72
+#: includes/post.php:72
 msgid "All Companies"
 msgstr "Alle bedrijven"
 
-#: deploy/deploy/includes/post.php:73 deploy/includes/post.php:73
-#: includes/post.php:73 wp-svn/tags/1.0.0/includes/post.php:75
-#: wp-svn/tags/1.0.1/includes/post.php:75
-#: wp-svn/tags/1.0.2/includes/post.php:75
-#: wp-svn/tags/1.0.3/includes/post.php:75
-#: wp-svn/tags/1.0.4/includes/post.php:75
-#: wp-svn/tags/1.1.0/includes/post.php:75
-#: wp-svn/tags/1.1.1/includes/post.php:75
-#: wp-svn/tags/1.2.0/includes/post.php:73 wp-svn/trunk/includes/post.php:73
+#: includes/post.php:73
 msgid "View Company"
 msgstr "Bekijk bedrijf"
 
-#: deploy/deploy/includes/post.php:74 deploy/includes/post.php:74
-#: includes/post.php:74 wp-svn/tags/1.0.0/includes/post.php:76
-#: wp-svn/tags/1.0.1/includes/post.php:76
-#: wp-svn/tags/1.0.2/includes/post.php:76
-#: wp-svn/tags/1.0.3/includes/post.php:76
-#: wp-svn/tags/1.0.4/includes/post.php:76
-#: wp-svn/tags/1.1.0/includes/post.php:76
-#: wp-svn/tags/1.1.1/includes/post.php:76
-#: wp-svn/tags/1.2.0/includes/post.php:74 wp-svn/trunk/includes/post.php:74
+#: includes/post.php:74
 msgid "Search Companies"
 msgstr "Zoek bedrijven"
 
-#: deploy/deploy/includes/post.php:76 deploy/includes/post.php:76
-#: includes/post.php:76 wp-svn/tags/1.0.0/includes/post.php:78
-#: wp-svn/tags/1.0.1/includes/post.php:78
-#: wp-svn/tags/1.0.2/includes/post.php:78
-#: wp-svn/tags/1.0.3/includes/post.php:78
-#: wp-svn/tags/1.0.4/includes/post.php:78
-#: wp-svn/tags/1.1.0/includes/post.php:78
-#: wp-svn/tags/1.1.1/includes/post.php:78
-#: wp-svn/tags/1.2.0/includes/post.php:76 wp-svn/trunk/includes/post.php:76
+#: includes/post.php:76
 msgid "No companies found in Trash."
 msgstr "Geen bedrijven gevonden in prullenbak."
 
-#: deploy/deploy/includes/post.php:77 deploy/includes/post.php:77
-#: includes/post.php:77 wp-svn/tags/1.0.0/includes/post.php:79
-#: wp-svn/tags/1.0.1/includes/post.php:79
-#: wp-svn/tags/1.0.2/includes/post.php:79
-#: wp-svn/tags/1.0.3/includes/post.php:79
-#: wp-svn/tags/1.0.4/includes/post.php:79
-#: wp-svn/tags/1.1.0/includes/post.php:79
-#: wp-svn/tags/1.1.1/includes/post.php:79
-#: wp-svn/tags/1.2.0/includes/post.php:77 wp-svn/trunk/includes/post.php:77
+#: includes/post.php:77
 msgid "Parent Company:"
 msgstr "Bovenliggend bedrijf:"
 
-#: deploy/deploy/includes/post.php:104 deploy/includes/post.php:104
-#: includes/post.php:104 wp-svn/tags/1.2.0/includes/post.php:104
-#: wp-svn/trunk/includes/post.php:104
+#: includes/post.php:104
 msgid "Edit Person"
 msgstr "Persoon bewerken"
 
-#: deploy/deploy/includes/post.php:105 deploy/includes/post.php:105
-#: includes/post.php:105 wp-svn/tags/1.2.0/includes/post.php:105
-#: wp-svn/trunk/includes/post.php:105
+#: includes/post.php:105
 msgid "View Person"
 msgstr "Persoon bekijken"
 
-#: deploy/deploy/includes/post.php:106 deploy/includes/post.php:106
-#: includes/post.php:106 wp-svn/tags/1.2.0/includes/post.php:106
-#: wp-svn/trunk/includes/post.php:106
+#: includes/post.php:106
 msgid "All Persons"
 msgstr "Alle personen"
 
-#: deploy/deploy/includes/post.php:107 deploy/includes/post.php:107
-#: includes/post.php:107 wp-svn/tags/1.2.0/includes/post.php:107
-#: wp-svn/trunk/includes/post.php:107
+#: includes/post.php:107
 msgid "Search Persons"
 msgstr "Personen zoeken"
 
-#: deploy/deploy/includes/post.php:108 deploy/includes/post.php:108
-#: includes/post.php:108 wp-svn/tags/1.2.0/includes/post.php:108
-#: wp-svn/trunk/includes/post.php:108
+#: includes/post.php:108
 msgid "Parent Person:"
 msgstr "Bovenliggend persoon:"
 
-#: deploy/deploy/includes/post.php:110 deploy/includes/post.php:110
-#: includes/post.php:110 wp-svn/tags/1.2.0/includes/post.php:110
-#: wp-svn/trunk/includes/post.php:110
+#: includes/post.php:110
 msgid "No persons found in Trash."
 msgstr "Geen personen gevonden in prullenbak."
 
-#: deploy/deploy/includes/projects.php:9 deploy/includes/projects.php:9
-#: includes/projects.php:9 wp-svn/tags/1.0.0/includes/projects.php:9
-#: wp-svn/tags/1.0.1/includes/projects.php:9
-#: wp-svn/tags/1.0.2/includes/projects.php:9
-#: wp-svn/tags/1.0.3/includes/projects.php:9
-#: wp-svn/tags/1.0.4/includes/projects.php:9
-#: wp-svn/tags/1.1.0/includes/projects.php:9
-#: wp-svn/tags/1.1.1/includes/projects.php:9
-#: wp-svn/tags/1.2.0/includes/projects.php:9
-#: wp-svn/trunk/includes/projects.php:9
+#: includes/projects.php:9
 msgid "Project Information"
 msgstr "Projectinformatie"
 
-#: deploy/deploy/includes/projects.php:233 deploy/includes/projects.php:233
-#: includes/projects.php:233 wp-svn/tags/1.1.0/includes/projects.php:231
-#: wp-svn/tags/1.1.1/includes/projects.php:235
-#: wp-svn/tags/1.2.0/includes/projects.php:233
-#: wp-svn/trunk/includes/projects.php:233
+#: includes/projects.php:233
 msgid "This '%s' project is just '%s' by %s."
 msgstr "Dit '%s' project is zojuist '%s' door %s."
 
-#: deploy/deploy/includes/projects.php:234
-#: deploy/deploy/includes/projects.php:235 deploy/includes/projects.php:234
-#: deploy/includes/projects.php:235 includes/projects.php:234
-#: includes/projects.php:235 wp-svn/tags/1.1.0/includes/projects.php:232
-#: wp-svn/tags/1.1.0/includes/projects.php:233
-#: wp-svn/tags/1.1.1/includes/projects.php:236
-#: wp-svn/tags/1.1.1/includes/projects.php:237
-#: wp-svn/tags/1.2.0/includes/projects.php:234
-#: wp-svn/tags/1.2.0/includes/projects.php:235
-#: wp-svn/trunk/includes/projects.php:234
-#: wp-svn/trunk/includes/projects.php:235
+#: includes/projects.php:234 includes/projects.php:235
 msgid "opened"
 msgstr "geopend"
 
-#: deploy/deploy/includes/projects.php:234
-#: deploy/deploy/includes/projects.php:235 deploy/includes/projects.php:234
-#: deploy/includes/projects.php:235 includes/projects.php:234
-#: includes/projects.php:235 wp-svn/tags/1.1.0/includes/projects.php:232
-#: wp-svn/tags/1.1.0/includes/projects.php:233
-#: wp-svn/tags/1.1.1/includes/projects.php:236
-#: wp-svn/tags/1.1.1/includes/projects.php:237
-#: wp-svn/tags/1.2.0/includes/projects.php:234
-#: wp-svn/tags/1.2.0/includes/projects.php:235
-#: wp-svn/trunk/includes/projects.php:234
-#: wp-svn/trunk/includes/projects.php:235
+#: includes/projects.php:234 includes/projects.php:235
 msgid "completed"
 msgstr "afgerond"
 
-#: deploy/deploy/includes/projects.php:351
-#: deploy/deploy/templates/projects-without-agreement.php:37
-#: deploy/includes/projects.php:351
-#: deploy/templates/projects-without-agreement.php:37
 #: includes/projects.php:351 templates/projects-without-agreement.php:37
-#: wp-svn/tags/1.0.0/includes/projects.php:258
-#: wp-svn/tags/1.0.0/templates/projects-without-agreement.php:37
-#: wp-svn/tags/1.0.1/includes/projects.php:315
-#: wp-svn/tags/1.0.1/templates/projects-without-agreement.php:37
-#: wp-svn/tags/1.0.2/includes/projects.php:315
-#: wp-svn/tags/1.0.2/templates/projects-without-agreement.php:37
-#: wp-svn/tags/1.0.3/includes/projects.php:315
-#: wp-svn/tags/1.0.3/templates/projects-without-agreement.php:37
-#: wp-svn/tags/1.0.4/includes/projects.php:315
-#: wp-svn/tags/1.0.4/templates/projects-without-agreement.php:37
-#: wp-svn/tags/1.1.0/includes/projects.php:349
-#: wp-svn/tags/1.1.0/templates/projects-without-agreement.php:37
-#: wp-svn/tags/1.1.1/includes/projects.php:353
-#: wp-svn/tags/1.1.1/templates/projects-without-agreement.php:37
-#: wp-svn/tags/1.2.0/includes/projects.php:351
-#: wp-svn/tags/1.2.0/templates/projects-without-agreement.php:37
-#: wp-svn/trunk/includes/projects.php:351
-#: wp-svn/trunk/templates/projects-without-agreement.php:37
 msgid "Principal"
 msgstr "Opdrachtgever"
 
-#: deploy/deploy/templates/projects-table-view.php:58
-#: deploy/deploy/templates/projects-without-agreement.php:74
-#: deploy/templates/projects-table-view.php:62
-#: deploy/templates/projects-without-agreement.php:74
 #: templates/projects-table-view.php:60
 #: templates/projects-without-agreement.php:74
-#: wp-svn/tags/1.0.0/templates/projects-table-view.php:58
-#: wp-svn/tags/1.0.0/templates/projects-without-agreement.php:74
-#: wp-svn/tags/1.0.1/templates/projects-table-view.php:58
-#: wp-svn/tags/1.0.1/templates/projects-without-agreement.php:74
-#: wp-svn/tags/1.0.2/templates/projects-table-view.php:58
-#: wp-svn/tags/1.0.2/templates/projects-without-agreement.php:74
-#: wp-svn/tags/1.0.3/templates/projects-table-view.php:58
-#: wp-svn/tags/1.0.3/templates/projects-without-agreement.php:74
-#: wp-svn/tags/1.0.4/templates/projects-table-view.php:58
-#: wp-svn/tags/1.0.4/templates/projects-without-agreement.php:74
-#: wp-svn/tags/1.1.0/templates/projects-table-view.php:58
-#: wp-svn/tags/1.1.0/templates/projects-without-agreement.php:74
-#: wp-svn/tags/1.1.1/templates/projects-table-view.php:58
-#: wp-svn/tags/1.1.1/templates/projects-without-agreement.php:74
-#: wp-svn/tags/1.2.0/templates/projects-table-view.php:58
-#: wp-svn/tags/1.2.0/templates/projects-without-agreement.php:74
-#: wp-svn/trunk/templates/projects-table-view.php:58
-#: wp-svn/trunk/templates/projects-without-agreement.php:74
 msgid "Edit"
 msgstr "Bewerken"
 
-#: deploy/deploy/templates/projects-without-agreement.php:36
-#: deploy/templates/projects-without-agreement.php:36
 #: templates/projects-without-agreement.php:36
-#: wp-svn/tags/1.0.0/templates/projects-without-agreement.php:36
-#: wp-svn/tags/1.0.1/templates/projects-without-agreement.php:36
-#: wp-svn/tags/1.0.2/templates/projects-without-agreement.php:36
-#: wp-svn/tags/1.0.3/templates/projects-without-agreement.php:36
-#: wp-svn/tags/1.0.4/templates/projects-without-agreement.php:36
-#: wp-svn/tags/1.1.0/templates/projects-without-agreement.php:36
-#: wp-svn/tags/1.1.1/templates/projects-without-agreement.php:36
-#: wp-svn/tags/1.2.0/templates/projects-without-agreement.php:36
-#: wp-svn/trunk/templates/projects-without-agreement.php:36
 msgid "Project Manager"
 msgstr "Projectleider"
 
-#: deploy/deploy/templates/projects-without-agreement.php:39
-#: deploy/templates/projects-without-agreement.php:39
 #: templates/projects-without-agreement.php:39
-#: wp-svn/tags/1.0.0/templates/projects-without-agreement.php:39
-#: wp-svn/tags/1.0.1/templates/projects-without-agreement.php:39
-#: wp-svn/tags/1.0.2/templates/projects-without-agreement.php:39
-#: wp-svn/tags/1.0.3/templates/projects-without-agreement.php:39
-#: wp-svn/tags/1.0.4/templates/projects-without-agreement.php:39
-#: wp-svn/tags/1.1.0/templates/projects-without-agreement.php:39
-#: wp-svn/tags/1.1.1/templates/projects-without-agreement.php:39
-#: wp-svn/tags/1.2.0/templates/projects-without-agreement.php:39
-#: wp-svn/trunk/templates/projects-without-agreement.php:39
 msgid "Actions"
 msgstr "Acties"
 
 #. Plugin URI of the plugin/theme
-msgid "http://wp.pronamic.eu/plugins/orbis/"
-msgstr "http://wp.pronamic.eu/plugins/orbis/"
+msgid "http://www.pronamic.eu/plugins/orbis/"
+msgstr "http://www.pronamic.eu/plugins/orbis/"
 
 #. Description of the plugin/theme
 msgid ""
@@ -2334,176 +633,72 @@ msgstr ""
 msgid "Pronamic"
 msgstr "Pronamic"
 
-#: deploy/deploy/includes/post.php:11 deploy/includes/post.php:11
-#: includes/post.php:11 wp-svn/tags/1.0.0/includes/post.php:13
-#: wp-svn/tags/1.0.1/includes/post.php:13
-#: wp-svn/tags/1.0.2/includes/post.php:13
-#: wp-svn/tags/1.0.3/includes/post.php:13
-#: wp-svn/tags/1.0.4/includes/post.php:13
-#: wp-svn/tags/1.1.0/includes/post.php:13
-#: wp-svn/tags/1.1.1/includes/post.php:13
-#: wp-svn/tags/1.2.0/includes/post.php:11 wp-svn/trunk/includes/post.php:11
+#: includes/post.php:11
 msgctxt "orbis_project"
 msgid "Add New"
 msgstr "Nieuw project"
 
-#: deploy/deploy/includes/post.php:30 deploy/includes/post.php:30
-#: includes/post.php:30 wp-svn/tags/1.0.0/includes/post.php:32
-#: wp-svn/tags/1.0.1/includes/post.php:32
-#: wp-svn/tags/1.0.2/includes/post.php:32
-#: wp-svn/tags/1.0.3/includes/post.php:32
-#: wp-svn/tags/1.0.4/includes/post.php:32
-#: wp-svn/tags/1.1.0/includes/post.php:32
-#: wp-svn/tags/1.1.1/includes/post.php:32
-#: wp-svn/tags/1.2.0/includes/post.php:30 wp-svn/trunk/includes/post.php:30
+#: includes/post.php:30
 msgctxt "slug"
 msgid "projects"
 msgstr "projecten"
 
-#: deploy/deploy/includes/post.php:56 deploy/includes/post.php:56
-#: includes/post.php:56 wp-svn/tags/1.0.0/includes/post.php:58
-#: wp-svn/tags/1.0.1/includes/post.php:58
-#: wp-svn/tags/1.0.2/includes/post.php:58
-#: wp-svn/tags/1.0.3/includes/post.php:58
-#: wp-svn/tags/1.0.4/includes/post.php:58
-#: wp-svn/tags/1.1.0/includes/post.php:58
-#: wp-svn/tags/1.1.1/includes/post.php:58
-#: wp-svn/tags/1.2.0/includes/post.php:56 wp-svn/trunk/includes/post.php:56
+#: includes/post.php:56
 msgctxt "slug"
 msgid "project-category"
 msgstr "project-categorie"
 
-#: deploy/deploy/includes/post.php:87 deploy/includes/post.php:87
-#: includes/post.php:87 wp-svn/tags/1.0.0/includes/post.php:89
-#: wp-svn/tags/1.0.1/includes/post.php:89
-#: wp-svn/tags/1.0.2/includes/post.php:89
-#: wp-svn/tags/1.0.3/includes/post.php:89
-#: wp-svn/tags/1.0.4/includes/post.php:89
-#: wp-svn/tags/1.1.0/includes/post.php:89
-#: wp-svn/tags/1.1.1/includes/post.php:89
-#: wp-svn/tags/1.2.0/includes/post.php:87 wp-svn/trunk/includes/post.php:87
+#: includes/post.php:87
 msgctxt "slug"
 msgid "companies"
 msgstr "bedrijven"
 
-#: deploy/deploy/includes/post.php:118 deploy/includes/post.php:118
-#: includes/post.php:118 wp-svn/tags/1.0.0/includes/post.php:108
-#: wp-svn/tags/1.0.1/includes/post.php:108
-#: wp-svn/tags/1.0.2/includes/post.php:108
-#: wp-svn/tags/1.0.3/includes/post.php:108
-#: wp-svn/tags/1.0.4/includes/post.php:108
-#: wp-svn/tags/1.1.0/includes/post.php:108
-#: wp-svn/tags/1.1.1/includes/post.php:108
-#: wp-svn/tags/1.2.0/includes/post.php:118 wp-svn/trunk/includes/post.php:118
+#: includes/post.php:118
 msgctxt "slug"
 msgid "persons"
 msgstr "personen"
 
-#: deploy/deploy/includes/post.php:144 deploy/includes/post.php:144
-#: includes/post.php:144 wp-svn/tags/1.0.0/includes/post.php:134
-#: wp-svn/tags/1.0.1/includes/post.php:134
-#: wp-svn/tags/1.0.2/includes/post.php:134
-#: wp-svn/tags/1.0.3/includes/post.php:134
-#: wp-svn/tags/1.0.4/includes/post.php:134
-#: wp-svn/tags/1.1.0/includes/post.php:134
-#: wp-svn/tags/1.1.1/includes/post.php:134
-#: wp-svn/tags/1.2.0/includes/post.php:144 wp-svn/trunk/includes/post.php:144
+#: includes/post.php:144
 msgctxt "slug"
 msgid "person-category"
 msgstr "persoon-categorie"
 
-#: deploy/deploy/includes/post.php:41 deploy/deploy/includes/post.php:129
-#: deploy/includes/post.php:41 deploy/includes/post.php:129
 #: includes/post.php:41 includes/post.php:129
-#: wp-svn/tags/1.0.0/includes/post.php:43
-#: wp-svn/tags/1.0.0/includes/post.php:119
-#: wp-svn/tags/1.0.1/includes/post.php:43
-#: wp-svn/tags/1.0.1/includes/post.php:119
-#: wp-svn/tags/1.0.2/includes/post.php:43
-#: wp-svn/tags/1.0.2/includes/post.php:119
-#: wp-svn/tags/1.0.3/includes/post.php:43
-#: wp-svn/tags/1.0.3/includes/post.php:119
-#: wp-svn/tags/1.0.4/includes/post.php:43
-#: wp-svn/tags/1.0.4/includes/post.php:119
-#: wp-svn/tags/1.1.0/includes/post.php:43
-#: wp-svn/tags/1.1.0/includes/post.php:119
-#: wp-svn/tags/1.1.1/includes/post.php:43
-#: wp-svn/tags/1.1.1/includes/post.php:119
-#: wp-svn/tags/1.2.0/includes/post.php:41
-#: wp-svn/tags/1.2.0/includes/post.php:129 wp-svn/trunk/includes/post.php:41
-#: wp-svn/trunk/includes/post.php:129
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr "Categorieën"
 
-#: deploy/deploy/includes/post.php:42 deploy/deploy/includes/post.php:130
-#: deploy/includes/post.php:42 deploy/includes/post.php:130
 #: includes/post.php:42 includes/post.php:130
-#: wp-svn/tags/1.0.0/includes/post.php:44
-#: wp-svn/tags/1.0.0/includes/post.php:120
-#: wp-svn/tags/1.0.1/includes/post.php:44
-#: wp-svn/tags/1.0.1/includes/post.php:120
-#: wp-svn/tags/1.0.2/includes/post.php:44
-#: wp-svn/tags/1.0.2/includes/post.php:120
-#: wp-svn/tags/1.0.3/includes/post.php:44
-#: wp-svn/tags/1.0.3/includes/post.php:120
-#: wp-svn/tags/1.0.4/includes/post.php:44
-#: wp-svn/tags/1.0.4/includes/post.php:120
-#: wp-svn/tags/1.1.0/includes/post.php:44
-#: wp-svn/tags/1.1.0/includes/post.php:120
-#: wp-svn/tags/1.1.1/includes/post.php:44
-#: wp-svn/tags/1.1.1/includes/post.php:120
-#: wp-svn/tags/1.2.0/includes/post.php:42
-#: wp-svn/tags/1.2.0/includes/post.php:130 wp-svn/trunk/includes/post.php:42
-#: wp-svn/trunk/includes/post.php:130
 msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr "Categorie"
 
-#: deploy/deploy/includes/post.php:68 deploy/includes/post.php:68
-#: includes/post.php:68 wp-svn/tags/1.0.0/includes/post.php:70
-#: wp-svn/tags/1.0.1/includes/post.php:70
-#: wp-svn/tags/1.0.2/includes/post.php:70
-#: wp-svn/tags/1.0.3/includes/post.php:70
-#: wp-svn/tags/1.0.4/includes/post.php:70
-#: wp-svn/tags/1.1.0/includes/post.php:70
-#: wp-svn/tags/1.1.1/includes/post.php:70
-#: wp-svn/tags/1.2.0/includes/post.php:68 wp-svn/trunk/includes/post.php:68
+#: includes/post.php:68
 msgctxt "orbis_company"
 msgid "Add New"
 msgstr "Nieuw bedrijf"
 
-#: deploy/deploy/includes/post.php:97 deploy/includes/post.php:97
-#: includes/post.php:97 wp-svn/tags/1.2.0/includes/post.php:97
-#: wp-svn/trunk/includes/post.php:97
+#: includes/post.php:97
 msgctxt "post type general name"
 msgid "Persons"
 msgstr "Personen"
 
-#: deploy/deploy/includes/post.php:98 deploy/includes/post.php:98
-#: includes/post.php:98 wp-svn/tags/1.2.0/includes/post.php:98
-#: wp-svn/trunk/includes/post.php:98
+#: includes/post.php:98
 msgctxt "post type singular name"
 msgid "Person"
 msgstr "Persoon"
 
-#: deploy/deploy/includes/post.php:99 deploy/includes/post.php:99
-#: includes/post.php:99 wp-svn/tags/1.2.0/includes/post.php:99
-#: wp-svn/trunk/includes/post.php:99
+#: includes/post.php:99
 msgctxt "admin menu"
 msgid "Persons"
 msgstr "Personen"
 
-#: deploy/deploy/includes/post.php:100 deploy/includes/post.php:100
-#: includes/post.php:100 wp-svn/tags/1.2.0/includes/post.php:100
-#: wp-svn/trunk/includes/post.php:100
+#: includes/post.php:100
 msgctxt "add new on admin bar"
 msgid "Person"
 msgstr "Persoon"
 
-#: deploy/deploy/includes/post.php:101 deploy/includes/post.php:101
-#: includes/post.php:101 wp-svn/tags/1.2.0/includes/post.php:101
-#: wp-svn/trunk/includes/post.php:101
+#: includes/post.php:101
 msgctxt "person"
 msgid "Add New"
 msgstr "Nieuw persoon"

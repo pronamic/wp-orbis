@@ -30,6 +30,10 @@ class Orbis_Plugin_Manager {
 			'title'     => 'Posts 2 Posts',
 			'file_name' => null,
 		),
+		'post-type-archive-links' => array(
+			'title'     => 'Post Type Archive Link',
+			'file_name' => null,
+		),
 	);
 
 	//////////////////////////////////////////////////
@@ -237,7 +241,7 @@ class Orbis_Empty_Upgrader_Skin extends WP_Upgrader_Skin {
 	 *
 	 * @return bool
 	 */
-	public function request_filesystem_credentials( $error = false ) {
+	public function request_filesystem_credentials( $error = false, $context = false, $allow_relaxed_file_ownership = false ) {
 		$error = false;
 
 		return true;
