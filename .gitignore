@@ -12,6 +12,3 @@
 
 # Node
 /node_modules/
-
-# WordPress SVN
-/wp-svn/
