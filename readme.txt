@@ -3,7 +3,7 @@ Contributors: pronamic, remcotolsma, kjtolsma
 Tags: orbis, intranet
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 
 Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More...
 
@@ -91,6 +91,10 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 
 == Changelog ==
+
+= 1.2.2 =
+*	Tweak - Adjusted WordPress admin company post type menu dashicon from 'network' to 'building'.
+*	Test - Tested up to WordPress version 4.1.
 
 = 1.2.1 =
 *	Tweak - Fixed notice on projects table view template.
