@@ -171,13 +171,11 @@ class Orbis_Plugin {
 	public function update_roles( $roles ) {
 		global $wp_roles;
 
-		if ( ! isset( $wp_roles ) ) {
-			$wp_roles = new WP_Roles();
-		}
-
-		foreach ( $roles as $role => $capabilities ) {
-			foreach  ( $capabilities as $cap => $grant ) {
-				$wp_roles->add_cap( $role, $cap, $grant );
+		if ( isset( $wp_roles ) ) {
+			foreach ( $roles as $role => $capabilities ) {
+				foreach  ( $capabilities as $cap => $grant ) {
+					$wp_roles->add_cap( $role, $cap, $grant );
+				}
 			}
 		}
 	}

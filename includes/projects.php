@@ -181,7 +181,7 @@ function orbis_save_project( $post_id, $post ) {
 	}
 
 	// Check permissions
-	if ( ! ( $post->post_type == 'orbis_project' && current_user_can( 'edit_post', $post_id ) ) ) {
+	if ( ! ( 'orbis_project' == $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
 
@@ -209,7 +209,7 @@ function orbis_save_project( $post_id, $post ) {
 	}
 
 	// Action
-	if ( $post->post_status == 'publish' && $is_finished_old != $is_finished_new ) {
+	if ( 'publish' == $post->post_status && $is_finished_old != $is_finished_new ) {
 		// @see https://github.com/woothemes/woocommerce/blob/v2.1.4/includes/class-wc-order.php#L1274
 		do_action( 'orbis_project_finished_update', $post_id, $is_finished_new );
 	}
@@ -258,7 +258,7 @@ function orbis_save_project_sync( $post_id, $post ) {
 	}
 
 	// Check post type
-	if ( ! ( $post->post_type == 'orbis_project' ) ) {
+	if ( ! ( 'orbis_project' == $post->post_type ) ) {
 		return;
 	}
 
@@ -268,7 +268,7 @@ function orbis_save_project_sync( $post_id, $post ) {
 	}
 
 	// Publish
-	if ( $post->post_status != 'publish' ) {
+	if ( 'publish' != $post->post_status ) {
 		return;
 	}
 
@@ -323,7 +323,7 @@ function orbis_save_project_sync( $post_id, $post ) {
 
 		$result = $wpdb->insert( $wpdb->orbis_projects, $data, $form );
 
-		if ( $result !== false ) {
+		if ( false !== $result ) {
 			$orbis_id = $wpdb->insert_id;
 		}
 	} else {
@@ -368,7 +368,7 @@ add_filter( 'manage_edit-orbis_project_columns' , 'orbis_project_edit_columns' )
  */
 function orbis_project_column( $column, $post_id ) {
 	switch ( $column ) {
-		case 'orbis_project_id':
+		case 'orbis_project_id' :
 			$orbis_id = get_post_meta( $post_id, '_orbis_project_id', true );
 
 			if ( ! empty( $orbis_id ) ) {
@@ -378,7 +378,7 @@ function orbis_project_column( $column, $post_id ) {
 			}
 
 			break;
-		case 'orbis_project_principal':
+		case 'orbis_project_principal' :
 			if ( orbis_project_has_principal() ) {
 				printf(
 					'<a href="%s">%s</a>',
@@ -388,7 +388,7 @@ function orbis_project_column( $column, $post_id ) {
 			}
 
 			break;
-		case 'orbis_project_time':
+		case 'orbis_project_time' :
 			orbis_project_the_time();
 
 			break;

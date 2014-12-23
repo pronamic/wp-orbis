@@ -72,6 +72,7 @@ class Orbis_Log_Widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
+		// @codingStandardsIgnoreStart
 		echo $args['before_widget'];
 
 		if ( ! empty( $title ) ) {
@@ -100,6 +101,7 @@ class Orbis_Log_Widget extends WP_Widget {
 		<?php
 
 		echo $args['after_widget'];
+		// @codingStandardsIgnoreEnd
 	}
 
 	function update( $new_instance, $old_instance ) {
@@ -116,11 +118,11 @@ class Orbis_Log_Widget extends WP_Widget {
 		?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
 				<?php _e( 'Title:', 'orbis' ); ?>
 			</label>
 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 
 		<?php
@@ -153,7 +155,7 @@ function orbis_log_save_post( $post_id, $post ) {
 		$name = $current_user->display_name;
 	}
 
-	if ( $post->post_status != 'publish' ) {
+	if ( 'publish' != $post->post_status ) {
 		$url = get_edit_post_link( $post_id );
 	} else {
 		$url = get_permalink( $post_id );

@@ -33,7 +33,7 @@ function orbis_projects_posts_clauses( $pieces, $query ) {
 
 	$post_type = $query->get( 'post_type' );
 
-	if ( $post_type == 'orbis_project' ) {
+	if ( 'orbis_project' == $post_type ) {
 		// Fields
 		$fields = ',
 			project.number_seconds AS project_number_seconds,

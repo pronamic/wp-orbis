@@ -234,11 +234,12 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-compress' );
+	grunt.loadNpmTasks( 'grunt-git' );
 	grunt.loadNpmTasks( 'grunt-aws-s3' );
 	grunt.loadNpmTasks( 'grunt-rt-wp-deploy' );
 
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'checkwpversion', 'copy:assets' ] );
+	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'phpcs', 'checkwpversion', 'copy:assets' ] );
 	grunt.registerTask( 'pot', [ 'checktextdomain', 'makepot' ] );
 	
 	grunt.registerTask( 'deploy', [

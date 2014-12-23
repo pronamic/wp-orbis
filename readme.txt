@@ -95,6 +95,7 @@ WordPress installation and then activate the Plugin from Plugins page.
 = 1.2.2 =
 *	Tweak - Adjusted WordPress admin company post type menu dashicon from 'network' to 'building'.
 *	Test - Tested up to WordPress version 4.1.
+*	Tweak - WordPress Coding Standards optimizations.
 
 = 1.2.1 =
 *	Tweak - Fixed notice on projects table view template.

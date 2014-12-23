@@ -14,18 +14,18 @@ function orbis_parse_time( $value ) {
 
 	$position_colon = strpos( $value, ':' );
 
-	if ( $position_colon !== false ) {
+	if ( false !== $position_colon ) {
 		$part_hours   = substr( $value, 0, $position_colon );
 		$part_minutes = substr( $value, $position_colon + 1 );
 	}
 
 	$var = filter_var( $part_hours, FILTER_VALIDATE_FLOAT );
-	if ( $var !== false ) {
+	if ( false !== $var ) {
 		$seconds += $var * 3600;
 	}
 
 	$var = filter_var( $part_minutes, FILTER_VALIDATE_FLOAT );
-	if ( $var !== false ) {
+	if ( false !== $var ) {
 		$seconds += $var * 60;
 	}
 

@@ -72,7 +72,7 @@ class Orbis_Core_Admin {
 		$screen = get_current_screen();
 
 		// Orbis screen
-		if ( strpos( $screen->id, 'orbis' ) !== false ) {
+		if ( false !== strpos( $screen->id, 'orbis' ) ) {
 			// Select2
 			wp_enqueue_script( 'select2' );
 
@@ -176,7 +176,7 @@ class Orbis_Core_Admin {
 		$other_items = array();
 
 		foreach ( $menu_order as $item ) {
-			if ( strpos( $item, 'orbis_' ) !== false ) {
+			if ( false !== strpos( $item, 'orbis_' ) ) {
 				$orbis_items[] = $item;
 			} else {
 				$other_items[] = $item;
