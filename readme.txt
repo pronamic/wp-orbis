@@ -25,7 +25,7 @@ theme is based on Bootstrap and gives you all the front-end functionality you
 need. Easely extend this theme with child themes. We’ll try to release more
  themes.
 
-[Download the Orbis theme for free.](https://www.pronamic.eu/themes/orbis/)
+[Download the Orbis theme for free.](http://www.pronamic.eu/themes/orbis/)
 
 = Benefits at a glance =
 
