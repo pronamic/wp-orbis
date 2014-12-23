@@ -79,7 +79,7 @@ function orbis_create_initial_post_types() {
 			),
 			'public'          => true,
 			'menu_position'   => 30,
-			'menu_icon'       => 'dashicons-networking',
+			'menu_icon'       => 'dashicons-building',
 			'capability_type' => array( 'orbis_company', 'orbis_companies' ),
 			'supports'        => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'custom-fields' ),
 			'has_archive'     => true,
