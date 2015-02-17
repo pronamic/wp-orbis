@@ -57,6 +57,9 @@ function orbis_save_company( $post_id, $post ) {
 		'_orbis_company_city'       => FILTER_SANITIZE_STRING,
 		'_orbis_company_country'    => FILTER_SANITIZE_STRING,
 		'_orbis_company_ebilling'   => FILTER_VALIDATE_BOOLEAN,
+		'_orbis_company_twitter'    => FILTER_SANITIZE_STRING,
+		'_orbis_company_facebook'   => FILTER_SANITIZE_STRING,
+		'_orbis_company_linkedin'   => FILTER_SANITIZE_STRING,
 	);
 
 	$data = filter_input_array( INPUT_POST, $definition );

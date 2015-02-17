@@ -13,6 +13,10 @@ $postcode   = get_post_meta( $post->ID, '_orbis_company_postcode', true );
 $city       = get_post_meta( $post->ID, '_orbis_company_city', true );
 $country    = get_post_meta( $post->ID, '_orbis_company_country', true );
 
+$company_twitter  = get_post_meta( $post->ID, '_orbis_company_twitter', true );
+$company_facebook = get_post_meta( $post->ID, '_orbis_company_facebook', true );
+$company_linkedin = get_post_meta( $post->ID, '_orbis_company_linkedin', true );
+
 wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_nonce' );
 
 ?>
@@ -66,6 +70,30 @@ wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_no
 				<input id="orbis_company_city" name="_orbis_company_city" placeholder="<?php esc_attr_e( 'City', 'orbis' ); ?>" value="<?php echo esc_attr( $city ); ?>" type="text" size="25" />
 				<br />
 				<input id="orbis_company_country" name="_orbis_company_country" placeholder="<?php esc_attr_e( 'Country', 'orbis' ); ?>" value="<?php echo esc_attr( $country ); ?>" type="text" size="42" />
+			</td>
+		</tr>
+		<tr valign="top">
+			<th scope="row">
+				<label for="orbis_company_twitter"><?php _e( 'Twitter Username:', 'orbis' ); ?></label>
+			</th>
+			<td>
+				<input type="text" id="orbis_company_twitter" name="_orbis_company_twitter" value="<?php echo esc_attr( $company_twitter ); ?>" class="regular-text" />
+			</td>
+		</tr>
+		<tr valign="top">
+			<th scope="row">
+				<label for="orbis_company_facebook"><?php _e( 'Facebook URL:', 'orbis' ); ?></label>
+			</th>
+			<td>
+				<input type="text" id="orbis_company_facebook" name="_orbis_company_facebook" value="<?php echo esc_attr( $company_facebook ); ?>" class="regular-text" />
+			</td>
+		</tr>
+		<tr valign="top">
+			<th scope="row">
+				<label for="orbis_company_linkedin"><?php _e( 'LinkedIn:', 'orbis' ); ?></label>
+			</th>
+			<td>
+				<input type="text" id="orbis_company_linkedin" name="_orbis_company_linkedin" value="<?php echo esc_attr( $company_linkedin ); ?>" class="regular-text" />
 			</td>
 		</tr>
 	</tbody>
