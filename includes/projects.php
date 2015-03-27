@@ -140,7 +140,9 @@ function orbis_projects_post_class( $classes ) {
 
 add_filter( 'post_class', 'orbis_projects_post_class' );
 
-
+/**
+ * Helper functions
+ */
 function orbis_project_is_finished() {
 	global $post;
 
@@ -163,6 +165,18 @@ function orbis_project_is_invoiced() {
 	}
 
 	return $is_invoiced;
+}
+
+function orbis_project_is_invoicable() {
+	global $post;
+
+	$is_invoicable = false;
+
+	if ( isset( $post->project_is_invoicable  ) ) {
+		$is_invoiced = (boolean) $post->project_is_invoicable;
+	}
+
+	return $is_invoicable;
 }
 
 /**
