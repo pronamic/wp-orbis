@@ -172,8 +172,8 @@ function orbis_project_is_invoicable() {
 
 	$is_invoicable = false;
 
-	if ( isset( $post->project_is_invoicable  ) ) {
-		$is_invoiced = (boolean) $post->project_is_invoicable;
+	if ( get_post_meta( get_the_ID(), '_orbis_project_is_invoicable', true ) ) {
+		$is_invoicable = true;
 	}
 
 	return $is_invoicable;
