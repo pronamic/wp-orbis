@@ -1,54 +1,66 @@
-# Copyright (C) 2014 Pronamic
+# Copyright (C) 2015 Pronamic
 # This file is distributed under the GPL.
 msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.2.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-12-23 10:02:36+00:00\n"
+"POT-Creation-Date: 2015-03-11 13:15:58+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
 
-#: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
+#: admin/meta-box-company-details.php:27 admin/meta-box-project-details.php:31
 #: includes/projects.php:353 templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr ""
 
-#: admin/meta-box-company-details.php:31 includes/companies.php:146
+#: admin/meta-box-company-details.php:35 includes/companies.php:149
 msgid "KvK Number"
 msgstr ""
 
-#: admin/meta-box-company-details.php:39
+#: admin/meta-box-company-details.php:43
 msgid "E-Mail"
 msgstr ""
 
-#: admin/meta-box-company-details.php:47
+#: admin/meta-box-company-details.php:51
 msgid "Website"
 msgstr ""
 
-#: admin/meta-box-company-details.php:55
+#: admin/meta-box-company-details.php:59
 msgid "Addresses"
 msgstr ""
 
-#: admin/meta-box-company-details.php:60 admin/meta-box-company-details.php:63
-#: includes/companies.php:144
+#: admin/meta-box-company-details.php:64 admin/meta-box-company-details.php:67
+#: includes/companies.php:147
 msgid "Address"
 msgstr ""
 
-#: admin/meta-box-company-details.php:65
+#: admin/meta-box-company-details.php:69
 msgid "Postcode"
 msgstr ""
 
-#: admin/meta-box-company-details.php:66
+#: admin/meta-box-company-details.php:70
 msgid "City"
 msgstr ""
 
-#: admin/meta-box-company-details.php:68
+#: admin/meta-box-company-details.php:72
 msgid "Country"
+msgstr ""
+
+#: admin/meta-box-company-details.php:77 admin/meta-box-person-details.php:44
+msgid "Twitter Username:"
+msgstr ""
+
+#: admin/meta-box-company-details.php:85 admin/meta-box-person-details.php:52
+msgid "Facebook URL:"
+msgstr ""
+
+#: admin/meta-box-company-details.php:93 admin/meta-box-person-details.php:60
+msgid "LinkedIn:"
 msgstr ""
 
 #: admin/meta-box-person-details.php:20
@@ -63,19 +75,7 @@ msgstr ""
 msgid "Mobile Number:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:44
-msgid "Twitter Username:"
-msgstr ""
-
-#: admin/meta-box-person-details.php:52
-msgid "Facebook URL:"
-msgstr ""
-
-#: admin/meta-box-person-details.php:60
-msgid "LinkedIn:"
-msgstr ""
-
-#: admin/meta-box-project-details.php:39
+#: admin/meta-box-project-details.php:39 templates/projects-table-view.php:7
 msgid "Client"
 msgstr ""
 
@@ -84,6 +84,7 @@ msgid "Select Client"
 msgstr ""
 
 #: admin/meta-box-project-details.php:47 includes/projects.php:352
+#: templates/projects-table-view.php:10
 msgid "Time"
 msgstr ""
 
@@ -372,6 +373,7 @@ msgid "Involved Persons"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:222 includes/post.php:10
+#: templates/projects-table-view.php:8
 msgid "Project"
 msgstr ""
 
@@ -427,24 +429,25 @@ msgstr ""
 msgid "Company Details"
 msgstr ""
 
-#: includes/companies.php:142 includes/projects.php:350
+#: includes/companies.php:145 includes/projects.php:350
 #: templates/projects-without-agreement.php:38
 msgid "Title"
 msgstr ""
 
-#: includes/companies.php:145
+#: includes/companies.php:148
 msgid "Online"
 msgstr ""
 
-#: includes/companies.php:147 includes/projects.php:354
+#: includes/companies.php:150 includes/projects.php:354
 msgid "Author"
 msgstr ""
 
-#: includes/companies.php:148 includes/projects.php:355
+#: includes/companies.php:151 includes/projects.php:355
 msgid "Comments"
 msgstr ""
 
-#: includes/companies.php:149 includes/projects.php:356
+#: includes/companies.php:152 includes/projects.php:356
+#: templates/projects-table-view.php:9
 msgid "Date"
 msgstr ""
 
@@ -452,15 +455,15 @@ msgstr ""
 msgid "Orbis Log"
 msgstr ""
 
-#: includes/log.php:120
+#: includes/log.php:122
 msgid "Title:"
 msgstr ""
 
-#: includes/log.php:151
+#: includes/log.php:153
 msgid "Anonymous"
 msgstr ""
 
-#: includes/log.php:163
+#: includes/log.php:165
 msgid "%s updated the \"%s\" post."
 msgstr ""
 
@@ -596,6 +599,34 @@ msgstr ""
 msgid "Principal"
 msgstr ""
 
+#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
+msgid "Order By:"
+msgstr ""
+
+#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
+msgid "Name"
+msgstr ""
+
+#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
+msgid "Number"
+msgstr ""
+
+#: templates/projects-table-view.php:5
+msgid "Manager"
+msgstr ""
+
+#: templates/projects-table-view.php:6
+msgid "ID"
+msgstr ""
+
+#: templates/projects-table-view.php:11
+msgid "Invoiceable"
+msgstr ""
+
+#: templates/projects-table-view.php:12
+msgid "Invoice Number"
+msgstr ""
+
 #: templates/projects-table-view.php:60
 #: templates/projects-without-agreement.php:74
 msgid "Edit"
@@ -607,6 +638,18 @@ msgstr ""
 
 #: templates/projects-without-agreement.php:39
 msgid "Actions"
+msgstr ""
+
+#: templates/projects.php:110
+msgid "Filter:"
+msgstr ""
+
+#: templates/projects.php:110
+msgid "Strippenkaart"
+msgstr ""
+
+#: templates/projects.php:110
+msgid "None"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

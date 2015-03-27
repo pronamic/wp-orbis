@@ -2,56 +2,67 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2014-12-23 10:02:36+00:00\n"
-"PO-Revision-Date: 2014-12-23 11:08+0100\n"
+"POT-Creation-Date: 2015-03-11 13:15:58+00:00\n"
+"PO-Revision-Date: 2015-03-11 14:17+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_x:2c,1;esc_attr_e\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.7.4\n"
 
-#: admin/meta-box-company-details.php:23 admin/meta-box-project-details.php:31
+#: admin/meta-box-company-details.php:27 admin/meta-box-project-details.php:31
 #: includes/projects.php:353 templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
-#: admin/meta-box-company-details.php:31 includes/companies.php:146
+#: admin/meta-box-company-details.php:35 includes/companies.php:149
 msgid "KvK Number"
 msgstr "KvK-nummer"
 
-#: admin/meta-box-company-details.php:39
+#: admin/meta-box-company-details.php:43
 msgid "E-Mail"
 msgstr "E-mailadres"
 
-#: admin/meta-box-company-details.php:47
+#: admin/meta-box-company-details.php:51
 msgid "Website"
 msgstr "Website"
 
-#: admin/meta-box-company-details.php:55
+#: admin/meta-box-company-details.php:59
 msgid "Addresses"
 msgstr "Adressen"
 
-#: admin/meta-box-company-details.php:60 admin/meta-box-company-details.php:63
-#: includes/companies.php:144
+#: admin/meta-box-company-details.php:64 admin/meta-box-company-details.php:67
+#: includes/companies.php:147
 msgid "Address"
 msgstr "Adres"
 
-#: admin/meta-box-company-details.php:65
+#: admin/meta-box-company-details.php:69
 msgid "Postcode"
 msgstr "Postcode"
 
-#: admin/meta-box-company-details.php:66
+#: admin/meta-box-company-details.php:70
 msgid "City"
 msgstr "Plaats"
 
-#: admin/meta-box-company-details.php:68
+#: admin/meta-box-company-details.php:72
 msgid "Country"
 msgstr "Land"
+
+#: admin/meta-box-company-details.php:77 admin/meta-box-person-details.php:44
+msgid "Twitter Username:"
+msgstr "Twitter gebruikersnaam:"
+
+#: admin/meta-box-company-details.php:85 admin/meta-box-person-details.php:52
+msgid "Facebook URL:"
+msgstr "Facebook URL:"
+
+#: admin/meta-box-company-details.php:93 admin/meta-box-person-details.php:60
+msgid "LinkedIn:"
+msgstr "LinkedIn:"
 
 #: admin/meta-box-person-details.php:20
 msgid "Email Address:"
@@ -65,19 +76,7 @@ msgstr "Telefoonnummer:"
 msgid "Mobile Number:"
 msgstr "Mobielnummer:"
 
-#: admin/meta-box-person-details.php:44
-msgid "Twitter Username:"
-msgstr "Twitter gebruikersnaam:"
-
-#: admin/meta-box-person-details.php:52
-msgid "Facebook URL:"
-msgstr "Facebook URL:"
-
-#: admin/meta-box-person-details.php:60
-msgid "LinkedIn:"
-msgstr "LinkedIn:"
-
-#: admin/meta-box-project-details.php:39
+#: admin/meta-box-project-details.php:39 templates/projects-table-view.php:7
 msgid "Client"
 msgstr "Klant"
 
@@ -86,6 +85,7 @@ msgid "Select Client"
 msgstr "Selecteer klant"
 
 #: admin/meta-box-project-details.php:47 includes/projects.php:352
+#: templates/projects-table-view.php:10
 msgid "Time"
 msgstr "Tijd"
 
@@ -380,6 +380,7 @@ msgid "Involved Persons"
 msgstr "Betrokken personen"
 
 #: classes/orbis-core-plugin.php:222 includes/post.php:10
+#: templates/projects-table-view.php:8
 msgid "Project"
 msgstr "Project"
 
@@ -435,24 +436,25 @@ msgstr "Je hebt niet genoeg rechten om een plugin te activeren"
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: includes/companies.php:142 includes/projects.php:350
+#: includes/companies.php:145 includes/projects.php:350
 #: templates/projects-without-agreement.php:38
 msgid "Title"
 msgstr "Titel"
 
-#: includes/companies.php:145
+#: includes/companies.php:148
 msgid "Online"
 msgstr "Online"
 
-#: includes/companies.php:147 includes/projects.php:354
+#: includes/companies.php:150 includes/projects.php:354
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/companies.php:148 includes/projects.php:355
+#: includes/companies.php:151 includes/projects.php:355
 msgid "Comments"
 msgstr "Reacties"
 
-#: includes/companies.php:149 includes/projects.php:356
+#: includes/companies.php:152 includes/projects.php:356
+#: templates/projects-table-view.php:9
 msgid "Date"
 msgstr "Datum"
 
@@ -460,15 +462,15 @@ msgstr "Datum"
 msgid "Orbis Log"
 msgstr "Orbis logboek"
 
-#: includes/log.php:120
+#: includes/log.php:122
 msgid "Title:"
 msgstr "Titel:"
 
-#: includes/log.php:151
+#: includes/log.php:153
 msgid "Anonymous"
 msgstr "Anoniem"
 
-#: includes/log.php:163
+#: includes/log.php:165
 msgid "%s updated the \"%s\" post."
 msgstr "%s heeft het \"%s\" bericht bijgewerkt."
 
@@ -604,6 +606,34 @@ msgstr "afgerond"
 msgid "Principal"
 msgstr "Opdrachtgever"
 
+#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
+msgid "Order By:"
+msgstr "Sorteer op:"
+
+#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
+msgid "Name"
+msgstr "Naam"
+
+#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
+msgid "Number"
+msgstr "Nummer"
+
+#: templates/projects-table-view.php:5
+msgid "Manager"
+msgstr "Projectleider"
+
+#: templates/projects-table-view.php:6
+msgid "ID"
+msgstr "ID"
+
+#: templates/projects-table-view.php:11
+msgid "Invoiceable"
+msgstr "Factureerbaar"
+
+#: templates/projects-table-view.php:12
+msgid "Invoice Number"
+msgstr "Factuurnummer"
+
 #: templates/projects-table-view.php:60
 #: templates/projects-without-agreement.php:74
 msgid "Edit"
@@ -616,6 +646,18 @@ msgstr "Projectleider"
 #: templates/projects-without-agreement.php:39
 msgid "Actions"
 msgstr "Acties"
+
+#: templates/projects.php:110
+msgid "Filter:"
+msgstr "Filter:"
+
+#: templates/projects.php:110
+msgid "Strippenkaart"
+msgstr "Strippenkaart"
+
+#: templates/projects.php:110
+msgid "None"
+msgstr "Geen"
 
 #. Plugin URI of the plugin/theme
 msgid "http://www.pronamic.eu/plugins/orbis/"
@@ -750,9 +792,6 @@ msgstr "Nieuw persoon"
 #~ msgid "Principal ID"
 #~ msgstr "Opdrachtgever ID"
 
-#~ msgid "Invoicable"
-#~ msgstr "Factureerbaar"
-
 #~ msgid "Project is invoicable"
 #~ msgstr "Project is factureerbaar"
 
@@ -761,9 +800,6 @@ msgstr "Nieuw persoon"
 
 #~ msgid "Project is invoiced"
 #~ msgstr "Project is gefactureerd"
-
-#~ msgid "Invoice Number"
-#~ msgstr "Factuurnummer"
 
 #~ msgid "Domains to invoice"
 #~ msgstr "Domeinen te facturen"
@@ -780,14 +816,8 @@ msgstr "Nieuw persoon"
 #~ msgid "No"
 #~ msgstr "Nee"
 
-#~ msgid "ID"
-#~ msgstr "ID"
-
 #~ msgid "Domain Name"
 #~ msgstr "Domeinnaam"
-
-#~ msgid "Order Date"
-#~ msgstr "Besteldatum"
 
 #~ msgid "Notes"
 #~ msgstr "Notitie"
@@ -806,9 +836,6 @@ msgstr "Nieuw persoon"
 
 #~ msgid "Type"
 #~ msgstr "Type"
-
-#~ msgid "Name"
-#~ msgstr "Naam"
 
 #~ msgid "Expiration Date"
 #~ msgstr "Vervaldatum"
