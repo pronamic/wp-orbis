@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2015-04-16 09:48:41+00:00\n"
-"PO-Revision-Date: 2015-04-16 11:49+0100\n"
+"POT-Creation-Date: 2015-05-30 14:23+0100\n"
+"PO-Revision-Date: 2015-05-30 14:24+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -12,9 +12,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8\n"
 
-#: admin/meta-box-company-details.php:27 admin/meta-box-project-details.php:31
+#: admin/meta-box-company-details.php:27 admin/meta-box-project-details.php:29
 #: includes/projects.php:367 templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr "Orbis ID"
@@ -80,44 +80,44 @@ msgstr "Mobielnummer:"
 msgid "LinkedIn URL:"
 msgstr "LinkedIn URL:"
 
-#: admin/meta-box-project-details.php:39 templates/projects-table-view.php:7
+#: admin/meta-box-project-details.php:37 templates/projects-table-view.php:7
 msgid "Client"
 msgstr "Klant"
 
-#: admin/meta-box-project-details.php:42
+#: admin/meta-box-project-details.php:40
 msgid "Select Client"
 msgstr "Selecteer klant"
 
-#: admin/meta-box-project-details.php:47 includes/projects.php:366
-#: templates/projects-table-view.php:10
+#: admin/meta-box-project-details.php:45 classes/orbis-core-email.php:43
+#: includes/projects.php:366 templates/projects-table-view.php:10
 msgid "Time"
 msgstr "Tijd"
 
-#: admin/meta-box-project-details.php:53
+#: admin/meta-box-project-details.php:51
 msgid ""
 "You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
 msgstr ""
 "Je kunt de tijd invoeren als 1.5 of 1:30 (beide zijn 1 uur en 30 minuten)."
 
-#: admin/meta-box-project-details.php:60
+#: admin/meta-box-project-details.php:58
 msgid "Agreement ID"
 msgstr "Akkoord ID"
 
-#: admin/meta-box-project-details.php:67 admin/meta-box-project-details.php:70
+#: admin/meta-box-project-details.php:65 admin/meta-box-project-details.php:68
 msgid "Choose a Agreement"
 msgstr "Kies een akkoord"
 
-#: admin/meta-box-project-details.php:70
+#: admin/meta-box-project-details.php:68
 msgid "Set as Agreement"
 msgstr "Stel in als akkoord"
 
-#: admin/meta-box-project-details.php:73
+#: admin/meta-box-project-details.php:71
 msgid "You can select an .PDF or .TXT file from the WordPress media library."
 msgstr ""
 "Je kunt een .PDF of .TXT bestand selecteren uit de WordPress media "
 "bibliotheek."
 
-#: admin/meta-box-project-details.php:74
+#: admin/meta-box-project-details.php:72
 msgid ""
 "If you received the agreement by mail print the complete mail conversation "
 "with an PDF printer."
@@ -125,15 +125,15 @@ msgstr ""
 "Als je een akkoord per e-mail hebt ontvangen print dan de complete e-mail "
 "conversatie uit met een PDF-printer."
 
-#: admin/meta-box-project-details.php:81
+#: admin/meta-box-project-details.php:79
 msgid "Finished"
 msgstr "Afgerond"
 
-#: admin/meta-box-project-details.php:87
+#: admin/meta-box-project-details.php:85
 msgid "Project is finished"
 msgstr "Project is afgerond"
 
-#: admin/page-dashboard.php:9
+#: admin/page-dashboard.php:9 templates/emails/update.php:38
 msgid "Recent Projects"
 msgstr "Recente projecten"
 
@@ -206,7 +206,7 @@ msgstr "Taken"
 msgid "%d tasks"
 msgstr "%d taken"
 
-#: admin/page-stats.php:73 classes/orbis-core-plugin.php:192
+#: admin/page-stats.php:73 classes/orbis-core-plugin.php:195
 #: includes/post.php:64 includes/post.php:66 includes/post.php:78
 msgid "Companies"
 msgstr "Bedrijven"
@@ -215,7 +215,7 @@ msgstr "Bedrijven"
 msgid "%d companies"
 msgstr "%d bedrijven"
 
-#: admin/page-stats.php:94 classes/orbis-core-plugin.php:219
+#: admin/page-stats.php:94 classes/orbis-core-plugin.php:222
 #: includes/post.php:7 includes/post.php:9 includes/post.php:21
 msgid "Projects"
 msgstr "Projecten"
@@ -300,111 +300,143 @@ msgstr "De plugin is succesvol geïnstalleerd en geactiveerd"
 msgid "The plugin was activated successfully"
 msgstr "De plugin is succesvol geactiveerd"
 
-#: classes/orbis-core-plugin.php:104
+#: classes/orbis-core-email.php:19
+msgid "E-mail"
+msgstr "E-mail"
+
+#: classes/orbis-core-email.php:31
+msgid "Frequency"
+msgstr "Frequentie"
+
+#: classes/orbis-core-email.php:55
+msgid "Next Schedule"
+msgstr "Volgende planning"
+
+#: classes/orbis-core-email.php:63
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: classes/orbis-core-email.php:74
+msgid "E-mail Manually"
+msgstr "E-mail handmatig"
+
+#: classes/orbis-core-email.php:180
+msgid "Send E-mail"
+msgstr "Verstuur e-mail"
+
+#: classes/orbis-core-email.php:195
+msgid "Not scheduled"
+msgstr "Niet ingepland"
+
+#: classes/orbis-core-email.php:231 classes/orbis-core-email.php:234
+msgid "Orbis Update"
+msgstr "Orbis update"
+
+#: classes/orbis-core-plugin.php:107
 msgid "No matches found"
 msgstr "Geen overeenkomsten gevonden"
 
-#: classes/orbis-core-plugin.php:105
+#: classes/orbis-core-plugin.php:108
 msgid "Please enter %s more characters"
 msgstr "Voer nog %s tekens in."
 
-#: classes/orbis-core-plugin.php:106
+#: classes/orbis-core-plugin.php:109
 msgid "You can only select %s item"
 msgstr "Je kunt slechts %s item selecteren"
 
-#: classes/orbis-core-plugin.php:107
+#: classes/orbis-core-plugin.php:110
 msgid "You can only select %s items"
 msgstr "Je kunt slechts %s items selecteren"
 
-#: classes/orbis-core-plugin.php:108
+#: classes/orbis-core-plugin.php:111
 msgid "Loading more results..."
 msgstr "Meer resultaten laden..."
 
-#: classes/orbis-core-plugin.php:109
+#: classes/orbis-core-plugin.php:112
 msgid "Searching..."
 msgstr "Zoeken...."
 
-#: classes/orbis-core-plugin.php:193 includes/post.php:121
+#: classes/orbis-core-plugin.php:196 includes/post.php:121
 msgid "Persons"
 msgstr "Personen"
 
-#: classes/orbis-core-plugin.php:196 classes/orbis-core-plugin.php:230
+#: classes/orbis-core-plugin.php:199 classes/orbis-core-plugin.php:233
 msgid "Person"
 msgstr "Persoon"
 
-#: classes/orbis-core-plugin.php:197 classes/orbis-core-plugin.php:231
+#: classes/orbis-core-plugin.php:200 classes/orbis-core-plugin.php:234
 msgid "Search person"
 msgstr "Zoek persoon"
 
-#: classes/orbis-core-plugin.php:198 classes/orbis-core-plugin.php:232
+#: classes/orbis-core-plugin.php:201 classes/orbis-core-plugin.php:235
 #: includes/post.php:135
 msgid "No persons found."
 msgstr "Geen personen gevonden."
 
-#: classes/orbis-core-plugin.php:199 classes/orbis-core-plugin.php:233
+#: classes/orbis-core-plugin.php:202 classes/orbis-core-plugin.php:236
 msgid "Add Person"
 msgstr "Persoon toevoegen"
 
-#: classes/orbis-core-plugin.php:200 classes/orbis-core-plugin.php:234
+#: classes/orbis-core-plugin.php:203 classes/orbis-core-plugin.php:237
 #: includes/post.php:129
 msgid "New Person"
 msgstr "Nieuw persoon"
 
-#: classes/orbis-core-plugin.php:201 classes/orbis-core-plugin.php:235
+#: classes/orbis-core-plugin.php:204 classes/orbis-core-plugin.php:238
 #: includes/post.php:128
 msgid "Add New Person"
 msgstr "Nieuw persoon toevoegen"
 
-#: classes/orbis-core-plugin.php:204 includes/post.php:67
+#: classes/orbis-core-plugin.php:207 includes/post.php:67
 msgid "Company"
 msgstr "Bedrijf"
 
-#: classes/orbis-core-plugin.php:205
+#: classes/orbis-core-plugin.php:208
 msgid "Search company"
 msgstr "Zoek bedrijf"
 
-#: classes/orbis-core-plugin.php:206 includes/post.php:75
+#: classes/orbis-core-plugin.php:209 includes/post.php:75
 msgid "No companies found."
 msgstr "Geen bedrijven gevonden."
 
-#: classes/orbis-core-plugin.php:207
+#: classes/orbis-core-plugin.php:210
 msgid "Add Company"
 msgstr "Bedrijf toevoegen"
 
-#: classes/orbis-core-plugin.php:208 includes/post.php:71
+#: classes/orbis-core-plugin.php:211 includes/post.php:71
 msgid "New Company"
 msgstr "Nieuw bedrijf"
 
-#: classes/orbis-core-plugin.php:209 includes/post.php:69
+#: classes/orbis-core-plugin.php:212 includes/post.php:69
 msgid "Add New Company"
 msgstr "Nieuwe bedrijf toevoegen"
 
-#: classes/orbis-core-plugin.php:218
+#: classes/orbis-core-plugin.php:221
 msgid "Involved Persons"
 msgstr "Betrokken personen"
 
-#: classes/orbis-core-plugin.php:222 includes/post.php:10
+#: classes/orbis-core-plugin.php:225 includes/post.php:10
 #: templates/projects-table-view.php:8
 msgid "Project"
 msgstr "Project"
 
-#: classes/orbis-core-plugin.php:223
+#: classes/orbis-core-plugin.php:226
 msgid "Search project"
 msgstr "Zoek project"
 
-#: classes/orbis-core-plugin.php:224 includes/post.php:18
+#: classes/orbis-core-plugin.php:227 includes/post.php:18
 msgid "No projects found."
 msgstr "Geen projecten gevonden."
 
-#: classes/orbis-core-plugin.php:225
+#: classes/orbis-core-plugin.php:228
 msgid "Add Project"
 msgstr "Project toevoegen"
 
-#: classes/orbis-core-plugin.php:226 includes/post.php:14
+#: classes/orbis-core-plugin.php:229 includes/post.php:14
 msgid "New Project"
 msgstr "Nieuw project"
 
-#: classes/orbis-core-plugin.php:227 includes/post.php:12
+#: classes/orbis-core-plugin.php:230 includes/post.php:12
 msgid "Add New Project"
 msgstr "Nieuw project toevoegen"
 
@@ -609,6 +641,26 @@ msgstr "afgerond"
 #: includes/projects.php:365 templates/projects-without-agreement.php:37
 msgid "Principal"
 msgstr "Opdrachtgever"
+
+#: templates/emails/update.php:6
+msgid "Recent Companies"
+msgstr "Recente bedrijven"
+
+#: templates/emails/update.php:22
+msgid "Recent Persons"
+msgstr "Recente personen"
+
+#: templates/emails/update.php:56
+msgid "Recent Deals"
+msgstr "Recente deals"
+
+#: templates/emails/update.php:72
+msgid "Recent Subscriptions"
+msgstr "Recente abonnementen"
+
+#: templates/emails/update.php:88
+msgid "Recent Tasks"
+msgstr "Recente taken"
 
 #: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
 msgid "Order By:"

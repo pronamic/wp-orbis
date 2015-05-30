@@ -32,6 +32,9 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		// API
 		$this->api = new Orbis_API();
 
+		// Email
+		$this->email = new Orbis_Core_Email( $this );
+
 		// Admin
 		if ( is_admin() ) {
 			global $orbis_admin;
