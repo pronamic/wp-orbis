@@ -11,16 +11,14 @@ $seconds        = get_post_meta( $post->ID, '_orbis_project_seconds_available', 
 $agreement_id   = get_post_meta( $post->ID, '_orbis_project_agreement_id', true );
 $is_finished    = filter_var( get_post_meta( $post->ID, '_orbis_project_is_finished', true ), FILTER_VALIDATE_BOOLEAN );
 
-if ( true ) {
-	$project = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->orbis_projects WHERE post_id = %d;", $post->ID ) );
+$project = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->orbis_projects WHERE post_id = %d;", $post->ID ) );
 
-	if ( $project ) {
-		$orbis_id	    = $project->id;
-		$principal_id   = $project->principal_id;
-		$is_finished    = $project->finished;
-		$seconds        = $project->number_seconds;
-		$is_finished    = $project->finished;
-	}
+if ( $project ) {
+	$orbis_id	    = $project->id;
+	$principal_id   = $project->principal_id;
+	$is_finished    = $project->finished;
+	$seconds        = $project->number_seconds;
+	$is_finished    = $project->finished;
 }
 
 ?>

@@ -43,7 +43,7 @@ function orbis_save_person( $post_id, $post ) {
 	}
 
 	// Check permissions
-	if ( ! ( 'orbis_person' == $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
+	if ( ! ( 'orbis_person' === $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
 

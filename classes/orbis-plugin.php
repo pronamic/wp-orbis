@@ -66,7 +66,7 @@ class Orbis_Plugin {
 		if ( is_admin() && ! empty( $this->name ) ) {
 			$option = $this->name . '_db_version';
 
-			if ( get_option( $option ) != $this->db_version ) {
+			if ( get_option( $option ) !== $this->db_version ) {
 				$this->install();
 
 				update_option( $option, $this->db_version );
@@ -102,7 +102,7 @@ class Orbis_Plugin {
 			return;
 		}
 
-		if ( ( isset( $_GET['action'] ) && 'upgrade-plugin' == $_GET['action'] ) && ( isset( $_GET['plugin'] ) && strstr( $_GET['plugin'], 'orbis' ) ) ) {
+		if ( ( isset( $_GET['action'] ) && 'upgrade-plugin' === $_GET['action'] ) && ( isset( $_GET['plugin'] ) && strstr( $_GET['plugin'], 'orbis' ) ) ) {
 			return;
 		}
 
@@ -173,7 +173,7 @@ class Orbis_Plugin {
 
 		if ( isset( $wp_roles ) ) {
 			foreach ( $roles as $role => $capabilities ) {
-				foreach  ( $capabilities as $cap => $grant ) {
+				foreach ( $capabilities as $cap => $grant ) {
 					$wp_roles->add_cap( $role, $cap, $grant );
 				}
 			}

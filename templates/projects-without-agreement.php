@@ -82,5 +82,4 @@ if ( $query->have_posts() ) : ?>
 		</table>
 	</div>
 
-
 <?php endif; ?>

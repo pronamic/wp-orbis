@@ -94,7 +94,7 @@ class Orbis_Core_AngularJS {
 	//////////////////////////////////////////////////
 
 	public function ng_app_attributes( $atts ) {
-		$atts .= ' ' . 'ng-app="orbisApp"';
+		$atts .= ' ng-app="orbisApp"';
 
 		return $atts;
 	}

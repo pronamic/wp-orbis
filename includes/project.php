@@ -34,7 +34,7 @@ function orbis_projects_posts_clauses( $pieces, $query ) {
 
 	$post_type = $query->get( 'post_type' );
 
-	if ( 'orbis_project' == $post_type ) {
+	if ( 'orbis_project' === $post_type ) {
 		// Fields
 		$fields = ',
 			project.number_seconds AS project_number_seconds,
@@ -87,7 +87,7 @@ function orbis_projects_posts_clauses( $pieces, $query ) {
 		if ( null !== $is_finished ) {
 			$is_finished = filter_var( $is_finished, FILTER_VALIDATE_BOOLEAN );
 
-			$where .= $wpdb->prepare( " AND project.finished = %d", $is_finished );
+			$where .= $wpdb->prepare( ' AND project.finished = %d', $is_finished );
 		}
 
 		// Pieces

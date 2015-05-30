@@ -43,7 +43,7 @@ function orbis_save_company( $post_id, $post ) {
 	}
 
 	// Check permissions
-	if ( ! ( 'orbis_company' == $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
+	if ( ! ( 'orbis_company' === $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
 
@@ -85,7 +85,7 @@ function orbis_save_company_sync( $post_id, $post ) {
 	}
 
 	// Check post type
-	if ( ! ( 'orbis_company' == $post->post_type ) ) {
+	if ( ! ( 'orbis_company' === $post->post_type ) ) {
 		return;
 	}
 
@@ -95,7 +95,7 @@ function orbis_save_company_sync( $post_id, $post ) {
 	}
 
 	// Publish
-	if ( 'publish' != $post->post_status ) {
+	if ( 'publish' !== $post->post_status ) {
 		return;
 	}
 

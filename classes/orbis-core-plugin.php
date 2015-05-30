@@ -339,7 +339,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 				'orbis_project' => orbis_post_type_capabilities( false, array(
 					'read_post' => true,
 				) ),
-			)
+			),
 		);
 
 		foreach ( $roles_post_cap as $role => $post_types ) {
