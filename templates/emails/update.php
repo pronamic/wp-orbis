@@ -6,12 +6,12 @@
 
 			<table>
 				<tr>
-					<td>
+					<td colspan="2">
 						<strong><?php _e( 'Recent Companies', 'orbis' ); ?></strong>
 					</td>
 				</tr>
 
-				<?php 
+				<?php
 
 				$query = new WP_Query( array(
 					'post_type'      => 'orbis_company',
@@ -22,34 +22,8 @@
 
 					<tr>
 						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
+							<?php the_time( 'D j M' ); ?>
 						</td>
-					</tr>
-
-				<?php endwhile; ?>
-
-			</table>
-
-		</td>
-		<td valign="top" width="33%">
-
-			<table>
-				<tr>
-					<td>
-						<strong><?php _e( 'Recent Persons', 'orbis' ); ?></strong>
-					</td>
-				</tr>
-
-				<?php 
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_person',
-					'posts_per_page' => 5,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
-
-					<tr>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
 						</td>
@@ -64,12 +38,44 @@
 
 			<table>
 				<tr>
-					<td>
+					<td colspan="2">
+						<strong><?php _e( 'Recent Persons', 'orbis' ); ?></strong>
+					</td>
+				</tr>
+
+				<?php
+
+				$query = new WP_Query( array(
+					'post_type'      => 'orbis_person',
+					'posts_per_page' => 5,
+				) );
+
+				while ( $query->have_posts() ) : $query->the_post(); ?>
+
+					<tr>
+						<td>
+							<?php the_time( 'D j M' ); ?>
+						</td>
+						<td>
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
+						</td>
+					</tr>
+
+				<?php endwhile; ?>
+
+			</table>
+
+		</td>
+		<td valign="top" width="33%">
+
+			<table>
+				<tr>
+					<td colspan="2">
 						<strong><?php _e( 'Recent Projects', 'orbis' ); ?></strong>
 					</td>
 				</tr>
 
-				<?php 
+				<?php
 
 				$query = new WP_Query( array(
 					'post_type'      => 'orbis_project',
@@ -79,6 +85,9 @@
 				while ( $query->have_posts() ) : $query->the_post(); ?>
 
 					<tr>
+						<td>
+							<?php the_time( 'D j M' ); ?>
+						</td>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
 						</td>
@@ -95,12 +104,12 @@
 
 			<table>
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						<strong><?php _e( 'Recent Deals', 'orbis' ); ?></strong>
 					</td>
 				</tr>
 
-				<?php 
+				<?php
 
 				$query = new WP_Query( array(
 					'post_type'      => 'orbis_deal',
@@ -110,6 +119,9 @@
 				while ( $query->have_posts() ) : $query->the_post(); ?>
 
 					<tr>
+						<td>
+							<?php the_time( 'D j M' ); ?>
+						</td>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
 						</td>
@@ -133,12 +145,12 @@
 
 			<table>
 				<tr>
-					<td>
+					<td colspan="2">
 						<strong><?php _e( 'Recent Subscriptions', 'orbis' ); ?></strong>
 					</td>
 				</tr>
 
-				<?php 
+				<?php
 
 				$query = new WP_Query( array(
 					'post_type'      => 'orbis_subscription',
@@ -148,6 +160,9 @@
 				while ( $query->have_posts() ) : $query->the_post(); ?>
 
 					<tr>
+						<td>
+							<?php the_time( 'D j M' ); ?>
+						</td>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
 						</td>
@@ -167,7 +182,7 @@
 					</td>
 				</tr>
 
-				<?php 
+				<?php
 
 				$query = new WP_Query( array(
 					'post_type'      => 'orbis_task',

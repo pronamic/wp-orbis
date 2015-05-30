@@ -161,7 +161,7 @@ class Orbis_Core_Email {
 
 		foreach ( $options as $option_key => $option ) {
 
-			$selected = ( is_string( $current_value ) && $option_key == $current_value ) ||
+			$selected = ( is_string( $current_value ) && $option_key === $current_value ) ||
 						( is_array( $current_value ) && in_array( $option_key, $current_value ) );
 
 			printf(
