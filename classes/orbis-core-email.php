@@ -70,6 +70,17 @@ class Orbis_Core_Email {
 		);
 
 		add_settings_field(
+			'orbis_email_subject_date_format', // id
+			__( 'Subject Date Format', 'orbis' ), // title
+			array( $this, 'input_text' ), // callback
+			'orbis', // page
+			'orbis_email', // section
+			array(
+				'label_for' => 'orbis_email_subject_date_format',
+			) // args
+		);
+
+		add_settings_field(
 			'orbis_email_manually', // id
 			__( 'E-mail Manually', 'orbis' ), // title
 			array( $this, 'button_email_manually' ), // callback
@@ -80,6 +91,7 @@ class Orbis_Core_Email {
 		register_setting( 'orbis', 'orbis_email_frequency' );
 		register_setting( 'orbis', 'orbis_email_time' );
 		register_setting( 'orbis', 'orbis_email_subject' );
+		register_setting( 'orbis', 'orbis_email_subject_date_format' );
 	}
 
 	/**
@@ -228,11 +240,19 @@ class Orbis_Core_Email {
 
 		global $orbis_email_title;
 
-		$orbis_email_title = __( 'Orbis Update', 'orbis' );
+		$orbis_email_title = str_replace(
+			array(
+				'{date}',
+			),
+			array(
+				date_i18n( get_option( 'orbis_email_subject_date_format' ) ),
+			),
+			get_option( 'orbis_email_subject', __( 'Orbis Update', 'orbis' ) )
+		);
 
 		$mail_to      = '';
-		$mail_subject = get_option( 'orbis_email_subject', __( 'Orbis Update', 'orbis' ) );
-		$mail_body  = $this->plugin->get_template( 'emails/update.php', false );
+		$mail_subject = $orbis_email_title;
+		$mail_body    = $this->plugin->get_template( 'emails/update.php', false );
 		$mail_headers = array(
 			'From: ' . get_bloginfo( 'name' ) . ' <' . get_bloginfo( 'admin_email' ) . '>',
 			'Content-Type: text/html',
