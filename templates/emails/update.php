@@ -1,208 +1,279 @@
+<?php
+
+$table_style   = '';
+$table_padding = 5;
+
+?>
+
 <?php do_action( 'orbis_email_header' ); ?>
 
-<table border="0" cellpadding="10" width="100%">
+<?php do_action( 'orbis_email_top' ); ?>
+
+<table border="0" cellpadding="0" width="100%">
 	<tr>
 		<td valign="top" width="33%">
+			<h2><?php esc_html_e( 'Recent Companies', 'orbis' ); ?></h2>
 
-			<table>
-				<tr>
-					<td colspan="2">
-						<strong><?php _e( 'Recent Companies', 'orbis' ); ?></strong>
-					</td>
-				</tr>
-
-				<?php
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_company',
-					'posts_per_page' => 5,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
-
+			<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
+				<thead>
 					<tr>
-						<td>
-							<?php the_time( 'D j M' ); ?>
-						</td>
-						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-						</td>
+						<th scope="col">
+							<?php esc_html_e( 'Date', 'orbis' ); ?>
+						</th>
+						<th scope="col">
+							<?php esc_html_e( 'Name', 'orbis' ); ?>
+						</th>
 					</tr>
+				</thead>
 
-				<?php endwhile; ?>
+				<tbody>
 
+					<?php
+
+					$query = new WP_Query( array(
+						'post_type'      => 'orbis_company',
+						'posts_per_page' => 5,
+						'no_found_rows'  => true,
+					) );
+
+					while ( $query->have_posts() ) : $query->the_post(); ?>
+
+						<tr>
+							<td>
+								<?php the_time( 'D j M' ); ?>
+							</td>
+							<td>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
+							</td>
+						</tr>
+
+					<?php endwhile; ?>
+
+				</tbody>
 			</table>
 
 		</td>
 		<td valign="top" width="33%">
+			<h2><?php esc_html_e( 'Recent Persons', 'orbis' ); ?></h2>
 
-			<table>
-				<tr>
-					<td colspan="2">
-						<strong><?php _e( 'Recent Persons', 'orbis' ); ?></strong>
-					</td>
-				</tr>
-
-				<?php
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_person',
-					'posts_per_page' => 5,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
-
+			<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
+				<thead>
 					<tr>
-						<td>
-							<?php the_time( 'D j M' ); ?>
-						</td>
-						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-						</td>
+						<th scope="col">
+							<?php esc_html_e( 'Date', 'orbis' ); ?>
+						</th>
+						<th scope="col">
+							<?php esc_html_e( 'Name', 'orbis' ); ?>
+						</th>
 					</tr>
+				</thead>
 
-				<?php endwhile; ?>
+				<tbody>
 
+					<?php
+
+					$query = new WP_Query( array(
+						'post_type'      => 'orbis_person',
+						'posts_per_page' => 5,
+						'no_found_rows'  => true,
+					) );
+
+					while ( $query->have_posts() ) : $query->the_post(); ?>
+
+						<tr>
+							<td>
+								<?php the_time( 'D j M' ); ?>
+							</td>
+							<td>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
+							</td>
+						</tr>
+
+					<?php endwhile; ?>
+
+				</tbody>
 			</table>
 
 		</td>
 		<td valign="top" width="33%">
+			<h2><?php esc_html_e( 'Recent Projects', 'orbis' ); ?></h2>
 
-			<table>
-				<tr>
-					<td colspan="2">
-						<strong><?php _e( 'Recent Projects', 'orbis' ); ?></strong>
-					</td>
-				</tr>
-
-				<?php
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_project',
-					'posts_per_page' => 5,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
-
+			<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
+				<thead>
 					<tr>
+						<th scope="col">
+							<?php esc_html_e( 'Date', 'orbis' ); ?>
+						</th>
 						<td>
-							<?php the_time( 'D j M' ); ?>
-						</td>
-						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-						</td>
+							<?php esc_html_e( 'Name', 'orbis' ); ?>
+						</th>
 					</tr>
+				</thead>
 
-				<?php endwhile; ?>
+				<tbody>
 
+					<?php
+
+					$query = new WP_Query( array(
+						'post_type'      => 'orbis_project',
+						'posts_per_page' => 5,
+						'no_found_rows'  => true,
+					) );
+
+					while ( $query->have_posts() ) : $query->the_post(); ?>
+
+						<tr>
+							<td>
+								<?php the_time( 'D j M' ); ?>
+							</td>
+							<td>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
+							</td>
+						</tr>
+
+					<?php endwhile; ?>
+
+				</tbody>
 			</table>
 
 		</td>
 	</tr>
 	<tr>
 		<td valign="top" width="33%">
+			<h2><?php esc_html_e( 'Recent Deals', 'orbis' ); ?></h2>
 
-			<table>
-				<tr>
-					<td colspan="3">
-						<strong><?php _e( 'Recent Deals', 'orbis' ); ?></strong>
-					</td>
-				</tr>
-
-				<?php
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_deal',
-					'posts_per_page' => 5,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
-
+			<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
+				<thead>
 					<tr>
-						<td>
-							<?php the_time( 'D j M' ); ?>
-						</td>
-						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-						</td>
-						<td>
-							<?php
-
-							$price = get_post_meta( $post->ID, '_orbis_deal_price', true );
-
-							echo orbis_price( $price );
-
-							?>
-						</td>
+						<th scope="col">
+							<?php esc_html_e( 'Date', 'orbis' ); ?>
+						</th>
+						<th scope="col">
+							<?php esc_html_e( 'Deal', 'orbis' ); ?>
+						</th>
+						<th scope="col">
+							<?php esc_html_e( 'Price', 'orbis' ); ?>
+						</th>
 					</tr>
+				</thead>
 
-				<?php endwhile; ?>
+				<tbody>
 
+					<?php
+
+					$query = new WP_Query( array(
+						'post_type'      => 'orbis_deal',
+						'posts_per_page' => 5,
+						'no_found_rows'  => true,
+					) );
+
+					while ( $query->have_posts() ) : $query->the_post(); ?>
+
+						<tr>
+							<td>
+								<?php the_time( 'D j M' ); ?>
+							</td>
+							<td>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
+							</td>
+							<td>
+								<?php
+
+								$price = get_post_meta( get_the_ID(), '_orbis_deal_price', true );
+
+								echo orbis_price( $price );
+
+								?>
+							</td>
+						</tr>
+
+					<?php endwhile; ?>
+
+				</tbody>
 			</table>
 
 		</td>
 		<td valign="top" width="33%">
+			<h2><?php esc_html_e( 'Recent Subscriptions', 'orbis' ); ?></h2>
 
-			<table>
-				<tr>
-					<td colspan="2">
-						<strong><?php _e( 'Recent Subscriptions', 'orbis' ); ?></strong>
-					</td>
-				</tr>
-
-				<?php
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_subscription',
-					'posts_per_page' => 5,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
-
+			<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
+				<thead>
 					<tr>
-						<td>
-							<?php the_time( 'D j M' ); ?>
-						</td>
-						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-						</td>
+						<th scope="col">
+							<?php esc_html_e( 'Date', 'orbis' ); ?>
+						</th>
+						<th scope="col">
+							<?php esc_html_e( 'Name', 'orbis' ); ?>
+						</th>
 					</tr>
+				</thead>
 
-				<?php endwhile; ?>
+				<tbody>
 
+					<?php
+
+					$query = new WP_Query( array(
+						'post_type'      => 'orbis_subscription',
+						'posts_per_page' => 5,
+						'no_found_rows'  => true,
+					) );
+
+					while ( $query->have_posts() ) : $query->the_post(); ?>
+
+						<tr>
+							<td>
+								<?php the_time( 'D j M' ); ?>
+							</td>
+							<td>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
+							</td>
+						</tr>
+
+					<?php endwhile; ?>
+
+				</tbody>
 			</table>
 
 		</td>
 		<td valign="top" width="33%">
+			<h2><?php esc_html_e( 'Recent Tasks', 'orbis' ); ?></h2>
 
-			<table>
-				<tr>
-					<td>
-						<strong><?php _e( 'Recent Tasks', 'orbis' ); ?></strong>
-					</td>
-				</tr>
-
-				<?php
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_task',
-					'posts_per_page' => 5,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
-
+			<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
+				<thead>
 					<tr>
-						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-						</td>
+						<th scope="col">
+							<?php esc_html_e( 'Task', 'orbis' ); ?>
+						</th>
 					</tr>
+				</thead>
 
-				<?php endwhile; ?>
+				<tbody>
 
+					<?php
+
+					$query = new WP_Query( array(
+						'post_type'      => 'orbis_task',
+						'posts_per_page' => 5,
+						'no_found_rows'  => true,
+					) );
+
+					while ( $query->have_posts() ) : $query->the_post(); ?>
+
+						<tr>
+							<td>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
+							</td>
+						</tr>
+
+					<?php endwhile; ?>
+
+				</tbody>
 			</table>
 
 		</td>
 	</tr>
 </table>
+
+<?php do_action( 'orbis_email_bottom' ); ?>
 
 <?php do_action( 'orbis_email_footer' ); ?>
