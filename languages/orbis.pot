@@ -4,14 +4,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.2.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2015-05-30 12:22:54+00:00\n"
+"POT-Creation-Date: 2015-06-09 15:01:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.5.2\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
 
 #: admin/meta-box-company-details.php:27 admin/meta-box-project-details.php:29
 #: includes/projects.php:367 templates/projects-without-agreement.php:35
@@ -126,7 +126,7 @@ msgstr ""
 msgid "Project is finished"
 msgstr ""
 
-#: admin/page-dashboard.php:9 templates/emails/update.php:38
+#: admin/page-dashboard.php:9 templates/emails/update.php:121
 msgid "Recent Projects"
 msgstr ""
 
@@ -310,18 +310,22 @@ msgid "Subject"
 msgstr ""
 
 #: classes/orbis-core-email.php:74
+msgid "Subject Date Format"
+msgstr ""
+
+#: classes/orbis-core-email.php:85
 msgid "E-mail Manually"
 msgstr ""
 
-#: classes/orbis-core-email.php:180
+#: classes/orbis-core-email.php:192
 msgid "Send E-mail"
 msgstr ""
 
-#: classes/orbis-core-email.php:195
+#: classes/orbis-core-email.php:207
 msgid "Not scheduled"
 msgstr ""
 
-#: classes/orbis-core-email.php:231 classes/orbis-core-email.php:234
+#: classes/orbis-core-email.php:250
 msgid "Orbis Update"
 msgstr ""
 
@@ -483,7 +487,9 @@ msgid "Comments"
 msgstr ""
 
 #: includes/companies.php:152 includes/projects.php:370
-#: templates/projects-table-view.php:9
+#: templates/emails/update.php:35 templates/emails/update.php:84
+#: templates/emails/update.php:133 templates/emails/update.php:190
+#: templates/emails/update.php:251 templates/projects-table-view.php:9
 msgid "Date"
 msgstr ""
 
@@ -635,32 +641,52 @@ msgstr ""
 msgid "Principal"
 msgstr ""
 
-#: templates/emails/update.php:6
+#: templates/emails/update.php:23
 msgid "Recent Companies"
 msgstr ""
 
-#: templates/emails/update.php:22
-msgid "Recent Persons"
+#: templates/emails/update.php:38 templates/emails/update.php:87
+#: templates/emails/update.php:136 templates/emails/update.php:254
+#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
+msgid "Name"
 msgstr ""
 
-#: templates/emails/update.php:56
-msgid "Recent Deals"
+#: templates/emails/update.php:64 templates/emails/update.php:113
+#: templates/emails/update.php:170 templates/emails/update.php:231
+#: templates/emails/update.php:288 templates/emails/update.php:339
+msgid "No new posts in the last 3 days."
 msgstr ""
 
 #: templates/emails/update.php:72
+msgid "Recent Persons"
+msgstr ""
+
+#: templates/emails/update.php:178
+msgid "Recent Deals"
+msgstr ""
+
+#: templates/emails/update.php:193
+msgid "Deal"
+msgstr ""
+
+#: templates/emails/update.php:196
+msgid "Price"
+msgstr ""
+
+#: templates/emails/update.php:239
 msgid "Recent Subscriptions"
 msgstr ""
 
-#: templates/emails/update.php:88
+#: templates/emails/update.php:296
 msgid "Recent Tasks"
+msgstr ""
+
+#: templates/emails/update.php:308
+msgid "Task"
 msgstr ""
 
 #: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
 msgid "Order By:"
-msgstr ""
-
-#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
-msgid "Name"
 msgstr ""
 
 #: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109

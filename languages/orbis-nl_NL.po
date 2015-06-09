@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2015-05-30 14:23+0100\n"
-"PO-Revision-Date: 2015-05-30 14:24+0100\n"
+"POT-Creation-Date: 2015-06-09 15:01:40+00:00\n"
+"PO-Revision-Date: 2015-06-09 17:02+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8\n"
+"X-Generator: Poedit 1.7.4\n"
 
 #: admin/meta-box-company-details.php:27 admin/meta-box-project-details.php:29
 #: includes/projects.php:367 templates/projects-without-agreement.php:35
@@ -133,7 +133,7 @@ msgstr "Afgerond"
 msgid "Project is finished"
 msgstr "Project is afgerond"
 
-#: admin/page-dashboard.php:9 templates/emails/update.php:38
+#: admin/page-dashboard.php:9 templates/emails/update.php:121
 msgid "Recent Projects"
 msgstr "Recente projecten"
 
@@ -317,18 +317,22 @@ msgid "Subject"
 msgstr "Onderwerp"
 
 #: classes/orbis-core-email.php:74
+msgid "Subject Date Format"
+msgstr "Onderwerp datumnotatie"
+
+#: classes/orbis-core-email.php:85
 msgid "E-mail Manually"
 msgstr "E-mail handmatig"
 
-#: classes/orbis-core-email.php:180
+#: classes/orbis-core-email.php:192
 msgid "Send E-mail"
 msgstr "Verstuur e-mail"
 
-#: classes/orbis-core-email.php:195
+#: classes/orbis-core-email.php:207
 msgid "Not scheduled"
 msgstr "Niet ingepland"
 
-#: classes/orbis-core-email.php:231 classes/orbis-core-email.php:234
+#: classes/orbis-core-email.php:250
 msgid "Orbis Update"
 msgstr "Orbis update"
 
@@ -490,7 +494,9 @@ msgid "Comments"
 msgstr "Reacties"
 
 #: includes/companies.php:152 includes/projects.php:370
-#: templates/projects-table-view.php:9
+#: templates/emails/update.php:35 templates/emails/update.php:84
+#: templates/emails/update.php:133 templates/emails/update.php:190
+#: templates/emails/update.php:251 templates/projects-table-view.php:9
 msgid "Date"
 msgstr "Datum"
 
@@ -642,33 +648,53 @@ msgstr "afgerond"
 msgid "Principal"
 msgstr "Opdrachtgever"
 
-#: templates/emails/update.php:6
+#: templates/emails/update.php:23
 msgid "Recent Companies"
 msgstr "Recente bedrijven"
 
-#: templates/emails/update.php:22
+#: templates/emails/update.php:38 templates/emails/update.php:87
+#: templates/emails/update.php:136 templates/emails/update.php:254
+#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
+msgid "Name"
+msgstr "Naam"
+
+#: templates/emails/update.php:64 templates/emails/update.php:113
+#: templates/emails/update.php:170 templates/emails/update.php:231
+#: templates/emails/update.php:288 templates/emails/update.php:339
+msgid "No new posts in the last 3 days."
+msgstr "Geen nieuwe berichten in de laatste 3 dagen."
+
+#: templates/emails/update.php:72
 msgid "Recent Persons"
 msgstr "Recente personen"
 
-#: templates/emails/update.php:56
+#: templates/emails/update.php:178
 msgid "Recent Deals"
 msgstr "Recente deals"
 
-#: templates/emails/update.php:72
+#: templates/emails/update.php:193
+msgid "Deal"
+msgstr "Deal"
+
+#: templates/emails/update.php:196
+msgid "Price"
+msgstr "Prijs"
+
+#: templates/emails/update.php:239
 msgid "Recent Subscriptions"
 msgstr "Recente abonnementen"
 
-#: templates/emails/update.php:88
+#: templates/emails/update.php:296
 msgid "Recent Tasks"
 msgstr "Recente taken"
+
+#: templates/emails/update.php:308
+msgid "Task"
+msgstr "Taak"
 
 #: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
 msgid "Order By:"
 msgstr "Sorteer op:"
-
-#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
-msgid "Name"
-msgstr "Naam"
 
 #: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
 msgid "Number"
@@ -906,9 +932,6 @@ msgstr "Nieuw persoon"
 
 #~ msgid "Update Date"
 #~ msgstr "Update datum"
-
-#~ msgid "Price"
-#~ msgstr "Prijs"
 
 #~ msgid "License Key"
 #~ msgstr "Licentiesleutel"
