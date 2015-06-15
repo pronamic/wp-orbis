@@ -27,6 +27,7 @@ class Orbis_Core_Settings {
 
 	public function dropdown_currencies() {
 		$currencies = array(
+			'GBP' => __( 'Pound sterling', 'orbis' ),
 			'EUR' => __( 'Euros', 'orbis' ),
 			'USD' => __( 'US Dollars', 'orbis' ),
 		);
