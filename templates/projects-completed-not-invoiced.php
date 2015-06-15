@@ -83,10 +83,8 @@ ksort( $managers );
 $parameters = $_GET;
 
 ?>
-<h1>Afgeronde projecten die niet zijn gefactureerd</h1>
-
 <p>
-	Sorteer op: <a href="?order=name">Naam</a> | <a href="?order=id">Nummer</a>
+	<?php _e( 'Order By:', 'orbis' ); ?> <a href="?order=name"><?php _e( 'Name', 'orbis' ); ?></a> | <a href="?order=id"><?php _e( 'Number', 'orbis' ); ?></a>
 </p>
 
 <?php

@@ -10,6 +10,7 @@ function orbis_project_query_vars( $query_vars ) {
 	$query_vars[] = 'orbis_project_principal';
 	$query_vars[] = 'orbis_project_client_id';
 	$query_vars[] = 'orbis_project_invoice_number';
+	$query_vars[] = 'orbis_project_is_finished';
 
 	return $query_vars;
 }
@@ -33,7 +34,7 @@ function orbis_projects_posts_clauses( $pieces, $query ) {
 
 	$post_type = $query->get( 'post_type' );
 
-	if ( 'orbis_project' == $post_type ) {
+	if ( 'orbis_project' === $post_type ) {
 		// Fields
 		$fields = ',
 			project.number_seconds AS project_number_seconds,
@@ -80,6 +81,16 @@ function orbis_projects_posts_clauses( $pieces, $query ) {
 
 			$where .= " AND project.invoice_number LIKE '{$wildcard}{$term}{$wildcard}' ";
 		}
+
+		$is_finished = $query->get( 'orbis_project_is_finished', null );
+
+		if ( null !== $is_finished ) {
+			$is_finished = filter_var( $is_finished, FILTER_VALIDATE_BOOLEAN );
+
+			$where .= $wpdb->prepare( ' AND project.finished = %d', $is_finished );
+		}
+
+		// Pieces
 
 		$pieces['join']   .= $join;
 		$pieces['fields'] .= $fields;

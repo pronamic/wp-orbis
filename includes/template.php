@@ -23,6 +23,10 @@ if ( ! function_exists( 'orbis_price' ) ) {
 					$currency_symbol = '$';
 
 					break;
+				case 'GBP':
+					$currency_symbol = '£';
+
+					break;
 			}
 
 			$return .= $currency_symbol;

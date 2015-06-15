@@ -4,7 +4,7 @@ Plugin Name: Orbis
 Plugin URI: http://www.pronamic.eu/plugins/orbis/
 Description: Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More...
 
-Version: 1.2.2
+Version: 1.3.0
 Requires at least: 3.0
 
 Author: Pronamic
@@ -33,6 +33,7 @@ function orbis_bootstrap() {
 	require_once 'classes/orbis-plugin.php';
 	require_once 'classes/orbis-core-admin.php';
 	require_once 'classes/orbis-core-angularjs.php';
+	require_once 'classes/orbis-core-email.php';
 	require_once 'classes/orbis-core-plugin.php';
 	require_once 'classes/orbis-core-settings.php';
 	require_once 'classes/orbis-api.php';

@@ -3,7 +3,7 @@ Contributors: pronamic, remcotolsma, kjtolsma
 Tags: orbis, intranet
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 1.2.2
+Stable tag: 1.3.0
 
 Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More...
 
@@ -25,7 +25,7 @@ theme is based on Bootstrap and gives you all the front-end functionality you
 need. Easely extend this theme with child themes. We’ll try to release more
  themes.
 
-[Download the Orbis theme for free.](https://github.com/pronamic/wt-orbis/releases)
+[Download the Orbis theme for free.](http://www.pronamic.eu/themes/orbis/)
 
 = Benefits at a glance =
 
@@ -51,9 +51,9 @@ need. Easely extend this theme with child themes. We’ll try to release more
 The power of Orbis lays in the extendability and flexibility. Use plugins to 
 add the functionality you need.
 
-*	[Orbis Tasks](http://www.orbiswp.com/plugins/) - Add tasks to Persons and connect them to Projects
-*	[Orbis Keychains](http://www.orbiswp.com/plugins/) - Alle your passwords im a save place
-*	[Orbis Timesheets](http://www.orbiswp.com/plugins/) - Submit your time en connect them to Projects.
+*	[Orbis Tasks](http://www.pronamic.eu/plugins/orbis-tasks/) - Add tasks to Persons and connect them to Projects
+*	[Orbis Keychains](http://www.pronamic.eu/plugins/orbis-keychains/) - Alle your passwords im a save place
+*	[Orbis Timesheets](http://www.pronamic.eu/plugins/orbis-timesheets/) - Submit your time en connect them to Projects.
 
 = Get involved =
 
@@ -91,6 +91,11 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 
 == Changelog ==
+
+= 1.3.0 =
+*	Added - Added daily recap email system.
+*	Added - Added company category taxonomy.
+*	Added - Added support for pound sterling.
 
 = 1.2.2 =
 *	Tweak - Adjusted WordPress admin company post type menu dashicon from 'network' to 'building'.

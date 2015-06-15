@@ -149,13 +149,13 @@ function orbis_log_save_post( $post_id, $post ) {
 	// Ok
 	$current_user = wp_get_current_user();
 
-	if ( 0 == $current_user->ID ) {
+	if ( 0 === $current_user->ID ) {
 		$name = __( 'Anonymous', 'orbis' );
 	} else {
 		$name = $current_user->display_name;
 	}
 
-	if ( 'publish' != $post->post_status ) {
+	if ( 'publish' !== $post->post_status ) {
 		$url = get_edit_post_link( $post_id );
 	} else {
 		$url = get_permalink( $post_id );

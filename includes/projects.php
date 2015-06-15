@@ -140,7 +140,9 @@ function orbis_projects_post_class( $classes ) {
 
 add_filter( 'post_class', 'orbis_projects_post_class' );
 
-
+/**
+ * Helper functions
+ */
 function orbis_project_is_finished() {
 	global $post;
 
@@ -165,6 +167,18 @@ function orbis_project_is_invoiced() {
 	return $is_invoiced;
 }
 
+function orbis_project_is_invoicable() {
+	global $post;
+
+	$is_invoicable = false;
+
+	if ( get_post_meta( get_the_ID(), '_orbis_project_is_invoicable', true ) ) {
+		$is_invoicable = true;
+	}
+
+	return $is_invoicable;
+}
+
 /**
  * Save project details
  */
@@ -181,7 +195,7 @@ function orbis_save_project( $post_id, $post ) {
 	}
 
 	// Check permissions
-	if ( ! ( 'orbis_project' == $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
+	if ( ! ( 'orbis_project' === $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
 
@@ -209,7 +223,7 @@ function orbis_save_project( $post_id, $post ) {
 	}
 
 	// Action
-	if ( 'publish' == $post->post_status && $is_finished_old != $is_finished_new ) {
+	if ( 'publish' === $post->post_status && $is_finished_old !== $is_finished_new ) {
 		// @see https://github.com/woothemes/woocommerce/blob/v2.1.4/includes/class-wc-order.php#L1274
 		do_action( 'orbis_project_finished_update', $post_id, $is_finished_new );
 	}
@@ -258,7 +272,7 @@ function orbis_save_project_sync( $post_id, $post ) {
 	}
 
 	// Check post type
-	if ( ! ( 'orbis_project' == $post->post_type ) ) {
+	if ( ! ( 'orbis_project' === $post->post_type ) ) {
 		return;
 	}
 
@@ -268,7 +282,7 @@ function orbis_save_project_sync( $post_id, $post ) {
 	}
 
 	// Publish
-	if ( 'publish' != $post->post_status ) {
+	if ( 'publish' !== $post->post_status ) {
 		return;
 	}
 
@@ -404,7 +418,7 @@ add_action( 'manage_posts_custom_column' , 'orbis_project_column', 10, 2 );
 function orbis_projects_pre_get_posts( $query ) {
 	$orderby = $query->get( 'orderby' );
 
-	if ( 'project_finished_modified' == $orderby ) {
+	if ( 'project_finished_modified' === $orderby ) {
 		$query->set( 'orderby', 'meta_value_num' );
 		$query->set( 'meta_key', '_orbis_project_finished_modified' );
 	}

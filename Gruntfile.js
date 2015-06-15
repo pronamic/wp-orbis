@@ -11,12 +11,16 @@ module.exports = function( grunt ) {
 		// PHP Code Sniffer
 		phpcs: {
 			application: {
-				dir: [ '.' ],
+				src: [
+					'**/*.php',
+					'!bower_components/**',
+					'!deploy/**',
+					'!node_modules/**'
+				],
 			},
 			options: {
 				standard: 'phpcs.ruleset.xml',
-				extensions: 'php',
-				ignore: '<%= dirs.ignore %>'
+				showSniffCodes: true
 			}
 		},
 
@@ -96,9 +100,9 @@ module.exports = function( grunt ) {
 		makepot: {
 			target: {
 				options: {
-					cwd: '',
 					domainPath: 'languages',
 					type: 'wp-plugin',
+					updatePoFiles: true,
 					exclude: [ 'bower_components/.*', 'deploy/.*', 'node_modules' ],
 				}
 			}

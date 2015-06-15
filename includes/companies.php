@@ -43,7 +43,7 @@ function orbis_save_company( $post_id, $post ) {
 	}
 
 	// Check permissions
-	if ( ! ( 'orbis_company' == $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
+	if ( ! ( 'orbis_company' === $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
 
@@ -57,6 +57,9 @@ function orbis_save_company( $post_id, $post ) {
 		'_orbis_company_city'       => FILTER_SANITIZE_STRING,
 		'_orbis_company_country'    => FILTER_SANITIZE_STRING,
 		'_orbis_company_ebilling'   => FILTER_VALIDATE_BOOLEAN,
+		'_orbis_company_twitter'    => FILTER_SANITIZE_STRING,
+		'_orbis_company_facebook'   => FILTER_SANITIZE_STRING,
+		'_orbis_company_linkedin'   => FILTER_SANITIZE_STRING,
 	);
 
 	$data = filter_input_array( INPUT_POST, $definition );
@@ -82,7 +85,7 @@ function orbis_save_company_sync( $post_id, $post ) {
 	}
 
 	// Check post type
-	if ( ! ( 'orbis_company' == $post->post_type ) ) {
+	if ( ! ( 'orbis_company' === $post->post_type ) ) {
 		return;
 	}
 
@@ -92,7 +95,7 @@ function orbis_save_company_sync( $post_id, $post ) {
 	}
 
 	// Publish
-	if ( 'publish' != $post->post_status ) {
+	if ( 'publish' !== $post->post_status ) {
 		return;
 	}
 

@@ -2,14 +2,14 @@
 	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>
-				<th scope="col">Projectleider</th>
-				<th scope="col">ID</th>
-				<th scope="col">Opdrachtgever</th>
-				<th scope="col">Project</th>
-				<th scope="col">Datum</th>
-				<th scope="col">Uren</th>
-				<th scope="col">Factureerbaar</th>
-				<th scope="col">Factuurnummer</th>
+				<th scope="col"><?php _e( 'Manager', 'orbis' ); ?></th>
+				<th scope="col"><?php _e( 'ID', 'orbis' ); ?></th>
+				<th scope="col"><?php _e( 'Client', 'orbis' ); ?></th>
+				<th scope="col"><?php _e( 'Project', 'orbis' ); ?></th>
+				<th scope="col"><?php _e( 'Date', 'orbis' ); ?></th>
+				<th scope="col"><?php _e( 'Time', 'orbis' ); ?></th>
+				<th scope="col"><?php _e( 'Invoiceable', 'orbis' ); ?></th>
+				<th scope="col"><?php _e( 'Invoice Number', 'orbis' ); ?></th>
 			</tr>
 		</thead>
 

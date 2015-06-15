@@ -105,11 +105,9 @@ ksort( $managers );
 $parameters = $_GET;
 
 ?>
-<h1>Projecten</h1>
-
 <p>
-	Sorteer op: <a href="?order=name">Naam</a> | <a href="?order=id">Nummer</a><br />
-	Filter: <a href="?filter=strippenkaart">Strippenkaart</a> | <a href="?filter=false">Geen</a><br />
+	<?php _e( 'Order By:', 'orbis' ); ?> <a href="?order=name"><?php _e( 'Name', 'orbis' ); ?></a> | <a href="?order=id"><?php _e( 'Number', 'orbis' ); ?></a><br />
+	<?php _e( 'Filter:', 'orbis' ); ?>: <a href="?filter=strippenkaart"><?php _e( 'Strippenkaart', 'orbis' ); ?></a> | <a href="?filter=false"><?php _e( 'None', 'orbis' ); ?></a><br />
 </p>
 
 <?php

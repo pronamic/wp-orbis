@@ -5,7 +5,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		parent::__construct( $file );
 
 		$this->set_name( 'orbis' );
-		$this->set_db_version( '1.2.0' );
+		$this->set_db_version( '1.3.0' );
 
 		// Actions
 		add_action( 'init', array( $this, 'init' ) );
@@ -31,6 +31,9 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		// API
 		$this->api = new Orbis_API();
+
+		// Email
+		$this->email = new Orbis_Core_Email( $this );
 
 		// Admin
 		if ( is_admin() ) {
@@ -339,7 +342,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 				'orbis_project' => orbis_post_type_capabilities( false, array(
 					'read_post' => true,
 				) ),
-			)
+			),
 		);
 
 		foreach ( $roles_post_cap as $role => $post_types ) {

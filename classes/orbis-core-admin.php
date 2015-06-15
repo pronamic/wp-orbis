@@ -89,7 +89,7 @@ class Orbis_Core_Admin {
 		}
 
 		// Orbis plugins screen
-		if ( 'orbis_page_orbis_plugins' == $screen->id ) {
+		if ( 'orbis_page_orbis_plugins' === $screen->id ) {
 			wp_enqueue_script(
 				'orbis-plugins-script',
 				$this->plugin->plugin_url( 'includes/js/orbis-plugins.js' ),
@@ -255,7 +255,7 @@ class Orbis_Core_Admin {
 						<legend class="screen-reader-text"><span><?php _e( 'Orbis User', 'orbis' ); ?></span></legend>
 
 						<label for="orbis_user">
-							<input name="orbis_user" type="checkbox" id="orbis_user" value="1" <?php checked( 'true' == $orbis_user ); ?> />
+							<input name="orbis_user" type="checkbox" id="orbis_user" value="1" <?php checked( 'true' === $orbis_user ); ?> />
 
 							<?php _e( 'Show user in Orbis.', 'orbis' ); ?>
 						</label><br />
@@ -292,7 +292,7 @@ class Orbis_Core_Admin {
 	}
 
 	/**
-     * Called through the WordPress AJAX hook. Activates a plugin that matches the slug passed through the $_POST variable.
+	 * Called through the WordPress AJAX hook. Activates a plugin that matches the slug passed through the $_POST variable.
 	 */
 	public function orbis_activate_plugin() {
 		$plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_SANITIZE_STRING );
