@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2015-06-09 15:01:40+00:00\n"
-"PO-Revision-Date: 2015-06-09 17:02+0100\n"
+"POT-Creation-Date: 2015-06-15 11:38:04+00:00\n"
+"PO-Revision-Date: 2015-06-15 13:38+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -449,14 +449,18 @@ msgid "Currency"
 msgstr "Valuta"
 
 #: classes/orbis-core-settings.php:30
+msgid "Pound sterling"
+msgstr "Pond sterling"
+
+#: classes/orbis-core-settings.php:31
 msgid "Euros"
 msgstr "Euro"
 
-#: classes/orbis-core-settings.php:31
+#: classes/orbis-core-settings.php:32
 msgid "US Dollars"
 msgstr "Amerikaanse dollar"
 
-#: classes/orbis-core-settings.php:50
+#: classes/orbis-core-settings.php:51
 msgid "Example: %s"
 msgstr "Voorbeeld: %s"
 

@@ -22,7 +22,7 @@ $defaults = array(
 <div>
 	<h2><?php esc_html_e( 'Recent Companies', 'orbis' ); ?></h2>
 
-	<?php 
+	<?php
 
 	$query = new WP_Query( wp_parse_args( array( 'post_type' => 'orbis_company' ), $defaults ) );
 
@@ -71,7 +71,7 @@ $defaults = array(
 <div>
 	<h2><?php esc_html_e( 'Recent Persons', 'orbis' ); ?></h2>
 
-	<?php 
+	<?php
 
 	$query = new WP_Query( wp_parse_args( array( 'post_type' => 'orbis_person' ), $defaults ) );
 
@@ -120,7 +120,7 @@ $defaults = array(
 <div>
 	<h2><?php esc_html_e( 'Recent Projects', 'orbis' ); ?></h2>
 
-	<?php 
+	<?php
 
 	$query = new WP_Query( wp_parse_args( array( 'post_type' => 'orbis_project' ), $defaults ) );
 
@@ -177,7 +177,7 @@ $defaults = array(
 <div>
 	<h2><?php esc_html_e( 'Recent Deals', 'orbis' ); ?></h2>
 
-	<?php 
+	<?php
 
 	$query = new WP_Query( wp_parse_args( array( 'post_type' => 'orbis_deal' ), $defaults ) );
 
@@ -238,7 +238,7 @@ $defaults = array(
 <div>
 	<h2><?php esc_html_e( 'Recent Subscriptions', 'orbis' ); ?></h2>
 
-	<?php 
+	<?php
 
 	$query = new WP_Query( wp_parse_args( array( 'post_type' => 'orbis_subscription' ), $defaults ) );
 
@@ -295,7 +295,7 @@ $defaults = array(
 <div>
 	<h2><?php esc_html_e( 'Recent Tasks', 'orbis' ); ?></h2>
 
-	<?php 
+	<?php
 
 	$query = new WP_Query( wp_parse_args( array( 'post_type' => 'orbis_task' ), $defaults ) );
 
