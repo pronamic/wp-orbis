@@ -140,15 +140,7 @@ $defaults = array(
 
 			<tbody>
 
-				<?php
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_project',
-					'posts_per_page' => 5,
-					'no_found_rows'  => true,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
+				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 					<tr>
 						<td>
@@ -258,15 +250,7 @@ $defaults = array(
 
 			<tbody>
 
-				<?php
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_subscription',
-					'posts_per_page' => 5,
-					'no_found_rows'  => true,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
+				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 					<tr>
 						<td>
@@ -312,15 +296,7 @@ $defaults = array(
 
 			<tbody>
 
-				<?php
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_task',
-					'posts_per_page' => 5,
-					'no_found_rows'  => true,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
+				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 					<tr>
 						<td>
