@@ -73,7 +73,7 @@ $sections = array(
 								<?php the_time( 'D j M' ); ?>
 							</td>
 							<td>
-								 <?php the_author(); ?> 
+								<?php the_author(); ?> 
 							</td>
 							<td>
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
