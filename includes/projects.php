@@ -211,7 +211,7 @@ function orbis_save_project( $post_id, $post ) {
 	$data['_orbis_project_seconds_available'] = orbis_filter_time_input( INPUT_POST, '_orbis_project_seconds_available' );
 
 	// Finished
-	$is_finished_old = get_post_meta( $post_id, '_orbis_project_is_finished', true );
+	$is_finished_old = filter_var( get_post_meta( $post_id, '_orbis_project_is_finished', true ), FILTER_VALIDATE_BOOLEAN );
 	$is_finished_new = $data['_orbis_project_is_finished'] ;
 
 	foreach ( $data as $key => $value ) {
