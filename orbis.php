@@ -4,7 +4,7 @@ Plugin Name: Orbis
 Plugin URI: http://www.pronamic.eu/plugins/orbis/
 Description: Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More...
 
-Version: 1.3.0
+Version: 1.3.1
 Requires at least: 3.0
 
 Author: Pronamic
