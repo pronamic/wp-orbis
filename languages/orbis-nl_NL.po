@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2015-06-15 11:38:04+00:00\n"
-"PO-Revision-Date: 2015-06-15 13:38+0100\n"
+"POT-Creation-Date: 2015-07-30 13:47:03+00:00\n"
+"PO-Revision-Date: 2015-07-30 15:47+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -133,7 +133,7 @@ msgstr "Afgerond"
 msgid "Project is finished"
 msgstr "Project is afgerond"
 
-#: admin/page-dashboard.php:9 templates/emails/update.php:121
+#: admin/page-dashboard.php:9 templates/emails/update.php:20
 msgid "Recent Projects"
 msgstr "Recente projecten"
 
@@ -490,6 +490,7 @@ msgid "Online"
 msgstr "Online"
 
 #: includes/companies.php:150 includes/projects.php:368
+#: templates/emails/update.php:51
 msgid "Author"
 msgstr "Auteur"
 
@@ -498,9 +499,7 @@ msgid "Comments"
 msgstr "Reacties"
 
 #: includes/companies.php:152 includes/projects.php:370
-#: templates/emails/update.php:35 templates/emails/update.php:84
-#: templates/emails/update.php:133 templates/emails/update.php:190
-#: templates/emails/update.php:251 templates/projects-table-view.php:9
+#: templates/emails/update.php:48 templates/projects-table-view.php:9
 msgid "Date"
 msgstr "Datum"
 
@@ -652,49 +651,46 @@ msgstr "afgerond"
 msgid "Principal"
 msgstr "Opdrachtgever"
 
-#: templates/emails/update.php:23
+#: templates/emails/update.php:17
+msgid "Recent Posts"
+msgstr "Recente berichten"
+
+#: templates/emails/update.php:18
 msgid "Recent Companies"
 msgstr "Recente bedrijven"
 
-#: templates/emails/update.php:38 templates/emails/update.php:87
-#: templates/emails/update.php:136 templates/emails/update.php:254
+#: templates/emails/update.php:19
+msgid "Recent Persons"
+msgstr "Recente personen"
+
+#: templates/emails/update.php:21
+msgid "Recent Deals"
+msgstr "Recente deals"
+
+#: templates/emails/update.php:22
+msgid "Recent Subscriptions"
+msgstr "Recente abonnementen"
+
+#: templates/emails/update.php:23
+msgid "Recent Keychains"
+msgstr "Recente sleutelhangers"
+
+#: templates/emails/update.php:24
+msgid "Recent Tasks"
+msgstr "Recente taken"
+
+#: templates/emails/update.php:54
 #: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
 msgid "Name"
 msgstr "Naam"
 
-#: templates/emails/update.php:64 templates/emails/update.php:113
-#: templates/emails/update.php:170 templates/emails/update.php:231
-#: templates/emails/update.php:288 templates/emails/update.php:339
-msgid "No new posts in the last 3 days."
-msgstr "Geen nieuwe berichten in de laatste 3 dagen."
-
-#: templates/emails/update.php:72
-msgid "Recent Persons"
-msgstr "Recente personen"
-
-#: templates/emails/update.php:178
-msgid "Recent Deals"
-msgstr "Recente deals"
-
-#: templates/emails/update.php:193
-msgid "Deal"
-msgstr "Deal"
-
-#: templates/emails/update.php:196
+#: templates/emails/update.php:60
 msgid "Price"
 msgstr "Prijs"
 
-#: templates/emails/update.php:239
-msgid "Recent Subscriptions"
-msgstr "Recente abonnementen"
-
-#: templates/emails/update.php:296
-msgid "Recent Tasks"
-msgstr "Recente taken"
-
-#: templates/emails/update.php:308
-msgid "Task"
-msgstr "Taak"
+#: templates/emails/update.php:105
+msgid "No new posts in the last 3 days."
+msgstr "Geen nieuwe berichten in de laatste 3 dagen."
 
 #: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
 msgid "Order By:"
@@ -835,6 +831,12 @@ msgstr "Persoon"
 msgctxt "person"
 msgid "Add New"
 msgstr "Nieuw persoon"
+
+#~ msgid "Deal"
+#~ msgstr "Deal"
+
+#~ msgid "Task"
+#~ msgstr "Taak"
 
 #~ msgid "LinkedIn Username:"
 #~ msgstr "LinkedIn gebruikersnaam:"
@@ -986,9 +988,6 @@ msgstr "Nieuw persoon"
 
 #~ msgid "View Keychain"
 #~ msgstr "Bekijk sleutelhanger"
-
-#~ msgid "Search Keychains"
-#~ msgstr "Sleutelhangers zoeken"
 
 #~ msgid "No keychains found"
 #~ msgstr "Geen sleutelhangers gevonden"

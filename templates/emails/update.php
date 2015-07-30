@@ -13,335 +13,103 @@ $defaults = array(
 	),
 );
 
+$sections = array(
+	'post'               => __( 'Recent Posts', 'orbis' ),
+	'orbis_company'      => __( 'Recent Companies', 'orbis' ),
+	'orbis_person'       => __( 'Recent Persons', 'orbis' ),
+	'orbis_project'      => __( 'Recent Projects', 'orbis' ),
+	'orbis_deal'         => __( 'Recent Deals', 'orbis' ),
+	'orbis_subscription' => __( 'Recent Subscriptions', 'orbis' ),
+	'orbis_keychain'     => __( 'Recent Keychains', 'orbis' ),
+	'orbis_task'         => __( 'Recent Tasks', 'orbis' ),
+);
+
 ?>
 
 <?php do_action( 'orbis_email_header' ); ?>
 
 <?php do_action( 'orbis_email_top' ); ?>
 
-<div>
-	<h2><?php esc_html_e( 'Recent Companies', 'orbis' ); ?></h2>
+<?php foreach ( $sections as $post_type => $label ) : ?>
 
-	<?php
+	<div>
+		<h2><?php echo esc_html( $label ); ?></h2>
 
-	$query = new WP_Query( wp_parse_args( array( 'post_type' => 'orbis_company' ), $defaults ) );
+		<?php
 
-	if ( $query->have_posts() ) : ?>
+		$query = new WP_Query( wp_parse_args( array( 'post_type' => $post_type ), $defaults ) );
 
-		<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
-			<thead>
-				<tr>
-					<th scope="col">
-						<?php esc_html_e( 'Date', 'orbis' ); ?>
-					</th>
-					<th scope="col">
-						<?php esc_html_e( 'Name', 'orbis' ); ?>
-					</th>
-				</tr>
-			</thead>
+		if ( $query->have_posts() ) : ?>
 
-			<tbody>
-
-				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-
+			<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
+				<thead>
 					<tr>
-						<td>
-							<?php the_time( 'D j M' ); ?>
-						</td>
-						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-						</td>
+						<th scope="col">
+							<?php esc_html_e( 'Date', 'orbis' ); ?>
+						</th>
+						<th scope="col">
+							<?php esc_html_e( 'Author', 'orbis' ); ?>
+						</th>
+						<th scope="col">
+							<?php esc_html_e( 'Name', 'orbis' ); ?>
+						</th>
+
+						<?php if ( 'orbis_deal' === $post_type ) : ?>
+
+							<th scope="col">
+								<?php esc_html_e( 'Price', 'orbis' ); ?>
+							</th>
+
+						<?php endif; ?>
 					</tr>
+				</thead>
 
-				<?php endwhile; ?>
+				<tbody>
 
-			</tbody>
-		</table>
+					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-	<?php else : ?>
+						<tr>
+							<td>
+								<?php the_time( 'D j M' ); ?>
+							</td>
+							<td>
+								<?php the_author(); ?> 
+							</td>
+							<td>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
+							</td>
 
-		<p>
-			<em><?php esc_html_e( 'No new posts in the last 3 days.', 'orbis' ); ?></em>
-		</p>
+							<?php if ( 'orbis_deal' === $post_type ) : ?>
 
-	<?php endif; ?>
+								<td>
+									<?php
 
-</div>
+									$price = get_post_meta( get_the_ID(), '_orbis_deal_price', true );
 
-<div>
-	<h2><?php esc_html_e( 'Recent Persons', 'orbis' ); ?></h2>
+									echo orbis_price( $price );
 
-	<?php
+									?>
+								</td>
 
-	$query = new WP_Query( wp_parse_args( array( 'post_type' => 'orbis_person' ), $defaults ) );
+							<?php endif; ?>
+						</tr>
 
-	if ( $query->have_posts() ) : ?>
+					<?php endwhile; ?>
 
-		<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
-			<thead>
-				<tr>
-					<th scope="col">
-						<?php esc_html_e( 'Date', 'orbis' ); ?>
-					</th>
-					<th scope="col">
-						<?php esc_html_e( 'Name', 'orbis' ); ?>
-					</th>
-				</tr>
-			</thead>
+				</tbody>
+			</table>
 
-			<tbody>
+		<?php else : ?>
 
-				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+			<p>
+				<em><?php esc_html_e( 'No new posts in the last 3 days.', 'orbis' ); ?></em>
+			</p>
 
-					<tr>
-						<td>
-							<?php the_time( 'D j M' ); ?>
-						</td>
-						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-						</td>
-					</tr>
+		<?php endif; ?>
 
-				<?php endwhile; ?>
+	</div>
 
-			</tbody>
-		</table>
-
-	<?php else : ?>
-
-		<p>
-			<em><?php esc_html_e( 'No new posts in the last 3 days.', 'orbis' ); ?></em>
-		</p>
-
-	<?php endif; ?>
-
-</div>
-
-<div>
-	<h2><?php esc_html_e( 'Recent Projects', 'orbis' ); ?></h2>
-
-	<?php
-
-	$query = new WP_Query( wp_parse_args( array( 'post_type' => 'orbis_project' ), $defaults ) );
-
-	if ( $query->have_posts() ) : ?>
-
-		<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
-			<thead>
-				<tr>
-					<th scope="col">
-						<?php esc_html_e( 'Date', 'orbis' ); ?>
-					</th>
-					<td>
-						<?php esc_html_e( 'Name', 'orbis' ); ?>
-					</th>
-				</tr>
-			</thead>
-
-			<tbody>
-
-				<?php
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_project',
-					'posts_per_page' => 5,
-					'no_found_rows'  => true,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
-
-					<tr>
-						<td>
-							<?php the_time( 'D j M' ); ?>
-						</td>
-						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-						</td>
-					</tr>
-
-				<?php endwhile; ?>
-
-			</tbody>
-		</table>
-
-	<?php else : ?>
-
-		<p>
-			<em><?php esc_html_e( 'No new posts in the last 3 days.', 'orbis' ); ?></em>
-		</p>
-
-	<?php endif; ?>
-
-</div>
-
-<div>
-	<h2><?php esc_html_e( 'Recent Deals', 'orbis' ); ?></h2>
-
-	<?php
-
-	$query = new WP_Query( wp_parse_args( array( 'post_type' => 'orbis_deal' ), $defaults ) );
-
-	if ( $query->have_posts() ) : ?>
-
-		<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
-			<thead>
-				<tr>
-					<th scope="col">
-						<?php esc_html_e( 'Date', 'orbis' ); ?>
-					</th>
-					<th scope="col">
-						<?php esc_html_e( 'Deal', 'orbis' ); ?>
-					</th>
-					<th scope="col">
-						<?php esc_html_e( 'Price', 'orbis' ); ?>
-					</th>
-				</tr>
-			</thead>
-
-			<tbody>
-
-				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-
-					<tr>
-						<td>
-							<?php the_time( 'D j M' ); ?>
-						</td>
-						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-						</td>
-						<td>
-							<?php
-
-							$price = get_post_meta( get_the_ID(), '_orbis_deal_price', true );
-
-							echo orbis_price( $price );
-
-							?>
-						</td>
-					</tr>
-
-				<?php endwhile; ?>
-
-			</tbody>
-		</table>
-
-	<?php else : ?>
-
-		<p>
-			<em><?php esc_html_e( 'No new posts in the last 3 days.', 'orbis' ); ?></em>
-		</p>
-
-	<?php endif; ?>
-
-</div>
-
-<div>
-	<h2><?php esc_html_e( 'Recent Subscriptions', 'orbis' ); ?></h2>
-
-	<?php
-
-	$query = new WP_Query( wp_parse_args( array( 'post_type' => 'orbis_subscription' ), $defaults ) );
-
-	if ( $query->have_posts() ) : ?>
-
-		<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
-			<thead>
-				<tr>
-					<th scope="col">
-						<?php esc_html_e( 'Date', 'orbis' ); ?>
-					</th>
-					<th scope="col">
-						<?php esc_html_e( 'Name', 'orbis' ); ?>
-					</th>
-				</tr>
-			</thead>
-
-			<tbody>
-
-				<?php
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_subscription',
-					'posts_per_page' => 5,
-					'no_found_rows'  => true,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
-
-					<tr>
-						<td>
-							<?php the_time( 'D j M' ); ?>
-						</td>
-						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-						</td>
-					</tr>
-
-				<?php endwhile; ?>
-
-			</tbody>
-		</table>
-
-	<?php else : ?>
-
-		<p>
-			<em><?php esc_html_e( 'No new posts in the last 3 days.', 'orbis' ); ?></em>
-		</p>
-
-	<?php endif; ?>
-
-</div>
-
-<div>
-	<h2><?php esc_html_e( 'Recent Tasks', 'orbis' ); ?></h2>
-
-	<?php
-
-	$query = new WP_Query( wp_parse_args( array( 'post_type' => 'orbis_task' ), $defaults ) );
-
-	if ( $query->have_posts() ) : ?>
-
-		<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
-			<thead>
-				<tr>
-					<th scope="col">
-						<?php esc_html_e( 'Task', 'orbis' ); ?>
-					</th>
-				</tr>
-			</thead>
-
-			<tbody>
-
-				<?php
-
-				$query = new WP_Query( array(
-					'post_type'      => 'orbis_task',
-					'posts_per_page' => 5,
-					'no_found_rows'  => true,
-				) );
-
-				while ( $query->have_posts() ) : $query->the_post(); ?>
-
-					<tr>
-						<td>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-						</td>
-					</tr>
-
-				<?php endwhile; ?>
-
-			</tbody>
-		</table>
-
-	<?php else : ?>
-
-		<p>
-			<em><?php esc_html_e( 'No new posts in the last 3 days.', 'orbis' ); ?></em>
-		</p>
-
-	<?php endif; ?>
-
-</div>
+<?php endforeach; ?>
 
 <?php do_action( 'orbis_email_bottom' ); ?>
 
