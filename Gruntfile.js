@@ -1,4 +1,6 @@
 module.exports = function( grunt ) {
+	require( 'load-grunt-tasks' )( grunt );
+
 	// Project configuration
 	grunt.initConfig( {
 		// Package
@@ -225,22 +227,6 @@ module.exports = function( grunt ) {
 			}
 		},
 	} );
-
-	grunt.loadNpmTasks( 'grunt-phpcs' );
-	grunt.loadNpmTasks( 'grunt-phplint' );
-	grunt.loadNpmTasks( 'grunt-phpmd' );
-	grunt.loadNpmTasks( 'grunt-checkwpversion' );
-	grunt.loadNpmTasks( 'grunt-checktextdomain' );
-	grunt.loadNpmTasks( 'grunt-wp-i18n' );
-	grunt.loadNpmTasks( 'grunt-contrib-clean' );
-	grunt.loadNpmTasks( 'grunt-contrib-copy' );
-	grunt.loadNpmTasks( 'grunt-contrib-concat' );
-	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-	grunt.loadNpmTasks( 'grunt-contrib-compress' );
-	grunt.loadNpmTasks( 'grunt-git' );
-	grunt.loadNpmTasks( 'grunt-aws-s3' );
-	grunt.loadNpmTasks( 'grunt-rt-wp-deploy' );
 
 	// Default task(s).
 	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'phpcs', 'checkwpversion', 'copy:assets' ] );
