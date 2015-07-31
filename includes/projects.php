@@ -212,7 +212,7 @@ function orbis_save_project( $post_id, $post ) {
 
 	// Finished
 	$is_finished_old = filter_var( get_post_meta( $post_id, '_orbis_project_is_finished', true ), FILTER_VALIDATE_BOOLEAN );
-	$is_finished_new = $data['_orbis_project_is_finished'] ;
+	$is_finished_new = filter_var( $data['_orbis_project_is_finished'], FILTER_VALIDATE_BOOLEAN );
 
 	foreach ( $data as $key => $value ) {
 		if ( empty( $value ) ) {
