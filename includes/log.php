@@ -57,7 +57,7 @@ class Orbis_Log_Widget extends WP_Widget {
 	 * Constructs and initializes this widget
 	 */
 	public function Orbis_Log_Widget() {
-		parent::WP_Widget( 'orbis-log', __( 'Orbis Log', 'orbis' ) );
+		parent::__construct( 'orbis-log', __( 'Orbis Log', 'orbis' ) );
 	}
 
 	function widget( $args, $instance ) {
