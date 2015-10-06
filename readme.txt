@@ -15,7 +15,7 @@ Management & Intranet functionalities. Make Orbis even more powerfull with some
 cool additional plugins.
 
 This plugin is built with idea to make business tools extendable. Every 
-bussiness is different. We believe in the power of WordPress and although 
+business is different. We believe in the power of WordPress and although 
 WordPress may not be your first idea to serve as a framework for such a tool, 
 we feel it has shown many advantages, particularly with extendability and 
 control. 
