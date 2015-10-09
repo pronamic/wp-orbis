@@ -222,7 +222,7 @@ function orbis_companies_suggest_company_id() {
 
 	$term = filter_input( INPUT_GET, 'term', FILTER_SANITIZE_STRING );
 
-	$query = $wpdb->prepare( "
+	$query = "
 		SELECT
 			company.id AS id,
 			company.name AS text
@@ -230,10 +230,12 @@ function orbis_companies_suggest_company_id() {
 			$wpdb->orbis_companies AS company
 		WHERE
 			company.name LIKE '%%%1\$s%%'
-		;", $term
-	);
+		;"
+	;
 
-	$data = $wpdb->get_results( $query );
+	$query = $wpdb->prepare( $query, $term ); // unprepared SQL
+
+	$data = $wpdb->get_results( $query ); // unprepared SQL
 
 	echo json_encode( $data );
 

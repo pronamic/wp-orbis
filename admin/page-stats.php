@@ -20,7 +20,7 @@
 			orbis_hours_registration ;
 	';
 
-	$result = $wpdb->get_row( $query );
+	$result = $wpdb->get_row( $query ); // unprepared SQL
 
 	$number_registrations = $result->number_registrations;
 
@@ -60,7 +60,7 @@
 			orbis_tasks ;
 	';
 
-	$number_tasks = $wpdb->get_var( $query );
+	$number_tasks = $wpdb->get_var( $query ); // unprepared SQL
 
 	?>
 
@@ -81,7 +81,7 @@
 			orbis_companies ;
 	';
 
-	$number_companies = $wpdb->get_var( $query );
+	$number_companies = $wpdb->get_var( $query ); // unprepared SQL
 
 	?>
 
@@ -102,7 +102,7 @@
 			orbis_projects ;
 	';
 
-	$number_projects = $wpdb->get_var( $query );
+	$number_projects = $wpdb->get_var( $query ); // unprepared SQL
 
 	?>
 
@@ -126,7 +126,7 @@
 		;
 	';
 
-	$number_domains = $wpdb->get_var( $query );
+	$number_domains = $wpdb->get_var( $query ); // unprepared SQL
 
 	?>
 	<dl>
@@ -146,7 +146,7 @@
 		;
 	';
 
-	$number_subscriptions = $wpdb->get_var( $query );
+	$number_subscriptions = $wpdb->get_var( $query ); // unprepared SQL
 
 	$query = '
 		SELECT
@@ -159,7 +159,7 @@
 		;
 	';
 
-	$total = $wpdb->get_var( $query );
+	$total = $wpdb->get_var( $query ); // unprepared SQL
 
 	?>
 	<dl>

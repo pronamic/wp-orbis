@@ -12,8 +12,8 @@ $prefix = defined( 'ORBIS_TABLE_PREFIX' ) ? ORBIS_TABLE_PREFIX : $wpdb->prefix;
 // Delete tables
 //////////////////////////////////////////////////
 
-$wpdb->query( "DROP TABLE IF EXISTS {$prefix}orbis_companies" );
-$wpdb->query( "DROP TABLE IF EXISTS {$prefix}orbis_projects" );
+$wpdb->query( "DROP TABLE IF EXISTS {$prefix}orbis_companies" ); // unprepared SQL
+$wpdb->query( "DROP TABLE IF EXISTS {$prefix}orbis_projects" ); // unprepared SQL
 
 //////////////////////////////////////////////////
 // Delete posts

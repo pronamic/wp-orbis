@@ -69,7 +69,7 @@ module.exports = function( grunt ) {
 		// Check textdomain errors
 		checktextdomain: {
 			options:{
-				text_domain: 'orbis',
+				text_domain: '<%= pkg.name %>',
 				keywords: [
 					'__:1,2d',
 					'_e:1,2d',
@@ -218,7 +218,7 @@ module.exports = function( grunt ) {
 		rt_wp_deploy: {
 			app: {
 				options: {
-					svnUrl: 'http://plugins.svn.wordpress.org/orbis/',
+					svnUrl: 'http://plugins.svn.wordpress.org/<%= pkg.name %>/',
 					svnDir: 'deploy/wp-svn',
 					svnUsername: 'pronamic',
 					deployDir: 'deploy/latest',
@@ -231,7 +231,7 @@ module.exports = function( grunt ) {
 	// Default task(s).
 	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'phpcs', 'checkwpversion', 'copy:assets' ] );
 	grunt.registerTask( 'pot', [ 'checktextdomain', 'makepot' ] );
-	
+
 	grunt.registerTask( 'deploy', [
 		'default',
 		'clean:deploy',

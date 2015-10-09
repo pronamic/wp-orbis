@@ -2,8 +2,8 @@
 Contributors: pronamic, remcotolsma, kjtolsma
 Tags: orbis, intranet
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 1.3.2
+Tested up to: 4.3.1
+Stable tag: 1.3.3
 
 Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More...
 
@@ -15,7 +15,7 @@ Management & Intranet functionalities. Make Orbis even more powerfull with some
 cool additional plugins.
 
 This plugin is built with idea to make business tools extendable. Every 
-bussiness is different. We believe in the power of WordPress and although 
+business is different. We believe in the power of WordPress and although 
 WordPress may not be your first idea to serve as a framework for such a tool, 
 we feel it has shown many advantages, particularly with extendability and 
 control. 
@@ -91,6 +91,11 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 
 == Changelog ==
+
+= 1.3.3 =
+*	Tweak - Changed bussiness to business in README.
+*	Fixed - Fix WP 4.3 deprecated WP_Widget method.
+*	Tweak - WordPress Coding Standards optimizations.
 
 = 1.3.2 =
 *	Fixed - Fixed issue with project status change comments.

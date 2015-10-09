@@ -6,7 +6,7 @@ function orbis_project_has_principal() {
 	return isset( $post->principal_id );
 }
 
-function orbis_project_principel_get_the_name( ) {
+function orbis_project_principel_get_the_name() {
 	global $post;
 
 	$principal = null;
@@ -18,7 +18,7 @@ function orbis_project_principel_get_the_name( ) {
 	return $principal;
 }
 
-function orbis_project_principel_the_name( ) {
+function orbis_project_principel_the_name() {
 	echo esc_html( orbis_project_principel_get_the_name() );
 }
 

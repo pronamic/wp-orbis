@@ -75,7 +75,7 @@ function orbis_persons_suggest_person_id() {
 
 	$term = filter_input( INPUT_GET, 'term', FILTER_SANITIZE_STRING );
 
-	$query = $wpdb->prepare( "
+	$query = "
 		SELECT
 			post.ID AS id,
 			post.post_title AS text
@@ -85,10 +85,12 @@ function orbis_persons_suggest_person_id() {
 			post.post_type = 'orbis_person'
 				AND
 			post.post_title LIKE '%%%1\$s%%'
-		;", $term
-	);
+		;
+	";
 
-	$data = $wpdb->get_results( $query );
+	$query = $wpdb->prepare( $query, $term ); // unprepared SQL
+
+	$data = $wpdb->get_results( $query ); // unprepared SQL
 
 	echo json_encode( $data );
 

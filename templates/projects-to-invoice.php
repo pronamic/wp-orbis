@@ -56,7 +56,7 @@ $sql = "
 global $wpdb;
 
 // Projects
-$projects = $wpdb->get_results( $sql );
+$projects = $wpdb->get_results( $sql ); // unprepared SQL
 
 // Managers
 $managers = array();
