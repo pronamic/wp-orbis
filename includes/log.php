@@ -35,7 +35,7 @@ function orbis_get_logs() {
 			0, 10
 	";
 
-	$logs = $wpdb->get_results( $query );
+	$logs = $wpdb->get_results( $query ); // unprepared SQL
 
 	return $logs;
 }

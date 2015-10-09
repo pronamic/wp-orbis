@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2015-07-31 08:28:39+00:00\n"
-"PO-Revision-Date: 2015-07-31 10:29+0100\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
+"POT-Creation-Date: 2015-10-09 11:59:14+00:00\n"
+"PO-Revision-Date: 2015-10-09 13:59+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Poedit 1.7.4\n"
 
 #: admin/meta-box-company-details.php:27 admin/meta-box-project-details.php:29
-#: includes/projects.php:367 templates/projects-without-agreement.php:35
+#: includes/projects.php:368 templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
@@ -89,7 +89,7 @@ msgid "Select Client"
 msgstr "Selecteer klant"
 
 #: admin/meta-box-project-details.php:45 classes/orbis-core-email.php:43
-#: includes/projects.php:366 templates/projects-table-view.php:10
+#: includes/projects.php:367 templates/projects-table-view.php:10
 msgid "Time"
 msgstr "Tijd"
 
@@ -480,7 +480,7 @@ msgstr "Je hebt niet genoeg rechten om een plugin te activeren"
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: includes/companies.php:145 includes/projects.php:364
+#: includes/companies.php:145 includes/projects.php:365
 #: templates/projects-without-agreement.php:38
 msgid "Title"
 msgstr "Titel"
@@ -489,16 +489,16 @@ msgstr "Titel"
 msgid "Online"
 msgstr "Online"
 
-#: includes/companies.php:150 includes/projects.php:368
+#: includes/companies.php:150 includes/projects.php:369
 #: templates/emails/update.php:51
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/companies.php:151 includes/projects.php:369
+#: includes/companies.php:151 includes/projects.php:370
 msgid "Comments"
 msgstr "Reacties"
 
-#: includes/companies.php:152 includes/projects.php:370
+#: includes/companies.php:152 includes/projects.php:371
 #: templates/emails/update.php:48 templates/projects-table-view.php:9
 msgid "Date"
 msgstr "Datum"
@@ -635,19 +635,19 @@ msgstr "Geen personen gevonden in prullenbak."
 msgid "Project Information"
 msgstr "Projectinformatie"
 
-#: includes/projects.php:247
+#: includes/projects.php:248
 msgid "This '%s' project is just '%s' by %s."
 msgstr "Dit '%s' project is zojuist '%s' door %s."
 
-#: includes/projects.php:248 includes/projects.php:249
+#: includes/projects.php:249 includes/projects.php:250
 msgid "opened"
 msgstr "geopend"
 
-#: includes/projects.php:248 includes/projects.php:249
+#: includes/projects.php:249 includes/projects.php:250
 msgid "completed"
 msgstr "afgerond"
 
-#: includes/projects.php:365 templates/projects-without-agreement.php:37
+#: includes/projects.php:366 templates/projects-without-agreement.php:37
 msgid "Principal"
 msgstr "Opdrachtgever"
 

@@ -56,7 +56,7 @@ function orbis_projects_suggest_project_id() {
 		";
 	}
 
-	$query = $wpdb->prepare( "
+	$query = "
 		SELECT
 			project.id AS project_id,
 			principal.name AS principal_name,
@@ -81,10 +81,11 @@ function orbis_projects_suggest_project_id() {
 			project.id
 		ORDER BY
 			project.id
-		", $term
-	);
+	";
 
-	$projects = $wpdb->get_results( $query );
+	$query = $wpdb->prepare( $query, $term ); // unprepared SQL
+
+	$projects = $wpdb->get_results( $query ); // unprepared SQL
 
 	$data = array();
 
