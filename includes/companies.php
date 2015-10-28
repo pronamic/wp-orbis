@@ -146,7 +146,7 @@ function orbis_company_edit_columns( $columns ) {
 		// 'orbis_company_id'          => __( 'Orbis ID', 'orbis' ),
 		'orbis_company_address'        => __( 'Address', 'orbis' ),
 		'orbis_company_online'         => __( 'Online', 'orbis' ),
-		'orbis_company_kvk_number'     => __( 'KvK Number', 'orbis' ),
+		'orbis_company_kvk_number'     => __( 'Registration Number', 'orbis' ),
 		'author'                       => __( 'Author', 'orbis' ),
 		'comments'                     => __( 'Comments', 'orbis' ),
 		'date'                         => __( 'Date', 'orbis' ),
