@@ -196,7 +196,7 @@ function orbis_company_column( $column, $post_id ) {
 			$kvk_number = get_post_meta( $post_id, '_orbis_company_kvk_number', true );
 
 			if ( ! empty( $kvk_number ) ) {
-				$url = sprintf( 'http://www.openkvk.nl/%s', $kvk_number );
+				$url = sprintf( 'https://openkvk.nl/kvk/%s/', $kvk_number );
 
 				printf( '<a href="%s" target="_blank">%s</a>', $url, $kvk_number );
 			}
