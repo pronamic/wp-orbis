@@ -144,7 +144,6 @@ function orbis_company_edit_columns( $columns ) {
 	$columns = array(
 		'cb'                           => '<input type="checkbox" />',
 		'title'                        => __( 'Title', 'orbis' ),
-		// 'orbis_company_id'          => __( 'Orbis ID', 'orbis' ),
 		'orbis_company_address'        => __( 'Address', 'orbis' ),
 		'orbis_company_online'         => __( 'Online', 'orbis' ),
 		'orbis_company_kvk_number'     => __( 'Registration Number', 'orbis' ),
@@ -165,16 +164,6 @@ add_filter( 'manage_edit-orbis_company_columns' , 'orbis_company_edit_columns' )
  */
 function orbis_company_column( $column, $post_id ) {
 	switch ( $column ) {
-		case 'orbis_company_id':
-			$orbis_id = get_post_meta( $post_id, '_orbis_company_id', true );
-
-			if ( ! empty( $orbis_id ) ) {
-				$url = sprintf( 'http://orbis.pronamic.nl/bedrijven/details/%s/', $orbis_id );
-
-				printf( '<a href="%s" target="_blank">%s</a>', $url, $orbis_id );
-			}
-
-			break;
 		case 'orbis_company_online':
 			$break = '';
 
