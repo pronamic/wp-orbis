@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2015-10-09 11:59:14+00:00\n"
-"PO-Revision-Date: 2015-10-09 13:59+0100\n"
+"POT-Creation-Date: 2015-10-28 10:21:20+00:00\n"
+"PO-Revision-Date: 2015-10-28 11:21+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -14,55 +14,59 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.7.4\n"
 
-#: admin/meta-box-company-details.php:27 admin/meta-box-project-details.php:29
+#: admin/meta-box-company-details.php:29 admin/meta-box-project-details.php:29
 #: includes/projects.php:368 templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
-#: admin/meta-box-company-details.php:35 includes/companies.php:149
-msgid "KvK Number"
-msgstr "KvK-nummer"
+#: admin/meta-box-company-details.php:37 includes/companies.php:150
+msgid "Registration Number"
+msgstr "Registratienummer"
 
-#: admin/meta-box-company-details.php:43
+#: admin/meta-box-company-details.php:45
+msgid "VAT Number"
+msgstr "BTW-nummer"
+
+#: admin/meta-box-company-details.php:53
 msgid "E-Mail"
 msgstr "E-mailadres"
 
-#: admin/meta-box-company-details.php:51
+#: admin/meta-box-company-details.php:61
 msgid "Website"
 msgstr "Website"
 
-#: admin/meta-box-company-details.php:59
+#: admin/meta-box-company-details.php:69
 msgid "Addresses"
 msgstr "Adressen"
 
-#: admin/meta-box-company-details.php:64 admin/meta-box-company-details.php:67
-#: includes/companies.php:147
+#: admin/meta-box-company-details.php:74 admin/meta-box-company-details.php:77
+#: includes/companies.php:148
 msgid "Address"
 msgstr "Adres"
 
-#: admin/meta-box-company-details.php:69
+#: admin/meta-box-company-details.php:79
 msgid "Postcode"
 msgstr "Postcode"
 
-#: admin/meta-box-company-details.php:70
+#: admin/meta-box-company-details.php:80
 msgid "City"
 msgstr "Plaats"
 
-#: admin/meta-box-company-details.php:72
+#: admin/meta-box-company-details.php:82
 msgid "Country"
 msgstr "Land"
 
-#: admin/meta-box-company-details.php:77 admin/meta-box-person-details.php:44
+#: admin/meta-box-company-details.php:87 admin/meta-box-person-details.php:44
 msgid "Twitter Username:"
 msgstr "Twitter gebruikersnaam:"
 
-#: admin/meta-box-company-details.php:85 admin/meta-box-person-details.php:52
+#: admin/meta-box-company-details.php:95 admin/meta-box-person-details.php:52
 msgid "Facebook URL:"
 msgstr "Facebook URL:"
 
-#: admin/meta-box-company-details.php:93
-msgid "LinkedIn:"
-msgstr "LinkedIn:"
+#: admin/meta-box-company-details.php:103 admin/meta-box-person-details.php:60
+msgid "LinkedIn URL:"
+msgstr "LinkedIn URL:"
 
 #: admin/meta-box-person-details.php:20
 msgid "Email Address:"
@@ -75,10 +79,6 @@ msgstr "Telefoonnummer:"
 #: admin/meta-box-person-details.php:36
 msgid "Mobile Number:"
 msgstr "Mobielnummer:"
-
-#: admin/meta-box-person-details.php:60
-msgid "LinkedIn URL:"
-msgstr "LinkedIn URL:"
 
 #: admin/meta-box-project-details.php:37 templates/projects-table-view.php:7
 msgid "Client"
@@ -480,25 +480,25 @@ msgstr "Je hebt niet genoeg rechten om een plugin te activeren"
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: includes/companies.php:145 includes/projects.php:365
+#: includes/companies.php:146 includes/projects.php:365
 #: templates/projects-without-agreement.php:38
 msgid "Title"
 msgstr "Titel"
 
-#: includes/companies.php:148
+#: includes/companies.php:149
 msgid "Online"
 msgstr "Online"
 
-#: includes/companies.php:150 includes/projects.php:369
+#: includes/companies.php:151 includes/projects.php:369
 #: templates/emails/update.php:51
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/companies.php:151 includes/projects.php:370
+#: includes/companies.php:152 includes/projects.php:370
 msgid "Comments"
 msgstr "Reacties"
 
-#: includes/companies.php:152 includes/projects.php:371
+#: includes/companies.php:153 includes/projects.php:371
 #: templates/emails/update.php:48 templates/projects-table-view.php:9
 msgid "Date"
 msgstr "Datum"
@@ -831,6 +831,12 @@ msgstr "Persoon"
 msgctxt "person"
 msgid "Add New"
 msgstr "Nieuw persoon"
+
+#~ msgid "LinkedIn:"
+#~ msgstr "LinkedIn:"
+
+#~ msgid "KvK Number"
+#~ msgstr "KvK-nummer"
 
 #~ msgid "Deal"
 #~ msgstr "Deal"
