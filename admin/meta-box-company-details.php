@@ -5,6 +5,8 @@ global $post;
 $orbis_id   = get_post_meta( $post->ID, '_orbis_company_id', true );
 
 $kvk_number = get_post_meta( $post->ID, '_orbis_company_kvk_number', true );
+$vat_number = get_post_meta( $post->ID, '_orbis_company_vat_number', true );
+
 $email      = get_post_meta( $post->ID, '_orbis_company_email', true );
 $website    = get_post_meta( $post->ID, '_orbis_company_website', true );
 
@@ -36,6 +38,14 @@ wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_no
 			</th>
 			<td>
 				<input id="orbis_company_kvk_number" name="_orbis_company_kvk_number" value="<?php echo esc_attr( $kvk_number ); ?>" type="text" size="10" />
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+				<label for="orbis_company_vat_number"><?php _e( 'VAT Number', 'orbis' ); ?></label>
+			</th>
+			<td>
+				<input id="orbis_company_vat_number" name="_orbis_company_vat_number" value="<?php echo esc_attr( $vat_number ); ?>" type="text" size="10" />
 			</td>
 		</tr>
 		<tr>

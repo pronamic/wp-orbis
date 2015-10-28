@@ -50,6 +50,7 @@ function orbis_save_company( $post_id, $post ) {
 	// OK
 	$definition = array(
 		'_orbis_company_kvk_number' => FILTER_SANITIZE_STRING,
+		'_orbis_company_vat_number' => FILTER_SANITIZE_STRING,
 		'_orbis_company_email'      => FILTER_VALIDATE_EMAIL,
 		'_orbis_company_website'    => FILTER_VALIDATE_URL,
 		'_orbis_company_address'    => FILTER_SANITIZE_STRING,
