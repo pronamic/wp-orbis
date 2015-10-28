@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2015-10-28 10:21:20+00:00\n"
-"PO-Revision-Date: 2015-10-28 11:21+0100\n"
+"POT-Creation-Date: 2015-10-28 13:33:28+00:00\n"
+"PO-Revision-Date: 2015-10-28 14:33+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -19,7 +19,7 @@ msgstr ""
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
-#: admin/meta-box-company-details.php:37 includes/companies.php:150
+#: admin/meta-box-company-details.php:37 includes/companies.php:149
 msgid "Registration Number"
 msgstr "Registratienummer"
 
@@ -40,7 +40,7 @@ msgid "Addresses"
 msgstr "Adressen"
 
 #: admin/meta-box-company-details.php:74 admin/meta-box-company-details.php:77
-#: includes/companies.php:148
+#: includes/companies.php:147
 msgid "Address"
 msgstr "Adres"
 
@@ -485,20 +485,20 @@ msgstr "Bedrijf details"
 msgid "Title"
 msgstr "Titel"
 
-#: includes/companies.php:149
+#: includes/companies.php:148
 msgid "Online"
 msgstr "Online"
 
-#: includes/companies.php:151 includes/projects.php:369
+#: includes/companies.php:150 includes/projects.php:369
 #: templates/emails/update.php:51
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/companies.php:152 includes/projects.php:370
+#: includes/companies.php:151 includes/projects.php:370
 msgid "Comments"
 msgstr "Reacties"
 
-#: includes/companies.php:153 includes/projects.php:371
+#: includes/companies.php:152 includes/projects.php:371
 #: templates/emails/update.php:48 templates/projects-table-view.php:9
 msgid "Date"
 msgstr "Datum"
@@ -680,7 +680,7 @@ msgid "Recent Tasks"
 msgstr "Recente taken"
 
 #: templates/emails/update.php:54
-#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
+#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:98
 msgid "Name"
 msgstr "Naam"
 
@@ -692,11 +692,11 @@ msgstr "Prijs"
 msgid "No new posts in the last 3 days."
 msgstr "Geen nieuwe berichten in de laatste 3 dagen."
 
-#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
+#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:98
 msgid "Order By:"
 msgstr "Sorteer op:"
 
-#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
+#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:98
 msgid "Number"
 msgstr "Nummer"
 
@@ -728,18 +728,6 @@ msgstr "Projectleider"
 #: templates/projects-without-agreement.php:39
 msgid "Actions"
 msgstr "Acties"
-
-#: templates/projects.php:110
-msgid "Filter:"
-msgstr "Filter:"
-
-#: templates/projects.php:110
-msgid "Strippenkaart"
-msgstr "Strippenkaart"
-
-#: templates/projects.php:110
-msgid "None"
-msgstr "Geen"
 
 #. Plugin URI of the plugin/theme
 msgid "http://www.pronamic.eu/plugins/orbis/"
@@ -831,6 +819,15 @@ msgstr "Persoon"
 msgctxt "person"
 msgid "Add New"
 msgstr "Nieuw persoon"
+
+#~ msgid "Filter:"
+#~ msgstr "Filter:"
+
+#~ msgid "Strippenkaart"
+#~ msgstr "Strippenkaart"
+
+#~ msgid "None"
+#~ msgstr "Geen"
 
 #~ msgid "LinkedIn:"
 #~ msgstr "LinkedIn:"
