@@ -41,7 +41,6 @@ $sql = "
 				ON project.id = registration.project_id
 	WHERE
 		NOT project.finished
-			%s
 	GROUP BY
 		project.id
 	ORDER BY
@@ -58,18 +57,8 @@ if ( isset( $_GET['order'] ) ) {
 	}
 }
 
-// Filter
-$filter = "AND project.name NOT LIKE '%Strippenkaart%'";
-if ( isset( $_GET['filter'] ) ) {
-	switch ( $_GET['filter'] ) {
-		case 'false' :
-			$filter = '';
-			break;
-	}
-}
-
 // Build query
-$sql = sprintf( $sql, $filter, $orderBy );
+$sql = sprintf( $sql, $orderBy );
 
 $statement = $pdo->prepare( $sql );
 $statement->execute();
@@ -107,7 +96,6 @@ $parameters = $_GET;
 ?>
 <p>
 	<?php _e( 'Order By:', 'orbis' ); ?> <a href="?order=name"><?php _e( 'Name', 'orbis' ); ?></a> | <a href="?order=id"><?php _e( 'Number', 'orbis' ); ?></a><br />
-	<?php _e( 'Filter:', 'orbis' ); ?>: <a href="?filter=strippenkaart"><?php _e( 'Strippenkaart', 'orbis' ); ?></a> | <a href="?filter=false"><?php _e( 'None', 'orbis' ); ?></a><br />
 </p>
 
 <?php
