@@ -100,7 +100,7 @@ wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_no
 		</tr>
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_company_linkedin"><?php _e( 'LinkedIn:', 'orbis' ); ?></label>
+				<label for="orbis_company_linkedin"><?php _e( 'LinkedIn URL:', 'orbis' ); ?></label>
 			</th>
 			<td>
 				<input type="text" id="orbis_company_linkedin" name="_orbis_company_linkedin" value="<?php echo esc_attr( $company_linkedin ); ?>" class="regular-text" />
