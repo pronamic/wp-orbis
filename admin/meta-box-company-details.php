@@ -37,7 +37,7 @@ wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_no
 				<label for="orbis_company_kvk_number"><?php _e( 'Registration Number', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input id="orbis_company_kvk_number" name="_orbis_company_kvk_number" value="<?php echo esc_attr( $kvk_number ); ?>" type="text" size="10" />
+				<input id="orbis_company_kvk_number" name="_orbis_company_kvk_number" value="<?php echo esc_attr( $kvk_number ); ?>" type="text" size="20" />
 			</td>
 		</tr>
 		<tr>
@@ -45,7 +45,7 @@ wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_no
 				<label for="orbis_company_vat_number"><?php _e( 'VAT Number', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input id="orbis_company_vat_number" name="_orbis_company_vat_number" value="<?php echo esc_attr( $vat_number ); ?>" type="text" size="10" />
+				<input id="orbis_company_vat_number" name="_orbis_company_vat_number" value="<?php echo esc_attr( $vat_number ); ?>" type="text" size="20" />
 			</td>
 		</tr>
 		<tr>
