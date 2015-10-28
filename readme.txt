@@ -92,6 +92,10 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 == Changelog ==
 
+= 1.3.4 =
+*	Tweak - Renamed 'KvK Number' field to 'Registration Number'.
+*	Added - Added an company 'VAT Number' field. 
+
 = 1.3.3 =
 *	Tweak - Changed bussiness to business in README.
 *	Fixed - Fix WP 4.3 deprecated WP_Widget method.
