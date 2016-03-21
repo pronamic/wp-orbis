@@ -250,7 +250,6 @@ class Orbis_Core_Email {
 			get_option( 'orbis_email_subject', __( 'Orbis Update', 'orbis' ) )
 		);
 
-		$mail_to      = '';
 		$mail_subject = $orbis_email_title;
 		$mail_body    = $this->plugin->get_template( 'emails/update.php', false );
 		$mail_headers = array(
@@ -259,13 +258,9 @@ class Orbis_Core_Email {
 		);
 
 		foreach ( $user_ids as $user_id ) {
-			$user_email = get_the_author_meta( 'user_email', $user_id );
+			$mail_to = get_the_author_meta( 'user_email', $user_id );
 
-			if ( is_email( $user_email ) ) {
-				$mail_to .= ' ' . $user_email . ', ';
-			}
-		}
-
-		wp_mail( $mail_to, $mail_subject, $mail_body, $mail_headers );
+			wp_mail( $mail_to, $mail_subject, $mail_body, $mail_headers );
+		}		
 	}
 }
