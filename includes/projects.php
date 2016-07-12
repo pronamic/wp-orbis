@@ -365,7 +365,6 @@ function orbis_project_edit_columns( $columns ) {
 		'title'                   => __( 'Title', 'orbis' ),
 		'orbis_project_principal' => __( 'Principal', 'orbis' ),
 		'orbis_project_time'      => __( 'Time', 'orbis' ),
-		'orbis_project_id'        => __( 'Orbis ID', 'orbis' ),
 		'author'                  => __( 'Author', 'orbis' ),
 		'comments'                => __( 'Comments', 'orbis' ),
 		'date'                    => __( 'Date', 'orbis' ),
@@ -383,16 +382,6 @@ add_filter( 'manage_edit-orbis_project_columns' , 'orbis_project_edit_columns' )
  */
 function orbis_project_column( $column, $post_id ) {
 	switch ( $column ) {
-		case 'orbis_project_id' :
-			$orbis_id = get_post_meta( $post_id, '_orbis_project_id', true );
-
-			if ( ! empty( $orbis_id ) ) {
-				$url = sprintf( 'http://orbis.pronamic.nl/projecten/details/%s/', $orbis_id );
-
-				printf( '<a href="%s" target="_blank">%s</a>', $url, $orbis_id );
-			}
-
-			break;
 		case 'orbis_project_principal' :
 			if ( orbis_project_has_principal() ) {
 				printf(
