@@ -159,6 +159,20 @@ module.exports = function( grunt ) {
 			},
 		},
 
+		// Imagemin
+		imagemin: {
+			build: {
+				files: [
+					{ // Images
+						expand: true,
+						cwd: 'src/images/',
+						src: ['**/*.{png,jpg,gif,svg}'],
+						dest: 'images/'
+					}
+				]
+			}
+		},
+
 		// Clean
 		clean: {
 			deploy: {
@@ -229,7 +243,7 @@ module.exports = function( grunt ) {
 	} );
 
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'phpcs', 'checkwpversion', 'copy:assets' ] );
+	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'phpcs', 'checkwpversion', 'copy:assets', 'imagemin' ] );
 	grunt.registerTask( 'pot', [ 'checktextdomain', 'makepot' ] );
 
 	grunt.registerTask( 'deploy', [

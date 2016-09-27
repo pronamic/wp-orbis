@@ -128,7 +128,7 @@ class Orbis_Core_Admin {
 			'manage_orbis', // capability
 			'orbis', // menu_slug
 			array( $this, 'page' ) , // function
-			$this->plugin->plugin_url( 'images/icon-16x16.png' ), // icon_url
+			'data:image/svg+xml;base64,' . base64_encode( file_get_contents( plugin_dir_path( $this->plugin->file ) . 'images/orbis-icon-menu.svg' ) ), // icon_url
 			'54.orbis.2'
 		);
 
