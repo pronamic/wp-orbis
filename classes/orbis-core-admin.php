@@ -16,11 +16,6 @@ class Orbis_Core_Admin {
 	 */
 	private $plugin;
 
-	/**
-	 * Orbis plugins page slug
-	 */
-	public static $ORBIS_PLUGINS_SLUG = 'orbis_plugins';
-
 	//////////////////////////////////////////////////
 
 	/**
