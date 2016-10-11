@@ -1,13 +1,5 @@
 <?php
 
-/* Connect to an ODBC database using driver invocation */
-$dsn = sprintf( 'mysql:dbname=%s;host=%s', DB_NAME, DB_HOST );
-$user = DB_USER;
-$password = DB_PASSWORD;
-
-$pdo = new PDO( $dsn, $user, $password );
-$pdo->exec( 'SET CHARACTER SET utf8' );
-
 global $wpdb;
 
 // Managers
@@ -60,11 +52,8 @@ if ( isset( $_GET['order'] ) ) {
 // Build query
 $sql = sprintf( $sql, $orderBy );
 
-$statement = $pdo->prepare( $sql );
-$statement->execute();
-
 // Projects
-$projects = $statement->fetchAll( PDO::FETCH_CLASS );
+$projects = $wpdb->get_results( $sql );
 
 // Managers
 $managers = array();
