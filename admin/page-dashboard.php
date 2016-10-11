@@ -11,23 +11,17 @@
 						<div class="inside">
 							<?php
 
-							$projects = get_posts( array(
-								'post_type'      => 'pronamic_project',
+							$query = new WP_Query( array(
+								'post_type'      => 'orbis_project',
 								'posts_per_page' => 5,
 							) );
 
-							if ( empty( $projects ) ) : ?>
-
-								<p>
-									<?php _e( 'No recent projects found.', 'orbis' ); ?>
-								</p>
-
-							<?php else : ?>
+							if ( $query->have_posts() ) : ?>
 
 								<div id="dashboard_recent_drafts">
 									<ul>
 
-										<?php foreach ( $projects as $project ) : ?>
+										<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 											<li>
 												<h4>
@@ -35,8 +29,8 @@
 
 													printf(
 														'<a href="%s">%s</a>',
-														get_edit_post_link( $project ),
-														get_the_title( $project )
+														get_edit_post_link(),
+														get_the_title()
 													);
 
 													?>
@@ -44,18 +38,24 @@
 
 													printf( '<abbr title="%s">%s</abbr>',
 														/* translators: comment date format. See http://php.net/date */
-														get_the_time( __( 'c', 'orbis' ), $project ),
-														get_the_time( get_option( 'date_format' ), $project )
+														get_the_time( __( 'c', 'orbis' ) ),
+														get_the_time( get_option( 'date_format' ) )
 													);
 
 													?>
 												</h4>
 											</li>
 
-										<?php endforeach; ?>
+										<?php endwhile; ?>
 
 									</ul>
 								</div>
+
+							<?php else : ?>
+
+								<p>
+									<?php esc_html_e( 'No recent projects found.', 'orbis' ); ?>
+								</p>
 
 							<?php endif; ?>
 						</div>
