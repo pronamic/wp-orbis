@@ -289,7 +289,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		$this->update_roles( $roles );
 
-		// Parent
+		// Install
 		parent::install();
 	}
 

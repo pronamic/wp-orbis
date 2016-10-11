@@ -127,7 +127,6 @@ class Orbis_Core_Admin {
 			'54.orbis.2'
 		);
 
-		// @see _add_post_type_submenus()
 		// @see wp-admin/menu.php
 		add_submenu_page(
 			'orbis', // parent_slug
