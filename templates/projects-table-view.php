@@ -34,7 +34,7 @@
 						</td>
 						<td>
 							<a href="<?php echo esc_attr( get_permalink( $project->principal_post_id ) ); ?>" style="color: #000;">
-								<?php echo esc_html( $project->principalName ); ?>
+								<?php echo esc_html( $project->principal_name ); ?>
 							</a>
 						</td>
 						<td>
@@ -74,16 +74,16 @@
 							?>
 						</td>
 						<td style="white-space: nowrap;">
-							<span style="color: <?php echo esc_attr( $project->failed ? 'Red' : 'Green' ); ?>;"><?php echo esc_html( orbis_time( $project->registeredSeconds ) ); ?></span>
+							<span style="color: <?php echo esc_attr( $project->failed ? 'Red' : 'Green' ); ?>;"><?php echo esc_html( orbis_time( $project->registered_seconds ) ); ?></span>
 							/
-							<?php echo esc_html( orbis_time( $project->availableSeconds ) ); ?>
+							<?php echo esc_html( orbis_time( $project->available_seconds ) ); ?>
 						</td>
 						<td>
 							<?php echo esc_html( $project->invoicable ? 'Ja' : 'Nee' ); ?>
 						</td>
 						<td>
 							<div class="actions">
-								<?php echo esc_html( $project->invoiceNumber ); ?>
+								<?php echo esc_html( $project->invoice_number ); ?>
 
 								<div class="nubbin">
 									<?php edit_post_link( __( 'Edit', 'orbis' ), '', '', $project->project_post_id ); ?>

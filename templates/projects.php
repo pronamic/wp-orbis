@@ -7,16 +7,16 @@ $sql = "
 	SELECT
 		project.id ,
 		project.name ,
-		project.number_seconds AS availableSeconds ,
-		project.invoice_number AS invoiceNumber ,
+		project.number_seconds AS available_seconds ,
+		project.invoice_number AS invoice_number ,
 		project.invoicable ,
 		project.post_id AS project_post_id,
 		manager.ID AS project_manager_id,
 		manager.display_name AS project_manager_name,
-		principal.id AS principalId ,
-		principal.name AS principalName ,
+		principal.id AS principal_id ,
+		principal.name AS principal_name ,
 		principal.post_id AS principal_post_id,
-		SUM(registration.number_seconds) AS registeredSeconds
+		SUM(registration.number_seconds) AS registered_seconds
 	FROM
 		orbis_projects AS project
 			LEFT JOIN
@@ -70,11 +70,10 @@ foreach ( $projects as $project ) {
 		$managers[ $manager->id ] = $manager;
 	}
 
-	$project->failed = $project->registeredSeconds > $project->availableSeconds;
-	$project->availableSeconds = $project->availableSeconds;
-	$project->registeredSeconds = $project->registeredSeconds;
+	$project->failed = $project->registered_seconds > $project->available_seconds;
 
 	$manager = $managers[ $project->project_manager_id ];
+
 	$manager->projects[] = $project;
 }
 
