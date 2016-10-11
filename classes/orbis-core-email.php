@@ -261,6 +261,6 @@ class Orbis_Core_Email {
 			$mail_to = get_the_author_meta( 'user_email', $user_id );
 
 			wp_mail( $mail_to, $mail_subject, $mail_body, $mail_headers );
-		}		
+		}
 	}
 }
