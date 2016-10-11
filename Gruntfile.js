@@ -1,6 +1,14 @@
 module.exports = function( grunt ) {
 	require( 'load-grunt-tasks' )( grunt );
 
+	var phpFiles = [
+		'**/*.php',
+		'!bower_components/**',
+		'!deploy/**',
+		'!node_modules/**',
+		'!vendor/**'
+	];
+
 	// Project configuration
 	grunt.initConfig( {
 		// Package
@@ -13,14 +21,10 @@ module.exports = function( grunt ) {
 		// PHP Code Sniffer
 		phpcs: {
 			application: {
-				src: [
-					'**/*.php',
-					'!bower_components/**',
-					'!deploy/**',
-					'!node_modules/**'
-				],
+				src: phpFiles
 			},
 			options: {
+				bin: 'vendor/bin/phpcs',
 				standard: 'phpcs.ruleset.xml',
 				showSniffCodes: true
 			}
@@ -33,7 +37,7 @@ module.exports = function( grunt ) {
 					'-lf': null
 				}
 			},
-			all: [ '**/*.php' ]
+			all: phpFiles
 		},
 
 		// PHP Mess Detector

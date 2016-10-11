@@ -31,5 +31,14 @@
 	"type": "wordpress-plugin",
 	"require": {
 		
-	}
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^2.7",
+		"wp-coding-standards/wpcs": "^0.10.0"
+	},
+    "scripts": {
+        "post-autoload-dump": [
+            "if [[ -d vendor/wp-coding-standards/wpcs ]]; then vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs; fi"
+        ]
+    }
 }
