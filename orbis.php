@@ -18,6 +18,14 @@ License: GPL
 GitHub URI: https://github.com/wp-orbis/wp-orbis
 */
 
+/**
+ * Autoload
+ */
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+
+/**
+ * Includes
+ */
 require_once 'includes/functions.php';
 require_once 'includes/persons.php';
 require_once 'includes/companies.php';
@@ -27,17 +35,10 @@ require_once 'includes/flot.php';
 require_once 'includes/shortcodes.php';
 require_once 'admin/includes/upgrade.php';
 
+/**
+ * Bootstrap
+ */
 function orbis_bootstrap() {
-	// Classes
-	require_once 'classes/orbis-plugin.php';
-	require_once 'classes/orbis-core-admin.php';
-	require_once 'classes/orbis-core-angularjs.php';
-	require_once 'classes/orbis-core-email.php';
-	require_once 'classes/orbis-core-plugin.php';
-	require_once 'classes/orbis-core-settings.php';
-	require_once 'classes/orbis-api.php';
-	require_once 'classes/orbis-plugin-manager.php';
-
 	// Initialize
 	global $orbis_plugin;
 

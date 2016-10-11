@@ -15,20 +15,23 @@
 			"email": "info@remcotolsma.nl",
 			"homepage": "http://www.remcotolsma.nl",
 			"role": "Developer"
-        },
+		},
 		{
 			"name": "Karel-Jan Tolsma",
 			"email": "info@kareljantolsma.nl",
 			"homepage": "http://www.kareljantolsma.nl",
 			"role": "Developer"
-        }
-    ],
-    "support": {
-        "email": "support@pronamic.nl",
-        "issues": "https://github.com/pronamic/wp-orbis/issues",
-        "source": "https://github.com/pronamic/wp-orbis"
-    },
+		}
+	],
+	"support": {
+		"email": "support@pronamic.nl",
+		"issues": "https://github.com/pronamic/wp-orbis/issues",
+		"source": "https://github.com/pronamic/wp-orbis"
+	},
 	"type": "wordpress-plugin",
+	"autoload": {
+		"classmap": ["classes/"]
+	},
 	"require": {
 		
 	},
@@ -36,9 +39,9 @@
 		"squizlabs/php_codesniffer": "^2.7",
 		"wp-coding-standards/wpcs": "^0.10.0"
 	},
-    "scripts": {
-        "post-autoload-dump": [
-            "if [[ -d vendor/wp-coding-standards/wpcs ]]; then vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs; fi"
-        ]
-    }
+	"scripts": {
+		"post-autoload-dump": [
+			"if [[ -d vendor/wp-coding-standards/wpcs ]]; then vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs; fi"
+		]
+	}
 }
