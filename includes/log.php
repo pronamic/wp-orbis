@@ -162,7 +162,7 @@ function orbis_log_save_post( $post_id, $post ) {
 	}
 
 	$message = sprintf(
-		__( '%s updated the "%s" post.', 'orbis' ),
+		__( '%1$s updated the "%2$s" post.', 'orbis' ),
 		$name,
 		sprintf(
 			'<a href="%s">%s</a>',
