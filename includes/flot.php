@@ -33,7 +33,7 @@ function orbis_flot_enqueue_scripts() {
 	// Register scripts
 	wp_register_script(
 		'excanvas',
-		$orbis_plugin->plugin_url( 'includes/js/flot/excanvas' . $suffix. '.js' )
+		$orbis_plugin->plugin_url( 'includes/js/flot/excanvas' . $suffix . '.js' )
 	);
 
 	// @see http://wordpress.stackexchange.com/a/20877
