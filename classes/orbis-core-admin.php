@@ -183,7 +183,7 @@ class Orbis_Core_Admin {
 			}
 		}
 
-		$orbis_index = array_search( 'orbis', $other_items ) + 1;
+		$orbis_index = array_search( 'orbis', $other_items, true ) + 1;
 
 		$before = array_slice( $other_items, 0, $orbis_index );
 		$after  = array_slice( $other_items, $orbis_index );
