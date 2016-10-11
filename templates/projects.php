@@ -40,17 +40,17 @@ $sql = "
 ";
 
 // Order by
-$orderBy = 'principal.name , project.name';
+$order_by = 'principal.name , project.name';
 if ( isset( $_GET['order'] ) ) {
 	switch ( $_GET['order'] ) {
 		case 'id' :
-			$orderBy = 'project.id DESC';
+			$order_by = 'project.id DESC';
 			break;
 	}
 }
 
 // Build query
-$sql = sprintf( $sql, $orderBy );
+$sql = sprintf( $sql, $order_by );
 
 // Projects
 $projects = $wpdb->get_results( $sql );
