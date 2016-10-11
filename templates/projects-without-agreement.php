@@ -10,9 +10,9 @@ function filter_where( $where = '' ) {
 add_filter( 'posts_where', 'filter_where' );
 
 $query = new WP_Query( array(
-	'post_type'  => 'orbis_project',
-	'nopaging'   => true,
-	'meta_query' => array(
+	'post_type'      => 'orbis_project',
+	'posts_per_page' => 50,
+	'meta_query'     => array(
 		array(
 			'key'     => '_orbis_project_agreement_id',
 			'compare' => 'NOT EXISTS',
