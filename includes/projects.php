@@ -245,7 +245,7 @@ function orbis_project_finished_update( $post_id, $is_finished ) {
 	$user = wp_get_current_user();
 
 	$comment_content = sprintf(
-		__( "This '%1$s' project is just '%2$s' by %3$s.", 'orbis' ),
+		__( 'This "%1$s" project is just "%2$s" by %3$s.', 'orbis' ),
 		$is_finished ? __( 'opened', 'orbis' ) : __( 'completed', 'orbis' ),
 		$is_finished ? __( 'completed', 'orbis' ) : __( 'opened', 'orbis' ),
 		$user->display_name
