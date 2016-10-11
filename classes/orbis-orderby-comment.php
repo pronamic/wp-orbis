@@ -55,7 +55,7 @@ class Orbis_OrderByComment {
 	 */
 	public function posts_orderby( $orderby, $query ) {
 		if ( 'last_comment_date' === $query->get( 'orderby' ) ) {
-			$orderby = 'last_comment_date' . ' ' . $query->get( 'order' );
+			$orderby = 'last_comment_date ' . $query->get( 'order' );
 		}
 
 		return $orderby;
