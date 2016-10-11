@@ -35,6 +35,9 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		// Email
 		$this->email = new Orbis_Core_Email( $this );
 
+		// Other
+		new Orbis_OrderByComment();
+
 		// Admin
 		if ( is_admin() ) {
 			global $orbis_admin;
