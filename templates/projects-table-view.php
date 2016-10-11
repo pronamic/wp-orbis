@@ -57,7 +57,7 @@
 
 							foreach ( $comments as $comment ) {
 								$title = sprintf(
-									__( '%s zegt op %s:', 'orbis' ),
+									__( '%1$s says on %2$s:', 'orbis' ),
 									'<strong>' . $comment->comment_author . '</strong>',
 									'<strong>' . date_i18n( 'j M Y', strtotime( $comment->comment_date ) ) . '</strong>'
 								);

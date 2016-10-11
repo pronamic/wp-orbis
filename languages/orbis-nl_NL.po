@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2016-10-11 08:56:20+00:00\n"
-"PO-Revision-Date: 2016-10-11 11:00+0100\n"
+"POT-Creation-Date: 2016-10-11 09:03:22+00:00\n"
+"PO-Revision-Date: 2016-10-11 11:03+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -717,8 +717,8 @@ msgid "Invoice Number"
 msgstr "Factuurnummer"
 
 #: templates/projects-table-view.php:60
-msgid "%s zegt op %s:"
-msgstr ""
+msgid "%1$s says on %2$s:"
+msgstr "%1$s zegt op %2$s:"
 
 #: templates/projects-table-view.php:89
 #: templates/projects-without-agreement.php:74
