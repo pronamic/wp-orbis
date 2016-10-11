@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2015-10-28 13:33:28+00:00\n"
-"PO-Revision-Date: 2015-10-28 14:33+0100\n"
+"POT-Creation-Date: 2016-10-11 08:56:20+00:00\n"
+"PO-Revision-Date: 2016-10-11 11:00+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Poedit 1.7.4\n"
 
 #: admin/meta-box-company-details.php:29 admin/meta-box-project-details.php:29
-#: includes/projects.php:368 templates/projects-without-agreement.php:35
+#: templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
@@ -89,7 +89,7 @@ msgid "Select Client"
 msgstr "Selecteer klant"
 
 #: admin/meta-box-project-details.php:45 classes/orbis-core-email.php:43
-#: includes/projects.php:367 templates/projects-table-view.php:10
+#: includes/projects.php:367 templates/projects-table-view.php:11
 msgid "Time"
 msgstr "Tijd"
 
@@ -137,14 +137,14 @@ msgstr "Project is afgerond"
 msgid "Recent Projects"
 msgstr "Recente projecten"
 
-#: admin/page-dashboard.php:22
-msgid "No recent projects found."
-msgstr "Geen recente projecten gevonden."
-
 #. translators: comment date format. See http:php.net/date
-#: admin/page-dashboard.php:47
+#: admin/page-dashboard.php:41
 msgid "c"
 msgstr "c"
+
+#: admin/page-dashboard.php:57
+msgid "No recent projects found."
+msgstr "Geen recente projecten gevonden."
 
 #: admin/page-dashboard.php:69 admin/page-dashboard.php:77
 msgid "Pronamic News"
@@ -489,17 +489,17 @@ msgstr "Titel"
 msgid "Online"
 msgstr "Online"
 
-#: includes/companies.php:150 includes/projects.php:369
-#: templates/emails/update.php:51
+#: includes/companies.php:150 includes/projects.php:368
+#: templates/emails/update.php:57
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/companies.php:151 includes/projects.php:370
+#: includes/companies.php:151 includes/projects.php:369
 msgid "Comments"
 msgstr "Reacties"
 
-#: includes/companies.php:152 includes/projects.php:371
-#: templates/emails/update.php:48 templates/projects-table-view.php:9
+#: includes/companies.php:152 includes/projects.php:370
+#: templates/emails/update.php:54 templates/projects-table-view.php:9
 msgid "Date"
 msgstr "Datum"
 
@@ -516,8 +516,8 @@ msgid "Anonymous"
 msgstr "Anoniem"
 
 #: includes/log.php:165
-msgid "%s updated the \"%s\" post."
-msgstr "%s heeft het \"%s\" bericht bijgewerkt."
+msgid "%1$s updated the \"%2$s\" post."
+msgstr "%1$s heeft het \"%2$s\" bericht bijgewerkt."
 
 #: includes/persons.php:9
 msgid "Contact information"
@@ -635,10 +635,6 @@ msgstr "Geen personen gevonden in prullenbak."
 msgid "Project Information"
 msgstr "Projectinformatie"
 
-#: includes/projects.php:248
-msgid "This '%s' project is just '%s' by %s."
-msgstr "Dit '%s' project is zojuist '%s' door %s."
-
 #: includes/projects.php:249 includes/projects.php:250
 msgid "opened"
 msgstr "geopend"
@@ -679,16 +675,16 @@ msgstr "Recente sleutelhangers"
 msgid "Recent Tasks"
 msgstr "Recente taken"
 
-#: templates/emails/update.php:54
+#: templates/emails/update.php:60
 #: templates/projects-completed-not-invoiced.php:87 templates/projects.php:98
 msgid "Name"
 msgstr "Naam"
 
-#: templates/emails/update.php:60
+#: templates/emails/update.php:66
 msgid "Price"
 msgstr "Prijs"
 
-#: templates/emails/update.php:105
+#: templates/emails/update.php:111
 msgid "No new posts in the last 3 days."
 msgstr "Geen nieuwe berichten in de laatste 3 dagen."
 
@@ -708,15 +704,23 @@ msgstr "Projectleider"
 msgid "ID"
 msgstr "ID"
 
-#: templates/projects-table-view.php:11
+#: templates/projects-table-view.php:10
+msgid "Comment"
+msgstr "Reactie"
+
+#: templates/projects-table-view.php:12
 msgid "Invoiceable"
 msgstr "Factureerbaar"
 
-#: templates/projects-table-view.php:12
+#: templates/projects-table-view.php:13
 msgid "Invoice Number"
 msgstr "Factuurnummer"
 
 #: templates/projects-table-view.php:60
+msgid "%s zegt op %s:"
+msgstr ""
+
+#: templates/projects-table-view.php:89
 #: templates/projects-without-agreement.php:74
 msgid "Edit"
 msgstr "Bewerken"
@@ -819,6 +823,9 @@ msgstr "Persoon"
 msgctxt "person"
 msgid "Add New"
 msgstr "Nieuw persoon"
+
+#~ msgid "This '%s' project is just '%s' by %s."
+#~ msgstr "Dit '%s' project is zojuist '%s' door %s."
 
 #~ msgid "Filter:"
 #~ msgstr "Filter:"

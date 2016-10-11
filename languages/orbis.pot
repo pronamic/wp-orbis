@@ -1,20 +1,20 @@
-# Copyright (C) 2015 Pronamic
+# Copyright (C) 2016 Pronamic
 # This file is distributed under the GPL.
 msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2015-10-28 13:33:28+00:00\n"
+"POT-Creation-Date: 2016-10-11 08:59:10+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.5.3\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
 
 #: admin/meta-box-company-details.php:29 admin/meta-box-project-details.php:29
-#: includes/projects.php:368 templates/projects-without-agreement.php:35
+#: templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr ""
 
@@ -88,7 +88,7 @@ msgid "Select Client"
 msgstr ""
 
 #: admin/meta-box-project-details.php:45 classes/orbis-core-email.php:43
-#: includes/projects.php:367 templates/projects-table-view.php:10
+#: includes/projects.php:367 templates/projects-table-view.php:11
 msgid "Time"
 msgstr ""
 
@@ -130,13 +130,13 @@ msgstr ""
 msgid "Recent Projects"
 msgstr ""
 
-#: admin/page-dashboard.php:22
-msgid "No recent projects found."
-msgstr ""
-
-#: admin/page-dashboard.php:47
+#: admin/page-dashboard.php:41
 #. translators: comment date format. See http:php.net/date
 msgid "c"
+msgstr ""
+
+#: admin/page-dashboard.php:57
+msgid "No recent projects found."
 msgstr ""
 
 #: admin/page-dashboard.php:69 admin/page-dashboard.php:77
@@ -482,17 +482,17 @@ msgstr ""
 msgid "Online"
 msgstr ""
 
-#: includes/companies.php:150 includes/projects.php:369
-#: templates/emails/update.php:51
+#: includes/companies.php:150 includes/projects.php:368
+#: templates/emails/update.php:57
 msgid "Author"
 msgstr ""
 
-#: includes/companies.php:151 includes/projects.php:370
+#: includes/companies.php:151 includes/projects.php:369
 msgid "Comments"
 msgstr ""
 
-#: includes/companies.php:152 includes/projects.php:371
-#: templates/emails/update.php:48 templates/projects-table-view.php:9
+#: includes/companies.php:152 includes/projects.php:370
+#: templates/emails/update.php:54 templates/projects-table-view.php:9
 msgid "Date"
 msgstr ""
 
@@ -509,7 +509,7 @@ msgid "Anonymous"
 msgstr ""
 
 #: includes/log.php:165
-msgid "%s updated the \"%s\" post."
+msgid "%1$s updated the \"%2$s\" post."
 msgstr ""
 
 #: includes/persons.php:9
@@ -628,10 +628,6 @@ msgstr ""
 msgid "Project Information"
 msgstr ""
 
-#: includes/projects.php:248
-msgid "This '%s' project is just '%s' by %s."
-msgstr ""
-
 #: includes/projects.php:249 includes/projects.php:250
 msgid "opened"
 msgstr ""
@@ -672,16 +668,16 @@ msgstr ""
 msgid "Recent Tasks"
 msgstr ""
 
-#: templates/emails/update.php:54
+#: templates/emails/update.php:60
 #: templates/projects-completed-not-invoiced.php:87 templates/projects.php:98
 msgid "Name"
 msgstr ""
 
-#: templates/emails/update.php:60
+#: templates/emails/update.php:66
 msgid "Price"
 msgstr ""
 
-#: templates/emails/update.php:105
+#: templates/emails/update.php:111
 msgid "No new posts in the last 3 days."
 msgstr ""
 
@@ -701,15 +697,23 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: templates/projects-table-view.php:11
-msgid "Invoiceable"
+#: templates/projects-table-view.php:10
+msgid "Comment"
 msgstr ""
 
 #: templates/projects-table-view.php:12
+msgid "Invoiceable"
+msgstr ""
+
+#: templates/projects-table-view.php:13
 msgid "Invoice Number"
 msgstr ""
 
 #: templates/projects-table-view.php:60
+msgid "%s zegt op %s:"
+msgstr ""
+
+#: templates/projects-table-view.php:89
 #: templates/projects-without-agreement.php:74
 msgid "Edit"
 msgstr ""
