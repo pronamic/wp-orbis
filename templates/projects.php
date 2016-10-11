@@ -53,7 +53,7 @@ if ( isset( $_GET['order'] ) ) {
 $sql = sprintf( $sql, $order_by );
 
 // Projects
-$projects = $wpdb->get_results( $sql );
+$projects = $wpdb->get_results( $sql ); // WPCS: unprepared SQL ok.
 
 // Managers
 $managers = array();
