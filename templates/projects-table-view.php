@@ -11,6 +11,7 @@
 				<th scope="col"><?php _e( 'Time', 'orbis' ); ?></th>
 				<th scope="col"><?php _e( 'Invoiceable', 'orbis' ); ?></th>
 				<th scope="col"><?php _e( 'Invoice Number', 'orbis' ); ?></th>
+				<th></th>
 			</tr>
 		</thead>
 
@@ -81,14 +82,21 @@
 						<td>
 							<?php echo esc_html( $project->invoicable ? 'Ja' : 'Nee' ); ?>
 						</td>
+						<td><?php echo esc_html( $project->invoice_number ); ?></td>
 						<td>
-							<div class="actions">
-								<?php echo esc_html( $project->invoice_number ); ?>
+							<?php
 
-								<div class="nubbin">
-									<?php edit_post_link( __( 'Edit', 'orbis' ), '', '', $project->project_post_id ); ?>
-								</div>
-							</div>
+							$text  = '';
+
+							$text .= '<i class="fa fa-pencil" aria-hidden="true"></i>';
+							$text .= sprintf(
+								'<span class="sr-only sr-only-focusable">%s</span>',
+								__( 'Edit', 'orbis' )
+							);
+
+							edit_post_link( $text );
+
+							?>
 						</td>
 					</tr>
 
