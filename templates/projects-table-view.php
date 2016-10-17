@@ -94,7 +94,7 @@
 								__( 'Edit', 'orbis' )
 							);
 
-							edit_post_link( $text );
+							edit_post_link( $text, '', '', $project->project_post_id );
 
 							?>
 						</td>
