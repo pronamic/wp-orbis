@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2016-10-17 12:46:02+00:00\n"
+"POT-Creation-Date: 2016-10-17 13:38:28+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,52 +39,60 @@ msgid "Addresses"
 msgstr ""
 
 #: admin/meta-box-company-details.php:74 admin/meta-box-company-details.php:77
-#: includes/companies.php:147
+#: admin/meta-box-person-details.php:92 includes/companies.php:147
 msgid "Address"
 msgstr ""
 
-#: admin/meta-box-company-details.php:79
+#: admin/meta-box-company-details.php:79 admin/meta-box-person-details.php:94
 msgid "Postcode"
 msgstr ""
 
-#: admin/meta-box-company-details.php:80
+#: admin/meta-box-company-details.php:80 admin/meta-box-person-details.php:95
 msgid "City"
 msgstr ""
 
-#: admin/meta-box-company-details.php:82
+#: admin/meta-box-company-details.php:82 admin/meta-box-person-details.php:97
 msgid "Country"
 msgstr ""
 
-#: admin/meta-box-company-details.php:87 admin/meta-box-person-details.php:68
+#: admin/meta-box-company-details.php:87 admin/meta-box-person-details.php:103
 msgid "Twitter Username:"
 msgstr ""
 
-#: admin/meta-box-company-details.php:95 admin/meta-box-person-details.php:76
+#: admin/meta-box-company-details.php:95 admin/meta-box-person-details.php:111
 msgid "Facebook URL:"
 msgstr ""
 
-#: admin/meta-box-company-details.php:103 admin/meta-box-person-details.php:84
+#: admin/meta-box-company-details.php:103 admin/meta-box-person-details.php:119
 msgid "LinkedIn URL:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:20
-msgid "Email Address:"
-msgstr ""
-
 #: admin/meta-box-person-details.php:28
-msgid "Phone Number:"
+msgid "Company:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:36
-msgid "Mobile Number:"
-msgstr ""
-
-#: admin/meta-box-person-details.php:44
+#: admin/meta-box-person-details.php:38
 msgid "Gender:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:55
+#: admin/meta-box-person-details.php:49
 msgid "— Select Gender —"
+msgstr ""
+
+#: admin/meta-box-person-details.php:63
+msgid "Email Address:"
+msgstr ""
+
+#: admin/meta-box-person-details.php:72
+msgid "Phone Number:"
+msgstr ""
+
+#: admin/meta-box-person-details.php:80
+msgid "Mobile Number:"
+msgstr ""
+
+#: admin/meta-box-person-details.php:89
+msgid "Address:"
 msgstr ""
 
 #: admin/meta-box-project-details.php:37 templates/projects-table-view.php:7
@@ -548,39 +556,39 @@ msgstr ""
 msgid "Parent Project:"
 msgstr ""
 
-#: includes/post.php:43 includes/post.php:100 includes/post.php:187
+#: includes/post.php:43 includes/post.php:100 includes/post.php:189
 msgid "Search Categories"
 msgstr ""
 
-#: includes/post.php:44 includes/post.php:101 includes/post.php:188
+#: includes/post.php:44 includes/post.php:101 includes/post.php:190
 msgid "All Categories"
 msgstr ""
 
-#: includes/post.php:45 includes/post.php:102 includes/post.php:189
+#: includes/post.php:45 includes/post.php:102 includes/post.php:191
 msgid "Parent Category"
 msgstr ""
 
-#: includes/post.php:46 includes/post.php:103 includes/post.php:190
+#: includes/post.php:46 includes/post.php:103 includes/post.php:192
 msgid "Parent Category:"
 msgstr ""
 
-#: includes/post.php:47 includes/post.php:104 includes/post.php:191
+#: includes/post.php:47 includes/post.php:104 includes/post.php:193
 msgid "Edit Category"
 msgstr ""
 
-#: includes/post.php:48 includes/post.php:105 includes/post.php:192
+#: includes/post.php:48 includes/post.php:105 includes/post.php:194
 msgid "Update Category"
 msgstr ""
 
-#: includes/post.php:49 includes/post.php:106 includes/post.php:193
+#: includes/post.php:49 includes/post.php:106 includes/post.php:195
 msgid "Add New Category"
 msgstr ""
 
-#: includes/post.php:50 includes/post.php:107 includes/post.php:194
+#: includes/post.php:50 includes/post.php:107 includes/post.php:196
 msgid "New Category Name"
 msgstr ""
 
-#: includes/post.php:51 includes/post.php:108 includes/post.php:195
+#: includes/post.php:51 includes/post.php:108 includes/post.php:197
 msgid "Categories"
 msgstr ""
 
@@ -791,6 +799,21 @@ msgstr ""
 msgid "https://www.pronamic.eu/"
 msgstr ""
 
+#: admin/meta-box-person-details.php:31
+msgctxt "person"
+msgid "Title"
+msgstr ""
+
+#: admin/meta-box-person-details.php:32
+msgctxt "person"
+msgid "Organization"
+msgstr ""
+
+#: includes/post.php:127
+msgctxt "person"
+msgid "Add New"
+msgstr ""
+
 #: includes/post.php:11
 msgctxt "orbis_project"
 msgid "Add New"
@@ -821,17 +844,17 @@ msgctxt "slug"
 msgid "persons"
 msgstr ""
 
-#: includes/post.php:174
+#: includes/post.php:176
 msgctxt "slug"
 msgid "genders"
 msgstr ""
 
-#: includes/post.php:200
+#: includes/post.php:202
 msgctxt "slug"
 msgid "person-category"
 msgstr ""
 
-#: includes/post.php:41 includes/post.php:98 includes/post.php:185
+#: includes/post.php:41 includes/post.php:98 includes/post.php:187
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr ""
@@ -841,7 +864,7 @@ msgctxt "taxonomy general name"
 msgid "Genders"
 msgstr ""
 
-#: includes/post.php:42 includes/post.php:99 includes/post.php:186
+#: includes/post.php:42 includes/post.php:99 includes/post.php:188
 msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr ""
@@ -874,9 +897,4 @@ msgstr ""
 #: includes/post.php:126
 msgctxt "add new on admin bar"
 msgid "Person"
-msgstr ""
-
-#: includes/post.php:127
-msgctxt "person"
-msgid "Add New"
 msgstr ""

@@ -6,6 +6,14 @@ $person_email_address = get_post_meta( $post->ID, '_orbis_person_email_address',
 $person_phone_number  = get_post_meta( $post->ID, '_orbis_person_phone_number', true );
 $person_mobile_number = get_post_meta( $post->ID, '_orbis_person_mobile_number', true );
 
+$title        = get_post_meta( $post->ID, '_orbis_title', true );
+$organization = get_post_meta( $post->ID, '_orbis_organization', true );
+
+$address    = get_post_meta( $post->ID, '_orbis_address', true );
+$postcode   = get_post_meta( $post->ID, '_orbis_postcode', true );
+$city       = get_post_meta( $post->ID, '_orbis_city', true );
+$country    = get_post_meta( $post->ID, '_orbis_country', true );
+
 $person_twitter  = get_post_meta( $post->ID, '_orbis_person_twitter', true );
 $person_facebook = get_post_meta( $post->ID, '_orbis_person_facebook', true );
 $person_linkedin = get_post_meta( $post->ID, '_orbis_person_linkedin', true );
@@ -15,6 +23,16 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 ?>
 <table class="form-table">
 	<tbody>
+		<tr valign="top">
+			<th scope="row">
+				<?php _e( 'Company:', 'orbis' ); ?>
+			</th>
+			<td>
+				<input type="text" id="_orbis_title" name="_orbis_title" value="<?php echo esc_attr( $title ); ?>" class="regular-text" placeholder="<?php echo esc_attr( _x( 'Title', 'person', 'orbis' ) ); ?>" style="width: 10em;" />
+				<input type="text" id="_orbis_organization" name="_orbis_organization" value="<?php echo esc_attr( $organization ); ?>" class="regular-text" placeholder="<?php echo esc_attr( _x( 'Organization', 'person', 'orbis' ) ); ?>" />
+			</td>
+		</tr>
+
 		<tr valign="top">
 			<th scope="row">
 				<label for="orbis_person_gender"><?php _e( 'Gender:', 'orbis' ); ?></label>
@@ -39,6 +57,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 				?>
 			</td>
 		</tr>
+
 		<tr valign="top">
 			<th scope="row">
 				<label for="orbis_person_email_address"><?php _e( 'Email Address:', 'orbis' ); ?></label>
@@ -47,6 +66,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 				<input type="text" id="orbis_person_email_address" name="_orbis_person_email_address" value="<?php echo esc_attr( $person_email_address ); ?>" class="regular-text" />
 			</td>
 		</tr>
+
 		<tr valign="top">
 			<th scope="row">
 				<label for="orbis_person_phone_number"><?php _e( 'Phone Number:', 'orbis' ); ?></label>
@@ -63,6 +83,21 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 				<input type="text" id="orbis_person_mobile_number" name="_orbis_person_mobile_number" value="<?php echo esc_attr( $person_mobile_number ); ?>" class="regular-text" />
 			</td>
 		</tr>
+
+		<tr>
+			<th scope="row">
+				<label for="orbis_address"><?php _e( 'Address:', 'orbis' ); ?></label>
+			</th>
+			<td>
+				<input id="orbis_address" name="_orbis_address" placeholder="<?php esc_attr_e( 'Address', 'orbis' ); ?>" value="<?php echo esc_attr( $address ); ?>" type="text" size="42" />
+				<br />
+				<input id="orbis_postcode" name="_orbis_postcode" placeholder="<?php esc_attr_e( 'Postcode', 'orbis' ); ?>" value="<?php echo esc_attr( $postcode ); ?>" type="text" size="10" />
+				<input id="orbis_city" name="_orbis_city" placeholder="<?php esc_attr_e( 'City', 'orbis' ); ?>" value="<?php echo esc_attr( $city ); ?>" type="text" size="25" />
+				<br />
+				<input id="orbis_country" name="_orbis_country" placeholder="<?php esc_attr_e( 'Country', 'orbis' ); ?>" value="<?php echo esc_attr( $country ); ?>" type="text" size="42" />
+			</td>
+		</tr>
+
 		<tr valign="top">
 			<th scope="row">
 				<label for="orbis_person_twitter"><?php _e( 'Twitter Username:', 'orbis' ); ?></label>

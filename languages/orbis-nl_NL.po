@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2016-10-17 12:46:02+00:00\n"
-"PO-Revision-Date: 2016-10-17 14:48+0100\n"
+"POT-Creation-Date: 2016-10-17 13:36:44+00:00\n"
+"PO-Revision-Date: 2016-10-17 15:38+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -40,53 +40,62 @@ msgid "Addresses"
 msgstr "Adressen"
 
 #: admin/meta-box-company-details.php:74 admin/meta-box-company-details.php:77
-#: includes/companies.php:147
+#: admin/meta-box-person-details.php:92 includes/companies.php:147
 msgid "Address"
 msgstr "Adres"
 
-#: admin/meta-box-company-details.php:79
+#: admin/meta-box-company-details.php:79 admin/meta-box-person-details.php:94
 msgid "Postcode"
 msgstr "Postcode"
 
-#: admin/meta-box-company-details.php:80
+#: admin/meta-box-company-details.php:80 admin/meta-box-person-details.php:95
 msgid "City"
 msgstr "Plaats"
 
-#: admin/meta-box-company-details.php:82
+#: admin/meta-box-company-details.php:82 admin/meta-box-person-details.php:97
 msgid "Country"
 msgstr "Land"
 
-#: admin/meta-box-company-details.php:87 admin/meta-box-person-details.php:68
+#: admin/meta-box-company-details.php:87 admin/meta-box-person-details.php:103
 msgid "Twitter Username:"
 msgstr "Twitter gebruikersnaam:"
 
-#: admin/meta-box-company-details.php:95 admin/meta-box-person-details.php:76
+#: admin/meta-box-company-details.php:95 admin/meta-box-person-details.php:111
 msgid "Facebook URL:"
 msgstr "Facebook URL:"
 
-#: admin/meta-box-company-details.php:103 admin/meta-box-person-details.php:84
+#: admin/meta-box-company-details.php:103
+#: admin/meta-box-person-details.php:119
 msgid "LinkedIn URL:"
 msgstr "LinkedIn URL:"
 
-#: admin/meta-box-person-details.php:20
-msgid "Email Address:"
-msgstr "E-mailadres:"
-
 #: admin/meta-box-person-details.php:28
-msgid "Phone Number:"
-msgstr "Telefoonnummer:"
+msgid "Company:"
+msgstr "Bedrijf:"
 
-#: admin/meta-box-person-details.php:36
-msgid "Mobile Number:"
-msgstr "Mobielnummer:"
-
-#: admin/meta-box-person-details.php:44
+#: admin/meta-box-person-details.php:38
 msgid "Gender:"
 msgstr "Geslacht:"
 
-#: admin/meta-box-person-details.php:55
+#: admin/meta-box-person-details.php:49
 msgid "— Select Gender —"
 msgstr "— Selecteer geslacht —"
+
+#: admin/meta-box-person-details.php:63
+msgid "Email Address:"
+msgstr "E-mailadres:"
+
+#: admin/meta-box-person-details.php:72
+msgid "Phone Number:"
+msgstr "Telefoonnummer:"
+
+#: admin/meta-box-person-details.php:80
+msgid "Mobile Number:"
+msgstr "Mobielnummer:"
+
+#: admin/meta-box-person-details.php:89
+msgid "Address:"
+msgstr "Adres:"
 
 #: admin/meta-box-project-details.php:37 templates/projects-table-view.php:7
 msgid "Client"
@@ -555,39 +564,39 @@ msgstr "Geen projecten gevonden in prullenbak."
 msgid "Parent Project:"
 msgstr "Bovenliggend project:"
 
-#: includes/post.php:43 includes/post.php:100 includes/post.php:187
+#: includes/post.php:43 includes/post.php:100 includes/post.php:189
 msgid "Search Categories"
 msgstr "Zoek categorieën"
 
-#: includes/post.php:44 includes/post.php:101 includes/post.php:188
+#: includes/post.php:44 includes/post.php:101 includes/post.php:190
 msgid "All Categories"
 msgstr "Alle categorieën"
 
-#: includes/post.php:45 includes/post.php:102 includes/post.php:189
+#: includes/post.php:45 includes/post.php:102 includes/post.php:191
 msgid "Parent Category"
 msgstr "Bovenliggende categorie"
 
-#: includes/post.php:46 includes/post.php:103 includes/post.php:190
+#: includes/post.php:46 includes/post.php:103 includes/post.php:192
 msgid "Parent Category:"
 msgstr "Bovenliggende categorie:"
 
-#: includes/post.php:47 includes/post.php:104 includes/post.php:191
+#: includes/post.php:47 includes/post.php:104 includes/post.php:193
 msgid "Edit Category"
 msgstr "Bewerk categorie"
 
-#: includes/post.php:48 includes/post.php:105 includes/post.php:192
+#: includes/post.php:48 includes/post.php:105 includes/post.php:194
 msgid "Update Category"
 msgstr "Update categorie"
 
-#: includes/post.php:49 includes/post.php:106 includes/post.php:193
+#: includes/post.php:49 includes/post.php:106 includes/post.php:195
 msgid "Add New Category"
 msgstr "Nieuwe categorie"
 
-#: includes/post.php:50 includes/post.php:107 includes/post.php:194
+#: includes/post.php:50 includes/post.php:107 includes/post.php:196
 msgid "New Category Name"
 msgstr "Nieuwe categorie naam"
 
-#: includes/post.php:51 includes/post.php:108 includes/post.php:195
+#: includes/post.php:51 includes/post.php:108 includes/post.php:197
 msgid "Categories"
 msgstr "Categorieën"
 
@@ -800,6 +809,21 @@ msgstr "Pronamic"
 msgid "https://www.pronamic.eu/"
 msgstr "https://www.pronamic.nl/"
 
+#: admin/meta-box-person-details.php:31
+msgctxt "person"
+msgid "Title"
+msgstr "Functie"
+
+#: admin/meta-box-person-details.php:32
+msgctxt "person"
+msgid "Organization"
+msgstr "Bedrijfsnaam"
+
+#: includes/post.php:127
+msgctxt "person"
+msgid "Add New"
+msgstr "Nieuw persoon"
+
 #: includes/post.php:11
 msgctxt "orbis_project"
 msgid "Add New"
@@ -830,17 +854,17 @@ msgctxt "slug"
 msgid "persons"
 msgstr "personen"
 
-#: includes/post.php:174
+#: includes/post.php:176
 msgctxt "slug"
 msgid "genders"
 msgstr "geslachten"
 
-#: includes/post.php:200
+#: includes/post.php:202
 msgctxt "slug"
 msgid "person-category"
 msgstr "persoon-categorie"
 
-#: includes/post.php:41 includes/post.php:98 includes/post.php:185
+#: includes/post.php:41 includes/post.php:98 includes/post.php:187
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr "Categorieën"
@@ -850,7 +874,7 @@ msgctxt "taxonomy general name"
 msgid "Genders"
 msgstr "Geslachten"
 
-#: includes/post.php:42 includes/post.php:99 includes/post.php:186
+#: includes/post.php:42 includes/post.php:99 includes/post.php:188
 msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr "Categorie"
@@ -884,11 +908,6 @@ msgstr "Personen"
 msgctxt "add new on admin bar"
 msgid "Person"
 msgstr "Persoon"
-
-#: includes/post.php:127
-msgctxt "person"
-msgid "Add New"
-msgstr "Nieuw persoon"
 
 #~ msgid "Filter:"
 #~ msgstr "Filter:"
@@ -1197,9 +1216,6 @@ msgstr "Nieuw persoon"
 
 #~ msgid "Passwords"
 #~ msgstr "Wachtwoorden"
-
-#~ msgid "Organisation"
-#~ msgstr "Organisatie"
 
 #~ msgid "Latitude"
 #~ msgstr "Breedtegraad"
