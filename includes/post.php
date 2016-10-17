@@ -147,6 +147,38 @@ function orbis_create_initial_post_types() {
 	);
 
 	register_taxonomy(
+		'orbis_gender',
+		array( 'orbis_person' ),
+		array(
+			'hierarchical'       => true,
+			'labels'             => array(
+				'name'              => _x( 'Genders', 'taxonomy general name', 'orbis' ),
+				'singular_name'     => _x( 'Gender', 'taxonomy singular name', 'orbis' ),
+				'search_items'      => __( 'Search Genders', 'orbis' ),
+				'all_items'         => __( 'All Genders', 'orbis' ),
+				'parent_item'       => __( 'Parent Gender', 'orbis' ),
+				'parent_item_colon' => __( 'Parent Gender:', 'orbis' ),
+				'edit_item'         => __( 'Edit Gender', 'orbis' ),
+				'update_item'       => __( 'Update Gender', 'orbis' ),
+				'add_new_item'      => __( 'Add New Gender', 'orbis' ),
+				'new_item_name'     => __( 'New Gender Name', 'orbis' ),
+				'menu_name'         => __( 'Genders', 'orbis' ),
+			),
+			'public'             => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'show_in_nav_menus'  => true,
+			'show_tagcloud'      => false,
+			'show_in_quick_edit' => false,
+			'meta_box_cb'        => false,
+			'query_var'          => true,
+			'rewrite'            => array(
+				'slug' => _x( 'genders', 'slug', 'orbis' ),
+			),
+		)
+	);
+
+	register_taxonomy(
 		'orbis_person_category',
 		array( 'orbis_person' ),
 		array(

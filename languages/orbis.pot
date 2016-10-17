@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2016-10-11 09:03:22+00:00\n"
+"POT-Creation-Date: 2016-10-17 12:46:02+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -55,15 +55,15 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: admin/meta-box-company-details.php:87 admin/meta-box-person-details.php:44
+#: admin/meta-box-company-details.php:87 admin/meta-box-person-details.php:68
 msgid "Twitter Username:"
 msgstr ""
 
-#: admin/meta-box-company-details.php:95 admin/meta-box-person-details.php:52
+#: admin/meta-box-company-details.php:95 admin/meta-box-person-details.php:76
 msgid "Facebook URL:"
 msgstr ""
 
-#: admin/meta-box-company-details.php:103 admin/meta-box-person-details.php:60
+#: admin/meta-box-company-details.php:103 admin/meta-box-person-details.php:84
 msgid "LinkedIn URL:"
 msgstr ""
 
@@ -77,6 +77,14 @@ msgstr ""
 
 #: admin/meta-box-person-details.php:36
 msgid "Mobile Number:"
+msgstr ""
+
+#: admin/meta-box-person-details.php:44
+msgid "Gender:"
+msgstr ""
+
+#: admin/meta-box-person-details.php:55
+msgid "— Select Gender —"
 msgstr ""
 
 #: admin/meta-box-project-details.php:37 templates/projects-table-view.php:7
@@ -143,7 +151,7 @@ msgstr ""
 msgid "Pronamic News"
 msgstr ""
 
-#. Author URI of the plugin/theme
+#: admin/page-dashboard.php:75
 msgid "http://www.pronamic.eu/"
 msgstr ""
 
@@ -151,15 +159,15 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: admin/page-plugins.php:24 classes/orbis-core-admin.php:100
+#: admin/page-plugins.php:24 classes/orbis-core-admin.php:95
 msgid "Install"
 msgstr ""
 
-#: admin/page-plugins.php:32 classes/orbis-core-admin.php:101
+#: admin/page-plugins.php:32 classes/orbis-core-admin.php:96
 msgid "Activate"
 msgstr ""
 
-#: admin/page-plugins.php:39 classes/orbis-core-admin.php:102
+#: admin/page-plugins.php:39 classes/orbis-core-admin.php:97
 msgid "Active"
 msgstr ""
 
@@ -199,7 +207,7 @@ msgstr ""
 msgid "%d tasks"
 msgstr ""
 
-#: admin/page-stats.php:73 classes/orbis-core-plugin.php:195
+#: admin/page-stats.php:73 classes/orbis-core-plugin.php:198
 #: includes/post.php:64 includes/post.php:66 includes/post.php:78
 msgid "Companies"
 msgstr ""
@@ -208,7 +216,7 @@ msgstr ""
 msgid "%d companies"
 msgstr ""
 
-#: admin/page-stats.php:94 classes/orbis-core-plugin.php:222
+#: admin/page-stats.php:94 classes/orbis-core-plugin.php:225
 #: includes/post.php:7 includes/post.php:9 includes/post.php:21
 msgid "Projects"
 msgstr ""
@@ -237,11 +245,11 @@ msgstr ""
 msgid "Annual Revenue"
 msgstr ""
 
-#: classes/orbis-core-admin.php:103
+#: classes/orbis-core-admin.php:98
 msgid "An unknown error occurred"
 msgstr ""
 
-#: classes/orbis-core-admin.php:104
+#: classes/orbis-core-admin.php:99
 msgid "Could not connect to the server"
 msgstr ""
 
@@ -249,47 +257,47 @@ msgstr ""
 msgid "Orbis"
 msgstr ""
 
-#: classes/orbis-core-admin.php:139
+#: classes/orbis-core-admin.php:133
 msgid "Orbis Settings"
 msgstr ""
 
-#: classes/orbis-core-admin.php:140
+#: classes/orbis-core-admin.php:134
 msgid "Settings"
 msgstr ""
 
-#: classes/orbis-core-admin.php:148
+#: classes/orbis-core-admin.php:142
 msgid "Orbis Stats"
 msgstr ""
 
-#: classes/orbis-core-admin.php:149
+#: classes/orbis-core-admin.php:143
 msgid "Stats"
 msgstr ""
 
-#: classes/orbis-core-admin.php:157
+#: classes/orbis-core-admin.php:151
 msgid "Orbis Plugins"
 msgstr ""
 
-#: classes/orbis-core-admin.php:158
+#: classes/orbis-core-admin.php:152
 msgid "Plugins"
 msgstr ""
 
-#: classes/orbis-core-admin.php:250 classes/orbis-core-admin.php:255
+#: classes/orbis-core-admin.php:244 classes/orbis-core-admin.php:249
 msgid "Orbis User"
 msgstr ""
 
-#: classes/orbis-core-admin.php:260
+#: classes/orbis-core-admin.php:254
 msgid "Show user in Orbis."
 msgstr ""
 
-#: classes/orbis-core-admin.php:278 classes/orbis-core-admin.php:301
+#: classes/orbis-core-admin.php:272 classes/orbis-core-admin.php:295
 msgid "The plugin could not be found"
 msgstr ""
 
-#: classes/orbis-core-admin.php:291
+#: classes/orbis-core-admin.php:285
 msgid "The plugin was installed and activated successfully"
 msgstr ""
 
-#: classes/orbis-core-admin.php:314
+#: classes/orbis-core-admin.php:308
 msgid "The plugin was activated successfully"
 msgstr ""
 
@@ -329,111 +337,111 @@ msgstr ""
 msgid "Orbis Update"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:107
+#: classes/orbis-core-plugin.php:110
 msgid "No matches found"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:108
+#: classes/orbis-core-plugin.php:111
 msgid "Please enter %s more characters"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:109
+#: classes/orbis-core-plugin.php:112
 msgid "You can only select %s item"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:110
+#: classes/orbis-core-plugin.php:113
 msgid "You can only select %s items"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:111
+#: classes/orbis-core-plugin.php:114
 msgid "Loading more results..."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:112
+#: classes/orbis-core-plugin.php:115
 msgid "Searching..."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:196 includes/post.php:121
+#: classes/orbis-core-plugin.php:199 includes/post.php:121
 msgid "Persons"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:199 classes/orbis-core-plugin.php:233
+#: classes/orbis-core-plugin.php:202 classes/orbis-core-plugin.php:236
 msgid "Person"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:200 classes/orbis-core-plugin.php:234
+#: classes/orbis-core-plugin.php:203 classes/orbis-core-plugin.php:237
 msgid "Search person"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:201 classes/orbis-core-plugin.php:235
+#: classes/orbis-core-plugin.php:204 classes/orbis-core-plugin.php:238
 #: includes/post.php:135
 msgid "No persons found."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:202 classes/orbis-core-plugin.php:236
+#: classes/orbis-core-plugin.php:205 classes/orbis-core-plugin.php:239
 msgid "Add Person"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:203 classes/orbis-core-plugin.php:237
+#: classes/orbis-core-plugin.php:206 classes/orbis-core-plugin.php:240
 #: includes/post.php:129
 msgid "New Person"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:204 classes/orbis-core-plugin.php:238
+#: classes/orbis-core-plugin.php:207 classes/orbis-core-plugin.php:241
 #: includes/post.php:128
 msgid "Add New Person"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:207 includes/post.php:67
+#: classes/orbis-core-plugin.php:210 includes/post.php:67
 msgid "Company"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:208
+#: classes/orbis-core-plugin.php:211
 msgid "Search company"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:209 includes/post.php:75
+#: classes/orbis-core-plugin.php:212 includes/post.php:75
 msgid "No companies found."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:210
+#: classes/orbis-core-plugin.php:213
 msgid "Add Company"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:211 includes/post.php:71
+#: classes/orbis-core-plugin.php:214 includes/post.php:71
 msgid "New Company"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:212 includes/post.php:69
+#: classes/orbis-core-plugin.php:215 includes/post.php:69
 msgid "Add New Company"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:221
+#: classes/orbis-core-plugin.php:224
 msgid "Involved Persons"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:225 includes/post.php:10
+#: classes/orbis-core-plugin.php:228 includes/post.php:10
 #: templates/projects-table-view.php:8
 msgid "Project"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:226
+#: classes/orbis-core-plugin.php:229
 msgid "Search project"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:227 includes/post.php:18
+#: classes/orbis-core-plugin.php:230 includes/post.php:18
 msgid "No projects found."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:228
+#: classes/orbis-core-plugin.php:231
 msgid "Add Project"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:229 includes/post.php:14
+#: classes/orbis-core-plugin.php:232 includes/post.php:14
 msgid "New Project"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:230 includes/post.php:12
+#: classes/orbis-core-plugin.php:233 includes/post.php:12
 msgid "Add New Project"
 msgstr ""
 
@@ -540,39 +548,39 @@ msgstr ""
 msgid "Parent Project:"
 msgstr ""
 
-#: includes/post.php:43 includes/post.php:100 includes/post.php:157
+#: includes/post.php:43 includes/post.php:100 includes/post.php:187
 msgid "Search Categories"
 msgstr ""
 
-#: includes/post.php:44 includes/post.php:101 includes/post.php:158
+#: includes/post.php:44 includes/post.php:101 includes/post.php:188
 msgid "All Categories"
 msgstr ""
 
-#: includes/post.php:45 includes/post.php:102 includes/post.php:159
+#: includes/post.php:45 includes/post.php:102 includes/post.php:189
 msgid "Parent Category"
 msgstr ""
 
-#: includes/post.php:46 includes/post.php:103 includes/post.php:160
+#: includes/post.php:46 includes/post.php:103 includes/post.php:190
 msgid "Parent Category:"
 msgstr ""
 
-#: includes/post.php:47 includes/post.php:104 includes/post.php:161
+#: includes/post.php:47 includes/post.php:104 includes/post.php:191
 msgid "Edit Category"
 msgstr ""
 
-#: includes/post.php:48 includes/post.php:105 includes/post.php:162
+#: includes/post.php:48 includes/post.php:105 includes/post.php:192
 msgid "Update Category"
 msgstr ""
 
-#: includes/post.php:49 includes/post.php:106 includes/post.php:163
+#: includes/post.php:49 includes/post.php:106 includes/post.php:193
 msgid "Add New Category"
 msgstr ""
 
-#: includes/post.php:50 includes/post.php:107 includes/post.php:164
+#: includes/post.php:50 includes/post.php:107 includes/post.php:194
 msgid "New Category Name"
 msgstr ""
 
-#: includes/post.php:51 includes/post.php:108 includes/post.php:165
+#: includes/post.php:51 includes/post.php:108 includes/post.php:195
 msgid "Categories"
 msgstr ""
 
@@ -624,8 +632,48 @@ msgstr ""
 msgid "No persons found in Trash."
 msgstr ""
 
+#: includes/post.php:157
+msgid "Search Genders"
+msgstr ""
+
+#: includes/post.php:158
+msgid "All Genders"
+msgstr ""
+
+#: includes/post.php:159
+msgid "Parent Gender"
+msgstr ""
+
+#: includes/post.php:160
+msgid "Parent Gender:"
+msgstr ""
+
+#: includes/post.php:161
+msgid "Edit Gender"
+msgstr ""
+
+#: includes/post.php:162
+msgid "Update Gender"
+msgstr ""
+
+#: includes/post.php:163
+msgid "Add New Gender"
+msgstr ""
+
+#: includes/post.php:164
+msgid "New Gender Name"
+msgstr ""
+
+#: includes/post.php:165
+msgid "Genders"
+msgstr ""
+
 #: includes/projects.php:9
 msgid "Project Information"
+msgstr ""
+
+#: includes/projects.php:248
+msgid "This \"%1$s\" project is just \"%2$s\" by %3$s."
 msgstr ""
 
 #: includes/projects.php:249 includes/projects.php:250
@@ -668,8 +716,7 @@ msgstr ""
 msgid "Recent Tasks"
 msgstr ""
 
-#: templates/emails/update.php:60
-#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:98
+#: templates/emails/update.php:60 templates/projects.php:86
 msgid "Name"
 msgstr ""
 
@@ -679,14 +726,6 @@ msgstr ""
 
 #: templates/emails/update.php:111
 msgid "No new posts in the last 3 days."
-msgstr ""
-
-#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:98
-msgid "Order By:"
-msgstr ""
-
-#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:98
-msgid "Number"
 msgstr ""
 
 #: templates/projects-table-view.php:5
@@ -709,11 +748,11 @@ msgstr ""
 msgid "Invoice Number"
 msgstr ""
 
-#: templates/projects-table-view.php:60
+#: templates/projects-table-view.php:61
 msgid "%1$s says on %2$s:"
 msgstr ""
 
-#: templates/projects-table-view.php:89
+#: templates/projects-table-view.php:94
 #: templates/projects-without-agreement.php:74
 msgid "Edit"
 msgstr ""
@@ -726,8 +765,16 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
+#: templates/projects.php:86
+msgid "Order By:"
+msgstr ""
+
+#: templates/projects.php:86
+msgid "Number"
+msgstr ""
+
 #. Plugin URI of the plugin/theme
-msgid "http://www.pronamic.eu/plugins/orbis/"
+msgid "https://www.pronamic.eu/plugins/orbis/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -738,6 +785,10 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Pronamic"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.pronamic.eu/"
 msgstr ""
 
 #: includes/post.php:11
@@ -770,19 +821,34 @@ msgctxt "slug"
 msgid "persons"
 msgstr ""
 
-#: includes/post.php:170
+#: includes/post.php:174
+msgctxt "slug"
+msgid "genders"
+msgstr ""
+
+#: includes/post.php:200
 msgctxt "slug"
 msgid "person-category"
 msgstr ""
 
-#: includes/post.php:41 includes/post.php:98 includes/post.php:155
+#: includes/post.php:41 includes/post.php:98 includes/post.php:185
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr ""
 
-#: includes/post.php:42 includes/post.php:99 includes/post.php:156
+#: includes/post.php:155
+msgctxt "taxonomy general name"
+msgid "Genders"
+msgstr ""
+
+#: includes/post.php:42 includes/post.php:99 includes/post.php:186
 msgctxt "taxonomy singular name"
 msgid "Category"
+msgstr ""
+
+#: includes/post.php:156
+msgctxt "taxonomy singular name"
+msgid "Gender"
 msgstr ""
 
 #: includes/post.php:68
