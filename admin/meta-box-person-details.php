@@ -2,7 +2,8 @@
 
 global $post;
 
-$person_email_address = get_post_meta( $post->ID, '_orbis_person_email_address', true );
+$orbis_person = new Orbis_Person( $post );
+
 $person_phone_number  = get_post_meta( $post->ID, '_orbis_person_phone_number', true );
 $person_mobile_number = get_post_meta( $post->ID, '_orbis_person_mobile_number', true );
 
@@ -42,8 +43,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 
 				$taxonomy = 'orbis_gender';
 
-				$genders = get_the_terms( $post, $taxonomy );
-				$gender  = is_array( $genders ) ? reset( $genders ) : null;
+				$gender = $orbis_person->get_gender();
 
 				wp_dropdown_categories( array(
 					'show_option_none' => __( '— Select Gender —', 'orbis' ),
@@ -63,7 +63,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 				<label for="orbis_person_email_address"><?php _e( 'Email Address:', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input type="text" id="orbis_person_email_address" name="_orbis_person_email_address" value="<?php echo esc_attr( $person_email_address ); ?>" class="regular-text" />
+				<input type="text" id="orbis_person_email_address" name="_orbis_person_email_address" value="<?php echo esc_attr( $orbis_person->get_email() ); ?>" class="regular-text" />
 			</td>
 		</tr>
 
