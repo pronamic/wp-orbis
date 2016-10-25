@@ -7,8 +7,9 @@ $orbis_id   = get_post_meta( $post->ID, '_orbis_company_id', true );
 $kvk_number = get_post_meta( $post->ID, '_orbis_company_kvk_number', true );
 $vat_number = get_post_meta( $post->ID, '_orbis_company_vat_number', true );
 
-$email      = get_post_meta( $post->ID, '_orbis_company_email', true );
-$website    = get_post_meta( $post->ID, '_orbis_company_website', true );
+$email         = get_post_meta( $post->ID, '_orbis_company_email', true );
+$invoice_email = get_post_meta( $post->ID, '_orbis_invoice_email', true );
+$website       = get_post_meta( $post->ID, '_orbis_company_website', true );
 
 $address    = get_post_meta( $post->ID, '_orbis_company_address', true );
 $postcode   = get_post_meta( $post->ID, '_orbis_company_postcode', true );
@@ -54,6 +55,14 @@ wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_no
 			</th>
 			<td>
 				<input id="orbis_company_email" name="_orbis_company_email" value="<?php echo esc_attr( $email ); ?>" type="email" size="42" />
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+				<label for="_orbis_invoice_email"><?php _e( 'Invoice E-Mail', 'orbis' ); ?></label>
+			</th>
+			<td>
+				<input id="_orbis_invoice_email" name="_orbis_invoice_email" value="<?php echo esc_attr( $invoice_email ); ?>" type="email" size="42" />
 			</td>
 		</tr>
 		<tr>

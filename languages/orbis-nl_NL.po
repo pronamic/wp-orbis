@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2016-10-17 13:36:44+00:00\n"
-"PO-Revision-Date: 2016-10-17 15:38+0100\n"
+"POT-Creation-Date: 2016-10-25 08:33:12+00:00\n"
+"PO-Revision-Date: 2016-10-25 10:35+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -14,66 +14,71 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.7.4\n"
 
-#: admin/meta-box-company-details.php:29 admin/meta-box-project-details.php:29
+#: admin/meta-box-company-details.php:30 admin/meta-box-project-details.php:29
 #: templates/projects-without-agreement.php:35
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
-#: admin/meta-box-company-details.php:37 includes/companies.php:149
+#: admin/meta-box-company-details.php:38 includes/companies.php:150
 msgid "Registration Number"
 msgstr "Registratienummer"
 
-#: admin/meta-box-company-details.php:45
+#: admin/meta-box-company-details.php:46
 msgid "VAT Number"
 msgstr "BTW-nummer"
 
-#: admin/meta-box-company-details.php:53
+#: admin/meta-box-company-details.php:54
 msgid "E-Mail"
 msgstr "E-mailadres"
 
-#: admin/meta-box-company-details.php:61
+#: admin/meta-box-company-details.php:62
+msgid "Invoice E-Mail"
+msgstr "Factuur e-mailadres"
+
+#: admin/meta-box-company-details.php:70
 msgid "Website"
 msgstr "Website"
 
-#: admin/meta-box-company-details.php:69
+#: admin/meta-box-company-details.php:78
 msgid "Addresses"
 msgstr "Adressen"
 
-#: admin/meta-box-company-details.php:74 admin/meta-box-company-details.php:77
-#: admin/meta-box-person-details.php:92 includes/companies.php:147
+#: admin/meta-box-company-details.php:83 admin/meta-box-company-details.php:86
+#: admin/meta-box-person-details.php:92 includes/companies.php:148
 msgid "Address"
 msgstr "Adres"
 
-#: admin/meta-box-company-details.php:79 admin/meta-box-person-details.php:94
+#: admin/meta-box-company-details.php:88 admin/meta-box-person-details.php:94
 msgid "Postcode"
 msgstr "Postcode"
 
-#: admin/meta-box-company-details.php:80 admin/meta-box-person-details.php:95
+#: admin/meta-box-company-details.php:89 admin/meta-box-person-details.php:95
 msgid "City"
 msgstr "Plaats"
 
-#: admin/meta-box-company-details.php:82 admin/meta-box-person-details.php:97
+#: admin/meta-box-company-details.php:91 admin/meta-box-person-details.php:97
 msgid "Country"
 msgstr "Land"
 
-#: admin/meta-box-company-details.php:87 admin/meta-box-person-details.php:103
+#: admin/meta-box-company-details.php:96 admin/meta-box-person-details.php:103
 msgid "Twitter Username:"
 msgstr "Twitter gebruikersnaam:"
 
-#: admin/meta-box-company-details.php:95 admin/meta-box-person-details.php:111
+#: admin/meta-box-company-details.php:104
+#: admin/meta-box-person-details.php:111
 msgid "Facebook URL:"
 msgstr "Facebook URL:"
 
-#: admin/meta-box-company-details.php:103
+#: admin/meta-box-company-details.php:112
 #: admin/meta-box-person-details.php:119
 msgid "LinkedIn URL:"
 msgstr "LinkedIn URL:"
 
-#: admin/meta-box-person-details.php:28
+#: admin/meta-box-person-details.php:29
 msgid "Company:"
 msgstr "Bedrijf:"
 
-#: admin/meta-box-person-details.php:38
+#: admin/meta-box-person-details.php:39
 msgid "Gender:"
 msgstr "Geslacht:"
 
@@ -497,25 +502,25 @@ msgstr "Je hebt niet genoeg rechten om een plugin te activeren"
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: includes/companies.php:146 includes/projects.php:365
+#: includes/companies.php:147 includes/projects.php:365
 #: templates/projects-without-agreement.php:38
 msgid "Title"
 msgstr "Titel"
 
-#: includes/companies.php:148
+#: includes/companies.php:149
 msgid "Online"
 msgstr "Online"
 
-#: includes/companies.php:150 includes/projects.php:368
+#: includes/companies.php:151 includes/projects.php:368
 #: templates/emails/update.php:57
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/companies.php:151 includes/projects.php:369
+#: includes/companies.php:152 includes/projects.php:369
 msgid "Comments"
 msgstr "Reacties"
 
-#: includes/companies.php:152 includes/projects.php:370
+#: includes/companies.php:153 includes/projects.php:370
 #: templates/emails/update.php:54 templates/projects-table-view.php:9
 msgid "Date"
 msgstr "Datum"
@@ -809,12 +814,12 @@ msgstr "Pronamic"
 msgid "https://www.pronamic.eu/"
 msgstr "https://www.pronamic.nl/"
 
-#: admin/meta-box-person-details.php:31
+#: admin/meta-box-person-details.php:32
 msgctxt "person"
 msgid "Title"
 msgstr "Functie"
 
-#: admin/meta-box-person-details.php:32
+#: admin/meta-box-person-details.php:33
 msgctxt "person"
 msgid "Organization"
 msgstr "Bedrijfsnaam"
@@ -1007,9 +1012,6 @@ msgstr "Persoon"
 
 #~ msgid "Edit Subscription Post"
 #~ msgstr "Bewerk abonnement bericht"
-
-#~ msgid "Invoice Paid"
-#~ msgstr "Factuur betaald"
 
 #~ msgid "Invoice is paid"
 #~ msgstr "Factuur is betaald"
