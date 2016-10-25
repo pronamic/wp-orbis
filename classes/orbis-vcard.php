@@ -45,8 +45,8 @@ class Orbis_VCard {
 		$orbis_company = new Orbis_Company( $post );
 
 		$vcard = new Sabre\VObject\Component\VCard( array(
-		    'FN'    => get_the_title( $post ),
-		    'EMAIL' => $orbis_company->get_email(),
+			'FN'    => get_the_title( $post ),
+			'EMAIL' => $orbis_company->get_email(),
 		) );
 
 		return $vcard;
@@ -63,8 +63,8 @@ class Orbis_VCard {
 		$orbis_person = new Orbis_Person( $post );
 
 		$vcard = new Sabre\VObject\Component\VCard( array(
-		    'FN'    => get_the_title( $post ),
-		    'EMAIL' => $orbis_person->get_email(),
+			'FN'    => get_the_title( $post ),
+			'EMAIL' => $orbis_person->get_email(),
 		) );
 
 		return $vcard;
@@ -80,7 +80,7 @@ class Orbis_VCard {
 
 		// if this is not a request for json or a singular object then bail
 		if ( null === $wp_query->get( 'vcard', null ) || ! is_singular() ) {
-        	return;
+			return;
 		}
 
 		$post = get_post();
@@ -100,8 +100,8 @@ class Orbis_VCard {
 			get_post_field( 'post_name', $post )
 		);
 
-		header( 'Content-Type: text/x-vcard' );  
-		header( sprintf( 'Content-Disposition: inline; filename="%s"', $filename ) );  
+		header( 'Content-Type: text/x-vcard' );
+		header( sprintf( 'Content-Disposition: inline; filename="%s"', $filename ) );
 
 		echo $vcard->serialize();
 

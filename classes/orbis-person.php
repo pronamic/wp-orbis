@@ -36,7 +36,7 @@ class Orbis_Person {
 
 	public function get_gender() {
 		$genders = get_the_terms( $this->post, 'orbis_gender' );
-		
+
 		$gender = is_array( $genders ) ? reset( $genders ) : null;
 
 		return $gender;
