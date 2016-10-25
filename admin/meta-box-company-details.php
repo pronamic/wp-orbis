@@ -2,6 +2,8 @@
 
 global $post;
 
+$orbis_company = new Orbis_Company( $post );
+
 $orbis_id   = get_post_meta( $post->ID, '_orbis_company_id', true );
 
 $kvk_number = get_post_meta( $post->ID, '_orbis_company_kvk_number', true );
@@ -54,7 +56,7 @@ wp_nonce_field( 'orbis_save_company_details', 'orbis_company_details_meta_box_no
 				<label for="orbis_company_email"><?php _e( 'E-Mail', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input id="orbis_company_email" name="_orbis_company_email" value="<?php echo esc_attr( $email ); ?>" type="email" size="42" />
+				<input id="orbis_company_email" name="_orbis_company_email" value="<?php echo esc_attr( $orbis_company->get_email() ); ?>" type="email" size="42" />
 			</td>
 		</tr>
 		<tr>
