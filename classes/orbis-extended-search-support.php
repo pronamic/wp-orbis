@@ -24,6 +24,7 @@ class Orbis_ExtendedSearchSupport {
 	 * @return array
 	 */
 	public function wpes_meta_keys( $meta_keys ) {
+		$meta_keys[] = '_orbis_title';
 		$meta_keys[] = '_orbis_organization';
 		$meta_keys[] = '_orbis_address';
 		$meta_keys[] = '_orbis_city';
