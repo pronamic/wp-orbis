@@ -47,6 +47,9 @@ class Orbis_Core_Admin {
 
 		// Settings
 		$this->settings = new Orbis_Core_Settings();
+
+		// Other
+		new Orbis_ExtendedSearchSupport();
 	}
 
 	//////////////////////////////////////////////////
