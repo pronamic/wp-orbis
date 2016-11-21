@@ -20,14 +20,11 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$this->plugin_include( 'includes/administration.php' );
 		$this->plugin_include( 'includes/email.php' );
 		$this->plugin_include( 'includes/post.php' );
-		$this->plugin_include( 'includes/project.php' );
 		$this->plugin_include( 'includes/template.php' );
-		$this->plugin_include( 'includes/project-template.php' );
 
 		// Tables
 		orbis_register_table( 'orbis_log' );
 		orbis_register_table( 'orbis_companies' );
-		orbis_register_table( 'orbis_projects' );
 
 		// API
 		$this->api = new Orbis_API();
@@ -215,32 +212,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 				'create'        => __( 'Add Company', 'orbis' ),
 				'new_item'      => __( 'New Company', 'orbis' ),
 				'add_new_item'  => __( 'Add New Company', 'orbis' ),
-			),
-		) );
-
-		p2p_register_connection_type( array(
-			'name'        => 'orbis_projects_to_persons',
-			'from'        => 'orbis_project',
-			'to'          => 'orbis_person',
-			'title'       => array(
-				'from' => __( 'Involved Persons', 'orbis' ),
-				'to'   => __( 'Projects', 'orbis' ),
-			),
-			'from_labels' => array(
-				'singular_name' => __( 'Project', 'orbis' ),
-				'search_items'  => __( 'Search project', 'orbis' ),
-				'not_found'     => __( 'No projects found.', 'orbis' ),
-				'create'        => __( 'Add Project', 'orbis' ),
-				'new_item'      => __( 'New Project', 'orbis' ),
-				'add_new_item'  => __( 'Add New Project', 'orbis' ),
-			),
-			'to_labels'   => array(
-				'singular_name' => __( 'Person', 'orbis' ),
-				'search_items'  => __( 'Search person', 'orbis' ),
-				'not_found'     => __( 'No persons found.', 'orbis' ),
-				'create'        => __( 'Add Person', 'orbis' ),
-				'new_item'      => __( 'New Person', 'orbis' ),
-				'add_new_item'  => __( 'Add New Person', 'orbis' ),
 			),
 		) );
 	}

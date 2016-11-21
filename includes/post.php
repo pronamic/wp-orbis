@@ -2,63 +2,6 @@
 
 function orbis_create_initial_post_types() {
 	register_post_type(
-		'orbis_project',
-		array(
-			'label'           => __( 'Projects', 'orbis' ),
-			'labels'          => array(
-				'name'               => __( 'Projects', 'orbis' ),
-				'singular_name'      => __( 'Project', 'orbis' ),
-				'add_new'            => _x( 'Add New', 'orbis_project', 'orbis' ),
-				'add_new_item'       => __( 'Add New Project', 'orbis' ),
-				'edit_item'          => __( 'Edit Project', 'orbis' ),
-				'new_item'           => __( 'New Project', 'orbis' ),
-				'all_items'          => __( 'All Projects', 'orbis' ),
-				'view_item'          => __( 'View Project', 'orbis' ),
-				'search_items'       => __( 'Search Projects', 'orbis' ),
-				'not_found'          => __( 'No projects found.', 'orbis' ),
-				'not_found_in_trash' => __( 'No projects found in Trash.', 'orbis' ),
-				'parent_item_colon'  => __( 'Parent Project:', 'orbis' ),
-				'menu_name'          => __( 'Projects', 'orbis' ),
-			),
-			'public'          => true,
-			'menu_position'   => 30,
-			'menu_icon'       => 'dashicons-portfolio',
-			'capability_type' => 'orbis_project',
-			'supports'        => array( 'title', 'editor', 'author', 'comments', 'custom-fields', 'revisions' ),
-			'has_archive'     => true,
-			'rewrite'         => array(
-				'slug' => _x( 'projects', 'slug', 'orbis' ),
-			),
-		)
-	);
-
-	register_taxonomy(
-		'orbis_project_category',
-		array( 'orbis_project' ),
-		array(
-			'hierarchical' => true,
-			'labels'       => array(
-				'name'              => _x( 'Categories', 'taxonomy general name', 'orbis' ),
-				'singular_name'     => _x( 'Category', 'taxonomy singular name', 'orbis' ),
-				'search_items'      => __( 'Search Categories', 'orbis' ),
-				'all_items'         => __( 'All Categories', 'orbis' ),
-				'parent_item'       => __( 'Parent Category', 'orbis' ),
-				'parent_item_colon' => __( 'Parent Category:', 'orbis' ),
-				'edit_item'         => __( 'Edit Category', 'orbis' ),
-				'update_item'       => __( 'Update Category', 'orbis' ),
-				'add_new_item'      => __( 'Add New Category', 'orbis' ),
-				'new_item_name'     => __( 'New Category Name', 'orbis' ),
-				'menu_name'         => __( 'Categories', 'orbis' ),
-			),
-			'show_ui'      => true,
-			'query_var'    => true,
-			'rewrite'      => array(
-				'slug' => _x( 'project-category', 'slug', 'orbis' ),
-			),
-		)
-	);
-
-	register_post_type(
 		'orbis_company',
 		array(
 			'label'           => __( 'Companies', 'orbis' ),
