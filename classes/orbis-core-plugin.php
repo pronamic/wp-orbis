@@ -37,6 +37,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		// Other
 		new Orbis_OrderByComment();
+		new Orbis_PostcodeFilter();
 
 		// Admin
 		if ( is_admin() ) {
