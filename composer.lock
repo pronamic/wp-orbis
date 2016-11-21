@@ -4,25 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "01e1b3e1583b7acad864eb90d43c5bcd",
-    "content-hash": "ded6a37c388127433ccffbb5bb491274",
+    "hash": "7c704b542c78278b351fa88edfe94a0c",
+    "content-hash": "26d66d5ab3daf28cd61be585eb735164",
     "packages": [
         {
             "name": "sabre/uri",
-            "version": "2.0.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fruux/sabre-uri.git",
-                "reference": "ef4987fd1c88d1112d75d8527a35a9392d02e488"
+                "reference": "258b72540fe3f2c0bb395cb40e56f9ae409f93b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fruux/sabre-uri/zipball/ef4987fd1c88d1112d75d8527a35a9392d02e488",
-                "reference": "ef4987fd1c88d1112d75d8527a35a9392d02e488",
+                "url": "https://api.github.com/repos/fruux/sabre-uri/zipball/258b72540fe3f2c0bb395cb40e56f9ae409f93b5",
+                "reference": "258b72540fe3f2c0bb395cb40e56f9ae409f93b5",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7"
+                "php": ">=5.4.7"
             },
             "require-dev": {
                 "phpunit/phpunit": "*",
@@ -56,7 +56,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2016-10-07 02:52:31"
+            "time": "2016-10-27 04:56:33"
         },
         {
             "name": "sabre/vobject",
