@@ -16,14 +16,6 @@ class Orbis_API {
 		add_filter( 'generate_rewrite_rules', array( $this, 'generate_rewrite_rules' ) );
 
 		add_filter( 'query_vars', array( $this, 'query_vars' ) );
-
-		add_filter( 'wp_loaded', array( $this, 'flush_rules' ) );
-	}
-
-	public function flush_rules() {
-		global $wp_rewrite;
-
-		$wp_rewrite->flush_rules();
 	}
 
 	public function generate_rewrite_rules( $wp_rewrite ) {
