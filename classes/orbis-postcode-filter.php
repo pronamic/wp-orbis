@@ -42,28 +42,28 @@ class Orbis_PostcodeFilter {
 		$min_postcode = $query->get( 'min_postcode' );
 		$max_postcode = $query->get( 'max_postcode' );
 
-		if ( empty( $min_postcode ) && empty( $max_postcode ) ) {
+		if ( '' === $min_postcode && '' === $max_postcode ) {
 			return;
 		}
 
 		$meta_query = $query->get( 'meta_query' );
 		$meta_query = is_array( $meta_query ) ? $meta_query : array();
 
-		if ( null !== $min_postcode && null !== $max_postcode ) {
+		if ( '' !== $min_postcode && '' !== $max_postcode ) {
 			$meta_query[] = array(
 				'key'     => '_orbis_postcode',
 				'value'   => array( $min_postcode, $max_postcode ),
 				'type'    => 'numeric',
 				'compare' => 'BETWEEN',
 			);
-		} elseif ( null !== $min_postcode ) {
+		} elseif ( '' !== $min_postcode ) {
 			$meta_query[] = array(
 				'key'     => '_orbis_postcode',
 				'value'   => $min_postcode,
 				'type'    => 'numeric',
 				'compare' => '>=',
 			);
-		} elseif ( null !== $max_postcode ) {
+		} elseif ( '' !== $max_postcode ) {
 			$meta_query[] = array(
 				'key'     => '_orbis_postcode',
 				'value'   => $max_postcode,
