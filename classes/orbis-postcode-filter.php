@@ -39,10 +39,10 @@ class Orbis_PostcodeFilter {
 	 * @param WP_Query $query
 	 */
 	public function pre_get_posts( $query ) {
-		$min_postcode = $query->get( 'min_postcode', null );
-		$max_postcode = $query->get( 'max_postcode', null );
+		$min_postcode = $query->get( 'min_postcode' );
+		$max_postcode = $query->get( 'max_postcode' );
 
-		if ( null === $min_postcode && null === $max_postcode ) {
+		if ( empty( $min_postcode ) && empty( $max_postcode ) ) {
 			return;
 		}
 
