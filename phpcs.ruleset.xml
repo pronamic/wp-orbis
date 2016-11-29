@@ -15,10 +15,11 @@
 		<exclude name="WordPress.VIP.ValidatedSanitizedInput" />
 		<exclude name="WordPress.VIP.SlowDBQuery.slow_db_query" />
 
+		<exclude name="WordPress.VIP.FileSystemWritesDisallow.FileWriteDetected" />
+
 		<exclude name="WordPress.VIP.RestrictedFunctions.file_get_contents" />
 		<exclude name="WordPress.VIP.RestrictedFunctions.user_meta" />
-
-		<exclude name="WordPress.VIP.RestrictedVariables.user_meta" />
+		<exclude name="WordPress.VIP.RestrictedFunctions.wp_redirect" />
 
 		<exclude name="WordPress.XSS.EscapeOutput" />
 	</rule>
