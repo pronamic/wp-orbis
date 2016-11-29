@@ -195,15 +195,15 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'to'   => 'orbis_company',
 			'title'       => array(
 				'from' => __( 'Companies', 'orbis' ),
-				'to'   => __( 'Persons', 'orbis' ),
+				'to'   => __( 'Contacts', 'orbis' ),
 			),
 			'from_labels' => array(
-				'singular_name' => __( 'Person', 'orbis' ),
-				'search_items'  => __( 'Search person', 'orbis' ),
-				'not_found'     => __( 'No persons found.', 'orbis' ),
-				'create'        => __( 'Add Person', 'orbis' ),
-				'new_item'      => __( 'New Person', 'orbis' ),
-				'add_new_item'  => __( 'Add New Person', 'orbis' ),
+				'singular_name' => __( 'Contact', 'orbis' ),
+				'search_items'  => __( 'Search contact', 'orbis' ),
+				'not_found'     => __( 'No contacts found.', 'orbis' ),
+				'create'        => __( 'Add Contact', 'orbis' ),
+				'new_item'      => __( 'New Contact', 'orbis' ),
+				'add_new_item'  => __( 'Add New Contact', 'orbis' ),
 			),
 			'to_labels'   => array(
 				'singular_name' => __( 'Company', 'orbis' ),

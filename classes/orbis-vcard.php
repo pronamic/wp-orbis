@@ -53,18 +53,18 @@ class Orbis_VCard {
 	}
 
 	/**
-	 * Get person vcard.
+	 * Get contact vcard.
 	 *
 	 * @see http://sabre.io/vobject/vcard/
 	 * @param $post
 	 * @return Sabre\VObject\Component\VCard
 	 */
-	private function get_person_vcard( $post ) {
-		$orbis_person = new Orbis_Person( $post );
+	private function get_contact_vcard( $post ) {
+		$contact = new Orbis_Contact( $post );
 
 		$vcard = new Sabre\VObject\Component\VCard( array(
 			'FN'    => get_the_title( $post ),
-			'EMAIL' => $orbis_person->get_email(),
+			'EMAIL' => $contact->get_email(),
 		) );
 
 		return $vcard;
@@ -92,7 +92,7 @@ class Orbis_VCard {
 		}
 
 		if ( 'orbis_person' === get_post_type( $post ) ) {
-			$vcard = $this->get_person_vcard( $post );
+			$vcard = $this->get_contact_vcard( $post );
 		}
 
 		$filename = sprintf(

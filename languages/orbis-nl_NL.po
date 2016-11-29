@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2016-11-21 11:56:31+00:00\n"
-"PO-Revision-Date: 2016-11-21 13:04+0100\n"
+"POT-Creation-Date: 2016-11-29 10:38:34+00:00\n"
+"PO-Revision-Date: 2016-11-29 11:38+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -12,10 +12,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.7.4\n"
 
-#: admin/meta-box-company-details.php:32 admin/meta-box-project-details.php:29
-#: templates/projects-without-agreement.php:35
+#: admin/meta-box-company-details.php:32
 msgid "Orbis ID"
 msgstr "Orbis ID"
 
@@ -44,114 +43,64 @@ msgid "Addresses"
 msgstr "Adressen"
 
 #: admin/meta-box-company-details.php:85 admin/meta-box-company-details.php:88
-#: admin/meta-box-person-details.php:92 includes/companies.php:147
+#: admin/meta-box-contact-details.php:92 includes/companies.php:147
 msgid "Address"
 msgstr "Adres"
 
-#: admin/meta-box-company-details.php:90 admin/meta-box-person-details.php:94
+#: admin/meta-box-company-details.php:90 admin/meta-box-contact-details.php:94
 msgid "Postcode"
 msgstr "Postcode"
 
-#: admin/meta-box-company-details.php:91 admin/meta-box-person-details.php:95
+#: admin/meta-box-company-details.php:91 admin/meta-box-contact-details.php:95
 msgid "City"
 msgstr "Plaats"
 
-#: admin/meta-box-company-details.php:93 admin/meta-box-person-details.php:97
+#: admin/meta-box-company-details.php:93 admin/meta-box-contact-details.php:97
 msgid "Country"
 msgstr "Land"
 
-#: admin/meta-box-company-details.php:98 admin/meta-box-person-details.php:103
+#: admin/meta-box-company-details.php:98
+#: admin/meta-box-contact-details.php:103
 msgid "Twitter Username:"
 msgstr "Twitter gebruikersnaam:"
 
-#: admin/meta-box-company-details.php:106 admin/meta-box-person-details.php:111
+#: admin/meta-box-company-details.php:106
+#: admin/meta-box-contact-details.php:111
 msgid "Facebook URL:"
 msgstr "Facebook URL:"
 
-#: admin/meta-box-company-details.php:114 admin/meta-box-person-details.php:119
+#: admin/meta-box-company-details.php:114
+#: admin/meta-box-contact-details.php:119
 msgid "LinkedIn URL:"
 msgstr "LinkedIn URL:"
 
-#: admin/meta-box-person-details.php:29
+#: admin/meta-box-contact-details.php:29
 msgid "Company:"
 msgstr "Bedrijf:"
 
-#: admin/meta-box-person-details.php:39
+#: admin/meta-box-contact-details.php:39
 msgid "Gender:"
 msgstr "Geslacht:"
 
-#: admin/meta-box-person-details.php:49
+#: admin/meta-box-contact-details.php:49
 msgid "— Select Gender —"
 msgstr "— Selecteer geslacht —"
 
-#: admin/meta-box-person-details.php:63
+#: admin/meta-box-contact-details.php:63
 msgid "Email Address:"
 msgstr "E-mailadres:"
 
-#: admin/meta-box-person-details.php:72
+#: admin/meta-box-contact-details.php:72
 msgid "Phone Number:"
 msgstr "Telefoonnummer:"
 
-#: admin/meta-box-person-details.php:80
+#: admin/meta-box-contact-details.php:80
 msgid "Mobile Number:"
 msgstr "Mobielnummer:"
 
-#: admin/meta-box-person-details.php:89
+#: admin/meta-box-contact-details.php:89
 msgid "Address:"
 msgstr "Adres:"
-
-#: admin/meta-box-project-details.php:37 templates/projects-table-view.php:7
-msgid "Client"
-msgstr "Klant"
-
-#: admin/meta-box-project-details.php:40
-msgid "Select Client"
-msgstr "Selecteer klant"
-
-#: admin/meta-box-project-details.php:45 classes/orbis-core-email.php:43
-#: templates/projects-table-view.php:11
-msgid "Time"
-msgstr "Tijd"
-
-#: admin/meta-box-project-details.php:51
-msgid ""
-"You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
-msgstr ""
-"Je kunt de tijd invoeren als 1.5 of 1:30 (beide zijn 1 uur en 30 minuten)."
-
-#: admin/meta-box-project-details.php:58
-msgid "Agreement ID"
-msgstr "Akkoord ID"
-
-#: admin/meta-box-project-details.php:65 admin/meta-box-project-details.php:68
-msgid "Choose a Agreement"
-msgstr "Kies een akkoord"
-
-#: admin/meta-box-project-details.php:68
-msgid "Set as Agreement"
-msgstr "Stel in als akkoord"
-
-#: admin/meta-box-project-details.php:71
-msgid "You can select an .PDF or .TXT file from the WordPress media library."
-msgstr ""
-"Je kunt een .PDF of .TXT bestand selecteren uit de WordPress media "
-"bibliotheek."
-
-#: admin/meta-box-project-details.php:72
-msgid ""
-"If you received the agreement by mail print the complete mail conversation "
-"with an PDF printer."
-msgstr ""
-"Als je een akkoord per e-mail hebt ontvangen print dan de complete e-mail "
-"conversatie uit met een PDF-printer."
-
-#: admin/meta-box-project-details.php:79
-msgid "Finished"
-msgstr "Afgerond"
-
-#: admin/meta-box-project-details.php:85
-msgid "Project is finished"
-msgstr "Project is afgerond"
 
 #: admin/page-dashboard.php:9 templates/emails/update.php:20
 msgid "Recent Projects"
@@ -178,15 +127,15 @@ msgstr "http://www.pronamic.nl/"
 msgid "Details"
 msgstr "Details"
 
-#: admin/page-plugins.php:24 classes/orbis-core-admin.php:98
+#: admin/page-plugins.php:24 classes/orbis-core-admin.php:95
 msgid "Install"
 msgstr "Installeer"
 
-#: admin/page-plugins.php:32 classes/orbis-core-admin.php:99
+#: admin/page-plugins.php:32 classes/orbis-core-admin.php:96
 msgid "Activate"
 msgstr "Activeer"
 
-#: admin/page-plugins.php:39 classes/orbis-core-admin.php:100
+#: admin/page-plugins.php:39 classes/orbis-core-admin.php:97
 msgid "Active"
 msgstr "Actief"
 
@@ -263,11 +212,11 @@ msgstr "Aantal abonnementen"
 msgid "Annual Revenue"
 msgstr "Jaaromzet"
 
-#: classes/orbis-core-admin.php:101
+#: classes/orbis-core-admin.php:98
 msgid "An unknown error occurred"
 msgstr "Een onbekende fout is opgetreden"
 
-#: classes/orbis-core-admin.php:102
+#: classes/orbis-core-admin.php:99
 msgid "Could not connect to the server"
 msgstr "Een verbinding met de server kon niet worden gemaakt"
 
@@ -275,47 +224,47 @@ msgstr "Een verbinding met de server kon niet worden gemaakt"
 msgid "Orbis"
 msgstr "Orbis"
 
-#: classes/orbis-core-admin.php:136
+#: classes/orbis-core-admin.php:133
 msgid "Orbis Settings"
 msgstr "Orbis instellingen"
 
-#: classes/orbis-core-admin.php:137
+#: classes/orbis-core-admin.php:134
 msgid "Settings"
 msgstr "Instellingen"
 
-#: classes/orbis-core-admin.php:145
+#: classes/orbis-core-admin.php:142
 msgid "Orbis Stats"
 msgstr "Orbis statistieken"
 
-#: classes/orbis-core-admin.php:146
+#: classes/orbis-core-admin.php:143
 msgid "Stats"
 msgstr "Statistieken"
 
-#: classes/orbis-core-admin.php:154
+#: classes/orbis-core-admin.php:151
 msgid "Orbis Plugins"
 msgstr "Orbis plugins"
 
-#: classes/orbis-core-admin.php:155
+#: classes/orbis-core-admin.php:152
 msgid "Plugins"
 msgstr "Plugins"
 
-#: classes/orbis-core-admin.php:247 classes/orbis-core-admin.php:252
+#: classes/orbis-core-admin.php:244 classes/orbis-core-admin.php:249
 msgid "Orbis User"
 msgstr "Orbis gebruiker"
 
-#: classes/orbis-core-admin.php:257
+#: classes/orbis-core-admin.php:254
 msgid "Show user in Orbis."
 msgstr "Toon gebruiker in Orbis."
 
-#: classes/orbis-core-admin.php:275 classes/orbis-core-admin.php:298
+#: classes/orbis-core-admin.php:272 classes/orbis-core-admin.php:295
 msgid "The plugin could not be found"
 msgstr "De plugin kon niet worden gevonden"
 
-#: classes/orbis-core-admin.php:288
+#: classes/orbis-core-admin.php:285
 msgid "The plugin was installed and activated successfully"
 msgstr "De plugin is succesvol geïnstalleerd en geactiveerd"
 
-#: classes/orbis-core-admin.php:311
+#: classes/orbis-core-admin.php:308
 msgid "The plugin was activated successfully"
 msgstr "De plugin is succesvol geactiveerd"
 
@@ -326,6 +275,10 @@ msgstr "E-mail"
 #: classes/orbis-core-email.php:31
 msgid "Frequency"
 msgstr "Frequentie"
+
+#: classes/orbis-core-email.php:43
+msgid "Time"
+msgstr "Tijd"
 
 #: classes/orbis-core-email.php:55
 msgid "Next Schedule"
@@ -380,32 +333,32 @@ msgid "Searching..."
 msgstr "Zoeken...."
 
 #: classes/orbis-core-plugin.php:198 includes/post.php:64
-msgid "Persons"
-msgstr "Personen"
+msgid "Contacts"
+msgstr "Contacten"
 
 #: classes/orbis-core-plugin.php:201
-msgid "Person"
-msgstr "Persoon"
+msgid "Contact"
+msgstr "Contact"
 
 #: classes/orbis-core-plugin.php:202
-msgid "Search person"
-msgstr "Zoek persoon"
+msgid "Search contact"
+msgstr "Contant zoeken"
 
 #: classes/orbis-core-plugin.php:203 includes/post.php:78
-msgid "No persons found."
-msgstr "Geen personen gevonden."
+msgid "No contacts found."
+msgstr "Geen contacten gevonden."
 
 #: classes/orbis-core-plugin.php:204
-msgid "Add Person"
-msgstr "Persoon toevoegen"
+msgid "Add Contact"
+msgstr "Contact toevoegen"
 
 #: classes/orbis-core-plugin.php:205 includes/post.php:72
-msgid "New Person"
-msgstr "Nieuw persoon"
+msgid "New Contact"
+msgstr "Nieuw contact"
 
 #: classes/orbis-core-plugin.php:206 includes/post.php:71
-msgid "Add New Person"
-msgstr "Nieuw persoon toevoegen"
+msgid "Add New Contact"
+msgstr "Nieuwe contact toevoegen"
 
 #: classes/orbis-core-plugin.php:209 includes/post.php:10
 msgid "Company"
@@ -467,7 +420,7 @@ msgstr "Je hebt niet genoeg rechten om een plugin te activeren"
 msgid "Company Details"
 msgstr "Bedrijf details"
 
-#: includes/companies.php:146 templates/projects-without-agreement.php:38
+#: includes/companies.php:146
 msgid "Title"
 msgstr "Titel"
 
@@ -484,7 +437,6 @@ msgid "Comments"
 msgstr "Reacties"
 
 #: includes/companies.php:152 templates/emails/update.php:54
-#: templates/projects-table-view.php:9
 msgid "Date"
 msgstr "Datum"
 
@@ -569,28 +521,28 @@ msgid "Categories"
 msgstr "Categorieën"
 
 #: includes/post.php:73
-msgid "Edit Person"
-msgstr "Persoon bewerken"
+msgid "Edit Contact"
+msgstr "Contact bewerken"
 
 #: includes/post.php:74
-msgid "View Person"
-msgstr "Persoon bekijken"
+msgid "View Contact"
+msgstr "Contact bekijken"
 
 #: includes/post.php:75
-msgid "All Persons"
-msgstr "Alle personen"
+msgid "All Contacts"
+msgstr "Alle contacten"
 
 #: includes/post.php:76
-msgid "Search Persons"
-msgstr "Personen zoeken"
+msgid "Search Contacts"
+msgstr "Contacten zoeken"
 
 #: includes/post.php:77
-msgid "Parent Person:"
-msgstr "Bovenliggend persoon:"
+msgid "Parent Contact:"
+msgstr "Bovenliggend contact:"
 
 #: includes/post.php:79
-msgid "No persons found in Trash."
-msgstr "Geen personen gevonden in prullenbak."
+msgid "No contacts found in Trash."
+msgstr "Geen contacten gevonden in prullenbak."
 
 #: includes/post.php:100
 msgid "Search Genders"
@@ -656,7 +608,7 @@ msgstr "Recente sleutelhangers"
 msgid "Recent Tasks"
 msgstr "Recente taken"
 
-#: templates/emails/update.php:60 templates/projects.php:86
+#: templates/emails/update.php:60
 msgid "Name"
 msgstr "Naam"
 
@@ -667,59 +619,6 @@ msgstr "Prijs"
 #: templates/emails/update.php:111
 msgid "No new posts in the last 3 days."
 msgstr "Geen nieuwe berichten in de laatste 3 dagen."
-
-#: templates/projects-table-view.php:5
-msgid "Manager"
-msgstr "Projectleider"
-
-#: templates/projects-table-view.php:6
-msgid "ID"
-msgstr "ID"
-
-#: templates/projects-table-view.php:8
-msgid "Project"
-msgstr "Project"
-
-#: templates/projects-table-view.php:10
-msgid "Comment"
-msgstr "Reactie"
-
-#: templates/projects-table-view.php:12
-msgid "Invoiceable"
-msgstr "Factureerbaar"
-
-#: templates/projects-table-view.php:13
-msgid "Invoice Number"
-msgstr "Factuurnummer"
-
-#: templates/projects-table-view.php:61
-msgid "%1$s says on %2$s:"
-msgstr "%1$s zegt op %2$s:"
-
-#: templates/projects-table-view.php:94
-#: templates/projects-without-agreement.php:74
-msgid "Edit"
-msgstr "Bewerken"
-
-#: templates/projects-without-agreement.php:36
-msgid "Project Manager"
-msgstr "Projectleider"
-
-#: templates/projects-without-agreement.php:37
-msgid "Principal"
-msgstr "Opdrachtgever"
-
-#: templates/projects-without-agreement.php:39
-msgid "Actions"
-msgstr "Acties"
-
-#: templates/projects.php:86
-msgid "Order By:"
-msgstr "Sorteer op:"
-
-#: templates/projects.php:86
-msgid "Number"
-msgstr "Nummer"
 
 #. Plugin URI of the plugin/theme
 msgid "https://www.pronamic.eu/plugins/orbis/"
@@ -741,20 +640,20 @@ msgstr "Pronamic"
 msgid "https://www.pronamic.eu/"
 msgstr "https://www.pronamic.nl/"
 
-#: admin/meta-box-person-details.php:32
-msgctxt "person"
+#: admin/meta-box-contact-details.php:32
+msgctxt "contact"
 msgid "Title"
-msgstr "Functie"
+msgstr "Titel"
 
-#: admin/meta-box-person-details.php:33
-msgctxt "person"
+#: admin/meta-box-contact-details.php:33
+msgctxt "contact"
 msgid "Organization"
 msgstr "Bedrijfsnaam"
 
 #: includes/post.php:70
-msgctxt "person"
+msgctxt "contact"
 msgid "Add New"
-msgstr "Nieuw persoon"
+msgstr "Nieuwe contact"
 
 #: includes/post.php:11
 msgctxt "orbis_company"
@@ -773,8 +672,8 @@ msgstr "bedrijf-categorie"
 
 #: includes/post.php:87
 msgctxt "slug"
-msgid "persons"
-msgstr "personen"
+msgid "contacts"
+msgstr "contacten"
 
 #: includes/post.php:119
 msgctxt "slug"
@@ -783,8 +682,8 @@ msgstr "geslachten"
 
 #: includes/post.php:145
 msgctxt "slug"
-msgid "person-category"
-msgstr "persoon-categorie"
+msgid "contact-category"
+msgstr "contact-categorie"
 
 #: includes/post.php:41 includes/post.php:130
 msgctxt "taxonomy general name"
@@ -808,32 +707,178 @@ msgstr "Geslacht"
 
 #: includes/post.php:66
 msgctxt "post type general name"
-msgid "Persons"
-msgstr "Personen"
+msgid "Contacts"
+msgstr "Contacten"
 
 #: includes/post.php:67
 msgctxt "post type singular name"
-msgid "Person"
-msgstr "Persoon"
+msgid "Contact"
+msgstr "Contact"
 
 #: includes/post.php:68
 msgctxt "admin menu"
-msgid "Persons"
-msgstr "Personen"
+msgid "Contacts"
+msgstr "Contacten"
 
 #: includes/post.php:69
 msgctxt "add new on admin bar"
-msgid "Person"
-msgstr "Persoon"
+msgid "Contact"
+msgstr "Contact"
+
+#~ msgctxt "person"
+#~ msgid "Add New"
+#~ msgstr "Nieuw persoon"
+
+#~ msgid "Client"
+#~ msgstr "Klant"
+
+#~ msgid "Select Client"
+#~ msgstr "Selecteer klant"
+
+#~ msgid ""
+#~ "You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
+#~ msgstr ""
+#~ "Je kunt de tijd invoeren als 1.5 of 1:30 (beide zijn 1 uur en 30 minuten)."
+
+#~ msgid "Agreement ID"
+#~ msgstr "Akkoord ID"
+
+#~ msgid "Choose a Agreement"
+#~ msgstr "Kies een akkoord"
+
+#~ msgid "Set as Agreement"
+#~ msgstr "Stel in als akkoord"
+
+#~ msgid ""
+#~ "You can select an .PDF or .TXT file from the WordPress media library."
+#~ msgstr ""
+#~ "Je kunt een .PDF of .TXT bestand selecteren uit de WordPress media "
+#~ "bibliotheek."
+
+#~ msgid ""
+#~ "If you received the agreement by mail print the complete mail "
+#~ "conversation with an PDF printer."
+#~ msgstr ""
+#~ "Als je een akkoord per e-mail hebt ontvangen print dan de complete e-mail "
+#~ "conversatie uit met een PDF-printer."
+
+#~ msgid "Finished"
+#~ msgstr "Afgerond"
+
+#~ msgid "Project is finished"
+#~ msgstr "Project is afgerond"
+
+#~ msgid "Persons"
+#~ msgstr "Personen"
+
+#~ msgid "Person"
+#~ msgstr "Persoon"
+
+#~ msgid "Search person"
+#~ msgstr "Zoek persoon"
+
+#~ msgid "No persons found."
+#~ msgstr "Geen personen gevonden."
+
+#~ msgid "Add Person"
+#~ msgstr "Persoon toevoegen"
+
+#~ msgid "New Person"
+#~ msgstr "Nieuw persoon"
+
+#~ msgid "Add New Person"
+#~ msgstr "Nieuw persoon toevoegen"
+
+#~ msgid "Edit Person"
+#~ msgstr "Persoon bewerken"
+
+#~ msgid "View Person"
+#~ msgstr "Persoon bekijken"
+
+#~ msgid "All Persons"
+#~ msgstr "Alle personen"
+
+#~ msgid "Search Persons"
+#~ msgstr "Personen zoeken"
+
+#~ msgid "Parent Person:"
+#~ msgstr "Bovenliggend persoon:"
+
+#~ msgid "No persons found in Trash."
+#~ msgstr "Geen personen gevonden in prullenbak."
+
+#~ msgid "Manager"
+#~ msgstr "Projectleider"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Project"
+#~ msgstr "Project"
+
+#~ msgid "Comment"
+#~ msgstr "Reactie"
+
+#~ msgid "Invoiceable"
+#~ msgstr "Factureerbaar"
+
+#~ msgid "Invoice Number"
+#~ msgstr "Factuurnummer"
+
+#~ msgid "%1$s says on %2$s:"
+#~ msgstr "%1$s zegt op %2$s:"
+
+#~ msgid "Edit"
+#~ msgstr "Bewerken"
+
+#~ msgid "Project Manager"
+#~ msgstr "Projectleider"
+
+#~ msgid "Principal"
+#~ msgstr "Opdrachtgever"
+
+#~ msgid "Actions"
+#~ msgstr "Acties"
+
+#~ msgid "Order By:"
+#~ msgstr "Sorteer op:"
+
+#~ msgid "Number"
+#~ msgstr "Nummer"
+
+#~ msgctxt "person"
+#~ msgid "Title"
+#~ msgstr "Functie"
+
+#~ msgctxt "slug"
+#~ msgid "persons"
+#~ msgstr "personen"
+
+#~ msgctxt "slug"
+#~ msgid "person-category"
+#~ msgstr "persoon-categorie"
+
+#~ msgctxt "post type general name"
+#~ msgid "Persons"
+#~ msgstr "Personen"
+
+#~ msgctxt "post type singular name"
+#~ msgid "Person"
+#~ msgstr "Persoon"
+
+#~ msgctxt "admin menu"
+#~ msgid "Persons"
+#~ msgstr "Personen"
+
+#~ msgctxt "add new on admin bar"
+#~ msgid "Person"
+#~ msgstr "Persoon"
 
 #~ msgid "Involved Persons"
 #~ msgstr "Betrokken personen"
 
 #~ msgid "Search project"
 #~ msgstr "Zoek project"
-
-#~ msgid "No projects found."
-#~ msgstr "Geen projecten gevonden."
 
 #~ msgid "Add Project"
 #~ msgstr "Project toevoegen"
@@ -847,17 +892,8 @@ msgstr "Persoon"
 #~ msgid "Edit Project"
 #~ msgstr "Project bewerken"
 
-#~ msgid "All Projects"
-#~ msgstr "Alle projecten"
-
 #~ msgid "View Project"
 #~ msgstr "Bekijk project"
-
-#~ msgid "Search Projects"
-#~ msgstr "Projecten zoeken"
-
-#~ msgid "No projects found in Trash."
-#~ msgstr "Geen projecten gevonden in prullenbak."
 
 #~ msgid "Parent Project:"
 #~ msgstr "Bovenliggend project:"
@@ -881,10 +917,6 @@ msgstr "Persoon"
 #~ msgctxt "slug"
 #~ msgid "projects"
 #~ msgstr "projecten"
-
-#~ msgctxt "slug"
-#~ msgid "project-category"
-#~ msgstr "project-categorie"
 
 #~ msgid "Filter:"
 #~ msgstr "Filter:"

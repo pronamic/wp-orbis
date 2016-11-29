@@ -61,22 +61,22 @@ function orbis_create_initial_post_types() {
 	register_post_type(
 		'orbis_person' ,
 		array(
-			'label'         => __( 'Persons', 'orbis' ),
+			'label'         => __( 'Contacts', 'orbis' ),
 			'labels'        => array(
-				'name'               => _x( 'Persons', 'post type general name', 'orbis' ),
-				'singular_name'      => _x( 'Person', 'post type singular name', 'orbis' ),
-				'menu_name'          => _x( 'Persons', 'admin menu', 'orbis' ),
-				'name_admin_bar'     => _x( 'Person', 'add new on admin bar', 'orbis' ),
-				'add_new'            => _x( 'Add New', 'person', 'orbis' ),
-				'add_new_item'       => __( 'Add New Person', 'orbis' ),
-				'new_item'           => __( 'New Person', 'orbis' ),
-				'edit_item'          => __( 'Edit Person', 'orbis' ),
-				'view_item'          => __( 'View Person', 'orbis' ),
-				'all_items'          => __( 'All Persons', 'orbis' ),
-				'search_items'       => __( 'Search Persons', 'orbis' ),
-				'parent_item_colon'  => __( 'Parent Person:', 'orbis' ),
-				'not_found'          => __( 'No persons found.', 'orbis' ),
-				'not_found_in_trash' => __( 'No persons found in Trash.', 'orbis' ),
+				'name'               => _x( 'Contacts', 'post type general name', 'orbis' ),
+				'singular_name'      => _x( 'Contact', 'post type singular name', 'orbis' ),
+				'menu_name'          => _x( 'Contacts', 'admin menu', 'orbis' ),
+				'name_admin_bar'     => _x( 'Contact', 'add new on admin bar', 'orbis' ),
+				'add_new'            => _x( 'Add New', 'contact', 'orbis' ),
+				'add_new_item'       => __( 'Add New Contact', 'orbis' ),
+				'new_item'           => __( 'New Contact', 'orbis' ),
+				'edit_item'          => __( 'Edit Contact', 'orbis' ),
+				'view_item'          => __( 'View Contact', 'orbis' ),
+				'all_items'          => __( 'All Contacts', 'orbis' ),
+				'search_items'       => __( 'Search Contacts', 'orbis' ),
+				'parent_item_colon'  => __( 'Parent Contact:', 'orbis' ),
+				'not_found'          => __( 'No contacts found.', 'orbis' ),
+				'not_found_in_trash' => __( 'No contacts found in Trash.', 'orbis' ),
 			),
 			'public'        => true,
 			'menu_position' => 30,
@@ -84,7 +84,7 @@ function orbis_create_initial_post_types() {
 			'supports'      => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'custom-fields', 'revisions' ),
 			'has_archive'   => true,
 			'rewrite'       => array(
-				'slug' => _x( 'persons', 'slug', 'orbis' ),
+				'slug' => _x( 'contacts', 'slug', 'orbis' ),
 			),
 		)
 	);
@@ -142,7 +142,7 @@ function orbis_create_initial_post_types() {
 			'show_ui'      => true,
 			'query_var'    => true,
 			'rewrite'      => array(
-				'slug' => _x( 'person-category', 'slug', 'orbis' ),
+				'slug' => _x( 'contact-category', 'slug', 'orbis' ),
 			),
 		)
 	);

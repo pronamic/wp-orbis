@@ -24,7 +24,7 @@ add_action( 'add_meta_boxes', 'orbis_person_add_meta_boxes' );
 function orbis_person_meta_box() {
 	global $orbis_plugin;
 
-	$orbis_plugin->plugin_include( 'admin/meta-box-person-details.php' );
+	$orbis_plugin->plugin_include( 'admin/meta-box-contact-details.php' );
 }
 
 /**

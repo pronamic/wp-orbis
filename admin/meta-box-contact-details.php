@@ -2,7 +2,7 @@
 
 global $post;
 
-$orbis_person = new Orbis_Person( $post );
+$contact = new Orbis_Contact( $post );
 
 $person_phone_number  = get_post_meta( $post->ID, '_orbis_person_phone_number', true );
 $person_mobile_number = get_post_meta( $post->ID, '_orbis_person_mobile_number', true );
@@ -29,8 +29,8 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 				<?php _e( 'Company:', 'orbis' ); ?>
 			</th>
 			<td>
-				<input type="text" id="_orbis_title" name="_orbis_title" value="<?php echo esc_attr( $title ); ?>" class="regular-text" placeholder="<?php echo esc_attr( _x( 'Title', 'person', 'orbis' ) ); ?>" style="width: 10em;" />
-				<input type="text" id="_orbis_organization" name="_orbis_organization" value="<?php echo esc_attr( $organization ); ?>" class="regular-text" placeholder="<?php echo esc_attr( _x( 'Organization', 'person', 'orbis' ) ); ?>" />
+				<input type="text" id="_orbis_title" name="_orbis_title" value="<?php echo esc_attr( $title ); ?>" class="regular-text" placeholder="<?php echo esc_attr( _x( 'Title', 'contact', 'orbis' ) ); ?>" style="width: 10em;" />
+				<input type="text" id="_orbis_organization" name="_orbis_organization" value="<?php echo esc_attr( $organization ); ?>" class="regular-text" placeholder="<?php echo esc_attr( _x( 'Organization', 'contact', 'orbis' ) ); ?>" />
 			</td>
 		</tr>
 
@@ -43,7 +43,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 
 				$taxonomy = 'orbis_gender';
 
-				$gender = $orbis_person->get_gender();
+				$gender = $contact->get_gender();
 
 				wp_dropdown_categories( array(
 					'show_option_none' => __( '— Select Gender —', 'orbis' ),
@@ -63,7 +63,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 				<label for="orbis_person_email_address"><?php _e( 'Email Address:', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input type="text" id="orbis_person_email_address" name="_orbis_person_email_address" value="<?php echo esc_attr( $orbis_person->get_email() ); ?>" class="regular-text" />
+				<input type="text" id="orbis_person_email_address" name="_orbis_person_email_address" value="<?php echo esc_attr( $contact->get_email() ); ?>" class="regular-text" />
 			</td>
 		</tr>
 

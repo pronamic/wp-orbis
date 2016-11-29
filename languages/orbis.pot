@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2016-11-21 11:56:31+00:00\n"
+"POT-Creation-Date: 2016-11-29 10:38:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,8 +13,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
 
-#: admin/meta-box-company-details.php:32 admin/meta-box-project-details.php:29
-#: templates/projects-without-agreement.php:35
+#: admin/meta-box-company-details.php:32
 msgid "Orbis ID"
 msgstr ""
 
@@ -43,107 +42,62 @@ msgid "Addresses"
 msgstr ""
 
 #: admin/meta-box-company-details.php:85 admin/meta-box-company-details.php:88
-#: admin/meta-box-person-details.php:92 includes/companies.php:147
+#: admin/meta-box-contact-details.php:92 includes/companies.php:147
 msgid "Address"
 msgstr ""
 
-#: admin/meta-box-company-details.php:90 admin/meta-box-person-details.php:94
+#: admin/meta-box-company-details.php:90 admin/meta-box-contact-details.php:94
 msgid "Postcode"
 msgstr ""
 
-#: admin/meta-box-company-details.php:91 admin/meta-box-person-details.php:95
+#: admin/meta-box-company-details.php:91 admin/meta-box-contact-details.php:95
 msgid "City"
 msgstr ""
 
-#: admin/meta-box-company-details.php:93 admin/meta-box-person-details.php:97
+#: admin/meta-box-company-details.php:93 admin/meta-box-contact-details.php:97
 msgid "Country"
 msgstr ""
 
-#: admin/meta-box-company-details.php:98 admin/meta-box-person-details.php:103
+#: admin/meta-box-company-details.php:98 admin/meta-box-contact-details.php:103
 msgid "Twitter Username:"
 msgstr ""
 
-#: admin/meta-box-company-details.php:106 admin/meta-box-person-details.php:111
+#: admin/meta-box-company-details.php:106
+#: admin/meta-box-contact-details.php:111
 msgid "Facebook URL:"
 msgstr ""
 
-#: admin/meta-box-company-details.php:114 admin/meta-box-person-details.php:119
+#: admin/meta-box-company-details.php:114
+#: admin/meta-box-contact-details.php:119
 msgid "LinkedIn URL:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:29
+#: admin/meta-box-contact-details.php:29
 msgid "Company:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:39
+#: admin/meta-box-contact-details.php:39
 msgid "Gender:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:49
+#: admin/meta-box-contact-details.php:49
 msgid "— Select Gender —"
 msgstr ""
 
-#: admin/meta-box-person-details.php:63
+#: admin/meta-box-contact-details.php:63
 msgid "Email Address:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:72
+#: admin/meta-box-contact-details.php:72
 msgid "Phone Number:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:80
+#: admin/meta-box-contact-details.php:80
 msgid "Mobile Number:"
 msgstr ""
 
-#: admin/meta-box-person-details.php:89
+#: admin/meta-box-contact-details.php:89
 msgid "Address:"
-msgstr ""
-
-#: admin/meta-box-project-details.php:37 templates/projects-table-view.php:7
-msgid "Client"
-msgstr ""
-
-#: admin/meta-box-project-details.php:40
-msgid "Select Client"
-msgstr ""
-
-#: admin/meta-box-project-details.php:45 classes/orbis-core-email.php:43
-#: templates/projects-table-view.php:11
-msgid "Time"
-msgstr ""
-
-#: admin/meta-box-project-details.php:51
-msgid "You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
-msgstr ""
-
-#: admin/meta-box-project-details.php:58
-msgid "Agreement ID"
-msgstr ""
-
-#: admin/meta-box-project-details.php:65 admin/meta-box-project-details.php:68
-msgid "Choose a Agreement"
-msgstr ""
-
-#: admin/meta-box-project-details.php:68
-msgid "Set as Agreement"
-msgstr ""
-
-#: admin/meta-box-project-details.php:71
-msgid "You can select an .PDF or .TXT file from the WordPress media library."
-msgstr ""
-
-#: admin/meta-box-project-details.php:72
-msgid ""
-"If you received the agreement by mail print the complete mail conversation "
-"with an PDF printer."
-msgstr ""
-
-#: admin/meta-box-project-details.php:79
-msgid "Finished"
-msgstr ""
-
-#: admin/meta-box-project-details.php:85
-msgid "Project is finished"
 msgstr ""
 
 #: admin/page-dashboard.php:9 templates/emails/update.php:20
@@ -171,15 +125,15 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: admin/page-plugins.php:24 classes/orbis-core-admin.php:98
+#: admin/page-plugins.php:24 classes/orbis-core-admin.php:95
 msgid "Install"
 msgstr ""
 
-#: admin/page-plugins.php:32 classes/orbis-core-admin.php:99
+#: admin/page-plugins.php:32 classes/orbis-core-admin.php:96
 msgid "Activate"
 msgstr ""
 
-#: admin/page-plugins.php:39 classes/orbis-core-admin.php:100
+#: admin/page-plugins.php:39 classes/orbis-core-admin.php:97
 msgid "Active"
 msgstr ""
 
@@ -256,11 +210,11 @@ msgstr ""
 msgid "Annual Revenue"
 msgstr ""
 
-#: classes/orbis-core-admin.php:101
+#: classes/orbis-core-admin.php:98
 msgid "An unknown error occurred"
 msgstr ""
 
-#: classes/orbis-core-admin.php:102
+#: classes/orbis-core-admin.php:99
 msgid "Could not connect to the server"
 msgstr ""
 
@@ -268,47 +222,47 @@ msgstr ""
 msgid "Orbis"
 msgstr ""
 
-#: classes/orbis-core-admin.php:136
+#: classes/orbis-core-admin.php:133
 msgid "Orbis Settings"
 msgstr ""
 
-#: classes/orbis-core-admin.php:137
+#: classes/orbis-core-admin.php:134
 msgid "Settings"
 msgstr ""
 
-#: classes/orbis-core-admin.php:145
+#: classes/orbis-core-admin.php:142
 msgid "Orbis Stats"
 msgstr ""
 
-#: classes/orbis-core-admin.php:146
+#: classes/orbis-core-admin.php:143
 msgid "Stats"
 msgstr ""
 
-#: classes/orbis-core-admin.php:154
+#: classes/orbis-core-admin.php:151
 msgid "Orbis Plugins"
 msgstr ""
 
-#: classes/orbis-core-admin.php:155
+#: classes/orbis-core-admin.php:152
 msgid "Plugins"
 msgstr ""
 
-#: classes/orbis-core-admin.php:247 classes/orbis-core-admin.php:252
+#: classes/orbis-core-admin.php:244 classes/orbis-core-admin.php:249
 msgid "Orbis User"
 msgstr ""
 
-#: classes/orbis-core-admin.php:257
+#: classes/orbis-core-admin.php:254
 msgid "Show user in Orbis."
 msgstr ""
 
-#: classes/orbis-core-admin.php:275 classes/orbis-core-admin.php:298
+#: classes/orbis-core-admin.php:272 classes/orbis-core-admin.php:295
 msgid "The plugin could not be found"
 msgstr ""
 
-#: classes/orbis-core-admin.php:288
+#: classes/orbis-core-admin.php:285
 msgid "The plugin was installed and activated successfully"
 msgstr ""
 
-#: classes/orbis-core-admin.php:311
+#: classes/orbis-core-admin.php:308
 msgid "The plugin was activated successfully"
 msgstr ""
 
@@ -318,6 +272,10 @@ msgstr ""
 
 #: classes/orbis-core-email.php:31
 msgid "Frequency"
+msgstr ""
+
+#: classes/orbis-core-email.php:43
+msgid "Time"
 msgstr ""
 
 #: classes/orbis-core-email.php:55
@@ -373,31 +331,31 @@ msgid "Searching..."
 msgstr ""
 
 #: classes/orbis-core-plugin.php:198 includes/post.php:64
-msgid "Persons"
+msgid "Contacts"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:201
-msgid "Person"
+msgid "Contact"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:202
-msgid "Search person"
+msgid "Search contact"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:203 includes/post.php:78
-msgid "No persons found."
+msgid "No contacts found."
 msgstr ""
 
 #: classes/orbis-core-plugin.php:204
-msgid "Add Person"
+msgid "Add Contact"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:205 includes/post.php:72
-msgid "New Person"
+msgid "New Contact"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:206 includes/post.php:71
-msgid "Add New Person"
+msgid "Add New Contact"
 msgstr ""
 
 #: classes/orbis-core-plugin.php:209 includes/post.php:10
@@ -460,7 +418,7 @@ msgstr ""
 msgid "Company Details"
 msgstr ""
 
-#: includes/companies.php:146 templates/projects-without-agreement.php:38
+#: includes/companies.php:146
 msgid "Title"
 msgstr ""
 
@@ -477,7 +435,6 @@ msgid "Comments"
 msgstr ""
 
 #: includes/companies.php:152 templates/emails/update.php:54
-#: templates/projects-table-view.php:9
 msgid "Date"
 msgstr ""
 
@@ -562,27 +519,27 @@ msgid "Categories"
 msgstr ""
 
 #: includes/post.php:73
-msgid "Edit Person"
+msgid "Edit Contact"
 msgstr ""
 
 #: includes/post.php:74
-msgid "View Person"
+msgid "View Contact"
 msgstr ""
 
 #: includes/post.php:75
-msgid "All Persons"
+msgid "All Contacts"
 msgstr ""
 
 #: includes/post.php:76
-msgid "Search Persons"
+msgid "Search Contacts"
 msgstr ""
 
 #: includes/post.php:77
-msgid "Parent Person:"
+msgid "Parent Contact:"
 msgstr ""
 
 #: includes/post.php:79
-msgid "No persons found in Trash."
+msgid "No contacts found in Trash."
 msgstr ""
 
 #: includes/post.php:100
@@ -649,7 +606,7 @@ msgstr ""
 msgid "Recent Tasks"
 msgstr ""
 
-#: templates/emails/update.php:60 templates/projects.php:86
+#: templates/emails/update.php:60
 msgid "Name"
 msgstr ""
 
@@ -659,59 +616,6 @@ msgstr ""
 
 #: templates/emails/update.php:111
 msgid "No new posts in the last 3 days."
-msgstr ""
-
-#: templates/projects-table-view.php:5
-msgid "Manager"
-msgstr ""
-
-#: templates/projects-table-view.php:6
-msgid "ID"
-msgstr ""
-
-#: templates/projects-table-view.php:8
-msgid "Project"
-msgstr ""
-
-#: templates/projects-table-view.php:10
-msgid "Comment"
-msgstr ""
-
-#: templates/projects-table-view.php:12
-msgid "Invoiceable"
-msgstr ""
-
-#: templates/projects-table-view.php:13
-msgid "Invoice Number"
-msgstr ""
-
-#: templates/projects-table-view.php:61
-msgid "%1$s says on %2$s:"
-msgstr ""
-
-#: templates/projects-table-view.php:94
-#: templates/projects-without-agreement.php:74
-msgid "Edit"
-msgstr ""
-
-#: templates/projects-without-agreement.php:36
-msgid "Project Manager"
-msgstr ""
-
-#: templates/projects-without-agreement.php:37
-msgid "Principal"
-msgstr ""
-
-#: templates/projects-without-agreement.php:39
-msgid "Actions"
-msgstr ""
-
-#: templates/projects.php:86
-msgid "Order By:"
-msgstr ""
-
-#: templates/projects.php:86
-msgid "Number"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -732,18 +636,18 @@ msgstr ""
 msgid "https://www.pronamic.eu/"
 msgstr ""
 
-#: admin/meta-box-person-details.php:32
-msgctxt "person"
+#: admin/meta-box-contact-details.php:32
+msgctxt "contact"
 msgid "Title"
 msgstr ""
 
-#: admin/meta-box-person-details.php:33
-msgctxt "person"
+#: admin/meta-box-contact-details.php:33
+msgctxt "contact"
 msgid "Organization"
 msgstr ""
 
 #: includes/post.php:70
-msgctxt "person"
+msgctxt "contact"
 msgid "Add New"
 msgstr ""
 
@@ -764,7 +668,7 @@ msgstr ""
 
 #: includes/post.php:87
 msgctxt "slug"
-msgid "persons"
+msgid "contacts"
 msgstr ""
 
 #: includes/post.php:119
@@ -774,7 +678,7 @@ msgstr ""
 
 #: includes/post.php:145
 msgctxt "slug"
-msgid "person-category"
+msgid "contact-category"
 msgstr ""
 
 #: includes/post.php:41 includes/post.php:130
@@ -799,20 +703,20 @@ msgstr ""
 
 #: includes/post.php:66
 msgctxt "post type general name"
-msgid "Persons"
+msgid "Contacts"
 msgstr ""
 
 #: includes/post.php:67
 msgctxt "post type singular name"
-msgid "Person"
+msgid "Contact"
 msgstr ""
 
 #: includes/post.php:68
 msgctxt "admin menu"
-msgid "Persons"
+msgid "Contacts"
 msgstr ""
 
 #: includes/post.php:69
 msgctxt "add new on admin bar"
-msgid "Person"
+msgid "Contact"
 msgstr ""
