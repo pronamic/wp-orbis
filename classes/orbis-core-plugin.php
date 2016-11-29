@@ -9,7 +9,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		// Actions
 		add_action( 'init', array( $this, 'init' ) );
-		add_action( 'p2p_init', array( $this, 'p2p_init' ) );
 
 		add_action( 'init', array( $this, 'register_scripts' ) );
 
@@ -24,7 +23,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		// Tables
 		orbis_register_table( 'orbis_log' );
-		orbis_register_table( 'orbis_companies' );
 
 		// API
 		$this->api = new Orbis_API();
@@ -185,37 +183,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 	//////////////////////////////////////////////////
 
-	/**
-	 * Posts to posts initialize
-	 */
-	public function p2p_init() {
-		p2p_register_connection_type( array(
-			'name' => 'orbis_persons_to_companies',
-			'from' => 'orbis_person',
-			'to'   => 'orbis_company',
-			'title'       => array(
-				'from' => __( 'Companies', 'orbis' ),
-				'to'   => __( 'Contacts', 'orbis' ),
-			),
-			'from_labels' => array(
-				'singular_name' => __( 'Contact', 'orbis' ),
-				'search_items'  => __( 'Search contact', 'orbis' ),
-				'not_found'     => __( 'No contacts found.', 'orbis' ),
-				'create'        => __( 'Add Contact', 'orbis' ),
-				'new_item'      => __( 'New Contact', 'orbis' ),
-				'add_new_item'  => __( 'Add New Contact', 'orbis' ),
-			),
-			'to_labels'   => array(
-				'singular_name' => __( 'Company', 'orbis' ),
-				'search_items'  => __( 'Search company', 'orbis' ),
-				'not_found'     => __( 'No companies found.', 'orbis' ),
-				'create'        => __( 'Add Company', 'orbis' ),
-				'new_item'      => __( 'New Company', 'orbis' ),
-				'add_new_item'  => __( 'Add New Company', 'orbis' ),
-			),
-		) );
-	}
-
 	public function loaded() {
 		$this->load_textdomain( 'orbis', '/languages/' );
 	}
@@ -234,14 +201,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			created DATETIME NOT NULL,
 			wp_user_id BIGINT(20) UNSIGNED DEFAULT NULL,
 			message VARCHAR(512) NOT NULL,
-			PRIMARY KEY  (id)
-		' );
-
-		orbis_install_table( 'orbis_companies', '
-			id BIGINT(16) UNSIGNED NOT NULL AUTO_INCREMENT,
-			post_id BIGINT(20) UNSIGNED DEFAULT NULL,
-			name VARCHAR(128) NOT NULL,
-			e_mail VARCHAR(128) DEFAULT NULL,
 			PRIMARY KEY  (id)
 		' );
 

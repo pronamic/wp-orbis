@@ -28,7 +28,6 @@ require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
  */
 require_once 'includes/functions.php';
 require_once 'includes/persons.php';
-require_once 'includes/companies.php';
 require_once 'includes/log.php';
 require_once 'includes/flot.php';
 require_once 'admin/includes/upgrade.php';
