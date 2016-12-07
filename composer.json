@@ -34,7 +34,8 @@
 	},
 	"require": {
 		"sabre/vobject": "^4.1",
-		"sabre/uri": "^1"
+		"sabre/uri": "^1",
+		"sabre/xml": "^1"
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "^2.7",

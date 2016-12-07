@@ -9,6 +9,7 @@ $person_mobile_number = get_post_meta( $post->ID, '_orbis_person_mobile_number',
 
 $title        = get_post_meta( $post->ID, '_orbis_title', true );
 $organization = get_post_meta( $post->ID, '_orbis_organization', true );
+$department   = get_post_meta( $post->ID, '_orbis_department', true );
 
 $address    = get_post_meta( $post->ID, '_orbis_address', true );
 $postcode   = get_post_meta( $post->ID, '_orbis_postcode', true );
@@ -30,7 +31,10 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 			</th>
 			<td>
 				<input type="text" id="_orbis_title" name="_orbis_title" value="<?php echo esc_attr( $title ); ?>" class="regular-text" placeholder="<?php echo esc_attr( _x( 'Title', 'contact', 'orbis' ) ); ?>" style="width: 10em;" />
+
 				<input type="text" id="_orbis_organization" name="_orbis_organization" value="<?php echo esc_attr( $organization ); ?>" class="regular-text" placeholder="<?php echo esc_attr( _x( 'Organization', 'contact', 'orbis' ) ); ?>" />
+
+				<input type="text" id="_orbis_department" name="_orbis_department" value="<?php echo esc_attr( $department ); ?>" class="regular-text" placeholder="<?php echo esc_attr( _x( 'Department', 'contact', 'orbis' ) ); ?>" style="width: 10em;" />
 			</td>
 		</tr>
 

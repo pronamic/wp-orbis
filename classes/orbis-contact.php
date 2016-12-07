@@ -30,6 +30,10 @@ class Orbis_Contact {
 		return get_post_meta( $this->post->ID, '_orbis_organization', true );
 	}
 
+	public function get_department() {
+		return get_post_meta( $this->post->ID, '_orbis_department', true );
+	}
+
 	public function get_email() {
 		return get_post_meta( $this->post->ID, '_orbis_person_email_address', true );
 	}

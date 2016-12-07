@@ -72,6 +72,7 @@ class Orbis_Core_Admin {
 				post.post_title,
 				MAX( IF( meta.meta_key = '_orbis_title', meta.meta_value, NULL ) ) AS contact_title,
 				MAX( IF( meta.meta_key = '_orbis_organization', meta.meta_value, NULL ) ) AS contact_organization,
+				MAX( IF( meta.meta_key = '_orbis_department', meta.meta_value, NULL ) ) AS contact_department,
 				MAX( IF( meta.meta_key = '_orbis_person_email_address', meta.meta_value, NULL ) ) AS contact_email,
 				MAX( IF( meta.meta_key = '_orbis_address', meta.meta_value, NULL ) ) AS contact_address,
 				MAX( IF( meta.meta_key = '_orbis_postcode', meta.meta_value, NULL ) ) AS contact_postcode,
@@ -157,7 +158,12 @@ class Orbis_Core_Admin {
 		foreach ( $data as $row ) {
 			$import = $this->create_import_post( $skeleton, $row );
 
-			$result = wp_update_post( $import );
+			$import = array_filter( $import );
+
+			$import['post_type']   = 'orbis_person';
+			$import['post_status'] = 'publish';
+
+			$result = wp_insert_post( $import, true );
 
 			if ( 0 !== $result ) {
 				$updated++;
@@ -199,6 +205,7 @@ class Orbis_Core_Admin {
 			__( 'Name', 'orbis' ),
 			__( 'Title', 'orbis' ),
 			__( 'Organization', 'orbis' ),
+			__( 'Department', 'orbis' ),
 			__( 'Email', 'orbis' ),
 			__( 'Address', 'orbis' ),
 			__( 'Postcode', 'orbis' ),
@@ -220,6 +227,7 @@ class Orbis_Core_Admin {
 				$result->post_title,
 				$result->contact_title,
 				$result->contact_organization,
+				$result->contact_department,
 				$result->contact_email,
 				$result->contact_address,
 				$result->contact_postcode,

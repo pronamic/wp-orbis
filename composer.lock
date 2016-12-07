@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7c704b542c78278b351fa88edfe94a0c",
-    "content-hash": "26d66d5ab3daf28cd61be585eb735164",
+    "hash": "6155ab1797e05875a88bb6485742ac4d",
+    "content-hash": "16a7421eb329677c56d9d4e9ff36c59a",
     "packages": [
         {
             "name": "sabre/uri",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fruux/sabre-uri.git",
-                "reference": "258b72540fe3f2c0bb395cb40e56f9ae409f93b5"
+                "reference": "8545a3335f741d4b7700bb14efb41b4c03775dcd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fruux/sabre-uri/zipball/258b72540fe3f2c0bb395cb40e56f9ae409f93b5",
-                "reference": "258b72540fe3f2c0bb395cb40e56f9ae409f93b5",
+                "url": "https://api.github.com/repos/fruux/sabre-uri/zipball/8545a3335f741d4b7700bb14efb41b4c03775dcd",
+                "reference": "8545a3335f741d4b7700bb14efb41b4c03775dcd",
                 "shasum": ""
             },
             "require": {
@@ -56,30 +56,30 @@
                 "uri",
                 "url"
             ],
-            "time": "2016-10-27 04:56:33"
+            "time": "2016-12-07 01:17:59"
         },
         {
             "name": "sabre/vobject",
-            "version": "4.1.1",
+            "version": "4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fruux/sabre-vobject.git",
-                "reference": "a3a59b06947f122af2d45d52b72172cdc1efd68f"
+                "reference": "d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fruux/sabre-vobject/zipball/a3a59b06947f122af2d45d52b72172cdc1efd68f",
-                "reference": "a3a59b06947f122af2d45d52b72172cdc1efd68f",
+                "url": "https://api.github.com/repos/fruux/sabre-vobject/zipball/d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c",
+                "reference": "d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "php": ">=5.5",
-                "sabre/xml": "~1.1"
+                "sabre/xml": ">=1.5 <3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "*",
-                "sabre/cs": "~0.0.3"
+                "sabre/cs": "^1.0.0"
             },
             "suggest": {
                 "hoa/bench": "If you would like to run the benchmark scripts"
@@ -153,7 +153,7 @@
                 "xCal",
                 "xCard"
             ],
-            "time": "2016-07-15 19:52:17"
+            "time": "2016-12-06 04:14:09"
         },
         {
             "name": "sabre/xml",
@@ -222,16 +222,16 @@
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.7.0",
+            "version": "2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "571e27b6348e5b3a637b2abc82ac0d01e6d7bbed"
+                "reference": "9b324f3a1132459a7274a0ace2e1b766ba80930f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/571e27b6348e5b3a637b2abc82ac0d01e6d7bbed",
-                "reference": "571e27b6348e5b3a637b2abc82ac0d01e6d7bbed",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/9b324f3a1132459a7274a0ace2e1b766ba80930f",
+                "reference": "9b324f3a1132459a7274a0ace2e1b766ba80930f",
                 "shasum": ""
             },
             "require": {
@@ -296,7 +296,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-09-01 23:53:02"
+            "time": "2016-11-30 04:02:31"
         },
         {
             "name": "wp-coding-standards/wpcs",

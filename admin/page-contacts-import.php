@@ -12,6 +12,7 @@ $wp_columns = array(
 $meta = array(
 	'_orbis_title'                => __( 'Title', 'orbis' ),
 	'_orbis_organization'         => __( 'Organization', 'orbis' ),
+	'_orbis_department'           => __( 'Department', 'orbis' ),
 	'_orbis_person_email_address' => __( 'Email', 'orbis' ),
 	'_orbis_address'              => __( 'Address', 'orbis' ),
 	'_orbis_postcode'             => __( 'Postcode', 'orbis' ),
@@ -33,12 +34,14 @@ foreach ( $meta as $key => $label ) {
 	$wp_columns[ $name ] = $label;
 }
 
-$csv_columns = array();
+$csv_row_1 = array();
+$csv_row_2 = array();
 
 if ( is_readable( $file ) ) {
-	$line = fgets( fopen( $file, 'r' ) );
+	$handle = fopen( $file, 'r' );
 
-	$csv_columns = str_getcsv( $line );
+	$csv_row_1 = str_getcsv( fgets( $handle ) );
+	$csv_row_2 = str_getcsv( fgets( $handle ) );
 }
 
 $defaults = array_keys( $wp_columns );
@@ -87,11 +90,15 @@ $defaults = array_keys( $wp_columns );
 				<thead>
 					<tr>
 						<th scope="col"><?php esc_html_e( 'WordPress', 'orbis' ); ?></th>
+						<th scope="col"><?php esc_html_e( 'First Row', 'orbis' ); ?></th>
+						<th scope="col"><?php esc_html_e( 'Second Row', 'orbis' ); ?></th>
 						<th scope="col"><?php esc_html_e( 'CSV', 'orbis' ); ?></th>
 					</tr>
 				</thead>
 
 				<tbody>
+
+					<?php $i = 0; ?>
 
 					<?php foreach ( $wp_columns as $key => $label ) : ?>
 
@@ -100,10 +107,18 @@ $defaults = array_keys( $wp_columns );
 								<?php echo esc_html( $label ); ?>
 							</td>
 							<td>
+								<?php echo esc_html( $csv_row_1[ $i ] ); ?>
+							</td>
+							<td>
+								<?php echo esc_html( $csv_row_2[ $i ] ); ?>
+							</td>
+							<td>
 								<select style="width: 100%;" name="<?php echo esc_attr( $key ); ?>">
+									<option value=""><?php esc_html_e( '— Nothing (skip) —', 'orbis' ); ?></option>
+
 									<?php
 
-									foreach ( $csv_columns as $csv_index => $csv_label ) {
+									foreach ( $csv_row_1 as $csv_index => $csv_label ) {
 										printf(
 											'<option value="%s" %s>%s</option>',
 											esc_attr( $csv_index ),
@@ -116,6 +131,8 @@ $defaults = array_keys( $wp_columns );
 								</select>
 							</td>
 						</tr>
+
+						<?php $i++; ?>
 
 					<?php endforeach; ?>
 
