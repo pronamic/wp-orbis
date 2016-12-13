@@ -29,10 +29,21 @@ if ( ! function_exists( 'orbis_price' ) ) {
 					break;
 			}
 
+			// @see https://en.wikipedia.org/wiki/Non-breaking_space#Keyboard_entry_methods
+			$non_breaking_space = ' ';
+
 			$return .= $currency_symbol;
-			$return .= '&nbsp;';
+			$return .= $non_breaking_space;
 
 			$return .= number_format_i18n( $price, 2 );
+
+			// Trime zeors
+			// @see https://github.com/woocommerce/woocommerce/blob/v2.2.3/includes/wc-formatting-functions.php#L136-L144
+			global $wp_locale;
+
+			if ( '00' === substr( $return, -2 ) ) {
+				$return = substr( $return, 0, -3 );
+			}
 		}
 
 		return $return;
