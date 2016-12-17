@@ -16,6 +16,8 @@ $postcode   = get_post_meta( $post->ID, '_orbis_postcode', true );
 $city       = get_post_meta( $post->ID, '_orbis_city', true );
 $country    = get_post_meta( $post->ID, '_orbis_country', true );
 
+$person_birth_date = get_post_meta( $post->ID, '_orbis_person_birth_date_string', true );
+
 $person_twitter  = get_post_meta( $post->ID, '_orbis_person_twitter', true );
 $person_facebook = get_post_meta( $post->ID, '_orbis_person_facebook', true );
 $person_linkedin = get_post_meta( $post->ID, '_orbis_person_linkedin', true );
@@ -99,6 +101,15 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 				<input id="orbis_city" name="_orbis_city" placeholder="<?php esc_attr_e( 'City', 'orbis' ); ?>" value="<?php echo esc_attr( $city ); ?>" type="text" size="25" />
 				<br />
 				<input id="orbis_country" name="_orbis_country" placeholder="<?php esc_attr_e( 'Country', 'orbis' ); ?>" value="<?php echo esc_attr( $country ); ?>" type="text" size="42" />
+			</td>
+		</tr>
+
+		<tr valign="top">
+			<th scope="row">
+				<label for="orbis_person_birth_date"><?php _e( 'Birth Date', 'orbis' ); ?></label>
+			</th>
+			<td>
+				<input type="text" id="orbis_person_birth_date" name="_orbis_person_birth_date" value="<?php echo esc_attr( $person_birth_date ); ?>" class="regular-text" />
 			</td>
 		</tr>
 
