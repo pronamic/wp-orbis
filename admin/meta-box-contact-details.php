@@ -29,7 +29,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 	<tbody>
 		<tr valign="top">
 			<th scope="row">
-				<?php _e( 'Company:', 'orbis' ); ?>
+				<?php _e( 'Company', 'orbis' ); ?>
 			</th>
 			<td>
 				<input type="text" id="_orbis_title" name="_orbis_title" value="<?php echo esc_attr( $title ); ?>" class="regular-text" placeholder="<?php echo esc_attr( _x( 'Title', 'contact', 'orbis' ) ); ?>" style="width: 10em;" />
@@ -42,7 +42,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_person_gender"><?php _e( 'Gender:', 'orbis' ); ?></label>
+				<label for="orbis_person_gender"><?php _e( 'Gender', 'orbis' ); ?></label>
 			</th>
 			<td>
 				<?php
@@ -66,7 +66,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_person_email_address"><?php _e( 'Email Address:', 'orbis' ); ?></label>
+				<label for="orbis_person_email_address"><?php _e( 'Email Address', 'orbis' ); ?></label>
 			</th>
 			<td>
 				<input type="text" id="orbis_person_email_address" name="_orbis_person_email_address" value="<?php echo esc_attr( $contact->get_email() ); ?>" class="regular-text" />
@@ -75,7 +75,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_person_phone_number"><?php _e( 'Phone Number:', 'orbis' ); ?></label>
+				<label for="orbis_person_phone_number"><?php _e( 'Phone Number', 'orbis' ); ?></label>
 			</th>
 			<td>
 				<input type="text" id="orbis_person_phone_number" name="_orbis_person_phone_number" value="<?php echo esc_attr( $person_phone_number ); ?>" class="regular-text" />
@@ -83,7 +83,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 		</tr>
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_person_mobile_number"><?php _e( 'Mobile Number:', 'orbis' ); ?></label>
+				<label for="orbis_person_mobile_number"><?php _e( 'Mobile Number', 'orbis' ); ?></label>
 			</th>
 			<td>
 				<input type="text" id="orbis_person_mobile_number" name="_orbis_person_mobile_number" value="<?php echo esc_attr( $person_mobile_number ); ?>" class="regular-text" />
@@ -92,7 +92,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 
 		<tr>
 			<th scope="row">
-				<label for="orbis_address"><?php _e( 'Address:', 'orbis' ); ?></label>
+				<label for="orbis_address"><?php _e( 'Address', 'orbis' ); ?></label>
 			</th>
 			<td>
 				<input id="orbis_address" name="_orbis_address" placeholder="<?php esc_attr_e( 'Address', 'orbis' ); ?>" value="<?php echo esc_attr( $address ); ?>" type="text" size="42" />
@@ -115,7 +115,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_person_twitter"><?php _e( 'Twitter Username:', 'orbis' ); ?></label>
+				<label for="orbis_person_twitter"><?php _e( 'Twitter Username', 'orbis' ); ?></label>
 			</th>
 			<td>
 				<input type="text" id="orbis_person_twitter" name="_orbis_person_twitter" value="<?php echo esc_attr( $person_twitter ); ?>" class="regular-text" />
@@ -123,7 +123,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 		</tr>
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_person_facebook"><?php _e( 'Facebook URL:', 'orbis' ); ?></label>
+				<label for="orbis_person_facebook"><?php _e( 'Facebook URL', 'orbis' ); ?></label>
 			</th>
 			<td>
 				<input type="text" id="orbis_person_facebook" name="_orbis_person_facebook" value="<?php echo esc_attr( $person_facebook ); ?>" class="regular-text" />
@@ -131,7 +131,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 		</tr>
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_person_linkedin"><?php _e( 'LinkedIn URL:', 'orbis' ); ?></label>
+				<label for="orbis_person_linkedin"><?php _e( 'LinkedIn URL', 'orbis' ); ?></label>
 			</th>
 			<td>
 				<input type="text" id="orbis_person_linkedin" name="_orbis_person_linkedin" value="<?php echo esc_attr( $person_linkedin ); ?>" class="regular-text" />
