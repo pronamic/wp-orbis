@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2016-12-07 12:56:34+00:00\n"
-"PO-Revision-Date: 2016-12-07 14:03+0100\n"
+"POT-Creation-Date: 2016-12-17 10:27:08+00:00\n"
+"PO-Revision-Date: 2016-12-17 11:32+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -12,114 +12,108 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.11\n"
 
-#: admin/meta-box-contact-details.php:30
-msgid "Company:"
-msgstr "Bedrijf:"
+#: admin/meta-box-contact-details.php:32
+msgid "Company"
+msgstr "Bedrijf"
 
-#: admin/meta-box-contact-details.php:43
-msgid "Gender:"
-msgstr "Geslacht:"
+#: admin/meta-box-contact-details.php:45
+msgid "Gender"
+msgstr "Geslacht"
 
-#: admin/meta-box-contact-details.php:53
+#: admin/meta-box-contact-details.php:55
 msgid "— Select Gender —"
 msgstr "— Selecteer geslacht —"
 
-#: admin/meta-box-contact-details.php:67
-msgid "Email Address:"
-msgstr "E-mailadres:"
+#: admin/meta-box-contact-details.php:69
+msgid "Email Address"
+msgstr "E-mailadres"
 
-#: admin/meta-box-contact-details.php:76
-msgid "Phone Number:"
-msgstr "Telefoonnummer:"
+#: admin/meta-box-contact-details.php:78 admin/page-contacts-import.php:21
+#: classes/orbis-core-admin.php:217
+msgid "Phone Number"
+msgstr "Telefoonnummer"
 
-#: admin/meta-box-contact-details.php:84
-msgid "Mobile Number:"
-msgstr "Mobielnummer:"
+#: admin/meta-box-contact-details.php:86 admin/page-contacts-import.php:22
+#: classes/orbis-core-admin.php:218
+msgid "Mobile Number"
+msgstr "Mobielnummer"
 
-#: admin/meta-box-contact-details.php:93
-msgid "Address:"
-msgstr "Adres:"
-
-#: admin/meta-box-contact-details.php:96 admin/page-contacts-import.php:17
-#: classes/orbis-core-admin.php:210
+#: admin/meta-box-contact-details.php:95 admin/meta-box-contact-details.php:98
+#: admin/page-contacts-import.php:17 classes/orbis-core-admin.php:213
 msgid "Address"
 msgstr "Adres"
 
-#: admin/meta-box-contact-details.php:98 admin/page-contacts-import.php:18
-#: classes/orbis-core-admin.php:211
+#: admin/meta-box-contact-details.php:100 admin/page-contacts-import.php:18
+#: classes/orbis-core-admin.php:214
 msgid "Postcode"
 msgstr "Postcode"
 
-#: admin/meta-box-contact-details.php:99 admin/page-contacts-import.php:19
-#: classes/orbis-core-admin.php:212
+#: admin/meta-box-contact-details.php:101 admin/page-contacts-import.php:19
+#: classes/orbis-core-admin.php:215
 msgid "City"
 msgstr "Plaats"
 
-#: admin/meta-box-contact-details.php:101 admin/page-contacts-import.php:20
-#: classes/orbis-core-admin.php:213
+#: admin/meta-box-contact-details.php:103 admin/page-contacts-import.php:20
+#: classes/orbis-core-admin.php:216
 msgid "Country"
 msgstr "Land"
 
-#: admin/meta-box-contact-details.php:107
-msgid "Twitter Username:"
-msgstr "Twitter gebruikersnaam:"
+#: admin/meta-box-contact-details.php:109
+msgid "Birth Date"
+msgstr "Geboortedatum"
 
-#: admin/meta-box-contact-details.php:115
-msgid "Facebook URL:"
-msgstr "Facebook URL:"
+#: admin/meta-box-contact-details.php:118
+msgid "Twitter Username"
+msgstr "Twitter gebruikersnaam"
 
-#: admin/meta-box-contact-details.php:123
-msgid "LinkedIn URL:"
-msgstr "LinkedIn URL:"
+#: admin/meta-box-contact-details.php:126
+msgid "Facebook URL"
+msgstr "Facebook URL"
 
-#: admin/page-contacts-export.php:10 classes/orbis-core-admin.php:349
+#: admin/meta-box-contact-details.php:134
+msgid "LinkedIn URL"
+msgstr "LinkedIn URL"
+
+#: admin/page-contacts-export.php:10 classes/orbis-core-admin.php:352
 msgid "Export"
 msgstr "Exporteren"
 
-#: admin/page-contacts-import.php:8 classes/orbis-core-admin.php:204
+#: admin/page-contacts-import.php:8 classes/orbis-core-admin.php:207
 msgid "ID"
 msgstr "ID"
 
-#: admin/page-contacts-import.php:9 classes/orbis-core-admin.php:205
+#: admin/page-contacts-import.php:9 classes/orbis-core-admin.php:208
 #: templates/emails/update.php:60
 msgid "Name"
 msgstr "Naam"
 
-#: admin/page-contacts-import.php:13 classes/orbis-core-admin.php:206
+#: admin/page-contacts-import.php:13 classes/orbis-core-admin.php:209
 msgid "Title"
 msgstr "Titel"
 
-#: admin/page-contacts-import.php:14 classes/orbis-core-admin.php:207
+#: admin/page-contacts-import.php:14 classes/orbis-core-admin.php:210
 msgid "Organization"
 msgstr "Bedrijfsnaam"
 
-#: admin/page-contacts-import.php:15 classes/orbis-core-admin.php:208
+#: admin/page-contacts-import.php:15 classes/orbis-core-admin.php:211
 msgid "Department"
 msgstr "Afdeling"
 
-#: admin/page-contacts-import.php:16 classes/orbis-core-admin.php:209
+#: admin/page-contacts-import.php:16 classes/orbis-core-admin.php:212
 msgid "Email"
 msgstr "E-mailadres"
 
-#: admin/page-contacts-import.php:21 classes/orbis-core-admin.php:214
-msgid "Phone Number"
-msgstr "Telefoonnummer"
-
-#: admin/page-contacts-import.php:22 classes/orbis-core-admin.php:215
-msgid "Mobile Number"
-msgstr "Mobielnummer"
-
-#: admin/page-contacts-import.php:23 classes/orbis-core-admin.php:216
+#: admin/page-contacts-import.php:23 classes/orbis-core-admin.php:219
 msgid "Twitter"
 msgstr "Twitter"
 
-#: admin/page-contacts-import.php:24 classes/orbis-core-admin.php:217
+#: admin/page-contacts-import.php:24 classes/orbis-core-admin.php:220
 msgid "Facebook"
 msgstr "Facebook"
 
-#: admin/page-contacts-import.php:25 classes/orbis-core-admin.php:218
+#: admin/page-contacts-import.php:25 classes/orbis-core-admin.php:221
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -151,7 +145,7 @@ msgstr "CSV"
 msgid "— Nothing (skip) —"
 msgstr "— Niks (overslaan) —"
 
-#: admin/page-contacts-import.php:147 classes/orbis-core-admin.php:358
+#: admin/page-contacts-import.php:147 classes/orbis-core-admin.php:361
 msgid "Import"
 msgstr "Importeren"
 
@@ -180,15 +174,15 @@ msgstr "http://www.pronamic.nl/"
 msgid "Details"
 msgstr "Details"
 
-#: admin/page-plugins.php:24 classes/orbis-core-admin.php:283
+#: admin/page-plugins.php:24 classes/orbis-core-admin.php:286
 msgid "Install"
 msgstr "Installeer"
 
-#: admin/page-plugins.php:32 classes/orbis-core-admin.php:284
+#: admin/page-plugins.php:32 classes/orbis-core-admin.php:287
 msgid "Activate"
 msgstr "Activeer"
 
-#: admin/page-plugins.php:39 classes/orbis-core-admin.php:285
+#: admin/page-plugins.php:39 classes/orbis-core-admin.php:288
 msgid "Active"
 msgstr "Actief"
 
@@ -264,15 +258,19 @@ msgstr "Aantal abonnementen"
 msgid "Annual Revenue"
 msgstr "Jaaromzet"
 
-#: classes/orbis-core-admin.php:189
+#: classes/class-admin-contact-post-type.php:29
+msgid "Contact information"
+msgstr "Contactinformatie"
+
+#: classes/orbis-core-admin.php:192
 msgid "orbis-contacts-export-%s.csv"
 msgstr "orbis-contacten-export-%s.csv"
 
-#: classes/orbis-core-admin.php:286
+#: classes/orbis-core-admin.php:289
 msgid "An unknown error occurred"
 msgstr "Een onbekende fout is opgetreden"
 
-#: classes/orbis-core-admin.php:287
+#: classes/orbis-core-admin.php:290
 msgid "Could not connect to the server"
 msgstr "Een verbinding met de server kon niet worden gemaakt"
 
@@ -280,55 +278,55 @@ msgstr "Een verbinding met de server kon niet worden gemaakt"
 msgid "Orbis"
 msgstr "Orbis"
 
-#: classes/orbis-core-admin.php:321
+#: classes/orbis-core-admin.php:324
 msgid "Orbis Settings"
 msgstr "Orbis instellingen"
 
-#: classes/orbis-core-admin.php:322
+#: classes/orbis-core-admin.php:325
 msgid "Settings"
 msgstr "Instellingen"
 
-#: classes/orbis-core-admin.php:330
+#: classes/orbis-core-admin.php:333
 msgid "Orbis Stats"
 msgstr "Orbis statistieken"
 
-#: classes/orbis-core-admin.php:331
+#: classes/orbis-core-admin.php:334
 msgid "Stats"
 msgstr "Statistieken"
 
-#: classes/orbis-core-admin.php:339
+#: classes/orbis-core-admin.php:342
 msgid "Orbis Plugins"
 msgstr "Orbis plugins"
 
-#: classes/orbis-core-admin.php:340
+#: classes/orbis-core-admin.php:343
 msgid "Plugins"
 msgstr "Plugins"
 
-#: classes/orbis-core-admin.php:348
+#: classes/orbis-core-admin.php:351
 msgid "Export Contacts"
 msgstr "Contacten exporteren"
 
-#: classes/orbis-core-admin.php:357
+#: classes/orbis-core-admin.php:360
 msgid "Import Contacts"
 msgstr "Contacten importeren"
 
-#: classes/orbis-core-admin.php:458 classes/orbis-core-admin.php:463
+#: classes/orbis-core-admin.php:461 classes/orbis-core-admin.php:466
 msgid "Orbis User"
 msgstr "Orbis gebruiker"
 
-#: classes/orbis-core-admin.php:468
+#: classes/orbis-core-admin.php:471
 msgid "Show user in Orbis."
 msgstr "Toon gebruiker in Orbis."
 
-#: classes/orbis-core-admin.php:486 classes/orbis-core-admin.php:509
+#: classes/orbis-core-admin.php:489 classes/orbis-core-admin.php:512
 msgid "The plugin could not be found"
 msgstr "De plugin kon niet worden gevonden"
 
-#: classes/orbis-core-admin.php:499
+#: classes/orbis-core-admin.php:502
 msgid "The plugin was installed and activated successfully"
 msgstr "De plugin is succesvol geïnstalleerd en geactiveerd"
 
-#: classes/orbis-core-admin.php:522
+#: classes/orbis-core-admin.php:525
 msgid "The plugin was activated successfully"
 msgstr "De plugin is succesvol geactiveerd"
 
@@ -443,10 +441,6 @@ msgstr "Anoniem"
 #: includes/log.php:165
 msgid "%1$s updated the \"%2$s\" post."
 msgstr "%1$s heeft het \"%2$s\" bericht bijgewerkt."
-
-#: includes/persons.php:9
-msgid "Contact information"
-msgstr "Contactinformatie"
 
 #: includes/post.php:7
 msgid "Contacts"
@@ -624,17 +618,17 @@ msgstr "Pronamic"
 msgid "https://www.pronamic.eu/"
 msgstr "https://www.pronamic.nl/"
 
-#: admin/meta-box-contact-details.php:33
+#: admin/meta-box-contact-details.php:35
 msgctxt "contact"
 msgid "Title"
 msgstr "Titel"
 
-#: admin/meta-box-contact-details.php:35
+#: admin/meta-box-contact-details.php:37
 msgctxt "contact"
 msgid "Organization"
 msgstr "Bedrijfsnaam"
 
-#: admin/meta-box-contact-details.php:37
+#: admin/meta-box-contact-details.php:39
 msgctxt "contact"
 msgid "Department"
 msgstr "Afdeling"
@@ -699,6 +693,21 @@ msgctxt "taxonomy singular name"
 msgid "Category"
 msgstr "Categorie"
 
+#~ msgid "Company:"
+#~ msgstr "Bedrijf:"
+
+#~ msgid "Gender:"
+#~ msgstr "Geslacht:"
+
+#~ msgid "Phone Number:"
+#~ msgstr "Telefoonnummer:"
+
+#~ msgid "Mobile Number:"
+#~ msgstr "Mobielnummer:"
+
+#~ msgid "Address:"
+#~ msgstr "Adres:"
+
 #~ msgid "Orbis ID"
 #~ msgstr "Orbis ID"
 
@@ -728,9 +737,6 @@ msgstr "Categorie"
 
 #~ msgid "Add Contact"
 #~ msgstr "Contact toevoegen"
-
-#~ msgid "Company"
-#~ msgstr "Bedrijf"
 
 #~ msgid "Search company"
 #~ msgstr "Zoek bedrijf"
@@ -1056,9 +1062,6 @@ msgstr "Categorie"
 
 #~ msgid "Type"
 #~ msgstr "Type"
-
-#~ msgid "Expiration Date"
-#~ msgstr "Vervaldatum"
 
 #~ msgid "Update Date"
 #~ msgstr "Update datum"

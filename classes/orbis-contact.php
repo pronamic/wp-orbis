@@ -55,4 +55,33 @@ class Orbis_Contact {
 
 		return $address;
 	}
+
+	public function get_birth_date( $format = 'Y-m-d' ) {
+		$value = get_post_meta( $this->post->ID, '_orbis_birth_date', true );
+
+		if ( '' === $value ) {
+			return;
+		}
+
+		$date = date_create( $value );
+
+		return $date;
+	}
+
+	/**
+	 * @see http://stackoverflow.com/questions/3776682/php-calculate-age
+	 */
+	public function get_age() {
+		$birth_date = $this->get_birth_date();
+
+		if ( empty( $birth_date ) ) {
+			return null;
+		}
+
+ 		$now  = new DateTime();
+ 
+ 		$interval = $now->diff( $birth_date );
+ 	
+ 		return $interval->y;
+	}
 }
