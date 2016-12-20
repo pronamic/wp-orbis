@@ -22,6 +22,10 @@ class Orbis_Contact {
 		$this->post = get_post( $post );
 	}
 
+	public function get_name() {
+		return get_the_title( $this->post );
+	}
+
 	public function get_title() {
 		return get_post_meta( $this->post->ID, '_orbis_title', true );
 	}
