@@ -295,7 +295,7 @@ class Orbis_Core_ContactsImporter {
 			'edit.php?post_type=orbis_person', // parent_slug
 			__( 'Export Contacts', 'orbis' ), // page_title
 			__( 'Export', 'orbis' ), // menu_title
-			'manage_options', // capability
+			'export', // capability
 			'orbis-persons-export', // menu_slug
 			array( $this, 'page_contacts_export' ) // function
 		);
@@ -304,7 +304,7 @@ class Orbis_Core_ContactsImporter {
 			'edit.php?post_type=orbis_person', // parent_slug
 			__( 'Import Contacts', 'orbis' ), // page_title
 			__( 'Import', 'orbis' ), // menu_title
-			'manage_options', // capability
+			'import', // capability
 			'orbis-persons-import', // menu_slug
 			array( $this, 'page_contacts_import' ) // function
 		);
