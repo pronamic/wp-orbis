@@ -4,36 +4,11 @@ $attachment_id = filter_input( INPUT_GET, 'attachment_id', FILTER_SANITIZE_STRIN
 
 $file = get_attached_file( $attachment_id );
 
-$wp_columns = array(
-	'post[ID]'           => __( 'ID', 'orbis' ),
-	'post[post_title]'   => __( 'Name', 'orbis' ),
-);
+$post_input = $this->get_import_post_input();
+$meta_input = $this->get_import_meta_input();
+$tax_input  = $this->get_import_tax_input();
 
-$meta = array(
-	'_orbis_title'                => __( 'Title', 'orbis' ),
-	'_orbis_organization'         => __( 'Organization', 'orbis' ),
-	'_orbis_department'           => __( 'Department', 'orbis' ),
-	'_orbis_person_email_address' => __( 'Email', 'orbis' ),
-	'_orbis_address'              => __( 'Address', 'orbis' ),
-	'_orbis_postcode'             => __( 'Postcode', 'orbis' ),
-	'_orbis_city'                 => __( 'City', 'orbis' ),
-	'_orbis_country'              => __( 'Country', 'orbis' ),
-	'_orbis_person_phone_number'  => __( 'Phone Number', 'orbis' ),
-	'_orbis_person_mobile_number' => __( 'Mobile Number', 'orbis' ),
-	'_orbis_person_twitter'       => __( 'Twitter', 'orbis' ),
-	'_orbis_person_facebook'      => __( 'Facebook', 'orbis' ),
-	'_orbis_person_linkedin'      => __( 'LinkedIn', 'orbis' ),
-);
-
-foreach ( $meta as $key => $label ) {
-	$name = sprintf(
-		'post[meta_input][%s]',
-		$key
-	);
-
-	$wp_columns[ $name ] = $label;
-}
-
+// CSV
 $csv_row_1 = array();
 $csv_row_2 = array();
 
@@ -44,7 +19,14 @@ if ( is_readable( $file ) ) {
 	$csv_row_2 = str_getcsv( fgets( $handle ) );
 }
 
-$defaults = array_keys( $wp_columns );
+$input = $post_input + $meta_input + $tax_input;
+
+$defaults = array_keys( $input );
+
+$max_columns = max(
+	count( $csv_row_1 ),
+	count( $csv_row_2 )
+);
 
 ?>
 
@@ -89,52 +71,76 @@ $defaults = array_keys( $wp_columns );
 			<table class="widefat" style="width: auto;">
 				<thead>
 					<tr>
-						<th scope="col"><?php esc_html_e( 'WordPress', 'orbis' ); ?></th>
 						<th scope="col"><?php esc_html_e( 'First Row', 'orbis' ); ?></th>
 						<th scope="col"><?php esc_html_e( 'Second Row', 'orbis' ); ?></th>
-						<th scope="col"><?php esc_html_e( 'CSV', 'orbis' ); ?></th>
+						<th scope="col"><?php esc_html_e( 'WordPress', 'orbis' ); ?></th>
 					</tr>
 				</thead>
 
 				<tbody>
 
-					<?php $i = 0; ?>
-
-					<?php foreach ( $wp_columns as $key => $label ) : ?>
+					<?php for ( $i = 0; $i < $max_columns; $i++ ) : ?>
 
 						<tr>
 							<td>
-								<?php echo esc_html( $label ); ?>
+								<?php echo esc_html( isset( $csv_row_1[ $i ] ) ? $csv_row_1[ $i ] : '' ); ?>
 							</td>
 							<td>
-								<?php echo esc_html( $csv_row_1[ $i ] ); ?>
+								<?php echo esc_html( isset( $csv_row_2[ $i ] ) ? $csv_row_2[ $i ] : '' ); ?>
 							</td>
 							<td>
-								<?php echo esc_html( $csv_row_2[ $i ] ); ?>
-							</td>
-							<td>
-								<select style="width: 100%;" name="<?php echo esc_attr( $key ); ?>">
+								<select style="width: 100%;" name="map[<?php echo esc_attr( $i ); ?>]">
 									<option value=""><?php esc_html_e( '— Nothing (skip) —', 'orbis' ); ?></option>
 
-									<?php
+									<optgroup label="<?php esc_attr_e( 'Post Fields', 'orbis' ); ?>">
+										<?php
 
-									foreach ( $csv_row_1 as $csv_index => $csv_label ) {
-										printf(
-											'<option value="%s" %s>%s</option>',
-											esc_attr( $csv_index ),
-											selected( $key, $defaults[ $csv_index ], false ),
-											esc_html( $csv_label )
-										);
-									}
+										foreach ( $post_input as $name => $label ) {
+											printf(
+												'<option value="%s" %s>%s</option>',
+												esc_attr( $name ),
+												selected( $name, $defaults[ $i ], false ),
+												esc_html( $label )
+											);
+										}
 
-									?>
+										?>
+									</optgroup>
+
+									<optgroup label="<?php esc_attr_e( 'Meta Fields', 'orbis' ); ?>">
+										<?php
+
+										foreach ( $meta_input as $name => $label ) {
+											printf(
+												'<option value="%s" %s>%s</option>',
+												esc_attr( $name ),
+												selected( $name, $defaults[ $i ], false ),
+												esc_html( $label )
+											);
+										}
+
+										?>
+									</optgroup>
+
+									<optgroup label="<?php esc_attr_e( 'Taxonomies', 'orbis' ); ?>">
+										<?php
+
+										foreach ( $tax_input as $name => $label ) {
+											printf(
+												'<option value="%s" %s>%s</option>',
+												esc_attr( $name ),
+												selected( $name, $defaults[ $i ], false ),
+												esc_html( $label )
+											);
+										}
+
+										?>
+									</optgroup>
 								</select>
 							</td>
 						</tr>
 
-						<?php $i++; ?>
-
-					<?php endforeach; ?>
+					<?php endfor; ?>
 
 				</tbody>
 			</table>

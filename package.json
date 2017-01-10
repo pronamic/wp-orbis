@@ -38,7 +38,7 @@
     "grunt-contrib-cssmin": "^1.0.2",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-uglify": "^2.0.0",
-    "grunt-git": "^1.0.2",
+    "grunt-git": "^1.0.3",
     "grunt-phpcs": "^0.4.0",
     "grunt-phplint": "0.0.8",
     "grunt-phpmd": "^0.1.1",

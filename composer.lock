@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6155ab1797e05875a88bb6485742ac4d",
     "content-hash": "16a7421eb329677c56d9d4e9ff36c59a",
     "packages": [
         {
@@ -56,7 +55,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2016-12-07 01:17:59"
+            "time": "2016-12-07T01:17:59+00:00"
         },
         {
             "name": "sabre/vobject",
@@ -153,7 +152,7 @@
                 "xCal",
                 "xCard"
             ],
-            "time": "2016-12-06 04:14:09"
+            "time": "2016-12-06T04:14:09+00:00"
         },
         {
             "name": "sabre/xml",
@@ -216,7 +215,7 @@
                 "dom",
                 "xml"
             ],
-            "time": "2016-10-09 22:57:52"
+            "time": "2016-10-09T22:57:52+00:00"
         }
     ],
     "packages-dev": [
@@ -296,7 +295,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-11-30 04:02:31"
+            "time": "2016-11-30T04:02:31+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -332,7 +331,7 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2016-08-29 20:04:47"
+            "time": "2016-08-29T20:04:47+00:00"
         }
     ],
     "aliases": [],
