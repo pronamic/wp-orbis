@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2017-01-10 11:52:38+00:00\n"
-"PO-Revision-Date: 2017-01-10 12:54+0100\n"
+"POT-Creation-Date: 2017-02-14 14:50:09+00:00\n"
+"PO-Revision-Date: 2017-02-14 15:52+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -13,6 +13,59 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.7.4\n"
+
+#: admin/contacts-import-confirm.php:1
+msgid "Confirm"
+msgstr "Bevestigen"
+
+#: admin/contacts-import-confirm.php:8 admin/contacts-import-map.php:89
+#: classes/orbis-contacts-importer.php:341
+msgid "Import"
+msgstr "Importeren"
+
+#: admin/contacts-import-map.php:1
+msgid "Map"
+msgstr "Indelen"
+
+#: admin/contacts-import-map.php:10
+msgid "First Row"
+msgstr "Eerste rij"
+
+#: admin/contacts-import-map.php:11
+msgid "Second Row"
+msgstr "Tweede rij"
+
+#: admin/contacts-import-map.php:12
+msgid "WordPress"
+msgstr "WordPress"
+
+#: admin/contacts-import-map.php:29
+msgid "— Nothing (skip) —"
+msgstr "— Niks (overslaan) —"
+
+#: admin/contacts-import-map.php:31
+msgid "Post Fields"
+msgstr "Bericht velden"
+
+#: admin/contacts-import-map.php:46
+msgid "Meta Fields"
+msgstr "Meta velden"
+
+#: admin/contacts-import-map.php:61
+msgid "Taxonomies"
+msgstr "Taxonomieën"
+
+#: admin/contacts-import-upload.php:1 admin/contacts-import-upload.php:10
+msgid "Upload"
+msgstr "Upload"
+
+#: admin/contacts-import.php:29
+msgid "Importing %1$s/%2$s contacts"
+msgstr "Importeren %1$s/%2$s contacten"
+
+#: admin/contacts-import.php:73
+msgid "Next"
+msgstr "Volgende"
 
 #: admin/meta-box-contact-details.php:32
 msgid "Company"
@@ -31,38 +84,38 @@ msgid "Email Address"
 msgstr "E-mailadres"
 
 #: admin/meta-box-contact-details.php:78
-#: classes/orbis-contacts-importer.php:62
-#: classes/orbis-contacts-importer.php:253
+#: classes/orbis-contacts-importer.php:63
+#: classes/orbis-contacts-importer.php:288
 msgid "Phone Number"
 msgstr "Telefoonnummer"
 
 #: admin/meta-box-contact-details.php:86
-#: classes/orbis-contacts-importer.php:63
-#: classes/orbis-contacts-importer.php:254
+#: classes/orbis-contacts-importer.php:64
+#: classes/orbis-contacts-importer.php:289
 msgid "Mobile Number"
 msgstr "Mobielnummer"
 
 #: admin/meta-box-contact-details.php:95 admin/meta-box-contact-details.php:98
-#: classes/orbis-contacts-importer.php:58
-#: classes/orbis-contacts-importer.php:249
+#: classes/orbis-contacts-importer.php:59
+#: classes/orbis-contacts-importer.php:284
 msgid "Address"
 msgstr "Adres"
 
 #: admin/meta-box-contact-details.php:100
-#: classes/orbis-contacts-importer.php:59
-#: classes/orbis-contacts-importer.php:250
+#: classes/orbis-contacts-importer.php:60
+#: classes/orbis-contacts-importer.php:285
 msgid "Postcode"
 msgstr "Postcode"
 
 #: admin/meta-box-contact-details.php:101
-#: classes/orbis-contacts-importer.php:60
-#: classes/orbis-contacts-importer.php:251
+#: classes/orbis-contacts-importer.php:61
+#: classes/orbis-contacts-importer.php:286
 msgid "City"
 msgstr "Plaats"
 
 #: admin/meta-box-contact-details.php:103
-#: classes/orbis-contacts-importer.php:61
-#: classes/orbis-contacts-importer.php:252
+#: classes/orbis-contacts-importer.php:62
+#: classes/orbis-contacts-importer.php:287
 msgid "Country"
 msgstr "Land"
 
@@ -82,49 +135,13 @@ msgstr "Facebook URL"
 msgid "LinkedIn URL"
 msgstr "LinkedIn URL"
 
-#: admin/page-contacts-export.php:10 classes/orbis-contacts-importer.php:297
+#: admin/page-contacts-export.php:10 classes/orbis-contacts-importer.php:332
 msgid "Export"
 msgstr "Exporteren"
 
-#: admin/page-contacts-import.php:40
+#: admin/page-contacts-import.php:46
 msgid "Imported contacts."
 msgstr "Contacten geïmporteerd."
-
-#: admin/page-contacts-import.php:58
-msgid "Upload"
-msgstr "Upload"
-
-#: admin/page-contacts-import.php:74
-msgid "First Row"
-msgstr "Eerste rij"
-
-#: admin/page-contacts-import.php:75
-msgid "Second Row"
-msgstr "Tweede rij"
-
-#: admin/page-contacts-import.php:76
-msgid "WordPress"
-msgstr "WordPress"
-
-#: admin/page-contacts-import.php:93
-msgid "— Nothing (skip) —"
-msgstr "— Niks (overslaan) —"
-
-#: admin/page-contacts-import.php:95
-msgid "Post Fields"
-msgstr "Bericht velden"
-
-#: admin/page-contacts-import.php:110
-msgid "Meta Fields"
-msgstr "Meta velden"
-
-#: admin/page-contacts-import.php:125
-msgid "Taxonomies"
-msgstr "Taxonomieën"
-
-#: admin/page-contacts-import.php:153 classes/orbis-contacts-importer.php:306
-msgid "Import"
-msgstr "Importeren"
 
 #: admin/page-dashboard.php:9 templates/emails/update.php:20
 msgid "Recent Projects"
@@ -239,64 +256,64 @@ msgstr "Jaaromzet"
 msgid "Contact information"
 msgstr "Contactinformatie"
 
-#: classes/orbis-contacts-importer.php:47
-#: classes/orbis-contacts-importer.php:243
+#: classes/orbis-contacts-importer.php:48
+#: classes/orbis-contacts-importer.php:278
 msgid "ID"
 msgstr "ID"
 
-#: classes/orbis-contacts-importer.php:48
-#: classes/orbis-contacts-importer.php:244 templates/emails/update.php:60
+#: classes/orbis-contacts-importer.php:49
+#: classes/orbis-contacts-importer.php:279 templates/emails/update.php:60
 msgid "Name"
 msgstr "Naam"
 
-#: classes/orbis-contacts-importer.php:54
-#: classes/orbis-contacts-importer.php:245
+#: classes/orbis-contacts-importer.php:55
+#: classes/orbis-contacts-importer.php:280
 msgid "Title"
 msgstr "Titel"
 
-#: classes/orbis-contacts-importer.php:55
-#: classes/orbis-contacts-importer.php:246
+#: classes/orbis-contacts-importer.php:56
+#: classes/orbis-contacts-importer.php:281
 msgid "Organization"
 msgstr "Bedrijfsnaam"
 
-#: classes/orbis-contacts-importer.php:56
-#: classes/orbis-contacts-importer.php:247
+#: classes/orbis-contacts-importer.php:57
+#: classes/orbis-contacts-importer.php:282
 msgid "Department"
 msgstr "Afdeling"
 
-#: classes/orbis-contacts-importer.php:57
-#: classes/orbis-contacts-importer.php:248
+#: classes/orbis-contacts-importer.php:58
+#: classes/orbis-contacts-importer.php:283
 msgid "Email"
 msgstr "E-mailadres"
 
-#: classes/orbis-contacts-importer.php:64
-#: classes/orbis-contacts-importer.php:255
+#: classes/orbis-contacts-importer.php:65
+#: classes/orbis-contacts-importer.php:290
 msgid "Twitter"
 msgstr "Twitter"
 
-#: classes/orbis-contacts-importer.php:65
-#: classes/orbis-contacts-importer.php:256
+#: classes/orbis-contacts-importer.php:66
+#: classes/orbis-contacts-importer.php:291
 msgid "Facebook"
 msgstr "Facebook"
 
-#: classes/orbis-contacts-importer.php:66
-#: classes/orbis-contacts-importer.php:257
+#: classes/orbis-contacts-importer.php:67
+#: classes/orbis-contacts-importer.php:292
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: classes/orbis-contacts-importer.php:72
+#: classes/orbis-contacts-importer.php:73
 msgid "Category"
 msgstr "Categorie"
 
-#: classes/orbis-contacts-importer.php:228
+#: classes/orbis-contacts-importer.php:263
 msgid "orbis-contacts-export-%s.csv"
 msgstr "orbis-contacten-export-%s.csv"
 
-#: classes/orbis-contacts-importer.php:296
+#: classes/orbis-contacts-importer.php:331
 msgid "Export Contacts"
 msgstr "Contacten exporteren"
 
-#: classes/orbis-contacts-importer.php:305
+#: classes/orbis-contacts-importer.php:340
 msgid "Import Contacts"
 msgstr "Contacten importeren"
 

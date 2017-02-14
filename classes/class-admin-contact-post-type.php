@@ -9,7 +9,7 @@ class Orbis_Contacts_AdminContactPostType {
 	/**
 	 * Construct.
 	 */
-	public function __construct( $plugin ) {		
+	public function __construct( $plugin ) {
 		$this->plugin = $plugin;
 
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );

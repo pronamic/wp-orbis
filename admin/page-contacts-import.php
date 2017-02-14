@@ -1,6 +1,6 @@
 <?php
 
-$attachment_id = filter_input( INPUT_GET, 'attachment_id', FILTER_SANITIZE_STRING );
+global $orbis_error;
 
 $file = get_attached_file( $attachment_id );
 
@@ -28,6 +28,12 @@ $max_columns = max(
 	count( $csv_row_2 )
 );
 
+$map = get_post_meta( $attachment_id, '_orbis_contacts_import_map', true );
+
+if ( empty( $map ) ) {
+	$map = $defaults;
+}
+
 ?>
 
 <div class="wrap">
@@ -43,120 +49,41 @@ $max_columns = max(
 
 	<?php endif; ?>
 
+	<?php if ( is_wp_error( $orbis_error ) ) : ?>
+
+		<div id="notice" class="notice notice-warning is-dismissible">
+			<p>
+				<?php echo esc_html( $orbis_error->get_error_message() ); ?>
+			</p>
+		</div>
+
+	<?php endif; ?>
+
 	<form method="post" action="" enctype="multipart/form-data">
 		<?php wp_nonce_field( 'orbis_contacts_import', 'orbis_contacts_import_nonce' ); ?>
 
-		<?php if ( empty( $file ) ) : ?>
+		<?php
 
-			<p>
-				<input type="file" name="orbis_contacts_import_file" />
-			</p>
+		switch ( $step ) {
+			case 'import' :
+				include 'contacts-import.php';
 
-			<?php
+				break;
+			case 'confirm' :
+				include 'contacts-import-confirm.php';
 
-			submit_button(
-				__( 'Upload', 'orbis' ),
-				'primary',
-				'orbis_contacts_import_upload'
-			);
+				break;
+			case 'map' :
+				include 'contacts-import-map.php';
 
-			?>
+				break;
+			case 'upload' :
+			default :
+				include 'contacts-import-upload.php';
 
-		<?php else : ?>
+				break;
+		}
 
-			<p>
-				<code><?php echo esc_html( basename( $file ) ); ?></code>
-			</p>
-
-			<table class="widefat" style="width: auto;">
-				<thead>
-					<tr>
-						<th scope="col"><?php esc_html_e( 'First Row', 'orbis' ); ?></th>
-						<th scope="col"><?php esc_html_e( 'Second Row', 'orbis' ); ?></th>
-						<th scope="col"><?php esc_html_e( 'WordPress', 'orbis' ); ?></th>
-					</tr>
-				</thead>
-
-				<tbody>
-
-					<?php for ( $i = 0; $i < $max_columns; $i++ ) : ?>
-
-						<tr>
-							<td>
-								<?php echo esc_html( isset( $csv_row_1[ $i ] ) ? $csv_row_1[ $i ] : '' ); ?>
-							</td>
-							<td>
-								<?php echo esc_html( isset( $csv_row_2[ $i ] ) ? $csv_row_2[ $i ] : '' ); ?>
-							</td>
-							<td>
-								<select style="width: 100%;" name="map[<?php echo esc_attr( $i ); ?>]">
-									<option value=""><?php esc_html_e( '— Nothing (skip) —', 'orbis' ); ?></option>
-
-									<optgroup label="<?php esc_attr_e( 'Post Fields', 'orbis' ); ?>">
-										<?php
-
-										foreach ( $post_input as $name => $label ) {
-											printf(
-												'<option value="%s" %s>%s</option>',
-												esc_attr( $name ),
-												selected( $name, $defaults[ $i ], false ),
-												esc_html( $label )
-											);
-										}
-
-										?>
-									</optgroup>
-
-									<optgroup label="<?php esc_attr_e( 'Meta Fields', 'orbis' ); ?>">
-										<?php
-
-										foreach ( $meta_input as $name => $label ) {
-											printf(
-												'<option value="%s" %s>%s</option>',
-												esc_attr( $name ),
-												selected( $name, $defaults[ $i ], false ),
-												esc_html( $label )
-											);
-										}
-
-										?>
-									</optgroup>
-
-									<optgroup label="<?php esc_attr_e( 'Taxonomies', 'orbis' ); ?>">
-										<?php
-
-										foreach ( $tax_input as $name => $label ) {
-											printf(
-												'<option value="%s" %s>%s</option>',
-												esc_attr( $name ),
-												selected( $name, $defaults[ $i ], false ),
-												esc_html( $label )
-											);
-										}
-
-										?>
-									</optgroup>
-								</select>
-							</td>
-						</tr>
-
-					<?php endfor; ?>
-
-				</tbody>
-			</table>
-
-			<input name="attachment_id" value="<?php echo esc_attr( $attachment_id ); ?>" type="hidden" />
-
-			<?php
-
-			submit_button(
-				__( 'Import', 'orbis' ),
-				'primary',
-				'orbis_contacts_import'
-			);
-
-			?>
-
-		<?php endif; ?>
+		?>
 	</form>
 </div>

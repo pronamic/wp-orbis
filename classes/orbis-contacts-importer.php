@@ -39,6 +39,7 @@ class Orbis_Core_ContactsImporter {
 	public function admin_init() {
 		$this->maybe_export_contacts();
 		$this->maybe_import_contacts_upload();
+		$this->maybe_import_contacts_map();
 		$this->maybe_import_contacts();
 	}
 
@@ -123,12 +124,44 @@ class Orbis_Core_ContactsImporter {
 		$result = media_handle_upload( 'orbis_contacts_import_file', 0 );
 
 		if ( is_int( $result ) ) {
-			$url = add_query_arg( 'attachment_id', $result );
+			$url = add_query_arg( array(
+				'attachment_id' => $result,
+				'step'          => 'map',
+			) );
 
 			wp_redirect( $url );
 
 			exit;
 		}
+
+		if ( is_wp_error( $result ) ) {
+			global $orbis_error;
+
+			$orbis_error = $result;
+		}
+	}
+
+	public function maybe_import_contacts_map() {
+		if ( ! filter_has_var( INPUT_POST, 'orbis_contacts_import_map' ) ) {
+			return;
+		}
+
+		check_admin_referer( 'orbis_contacts_import', 'orbis_contacts_import_nonce' );
+
+		$attachment_id = filter_input( INPUT_POST, 'attachment_id', FILTER_SANITIZE_STRING );
+
+		$map = filter_input( INPUT_POST, 'map', FILTER_SANITIZE_STRING, FILTER_FORCE_ARRAY );
+
+		update_post_meta( $attachment_id, '_orbis_contacts_import_map', $map );
+
+		$url = add_query_arg( array(
+			'attachment_id' => $attachment_id,
+			'step'          => 'confirm',
+		) );
+
+		wp_redirect( $url );
+
+		exit;
 	}
 
 	private function create_import_post( $map, $data ) {
@@ -144,17 +177,26 @@ class Orbis_Core_ContactsImporter {
 		$tax_input  = $this->get_import_tax_input();
 
 		foreach ( $map as $i => $key ) {
-			if ( isset( $post_input[ $key ] ) && isset( $data[ $i ] ) ) {
-				$post[ $key ] = $data[ $i ];
+			if ( ! isset( $data[ $i ] ) ) {
+				continue;
 			}
 
-			if ( isset( $meta_input[ $key ] ) && isset( $data[ $i ] ) ) {
-				$post['meta_input'][ $key ] = $data[ $i ];
+			$value = $data[ $i ];
+			$value = trim( $value );
+
+			if ( empty( $valye ) ) {
+				continue;
 			}
 
-			if ( isset( $tax_input[ $key ] ) && isset( $data[ $i ] ) ) {
-				$value = $data[ $i ];
+			if ( isset( $post_input[ $key ] ) ) {
+				$post[ $key ] = $value;
+			}
 
+			if ( isset( $meta_input[ $key ] ) ) {
+				$post['meta_input'][ $key ] = $value;
+			}
+
+			if ( isset( $tax_input[ $key ] ) ) {
 				$result = term_exists( $value, $key );
 
 				if ( ! is_array( $result ) ) {
@@ -176,6 +218,23 @@ class Orbis_Core_ContactsImporter {
 		return $post;
 	}
 
+	public function get_import_contacts_url( $args ) {
+		$args = wp_parse_args( $args, array(
+			'post_type'     => 'orbis_person',
+			'page'          => 'orbis-persons-import',
+			'step'          => 'import',
+			'attachment_id' => false,
+			'offset'        => 0,
+			'count'         => 10,
+		) );
+
+		$url = add_query_arg( $args, admin_url( 'edit.php' ) );
+
+		$url = wp_nonce_url( $url, 'orbis_contacts_import', 'orbis_contacts_import_nonce' );
+
+		return $url;
+	}
+
 	public function maybe_import_contacts() {
 		if ( ! filter_has_var( INPUT_POST, 'orbis_contacts_import' ) ) {
 			return;
@@ -183,33 +242,9 @@ class Orbis_Core_ContactsImporter {
 
 		check_admin_referer( 'orbis_contacts_import', 'orbis_contacts_import_nonce' );
 
-		$attachment_id = filter_input( INPUT_POST, 'attachment_id', FILTER_SANITIZE_STRING );
-
-		$file = get_attached_file( $attachment_id );
-
-		if ( ! is_readable( $file ) ) {
-			return;
-		}
-
-		$data = array_map( 'str_getcsv', file( $file ) );
-
-		$first = array_shift( $data );
-
-		$map = filter_input( INPUT_POST, 'map', FILTER_SANITIZE_STRING, FILTER_FORCE_ARRAY );
-
-		$updated = 0;
-
-		foreach ( $data as $row ) {
-			$post = $this->create_import_post( $map, $row );
-
-			$result = wp_insert_post( $post, true );
-
-			if ( 0 !== $result ) {
-				$updated++;
-			}
-		}
-
-		$url = add_query_arg( 'updated', $updated );
+		$url = $this->get_import_contacts_url( array(
+			'attachment_id' => filter_input( INPUT_POST, 'attachment_id', FILTER_SANITIZE_STRING ),
+		) );
 
 		wp_redirect( $url );
 
@@ -315,6 +350,9 @@ class Orbis_Core_ContactsImporter {
 	}
 
 	public function page_contacts_import() {
+		$attachment_id = filter_input( INPUT_GET, 'attachment_id', FILTER_SANITIZE_STRING );
+		$step          = filter_input( INPUT_GET, 'step', FILTER_SANITIZE_STRING );
+
 		include plugin_dir_path( $this->plugin->file ) . '/admin/page-contacts-import.php';
 	}
 }
