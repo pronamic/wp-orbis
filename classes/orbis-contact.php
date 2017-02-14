@@ -82,10 +82,10 @@ class Orbis_Contact {
 			return null;
 		}
 
- 		$now  = new DateTime();
- 
- 		$interval = $now->diff( $birth_date );
- 	
- 		return $interval->y;
+		$now = new DateTime();
+
+		$interval = $now->diff( $birth_date );
+
+		return $interval->y;
 	}
 }
