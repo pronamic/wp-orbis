@@ -18,6 +18,7 @@
 		<exclude name="WordPress.VIP.FileSystemWritesDisallow.FileWriteDetected" />
 
 		<exclude name="WordPress.VIP.RestrictedFunctions.file_get_contents" />
+		<exclude name="WordPress.VIP.RestrictedFunctions.term_exists" />
 		<exclude name="WordPress.VIP.RestrictedFunctions.user_meta" />
 		<exclude name="WordPress.VIP.RestrictedFunctions.wp_redirect" />
 
