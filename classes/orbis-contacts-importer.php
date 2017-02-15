@@ -184,7 +184,7 @@ class Orbis_Core_ContactsImporter {
 			$value = $data[ $i ];
 			$value = trim( $value );
 
-			if ( empty( $valye ) ) {
+			if ( empty( $value ) ) {
 				continue;
 			}
 
