@@ -43,6 +43,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		$this->angularjs = new Orbis_Core_AngularJS( $this );
 		$this->vcard     = new Orbis_VCard( $this );
+		$this->csv       = new Orbis_Csv( $this );
 	}
 
 	//////////////////////////////////////////////////
