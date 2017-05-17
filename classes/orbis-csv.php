@@ -106,16 +106,16 @@ class Orbis_Csv {
 			while ( have_posts() ) {
 				the_post();
 
-				$post_id = get_the_ID();
+				$post = get_post();
 
-				$contact = new Orbis_Contact( get_post() );
+				$contact = new Orbis_Contact( $post );
 
 				$address = $contact->get_address();
 
 				// Row
 				$row = array(
-					get_the_ID(),
-					get_the_title(),
+					$post->ID,
+					$post->post_title,
 					$contact->get_title(),
 					$contact->get_organization(),
 					$contact->get_department(),
@@ -124,11 +124,11 @@ class Orbis_Csv {
 					$address->get_postcode(),
 					$address->get_city(),
 					$address->get_country(),
-					get_post_meta( $post_id, '_orbis_person_phone_number', true ),
-					get_post_meta( $post_id, '_orbis_person_mobile_number', true ),
-					get_post_meta( $post_id, '_orbis_person_twitter', true ),
-					get_post_meta( $post_id, '_orbis_person_facebook', true ),
-					get_post_meta( $post_id, '_orbis_person_linkedin', true ),
+					get_post_meta( $post->ID, '_orbis_person_phone_number', true ),
+					get_post_meta( $post->ID, '_orbis_person_mobile_number', true ),
+					get_post_meta( $post->ID, '_orbis_person_twitter', true ),
+					get_post_meta( $post->ID, '_orbis_person_facebook', true ),
+					get_post_meta( $post->ID, '_orbis_person_linkedin', true ),
 				);
 
 				fputcsv( $resource, $row );
