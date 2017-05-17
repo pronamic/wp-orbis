@@ -7,6 +7,7 @@
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
 
 		<exclude name="Squiz.Commenting" />
+		<exclude name="Squiz.PHP.CommentedOutCode.Found" />
 
 		<exclude name="WordPress.PHP.DiscouragedFunctions.DiscouragedWithAlternative" />
 

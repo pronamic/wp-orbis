@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2017-02-14 14:50:09+00:00\n"
+"POT-Creation-Date: 2017-03-09 15:42:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,36 +83,36 @@ msgid "Email Address"
 msgstr ""
 
 #: admin/meta-box-contact-details.php:78 classes/orbis-contacts-importer.php:63
-#: classes/orbis-contacts-importer.php:288
+#: classes/orbis-contacts-importer.php:288 classes/orbis-csv.php:97
 msgid "Phone Number"
 msgstr ""
 
 #: admin/meta-box-contact-details.php:86 classes/orbis-contacts-importer.php:64
-#: classes/orbis-contacts-importer.php:289
+#: classes/orbis-contacts-importer.php:289 classes/orbis-csv.php:98
 msgid "Mobile Number"
 msgstr ""
 
 #: admin/meta-box-contact-details.php:95 admin/meta-box-contact-details.php:98
 #: classes/orbis-contacts-importer.php:59
-#: classes/orbis-contacts-importer.php:284
+#: classes/orbis-contacts-importer.php:284 classes/orbis-csv.php:93
 msgid "Address"
 msgstr ""
 
 #: admin/meta-box-contact-details.php:100
 #: classes/orbis-contacts-importer.php:60
-#: classes/orbis-contacts-importer.php:285
+#: classes/orbis-contacts-importer.php:285 classes/orbis-csv.php:94
 msgid "Postcode"
 msgstr ""
 
 #: admin/meta-box-contact-details.php:101
 #: classes/orbis-contacts-importer.php:61
-#: classes/orbis-contacts-importer.php:286
+#: classes/orbis-contacts-importer.php:286 classes/orbis-csv.php:95
 msgid "City"
 msgstr ""
 
 #: admin/meta-box-contact-details.php:103
 #: classes/orbis-contacts-importer.php:62
-#: classes/orbis-contacts-importer.php:287
+#: classes/orbis-contacts-importer.php:287 classes/orbis-csv.php:96
 msgid "Country"
 msgstr ""
 
@@ -254,47 +254,48 @@ msgid "Contact information"
 msgstr ""
 
 #: classes/orbis-contacts-importer.php:48
-#: classes/orbis-contacts-importer.php:278
+#: classes/orbis-contacts-importer.php:278 classes/orbis-csv.php:87
 msgid "ID"
 msgstr ""
 
 #: classes/orbis-contacts-importer.php:49
-#: classes/orbis-contacts-importer.php:279 templates/emails/update.php:60
+#: classes/orbis-contacts-importer.php:279 classes/orbis-csv.php:88
+#: templates/emails/update.php:60
 msgid "Name"
 msgstr ""
 
 #: classes/orbis-contacts-importer.php:55
-#: classes/orbis-contacts-importer.php:280
+#: classes/orbis-contacts-importer.php:280 classes/orbis-csv.php:89
 msgid "Title"
 msgstr ""
 
 #: classes/orbis-contacts-importer.php:56
-#: classes/orbis-contacts-importer.php:281
+#: classes/orbis-contacts-importer.php:281 classes/orbis-csv.php:90
 msgid "Organization"
 msgstr ""
 
 #: classes/orbis-contacts-importer.php:57
-#: classes/orbis-contacts-importer.php:282
+#: classes/orbis-contacts-importer.php:282 classes/orbis-csv.php:91
 msgid "Department"
 msgstr ""
 
 #: classes/orbis-contacts-importer.php:58
-#: classes/orbis-contacts-importer.php:283
+#: classes/orbis-contacts-importer.php:283 classes/orbis-csv.php:92
 msgid "Email"
 msgstr ""
 
 #: classes/orbis-contacts-importer.php:65
-#: classes/orbis-contacts-importer.php:290
+#: classes/orbis-contacts-importer.php:290 classes/orbis-csv.php:99
 msgid "Twitter"
 msgstr ""
 
 #: classes/orbis-contacts-importer.php:66
-#: classes/orbis-contacts-importer.php:291
+#: classes/orbis-contacts-importer.php:291 classes/orbis-csv.php:100
 msgid "Facebook"
 msgstr ""
 
 #: classes/orbis-contacts-importer.php:67
-#: classes/orbis-contacts-importer.php:292
+#: classes/orbis-contacts-importer.php:292 classes/orbis-csv.php:101
 msgid "LinkedIn"
 msgstr ""
 
@@ -410,27 +411,27 @@ msgstr ""
 msgid "Orbis Update"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:107
+#: classes/orbis-core-plugin.php:108
 msgid "No matches found"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:108
+#: classes/orbis-core-plugin.php:109
 msgid "Please enter %s more characters"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:109
+#: classes/orbis-core-plugin.php:110
 msgid "You can only select %s item"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:110
+#: classes/orbis-core-plugin.php:111
 msgid "You can only select %s items"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:111
+#: classes/orbis-core-plugin.php:112
 msgid "Loading more results..."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:112
+#: classes/orbis-core-plugin.php:113
 msgid "Searching..."
 msgstr ""
 
@@ -452,6 +453,10 @@ msgstr ""
 
 #: classes/orbis-core-settings.php:51
 msgid "Example: %s"
+msgstr ""
+
+#: classes/orbis-csv.php:74
+msgid "csv-export-%s.csv"
 msgstr ""
 
 #: classes/orbis-plugin-manager.php:70

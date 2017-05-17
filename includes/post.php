@@ -91,7 +91,7 @@ function orbis_create_initial_post_types() {
 	);
 }
 
-add_action( 'init', 'orbis_create_initial_post_types', 0 ); // highest priority
+add_action( 'init', 'orbis_create_initial_post_types', 10 ); // highest priority
 
 /**
  * Get the post type capabilties merged with the capabilities passed in

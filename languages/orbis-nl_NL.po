@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2017-02-14 14:50:09+00:00\n"
-"PO-Revision-Date: 2017-02-14 15:52+0100\n"
+"POT-Creation-Date: 2017-03-09 15:42:36+00:00\n"
+"PO-Revision-Date: 2017-03-09 16:44+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -85,37 +85,37 @@ msgstr "E-mailadres"
 
 #: admin/meta-box-contact-details.php:78
 #: classes/orbis-contacts-importer.php:63
-#: classes/orbis-contacts-importer.php:288
+#: classes/orbis-contacts-importer.php:288 classes/orbis-csv.php:97
 msgid "Phone Number"
 msgstr "Telefoonnummer"
 
 #: admin/meta-box-contact-details.php:86
 #: classes/orbis-contacts-importer.php:64
-#: classes/orbis-contacts-importer.php:289
+#: classes/orbis-contacts-importer.php:289 classes/orbis-csv.php:98
 msgid "Mobile Number"
 msgstr "Mobielnummer"
 
 #: admin/meta-box-contact-details.php:95 admin/meta-box-contact-details.php:98
 #: classes/orbis-contacts-importer.php:59
-#: classes/orbis-contacts-importer.php:284
+#: classes/orbis-contacts-importer.php:284 classes/orbis-csv.php:93
 msgid "Address"
 msgstr "Adres"
 
 #: admin/meta-box-contact-details.php:100
 #: classes/orbis-contacts-importer.php:60
-#: classes/orbis-contacts-importer.php:285
+#: classes/orbis-contacts-importer.php:285 classes/orbis-csv.php:94
 msgid "Postcode"
 msgstr "Postcode"
 
 #: admin/meta-box-contact-details.php:101
 #: classes/orbis-contacts-importer.php:61
-#: classes/orbis-contacts-importer.php:286
+#: classes/orbis-contacts-importer.php:286 classes/orbis-csv.php:95
 msgid "City"
 msgstr "Plaats"
 
 #: admin/meta-box-contact-details.php:103
 #: classes/orbis-contacts-importer.php:62
-#: classes/orbis-contacts-importer.php:287
+#: classes/orbis-contacts-importer.php:287 classes/orbis-csv.php:96
 msgid "Country"
 msgstr "Land"
 
@@ -257,47 +257,48 @@ msgid "Contact information"
 msgstr "Contactinformatie"
 
 #: classes/orbis-contacts-importer.php:48
-#: classes/orbis-contacts-importer.php:278
+#: classes/orbis-contacts-importer.php:278 classes/orbis-csv.php:87
 msgid "ID"
 msgstr "ID"
 
 #: classes/orbis-contacts-importer.php:49
-#: classes/orbis-contacts-importer.php:279 templates/emails/update.php:60
+#: classes/orbis-contacts-importer.php:279 classes/orbis-csv.php:88
+#: templates/emails/update.php:60
 msgid "Name"
 msgstr "Naam"
 
 #: classes/orbis-contacts-importer.php:55
-#: classes/orbis-contacts-importer.php:280
+#: classes/orbis-contacts-importer.php:280 classes/orbis-csv.php:89
 msgid "Title"
 msgstr "Titel"
 
 #: classes/orbis-contacts-importer.php:56
-#: classes/orbis-contacts-importer.php:281
+#: classes/orbis-contacts-importer.php:281 classes/orbis-csv.php:90
 msgid "Organization"
 msgstr "Bedrijfsnaam"
 
 #: classes/orbis-contacts-importer.php:57
-#: classes/orbis-contacts-importer.php:282
+#: classes/orbis-contacts-importer.php:282 classes/orbis-csv.php:91
 msgid "Department"
 msgstr "Afdeling"
 
 #: classes/orbis-contacts-importer.php:58
-#: classes/orbis-contacts-importer.php:283
+#: classes/orbis-contacts-importer.php:283 classes/orbis-csv.php:92
 msgid "Email"
 msgstr "E-mailadres"
 
 #: classes/orbis-contacts-importer.php:65
-#: classes/orbis-contacts-importer.php:290
+#: classes/orbis-contacts-importer.php:290 classes/orbis-csv.php:99
 msgid "Twitter"
 msgstr "Twitter"
 
 #: classes/orbis-contacts-importer.php:66
-#: classes/orbis-contacts-importer.php:291
+#: classes/orbis-contacts-importer.php:291 classes/orbis-csv.php:100
 msgid "Facebook"
 msgstr "Facebook"
 
 #: classes/orbis-contacts-importer.php:67
-#: classes/orbis-contacts-importer.php:292
+#: classes/orbis-contacts-importer.php:292 classes/orbis-csv.php:101
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -413,27 +414,27 @@ msgstr "Niet ingepland"
 msgid "Orbis Update"
 msgstr "Orbis update"
 
-#: classes/orbis-core-plugin.php:107
+#: classes/orbis-core-plugin.php:108
 msgid "No matches found"
 msgstr "Geen overeenkomsten gevonden"
 
-#: classes/orbis-core-plugin.php:108
+#: classes/orbis-core-plugin.php:109
 msgid "Please enter %s more characters"
 msgstr "Voer nog %s tekens in."
 
-#: classes/orbis-core-plugin.php:109
+#: classes/orbis-core-plugin.php:110
 msgid "You can only select %s item"
 msgstr "Je kunt slechts %s item selecteren"
 
-#: classes/orbis-core-plugin.php:110
+#: classes/orbis-core-plugin.php:111
 msgid "You can only select %s items"
 msgstr "Je kunt slechts %s items selecteren"
 
-#: classes/orbis-core-plugin.php:111
+#: classes/orbis-core-plugin.php:112
 msgid "Loading more results..."
 msgstr "Meer resultaten laden..."
 
-#: classes/orbis-core-plugin.php:112
+#: classes/orbis-core-plugin.php:113
 msgid "Searching..."
 msgstr "Zoeken...."
 
@@ -456,6 +457,10 @@ msgstr "Amerikaanse dollar"
 #: classes/orbis-core-settings.php:51
 msgid "Example: %s"
 msgstr "Voorbeeld: %s"
+
+#: classes/orbis-csv.php:74
+msgid "csv-export-%s.csv"
+msgstr "csv-export-%s.csv"
 
 #: classes/orbis-plugin-manager.php:70
 msgid "You don't have the required permissions to install a plugin"
