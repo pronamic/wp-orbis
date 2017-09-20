@@ -14,11 +14,13 @@ function orbis_persons_suggest_person_id() {
 		WHERE
 			post.post_type = 'orbis_person'
 				AND
-			post.post_title LIKE '%%%1\$s%%'
+			post.post_title LIKE %s
 		;
 	";
 
-	$query = $wpdb->prepare( $query, $term ); // unprepared SQL
+	$like = '%' . $wpdb->esc_like( $term ) . '%';
+
+	$query = $wpdb->prepare( $query, $like ); // unprepared SQL
 
 	$data = $wpdb->get_results( $query ); // unprepared SQL
 
