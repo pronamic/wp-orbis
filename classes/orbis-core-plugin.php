@@ -34,6 +34,9 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		new Orbis_OrderByComment();
 		new Orbis_PostcodeFilter();
 
+		// Shortcodes
+		add_shortcode( 'orbis_list_pages', array( $this, 'shortcode_list_pages' ) );
+
 		// Admin
 		if ( is_admin() ) {
 			global $orbis_admin;
@@ -274,5 +277,23 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		}
 
 		return $roles;
+	}
+
+	public function shortcode_list_pages(  $atts, $content, $tag ) {
+		$atts = shortcode_atts( array(
+			'child_of' => get_the_ID(),
+			'depth'    => 0,
+			'title_li' => null,
+		), $atts, $tag );
+
+		$atts['echo'] = false;
+
+		$result = wp_list_pages( $atts );
+
+		if ( empty( $atts['title_li'] ) ) {
+			$result = '<ul>' . $result . '</ul>';
+		}
+
+		return $result;
 	}
 }
