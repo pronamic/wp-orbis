@@ -9,9 +9,49 @@
 class Orbis_OrderByComment {
 	public function __construct() {
 		// Filters
+		add_filter( 'posts_fields', array( $this, 'posts_fields' ), 10, 2 );
+
 		add_filter( 'posts_join', array( $this, 'posts_join' ), 10, 2 );
 
 		add_filter( 'posts_orderby', array( $this, 'posts_orderby' ), 10, 2 );
+
+		add_filter( 'date_query_valid_columns', array( $this, 'date_query_valid_columns' ) );
+	}
+
+	public function query_has_last_comment_date_query( $query ) {
+		if ( 'last_comment_date' === $query->get( 'orderby' ) ) {
+			return true;
+		}
+
+		if ( ! isset( $query->date_query ) ) {
+			return false;
+		}
+
+		if ( ! is_array( $query->date_query->queries ) ) {
+			return false;
+		}
+
+		foreach ( $query->date_query->queries as $query ) {
+			if ( ! isset( $query['column' ] ) ) {
+				continue;
+			}
+
+			if ( 'last_comment_date' === $query['column'] ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public function posts_fields( $fields, $query ) {
+		if ( ! $this->query_has_last_comment_date_query( $query ) ) {
+			return $fields;
+		}
+
+		$fields .= ', last_comment_date';
+
+		return $fields;
 	}
 
 	/**
@@ -23,23 +63,25 @@ class Orbis_OrderByComment {
 	 * @return string
 	 */
 	public function posts_join( $join, $query ) {
-		if ( 'last_comment_date' === $query->get( 'orderby' ) ) {
-			global $wpdb;
-
-			$join .= "LEFT JOIN ( 
-				SELECT
-					comment_post_ID,
-					MAX( comment_date ) AS last_comment_date
-				FROM
-					$wpdb->comments
-				WHERE
-					comment_approved = '1'
-				GROUP BY
-					comment_post_ID
-			) AS last_comment
-				ON last_comment.comment_post_ID = $wpdb->posts.ID
-			";
+		if ( ! $this->query_has_last_comment_date_query( $query ) ) {
+			return $join;
 		}
+
+		global $wpdb;
+
+		$join .= "LEFT JOIN ( 
+			SELECT
+				comment_post_ID,
+				MAX( comment_date ) AS last_comment_date
+			FROM
+				$wpdb->comments
+			WHERE
+				comment_approved = '1'
+			GROUP BY
+				comment_post_ID
+		) AS last_comment
+			ON last_comment.comment_post_ID = $wpdb->posts.ID
+		";
 
 		return $join;
 	}
@@ -59,5 +101,11 @@ class Orbis_OrderByComment {
 		}
 
 		return $orderby;
+	}
+
+	public function date_query_valid_columns( $valid_columns ) {
+		$valid_columns[] = 'last_comment_date';
+
+		return $valid_columns;
 	}
 }
