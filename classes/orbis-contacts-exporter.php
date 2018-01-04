@@ -43,7 +43,7 @@ class Orbis_ContactsExporter {
 	 * @return string
 	 */
 	public function post_limits( $limits, $query ) {
-		if ( in_array( $query->get( 'feed' ), array( 'csv', 'xls' ) ) ) {
+		if ( in_array( $query->get( 'feed' ), array( 'csv', 'xls' ), true ) ) {
 			$limits = '';
 		}
 
