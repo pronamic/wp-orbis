@@ -281,9 +281,10 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 	public function shortcode_list_pages(  $atts, $content, $tag ) {
 		$atts = shortcode_atts( array(
-			'child_of' => get_the_ID(),
-			'depth'    => 0,
-			'title_li' => null,
+			'child_of'  => get_the_ID(),
+			'depth'     => 0,
+			'post_type' => 'page',
+			'title_li'  => null,
 		), $atts, $tag );
 
 		$atts['echo'] = false;
