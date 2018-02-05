@@ -279,7 +279,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		return $roles;
 	}
 
-	public function shortcode_list_pages(  $atts, $content, $tag ) {
+	public function shortcode_list_pages( $atts, $content, $tag ) {
 		$atts = shortcode_atts( array(
 			'child_of'  => get_the_ID(),
 			'depth'     => 0,

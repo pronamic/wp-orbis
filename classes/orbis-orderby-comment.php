@@ -32,7 +32,7 @@ class Orbis_OrderByComment {
 		}
 
 		foreach ( $query->date_query->queries as $query ) {
-			if ( ! isset( $query['column' ] ) ) {
+			if ( ! isset( $query['column'] ) ) {
 				continue;
 			}
 
