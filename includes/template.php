@@ -60,6 +60,8 @@ if ( ! function_exists( 'orbis_time' ) ) {
 	 */
 	function orbis_time( $seconds, $format = 'HH:MM' ) {
 		// @see http://stackoverflow.com/a/3856312
+		$seconds = intval($seconds);
+
 		$hours   = floor( $seconds / 3600 );
 		$minutes = floor( ( $seconds - ( $hours * 3600 ) ) / 60 );
 		$seconds = floor( $seconds % 60 );
