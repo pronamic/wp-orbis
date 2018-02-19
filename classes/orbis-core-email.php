@@ -51,6 +51,17 @@ class Orbis_Core_Email {
 		);
 
 		add_settings_field(
+			'orbis_email_in_weekend', // id
+			__( 'Send in weekend', 'orbis' ), // title
+			array( $this, 'input_checkbox' ), // callback
+			'orbis', // page
+			'orbis_email', // section
+			array(
+				'label_for' => 'orbis_email_in_weekend',
+			) // args
+		);
+
+		add_settings_field(
 			'orbis_email_next_schedule', // id
 			__( 'Next Schedule', 'orbis' ), // title
 			array( $this, 'next_schedule' ), // callback
@@ -90,6 +101,7 @@ class Orbis_Core_Email {
 
 		register_setting( 'orbis', 'orbis_email_frequency' );
 		register_setting( 'orbis', 'orbis_email_time' );
+		register_setting( 'orbis', 'orbis_email_in_weekend' );
 		register_setting( 'orbis', 'orbis_email_subject' );
 		register_setting( 'orbis', 'orbis_email_subject_date_format' );
 	}
@@ -224,43 +236,46 @@ class Orbis_Core_Email {
 
 	public function maybe_email_manually() {
 		if ( filter_has_var( INPUT_POST, 'orbis_email_manually' ) ) {
-			$this->send_email();
+			$this->send_email( true );
 		}
 	}
 
 	/**
 	 * Sends an email containing this week's timesheets to all selected users.
 	 */
-	public function send_email() {
-		$user_ids = get_users( array(
-			'fields'     => 'ids',
-			'meta_key'   => '_orbis_user',
-			'meta_value' => 'true',
-		) );
+	public function send_email( $is_manual = false ) {
+		$send_in_weekend = get_option( 'orbis_email_in_weekend' );
+		if ( ( date('D') != 'Sat' && date('D') != 'Sun' ) || $is_manual || $send_in_weekend ) {
+			$user_ids = get_users( array(
+				'fields'     => 'ids',
+				'meta_key'   => '_orbis_user',
+				'meta_value' => 'true',
+			) );
 
-		global $orbis_email_title;
+			global $orbis_email_title;
 
-		$orbis_email_title = str_replace(
-			array(
-				'{date}',
-			),
-			array(
-				date_i18n( get_option( 'orbis_email_subject_date_format' ) ),
-			),
-			get_option( 'orbis_email_subject', __( 'Orbis Update', 'orbis' ) )
-		);
+			$orbis_email_title = str_replace(
+				array(
+					'{date}',
+				),
+				array(
+					date_i18n( get_option( 'orbis_email_subject_date_format' ) ),
+				),
+				get_option( 'orbis_email_subject', __( 'Orbis Update', 'orbis' ) )
+			);
 
-		$mail_subject = $orbis_email_title;
-		$mail_body    = $this->plugin->get_template( 'emails/update.php', false );
-		$mail_headers = array(
-			'From: ' . get_bloginfo( 'name' ) . ' <' . get_bloginfo( 'admin_email' ) . '>',
-			'Content-Type: text/html',
-		);
+			$mail_subject = $orbis_email_title;
+			$mail_body    = $this->plugin->get_template( 'emails/update.php', false );
+			$mail_headers = array(
+				'From: ' . get_bloginfo( 'name' ) . ' <' . get_bloginfo( 'admin_email' ) . '>',
+				'Content-Type: text/html',
+			);
 
-		foreach ( $user_ids as $user_id ) {
-			$mail_to = get_the_author_meta( 'user_email', $user_id );
+			foreach ( $user_ids as $user_id ) {
+				$mail_to = get_the_author_meta( 'user_email', $user_id );
 
-			wp_mail( $mail_to, $mail_subject, $mail_body, $mail_headers );
+				wp_mail( $mail_to, $mail_subject, $mail_body, $mail_headers );
+			}
 		}
 	}
 }
