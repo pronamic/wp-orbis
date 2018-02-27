@@ -63,3 +63,8 @@ table.orbis-plugins th {
 .orbis-admin-table thead{
   background: #f1f1f1;
 }
+
+.orbis-admin-table tfoot input:not([type="submit"]){
+  padding: 3px 5px !important;
+  margin: 1px !important;
+}
