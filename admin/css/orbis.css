@@ -56,15 +56,21 @@ table.orbis-plugins th {
 /**
  * Orbis admin
  */
+/*
+
 .orbis-admin-table {
-  background: #f9f9f9 !important;
+    width: 100%;
 }
 
-.orbis-admin-table thead{
-  background: #f1f1f1;
+.orbis-admin-table th {
+    font-size: 14px;
+
+    text-align: left;
 }
 
-.orbis-admin-table tfoot input:not([type="submit"]){
-  padding: 3px 5px !important;
-  margin: 1px !important;
+.orbis-admin-table th,
+.orbis-admin-table td {
+    padding: 2px 0;
+
+    vertical-align: middle;
 }
