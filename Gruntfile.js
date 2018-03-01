@@ -120,26 +120,26 @@ module.exports = function( grunt ) {
 				files: [
 					{ // AngularJS
 						expand: true,
-						cwd: 'bower_components/angular',
+						cwd: 'node_modules/angular',
 						src: [ 'angular-csp.css', 'angular.js', 'angular.min.js', 'angular.min.js.map' ],
 						dest: 'assets/angular'
 					},
 					{ // AngularJS jQuery UI Datepicker
 						expand: true,
-						cwd: 'bower_components/angular-ui-date/src',
+						cwd: 'node_modules/angular-ui-date/src',
 						src: [ 'date.js' ],
 						dest: 'assets/angular-ui-date'
 					},
 					{ // AngularJS ui-select
 						expand: true,
-						cwd: 'bower_components/angular-ui-select/dist',
+						cwd: 'node_modules/angular-ui-select/dist',
 						src: [ 'select.css', 'select.js' ],
 						dest: 'assets/angular-ui-select'
 					},
 					{ // Select2
 						expand: true,
-						cwd: 'bower_components/select2',
-						src: [ 'select2.js', 'select2.css', 'select2-bootstrap.css', 'select2-spinner.gif', 'select2.png', 'select2x2.png' ],
+						cwd: 'node_modules/select2/dist',
+						src: [ '**' ],
 						dest: 'assets/select2'
 					},
 				]
@@ -179,6 +179,12 @@ module.exports = function( grunt ) {
 
 		// Clean
 		clean: {
+			build: {
+				src: [
+					'assets'
+				]
+			},
+
 			deploy: {
 				src: [ 'deploy/latest' ]
 			},
@@ -281,5 +287,10 @@ module.exports = function( grunt ) {
 		'deploy',
 		'aws_s3:deploy',
 		'gitcheckout:develop'
+	] );
+
+	grunt.registerTask( 'assets', [
+		'clean',
+		'copy'
 	] );
 };
