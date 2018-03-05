@@ -88,6 +88,6 @@ if ( ! function_exists( 'orbis_time' ) ) {
 			$seconds,
 		);
 
-		return str_replace( $search, $replace, $format );	
+		return str_replace( $search, $replace, $format );
 	}
 }

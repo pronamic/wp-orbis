@@ -245,7 +245,7 @@ class Orbis_Core_Email {
 	 */
 	public function send_email( $is_manual = false ) {
 		$send_in_weekend = get_option( 'orbis_email_in_weekend' );
-		if ( ( date('D') != 'Sat' && date('D') != 'Sun' ) || $is_manual || $send_in_weekend ) {
+		if ( ( date( 'D' ) !== 'Sat' && date( 'D' ) !== 'Sun' ) || $is_manual || $send_in_weekend ) {
 			$user_ids = get_users( array(
 				'fields'     => 'ids',
 				'meta_key'   => '_orbis_user',
