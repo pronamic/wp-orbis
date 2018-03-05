@@ -68,17 +68,17 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		// Select2
 		wp_register_script(
 			'select2',
-			$this->plugin_url( 'assets/select2/select2.js' ),
+			$this->plugin_url( 'assets/select2/js/select2.full.js' ),
 			array( 'jquery' ),
-			'3.5.1',
+			'4.0.6-rc.1',
 			true
 		);
 
 		wp_register_style(
 			'select2',
-			$this->plugin_url( 'assets/select2/select2.css' ),
+			$this->plugin_url( 'assets/select2/css/select.css' ),
 			array(),
-			'3.5.1'
+			'4.0.6-rc.1'
 		);
 
 		// jQuery UI datepicker

@@ -39,24 +39,24 @@ jQuery( document ).ready( function( $ ) {
 
 	$( '.orbis-id-control' ).select2( {
         minimumInputLength: 2,
+        allowClear: true,
         initSelection: function ( element, callback ) {
             callback( { id: element.val(), text: element.data( 'text' ) } );
         },
         ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
             url: orbis.ajaxUrl,
             dataType: 'json',
-            data: function( term, page ) {
+            data: function( params ) {
                 return {
                 	action: wpAction( this ),
-					term: term
+					term: params.term
                 };
             },
-            results: function ( data, page ) { // parse the results into the format expected by Select2.
+            processResults: function ( data ) { // parse the results into the format expected by Select2.
                 // since we are using custom formatting functions we do not need to alter remote JSON data
                 return { results: data };
             }
         },
-        allowClear: true,
         formatNoMatches: formatNoMatches,
         formatInputTooShort: formatInputTooShort,
         formatSelectionTooBig: formatSelectionTooBig,
