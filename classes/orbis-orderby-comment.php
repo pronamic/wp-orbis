@@ -27,17 +27,19 @@ class Orbis_OrderByComment {
 			return false;
 		}
 
-		if ( ! is_array( $query->date_query->queries ) ) {
-			return false;
-		}
-
-		foreach ( $query->date_query->queries as $query ) {
-			if ( ! isset( $query['column'] ) ) {
-				continue;
+		if ( $query->date_query ) {
+			if ( ! is_array( $query->date_query->queries ) ) {
+				return false;
 			}
 
-			if ( 'last_comment_date' === $query['column'] ) {
-				return true;
+			foreach ( $query->date_query->queries as $query ) {
+				if ( ! isset( $query['column'] ) ) {
+					continue;
+				}
+
+				if ( 'last_comment_date' === $query['column'] ) {
+					return true;
+				}
 			}
 		}
 
