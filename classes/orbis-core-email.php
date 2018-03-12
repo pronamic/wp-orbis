@@ -248,8 +248,8 @@ class Orbis_Core_Email {
 		if ( ( date( 'D' ) !== 'Sat' && date( 'D' ) !== 'Sun' ) || $is_manual || $send_in_weekend ) {
 			$user_ids = get_users( array(
 				'fields'     => 'ids',
-				'meta_key'   => '_orbis_user',
-				'meta_value' => 'true',
+				'meta_key'   => '_orbis_user', // WPCS: slow query ok.
+				'meta_value' => 'true', // WPCS: slow query ok.
 			) );
 
 			global $orbis_email_title;

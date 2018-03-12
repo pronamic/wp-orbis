@@ -51,7 +51,7 @@ class Orbis_Contact {
 	}
 
 	public function get_address() {
-		$address = new Orbis_Address();
+		$address           = new Orbis_Address();
 		$address->address  = get_post_meta( $this->post->ID, '_orbis_address', true );
 		$address->postcode = get_post_meta( $this->post->ID, '_orbis_postcode', true );
 		$address->city     = get_post_meta( $this->post->ID, '_orbis_city', true );

@@ -2,7 +2,7 @@
 
 function orbis_create_initial_post_types() {
 	register_post_type(
-		'orbis_person' ,
+		'orbis_person',
 		array(
 			'label'         => __( 'Contacts', 'orbis' ),
 			'labels'        => array(

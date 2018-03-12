@@ -244,7 +244,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 				'orbis_company' => orbis_post_type_capabilities( true, array() ),
 				'orbis_project' => orbis_post_type_capabilities( true, array() ),
 			),
-			'administrator' => array(
+			'administrator'       => array(
 				'orbis_company' => orbis_post_type_capabilities( true, array(
 					'delete_post' => false,
 				) ),
@@ -252,7 +252,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 					'delete_post' => false,
 				) ),
 			),
-			'editor' => array(
+			'editor'              => array(
 				'orbis_company' => orbis_post_type_capabilities( false, array(
 					'read_post' => true,
 				) ),
@@ -260,7 +260,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 					'read_post' => true,
 				) ),
 			),
-			'employee' => array(
+			'employee'            => array(
 				'orbis_company' => orbis_post_type_capabilities( false, array(
 					'read_post' => true,
 				) ),

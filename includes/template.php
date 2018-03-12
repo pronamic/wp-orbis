@@ -18,7 +18,7 @@ if ( ! function_exists( 'orbis_price' ) ) {
 		$currency_symbol = '';
 
 		switch ( $currency_code ) {
-			case 'EUR' :
+			case 'EUR':
 				$currency_symbol = '€';
 
 				break;
@@ -70,7 +70,7 @@ if ( ! function_exists( 'orbis_time' ) ) {
 		$minutes = floor( ( $seconds - ( $hours * 3600 ) ) / 60 );
 		$seconds = floor( $seconds % 60 );
 
-		$search  = array(
+		$search = array(
 			'HH',
 			'H',
 			'MM',

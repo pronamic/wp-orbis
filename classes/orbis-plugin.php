@@ -98,11 +98,11 @@ class Orbis_Plugin {
 		// Delete the redirect transient
 		delete_transient( '_orbis_activation_redirect' );
 
-		if ( is_network_admin() || isset( $_GET['activate-multi'] ) || defined( 'IFRAME_REQUEST' ) ) {
+		if ( is_network_admin() || isset( $_GET['activate-multi'] ) || defined( 'IFRAME_REQUEST' ) ) { // WPCS: CSRF ok.
 			return;
 		}
 
-		if ( ( isset( $_GET['action'] ) && 'upgrade-plugin' === $_GET['action'] ) && ( isset( $_GET['plugin'] ) && strstr( $_GET['plugin'], 'orbis' ) ) ) {
+		if ( ( isset( $_GET['action'] ) && 'upgrade-plugin' === $_GET['action'] ) && ( isset( $_GET['plugin'] ) && strstr( $_GET['plugin'], 'orbis' ) ) ) { // WPCS: CSRF ok.
 			return;
 		}
 
@@ -184,7 +184,7 @@ class Orbis_Plugin {
 
 	public function locate_template( $template_name ) {
 		$template = locate_template( array(
-			$template_name
+			$template_name,
 		) );
 
 		if ( ! $template ) {

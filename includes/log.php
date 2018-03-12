@@ -60,7 +60,7 @@ class Orbis_Log_Widget extends WP_Widget {
 		parent::__construct( 'orbis-log', __( 'Orbis Log', 'orbis' ) );
 	}
 
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		$defaults = array(
 			'before_widget' => '',
 			'after_widget'  => '',
@@ -104,7 +104,7 @@ class Orbis_Log_Widget extends WP_Widget {
 		// @codingStandardsIgnoreEnd
 	}
 
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
 		$instance['title'] = $new_instance['title'];
@@ -112,7 +112,7 @@ class Orbis_Log_Widget extends WP_Widget {
 		return $instance;
 	}
 
-	function form( $instance ) {
+	public function form( $instance ) {
 		$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 
 		?>

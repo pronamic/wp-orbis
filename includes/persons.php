@@ -24,7 +24,7 @@ function orbis_persons_suggest_person_id() {
 
 	$data = $wpdb->get_results( $query ); // unprepared SQL
 
-	echo json_encode( $data );
+	echo wp_json_encode( $data );
 
 	die();
 }

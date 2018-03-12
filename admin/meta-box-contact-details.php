@@ -11,10 +11,10 @@ $title        = get_post_meta( $post->ID, '_orbis_title', true );
 $organization = get_post_meta( $post->ID, '_orbis_organization', true );
 $department   = get_post_meta( $post->ID, '_orbis_department', true );
 
-$address    = get_post_meta( $post->ID, '_orbis_address', true );
-$postcode   = get_post_meta( $post->ID, '_orbis_postcode', true );
-$city       = get_post_meta( $post->ID, '_orbis_city', true );
-$country    = get_post_meta( $post->ID, '_orbis_country', true );
+$address  = get_post_meta( $post->ID, '_orbis_address', true );
+$postcode = get_post_meta( $post->ID, '_orbis_postcode', true );
+$city     = get_post_meta( $post->ID, '_orbis_city', true );
+$country  = get_post_meta( $post->ID, '_orbis_country', true );
 
 $birth_date = get_post_meta( $post->ID, '_orbis_birth_date_string', true );
 

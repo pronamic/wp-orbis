@@ -39,13 +39,17 @@ $sections = array(
 
 		$transient = 'orbis_email_update_' . $post_type;
 
+		// @codingStandardsIgnoreStart
 		if ( false === ( $query = get_transient( $transient ) ) ) {
+			// @codingStandardsIgnoreEnd
 			$query = new WP_Query( wp_parse_args( array( 'post_type' => $post_type ), $defaults ) );
 
 			set_transient( $transient, $query, 1 * HOUR_IN_SECONDS );
 		}
 
-		if ( $query->have_posts() ) : ?>
+		if ( $query->have_posts() ) :
+
+		?>
 
 			<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
 				<thead>
@@ -72,7 +76,10 @@ $sections = array(
 
 				<tbody>
 
-					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+					<?php
+					while ( $query->have_posts() ) :
+						$query->the_post();
+					?>
 
 						<tr>
 							<td>

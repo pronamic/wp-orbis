@@ -48,7 +48,7 @@ function orbis_register_table( $key, $name = false, $prefix = false ) {
 	$prefix = defined( 'ORBIS_TABLE_PREFIX' ) ? ORBIS_TABLE_PREFIX : $wpdb->prefix;
 
 	$wpdb->tables[] = $name;
-	$wpdb->$key = $prefix . $name;
+	$wpdb->$key     = $prefix . $name;
 }
 
 /**

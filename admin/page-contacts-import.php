@@ -13,7 +13,9 @@ $csv_row_1 = array();
 $csv_row_2 = array();
 
 if ( is_readable( $file ) ) {
+	// @codingStandardsIgnoreStart
 	$handle = fopen( $file, 'r' );
+	// @codingStandardsIgnoreEnd
 
 	$csv_row_1 = str_getcsv( fgets( $handle ) );
 	$csv_row_2 = str_getcsv( fgets( $handle ) );
@@ -65,20 +67,20 @@ if ( empty( $map ) ) {
 		<?php
 
 		switch ( $step ) {
-			case 'import' :
+			case 'import':
 				include 'contacts-import.php';
 
 				break;
-			case 'confirm' :
+			case 'confirm':
 				include 'contacts-import-confirm.php';
 
 				break;
-			case 'map' :
+			case 'map':
 				include 'contacts-import-map.php';
 
 				break;
-			case 'upload' :
-			default :
+			case 'upload':
+			default:
 				include 'contacts-import-upload.php';
 
 				break;

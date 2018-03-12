@@ -14,8 +14,8 @@ function orbis_flot( $element_id, $data, $options ) {
 	printf(
 		'<script type="text/javascript">jQuery.plot("#%s", %s, %s);</script>',
 		$element_id,
-		json_encode( $data ),
-		json_encode( $options )
+		wp_json_encode( $data ),
+		wp_json_encode( $options )
 	);
 }
 

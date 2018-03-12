@@ -129,7 +129,7 @@ class Orbis_Core_ContactsImporter {
 				'step'          => 'map',
 			) );
 
-			wp_redirect( $url );
+			wp_safe_redirect( $url );
 
 			exit;
 		}
@@ -159,7 +159,7 @@ class Orbis_Core_ContactsImporter {
 			'step'          => 'confirm',
 		) );
 
-		wp_redirect( $url );
+		wp_safe_redirect( $url );
 
 		exit;
 	}
@@ -197,7 +197,7 @@ class Orbis_Core_ContactsImporter {
 			}
 
 			if ( isset( $tax_input[ $key ] ) ) {
-				$result = term_exists( $value, $key );
+				$result = wpcom_vip_term_exists( $value, $key );
 
 				if ( ! is_array( $result ) ) {
 					$result = wp_insert_term( $value, $key );
@@ -246,7 +246,7 @@ class Orbis_Core_ContactsImporter {
 			'attachment_id' => filter_input( INPUT_POST, 'attachment_id', FILTER_SANITIZE_STRING ),
 		) );
 
-		wp_redirect( $url );
+		wp_safe_redirect( $url );
 
 		exit;
 	}
@@ -271,7 +271,9 @@ class Orbis_Core_ContactsImporter {
 		// Results
 		$results = $this->get_export();
 
+		// @codingStandardsIgnoreStart
 		$resource = fopen( 'php://output', 'w' );
+		// @codingStandardsIgnoreEnd
 
 		// Header
 		$header = array(

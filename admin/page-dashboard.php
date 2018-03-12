@@ -16,12 +16,18 @@
 								'posts_per_page' => 5,
 							) );
 
-							if ( $query->have_posts() ) : ?>
+							if ( $query->have_posts() ) :
+							?>
 
 								<div id="dashboard_recent_drafts">
 									<ul>
 
-										<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+										<?php
+
+										while ( $query->have_posts() ) :
+											$query->the_post();
+
+										?>
 
 											<li>
 												<h4>

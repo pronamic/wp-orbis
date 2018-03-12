@@ -37,15 +37,9 @@ jQuery( document ).ready( function( $ ) {
 
 	$( '.select2' ).select2();
 
-	var defaultValue   = $( '.orbis-id-control option[id="orbis_select2_default"]' ).text();
-	var defaultValueID = $( '.orbis-id-control option[id="orbis_select2_default"]' ).val();
-
 	$( '.orbis-id-control' ).select2( {
         minimumInputLength: 2,
         allowClear: true,
-        initSelection: function ( element, callback ) {
-            callback( { id: element.val(), text: element.data( 'text' ) } );
-        },
         ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
             url: orbis.ajaxUrl,
             dataType: 'json',
@@ -59,10 +53,6 @@ jQuery( document ).ready( function( $ ) {
                 // since we are using custom formatting functions we do not need to alter remote JSON data
                 return { results: data };
             }
-        },
-        placeholder:{
-        	id: defaultValueID,
-        	text: defaultValue
         },
         formatNoMatches: formatNoMatches,
         formatInputTooShort: formatInputTooShort,
