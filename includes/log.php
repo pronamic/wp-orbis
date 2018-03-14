@@ -72,7 +72,6 @@ class Orbis_Log_Widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
-		// @codingStandardsIgnoreStart
 		echo $args['before_widget'];
 
 		if ( ! empty( $title ) ) {
@@ -101,7 +100,6 @@ class Orbis_Log_Widget extends WP_Widget {
 		<?php
 
 		echo $args['after_widget'];
-		// @codingStandardsIgnoreEnd
 	}
 
 	public function update( $new_instance, $old_instance ) {

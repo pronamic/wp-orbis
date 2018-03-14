@@ -13,9 +13,7 @@ $csv_row_1 = array();
 $csv_row_2 = array();
 
 if ( is_readable( $file ) ) {
-	// @codingStandardsIgnoreStart
-	$handle = fopen( $file, 'r' );
-	// @codingStandardsIgnoreEnd
+	$handle = fopen( $file, 'r' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fopen
 
 	$csv_row_1 = str_getcsv( fgets( $handle ) );
 	$csv_row_2 = str_getcsv( fgets( $handle ) );

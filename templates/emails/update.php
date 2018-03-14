@@ -39,9 +39,7 @@ $sections = array(
 
 		$transient = 'orbis_email_update_' . $post_type;
 
-		// @codingStandardsIgnoreStart
-		if ( false === ( $query = get_transient( $transient ) ) ) {
-			// @codingStandardsIgnoreEnd
+		if ( false === ( get_transient( $transient ) ) ) {
 			$query = new WP_Query( wp_parse_args( array( 'post_type' => $post_type ), $defaults ) );
 
 			set_transient( $transient, $query, 1 * HOUR_IN_SECONDS );

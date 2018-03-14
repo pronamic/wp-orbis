@@ -140,9 +140,7 @@ class Orbis_Plugin {
 	 * @param array  $args (optional, defaults to an empty array)
 	 */
 	public function plugin_include( $path, $args = array() ) {
-		// @codingStandardsIgnoreStart
-		extract( $args );
-		// @codingStandardsIgnoreEnd
+		extract( $args ); // phpcs:ignore WordPress.Functions.DontExtract.extract_extract
 
 		include $this->dir_path . '/' . $path;
 	}
@@ -201,9 +199,7 @@ class Orbis_Plugin {
 
 		$located = $this->locate_template( $template_name );
 
-		// @codingStandardsIgnoreStart
-		extract( $args );
-		// @codingStandardsIgnoreEnd
+		extract( $args ); // phpcs:ignore WordPress.Functions.DontExtract.extract_extract
 
 		include $located;
 

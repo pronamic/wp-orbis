@@ -271,9 +271,7 @@ class Orbis_Core_ContactsImporter {
 		// Results
 		$results = $this->get_export();
 
-		// @codingStandardsIgnoreStart
-		$resource = fopen( 'php://output', 'w' );
-		// @codingStandardsIgnoreEnd
+		$resource = fopen( 'php://output', 'w' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fopen
 
 		// Header
 		$header = array(

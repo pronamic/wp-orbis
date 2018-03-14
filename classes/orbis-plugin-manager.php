@@ -206,6 +206,7 @@ require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 // @codingStandardsIgnoreStart
 class Orbis_Empty_Upgrader_Skin extends WP_Upgrader_Skin {
 	// @codingStandardsIgnoreEnd
+	// Ignoring Generic.Files.OneClassPerFile.MultipleFound
 	/**
 	 *
 	 * @var WP_Error

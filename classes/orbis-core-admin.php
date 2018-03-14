@@ -111,9 +111,7 @@ class Orbis_Core_Admin {
 		 */
 		global $menu;
 
-		// @codingStandardsIgnoreStart
-		$menu['54.orbis.1'] = array( '', 'read', 'separator-orbis', '', 'wp-menu-separator orbis' );
-		// @codingStandardsIgnoreEnd
+		$menu['54.orbis.1'] = array( '', 'read', 'separator-orbis', '', 'wp-menu-separator orbis' ); // WPCS: override ok.
 
 		add_menu_page(
 			__( 'Orbis', 'orbis' ), // page_title
@@ -124,6 +122,7 @@ class Orbis_Core_Admin {
 			// @codingStandardsIgnoreStart
 			'data:image/svg+xml;base64,' . base64_encode( file_get_contents( plugin_dir_path( $this->plugin->file ) . 'images/orbis-icon-menu.svg' ) ), // icon_url
 			// @codingStandardsIgnoreEnd
+			// phpcs recommends WP_Filesystem instead of file_get_contents(). This is needlessly complex and not necessary.
 			'54.orbis.2'
 		);
 

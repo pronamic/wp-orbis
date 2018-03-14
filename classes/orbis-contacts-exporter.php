@@ -84,9 +84,7 @@ class Orbis_ContactsExporter {
 		header( 'Content-Disposition: attachment; filename=' . $filename );
 
 		// Results
-		// @codingStandardsIgnoreStart
-		$resource = fopen( 'php://output', 'w' );
-		// @codingStandardsIgnoreEnd
+		$resource = fopen( 'php://output', 'w' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fopen
 
 		// Header
 		$header = array(
