@@ -56,6 +56,10 @@ table.orbis-plugins th {
 /**
  * Orbis admin
  */
+.horizontal-scrollable {
+    overflow-x: auto;
+    white-space: nowrap;
+}
 
 .orbis-admin-table {
     width: 100%;
