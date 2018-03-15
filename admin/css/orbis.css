@@ -56,7 +56,7 @@ table.orbis-plugins th {
 /**
  * Orbis admin
  */
-.horizontal-scrollable {
+.orbis-table-responsive {
     overflow-x: auto;
     white-space: nowrap;
 }
