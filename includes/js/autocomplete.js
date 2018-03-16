@@ -63,5 +63,5 @@ jQuery( document ).ready( function( $ ) {
         selectOnClose: true
 	} );
 
-	$( '.select-form-control:first' ).select2( 'open' );
+	$( '.select-form-control:first' ).select2( 'focus' );
 } );
