@@ -35,7 +35,7 @@ jQuery( document ).ready( function( $ ) {
 		}
 	};
 
-	$( '.select2' ).select2();
+	$( '.select2' ).select2({ width: '100%' });
 
 	$( '.orbis-id-control' ).select2( {
         minimumInputLength: 2,
@@ -58,6 +58,7 @@ jQuery( document ).ready( function( $ ) {
         formatInputTooShort: formatInputTooShort,
         formatSelectionTooBig: formatSelectionTooBig,
         formatLoadMore: formatLoadMore,
-        formatSearching: formatSearching
+        formatSearching: formatSearching,
+        width: '100%'
 	} );
 } );
