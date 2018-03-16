@@ -62,4 +62,6 @@ jQuery( document ).ready( function( $ ) {
         width: '100%',
         selectOnClose: true
 	} );
+
+	$( '.select-form-control:first' ).select2( 'open' );
 } );

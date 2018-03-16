@@ -104,7 +104,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'orbis-autocomplete',
 			$this->plugin_url( 'includes/js/autocomplete.js' ),
 			array( 'jquery', 'jquery-ui-autocomplete', 'select2', 'orbis' ),
-			'1.0.2',
+			'1.0.3',
 			true
 		);
 
