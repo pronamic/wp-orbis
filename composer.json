@@ -39,9 +39,9 @@
 	},
 	"require": {
 		"php": "^5.5",
-		"sabre/vobject": "^4.1",
 		"phpoffice/phpexcel": "^1.8",
-		"tecnickcom/tcpdf": "^6.2"
+		"tecnickcom/tcpdf": "^6.2",
+		"sabre/vobject": "^4.1"
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "^3.2",
