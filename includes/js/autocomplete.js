@@ -59,6 +59,7 @@ jQuery( document ).ready( function( $ ) {
         formatSelectionTooBig: formatSelectionTooBig,
         formatLoadMore: formatLoadMore,
         formatSearching: formatSearching,
-        width: '100%'
+        width: '100%',
+        selectOnClose: true
 	} );
 } );
