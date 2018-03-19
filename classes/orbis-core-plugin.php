@@ -65,20 +65,52 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	 * Register scripts
 	 */
 	public function register_scripts() {
+		$dir = plugin_dir_path( $this->file );
+		$uri = plugin_dir_url( $this->file );
+
 		// Select2
+		$select2_version = '4.0.6-rc.1';
+
 		wp_register_script(
 			'select2',
 			$this->plugin_url( 'assets/select2/js/select2.full.js' ),
-			array( 'jquery' ),
-			'4.0.6-rc.1',
+			array(
+				'jquery',
+			),
+			$select2_version,
 			true
 		);
+
+		$names = array(
+			// 'nl-NL'
+			str_replace( '_', '-', get_locale() ),
+			// 'nl'
+			substr( get_locale(), 0, 2 ),
+		);
+
+		foreach ( $names as $name ) {
+			$path = '/assets/select2/js/i18n/' . $name . '.js';
+
+			if ( is_readable( $dir . $path ) ) {
+				wp_register_script(
+					'select2-i18n',
+					$uri . $path,
+					array(
+						'select2',
+					),
+					$select2_version,
+					true
+				);
+
+				break;
+			}
+		}
 
 		wp_register_style(
 			'select2',
 			$this->plugin_url( 'assets/select2/css/select.css' ),
 			array(),
-			'4.0.6-rc.1'
+			$select2_version
 		);
 
 		// jQuery UI datepicker
@@ -125,6 +157,12 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	 */
 	public function enqueue_scripts() {
 		$this->enqueue_jquery_datepicker();
+
+		// Select2
+		wp_enqueue_style( 'select2' );
+
+		wp_enqueue_script( 'select2' );
+		wp_enqueue_script( 'select2-i18n' );
 
 		// Orbis
 		wp_enqueue_script( 'orbis' );
