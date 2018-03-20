@@ -89,6 +89,7 @@ jQuery( document ).ready( function( $ ) {
 			}
 
 			this.dropdown.$search.val( e.key );
+
 			this.open();
 		} );
 	} );
