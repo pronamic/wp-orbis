@@ -66,6 +66,30 @@ jQuery( document ).ready( function( $ ) {
         selectOnClose: true
 	} );
 
-	$( '.select-form-control:first' ).select2( 'focus' );
-	
+	/**
+	 * Auto open Select2 on keypress.
+	 *
+	 * @see https://github.com/select2/select2/issues/3279#issuecomment-366828094
+	 * @see https://github.com/select2/select2/blob/4.0.6-rc.1/dist/js/select2.full.js#L5465-L5499
+	 */
+	$( '[data-select2-id]' ).each( function() {
+		var select2 = $( this ).data( 'select2' );
+
+		if ( ! select2 ) {
+			return;
+		}
+
+		select2.on( 'keypress', function( e ) {
+			if ( this.isOpen() ) {
+				return;
+			}
+
+			if ( e.which < 48 || e.which > 90 ) {
+				return;
+			}
+
+			this.dropdown.$search.val( e.key );
+			this.open();
+		} );
+	} );
 } );
