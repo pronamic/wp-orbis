@@ -41,31 +41,56 @@ jQuery( document ).ready( function( $ ) {
 	} );
 
 	$( '.orbis-id-control' ).select2( {
-        minimumInputLength: 2,
-        allowClear: true,
-        ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-            url: orbis.ajaxUrl,
-            dataType: 'json',
-            data: function( params ) {
-                return {
-                	action: wpAction( this ),
+		minimumInputLength: 2,
+		allowClear: true,
+		ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
+			url: orbis.ajaxUrl,
+			dataType: 'json',
+			data: function( params ) {
+				return {
+					action: wpAction( this ),
 					term: params.term
-                };
-            },
-            processResults: function ( data ) { // parse the results into the format expected by Select2.
-                // since we are using custom formatting functions we do not need to alter remote JSON data
-                return { results: data };
-            }
-        },
-        formatNoMatches: formatNoMatches,
-        formatInputTooShort: formatInputTooShort,
-        formatSelectionTooBig: formatSelectionTooBig,
-        formatLoadMore: formatLoadMore,
-        formatSearching: formatSearching,
-        width: '100%',
-        selectOnClose: true
+				};
+			},
+			processResults: function ( data ) { // parse the results into the format expected by Select2.
+				// since we are using custom formatting functions we do not need to alter remote JSON data
+				return { results: data };
+			}
+		},
+		formatNoMatches: formatNoMatches,
+		formatInputTooShort: formatInputTooShort,
+		formatSelectionTooBig: formatSelectionTooBig,
+		formatLoadMore: formatLoadMore,
+		formatSearching: formatSearching,
+		width: '100%',
+		selectOnClose: true
 	} );
 
-	$( '.select-form-control:first' ).select2( 'focus' );
-	
+	/**
+	 * Auto open Select2 on keypress.
+	 *
+	 * @see https://github.com/select2/select2/issues/3279#issuecomment-366828094
+	 * @see https://github.com/select2/select2/blob/4.0.6-rc.1/dist/js/select2.full.js#L5465-L5499
+	 */
+	$( '[data-select2-id]' ).each( function() {
+		var select2 = $( this ).data( 'select2' );
+
+		if ( ! select2 ) {
+			return;
+		}
+
+		select2.on( 'keypress', function( e ) {
+			if ( this.isOpen() ) {
+				return;
+			}
+
+			if ( e.which < 48 || e.which > 90 ) {
+				return;
+			}
+
+			this.dropdown.$search.val( e.key );
+
+			this.open();
+		} );
+	} );
 } );
