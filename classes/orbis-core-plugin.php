@@ -33,6 +33,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		// Other
 		new Orbis_OrderByComment();
 		new Orbis_PostcodeFilter();
+		new Orbis_OrderByActiveSubscriptions();
 
 		// Shortcodes
 		add_shortcode( 'orbis_list_pages', array( $this, 'shortcode_list_pages' ) );
