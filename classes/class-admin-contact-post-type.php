@@ -71,7 +71,7 @@ class Orbis_Contacts_AdminContactPostType {
 			'_orbis_title'                => FILTER_SANITIZE_STRING,
 			'_orbis_organization'         => FILTER_SANITIZE_STRING,
 			'_orbis_department'           => FILTER_SANITIZE_STRING,
-			'_orbis_person_email_address' => FILTER_VALIDATE_EMAIL,
+			'_orbis_email'                => FILTER_VALIDATE_EMAIL,
 			'_orbis_person_phone_number'  => FILTER_SANITIZE_STRING,
 			'_orbis_person_mobile_number' => FILTER_SANITIZE_STRING,
 			'_orbis_address'              => FILTER_SANITIZE_STRING,
@@ -79,9 +79,10 @@ class Orbis_Contacts_AdminContactPostType {
 			'_orbis_city'                 => FILTER_SANITIZE_STRING,
 			'_orbis_country'              => FILTER_SANITIZE_STRING,
 			'_orbis_birth_date_string'    => FILTER_SANITIZE_STRING,
-			'_orbis_person_twitter'       => FILTER_SANITIZE_STRING,
-			'_orbis_person_facebook'      => FILTER_SANITIZE_STRING,
-			'_orbis_person_linkedin'      => FILTER_SANITIZE_STRING,
+			'_orbis_iban_number'          => FILTER_SANITIZE_STRING,
+			'_orbis_twitter'              => FILTER_SANITIZE_STRING,
+			'_orbis_facebook'             => FILTER_SANITIZE_STRING,
+			'_orbis_linkedin'             => FILTER_SANITIZE_STRING,
 		);
 
 		$data = filter_input_array( INPUT_POST, $definition );

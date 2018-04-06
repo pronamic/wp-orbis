@@ -261,7 +261,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 				WHERE meta_key = %s
 			";
 
-		$replace_values = array{
+		$replace_values = array(
 			'_orbis_person_twitter'       => '_orbis_twitter',
 			'_orbis_person_facebook'      => '_orbis_facebook',
 			'_orbis_person_linkedin'      => '_orbis_linkedin',
@@ -274,7 +274,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'_orbis_company_postcode'     => '_orbis_postcode',
 			'_orbis_company_city'         => '_orbis_city',
 			'_orbis_company_country'      => '_orbis_country',
-		}
+		);
 
 		foreach ( $replace_values as $old => $new ) {
 			$wpdb->query(
