@@ -278,8 +278,11 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		foreach ( $replace_values as $old => $new ) {
 			$wpdb->query(
-				$wpdb->prepare(
-					$replace_query,
+				$wpdb->prepare( "
+					UPDATE $wpdb->postmeta
+						SET meta_key = %s
+						WHERE meta_key = %s
+					",
 					$new,
 					$old
 				)
