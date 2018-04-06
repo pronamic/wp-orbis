@@ -18,9 +18,9 @@ $country  = get_post_meta( $post->ID, '_orbis_country', true );
 
 $birth_date = get_post_meta( $post->ID, '_orbis_birth_date_string', true );
 
-$person_twitter  = get_post_meta( $post->ID, '_orbis_person_twitter', true );
-$person_facebook = get_post_meta( $post->ID, '_orbis_person_facebook', true );
-$person_linkedin = get_post_meta( $post->ID, '_orbis_person_linkedin', true );
+$person_twitter  = get_post_meta( $post->ID, '_orbis_twitter', true );
+$person_facebook = get_post_meta( $post->ID, '_orbis_facebook', true );
+$person_linkedin = get_post_meta( $post->ID, '_orbis_linkedin', true );
 
 wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonce' );
 
@@ -115,18 +115,18 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_person_twitter"><?php _e( 'Twitter Username', 'orbis' ); ?></label>
+				<label for="orbis_twitter"><?php _e( 'Twitter Username', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input type="text" id="orbis_person_twitter" name="_orbis_person_twitter" value="<?php echo esc_attr( $person_twitter ); ?>" class="regular-text" />
+				<input type="text" id="orbis_twitter" name="_orbis_twitter" value="<?php echo esc_attr( $person_twitter ); ?>" class="regular-text" />
 			</td>
 		</tr>
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_person_facebook"><?php _e( 'Facebook URL', 'orbis' ); ?></label>
+				<label for="orbis_facebook"><?php _e( 'Facebook URL', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input type="text" id="orbis_person_facebook" name="_orbis_person_facebook" value="<?php echo esc_attr( $person_facebook ); ?>" class="regular-text" />
+				<input type="text" id="orbis_facebook" name="_orbis_facebook" value="<?php echo esc_attr( $person_facebook ); ?>" class="regular-text" />
 			</td>
 		</tr>
 		<tr valign="top">
@@ -134,7 +134,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 				<label for="orbis_person_linkedin"><?php _e( 'LinkedIn URL', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input type="text" id="orbis_person_linkedin" name="_orbis_person_linkedin" value="<?php echo esc_attr( $person_linkedin ); ?>" class="regular-text" />
+				<input type="text" id="orbis_linkedin" name="_orbis_linkedin" value="<?php echo esc_attr( $person_linkedin ); ?>" class="regular-text" />
 			</td>
 		</tr>
 	</tbody>

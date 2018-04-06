@@ -5,7 +5,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		parent::__construct( $file );
 
 		$this->set_name( 'orbis' );
-		$this->set_db_version( '1.3.0' );
+		$this->set_db_version( '1.3.3' );
 
 		// Actions
 		add_action( 'init', array( $this, 'init' ) );
@@ -252,6 +252,36 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$roles = $this->get_roles();
 
 		$this->update_roles( $roles );
+
+		global $wpdb;
+
+		$replace_query = "
+			UPDATE $wpdb->postmeta
+				SET meta_key = %s
+				WHERE meta_key = %s
+			";
+
+		$replace_values = array{
+			'_orbis_person_twitter'       => '_orbis_twitter',
+			'_orbis_person_facebook'      => '_orbis_facebook',
+			'_orbis_person_linkedin'      => '_orbis_linkedin',
+			'_orbis_person_email_address' => '_orbis_email',
+			'_orbis_company_twitter'      => '_orbis_twitter',
+			'_orbis_company_facebook'     => '_orbis_facebook',
+			'_orbis_company_linkedin'     => '_orbis_linkedin',
+			'_orbis_company_email'        => '_orbis_email',
+			'_orbis_company_address'      => '_orbis_address',
+		}
+
+		foreach ( $replace_values as $old => $new ) {
+			$wpdb->query(
+				$wpdb->prepare(
+					$replace_query,
+					$new,
+					$old
+				)
+			);
+		}
 
 		// Install
 		parent::install();
