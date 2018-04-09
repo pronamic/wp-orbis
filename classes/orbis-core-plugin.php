@@ -253,6 +253,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		$this->update_roles( $roles );
 
+		// Replace old meta values
 		global $wpdb;
 
 		$replace_query = "
@@ -276,15 +277,15 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'_orbis_company_country'      => '_orbis_country',
 		);
 
-		foreach ( $replace_values as $old => $new ) {
+		foreach ( $replace_values as $old_key => $new_key ) {
 			$wpdb->query(
 				$wpdb->prepare( "
 					UPDATE $wpdb->postmeta
 						SET meta_key = %s
 						WHERE meta_key = %s
 					",
-					$new,
-					$old
+					$new_key,
+					$old_key
 				)
 			);
 		}
