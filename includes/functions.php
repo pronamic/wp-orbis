@@ -77,3 +77,12 @@ function orbis_install_table( $key, $columns ) {
 
 	dbDelta( "CREATE TABLE $full_table_name ( $columns ) $table_options" );
 }
+
+/**
+ * Check for weekend
+*/
+function orbis_is_weekend() {
+	$day = date( 'l' );
+
+	return in_array( $day, array( 'Saturday', 'Sunday' ), true );
+}
