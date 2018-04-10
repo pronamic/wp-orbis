@@ -275,6 +275,9 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'_orbis_company_postcode'     => '_orbis_postcode',
 			'_orbis_company_city'         => '_orbis_city',
 			'_orbis_company_country'      => '_orbis_country',
+			'_orbis_company_kvk_number'   => '_orbis_kvk_number',
+			'_orbis_company_vat_number'   => '_orbis_vat_number',
+			'_orbis_company_website'      => '_orbis_website',
 		);
 
 		foreach ( $replace_values as $old_key => $new_key ) {

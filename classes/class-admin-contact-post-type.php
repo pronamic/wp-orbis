@@ -79,7 +79,7 @@ class Orbis_Contacts_AdminContactPostType {
 			'_orbis_city'                 => FILTER_SANITIZE_STRING,
 			'_orbis_country'              => FILTER_SANITIZE_STRING,
 			'_orbis_birth_date_string'    => FILTER_SANITIZE_STRING,
-			'_orbis_iban_number'          => FILTER_SANITIZE_STRING,
+			'_orbis_iban'                 => FILTER_SANITIZE_STRING,
 			'_orbis_twitter'              => FILTER_SANITIZE_STRING,
 			'_orbis_facebook'             => FILTER_SANITIZE_STRING,
 			'_orbis_linkedin'             => FILTER_SANITIZE_STRING,

@@ -17,7 +17,7 @@ $city     = get_post_meta( $post->ID, '_orbis_city', true );
 $country  = get_post_meta( $post->ID, '_orbis_country', true );
 
 $birth_date  = get_post_meta( $post->ID, '_orbis_birth_date_string', true );
-$iban_number = get_post_meta( $post->ID, '_orbis_iban_number', true );
+$iban        = get_post_meta( $post->ID, '_orbis_iban', true );
 
 $person_twitter  = get_post_meta( $post->ID, '_orbis_twitter', true );
 $person_facebook = get_post_meta( $post->ID, '_orbis_facebook', true );
@@ -116,10 +116,10 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_iban_number"><?php _e( 'IBAN Number', 'orbis' ); ?></label>
+				<label for="orbis_iban"><?php _e( 'IBAN Number', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input type="text" id="orbis_iban_number" name="_orbis_iban_number" value="<?php echo esc_attr( $iban_number ); ?>" class="regular-text" />
+				<input type="text" id="orbis_iban" name="_orbis_iban" value="<?php echo esc_attr( $iban ); ?>" class="regular-text" />
 			</td>
 		</tr>
 
