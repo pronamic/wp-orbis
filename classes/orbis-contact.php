@@ -39,7 +39,7 @@ class Orbis_Contact {
 	}
 
 	public function get_email() {
-		return get_post_meta( $this->post->ID, '_orbis_person_email_address', true );
+		return get_post_meta( $this->post->ID, '_orbis_email', true );
 	}
 
 	public function get_gender() {

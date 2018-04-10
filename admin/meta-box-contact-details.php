@@ -67,10 +67,10 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_person_email_address"><?php _e( 'Email Address', 'orbis' ); ?></label>
+				<label for="orbis_email"><?php _e( 'Email Address', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input type="text" id="orbis_person_email_address" name="_orbis_person_email_address" value="<?php echo esc_attr( $contact->get_email() ); ?>" class="regular-text" />
+				<input type="text" id="orbis_email" name="_orbis_email" value="<?php echo esc_attr( $contact->get_email() ); ?>" class="regular-text" />
 			</td>
 		</tr>
 
