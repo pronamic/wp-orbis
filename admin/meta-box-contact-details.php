@@ -16,8 +16,8 @@ $postcode = get_post_meta( $post->ID, '_orbis_postcode', true );
 $city     = get_post_meta( $post->ID, '_orbis_city', true );
 $country  = get_post_meta( $post->ID, '_orbis_country', true );
 
-$birth_date  = get_post_meta( $post->ID, '_orbis_birth_date_string', true );
-$iban        = get_post_meta( $post->ID, '_orbis_iban', true );
+$birth_date = get_post_meta( $post->ID, '_orbis_birth_date_string', true );
+$iban       = get_post_meta( $post->ID, '_orbis_iban', true );
 
 $person_twitter  = get_post_meta( $post->ID, '_orbis_twitter', true );
 $person_facebook = get_post_meta( $post->ID, '_orbis_facebook', true );

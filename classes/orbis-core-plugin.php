@@ -311,7 +311,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		" );
 
 		foreach ( $projects as $project ) {
-			$registered_time = $wpdb->get_var( $wpdb->prepare( $query, $project->id ) );
+			$registered_time = $wpdb->get_var( $wpdb->prepare( $query, $project->id ) ); // phpcs:ignore WordPress.WP.PreparedSQL.NotPrepared
 			update_post_meta( $project->post_id, 'orbis_project_registered_time', $registered_time );
 		}
 
