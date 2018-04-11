@@ -293,28 +293,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			);
 		}
 
-		// Save logged time in project meta
-		$query = "
-			SELECT
-				SUM( number_seconds ) AS logged_time
-			FROM
-				$wpdb->orbis_timesheets
-			WHERE
-				project_id = %d
-		";
-
-		$projects = $wpdb->get_results( "
-			SELECT
-				*
-			FROM
-				$wpdb->orbis_projects
-		" );
-
-		foreach ( $projects as $project ) {
-			$registered_time = $wpdb->get_var( $wpdb->prepare( $query, $project->id ) ); // phpcs:ignore WordPress.WP.PreparedSQL.NotPrepared
-			update_post_meta( $project->post_id, 'orbis_project_registered_time', $registered_time );
-		}
-
 		// Install
 		parent::install();
 	}
