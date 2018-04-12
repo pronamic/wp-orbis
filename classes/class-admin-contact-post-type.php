@@ -68,21 +68,21 @@ class Orbis_Contacts_AdminContactPostType {
 
 		// OK
 		$definition = array(
-			'_orbis_title'                => FILTER_SANITIZE_STRING,
-			'_orbis_organization'         => FILTER_SANITIZE_STRING,
-			'_orbis_department'           => FILTER_SANITIZE_STRING,
-			'_orbis_email'                => FILTER_VALIDATE_EMAIL,
-			'_orbis_person_phone_number'  => FILTER_SANITIZE_STRING,
-			'_orbis_person_mobile_number' => FILTER_SANITIZE_STRING,
-			'_orbis_address'              => FILTER_SANITIZE_STRING,
-			'_orbis_postcode'             => FILTER_SANITIZE_STRING,
-			'_orbis_city'                 => FILTER_SANITIZE_STRING,
-			'_orbis_country'              => FILTER_SANITIZE_STRING,
-			'_orbis_birth_date_string'    => FILTER_SANITIZE_STRING,
-			'_orbis_iban'                 => FILTER_SANITIZE_STRING,
-			'_orbis_twitter'              => FILTER_SANITIZE_STRING,
-			'_orbis_facebook'             => FILTER_SANITIZE_STRING,
-			'_orbis_linkedin'             => FILTER_SANITIZE_STRING,
+			'_orbis_title'             => FILTER_SANITIZE_STRING,
+			'_orbis_organization'      => FILTER_SANITIZE_STRING,
+			'_orbis_department'        => FILTER_SANITIZE_STRING,
+			'_orbis_email'             => FILTER_VALIDATE_EMAIL,
+			'_orbis_phone_number'      => FILTER_SANITIZE_STRING,
+			'_orbis_mobile_number'     => FILTER_SANITIZE_STRING,
+			'_orbis_address'           => FILTER_SANITIZE_STRING,
+			'_orbis_postcode'          => FILTER_SANITIZE_STRING,
+			'_orbis_city'              => FILTER_SANITIZE_STRING,
+			'_orbis_country'           => FILTER_SANITIZE_STRING,
+			'_orbis_birth_date_string' => FILTER_SANITIZE_STRING,
+			'_orbis_iban'              => FILTER_SANITIZE_STRING,
+			'_orbis_twitter'           => FILTER_SANITIZE_STRING,
+			'_orbis_facebook'          => FILTER_SANITIZE_STRING,
+			'_orbis_linkedin'          => FILTER_SANITIZE_STRING,
 		);
 
 		$data = filter_input_array( INPUT_POST, $definition );

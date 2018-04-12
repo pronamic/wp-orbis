@@ -4,8 +4,8 @@ global $post;
 
 $contact = new Orbis_Contact( $post );
 
-$person_phone_number  = get_post_meta( $post->ID, '_orbis_person_phone_number', true );
-$person_mobile_number = get_post_meta( $post->ID, '_orbis_person_mobile_number', true );
+$person_phone_number  = get_post_meta( $post->ID, '_orbis_phone_number', true );
+$person_mobile_number = get_post_meta( $post->ID, '_orbis_mobile_number', true );
 
 $title        = get_post_meta( $post->ID, '_orbis_title', true );
 $organization = get_post_meta( $post->ID, '_orbis_organization', true );
@@ -76,7 +76,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_person_phone_number"><?php _e( 'Phone Number', 'orbis' ); ?></label>
+				<label for="orbis_phone_number"><?php _e( 'Phone Number', 'orbis' ); ?></label>
 			</th>
 			<td>
 				<input type="text" id="orbis_person_phone_number" name="_orbis_person_phone_number" value="<?php echo esc_attr( $person_phone_number ); ?>" class="regular-text" />
@@ -84,7 +84,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 		</tr>
 		<tr valign="top">
 			<th scope="row">
-				<label for="orbis_person_mobile_number"><?php _e( 'Mobile Number', 'orbis' ); ?></label>
+				<label for="orbis_mobile_number"><?php _e( 'Mobile Number', 'orbis' ); ?></label>
 			</th>
 			<td>
 				<input type="text" id="orbis_person_mobile_number" name="_orbis_person_mobile_number" value="<?php echo esc_attr( $person_mobile_number ); ?>" class="regular-text" />

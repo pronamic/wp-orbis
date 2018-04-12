@@ -52,19 +52,19 @@ class Orbis_Core_ContactsImporter {
 
 	public function get_import_meta_input() {
 		return array(
-			'_orbis_title'                => __( 'Title', 'orbis' ),
-			'_orbis_organization'         => __( 'Organization', 'orbis' ),
-			'_orbis_department'           => __( 'Department', 'orbis' ),
-			'_orbis_person_email_address' => __( 'Email', 'orbis' ),
-			'_orbis_address'              => __( 'Address', 'orbis' ),
-			'_orbis_postcode'             => __( 'Postcode', 'orbis' ),
-			'_orbis_city'                 => __( 'City', 'orbis' ),
-			'_orbis_country'              => __( 'Country', 'orbis' ),
-			'_orbis_person_phone_number'  => __( 'Phone Number', 'orbis' ),
-			'_orbis_person_mobile_number' => __( 'Mobile Number', 'orbis' ),
-			'_orbis_person_twitter'       => __( 'Twitter', 'orbis' ),
-			'_orbis_person_facebook'      => __( 'Facebook', 'orbis' ),
-			'_orbis_person_linkedin'      => __( 'LinkedIn', 'orbis' ),
+			'_orbis_title'         => __( 'Title', 'orbis' ),
+			'_orbis_organization'  => __( 'Organization', 'orbis' ),
+			'_orbis_department'    => __( 'Department', 'orbis' ),
+			'_orbis_email'         => __( 'Email', 'orbis' ),
+			'_orbis_address'       => __( 'Address', 'orbis' ),
+			'_orbis_postcode'      => __( 'Postcode', 'orbis' ),
+			'_orbis_city'          => __( 'City', 'orbis' ),
+			'_orbis_country'       => __( 'Country', 'orbis' ),
+			'_orbis_phone_number'  => __( 'Phone Number', 'orbis' ),
+			'_orbis_mobile_number' => __( 'Mobile Number', 'orbis' ),
+			'_orbis_twitter'       => __( 'Twitter', 'orbis' ),
+			'_orbis_facebook'      => __( 'Facebook', 'orbis' ),
+			'_orbis_linkedin'      => __( 'LinkedIn', 'orbis' ),
 		);
 	}
 
@@ -87,16 +87,16 @@ class Orbis_Core_ContactsImporter {
 				MAX( IF( meta.meta_key = '_orbis_title', meta.meta_value, NULL ) ) AS contact_title,
 				MAX( IF( meta.meta_key = '_orbis_organization', meta.meta_value, NULL ) ) AS contact_organization,
 				MAX( IF( meta.meta_key = '_orbis_department', meta.meta_value, NULL ) ) AS contact_department,
-				MAX( IF( meta.meta_key = '_orbis_person_email_address', meta.meta_value, NULL ) ) AS contact_email,
+				MAX( IF( meta.meta_key = '_orbis_email', meta.meta_value, NULL ) ) AS contact_email,
 				MAX( IF( meta.meta_key = '_orbis_address', meta.meta_value, NULL ) ) AS contact_address,
 				MAX( IF( meta.meta_key = '_orbis_postcode', meta.meta_value, NULL ) ) AS contact_postcode,
 				MAX( IF( meta.meta_key = '_orbis_city', meta.meta_value, NULL ) ) AS contact_city,
 				MAX( IF( meta.meta_key = '_orbis_country', meta.meta_value, NULL ) ) AS contact_country,
-				MAX( IF( meta.meta_key = '_orbis_person_phone_number', meta.meta_value, NULL ) ) AS contact_phone_number,
-				MAX( IF( meta.meta_key = '_orbis_person_mobile_number', meta.meta_value, NULL ) ) AS contact_mobile_number,
-				MAX( IF( meta.meta_key = '_orbis_person_twitter', meta.meta_value, NULL ) ) AS contact_twitter,
-				MAX( IF( meta.meta_key = '_orbis_person_facebook', meta.meta_value, NULL ) ) AS contact_facebook,
-				MAX( IF( meta.meta_key = '_orbis_person_linkedin', meta.meta_value, NULL ) ) AS contact_linkedin
+				MAX( IF( meta.meta_key = '_orbis_phone_number', meta.meta_value, NULL ) ) AS contact_phone_number,
+				MAX( IF( meta.meta_key = '_orbis_mobile_number', meta.meta_value, NULL ) ) AS contact_mobile_number,
+				MAX( IF( meta.meta_key = '_orbis_twitter', meta.meta_value, NULL ) ) AS contact_twitter,
+				MAX( IF( meta.meta_key = '_orbis_facebook', meta.meta_value, NULL ) ) AS contact_facebook,
+				MAX( IF( meta.meta_key = '_orbis_linkedin', meta.meta_value, NULL ) ) AS contact_linkedin
 			FROM
 				$wpdb->posts AS post
 					LEFT JOIN

@@ -5,7 +5,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		parent::__construct( $file );
 
 		$this->set_name( 'orbis' );
-		$this->set_db_version( '1.3.6' );
+		$this->set_db_version( '1.3.7' );
 
 		// Actions
 		add_action( 'init', array( $this, 'init' ) );
@@ -267,6 +267,8 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'_orbis_person_facebook'      => '_orbis_facebook',
 			'_orbis_person_linkedin'      => '_orbis_linkedin',
 			'_orbis_person_email_address' => '_orbis_email',
+			'_orbis_person_phone_number'  => '_orbis_phone_number',
+			'_orbis_person_mobile_number' => '_orbis_mobile_number',
 			'_orbis_company_twitter'      => '_orbis_twitter',
 			'_orbis_company_facebook'     => '_orbis_facebook',
 			'_orbis_company_linkedin'     => '_orbis_linkedin',

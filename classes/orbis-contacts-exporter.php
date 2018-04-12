@@ -129,11 +129,11 @@ class Orbis_ContactsExporter {
 					$address->get_postcode(),
 					$address->get_city(),
 					$address->get_country(),
-					get_post_meta( $post->ID, '_orbis_person_phone_number', true ),
-					get_post_meta( $post->ID, '_orbis_person_mobile_number', true ),
-					get_post_meta( $post->ID, '_orbis_person_twitter', true ),
-					get_post_meta( $post->ID, '_orbis_person_facebook', true ),
-					get_post_meta( $post->ID, '_orbis_person_linkedin', true ),
+					get_post_meta( $post->ID, '_orbis_phone_number', true ),
+					get_post_meta( $post->ID, '_orbis_mobile_number', true ),
+					get_post_meta( $post->ID, '_orbis_twitter', true ),
+					get_post_meta( $post->ID, '_orbis_facebook', true ),
+					get_post_meta( $post->ID, '_orbis_linkedin', true ),
 				);
 
 				fputcsv( $resource, $row );
@@ -201,11 +201,11 @@ class Orbis_ContactsExporter {
 					$address->get_postcode(),
 					$address->get_city(),
 					$address->get_country(),
-					get_post_meta( $post->ID, '_orbis_person_phone_number', true ),
-					get_post_meta( $post->ID, '_orbis_person_mobile_number', true ),
-					get_post_meta( $post->ID, '_orbis_person_twitter', true ),
-					get_post_meta( $post->ID, '_orbis_person_facebook', true ),
-					get_post_meta( $post->ID, '_orbis_person_linkedin', true ),
+					get_post_meta( $post->ID, '_orbis_phone_number', true ),
+					get_post_meta( $post->ID, '_orbis_mobile_number', true ),
+					get_post_meta( $post->ID, '_orbis_twitter', true ),
+					get_post_meta( $post->ID, '_orbis_facebook', true ),
+					get_post_meta( $post->ID, '_orbis_linkedin', true ),
 				);
 
 				$data[] = $row;
