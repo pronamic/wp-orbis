@@ -256,12 +256,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		// Replace old meta values
 		global $wpdb;
 
-		$replace_query = "
-			UPDATE $wpdb->postmeta
-				SET meta_key = %s
-				WHERE meta_key = %s
-			";
-
 		$replace_values = array(
 			'_orbis_person_twitter'       => '_orbis_twitter',
 			'_orbis_person_facebook'      => '_orbis_facebook',
