@@ -23,7 +23,7 @@ class Orbis_OrderByComment {
 			return true;
 		}
 
-		if ( ! isset( $query->date_query ) ) {
+		if ( ! isset( $query->date_query, $query->date_query->queries ) ) {
 			return false;
 		}
 
