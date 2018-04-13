@@ -83,7 +83,7 @@ class Orbis_Log_Widget extends WP_Widget {
 		$logs = orbis_get_logs();
 
 		?>
-		<div class="content">
+		<div class="card-body">
 			<ul class="no-disc">
 				<?php foreach ( $logs as $log ) : ?>
 
