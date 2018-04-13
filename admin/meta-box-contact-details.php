@@ -79,7 +79,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 				<label for="orbis_phone_number"><?php _e( 'Phone Number', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input type="text" id="orbis_person_phone_number" name="_orbis_person_phone_number" value="<?php echo esc_attr( $person_phone_number ); ?>" class="regular-text" />
+				<input type="text" id="orbis_person_phone_number" name="_orbis_phone_number" value="<?php echo esc_attr( $person_phone_number ); ?>" class="regular-text" />
 			</td>
 		</tr>
 		<tr valign="top">
@@ -87,7 +87,7 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 				<label for="orbis_mobile_number"><?php _e( 'Mobile Number', 'orbis' ); ?></label>
 			</th>
 			<td>
-				<input type="text" id="orbis_person_mobile_number" name="_orbis_person_mobile_number" value="<?php echo esc_attr( $person_mobile_number ); ?>" class="regular-text" />
+				<input type="text" id="orbis_person_mobile_number" name="_orbis_mobile_number" value="<?php echo esc_attr( $person_mobile_number ); ?>" class="regular-text" />
 			</td>
 		</tr>
 
