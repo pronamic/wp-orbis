@@ -33,6 +33,10 @@ jQuery( document ).ready( function( $ ) {
 		if ( item.hasClass( 'orbis-person-id-control' ) ) {
 			return 'person_id_suggest';
 		}
+
+		if ( item.hasClass( 'orbis-keychain-id-control' ) ) {
+			return 'keychain_id_suggest';
+		}
 	};
 
 	$( '.select2' ).select2( {
