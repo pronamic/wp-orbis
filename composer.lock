@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2aab24e9b1888fb4ab83e455dc63208d",
+    "content-hash": "1d1ccec270e795129ebaa305bb7db6cf",
     "packages": [
         {
             "name": "phpoffice/phpexcel",
@@ -63,6 +63,61 @@
             ],
             "abandoned": "phpoffice/phpspreadsheet",
             "time": "2015-05-01T07:00:55+00:00"
+        },
+        {
+            "name": "pronamic/wp-money",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-money.git",
+                "reference": "0979695a9a08830530be5421884084323541619c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-money/zipball/0979695a9a08830530be5421884084323541619c",
+                "reference": "0979695a9a08830530be5421884084323541619c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "johnpbloch/wordpress": "^4.9",
+                "koodimonni-language/de_de": "*",
+                "koodimonni-language/fr_fr": "*",
+                "koodimonni-language/nl_nl": "*",
+                "php-coveralls/php-coveralls": "^1.1",
+                "phpmd/phpmd": "^2.4",
+                "phpunit/phpunit": "^4.8",
+                "vlucas/phpdotenv": "^2.0",
+                "wimg/php-compatibility": "^8.1",
+                "wp-coding-standards/wpcs": "^0.14.1",
+                "wp-phpunit/wp-phpunit": "^4.9"
+            },
+            "type": "library",
+            "extra": {
+                "dropin-paths": {
+                    "vendor/wp-phpunit/wp-phpunit/data/languages/": [
+                        "vendor:koodimonni-language"
+                    ],
+                    "vendor/wp-phpunit/wp-phpunit/data/languages/plugins/": [
+                        "vendor:koodimonni-plugin-language"
+                    ],
+                    "vendor/wp-phpunit/wp-phpunit/data/languages/themes/": [
+                        "vendor:koodimonni-theme-language"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Money\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "time": "2018-04-20T13:33:43+00:00"
         },
         {
             "name": "sabre/uri",
@@ -431,9 +486,18 @@
             "time": "2018-02-16T01:57:48+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "1.0.0",
+            "alias_normalized": "1.0.0.0",
+            "version": "dev-develop",
+            "package": "pronamic/wp-money"
+        }
+    ],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "pronamic/wp-money": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
