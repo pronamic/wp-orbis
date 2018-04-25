@@ -1,5 +1,7 @@
 <?php
 
+use Pronamic\WordPress\Money\Money;
+
 $table_style   = '';
 $table_padding = 5;
 
@@ -96,8 +98,9 @@ $sections = array(
 									<?php
 
 									$price = get_post_meta( get_the_ID(), '_orbis_deal_price', true );
+									$price = new Money( $price, 'EUR' );
 
-									echo orbis_price( $price );
+									echo $price->format_i18n();
 
 									?>
 								</td>

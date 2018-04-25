@@ -1,5 +1,7 @@
 <?php
 
+use Pronamic\WordPress\Money\Money;
+
 class Orbis_Core_Settings {
 	public function __construct() {
 		// Actions
@@ -45,11 +47,13 @@ class Orbis_Core_Settings {
 		}
 		echo '</select>';
 
+		$example_price = new Money( 12345678.90, 'EUR' );
+
 		printf(
 			'<span class="description"><br />%s</span>',
 			sprintf(
 				__( 'Example: %s', 'orbis' ),
-				orbis_price( 12345678.90 )
+				$example_price->format_i18n()
 			)
 		);
 	}

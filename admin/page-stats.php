@@ -1,3 +1,4 @@
+<?php use Pronamic\WordPress\Money\Money; ?>
 <div class="wrap">
 	<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 
@@ -160,6 +161,7 @@
 	';
 
 	$total = $wpdb->get_var( $query ); // unprepared SQL
+	$total = new Money( $total, 'EUR' );
 
 	?>
 	<dl>
@@ -167,6 +169,6 @@
 		<dd><?php echo esc_html( $number_subscriptions ); ?></dd>
 
 		<dt><?php _e( 'Annual Revenue', 'orbis' ); ?></dt>
-		<dd><?php echo esc_html( orbis_price( $total ) ); ?></dd>
+		<dd><?php echo esc_html( $total->format_i18n() ); ?></dd>
 	</dl>
 </div>
