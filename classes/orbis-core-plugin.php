@@ -229,6 +229,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 	public function loaded() {
 		$this->load_textdomain( 'orbis', '/languages/' );
+		$this->load_textdomain( 'pronamic-money', '/vendor/pronamic/wp-money/languages/' );
 	}
 
 	/**

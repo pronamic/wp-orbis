@@ -96,7 +96,8 @@ module.exports = function( grunt ) {
 					'**/*.php',
 					'!bower_components/**',
 					'!deploy/**',
-					'!node_modules/**'
+					'!node_modules/**',
+					'!vendor/**'
 				],
 				expand: true
 			}
