@@ -175,10 +175,6 @@ function orbis_get_select2_keychains_data( $data ) {
 
 	$keychains = $wpdb->get_results( $query );
 
-	if ( empty( $keychains ) ) {
-		return new WP_Error( 'no_result', 'No Keychains', array( 'status' => 404 ) );
-	}
-
 	$keychainsJSON = json_encode( $keychains );
 	echo $keychainsJSON;
 	die();
