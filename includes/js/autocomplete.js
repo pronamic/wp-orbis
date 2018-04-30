@@ -96,6 +96,32 @@ jQuery( document ).ready( function( $ ) {
 		},
 	} );
 
+	var subscriptionURL = window.location.origin + "/wp-json/wp/v2/orbis/subscriptions/select2";
+
+	$( '.orbis-subscription-rest' ).select2( {
+		minimumInputLength: 2,
+		allowClear: true,
+		ajax: {
+			url: subscriptionURL,
+			dataType: 'json',
+			data: function( params ) {
+				return {
+					search: params.term
+				}
+			},
+			processResults: function( data ) {
+				return { results: data };
+			},
+			width: '100%',
+			selectOnClose: true,
+			formatNoMatches: formatNoMatches,
+			formatInputTooShort: formatInputTooShort,
+			formatSelectionTooBig: formatSelectionTooBig,
+			formatLoadMore: formatLoadMore,
+			formatSearching: formatSearching
+		},
+	} );
+
 	/**
 	 * Auto open Select2 on keypress.
 	 *

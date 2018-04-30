@@ -102,6 +102,15 @@ function orbis_register_keychain_rest() {
 
 add_action( 'rest_api_init', 'orbis_register_keychain_rest' );
 
+function orbis_register_subscription_parent_rest() {
+	register_rest_route( 'wp/v2', '/orbis/subscriptions/select2', array(
+		'methods'  => 'GET',
+		'callback' => 'orbis_get_select2_subscriptions_data',
+	) );
+}
+
+add_action( 'rest_api_init', 'orbis_register_subscription_parent_rest' );
+
 /**
  * Get the post type capabilties merged with the capabilities passed in
  *
@@ -155,7 +164,7 @@ function orbis_translate_post_type_capabilities( $post_type, $capabilities, &$re
 function orbis_get_select2_keychains_data( $data ) {
 	global $wpdb;
 
-	$search = '%' . $data['search'] . '%';
+	$search = '%' . $data["search"] . '%';
 
 	$query = $wpdb->prepare( "
 		SELECT
@@ -177,5 +186,80 @@ function orbis_get_select2_keychains_data( $data ) {
 
 	$keychains_json = wp_json_encode( $keychains );
 	echo $keychains_json;
+	die();
+}
+
+function orbis_get_select2_subscriptions_data( $data ) {
+	global $wpdb;
+
+	$term = $data["search"];
+
+	$fields = '';
+	$join   = '';
+	$where  = '';
+
+	if ( isset( $wpdb->orbis_timesheets ) ) {
+		$fields .= ', SUM( timesheet.number_seconds ) AS registered_time';
+		$join   .= "
+			LEFT JOIN
+				$wpdb->orbis_timesheets AS timesheet
+					ON timesheet.subscription_id = subscription.id AND timesheet.date > DATE_SUB( CURDATE(), INTERVAL 1 YEAR )
+		";
+	}
+
+	$query = "
+		SELECT
+			subscription.id AS id,
+			CONCAT( subscription.id, '. ', IFNULL( CONCAT( product.name, ' - ' ), '' ), subscription.name ) AS text
+			$fields
+		FROM
+			$wpdb->orbis_subscriptions AS subscription
+				LEFT JOIN
+			$wpdb->orbis_subscription_products AS product
+					ON subscription.type_id = product.id
+			$join
+		WHERE
+			subscription.expiration_date > NOW()
+				AND
+			(
+				subscription.name LIKE %s
+					OR
+				product.name LIKE %s
+			)
+			$where
+		GROUP BY
+			subscription.id
+		ORDER BY
+			subscription.id
+	";
+
+	$like = '%' . $wpdb->esc_like( $term ) . '%';
+
+	$query = $wpdb->prepare( $query, $like, $like ); // unprepared SQL
+
+	$subscriptions = $wpdb->get_results( $query ); // unprepared SQL
+
+	$data = array();
+
+	foreach ( $subscriptions as $subscription ) {
+		$result     = new stdClass();
+		$result->id = $subscription->id;
+
+		$text = $subscription->text;
+
+		if ( isset( $subscription->registered_time ) ) {
+			$text = sprintf(
+				'%s ( %s )',
+				$text,
+				orbis_time( $subscription->registered_time )
+			);
+		}
+
+		$result->text = $text;
+
+		$data[] = $result;
+	}
+
+	echo wp_json_encode( $data );
 	die();
 }
