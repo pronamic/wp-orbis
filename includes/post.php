@@ -142,3 +142,26 @@ function orbis_translate_post_type_capabilities( $post_type, $capabilities, &$re
 
 	return $result;
 }
+
+function orbis_get_select2_keychains_data( $data ) {
+	global $wpdb;
+
+	$search = "%" . $data . "%";
+
+	$query = $wpdb->prepare( "
+		SELECT
+			ID AS id,
+			post_title AS text
+		FROM
+			$wpdb->posts
+		WHERE
+			post_title LIKE %s
+		",
+		$search
+	);
+
+	$keychains = $wpdb->get_results( $query );
+
+	$keychainsJSON = json_encode( $keychains );
+	return $keychainsJSON;
+}
