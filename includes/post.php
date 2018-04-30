@@ -146,7 +146,7 @@ function orbis_translate_post_type_capabilities( $post_type, $capabilities, &$re
 function orbis_get_select2_keychains_data( $data ) {
 	global $wpdb;
 
-	$search = "%" . $data . "%";
+	$search = "%" . $data['search'] . "%";
 
 	$query = $wpdb->prepare( "
 		SELECT
@@ -156,12 +156,21 @@ function orbis_get_select2_keychains_data( $data ) {
 			$wpdb->posts
 		WHERE
 			post_title LIKE %s
+				AND
+			post_type = 'orbis_keychain'
+				AND
+			post_status = 'publish'
 		",
 		$search
 	);
 
 	$keychains = $wpdb->get_results( $query );
 
+	if ( empty( $keychains ) ) {
+		return new WP_Error( 'no_result', 'No Keychains', array( 'status' => 404 ) );
+	}
+
 	$keychainsJSON = json_encode( $keychains );
-	return $keychainsJSON;
+	echo $keychainsJSON;
+	die();
 }
