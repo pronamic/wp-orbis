@@ -160,7 +160,7 @@ function orbis_get_select2_keychains_data( $data ) {
 	$query = $wpdb->prepare( "
 		SELECT
 			ID AS id,
-			post_title AS text
+			CONCAT( id, '. ', post_title ) AS text
 		FROM
 			$wpdb->posts
 		WHERE

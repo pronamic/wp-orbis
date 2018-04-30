@@ -85,7 +85,14 @@ jQuery( document ).ready( function( $ ) {
 			},
 			processResults: function( data ) {
 				return { results: data };
-			}
+			},
+			width: '100%',
+			selectOnClose: true,
+			formatNoMatches: formatNoMatches,
+			formatInputTooShort: formatInputTooShort,
+			formatSelectionTooBig: formatSelectionTooBig,
+			formatLoadMore: formatLoadMore,
+			formatSearching: formatSearching
 		},
 	} );
 
