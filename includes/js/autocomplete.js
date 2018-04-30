@@ -70,6 +70,25 @@ jQuery( document ).ready( function( $ ) {
 		selectOnClose: true
 	} );
 
+	var keychainURL = window.location.origin + "/wp-json/wp/v2/orbis/keychains/select2";
+
+	$( '.orbis-keychain-rest' ).select2( {
+		minimumInputLength: 2,
+		allowClear: true,
+		ajax: {
+			url: keychainURL,
+			dataType: 'json',
+			data: function( params ) {
+				return {
+					search: params.term
+				}
+			},
+			processResults: function( data ) {
+				return { results: data };
+			}
+		},
+	} );
+
 	/**
 	 * Auto open Select2 on keypress.
 	 *
