@@ -164,7 +164,7 @@ function orbis_translate_post_type_capabilities( $post_type, $capabilities, &$re
 function orbis_get_select2_keychains_data( $data ) {
 	global $wpdb;
 
-	$search = '%' . $data["search"] . '%';
+	$search = '%' . $data['search'] . '%';
 
 	$query = $wpdb->prepare( "
 		SELECT
@@ -192,7 +192,7 @@ function orbis_get_select2_keychains_data( $data ) {
 function orbis_get_select2_subscriptions_data( $data ) {
 	global $wpdb;
 
-	$term = $data["search"];
+	$term = $data['search'];
 
 	$fields = '';
 	$join   = '';
