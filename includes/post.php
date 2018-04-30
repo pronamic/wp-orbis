@@ -93,6 +93,15 @@ function orbis_create_initial_post_types() {
 
 add_action( 'init', 'orbis_create_initial_post_types', 10 ); // highest priority
 
+function orbis_register_keychain_rest() {
+	register_rest_route( 'wp/v2', '/orbis/keychains/select2', array(
+		'methods'  => 'GET',
+		'callback' => 'orbis_get_select2_keychains_data'
+	) );
+}
+
+add_action( 'rest_api_init', 'orbis_register_keychain_rest' );
+
 /**
  * Get the post type capabilties merged with the capabilities passed in
  *
