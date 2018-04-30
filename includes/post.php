@@ -96,7 +96,7 @@ add_action( 'init', 'orbis_create_initial_post_types', 10 ); // highest priority
 function orbis_register_keychain_rest() {
 	register_rest_route( 'wp/v2', '/orbis/keychains/select2', array(
 		'methods'  => 'GET',
-		'callback' => 'orbis_get_select2_keychains_data'
+		'callback' => 'orbis_get_select2_keychains_data',
 	) );
 }
 
@@ -155,7 +155,7 @@ function orbis_translate_post_type_capabilities( $post_type, $capabilities, &$re
 function orbis_get_select2_keychains_data( $data ) {
 	global $wpdb;
 
-	$search = "%" . $data['search'] . "%";
+	$search = '%' . $data['search'] . '%';
 
 	$query = $wpdb->prepare( "
 		SELECT
@@ -173,9 +173,9 @@ function orbis_get_select2_keychains_data( $data ) {
 		$search
 	);
 
-	$keychains = $wpdb->get_results( $query );
+	$keychains = $wpdb->get_results( $query ); // WPCS: unprepared SQL ok.
 
-	$keychainsJSON = json_encode( $keychains );
-	echo $keychainsJSON;
+	$keychains_json = wp_json_encode( $keychains );
+	echo $keychains_json;
 	die();
 }
