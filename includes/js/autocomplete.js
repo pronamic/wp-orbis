@@ -70,43 +70,15 @@ jQuery( document ).ready( function( $ ) {
 		selectOnClose: true
 	} );
 
-	var keychainURL = window.location.origin + "/wp-json/wp/v2/orbis/keychains";
+	var url = window.location.origin + "/wp-json/wp/v2/";
 
-	$( '.orbis-keychain-rest' ).select2( {
+	$( '[data-post-suggest]' ).select2( {
 		minimumInputLength: 2,
 		allowClear: true,
 		ajax: {
-			url: keychainURL,
-			dataType: 'json',
-			data: function( params ) {
-				return {
-					search: params.term
-				}
+			url: function() {
+				return url + $( this ).data( "post-suggest" )
 			},
-			processResults: function( data ) {
-				return {
-					results: jQuery.map( data, function( obj ) {
-						return { id: obj.id, text: obj.title.rendered };
-					} )
-				}
-			},
-			width: '100%',
-			selectOnClose: true,
-			formatNoMatches: formatNoMatches,
-			formatInputTooShort: formatInputTooShort,
-			formatSelectionTooBig: formatSelectionTooBig,
-			formatLoadMore: formatLoadMore,
-			formatSearching: formatSearching
-		},
-	} );
-
-	var subscriptionURL = window.location.origin + "/wp-json/wp/v2/orbis/subscriptions";
-
-	$( '.orbis-subscription-rest' ).select2( {
-		minimumInputLength: 2,
-		allowClear: true,
-		ajax: {
-			url: subscriptionURL,
 			dataType: 'json',
 			data: function( params ) {
 				return {
