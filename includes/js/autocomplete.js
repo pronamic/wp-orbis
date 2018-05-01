@@ -70,7 +70,7 @@ jQuery( document ).ready( function( $ ) {
 		selectOnClose: true
 	} );
 
-	var keychainURL = window.location.origin + "/wp-json/wp/v2/orbis/keychains/select2";
+	var keychainURL = window.location.origin + "/wp-json/wp/v2/orbis/keychains";
 
 	$( '.orbis-keychain-rest' ).select2( {
 		minimumInputLength: 2,
@@ -84,7 +84,11 @@ jQuery( document ).ready( function( $ ) {
 				}
 			},
 			processResults: function( data ) {
-				return { results: data };
+				return {
+					results: jQuery.map( data, function( obj ) {
+						return { id: obj.id, text: obj.title.rendered };
+					} )
+				}
 			},
 			width: '100%',
 			selectOnClose: true,
@@ -96,7 +100,7 @@ jQuery( document ).ready( function( $ ) {
 		},
 	} );
 
-	var subscriptionURL = window.location.origin + "/wp-json/wp/v2/orbis/subscriptions/select2";
+	var subscriptionURL = window.location.origin + "/wp-json/wp/v2/orbis/subscriptions";
 
 	$( '.orbis-subscription-rest' ).select2( {
 		minimumInputLength: 2,
@@ -110,7 +114,11 @@ jQuery( document ).ready( function( $ ) {
 				}
 			},
 			processResults: function( data ) {
-				return { results: data };
+				return {
+					results: jQuery.map( data, function( obj ) {
+						return { id: obj.id, text: obj.title.rendered };
+					} )
+				}
 			},
 			width: '100%',
 			selectOnClose: true,
