@@ -26,6 +26,8 @@ function orbis_create_initial_post_types() {
 			'menu_icon'     => 'dashicons-businessman',
 			'supports'      => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'custom-fields', 'revisions' ),
 			'has_archive'   => true,
+			'show_in_rest'  => true,
+			'rest_base'     => 'orbis/persons',
 			'rewrite'       => array(
 				'slug' => _x( 'contacts', 'slug', 'orbis' ),
 			),
