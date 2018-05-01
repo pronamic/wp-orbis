@@ -77,3 +77,10 @@ table.orbis-plugins th {
 
     vertical-align: middle;
 }
+
+/**
+ * Orbis Subscription
+ */
+body.post-type-orbis_subscription form#post #titlediv {
+    display: none;
+}
