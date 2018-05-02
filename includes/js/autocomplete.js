@@ -71,12 +71,16 @@ jQuery( document ).ready( function( $ ) {
 	} );
 
 	var url = window.location.origin + "/wp-json/wp/v2/";
+	var postID;
+	var dontShowSelf;
 
 	$( '[data-post-suggest]' ).select2( {
 		minimumInputLength: 2,
 		allowClear: true,
 		ajax: {
 			url: function() {
+				postID = $( this ).data( "post-id" );
+				dontShowSelf = $( this ).data( "no-self-display" );
 				return url + $( this ).data( "post-suggest" )
 			},
 			dataType: 'json',
@@ -88,22 +92,26 @@ jQuery( document ).ready( function( $ ) {
 			processResults: function( data ) {
 				return {
 					results: jQuery.map( data, function( obj ) {
-						return { id: obj.id, text: decodeHtml( obj.title.rendered ) };
+						if ( postID != obj.id || dontShowSelf != true ) {
+							return { id: obj.id, text: decodeHtml( obj.title.rendered ) };
+						} else {
+							return;
+						}
 					} )
 				}
-			},
-			width: '100%',
-			selectOnClose: true,
-			formatNoMatches: formatNoMatches,
-			formatInputTooShort: formatInputTooShort,
-			formatSelectionTooBig: formatSelectionTooBig,
-			formatLoadMore: formatLoadMore,
-			formatSearching: formatSearching
+			}
 		},
+		width: '100%',
+		selectOnClose: true,
+		formatNoMatches: formatNoMatches,
+		formatInputTooShort: formatInputTooShort,
+		formatSelectionTooBig: formatSelectionTooBig,
+		formatLoadMore: formatLoadMore,
+		formatSearching: formatSearching
 	} );
 
 	function decodeHtml( html ) {
-		var txt = document.createElement("textarea");
+		var txt = document.createElement( "textarea" );
 		txt.innerHTML = html;
 		return txt.value;
 	}
