@@ -78,7 +78,7 @@ jQuery( document ).ready( function( $ ) {
 		allowClear: true,
 		ajax: {
 			url: function() {
-				exclude = $( this ).data( "exclude" );
+				exclude = $( this ).data( "post-suggest-exclude" );
 				return url + $( this ).data( "post-suggest" )
 			},
 			dataType: 'json',
