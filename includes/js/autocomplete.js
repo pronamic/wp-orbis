@@ -88,7 +88,7 @@ jQuery( document ).ready( function( $ ) {
 			processResults: function( data ) {
 				return {
 					results: jQuery.map( data, function( obj ) {
-						return { id: obj.id, text: obj.title.rendered };
+						return { id: obj.id, text: decodeHtml( obj.title.rendered ) };
 					} )
 				}
 			},
@@ -101,6 +101,12 @@ jQuery( document ).ready( function( $ ) {
 			formatSearching: formatSearching
 		},
 	} );
+
+	function decodeHtml( html ) {
+		var txt = document.createElement("textarea");
+		txt.innerHTML = html;
+		return txt.value;
+	}
 
 	/**
 	 * Auto open Select2 on keypress.
