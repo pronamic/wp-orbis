@@ -71,32 +71,27 @@ jQuery( document ).ready( function( $ ) {
 	} );
 
 	var url = window.location.origin + "/wp-json/wp/v2/";
-	var postID;
-	var dontShowSelf;
+	var exclude;
 
 	$( '[data-post-suggest]' ).select2( {
 		minimumInputLength: 2,
 		allowClear: true,
 		ajax: {
 			url: function() {
-				postID = $( this ).data( "post-id" );
-				dontShowSelf = $( this ).data( "no-self-display" );
+				exclude = $( this ).data( "exclude" );
 				return url + $( this ).data( "post-suggest" )
 			},
 			dataType: 'json',
 			data: function( params ) {
 				return {
-					search: params.term
+					search: params.term,
+					exclude: exclude
 				}
 			},
 			processResults: function( data ) {
 				return {
 					results: jQuery.map( data, function( obj ) {
-						if ( postID != obj.id || dontShowSelf != true ) {
-							return { id: obj.id, text: decodeHtml( obj.title.rendered ) };
-						} else {
-							return;
-						}
+						return { id: obj.id, text: decodeHtml( obj.title.rendered ) };
 					} )
 				}
 			}
