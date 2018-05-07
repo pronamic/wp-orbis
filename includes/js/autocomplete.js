@@ -102,7 +102,11 @@ jQuery( document ).ready( function( $ ) {
 		formatInputTooShort: formatInputTooShort,
 		formatSelectionTooBig: formatSelectionTooBig,
 		formatLoadMore: formatLoadMore,
-		formatSearching: formatSearching
+		formatSearching: formatSearching,
+		placeholder: {
+			id: "",
+			placeholder: "Leave blank to ..."
+		}
 	} );
 
 	function decodeHtml( html ) {
