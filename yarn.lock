@@ -27,9 +27,9 @@ angular-ui-select@latest:
   version "0.12.100"
   resolved "https://registry.yarnpkg.com/angular-ui-select/-/angular-ui-select-0.12.100.tgz#83cb869ecaf7a3dd40463bca18eafe0d84e1b9ca"
 
-angular@~1.6.9:
-  version "1.6.9"
-  resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.9.tgz#bc812932e18909038412d594a5990f4bb66c0619"
+angular@~1.6.10:
+  version "1.6.10"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.10.tgz#eed3080a34d29d0f681ff119b18ce294e3f74826"
 
 ansi-gray@^0.1.1:
   version "0.1.1"
