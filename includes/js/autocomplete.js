@@ -83,7 +83,9 @@ jQuery( document ).ready( function( $ ) {
 			dataType: 'json',
 			data: function( params ) {
 				exclude = $( this ).data( "post-suggest-exclude" );
+				only_active = $( this ).data( "post-suggest-only-active" );
 				return {
+					only_active: only_active,
 					search: params.term,
 					exclude: exclude
 				}
