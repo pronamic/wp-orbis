@@ -78,11 +78,11 @@ jQuery( document ).ready( function( $ ) {
 		allowClear: true,
 		ajax: {
 			url: function() {
-				exclude = $( this ).data( "post-suggest-exclude" );
 				return url + $( this ).data( "post-suggest" )
 			},
 			dataType: 'json',
 			data: function( params ) {
+				exclude = $( this ).data( "post-suggest-exclude" );
 				return {
 					search: params.term,
 					exclude: exclude
