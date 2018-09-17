@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<ruleset name="Orbis rules">
+	<config name="installed_paths" value="../../wp-coding-standards/wpcs" />
+
+	<rule ref="WordPress">
+		<exclude name="Generic.Commenting" />
+
+		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+
+		<exclude name="Squiz.Commenting" />
+		<exclude name="Squiz.PHP.CommentedOutCode.Found" />
+
+		<exclude name="WordPress.DB.DirectDatabaseQuery.DirectQuery" />
+		<exclude name="WordPress.DB.DirectDatabaseQuery.NoCaching" />
+
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+
+		<exclude name="WordPress.PHP.DiscouragedFunctions.DiscouragedWithAlternative" />
+		<exclude name="WordPress.PHP.DontExtract.extract_extract" />
+
+		<exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped" />
+		<exclude name="WordPress.Security.EscapeOutput.UnsafePrintingFunction" />
+		<exclude name="WordPress.Security.ValidatedSanitizedInput.InputNotSanitized" />
+		<exclude name="WordPress.Security.ValidatedSanitizedInput.MissingUnslash" />
+
+		<exclude name="WordPress.WP.EnqueuedResourceParameters.MissingVersion" />
+		<exclude name="WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion" />
+		<exclude name="WordPress.WP.EnqueuedResourceParameters.NotInFooter" />
+
+		<exclude name="WordPress.WP.GlobalVariablesOverride.OverrideProhibited" />
+		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+	</rule>
+</ruleset>

@@ -49,7 +49,7 @@ $sections = array(
 
 		if ( $query->have_posts() ) :
 
-		?>
+			?>
 
 			<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
 				<thead>
@@ -79,7 +79,7 @@ $sections = array(
 					<?php
 					while ( $query->have_posts() ) :
 						$query->the_post();
-					?>
+						?>
 
 						<tr>
 							<td>

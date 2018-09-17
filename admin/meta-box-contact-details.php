@@ -52,14 +52,16 @@ wp_nonce_field( 'orbis_save_person_details', 'orbis_person_details_meta_box_nonc
 
 				$gender = $contact->get_gender();
 
-				wp_dropdown_categories( array(
-					'show_option_none' => __( '— Select Gender —', 'orbis' ),
-					'hide_empty'       => false,
-					'name'             => sprintf( 'tax_input[%s]', $taxonomy ),
-					'id'               => 'orbis_person_gender',
-					'selected'         => $gender ? $gender->term_id : null,
-					'taxonomy'         => $taxonomy,
-				) );
+				wp_dropdown_categories(
+					array(
+						'show_option_none' => __( '— Select Gender —', 'orbis' ),
+						'hide_empty'       => false,
+						'name'             => sprintf( 'tax_input[%s]', $taxonomy ),
+						'id'               => 'orbis_person_gender',
+						'selected'         => $gender ? $gender->term_id : null,
+						'taxonomy'         => $taxonomy,
+					)
+				);
 
 				?>
 			</td>

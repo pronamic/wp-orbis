@@ -80,7 +80,8 @@ class Orbis_Core_ContactsImporter {
 	private function get_export() {
 		global $wpdb;
 
-		$results = $wpdb->get_results( "
+		$results = $wpdb->get_results(
+			"
 			SELECT
 				post.ID,
 				post.post_title,
@@ -109,7 +110,8 @@ class Orbis_Core_ContactsImporter {
 			GROUP BY
 				post.ID
 			;
-		" );
+		"
+		);
 
 		return $results;
 	}
@@ -124,10 +126,12 @@ class Orbis_Core_ContactsImporter {
 		$result = media_handle_upload( 'orbis_contacts_import_file', 0 );
 
 		if ( is_int( $result ) ) {
-			$url = add_query_arg( array(
-				'attachment_id' => $result,
-				'step'          => 'map',
-			) );
+			$url = add_query_arg(
+				array(
+					'attachment_id' => $result,
+					'step'          => 'map',
+				)
+			);
 
 			wp_safe_redirect( $url );
 
@@ -154,10 +158,12 @@ class Orbis_Core_ContactsImporter {
 
 		update_post_meta( $attachment_id, '_orbis_contacts_import_map', $map );
 
-		$url = add_query_arg( array(
-			'attachment_id' => $attachment_id,
-			'step'          => 'confirm',
-		) );
+		$url = add_query_arg(
+			array(
+				'attachment_id' => $attachment_id,
+				'step'          => 'confirm',
+			)
+		);
 
 		wp_safe_redirect( $url );
 
@@ -219,14 +225,17 @@ class Orbis_Core_ContactsImporter {
 	}
 
 	public function get_import_contacts_url( $args ) {
-		$args = wp_parse_args( $args, array(
-			'post_type'     => 'orbis_person',
-			'page'          => 'orbis-persons-import',
-			'step'          => 'import',
-			'attachment_id' => false,
-			'offset'        => 0,
-			'count'         => 10,
-		) );
+		$args = wp_parse_args(
+			$args,
+			array(
+				'post_type'     => 'orbis_person',
+				'page'          => 'orbis-persons-import',
+				'step'          => 'import',
+				'attachment_id' => false,
+				'offset'        => 0,
+				'count'         => 10,
+			)
+		);
 
 		$url = add_query_arg( $args, admin_url( 'edit.php' ) );
 
@@ -242,9 +251,11 @@ class Orbis_Core_ContactsImporter {
 
 		check_admin_referer( 'orbis_contacts_import', 'orbis_contacts_import_nonce' );
 
-		$url = $this->get_import_contacts_url( array(
-			'attachment_id' => filter_input( INPUT_POST, 'attachment_id', FILTER_SANITIZE_STRING ),
-		) );
+		$url = $this->get_import_contacts_url(
+			array(
+				'attachment_id' => filter_input( INPUT_POST, 'attachment_id', FILTER_SANITIZE_STRING ),
+			)
+		);
 
 		wp_safe_redirect( $url );
 

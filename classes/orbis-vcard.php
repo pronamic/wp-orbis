@@ -44,10 +44,12 @@ class Orbis_VCard {
 	private function get_company_vcard( $post ) {
 		$orbis_company = new Orbis_Company( $post );
 
-		$vcard = new Sabre\VObject\Component\VCard( array(
-			'FN'    => get_the_title( $post ),
-			'EMAIL' => $orbis_company->get_email(),
-		) );
+		$vcard = new Sabre\VObject\Component\VCard(
+			array(
+				'FN'    => get_the_title( $post ),
+				'EMAIL' => $orbis_company->get_email(),
+			)
+		);
 
 		return $vcard;
 	}
@@ -62,10 +64,12 @@ class Orbis_VCard {
 	private function get_contact_vcard( $post ) {
 		$contact = new Orbis_Contact( $post );
 
-		$vcard = new Sabre\VObject\Component\VCard( array(
-			'FN'    => get_the_title( $post ),
-			'EMAIL' => $contact->get_email(),
-		) );
+		$vcard = new Sabre\VObject\Component\VCard(
+			array(
+				'FN'    => get_the_title( $post ),
+				'EMAIL' => $contact->get_email(),
+			)
+		);
 
 		return $vcard;
 	}

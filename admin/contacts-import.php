@@ -62,10 +62,12 @@ foreach ( $data as $row ) {
 
 echo '</ul>';
 
-$url = $this->get_import_contacts_url( array(
-	'attachment_id' => $attachment_id,
-	'offset'        => $offset + $count,
-) );
+$url = $this->get_import_contacts_url(
+	array(
+		'attachment_id' => $attachment_id,
+		'offset'        => $offset + $count,
+	)
+);
 
 printf(
 	'<a id="orbis-import-next-link" href="%s" >%s</a>',

@@ -181,9 +181,11 @@ class Orbis_Plugin {
 	//////////////////////////////////////////////////
 
 	public function locate_template( $template_name ) {
-		$template = locate_template( array(
-			$template_name,
-		) );
+		$template = locate_template(
+			array(
+				$template_name,
+			)
+		);
 
 		if ( ! $template ) {
 			$template = $this->dir_path . 'templates/' . $template_name;

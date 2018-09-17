@@ -11,13 +11,15 @@
 						<div class="inside">
 							<?php
 
-							$query = new WP_Query( array(
-								'post_type'      => 'orbis_project',
-								'posts_per_page' => 5,
-							) );
+							$query = new WP_Query(
+								array(
+									'post_type'      => 'orbis_project',
+									'posts_per_page' => 5,
+								)
+							);
 
 							if ( $query->have_posts() ) :
-							?>
+								?>
 
 								<div id="dashboard_recent_drafts">
 									<ul>
@@ -27,7 +29,7 @@
 										while ( $query->have_posts() ) :
 											$query->the_post();
 
-										?>
+											?>
 
 											<li>
 												<h4>
@@ -42,7 +44,8 @@
 													?>
 													<?php
 
-													printf( '<abbr title="%s">%s</abbr>',
+													printf(
+														'<abbr title="%s">%s</abbr>',
 														/* translators: comment date format. See http://php.net/date */
 														get_the_time( __( 'c', 'orbis' ) ),
 														get_the_time( get_option( 'date_format' ) )
@@ -77,12 +80,15 @@
 						<div class="inside">
 							<?php
 
-							wp_widget_rss_output( 'http://feeds.feedburner.com/pronamic', array(
-								'link'  => __( 'http://www.pronamic.eu/', 'orbis' ),
-								'url'   => 'http://feeds.feedburner.com/pronamic',
-								'title' => __( 'Pronamic News', 'orbis' ),
-								'items' => 5,
-							) );
+							wp_widget_rss_output(
+								'http://feeds.feedburner.com/pronamic',
+								array(
+									'link'  => __( 'http://www.pronamic.eu/', 'orbis' ),
+									'url'   => 'http://feeds.feedburner.com/pronamic',
+									'title' => __( 'Pronamic News', 'orbis' ),
+									'items' => 5,
+								)
+							);
 
 							?>
 						</div>

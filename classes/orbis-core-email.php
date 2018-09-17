@@ -241,11 +241,13 @@ class Orbis_Core_Email {
 	 * Sends an email containing this week's timesheets to all selected users.
 	 */
 	public function send_email() {
-		$user_ids = get_users( array(
-			'fields'     => 'ids',
-			'meta_key'   => '_orbis_user', // WPCS: slow query ok.
-			'meta_value' => 'true', // WPCS: slow query ok.
-		) );
+		$user_ids = get_users(
+			array(
+				'fields'     => 'ids',
+				'meta_key'   => '_orbis_user', // WPCS: slow query ok.
+				'meta_value' => 'true', // WPCS: slow query ok.
+			)
+		);
 
 		global $orbis_email_title;
 

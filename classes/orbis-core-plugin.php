@@ -241,13 +241,16 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	 */
 	public function install() {
 		// Tables
-		orbis_install_table( 'orbis_log', '
+		orbis_install_table(
+			'orbis_log',
+			'
 			id BIGINT(16) UNSIGNED NOT NULL AUTO_INCREMENT,
 			created DATETIME NOT NULL,
 			wp_user_id BIGINT(20) UNSIGNED DEFAULT NULL,
 			message VARCHAR(512) NOT NULL,
 			PRIMARY KEY  (id)
-		' );
+		'
+		);
 
 		// Roles
 		$roles = $this->get_roles();
@@ -279,7 +282,8 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		foreach ( $replace_values as $old_key => $new_key ) {
 			$wpdb->query(
-				$wpdb->prepare( "
+				$wpdb->prepare(
+					"
 					UPDATE $wpdb->postmeta
 						SET meta_key = %s
 						WHERE meta_key = %s
@@ -321,28 +325,46 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 				'orbis_project' => orbis_post_type_capabilities( true, array() ),
 			),
 			'administrator'       => array(
-				'orbis_company' => orbis_post_type_capabilities( true, array(
-					'delete_post' => false,
-				) ),
-				'orbis_project' => orbis_post_type_capabilities( true, array(
-					'delete_post' => false,
-				) ),
+				'orbis_company' => orbis_post_type_capabilities(
+					true,
+					array(
+						'delete_post' => false,
+					)
+				),
+				'orbis_project' => orbis_post_type_capabilities(
+					true,
+					array(
+						'delete_post' => false,
+					)
+				),
 			),
 			'editor'              => array(
-				'orbis_company' => orbis_post_type_capabilities( false, array(
-					'read_post' => true,
-				) ),
-				'orbis_project' => orbis_post_type_capabilities( false, array(
-					'read_post' => true,
-				) ),
+				'orbis_company' => orbis_post_type_capabilities(
+					false,
+					array(
+						'read_post' => true,
+					)
+				),
+				'orbis_project' => orbis_post_type_capabilities(
+					false,
+					array(
+						'read_post' => true,
+					)
+				),
 			),
 			'employee'            => array(
-				'orbis_company' => orbis_post_type_capabilities( false, array(
-					'read_post' => true,
-				) ),
-				'orbis_project' => orbis_post_type_capabilities( false, array(
-					'read_post' => true,
-				) ),
+				'orbis_company' => orbis_post_type_capabilities(
+					false,
+					array(
+						'read_post' => true,
+					)
+					),
+				'orbis_project' => orbis_post_type_capabilities(
+					false,
+					array(
+						'read_post' => true,
+					)
+				),
 			),
 		);
 
@@ -356,12 +378,16 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	}
 
 	public function shortcode_list_pages( $atts, $content, $tag ) {
-		$atts = shortcode_atts( array(
-			'child_of'  => get_the_ID(),
-			'depth'     => 0,
-			'post_type' => 'page',
-			'title_li'  => null,
-		), $atts, $tag );
+		$atts = shortcode_atts(
+			array(
+				'child_of'  => get_the_ID(),
+				'depth'     => 0,
+				'post_type' => 'page',
+				'title_li'  => null,
+			),
+			$atts,
+			$tag
+		);
 
 		$atts['echo'] = false;
 
