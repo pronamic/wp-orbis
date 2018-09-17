@@ -8,7 +8,6 @@ class Orbis_Core_Email {
 		add_action( 'admin_init', array( $this, 'maybe_email_manually' ) );
 
 		add_action( 'orbis_email', array( $this, 'maybe_send_email' ) );
-		add_action( 'orbis_email', array( $this, 'send_email' ) );
 	}
 
 	public function admin_init() {
