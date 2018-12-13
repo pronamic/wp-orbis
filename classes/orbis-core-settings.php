@@ -38,7 +38,10 @@ class Orbis_Core_Settings {
 			__( 'Invoice Header Text', 'orbis' ),
 			array( $this, 'input_text' ),
 			'orbis',
-			'orbis_billing'
+			'orbis_billing',
+			array(
+				'label_for' => 'orbis_invoice_header_text',
+			)
 		);
 
 		register_setting( 'orbis', 'orbis_invoice_header_text' );
@@ -48,7 +51,10 @@ class Orbis_Core_Settings {
 			__( 'Invoice Footer Text', 'orbis' ),
 			array( $this, 'input_text' ),
 			'orbis',
-			'orbis_billing'
+			'orbis_billing',
+			array(
+				'label_for' => 'orbis_invoice_footer_text',
+			)
 		);
 
 		register_setting( 'orbis', 'orbis_invoice_footer_text' );
