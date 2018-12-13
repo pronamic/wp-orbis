@@ -105,7 +105,7 @@ module.exports = function( grunt ) {
 					domainPath: 'languages',
 					type: 'wp-plugin',
 					updatePoFiles: true,
-					exclude: [ 'bower_components/.*', 'deploy/.*', 'node_modules' ],
+					exclude: [ 'bower_components/.*', 'deploy/.*', 'node_modules/.*', 'node_modules/.*' ],
 				}
 			}
 		},
