@@ -47,7 +47,7 @@
     "load-grunt-tasks": "^4.0.0",
     "jquery-ui": "~1.12.1",
     "select2": "~4.0.6-rc.1",
-    "angular": "~1.7.5",
+    "angular": "~1.7.9",
     "angular-ui-date": "latest",
     "angular-ui-select": "latest"
   },
