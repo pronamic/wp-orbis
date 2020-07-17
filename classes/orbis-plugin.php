@@ -33,6 +33,8 @@ class Orbis_Plugin {
 
 		add_action( 'admin_init', array( $this, 'update' ), 5 );
 		add_action( 'admin_init', array( $this, 'install_redirect' ) );
+
+		add_action( 'rest_api_init', array( $this, 'rest_api_init' ) );
 	}
 
 	//////////////////////////////////////////////////
@@ -208,5 +210,137 @@ class Orbis_Plugin {
 		if ( ! $echo ) {
 			return ob_get_clean();
 		}
+	}
+
+	/**
+	 * REST API initialize.
+	 *
+	 * @link https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/
+	 * @link https://github.com/wp-orbis/wp-orbis-accounts/blob/master/classes/orbis-accounts-plugin.php
+	 */
+	public function rest_api_init() {
+		\register_rest_route( 'orbis/v1', '/users/by', array(
+			'methods'  => 'GET',
+			'callback' => array( $this, 'rest_api_user_by' )
+		) );
+
+		\register_rest_route( 'orbis/v1', '/users/(?P<id>\d+)', array(
+			'methods'  => 'GET',
+			'callback' => array( $this, 'rest_api_user' )
+		) );
+	}
+
+	/**
+	 * REST API user by email.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/get_user_by/
+	 * @param \WP_REST_Request $request WordPress REST API request object.
+	 * @return object
+	 */ 
+	public function rest_api_user_by( \WP_REST_Request $request ) {
+		$email = $request->get_param( 'email' );
+
+		$user = \get_user_by( 'email', $email );
+
+		if ( false === $user ) {
+			return new WP_Error( 'rest_user_invalid_email', 'Invalid user email.', array( 'status' => 404 ) );
+		}
+
+		$response = (object) array(
+			'id'    => $user->ID,
+			'name'  => $user->display_name,
+			'email' => $user->user_email,
+		);
+
+		return $response;
+	}
+
+	/**
+	 * REST API user.
+	 *
+	 * @param \WP_REST_Request $request WordPress REST API request object.
+	 * @return object
+	 */
+	public function rest_api_user( \WP_REST_Request $request ) {
+		global $wpdb;
+
+		$user_id = $request->get_param( 'id' );
+
+		$user = \get_user_by( 'id', $user_id );
+
+		if ( false === $user ) {
+			return new WP_Error( 'rest_user_invalid_id', 'Invalid user ID.', array( 'status' => 404 ) );
+		}
+
+		$response = (object) array(
+			'id'            => $user->ID,
+			'name'          => $user->display_name,
+			'email'         => $user->user_email,
+			'companies'     => array(),
+			'subscriptions' => array(),
+		);
+
+		/**
+		 * Companies.
+		 */
+		$query = new \WP_Query( array(
+			'connected_type'  => 'orbis_users_to_companies',
+			'connected_items' => $user->ID,
+			'nopaging'        => true,
+		) );
+
+		$companies = array();
+
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+
+				$company = new stdClass();
+
+				$company->id    = get_the_ID();
+				$company->title = get_the_title();
+
+				$response->companies[] = $company;
+			}
+		}
+
+		/**
+		 * Subscriptions.
+		 */
+		if ( \count( $response->companies ) > 0 ) {
+			$ids = wp_list_pluck( $response->companies, 'id' );
+
+			$list = implode( ',', $ids );
+
+			$query = "
+				SELECT
+					subscription.id, 
+					subscription.type_id,
+					company.name AS company_name,
+					product.name AS product_name,
+					product.price,
+					subscription.name,
+					subscription.activation_date,
+					subscription.cancel_date IS NOT NULL AS canceled,
+					subscription.post_id
+				FROM
+					$wpdb->orbis_subscriptions AS subscription
+						LEFT JOIN
+					$wpdb->orbis_subscription_products AS product
+							ON subscription.type_id = product.id
+						LEFT JOIN
+					$wpdb->orbis_companies as company
+							ON subscription.company_id = company.id
+				WHERE
+					company.post_id IN ( $list )
+				ORDER BY
+					activation_date ASC
+				;
+			";
+
+			$response->subscriptions = $wpdb->get_results( $query );
+		}
+
+		return $response;
 	}
 }
