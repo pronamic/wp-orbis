@@ -300,6 +300,20 @@ class Orbis_Plugin {
 				$company->id    = get_the_ID();
 				$company->title = get_the_title();
 
+				$company->post_id = \get_the_ID();
+
+				$email = get_post_meta( $company->post_id, '_orbis_email', true );
+
+				$company->email = empty( $email ) ? null : $email;
+
+				$accounting_email = get_post_meta( $company->post_id, '_orbis_accounting_email', true );
+
+				$company->accounting_email = empty( $accounting_email ) ? null : $accounting_email;
+
+				$invoice_email = get_post_meta( $company->post_id, '_orbis_invoice_email', true );
+
+				$company->invoice_email = empty( $invoice_email ) ? null : $invoice_email;
+
 				$response->companies[] = $company;
 			}
 		}
