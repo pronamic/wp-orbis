@@ -302,6 +302,20 @@ class Orbis_Plugin {
 
 				$company->post_id = \get_the_ID();
 
+				// Address.
+				$address  = get_post_meta( $company->post_id, '_orbis_address', true );
+				$postcode = get_post_meta( $company->post_id, '_orbis_postcode', true );
+				$city     = get_post_meta( $company->post_id, '_orbis_city', true );
+				$country  = get_post_meta( $company->post_id, '_orbis_country', true );
+
+				$company->address = (object) array(
+					'line_1'       => empty( $address ) ? null : $address,
+					'postal_code'  => empty( $postcode ) ? null : $postcode,
+					'city'         => empty( $city ) ? null : $city,
+					'country_code' => empty( $country ) ? null : $country,
+				);
+
+				// Email.
 				$email = get_post_meta( $company->post_id, '_orbis_email', true );
 
 				$company->email = empty( $email ) ? null : $email;
@@ -313,6 +327,7 @@ class Orbis_Plugin {
 				$invoice_email = get_post_meta( $company->post_id, '_orbis_invoice_email', true );
 
 				$company->invoice_email = empty( $invoice_email ) ? null : $invoice_email;
+
 
 				$response->companies[] = $company;
 			}
