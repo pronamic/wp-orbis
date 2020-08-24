@@ -347,6 +347,7 @@ class Orbis_Plugin {
 					subscription.type_id,
 					company.name AS company_name,
 					product.name AS product_name,
+					product.interval AS product_interval,
 					product.price,
 					subscription.name,
 					subscription.activation_date,
@@ -367,7 +368,24 @@ class Orbis_Plugin {
 				;
 			";
 
-			$response->subscriptions = $wpdb->get_results( $query );
+			$data = $wpdb->get_results( $query );
+
+			foreach ( $data as $item ) {
+				$subscription = (object) array(
+					'id'                      => \intval( $item->id ),
+					'type_id'                 => \intval( $item->type_id ),
+					'company_name'            => $item->company_name,
+					'product_name'            => $item->product_name,
+					'price'                   => $item->price,
+					'name'                    => $item->name,
+					'activation_date'         => $item->activation_date,
+					'canceled'                => \boolval( $item->canceled ),
+					'post_id'                 => \intval( $item->post_id ),
+					'current_period_end_date' => \Orbis_Subscription::get_current_period_end_date( $item->activation_date, $item->product_interval )->format( \DATE_ATOM ),
+				);				
+
+				$response->subscriptions[] = $subscription;	
+			}
 		}
 
 		return $response;
