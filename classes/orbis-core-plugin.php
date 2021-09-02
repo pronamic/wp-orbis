@@ -70,7 +70,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$uri = plugin_dir_url( $this->file );
 
 		// Select2
-		$select2_version = '4.0.6-rc.1';
+		$select2_version = '4.1.0-rc.0';
 
 		wp_register_script(
 			'select2',
