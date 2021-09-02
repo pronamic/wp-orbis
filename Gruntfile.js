@@ -46,24 +46,6 @@ module.exports = function( grunt ) {
 				rulesets: 'phpmd.ruleset.xml'
 			}
 		},
-		
-		// Check WordPress version
-		checkwpversion: {
-			options: {
-				readme: 'readme.txt',
-				plugin: 'orbis.php',
-			},
-			check: {
-				version1: 'plugin',
-				version2: 'readme',
-				compare: '=='
-			},
-			check2: {
-				version1: 'plugin',
-				version2: '<%= pkg.version %>',
-				compare: '=='
-			}
-		},
 
 		// Check textdomain errors
 		checktextdomain: {
@@ -260,7 +242,7 @@ module.exports = function( grunt ) {
 	} );
 
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'phpcs', 'checkwpversion', 'copy:assets', 'imagemin' ] );
+	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'phpcs', 'copy:assets', 'imagemin' ] );
 	grunt.registerTask( 'pot', [ 'checktextdomain', 'makepot' ] );
 
 	grunt.registerTask( 'deploy', [
