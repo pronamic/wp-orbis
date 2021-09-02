@@ -145,8 +145,6 @@ jQuery( document ).ready( function( $ ) {
 				return;
 			}
 
-			this.dropdown.$search.val( e.key );
-
 			this.open();
 		} );
 	} );
