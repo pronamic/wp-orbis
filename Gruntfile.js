@@ -18,18 +18,6 @@ module.exports = function( grunt ) {
 			ignore: [ 'bower_components', 'deploy', 'node_modules', 'vendor' ].join( ',' ) 
 		},
 
-		// PHP Code Sniffer
-		phpcs: {
-			application: {
-				src: phpFiles
-			},
-			options: {
-				bin: 'vendor/bin/phpcs',
-				standard: 'phpcs.xml.dist',
-				showSniffCodes: true
-			}
-		},
-
 		// PHPLint
 		phplint: {
 			all: phpFiles
@@ -242,7 +230,7 @@ module.exports = function( grunt ) {
 	} );
 
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'phpcs', 'copy:assets', 'imagemin' ] );
+	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'copy:assets', 'imagemin' ] );
 	grunt.registerTask( 'pot', [ 'checktextdomain', 'makepot' ] );
 
 	grunt.registerTask( 'deploy', [

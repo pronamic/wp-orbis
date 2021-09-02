@@ -38,7 +38,6 @@
     "grunt-contrib-imagemin": "^4.0.0",
     "grunt-contrib-uglify": "^5.0.1",
     "grunt-git": "^1.1.1",
-    "grunt-phpcs": "^0.4.0",
     "grunt-phplint": "0.1.0",
     "grunt-phpmd": "^0.1.1",
     "grunt-rt-wp-deploy": "^0.1.2",
