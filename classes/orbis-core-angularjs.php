@@ -43,7 +43,7 @@ class Orbis_Core_AngularJS {
 			'angular',
 			$this->plugin->plugin_url( 'assets/angular/angular.js' ),
 			array(),
-			'1.2.23',
+			'1.8.2',
 			true
 		);
 
@@ -51,7 +51,7 @@ class Orbis_Core_AngularJS {
 			'angular-csp',
 			$this->plugin->plugin_url( 'assets/angular/angular-csp.css' ),
 			array(),
-			'1.2.23',
+			'1.8.2',
 			true
 		);
 
