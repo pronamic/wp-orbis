@@ -39,7 +39,9 @@ jQuery( document ).ready( function( $ ) {
 		}
 	};
 
-	$.fn.select2.defaults.set( 'theme', 'bootstrap4' );
+	if ( orbisl10n.theme ) {
+		$.fn.select2.defaults.set( 'theme', orbisl10n.theme );
+	}
 
 	$( document ).on( 'select2:open', function() {
 		document.querySelector( '.select2-container--open .select2-search__field' ).focus();

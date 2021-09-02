@@ -65,9 +65,13 @@ class Orbis_Core_Admin {
 		// Orbis screen
 		if ( false !== strpos( $screen->id, 'orbis' ) ) {
 			// Select2
-			wp_enqueue_script( 'select2' );
+			wp_enqueue_style( 'select2' );
 
-			wp_enqueue_style( 'orbis-select2' );
+			wp_enqueue_script( 'select2' );
+			wp_enqueue_script( 'select2-i18n' );
+
+			// Orbis autocomplete
+			wp_enqueue_script( 'orbis-autocomplete' );
 
 			// jQuery datepicker
 			$this->plugin->enqueue_jquery_datepicker();

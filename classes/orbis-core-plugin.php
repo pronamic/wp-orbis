@@ -155,6 +155,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		);
 
 		$translation_array = array(
+			'theme'                 => \is_admin() ? null : 'bootstrap4',
 			'noMatches'             => __( 'No matches found', 'orbis' ),
 			'inputTooShort'         => sprintf( __( 'Please enter %s more characters', 'orbis' ), '{todo}' ),
 			'selectionTooBigSingle' => sprintf( __( 'You can only select %s item', 'orbis' ), '{limit}' ),
