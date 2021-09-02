@@ -39,6 +39,12 @@ jQuery( document ).ready( function( $ ) {
 		}
 	};
 
+	$.fn.select2.defaults.set( 'theme', 'bootstrap4' );
+
+	$( document ).on( 'select2:open', function() {
+		document.querySelector( '.select2-container--open .select2-search__field' ).focus();
+	} );
+
 	$( '.select2' ).select2( {
 		width: '100%',
 		selectOnClose: true

@@ -109,9 +109,22 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		wp_register_style(
 			'select2',
-			$this->plugin_url( 'assets/select2/css/select.css' ),
+			$this->plugin_url( 'assets/select2/css/select2.min.css' ),
 			array(),
 			$select2_version
+		);
+
+		/**
+		 * Select2
+		 */
+		wp_register_style(
+			'select2-bootstrap4-theme',
+			$this->plugin_url( 'assets/select2-bootstrap4-theme/select2-bootstrap4.min.css' ),
+			array(
+				'bootstrap',
+				'select2',
+			),
+			'1.5.2'
 		);
 
 		// jQuery UI datepicker
@@ -165,8 +178,14 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		wp_enqueue_script( 'select2' );
 		wp_enqueue_script( 'select2-i18n' );
 
+		// Select2 Boostrap 4 theme
+		wp_enqueue_style( 'select2-bootstrap4-theme' );
+
 		// Orbis
 		wp_enqueue_script( 'orbis' );
+
+		// Orbis autocomplete
+		wp_enqueue_script( 'orbis-autocomplete' );
 	}
 
 	//////////////////////////////////////////////////

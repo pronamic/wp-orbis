@@ -108,6 +108,12 @@ module.exports = function( grunt ) {
 						src: [ '**' ],
 						dest: 'assets/select2'
 					},
+					{ // Select2 Bootstrap 4 theme
+						expand: true,
+						cwd: 'node_modules/@ttskch/select2-bootstrap4-theme/dist',
+						src: [ '**' ],
+						dest: 'assets/select2-bootstrap4-theme'
+					},
 				]
 			},
 
