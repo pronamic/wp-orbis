@@ -45,7 +45,7 @@
     "grunt-phpmd": "^0.1.1",
     "grunt-rt-wp-deploy": "^0.1.2",
     "grunt-wp-i18n": "~1.0.3",
-    "jquery-ui": "~1.13.0",
+    "jquery-ui": "~1.13.2",
     "load-grunt-tasks": "^5.1.0",
     "select2": "~4.1.0-rc.0"
   },
