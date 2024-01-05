@@ -56,11 +56,11 @@ class Orbis_Log_Widget extends WP_Widget {
 	/**
 	 * Constructs and initializes this widget
 	 */
-	public function Orbis_Log_Widget() {
+	public function __construct() {
 		parent::__construct( 'orbis-log', __( 'Orbis Log', 'orbis' ) );
 	}
 
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		$defaults = array(
 			'before_widget' => '',
 			'after_widget'  => '',
@@ -72,7 +72,6 @@ class Orbis_Log_Widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
-		// @codingStandardsIgnoreStart
 		echo $args['before_widget'];
 
 		if ( ! empty( $title ) ) {
@@ -84,7 +83,7 @@ class Orbis_Log_Widget extends WP_Widget {
 		$logs = orbis_get_logs();
 
 		?>
-		<div class="content">
+		<div class="card-body">
 			<ul class="no-disc">
 				<?php foreach ( $logs as $log ) : ?>
 
@@ -101,10 +100,9 @@ class Orbis_Log_Widget extends WP_Widget {
 		<?php
 
 		echo $args['after_widget'];
-		// @codingStandardsIgnoreEnd
 	}
 
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
 		$instance['title'] = $new_instance['title'];
@@ -112,7 +110,7 @@ class Orbis_Log_Widget extends WP_Widget {
 		return $instance;
 	}
 
-	function form( $instance ) {
+	public function form( $instance ) {
 		$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 
 		?>
@@ -162,7 +160,7 @@ function orbis_log_save_post( $post_id, $post ) {
 	}
 
 	$message = sprintf(
-		__( '%s updated the "%s" post.', 'orbis' ),
+		__( '%1$s updated the "%2$s" post.', 'orbis' ),
 		$name,
 		sprintf(
 			'<a href="%s">%s</a>',

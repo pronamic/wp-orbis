@@ -1,44 +1,41 @@
 <?php
 /*
 Plugin Name: Orbis
-Plugin URI: http://www.pronamic.eu/plugins/orbis/
+Plugin URI: https://www.pronamic.eu/plugins/orbis/
 Description: Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More...
 
 Version: 1.3.3
 Requires at least: 3.0
 
 Author: Pronamic
-Author URI: http://www.pronamic.eu/
+Author URI: https://www.pronamic.eu/
 
 Text Domain: orbis
 Domain Path: /languages/
 
 License: GPL
 
-GitHub URI: https://github.com/pronamic/wp-orbis
+GitHub URI: https://github.com/wp-orbis/wp-orbis
 */
 
+/**
+ * Autoload
+ */
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+
+/**
+ * Includes
+ */
 require_once 'includes/functions.php';
 require_once 'includes/persons.php';
-require_once 'includes/companies.php';
-require_once 'includes/projects.php';
 require_once 'includes/log.php';
 require_once 'includes/flot.php';
-require_once 'includes/scheme.php';
-require_once 'includes/shortcodes.php';
 require_once 'admin/includes/upgrade.php';
 
+/**
+ * Bootstrap
+ */
 function orbis_bootstrap() {
-	// Classes
-	require_once 'classes/orbis-plugin.php';
-	require_once 'classes/orbis-core-admin.php';
-	require_once 'classes/orbis-core-angularjs.php';
-	require_once 'classes/orbis-core-email.php';
-	require_once 'classes/orbis-core-plugin.php';
-	require_once 'classes/orbis-core-settings.php';
-	require_once 'classes/orbis-api.php';
-	require_once 'classes/orbis-plugin-manager.php';
-
 	// Initialize
 	global $orbis_plugin;
 

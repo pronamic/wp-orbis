@@ -1,7 +1,7 @@
 <div class="wrap">
-	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+	<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 
-    <div class="orbis-plugins-message below-h2"></div>
+	<div class="orbis-plugins-message below-h2"></div>
 
 	<table class="orbis-plugins">
 

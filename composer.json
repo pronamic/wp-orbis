@@ -15,21 +15,38 @@
 			"email": "info@remcotolsma.nl",
 			"homepage": "http://www.remcotolsma.nl",
 			"role": "Developer"
-        },
+		},
 		{
 			"name": "Karel-Jan Tolsma",
 			"email": "info@kareljantolsma.nl",
 			"homepage": "http://www.kareljantolsma.nl",
 			"role": "Developer"
-        }
-    ],
-    "support": {
-        "email": "support@pronamic.nl",
-        "issues": "https://github.com/pronamic/wp-orbis/issues",
-        "source": "https://github.com/pronamic/wp-orbis"
-    },
+		}
+	],
+	"support": {
+		"email": "support@pronamic.nl",
+		"issues": "https://github.com/pronamic/wp-orbis/issues",
+		"source": "https://github.com/pronamic/wp-orbis"
+	},
 	"type": "wordpress-plugin",
+	"autoload": {
+		"classmap": ["classes/"]
+	},
+	"config": {
+		"platform": {
+			"php": "5.5"
+		}
+	},
 	"require": {
-		
+		"pronamic/wp-money": "^1.1",
+		"php": "^5.5",
+		"phpoffice/phpexcel": "^1.8",
+		"tecnickcom/tcpdf": "^6.2",
+		"sabre/vobject": "^4.1",
+		"giggsey/libphonenumber-for-php": "^8.10"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.2",
+		"wp-coding-standards/wpcs": "^1.1"
 	}
 }

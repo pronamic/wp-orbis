@@ -7,7 +7,7 @@ class Orbis_Core_Email {
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_init', array( $this, 'maybe_email_manually' ) );
 
-		add_action( 'orbis_email', array( $this, 'send_email' ) );
+		add_action( 'orbis_email', array( $this, 'maybe_send_email' ) );
 	}
 
 	public function admin_init() {
@@ -174,7 +174,7 @@ class Orbis_Core_Email {
 		foreach ( $options as $option_key => $option ) {
 
 			$selected = ( is_string( $current_value ) && $option_key === $current_value ) ||
-						( is_array( $current_value ) && in_array( $option_key, $current_value ) );
+						( is_array( $current_value ) && in_array( $option_key, $current_value, true ) );
 
 			printf(
 				'<option value="%s" %s>%s</option>',
@@ -228,15 +228,25 @@ class Orbis_Core_Email {
 		}
 	}
 
+	public function maybe_send_email() {
+		if ( orbis_is_weekend() ) {
+			return;
+		}
+
+		$this->send_email();
+	}
+
 	/**
 	 * Sends an email containing this week's timesheets to all selected users.
 	 */
 	public function send_email() {
-		$user_ids = get_users( array(
-			'fields'     => 'ids',
-			'meta_key'   => '_orbis_user',
-			'meta_value' => 'true',
-		) );
+		$user_ids = get_users(
+			array(
+				'fields'     => 'ids',
+				'meta_key'   => '_orbis_user', // WPCS: slow query ok.
+				'meta_value' => 'true', // WPCS: slow query ok.
+			)
+		);
 
 		global $orbis_email_title;
 
@@ -250,7 +260,6 @@ class Orbis_Core_Email {
 			get_option( 'orbis_email_subject', __( 'Orbis Update', 'orbis' ) )
 		);
 
-		$mail_to      = '';
 		$mail_subject = $orbis_email_title;
 		$mail_body    = $this->plugin->get_template( 'emails/update.php', false );
 		$mail_headers = array(
@@ -259,13 +268,9 @@ class Orbis_Core_Email {
 		);
 
 		foreach ( $user_ids as $user_id ) {
-			$user_email = get_the_author_meta( 'user_email', $user_id );
+			$mail_to = get_the_author_meta( 'user_email', $user_id );
 
-			if ( is_email( $user_email ) ) {
-				$mail_to .= ' ' . $user_email . ', ';
-			}
+			wp_mail( $mail_to, $mail_subject, $mail_body, $mail_headers );
 		}
-
-		wp_mail( $mail_to, $mail_subject, $mail_body, $mail_headers );
 	}
 }

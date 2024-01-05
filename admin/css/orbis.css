@@ -1,7 +1,3 @@
-#icon-orbis {
-	background: url("../images/icon-32x32.png") no-repeat;	
-}
-
 tr.cancelled td {
     color: #999;
 
@@ -52,6 +48,39 @@ table.orbis-plugins th {
     display: none;
 }
 
+
 .loading-icon.loading {
     display: block;
+}
+
+/**
+ * Orbis admin
+ */
+.orbis-table-responsive {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.orbis-admin-table {
+    width: 100%;
+}
+
+.orbis-admin-table th {
+    font-size: 14px;
+
+    text-align: left;
+}
+
+.orbis-admin-table th,
+.orbis-admin-table td {
+    padding: 2px 0;
+
+    vertical-align: middle;
+}
+
+/**
+ * Orbis Subscription
+ */
+body.post-type-orbis_subscription form#post #titlediv {
+    display: none;
 }

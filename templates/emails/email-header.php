@@ -7,7 +7,7 @@ $base_text = '#FFFFFF';
 $width = 600;
 
 // For gmail compatibility, including CSS styles in head/body are stripped out therefore styles need to be inline. These variables contain rules which are added to the template inline. !important; is a gmail hack to prevent styles being stripped if it doesn't like something.
-$wrapper = '
+$wrapper            = '
 	width:100%;
 	-webkit-text-size-adjust:none !important;
 	margin:0;
@@ -21,7 +21,7 @@ $template_container = '
 	-webkit-border-radius:6px !important;
 	border-radius:6px !important;
 ';
-$template_header = '
+$template_header    = '
 	background-color: ' . esc_attr( $base ) . ';
 	-webkit-border-top-left-radius:6px !important;
 	-webkit-border-top-right-radius:6px !important;
@@ -33,7 +33,7 @@ $template_header = '
 	line-height:100%;
 	vertical-align:middle;
 ';
-$body_content = '
+$body_content       = '
 	-webkit-border-radius:6px !important;
 	border-radius:6px !important;
 ';
@@ -43,7 +43,7 @@ $body_content_inner = '
 	line-height:150%;
 	text-align:left;
 ';
-$header_content_h1 = '
+$header_content_h1  = '
 	color: ' . esc_attr( $base_text ) . ';
 	margin:0;
 	padding: 28px 24px;

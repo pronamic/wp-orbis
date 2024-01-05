@@ -1,5 +1,5 @@
 === Orbis ===
-Contributors: pronamic, remcotolsma, kjtolsma
+Contributors: pronamic, remcotolsma, kjtolsma, rubendroogh
 Tags: orbis, intranet
 Requires at least: 3.0
 Tested up to: 4.3.1
@@ -91,6 +91,11 @@ WordPress installation and then activate the Plugin from Plugins page.
 
 
 == Changelog ==
+
+= 1.3.4 =
+*	Tweak - Renamed 'KvK Number' field to 'Registration Number'.
+*	Added - Added an company 'VAT Number' field. 
+*	Tweak - Fixed openkvk.nl links.
 
 = 1.3.3 =
 *	Tweak - Changed bussiness to business in README.

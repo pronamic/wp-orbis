@@ -48,7 +48,7 @@ function orbis_register_table( $key, $name = false, $prefix = false ) {
 	$prefix = defined( 'ORBIS_TABLE_PREFIX' ) ? ORBIS_TABLE_PREFIX : $wpdb->prefix;
 
 	$wpdb->tables[] = $name;
-	$wpdb->$key = $prefix . $name;
+	$wpdb->$key     = $prefix . $name;
 }
 
 /**
@@ -76,4 +76,13 @@ function orbis_install_table( $key, $columns ) {
 	$table_options = $charset_collate;
 
 	dbDelta( "CREATE TABLE $full_table_name ( $columns ) $table_options" );
+}
+
+/**
+ * Check for weekend
+*/
+function orbis_is_weekend() {
+	$day = date( 'l' );
+
+	return in_array( $day, array( 'Saturday', 'Sunday' ), true );
 }

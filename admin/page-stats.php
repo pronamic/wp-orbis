@@ -1,5 +1,6 @@
+<?php use Pronamic\WordPress\Money\Money; ?>
 <div class="wrap">
-	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+	<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 
 	<?php
 
@@ -7,7 +8,7 @@
 
 	?>
 
-	<h3><?php _e( 'Timesheets', 'orbis' ); ?></h3>
+	<h2><?php _e( 'Timesheets', 'orbis' ); ?></h2>
 
 	<?php
 
@@ -49,7 +50,7 @@
 		</li>
 	</ul>
 
-	<h3><?php _e( 'Tasks', 'orbis' ); ?></h3>
+	<h2><?php _e( 'Tasks', 'orbis' ); ?></h2>
 
 	<?php
 
@@ -70,7 +71,7 @@
 		</li>
 	</ul>
 
-	<h3><?php _e( 'Companies', 'orbis' ); ?></h3>
+	<h2><?php _e( 'Companies', 'orbis' ); ?></h2>
 
 	<?php
 
@@ -91,7 +92,7 @@
 		</li>
 	</ul>
 
-	<h3><?php _e( 'Projects', 'orbis' ); ?></h3>
+	<h2><?php _e( 'Projects', 'orbis' ); ?></h2>
 
 	<?php
 
@@ -112,7 +113,7 @@
 		</li>
 	</ul>
 
-	<h3><?php _e( 'Domains', 'orbis' ); ?></h3>
+	<h2><?php _e( 'Domains', 'orbis' ); ?></h2>
 
 	<?php
 
@@ -134,7 +135,7 @@
 		<dd><?php echo esc_html( $number_domains ); ?></dd>
 	</dl>
 
-	<h3><?php _e( 'Subscriptions', 'orbis' ); ?></h3>
+	<h2><?php _e( 'Subscriptions', 'orbis' ); ?></h2>
 
 	<?php
 
@@ -160,6 +161,7 @@
 	';
 
 	$total = $wpdb->get_var( $query ); // unprepared SQL
+	$total = new Money( $total, 'EUR' );
 
 	?>
 	<dl>
@@ -167,6 +169,6 @@
 		<dd><?php echo esc_html( $number_subscriptions ); ?></dd>
 
 		<dt><?php _e( 'Annual Revenue', 'orbis' ); ?></dt>
-		<dd><?php echo esc_html( orbis_price( $total ) ); ?></dd>
+		<dd><?php echo esc_html( $total->format_i18n() ); ?></dd>
 	</dl>
 </div>

@@ -10,29 +10,42 @@ if ( ! function_exists( 'orbis_price' ) ) {
 	function orbis_price( $price ) {
 		$return = '';
 
-		if ( is_numeric( $price ) ) {
-			$currency_code   = get_option( 'orbis_currency' );
-			$currency_symbol = '';
+		if ( ! is_numeric( $price ) ) {
+			return false;
+		}
 
-			switch ( $currency_code ) {
-				case 'EUR' :
-					$currency_symbol = '€';
+		$currency_code   = get_option( 'orbis_currency' );
+		$currency_symbol = '';
 
-					break;
-				case 'USD':
-					$currency_symbol = '$';
+		switch ( $currency_code ) {
+			case 'EUR':
+				$currency_symbol = '€';
 
-					break;
-				case 'GBP':
-					$currency_symbol = '£';
+				break;
+			case 'USD':
+				$currency_symbol = '$';
 
-					break;
-			}
+				break;
+			case 'GBP':
+				$currency_symbol = '£';
 
-			$return .= $currency_symbol;
-			$return .= '&nbsp;';
+				break;
+		}
 
-			$return .= number_format_i18n( $price, 2 );
+		// @see https://en.wikipedia.org/wiki/Non-breaking_space#Keyboard_entry_methods
+		$non_breaking_space = ' ';
+
+		$return .= $currency_symbol;
+		$return .= $non_breaking_space;
+
+		$return .= number_format_i18n( $price, 2 );
+
+		// Trime zeors
+		// @see https://github.com/woocommerce/woocommerce/blob/v2.2.3/includes/wc-formatting-functions.php#L136-L144
+		global $wp_locale;
+
+		if ( '00' === substr( $return, -2 ) ) {
+			$return = substr( $return, 0, -3 );
 		}
 
 		return $return;
@@ -49,11 +62,15 @@ if ( ! function_exists( 'orbis_time' ) ) {
 	 */
 	function orbis_time( $seconds, $format = 'HH:MM' ) {
 		// @see http://stackoverflow.com/a/3856312
+		if ( ! is_numeric( $seconds ) ) {
+			return false;
+		}
+
 		$hours   = floor( $seconds / 3600 );
 		$minutes = floor( ( $seconds - ( $hours * 3600 ) ) / 60 );
 		$seconds = floor( $seconds % 60 );
 
-		$search  = array(
+		$search = array(
 			'HH',
 			'H',
 			'MM',

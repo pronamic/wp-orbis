@@ -1,39 +1,26 @@
 module.exports = function( grunt ) {
 	require( 'load-grunt-tasks' )( grunt );
 
+	var phpFiles = [
+		'**/*.php',
+		'!bower_components/**',
+		'!deploy/**',
+		'!node_modules/**',
+		'!vendor/**'
+	];
+
 	// Project configuration
 	grunt.initConfig( {
 		// Package
 		pkg: grunt.file.readJSON( 'package.json' ),
 
 		dirs: {
-			ignore: [ 'bower_components', 'deploy', 'node_modules' ].join( ',' ) 
-		},
-
-		// PHP Code Sniffer
-		phpcs: {
-			application: {
-				src: [
-					'**/*.php',
-					'!bower_components/**',
-					'!deploy/**',
-					'!node_modules/**'
-				],
-			},
-			options: {
-				standard: 'phpcs.ruleset.xml',
-				showSniffCodes: true
-			}
+			ignore: [ 'bower_components', 'deploy', 'node_modules', 'vendor' ].join( ',' ) 
 		},
 
 		// PHPLint
 		phplint: {
-			options: {
-				phpArgs: {
-					'-lf': null
-				}
-			},
-			all: [ '**/*.php' ]
+			all: phpFiles
 		},
 
 		// PHP Mess Detector
@@ -45,24 +32,6 @@ module.exports = function( grunt ) {
 				exclude: '<%= dirs.ignore %>',
 				reportFormat: 'text',
 				rulesets: 'phpmd.ruleset.xml'
-			}
-		},
-		
-		// Check WordPress version
-		checkwpversion: {
-			options: {
-				readme: 'readme.txt',
-				plugin: 'orbis.php',
-			},
-			check: {
-				version1: 'plugin',
-				version2: 'readme',
-				compare: '=='
-			},
-			check2: {
-				version1: 'plugin',
-				version2: '<%= pkg.version %>',
-				compare: '=='
 			}
 		},
 
@@ -92,7 +61,8 @@ module.exports = function( grunt ) {
 					'**/*.php',
 					'!bower_components/**',
 					'!deploy/**',
-					'!node_modules/**'
+					'!node_modules/**',
+					'!vendor/**'
 				],
 				expand: true
 			}
@@ -105,7 +75,7 @@ module.exports = function( grunt ) {
 					domainPath: 'languages',
 					type: 'wp-plugin',
 					updatePoFiles: true,
-					exclude: [ 'bower_components/.*', 'deploy/.*', 'node_modules' ],
+					exclude: [ 'bower_components/.*', 'deploy/.*', 'node_modules/.*', 'node_modules/.*' ],
 				}
 			}
 		},
@@ -116,27 +86,33 @@ module.exports = function( grunt ) {
 				files: [
 					{ // AngularJS
 						expand: true,
-						cwd: 'bower_components/angular',
+						cwd: 'node_modules/angular',
 						src: [ 'angular-csp.css', 'angular.js', 'angular.min.js', 'angular.min.js.map' ],
 						dest: 'assets/angular'
 					},
 					{ // AngularJS jQuery UI Datepicker
 						expand: true,
-						cwd: 'bower_components/angular-ui-date/src',
+						cwd: 'node_modules/angular-ui-date/src',
 						src: [ 'date.js' ],
 						dest: 'assets/angular-ui-date'
 					},
 					{ // AngularJS ui-select
 						expand: true,
-						cwd: 'bower_components/angular-ui-select/dist',
+						cwd: 'node_modules/angular-ui-select/dist',
 						src: [ 'select.css', 'select.js' ],
 						dest: 'assets/angular-ui-select'
 					},
 					{ // Select2
 						expand: true,
-						cwd: 'bower_components/select2',
-						src: [ 'select2.js', 'select2.css', 'select2-bootstrap.css', 'select2-spinner.gif', 'select2.png', 'select2x2.png' ],
+						cwd: 'node_modules/select2/dist',
+						src: [ '**' ],
 						dest: 'assets/select2'
+					},
+					{ // Select2 Bootstrap 4 theme
+						expand: true,
+						cwd: 'node_modules/@ttskch/select2-bootstrap4-theme/dist',
+						src: [ '**' ],
+						dest: 'assets/select2-bootstrap4-theme'
 					},
 				]
 			},
@@ -145,25 +121,56 @@ module.exports = function( grunt ) {
 				src: [
 					'**',
 					'!bower.json',
-					'!composer.json',
 					'!Gruntfile.js',
 					'!package.json',
 					'!phpcs.ruleset.xml',
 					'!phpmd.ruleset.xml',
 					'!bower_components/**',
 					'!deploy/**',
-					'!node_modules/**'
+					'!node_modules/**',
+					'!vendor/**'
 				],
 				dest: 'deploy/latest',
 				expand: true
 			},
 		},
 
+		// Imagemin
+		imagemin: {
+			build: {
+				files: [
+					{ // Images
+						expand: true,
+						cwd: 'src/images/',
+						src: ['**/*.{png,jpg,gif,svg}'],
+						dest: 'images/'
+					}
+				]
+			}
+		},
+
 		// Clean
 		clean: {
+			build: {
+				src: [
+					'assets'
+				]
+			},
+
 			deploy: {
 				src: [ 'deploy/latest' ]
 			},
+		},
+
+		// Composer
+		composer: {
+			options : {
+				cwd: 'deploy/latest',
+				flags: [
+					'no-dev',
+					'prefer-dist'
+				]
+			}
 		},
 
 		// Compress
@@ -229,13 +236,14 @@ module.exports = function( grunt ) {
 	} );
 
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'phpcs', 'checkwpversion', 'copy:assets' ] );
+	grunt.registerTask( 'default', [ 'phplint', 'phpmd', 'copy:assets', 'imagemin' ] );
 	grunt.registerTask( 'pot', [ 'checktextdomain', 'makepot' ] );
 
 	grunt.registerTask( 'deploy', [
 		'default',
 		'clean:deploy',
 		'copy:deploy',
+		'composer:install',
 		'compress:deploy'
 	] );
 
@@ -251,5 +259,10 @@ module.exports = function( grunt ) {
 		'deploy',
 		'aws_s3:deploy',
 		'gitcheckout:develop'
+	] );
+
+	grunt.registerTask( 'assets', [
+		'clean',
+		'copy'
 	] );
 };

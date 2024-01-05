@@ -1,5 +1,7 @@
 <?php
 
+use Pronamic\WordPress\Money\Money;
+
 $table_style   = '';
 $table_padding = 5;
 
@@ -37,9 +39,19 @@ $sections = array(
 
 		<?php
 
-		$query = new WP_Query( wp_parse_args( array( 'post_type' => $post_type ), $defaults ) );
+		$transient = 'orbis_email_update_' . $post_type;
 
-		if ( $query->have_posts() ) : ?>
+		$query = get_transient( $transient );
+
+		if ( empty( $query ) ) {
+			$query = new WP_Query( wp_parse_args( array( 'post_type' => $post_type ), $defaults ) );
+
+			set_transient( $transient, $query, 1 * HOUR_IN_SECONDS );
+		}
+
+		if ( $query->have_posts() ) :
+
+			?>
 
 			<table style="<?php echo esc_attr( $table_style ); ?>" cellpadding="<?php echo esc_attr( $table_padding ); ?>">
 				<thead>
@@ -66,7 +78,10 @@ $sections = array(
 
 				<tbody>
 
-					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+					<?php
+					while ( $query->have_posts() ) :
+						$query->the_post();
+						?>
 
 						<tr>
 							<td>
@@ -85,8 +100,9 @@ $sections = array(
 									<?php
 
 									$price = get_post_meta( get_the_ID(), '_orbis_deal_price', true );
+									$price = new Money( $price, 'EUR' );
 
-									echo orbis_price( $price );
+									echo $price->format_i18n();
 
 									?>
 								</td>

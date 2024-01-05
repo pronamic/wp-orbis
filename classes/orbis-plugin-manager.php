@@ -22,11 +22,11 @@ class Orbis_Plugin_Manager {
 	 * List of recommended plugins
 	 */
 	public static $recommended_plugins = array(
-		'members' => array(
+		'members'                 => array(
 			'title'     => 'Members',
 			'file_name' => null,
 		),
-		'posts-to-posts' => array(
+		'posts-to-posts'          => array(
 			'title'     => 'Posts 2 Posts',
 			'file_name' => null,
 		),
@@ -72,22 +72,27 @@ class Orbis_Plugin_Manager {
 
 		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 
-		$plugins_api = plugins_api( 'plugin_information', array(
-			'slug'   => $plugin_slug,
-			'fields' => array(
-				'sections' => false,
-			),
-		) );
+		$plugins_api = plugins_api(
+			'plugin_information',
+			array(
+				'slug'   => $plugin_slug,
+				'fields' => array(
+					'sections' => false,
+				),
+			)
+		);
 
 		if ( is_wp_error( $plugins_api ) ) {
 			return new WP_Error( 1, $plugins_api->get_error_message() );
 		}
 
-		$skin = new Orbis_Empty_Upgrader_Skin( array(
-			'nonce'  => 'install-plugin_' . $plugin_slug,
-			'plugin' => $plugin_slug,
-			'api'    => $plugins_api,
-		) );
+		$skin = new Orbis_Empty_Upgrader_Skin(
+			array(
+				'nonce'  => 'install-plugin_' . $plugin_slug,
+				'plugin' => $plugin_slug,
+				'api'    => $plugins_api,
+			)
+		);
 
 		$plugin_upgrader = new Plugin_Upgrader( $skin );
 
@@ -146,7 +151,7 @@ class Orbis_Plugin_Manager {
 	 *
 	 * @param string $plugin_slug
 	 * @param string $plugin_file_name
-	 *        	(Optional, defaults to null)
+	 *          (Optional, defaults to null)
 	 *
 	 * @return bool $is_plugin_installed
 	 */
@@ -174,7 +179,7 @@ class Orbis_Plugin_Manager {
 	 *
 	 * @param string $plugin_slug
 	 * @param string $plugin_file_name
-	 *        	(Optional, defaults to null)
+	 *          (Optional, defaults to null)
 	 *
 	 * @return bool $is_plugin_active
 	 */
@@ -192,7 +197,7 @@ class Orbis_Plugin_Manager {
 	}
 }
 
-include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 
 /**
  * Title: Orbis empty upgrader skin
@@ -203,7 +208,10 @@ include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
  * @author Stefan Boonstra
  * @version 1.0
  */
+// @codingStandardsIgnoreStart
 class Orbis_Empty_Upgrader_Skin extends WP_Upgrader_Skin {
+	// @codingStandardsIgnoreEnd
+	// Ignoring Generic.Files.OneClassPerFile.MultipleFound
 	/**
 	 *
 	 * @var WP_Error
@@ -227,7 +235,7 @@ class Orbis_Empty_Upgrader_Skin extends WP_Upgrader_Skin {
 		$args = wp_parse_args( $args, $defaults );
 
 		$this->type = $args['type'];
-		$this->api = isset( $args['api'] ) ? $args['api'] : array();
+		$this->api  = isset( $args['api'] ) ? $args['api'] : array();
 
 		parent::__construct( $args );
 	}

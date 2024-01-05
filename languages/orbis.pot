@@ -1,149 +1,163 @@
-# Copyright (C) 2015 Pronamic
+# Copyright (C) 2017 Pronamic
 # This file is distributed under the GPL.
 msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 1.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis\n"
-"POT-Creation-Date: 2015-10-09 11:59:14+00:00\n"
+"POT-Creation-Date: 2017-03-09 15:42:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.5.3\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
 
-#: admin/meta-box-company-details.php:27 admin/meta-box-project-details.php:29
-#: includes/projects.php:368 templates/projects-without-agreement.php:35
-msgid "Orbis ID"
+#: admin/contacts-import-confirm.php:1
+msgid "Confirm"
 msgstr ""
 
-#: admin/meta-box-company-details.php:35 includes/companies.php:149
-msgid "KvK Number"
+#: admin/contacts-import-confirm.php:8 admin/contacts-import-map.php:89
+#: classes/orbis-contacts-importer.php:341
+msgid "Import"
 msgstr ""
 
-#: admin/meta-box-company-details.php:43
-msgid "E-Mail"
+#: admin/contacts-import-map.php:1
+msgid "Map"
 msgstr ""
 
-#: admin/meta-box-company-details.php:51
-msgid "Website"
+#: admin/contacts-import-map.php:10
+msgid "First Row"
 msgstr ""
 
-#: admin/meta-box-company-details.php:59
-msgid "Addresses"
+#: admin/contacts-import-map.php:11
+msgid "Second Row"
 msgstr ""
 
-#: admin/meta-box-company-details.php:64 admin/meta-box-company-details.php:67
-#: includes/companies.php:147
+#: admin/contacts-import-map.php:12
+msgid "WordPress"
+msgstr ""
+
+#: admin/contacts-import-map.php:29
+msgid "— Nothing (skip) —"
+msgstr ""
+
+#: admin/contacts-import-map.php:31
+msgid "Post Fields"
+msgstr ""
+
+#: admin/contacts-import-map.php:46
+msgid "Meta Fields"
+msgstr ""
+
+#: admin/contacts-import-map.php:61
+msgid "Taxonomies"
+msgstr ""
+
+#: admin/contacts-import-upload.php:1 admin/contacts-import-upload.php:10
+msgid "Upload"
+msgstr ""
+
+#: admin/contacts-import.php:29
+msgid "Importing %1$s/%2$s contacts"
+msgstr ""
+
+#: admin/contacts-import.php:73
+msgid "Next"
+msgstr ""
+
+#: admin/meta-box-contact-details.php:32
+msgid "Company"
+msgstr ""
+
+#: admin/meta-box-contact-details.php:45
+msgid "Gender"
+msgstr ""
+
+#: admin/meta-box-contact-details.php:55
+msgid "— Select Gender —"
+msgstr ""
+
+#: admin/meta-box-contact-details.php:69
+msgid "Email Address"
+msgstr ""
+
+#: admin/meta-box-contact-details.php:78 classes/orbis-contacts-importer.php:63
+#: classes/orbis-contacts-importer.php:288 classes/orbis-csv.php:97
+msgid "Phone Number"
+msgstr ""
+
+#: admin/meta-box-contact-details.php:86 classes/orbis-contacts-importer.php:64
+#: classes/orbis-contacts-importer.php:289 classes/orbis-csv.php:98
+msgid "Mobile Number"
+msgstr ""
+
+#: admin/meta-box-contact-details.php:95 admin/meta-box-contact-details.php:98
+#: classes/orbis-contacts-importer.php:59
+#: classes/orbis-contacts-importer.php:284 classes/orbis-csv.php:93
 msgid "Address"
 msgstr ""
 
-#: admin/meta-box-company-details.php:69
+#: admin/meta-box-contact-details.php:100
+#: classes/orbis-contacts-importer.php:60
+#: classes/orbis-contacts-importer.php:285 classes/orbis-csv.php:94
 msgid "Postcode"
 msgstr ""
 
-#: admin/meta-box-company-details.php:70
+#: admin/meta-box-contact-details.php:101
+#: classes/orbis-contacts-importer.php:61
+#: classes/orbis-contacts-importer.php:286 classes/orbis-csv.php:95
 msgid "City"
 msgstr ""
 
-#: admin/meta-box-company-details.php:72
+#: admin/meta-box-contact-details.php:103
+#: classes/orbis-contacts-importer.php:62
+#: classes/orbis-contacts-importer.php:287 classes/orbis-csv.php:96
 msgid "Country"
 msgstr ""
 
-#: admin/meta-box-company-details.php:77 admin/meta-box-person-details.php:44
-msgid "Twitter Username:"
+#: admin/meta-box-contact-details.php:109
+msgid "Birth Date"
 msgstr ""
 
-#: admin/meta-box-company-details.php:85 admin/meta-box-person-details.php:52
-msgid "Facebook URL:"
+#: admin/meta-box-contact-details.php:118
+msgid "Twitter Username"
 msgstr ""
 
-#: admin/meta-box-company-details.php:93
-msgid "LinkedIn:"
+#: admin/meta-box-contact-details.php:126
+msgid "Facebook URL"
 msgstr ""
 
-#: admin/meta-box-person-details.php:20
-msgid "Email Address:"
+#: admin/meta-box-contact-details.php:134
+msgid "LinkedIn URL"
 msgstr ""
 
-#: admin/meta-box-person-details.php:28
-msgid "Phone Number:"
+#: admin/page-contacts-export.php:10 classes/orbis-contacts-importer.php:332
+msgid "Export"
 msgstr ""
 
-#: admin/meta-box-person-details.php:36
-msgid "Mobile Number:"
-msgstr ""
-
-#: admin/meta-box-person-details.php:60
-msgid "LinkedIn URL:"
-msgstr ""
-
-#: admin/meta-box-project-details.php:37 templates/projects-table-view.php:7
-msgid "Client"
-msgstr ""
-
-#: admin/meta-box-project-details.php:40
-msgid "Select Client"
-msgstr ""
-
-#: admin/meta-box-project-details.php:45 classes/orbis-core-email.php:43
-#: includes/projects.php:367 templates/projects-table-view.php:10
-msgid "Time"
-msgstr ""
-
-#: admin/meta-box-project-details.php:51
-msgid "You can enter time as 1.5 or 1:30 (they both mean 1 hour and 30 minutes)."
-msgstr ""
-
-#: admin/meta-box-project-details.php:58
-msgid "Agreement ID"
-msgstr ""
-
-#: admin/meta-box-project-details.php:65 admin/meta-box-project-details.php:68
-msgid "Choose a Agreement"
-msgstr ""
-
-#: admin/meta-box-project-details.php:68
-msgid "Set as Agreement"
-msgstr ""
-
-#: admin/meta-box-project-details.php:71
-msgid "You can select an .PDF or .TXT file from the WordPress media library."
-msgstr ""
-
-#: admin/meta-box-project-details.php:72
-msgid ""
-"If you received the agreement by mail print the complete mail conversation "
-"with an PDF printer."
-msgstr ""
-
-#: admin/meta-box-project-details.php:79
-msgid "Finished"
-msgstr ""
-
-#: admin/meta-box-project-details.php:85
-msgid "Project is finished"
+#: admin/page-contacts-import.php:46
+msgid "Imported contacts."
 msgstr ""
 
 #: admin/page-dashboard.php:9 templates/emails/update.php:20
 msgid "Recent Projects"
 msgstr ""
 
-#: admin/page-dashboard.php:22
-msgid "No recent projects found."
-msgstr ""
-
-#: admin/page-dashboard.php:47
+#: admin/page-dashboard.php:41
 #. translators: comment date format. See http:php.net/date
 msgid "c"
+msgstr ""
+
+#: admin/page-dashboard.php:57
+msgid "No recent projects found."
 msgstr ""
 
 #: admin/page-dashboard.php:69 admin/page-dashboard.php:77
 msgid "Pronamic News"
 msgstr ""
 
-#. Author URI of the plugin/theme
+#: admin/page-dashboard.php:75
 msgid "http://www.pronamic.eu/"
 msgstr ""
 
@@ -151,15 +165,15 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: admin/page-plugins.php:24 classes/orbis-core-admin.php:100
+#: admin/page-plugins.php:24 classes/orbis-core-admin.php:91
 msgid "Install"
 msgstr ""
 
-#: admin/page-plugins.php:32 classes/orbis-core-admin.php:101
+#: admin/page-plugins.php:32 classes/orbis-core-admin.php:92
 msgid "Activate"
 msgstr ""
 
-#: admin/page-plugins.php:39 classes/orbis-core-admin.php:102
+#: admin/page-plugins.php:39 classes/orbis-core-admin.php:93
 msgid "Active"
 msgstr ""
 
@@ -199,8 +213,7 @@ msgstr ""
 msgid "%d tasks"
 msgstr ""
 
-#: admin/page-stats.php:73 classes/orbis-core-plugin.php:195
-#: includes/post.php:64 includes/post.php:66 includes/post.php:78
+#: admin/page-stats.php:73
 msgid "Companies"
 msgstr ""
 
@@ -208,8 +221,7 @@ msgstr ""
 msgid "%d companies"
 msgstr ""
 
-#: admin/page-stats.php:94 classes/orbis-core-plugin.php:222
-#: includes/post.php:7 includes/post.php:9 includes/post.php:21
+#: admin/page-stats.php:94
 msgid "Projects"
 msgstr ""
 
@@ -237,11 +249,77 @@ msgstr ""
 msgid "Annual Revenue"
 msgstr ""
 
-#: classes/orbis-core-admin.php:103
+#: classes/class-admin-contact-post-type.php:29
+msgid "Contact information"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:48
+#: classes/orbis-contacts-importer.php:278 classes/orbis-csv.php:87
+msgid "ID"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:49
+#: classes/orbis-contacts-importer.php:279 classes/orbis-csv.php:88
+#: templates/emails/update.php:60
+msgid "Name"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:55
+#: classes/orbis-contacts-importer.php:280 classes/orbis-csv.php:89
+msgid "Title"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:56
+#: classes/orbis-contacts-importer.php:281 classes/orbis-csv.php:90
+msgid "Organization"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:57
+#: classes/orbis-contacts-importer.php:282 classes/orbis-csv.php:91
+msgid "Department"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:58
+#: classes/orbis-contacts-importer.php:283 classes/orbis-csv.php:92
+msgid "Email"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:65
+#: classes/orbis-contacts-importer.php:290 classes/orbis-csv.php:99
+msgid "Twitter"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:66
+#: classes/orbis-contacts-importer.php:291 classes/orbis-csv.php:100
+msgid "Facebook"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:67
+#: classes/orbis-contacts-importer.php:292 classes/orbis-csv.php:101
+msgid "LinkedIn"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:73
+msgid "Category"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:263
+msgid "orbis-contacts-export-%s.csv"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:331
+msgid "Export Contacts"
+msgstr ""
+
+#: classes/orbis-contacts-importer.php:340
+msgid "Import Contacts"
+msgstr ""
+
+#: classes/orbis-core-admin.php:94
 msgid "An unknown error occurred"
 msgstr ""
 
-#: classes/orbis-core-admin.php:104
+#: classes/orbis-core-admin.php:95
 msgid "Could not connect to the server"
 msgstr ""
 
@@ -249,47 +327,47 @@ msgstr ""
 msgid "Orbis"
 msgstr ""
 
-#: classes/orbis-core-admin.php:139
+#: classes/orbis-core-admin.php:129
 msgid "Orbis Settings"
 msgstr ""
 
-#: classes/orbis-core-admin.php:140
+#: classes/orbis-core-admin.php:130
 msgid "Settings"
 msgstr ""
 
-#: classes/orbis-core-admin.php:148
+#: classes/orbis-core-admin.php:138
 msgid "Orbis Stats"
 msgstr ""
 
-#: classes/orbis-core-admin.php:149
+#: classes/orbis-core-admin.php:139
 msgid "Stats"
 msgstr ""
 
-#: classes/orbis-core-admin.php:157
+#: classes/orbis-core-admin.php:147
 msgid "Orbis Plugins"
 msgstr ""
 
-#: classes/orbis-core-admin.php:158
+#: classes/orbis-core-admin.php:148
 msgid "Plugins"
 msgstr ""
 
-#: classes/orbis-core-admin.php:250 classes/orbis-core-admin.php:255
+#: classes/orbis-core-admin.php:248 classes/orbis-core-admin.php:253
 msgid "Orbis User"
 msgstr ""
 
-#: classes/orbis-core-admin.php:260
+#: classes/orbis-core-admin.php:258
 msgid "Show user in Orbis."
 msgstr ""
 
-#: classes/orbis-core-admin.php:278 classes/orbis-core-admin.php:301
+#: classes/orbis-core-admin.php:276 classes/orbis-core-admin.php:299
 msgid "The plugin could not be found"
 msgstr ""
 
-#: classes/orbis-core-admin.php:291
+#: classes/orbis-core-admin.php:289
 msgid "The plugin was installed and activated successfully"
 msgstr ""
 
-#: classes/orbis-core-admin.php:314
+#: classes/orbis-core-admin.php:312
 msgid "The plugin was activated successfully"
 msgstr ""
 
@@ -299,6 +377,10 @@ msgstr ""
 
 #: classes/orbis-core-email.php:31
 msgid "Frequency"
+msgstr ""
+
+#: classes/orbis-core-email.php:43
+msgid "Time"
 msgstr ""
 
 #: classes/orbis-core-email.php:55
@@ -329,112 +411,28 @@ msgstr ""
 msgid "Orbis Update"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:107
+#: classes/orbis-core-plugin.php:108
 msgid "No matches found"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:108
+#: classes/orbis-core-plugin.php:109
 msgid "Please enter %s more characters"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:109
+#: classes/orbis-core-plugin.php:110
 msgid "You can only select %s item"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:110
+#: classes/orbis-core-plugin.php:111
 msgid "You can only select %s items"
 msgstr ""
 
-#: classes/orbis-core-plugin.php:111
+#: classes/orbis-core-plugin.php:112
 msgid "Loading more results..."
 msgstr ""
 
-#: classes/orbis-core-plugin.php:112
+#: classes/orbis-core-plugin.php:113
 msgid "Searching..."
-msgstr ""
-
-#: classes/orbis-core-plugin.php:196 includes/post.php:121
-msgid "Persons"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:199 classes/orbis-core-plugin.php:233
-msgid "Person"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:200 classes/orbis-core-plugin.php:234
-msgid "Search person"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:201 classes/orbis-core-plugin.php:235
-#: includes/post.php:135
-msgid "No persons found."
-msgstr ""
-
-#: classes/orbis-core-plugin.php:202 classes/orbis-core-plugin.php:236
-msgid "Add Person"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:203 classes/orbis-core-plugin.php:237
-#: includes/post.php:129
-msgid "New Person"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:204 classes/orbis-core-plugin.php:238
-#: includes/post.php:128
-msgid "Add New Person"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:207 includes/post.php:67
-msgid "Company"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:208
-msgid "Search company"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:209 includes/post.php:75
-msgid "No companies found."
-msgstr ""
-
-#: classes/orbis-core-plugin.php:210
-msgid "Add Company"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:211 includes/post.php:71
-msgid "New Company"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:212 includes/post.php:69
-msgid "Add New Company"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:221
-msgid "Involved Persons"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:225 includes/post.php:10
-#: templates/projects-table-view.php:8
-msgid "Project"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:226
-msgid "Search project"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:227 includes/post.php:18
-msgid "No projects found."
-msgstr ""
-
-#: classes/orbis-core-plugin.php:228
-msgid "Add Project"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:229 includes/post.php:14
-msgid "New Project"
-msgstr ""
-
-#: classes/orbis-core-plugin.php:230 includes/post.php:12
-msgid "Add New Project"
 msgstr ""
 
 #: classes/orbis-core-settings.php:12 classes/orbis-core-settings.php:19
@@ -457,6 +455,10 @@ msgstr ""
 msgid "Example: %s"
 msgstr ""
 
+#: classes/orbis-csv.php:74
+msgid "csv-export-%s.csv"
+msgstr ""
+
 #: classes/orbis-plugin-manager.php:70
 msgid "You don't have the required permissions to install a plugin"
 msgstr ""
@@ -467,33 +469,6 @@ msgstr ""
 
 #: classes/orbis-plugin-manager.php:130
 msgid "You don't have the required permissions to activate a plugin"
-msgstr ""
-
-#: includes/companies.php:9
-msgid "Company Details"
-msgstr ""
-
-#: includes/companies.php:145 includes/projects.php:365
-#: templates/projects-without-agreement.php:38
-msgid "Title"
-msgstr ""
-
-#: includes/companies.php:148
-msgid "Online"
-msgstr ""
-
-#: includes/companies.php:150 includes/projects.php:369
-#: templates/emails/update.php:51
-msgid "Author"
-msgstr ""
-
-#: includes/companies.php:151 includes/projects.php:370
-msgid "Comments"
-msgstr ""
-
-#: includes/companies.php:152 includes/projects.php:371
-#: templates/emails/update.php:48 templates/projects-table-view.php:9
-msgid "Date"
 msgstr ""
 
 #: includes/log.php:60
@@ -509,139 +484,119 @@ msgid "Anonymous"
 msgstr ""
 
 #: includes/log.php:165
-msgid "%s updated the \"%s\" post."
+msgid "%1$s updated the \"%2$s\" post."
 msgstr ""
 
-#: includes/persons.php:9
-msgid "Contact information"
+#: includes/post.php:7
+msgid "Contacts"
 msgstr ""
 
-#: includes/post.php:13
-msgid "Edit Project"
+#: includes/post.php:14
+msgid "Add New Contact"
 msgstr ""
 
 #: includes/post.php:15
-msgid "All Projects"
+msgid "New Contact"
 msgstr ""
 
 #: includes/post.php:16
-msgid "View Project"
+msgid "Edit Contact"
 msgstr ""
 
 #: includes/post.php:17
-msgid "Search Projects"
+msgid "View Contact"
+msgstr ""
+
+#: includes/post.php:18
+msgid "All Contacts"
 msgstr ""
 
 #: includes/post.php:19
-msgid "No projects found in Trash."
+msgid "Search Contacts"
 msgstr ""
 
 #: includes/post.php:20
-msgid "Parent Project:"
+msgid "Parent Contact:"
 msgstr ""
 
-#: includes/post.php:43 includes/post.php:100 includes/post.php:157
+#: includes/post.php:21
+msgid "No contacts found."
+msgstr ""
+
+#: includes/post.php:22
+msgid "No contacts found in Trash."
+msgstr ""
+
+#: includes/post.php:43
+msgid "Search Genders"
+msgstr ""
+
+#: includes/post.php:44
+msgid "All Genders"
+msgstr ""
+
+#: includes/post.php:45
+msgid "Parent Gender"
+msgstr ""
+
+#: includes/post.php:46
+msgid "Parent Gender:"
+msgstr ""
+
+#: includes/post.php:47
+msgid "Edit Gender"
+msgstr ""
+
+#: includes/post.php:48
+msgid "Update Gender"
+msgstr ""
+
+#: includes/post.php:49
+msgid "Add New Gender"
+msgstr ""
+
+#: includes/post.php:50
+msgid "New Gender Name"
+msgstr ""
+
+#: includes/post.php:51
+msgid "Genders"
+msgstr ""
+
+#: includes/post.php:75
 msgid "Search Categories"
 msgstr ""
 
-#: includes/post.php:44 includes/post.php:101 includes/post.php:158
+#: includes/post.php:76
 msgid "All Categories"
 msgstr ""
 
-#: includes/post.php:45 includes/post.php:102 includes/post.php:159
+#: includes/post.php:77
 msgid "Parent Category"
 msgstr ""
 
-#: includes/post.php:46 includes/post.php:103 includes/post.php:160
+#: includes/post.php:78
 msgid "Parent Category:"
 msgstr ""
 
-#: includes/post.php:47 includes/post.php:104 includes/post.php:161
+#: includes/post.php:79
 msgid "Edit Category"
 msgstr ""
 
-#: includes/post.php:48 includes/post.php:105 includes/post.php:162
+#: includes/post.php:80
 msgid "Update Category"
 msgstr ""
 
-#: includes/post.php:49 includes/post.php:106 includes/post.php:163
+#: includes/post.php:81
 msgid "Add New Category"
 msgstr ""
 
-#: includes/post.php:50 includes/post.php:107 includes/post.php:164
+#: includes/post.php:82
 msgid "New Category Name"
 msgstr ""
 
-#: includes/post.php:51 includes/post.php:108 includes/post.php:165
+#: includes/post.php:83
 msgid "Categories"
-msgstr ""
-
-#: includes/post.php:70
-msgid "Edit Company"
-msgstr ""
-
-#: includes/post.php:72
-msgid "All Companies"
-msgstr ""
-
-#: includes/post.php:73
-msgid "View Company"
-msgstr ""
-
-#: includes/post.php:74
-msgid "Search Companies"
-msgstr ""
-
-#: includes/post.php:76
-msgid "No companies found in Trash."
-msgstr ""
-
-#: includes/post.php:77
-msgid "Parent Company:"
-msgstr ""
-
-#: includes/post.php:130
-msgid "Edit Person"
-msgstr ""
-
-#: includes/post.php:131
-msgid "View Person"
-msgstr ""
-
-#: includes/post.php:132
-msgid "All Persons"
-msgstr ""
-
-#: includes/post.php:133
-msgid "Search Persons"
-msgstr ""
-
-#: includes/post.php:134
-msgid "Parent Person:"
-msgstr ""
-
-#: includes/post.php:136
-msgid "No persons found in Trash."
-msgstr ""
-
-#: includes/projects.php:9
-msgid "Project Information"
-msgstr ""
-
-#: includes/projects.php:248
-msgid "This '%s' project is just '%s' by %s."
-msgstr ""
-
-#: includes/projects.php:249 includes/projects.php:250
-msgid "opened"
-msgstr ""
-
-#: includes/projects.php:249 includes/projects.php:250
-msgid "completed"
-msgstr ""
-
-#: includes/projects.php:366 templates/projects-without-agreement.php:37
-msgid "Principal"
 msgstr ""
 
 #: templates/emails/update.php:17
@@ -673,69 +628,23 @@ msgid "Recent Tasks"
 msgstr ""
 
 #: templates/emails/update.php:54
-#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
-msgid "Name"
+msgid "Date"
 msgstr ""
 
-#: templates/emails/update.php:60
+#: templates/emails/update.php:57
+msgid "Author"
+msgstr ""
+
+#: templates/emails/update.php:66
 msgid "Price"
 msgstr ""
 
-#: templates/emails/update.php:105
+#: templates/emails/update.php:111
 msgid "No new posts in the last 3 days."
 msgstr ""
 
-#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
-msgid "Order By:"
-msgstr ""
-
-#: templates/projects-completed-not-invoiced.php:87 templates/projects.php:109
-msgid "Number"
-msgstr ""
-
-#: templates/projects-table-view.php:5
-msgid "Manager"
-msgstr ""
-
-#: templates/projects-table-view.php:6
-msgid "ID"
-msgstr ""
-
-#: templates/projects-table-view.php:11
-msgid "Invoiceable"
-msgstr ""
-
-#: templates/projects-table-view.php:12
-msgid "Invoice Number"
-msgstr ""
-
-#: templates/projects-table-view.php:60
-#: templates/projects-without-agreement.php:74
-msgid "Edit"
-msgstr ""
-
-#: templates/projects-without-agreement.php:36
-msgid "Project Manager"
-msgstr ""
-
-#: templates/projects-without-agreement.php:39
-msgid "Actions"
-msgstr ""
-
-#: templates/projects.php:110
-msgid "Filter:"
-msgstr ""
-
-#: templates/projects.php:110
-msgid "Strippenkaart"
-msgstr ""
-
-#: templates/projects.php:110
-msgid "None"
-msgstr ""
-
 #. Plugin URI of the plugin/theme
-msgid "http://www.pronamic.eu/plugins/orbis/"
+msgid "https://www.pronamic.eu/plugins/orbis/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -748,77 +657,81 @@ msgstr ""
 msgid "Pronamic"
 msgstr ""
 
-#: includes/post.php:11
-msgctxt "orbis_project"
+#. Author URI of the plugin/theme
+msgid "https://www.pronamic.eu/"
+msgstr ""
+
+#: admin/meta-box-contact-details.php:35
+msgctxt "contact"
+msgid "Title"
+msgstr ""
+
+#: admin/meta-box-contact-details.php:37
+msgctxt "contact"
+msgid "Organization"
+msgstr ""
+
+#: admin/meta-box-contact-details.php:39
+msgctxt "contact"
+msgid "Department"
+msgstr ""
+
+#: includes/post.php:13
+msgctxt "contact"
 msgid "Add New"
+msgstr ""
+
+#: includes/post.php:9
+msgctxt "post type general name"
+msgid "Contacts"
+msgstr ""
+
+#: includes/post.php:10
+msgctxt "post type singular name"
+msgid "Contact"
+msgstr ""
+
+#: includes/post.php:11
+msgctxt "admin menu"
+msgid "Contacts"
+msgstr ""
+
+#: includes/post.php:12
+msgctxt "add new on admin bar"
+msgid "Contact"
 msgstr ""
 
 #: includes/post.php:30
 msgctxt "slug"
-msgid "projects"
+msgid "contacts"
 msgstr ""
 
-#: includes/post.php:56
+#: includes/post.php:62
 msgctxt "slug"
-msgid "project-category"
+msgid "genders"
 msgstr ""
 
-#: includes/post.php:87
+#: includes/post.php:88
 msgctxt "slug"
-msgid "companies"
+msgid "contact-category"
 msgstr ""
 
-#: includes/post.php:113
-msgctxt "slug"
-msgid "company-category"
+#: includes/post.php:41
+msgctxt "taxonomy general name"
+msgid "Genders"
 msgstr ""
 
-#: includes/post.php:144
-msgctxt "slug"
-msgid "persons"
-msgstr ""
-
-#: includes/post.php:170
-msgctxt "slug"
-msgid "person-category"
-msgstr ""
-
-#: includes/post.php:41 includes/post.php:98 includes/post.php:155
+#: includes/post.php:73
 msgctxt "taxonomy general name"
 msgid "Categories"
 msgstr ""
 
-#: includes/post.php:42 includes/post.php:99 includes/post.php:156
+#: includes/post.php:42
+msgctxt "taxonomy singular name"
+msgid "Gender"
+msgstr ""
+
+#: includes/post.php:74
 msgctxt "taxonomy singular name"
 msgid "Category"
-msgstr ""
-
-#: includes/post.php:68
-msgctxt "orbis_company"
-msgid "Add New"
-msgstr ""
-
-#: includes/post.php:123
-msgctxt "post type general name"
-msgid "Persons"
-msgstr ""
-
-#: includes/post.php:124
-msgctxt "post type singular name"
-msgid "Person"
-msgstr ""
-
-#: includes/post.php:125
-msgctxt "admin menu"
-msgid "Persons"
-msgstr ""
-
-#: includes/post.php:126
-msgctxt "add new on admin bar"
-msgid "Person"
-msgstr ""
-
-#: includes/post.php:127
-msgctxt "person"
-msgid "Add New"
 msgstr ""

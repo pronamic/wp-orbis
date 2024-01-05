@@ -16,11 +16,6 @@ class Orbis_Core_Admin {
 	 */
 	private $plugin;
 
-	/**
-	 * Orbis plugins page slug
-	 */
-	public static $ORBIS_PLUGINS_SLUG = 'orbis_plugins';
-
 	//////////////////////////////////////////////////
 
 	/**
@@ -32,7 +27,6 @@ class Orbis_Core_Admin {
 		$this->plugin = $plugin;
 
 		// Actions
-		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
@@ -40,7 +34,7 @@ class Orbis_Core_Admin {
 		add_filter( 'menu_order', array( $this, 'menu_order' ) );
 		add_filter( 'custom_menu_order', array( $this, 'custom_menu_order' ) );
 
-		add_action( 'wp_ajax_orbis_install_plugin' , array( $this, 'orbis_install_plugin' ) );
+		add_action( 'wp_ajax_orbis_install_plugin', array( $this, 'orbis_install_plugin' ) );
 		add_action( 'wp_ajax_orbis_activate_plugin', array( $this, 'orbis_activate_plugin' ) );
 
 		// Users
@@ -52,15 +46,12 @@ class Orbis_Core_Admin {
 
 		// Settings
 		$this->settings = new Orbis_Core_Settings();
-	}
 
-	//////////////////////////////////////////////////
+		// Contact post type
+		$this->contact_post_type = new Orbis_Contacts_AdminContactPostType( $plugin );
 
-	/**
-	 * Admin initialize
-	 */
-	public function admin_init() {
-
+		// Contacts importer
+		$this->contacts_importer = new Orbis_Core_ContactsImporter( $plugin );
 	}
 
 	//////////////////////////////////////////////////
@@ -74,9 +65,13 @@ class Orbis_Core_Admin {
 		// Orbis screen
 		if ( false !== strpos( $screen->id, 'orbis' ) ) {
 			// Select2
-			wp_enqueue_script( 'select2' );
+			wp_enqueue_style( 'select2' );
 
-			wp_enqueue_style( 'orbis-select2' );
+			wp_enqueue_script( 'select2' );
+			wp_enqueue_script( 'select2-i18n' );
+
+			// Orbis autocomplete
+			wp_enqueue_script( 'orbis-autocomplete' );
 
 			// jQuery datepicker
 			$this->plugin->enqueue_jquery_datepicker();
@@ -96,13 +91,17 @@ class Orbis_Core_Admin {
 				array( 'jquery', 'thickbox' )
 			);
 
-			wp_localize_script( 'orbis-plugins-script', 'orbis_plugins_script_strings', array(
-				'install_button_text'      => __( 'Install', 'orbis' ),
-				'activate_button_text'     => __( 'Activate', 'orbis' ),
-				'active_button_text'       => __( 'Active', 'orbis' ),
-				'error_message_unknown'    => __( 'An unknown error occurred', 'orbis' ),
-				'error_message_connection' => __( 'Could not connect to the server', 'orbis' ),
-			) );
+			wp_localize_script(
+				'orbis-plugins-script',
+				'orbis_plugins_script_strings',
+				array(
+					'install_button_text'      => __( 'Install', 'orbis' ),
+					'activate_button_text'     => __( 'Activate', 'orbis' ),
+					'active_button_text'       => __( 'Active', 'orbis' ),
+					'error_message_unknown'    => __( 'An unknown error occurred', 'orbis' ),
+					'error_message_connection' => __( 'Could not connect to the server', 'orbis' ),
+				)
+			);
 
 			wp_enqueue_style( 'thickbox' );
 		}
@@ -120,19 +119,21 @@ class Orbis_Core_Admin {
 		 */
 		global $menu;
 
-		$menu['54.orbis.1'] = array( '', 'read', 'separator-orbis', '', 'wp-menu-separator orbis' );
+		$menu['54.orbis.1'] = array( '', 'read', 'separator-orbis', '', 'wp-menu-separator orbis' ); // WPCS: override ok.
 
 		add_menu_page(
 			__( 'Orbis', 'orbis' ), // page_title
 			__( 'Orbis', 'orbis' ), // menu_title
 			'manage_orbis', // capability
 			'orbis', // menu_slug
-			array( $this, 'page' ) , // function
-			$this->plugin->plugin_url( 'images/icon-16x16.png' ), // icon_url
+			array( $this, 'page' ), // function
+			// @codingStandardsIgnoreStart
+			'data:image/svg+xml;base64,' . base64_encode( file_get_contents( plugin_dir_path( $this->plugin->file ) . 'images/orbis-icon-menu.svg' ) ), // icon_url
+			// @codingStandardsIgnoreEnd
+			// phpcs recommends WP_Filesystem instead of file_get_contents(). This is needlessly complex and not necessary.
 			'54.orbis.2'
 		);
 
-		// @see _add_post_type_submenus()
 		// @see wp-admin/menu.php
 		add_submenu_page(
 			'orbis', // parent_slug
@@ -183,7 +184,7 @@ class Orbis_Core_Admin {
 			}
 		}
 
-		$orbis_index = array_search( 'orbis', $other_items ) + 1;
+		$orbis_index = array_search( 'orbis', $other_items, true ) + 1;
 
 		$before = array_slice( $other_items, 0, $orbis_index );
 		$after  = array_slice( $other_items, $orbis_index );
@@ -221,12 +222,20 @@ class Orbis_Core_Admin {
 		$this->plugin->plugin_include( 'admin/page-plugins.php' );
 	}
 
+	public function page_contacts_export() {
+		$this->plugin->plugin_include( 'admin/page-contacts-export.php' );
+	}
+
+	public function page_contacts_import() {
+		$this->plugin->plugin_include( 'admin/page-contacts-import.php' );
+	}
+
 	//////////////////////////////////////////////////
 
 	/**
 	 * User update
 	 */
-	function user_update( $user_id ) {
+	public function user_update( $user_id ) {
 		$orbis_user = filter_input( INPUT_POST, 'orbis_user', FILTER_VALIDATE_BOOLEAN );
 
 		update_user_meta( $user_id, '_orbis_user', $orbis_user ? 'true' : 'false' );
@@ -275,7 +284,14 @@ class Orbis_Core_Admin {
 		$plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_SANITIZE_STRING );
 
 		if ( ! $plugin_slug ) {
-			die( json_encode( array( 'success' => false, 'message' => __( 'The plugin could not be found', 'orbis' ) ) ) );
+			die(
+				wp_json_encode(
+					array(
+						'success' => false,
+						'message' => __( 'The plugin could not be found', 'orbis' ),
+					)
+				)
+			);
 		}
 
 		check_ajax_referer( 'manage-plugin-' . $plugin_slug, 'nonce' );
@@ -285,10 +301,25 @@ class Orbis_Core_Admin {
 		$result = $plugin_installer->install_plugin( $plugin_slug );
 
 		if ( is_wp_error( $result ) ) {
-			die( json_encode( array( 'success' => false, 'error_code' => $result->get_error_code(), 'message' => $result->get_error_message() ) ) );
+			die(
+				wp_json_encode(
+					array(
+						'success'    => false,
+						'error_code' => $result->get_error_code(),
+						'message'    => $result->get_error_message(),
+					)
+				)
+			);
 		}
 
-		die( json_encode( array( 'success' => true, 'message' => __( 'The plugin was installed and activated successfully', 'orbis' ) ) ) );
+		die(
+			wp_json_encode(
+				array(
+					'success' => true,
+					'message' => __( 'The plugin was installed and activated successfully', 'orbis' ),
+				)
+			)
+		);
 	}
 
 	/**
@@ -298,7 +329,14 @@ class Orbis_Core_Admin {
 		$plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_SANITIZE_STRING );
 
 		if ( ! $plugin_slug ) {
-			die( json_encode( array( 'success' => false, 'message' => __( 'The plugin could not be found', 'orbis' ) ) ) );
+			die(
+				wp_json_encode(
+					array(
+						'success' => false,
+						'message' => __( 'The plugin could not be found', 'orbis' ),
+					)
+				)
+			);
 		}
 
 		check_ajax_referer( 'manage-plugin-' . $plugin_slug, 'nonce' );
@@ -308,9 +346,24 @@ class Orbis_Core_Admin {
 		$result = $plugin_installer->activate_plugin( $plugin_slug );
 
 		if ( is_wp_error( $result ) ) {
-			die( json_encode( array( 'success' => false, 'error_code' => $result->get_error_code(), 'message' => $result->get_error_message() ) ) );
+			die(
+				wp_json_encode(
+					array(
+						'success'    => false,
+						'error_code' => $result->get_error_code(),
+						'message'    => $result->get_error_message(),
+					)
+				)
+			);
 		}
 
-		die( json_encode( array( 'success' => true, 'message' => __( 'The plugin was activated successfully', 'orbis' ) ) ) );
+		die(
+			wp_json_encode(
+				array(
+					'success' => true,
+					'message' => __( 'The plugin was activated successfully', 'orbis' ),
+				)
+			)
+		);
 	}
 }
