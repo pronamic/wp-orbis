@@ -1,6 +1,6 @@
 {
-	"name": "orbis",
-	"description": "Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More...",
+	"name": "pronamic/wp-orbis",
+	"description": "Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More…",
 	"version": "1.2.0",
 	"keywords": [
 		"orbis",
