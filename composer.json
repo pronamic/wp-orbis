@@ -30,7 +30,9 @@
 	},
 	"type": "wordpress-plugin",
 	"autoload": {
-		"classmap": ["classes/"]
+		"classmap": [
+			"classes/"
+		]
 	},
 	"config": {
 		"platform": {
