@@ -36,12 +36,12 @@
 	},
 	"config": {
 		"platform": {
-			"php": "5.5"
+			"php": "8.0"
 		}
 	},
 	"require": {
+		"php": ">=8.0",
 		"pronamic/wp-money": "^1.1",
-		"php": "^5.5",
 		"phpoffice/phpexcel": "^1.8",
 		"tecnickcom/tcpdf": "^6.2",
 		"sabre/vobject": "^4.1",
