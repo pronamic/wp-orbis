@@ -1,34 +1,35 @@
 <?xml version="1.0"?>
 
 <ruleset name="Orbis rules">
-	<config name="installed_paths" value="../../wp-coding-standards/wpcs" />
+	<file>.</file>
 
-	<rule ref="WordPress">
-		<exclude name="Generic.Commenting" />
+	<exclude-pattern type="relative">^build/*</exclude-pattern>
+	<exclude-pattern type="relative">^node_modules/*</exclude-pattern>
+	<exclude-pattern type="relative">^packages/*</exclude-pattern>
+	<exclude-pattern type="relative">^vendor/*</exclude-pattern>
 
-		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
-
+	<rule ref="PronamicWP">
 		<exclude name="Squiz.Commenting" />
-		<exclude name="Squiz.PHP.CommentedOutCode.Found" />
 
-		<exclude name="WordPress.DB.DirectDatabaseQuery.DirectQuery" />
-		<exclude name="WordPress.DB.DirectDatabaseQuery.NoCaching" />
+		<exclude name="WordPress.DB" />
+	</rule>
 
-		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="orbis" />
+			</property>
+		</properties>
+	</rule>
 
-		<exclude name="WordPress.PHP.DiscouragedFunctions.DiscouragedWithAlternative" />
-		<exclude name="WordPress.PHP.DontExtract.extract_extract" />
+	<rule ref="WordPress.Utils.I18nTextDomainFixer">
+		<properties>
+			<property name="old_text_domain" type="array">
+				<element value="orbis" />
+				<element value="pronamic-money" />
+			</property>
 
-		<exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped" />
-		<exclude name="WordPress.Security.EscapeOutput.UnsafePrintingFunction" />
-		<exclude name="WordPress.Security.ValidatedSanitizedInput.InputNotSanitized" />
-		<exclude name="WordPress.Security.ValidatedSanitizedInput.MissingUnslash" />
-
-		<exclude name="WordPress.WP.EnqueuedResourceParameters.MissingVersion" />
-		<exclude name="WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion" />
-		<exclude name="WordPress.WP.EnqueuedResourceParameters.NotInFooter" />
-
-		<exclude name="WordPress.WP.GlobalVariablesOverride.OverrideProhibited" />
-		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+			<property name="new_text_domain" value="orbis" />
+		</properties>
 	</rule>
 </ruleset>
