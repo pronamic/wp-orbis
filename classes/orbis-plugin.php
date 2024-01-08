@@ -36,6 +36,38 @@ class Orbis_Plugin {
 		add_action( 'admin_init', [ $this, 'install_redirect' ] );
 
 		add_action( 'rest_api_init', [ $this, 'rest_api_init' ] );
+
+		add_filter( 'the_posts', function( $posts ) {
+			foreach ( $posts as $post ) {
+				if ( ! $this->can_user_view_post( $post->ID ) ) {
+					return [];
+				}
+			}
+
+			return $posts;
+		} );
+	}
+
+	public function can_user_view_post( $post_id ) {
+		if ( \current_user_can( 'read_post', $post_id ) ) {
+			return true;
+		}
+
+		if ( \function_exists( '\members_get_post_roles' ) ) {
+			$roles = \members_get_post_roles( $post_id );
+
+			if ( empty( $roles ) ) {
+				return false;
+			}
+		}
+
+		if ( \function_exists( '\members_can_current_user_view_post' ) ) {
+			if ( \members_can_current_user_view_post( $post_id ) ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	//////////////////////////////////////////////////
