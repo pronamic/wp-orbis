@@ -45,7 +45,7 @@
 	},
 	"require": {
 		"php": ">=8.0",
-		"pronamic/wp-money": "^1.1",
+		"pronamic/wp-money": "^2.4",
 		"phpoffice/phpexcel": "^1.8",
 		"tecnickcom/tcpdf": "^6.2",
 		"sabre/vobject": "^4.1",
