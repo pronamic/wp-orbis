@@ -5,7 +5,7 @@ use Pronamic\WordPress\Money\Money;
 class Orbis_Core_Settings {
 	public function __construct() {
 		// Actions
-		add_action( 'admin_init', array( $this, 'admin_init' ) );
+		add_action( 'admin_init', [ $this, 'admin_init' ] );
 	}
 
 	public function admin_init() {
@@ -19,7 +19,7 @@ class Orbis_Core_Settings {
 		add_settings_field(
 			'orbis_currency',
 			__( 'Currency', 'orbis' ),
-			array( $this, 'dropdown_currencies' ),
+			[ $this, 'dropdown_currencies' ],
 			'orbis',
 			'orbis_currency'
 		);
@@ -36,12 +36,12 @@ class Orbis_Core_Settings {
 		add_settings_field(
 			'orbis_invoice_header_text',
 			__( 'Invoice Header Text', 'orbis' ),
-			array( $this, 'input_text' ),
+			[ $this, 'input_text' ],
 			'orbis',
 			'orbis_billing',
-			array(
+			[
 				'label_for' => 'orbis_invoice_header_text',
-			)
+			]
 		);
 
 		register_setting( 'orbis', 'orbis_invoice_header_text' );
@@ -49,23 +49,23 @@ class Orbis_Core_Settings {
 		add_settings_field(
 			'orbis_invoice_footer_text',
 			__( 'Invoice Footer Text', 'orbis' ),
-			array( $this, 'input_text' ),
+			[ $this, 'input_text' ],
 			'orbis',
 			'orbis_billing',
-			array(
+			[
 				'label_for' => 'orbis_invoice_footer_text',
-			)
+			]
 		);
 
 		register_setting( 'orbis', 'orbis_invoice_footer_text' );
 	}
 
 	public function dropdown_currencies() {
-		$currencies = array(
+		$currencies = [
 			'GBP' => __( 'Pound sterling', 'orbis' ),
 			'EUR' => __( 'Euros', 'orbis' ),
 			'USD' => __( 'US Dollars', 'orbis' ),
-		);
+		];
 
 		$current = get_option( 'orbis_currency' );
 
@@ -99,7 +99,7 @@ class Orbis_Core_Settings {
 	public function input_text( $args ) {
 		$name = $args['label_for'];
 
-		$classes = array( 'regular-text' );
+		$classes = [ 'regular-text' ];
 		if ( isset( $args['classes'] ) ) {
 			$classes = $args['classes'];
 		}

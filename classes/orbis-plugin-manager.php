@@ -5,6 +5,7 @@
  * Description:
  * Copyright: Copyright (c) 2005 - 2013
  * Company: Pronamic
+ *
  * @author Stefan Boonstra
  * @version 1.0
  */
@@ -21,20 +22,20 @@ class Orbis_Plugin_Manager {
 	/**
 	 * List of recommended plugins
 	 */
-	public static $recommended_plugins = array(
-		'members'                 => array(
+	public static $recommended_plugins = [
+		'members'                 => [
 			'title'     => 'Members',
 			'file_name' => null,
-		),
-		'posts-to-posts'          => array(
+		],
+		'posts-to-posts'          => [
 			'title'     => 'Posts 2 Posts',
 			'file_name' => null,
-		),
-		'post-type-archive-links' => array(
+		],
+		'post-type-archive-links' => [
 			'title'     => 'Post Type Archive Link',
 			'file_name' => null,
-		),
-	);
+		],
+	];
 
 	//////////////////////////////////////////////////
 
@@ -74,12 +75,12 @@ class Orbis_Plugin_Manager {
 
 		$plugins_api = plugins_api(
 			'plugin_information',
-			array(
+			[
 				'slug'   => $plugin_slug,
-				'fields' => array(
+				'fields' => [
 					'sections' => false,
-				),
-			)
+				],
+			]
 		);
 
 		if ( is_wp_error( $plugins_api ) ) {
@@ -87,11 +88,11 @@ class Orbis_Plugin_Manager {
 		}
 
 		$skin = new Orbis_Empty_Upgrader_Skin(
-			array(
+			[
 				'nonce'  => 'install-plugin_' . $plugin_slug,
 				'plugin' => $plugin_slug,
 				'api'    => $plugins_api,
-			)
+			]
 		);
 
 		$plugin_upgrader = new Plugin_Upgrader( $skin );
@@ -223,19 +224,19 @@ class Orbis_Empty_Upgrader_Skin extends WP_Upgrader_Skin {
 	 *
 	 * @param mixed $args
 	 */
-	public function __construct( $args = array() ) {
-		$defaults = array(
+	public function __construct( $args = [] ) {
+		$defaults = [
 			'type'   => 'web',
 			'url'    => '',
 			'plugin' => '',
 			'nonce'  => '',
 			'title'  => '',
-		);
+		];
 
 		$args = wp_parse_args( $args, $defaults );
 
 		$this->type = $args['type'];
-		$this->api  = isset( $args['api'] ) ? $args['api'] : array();
+		$this->api  = isset( $args['api'] ) ? $args['api'] : [];
 
 		parent::__construct( $args );
 	}
@@ -272,11 +273,9 @@ class Orbis_Empty_Upgrader_Skin extends WP_Upgrader_Skin {
 	//////////////////////////////////////////////////
 
 	public function header() {
-
 	}
 
 	public function footer() {
-
 	}
 
 	public function feedback( $string ) {

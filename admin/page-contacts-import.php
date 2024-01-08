@@ -9,8 +9,8 @@ $meta_input = $this->get_import_meta_input();
 $tax_input  = $this->get_import_tax_input();
 
 // CSV
-$csv_row_1 = array();
-$csv_row_2 = array();
+$csv_row_1 = [];
+$csv_row_2 = [];
 
 if ( is_readable( $file ) ) {
 	$handle = fopen( $file, 'r' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fopen

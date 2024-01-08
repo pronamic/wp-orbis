@@ -3,9 +3,9 @@
 function orbis_create_initial_post_types() {
 	register_post_type(
 		'orbis_person',
-		array(
+		[
 			'label'         => __( 'Contacts', 'orbis' ),
-			'labels'        => array(
+			'labels'        => [
 				'name'               => _x( 'Contacts', 'post type general name', 'orbis' ),
 				'singular_name'      => _x( 'Contact', 'post type singular name', 'orbis' ),
 				'menu_name'          => _x( 'Contacts', 'admin menu', 'orbis' ),
@@ -20,26 +20,26 @@ function orbis_create_initial_post_types() {
 				'parent_item_colon'  => __( 'Parent Contact:', 'orbis' ),
 				'not_found'          => __( 'No contacts found.', 'orbis' ),
 				'not_found_in_trash' => __( 'No contacts found in Trash.', 'orbis' ),
-			),
+			],
 			'public'        => true,
 			'menu_position' => 30,
 			'menu_icon'     => 'dashicons-businessman',
-			'supports'      => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'custom-fields', 'revisions' ),
+			'supports'      => [ 'title', 'editor', 'author', 'comments', 'thumbnail', 'custom-fields', 'revisions' ],
 			'has_archive'   => true,
 			'show_in_rest'  => true,
 			'rest_base'     => 'orbis/persons',
-			'rewrite'       => array(
+			'rewrite'       => [
 				'slug' => _x( 'contacts', 'slug', 'orbis' ),
-			),
-		)
+			],
+		]
 	);
 
 	register_taxonomy(
 		'orbis_gender',
-		array( 'orbis_person' ),
-		array(
+		[ 'orbis_person' ],
+		[
 			'hierarchical'       => true,
-			'labels'             => array(
+			'labels'             => [
 				'name'              => _x( 'Genders', 'taxonomy general name', 'orbis' ),
 				'singular_name'     => _x( 'Gender', 'taxonomy singular name', 'orbis' ),
 				'search_items'      => __( 'Search Genders', 'orbis' ),
@@ -51,7 +51,7 @@ function orbis_create_initial_post_types() {
 				'add_new_item'      => __( 'Add New Gender', 'orbis' ),
 				'new_item_name'     => __( 'New Gender Name', 'orbis' ),
 				'menu_name'         => __( 'Genders', 'orbis' ),
-			),
+			],
 			'public'             => true,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
@@ -60,18 +60,18 @@ function orbis_create_initial_post_types() {
 			'show_in_quick_edit' => false,
 			'meta_box_cb'        => false,
 			'query_var'          => true,
-			'rewrite'            => array(
+			'rewrite'            => [
 				'slug' => _x( 'genders', 'slug', 'orbis' ),
-			),
-		)
+			],
+		]
 	);
 
 	register_taxonomy(
 		'orbis_person_category',
-		array( 'orbis_person' ),
-		array(
+		[ 'orbis_person' ],
+		[
 			'hierarchical' => true,
-			'labels'       => array(
+			'labels'       => [
 				'name'              => _x( 'Categories', 'taxonomy general name', 'orbis' ),
 				'singular_name'     => _x( 'Category', 'taxonomy singular name', 'orbis' ),
 				'search_items'      => __( 'Search Categories', 'orbis' ),
@@ -83,13 +83,13 @@ function orbis_create_initial_post_types() {
 				'add_new_item'      => __( 'Add New Category', 'orbis' ),
 				'new_item_name'     => __( 'New Category Name', 'orbis' ),
 				'menu_name'         => __( 'Categories', 'orbis' ),
-			),
+			],
 			'show_ui'      => true,
 			'query_var'    => true,
-			'rewrite'      => array(
+			'rewrite'      => [
 				'slug' => _x( 'contact-category', 'slug', 'orbis' ),
-			),
-		)
+			],
+		]
 	);
 }
 
@@ -102,7 +102,7 @@ add_action( 'init', 'orbis_create_initial_post_types', 10 ); // highest priority
  * @return array
  */
 function orbis_post_type_capabilities( $grant, array $capabilities ) {
-	$default_capabilties = array(
+	$default_capabilties = [
 		'edit_post'              => $grant,
 		'read_post'              => $grant,
 		'delete_post'            => $grant,
@@ -117,7 +117,7 @@ function orbis_post_type_capabilities( $grant, array $capabilities ) {
 		'delete_others_posts'    => $grant,
 		'edit_private_posts'     => $grant,
 		'edit_published_posts'   => $grant,
-	);
+	];
 
 	return array_merge( $default_capabilties, $capabilities );
 }
@@ -129,7 +129,7 @@ function orbis_post_type_capabilities( $grant, array $capabilities ) {
  * @param array $capabilities
  * @return array
  */
-function orbis_translate_post_type_capabilities( $post_type, $capabilities, &$result = array() ) {
+function orbis_translate_post_type_capabilities( $post_type, $capabilities, &$result = [] ) {
 	global $wp_post_types;
 
 	if ( isset( $wp_post_types[ $post_type ] ) ) {

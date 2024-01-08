@@ -4,14 +4,14 @@ class Orbis_Core_Email {
 	public function __construct( $plugin ) {
 		$this->plugin = $plugin;
 
-		add_action( 'admin_init', array( $this, 'admin_init' ) );
-		add_action( 'admin_init', array( $this, 'maybe_email_manually' ) );
+		add_action( 'admin_init', [ $this, 'admin_init' ] );
+		add_action( 'admin_init', [ $this, 'maybe_email_manually' ] );
 
-		add_action( 'orbis_email', array( $this, 'maybe_send_email' ) );
+		add_action( 'orbis_email', [ $this, 'maybe_send_email' ] );
 	}
 
 	public function admin_init() {
-		add_filter( sprintf( 'pre_update_option_%s', 'orbis_email_frequency' ), array( $this, 'update_option_frequency' ), 10, 2 );
+		add_filter( sprintf( 'pre_update_option_%s', 'orbis_email_frequency' ), [ $this, 'update_option_frequency' ], 10, 2 );
 
 		// E-mail
 		add_settings_section(
@@ -21,7 +21,7 @@ class Orbis_Core_Email {
 			'orbis' // page
 		);
 
-		$options = array( '' );
+		$options = [ '' ];
 		foreach ( wp_get_schedules() as $name => $schedule ) {
 			$options[ $name ] = $schedule['display'];
 		}
@@ -29,31 +29,31 @@ class Orbis_Core_Email {
 		add_settings_field(
 			'orbis_email_frequency', // id
 			__( 'Frequency', 'orbis' ), // title
-			array( $this, 'input_select' ), // callback
+			[ $this, 'input_select' ], // callback
 			'orbis', // page
 			'orbis_email', // section
-			array(
+			[
 				'label_for' => 'orbis_email_frequency',
 				'options'   => $options,
-			) // args
+			] // args
 		);
 
 		add_settings_field(
 			'orbis_email_time', // id
 			__( 'Time', 'orbis' ), // title
-			array( $this, 'input_text' ), // callback
+			[ $this, 'input_text' ], // callback
 			'orbis', // page
 			'orbis_email', // section
-			array(
+			[
 				'label_for' => 'orbis_email_time',
-				'classes'   => array(),
-			) // args
+				'classes'   => [],
+			] // args
 		);
 
 		add_settings_field(
 			'orbis_email_next_schedule', // id
 			__( 'Next Schedule', 'orbis' ), // title
-			array( $this, 'next_schedule' ), // callback
+			[ $this, 'next_schedule' ], // callback
 			'orbis', // page
 			'orbis_email' // section
 		);
@@ -61,29 +61,29 @@ class Orbis_Core_Email {
 		add_settings_field(
 			'orbis_email_subject', // id
 			__( 'Subject', 'orbis' ), // title
-			array( $this, 'input_text' ), // callback
+			[ $this, 'input_text' ], // callback
 			'orbis', // page
 			'orbis_email', // section
-			array(
+			[
 				'label_for' => 'orbis_email_subject',
-			) // args
+			] // args
 		);
 
 		add_settings_field(
 			'orbis_email_subject_date_format', // id
 			__( 'Subject Date Format', 'orbis' ), // title
-			array( $this, 'input_text' ), // callback
+			[ $this, 'input_text' ], // callback
 			'orbis', // page
 			'orbis_email', // section
-			array(
+			[
 				'label_for' => 'orbis_email_subject_date_format',
-			) // args
+			] // args
 		);
 
 		add_settings_field(
 			'orbis_email_manually', // id
 			__( 'E-mail Manually', 'orbis' ), // title
-			array( $this, 'button_email_manually' ), // callback
+			[ $this, 'button_email_manually' ], // callback
 			'orbis', // page
 			'orbis_email' // section
 		);
@@ -102,7 +102,7 @@ class Orbis_Core_Email {
 	public function input_text( $args ) {
 		$name = $args['label_for'];
 
-		$classes = array( 'regular-text' );
+		$classes = [ 'regular-text' ];
 		if ( isset( $args['classes'] ) ) {
 			$classes = $args['classes'];
 		}
@@ -124,7 +124,7 @@ class Orbis_Core_Email {
 	public function input_checkbox( $args ) {
 		$name = $args['label_for'];
 
-		$classes = array();
+		$classes = [];
 		if ( isset( $args['classes'] ) ) {
 			$classes = $args['classes'];
 		}
@@ -146,12 +146,12 @@ class Orbis_Core_Email {
 	public function input_select( $args ) {
 		$name = $args['label_for'];
 
-		$classes = array();
+		$classes = [];
 		if ( isset( $args['classes'] ) ) {
 			$classes = $args['classes'];
 		}
 
-		$options = array();
+		$options = [];
 		if ( isset( $args['options'] ) ) {
 			$options = $args['options'];
 		}
@@ -241,31 +241,31 @@ class Orbis_Core_Email {
 	 */
 	public function send_email() {
 		$user_ids = get_users(
-			array(
+			[
 				'fields'     => 'ids',
 				'meta_key'   => '_orbis_user', // WPCS: slow query ok.
 				'meta_value' => 'true', // WPCS: slow query ok.
-			)
+			]
 		);
 
 		global $orbis_email_title;
 
 		$orbis_email_title = str_replace(
-			array(
+			[
 				'{date}',
-			),
-			array(
+			],
+			[
 				date_i18n( get_option( 'orbis_email_subject_date_format' ) ),
-			),
+			],
 			get_option( 'orbis_email_subject', __( 'Orbis Update', 'orbis' ) )
 		);
 
 		$mail_subject = $orbis_email_title;
 		$mail_body    = $this->plugin->get_template( 'emails/update.php', false );
-		$mail_headers = array(
+		$mail_headers = [
 			'From: ' . get_bloginfo( 'name' ) . ' <' . get_bloginfo( 'admin_email' ) . '>',
 			'Content-Type: text/html',
-		);
+		];
 
 		foreach ( $user_ids as $user_id ) {
 			$mail_to = get_the_author_meta( 'user_email', $user_id );

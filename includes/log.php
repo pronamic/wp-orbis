@@ -3,17 +3,17 @@
 function orbis_log( $message ) {
 	global $wpdb;
 
-	$data = array(
+	$data = [
 		'created'    => current_time( 'mysql' ),
 		'wp_user_id' => get_current_user_id(),
 		'message'    => $message,
-	);
+	];
 
-	$format = array(
+	$format = [
 		'created' => '%s',
 		'user_id' => '%d',
 		'message' => '%s',
-	);
+	];
 
 	$result = $wpdb->insert( $wpdb->orbis_log, $data, $format );
 
@@ -61,12 +61,12 @@ class Orbis_Log_Widget extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		$defaults = array(
+		$defaults = [
 			'before_widget' => '',
 			'after_widget'  => '',
 			'before_title'  => '',
 			'after_title'   => '',
-		);
+		];
 
 		$args = wp_parse_args( $args, $defaults );
 

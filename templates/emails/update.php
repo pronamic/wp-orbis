@@ -5,17 +5,17 @@ use Pronamic\WordPress\Money\Money;
 $table_style   = '';
 $table_padding = 5;
 
-$defaults = array(
+$defaults = [
 	'posts_per_page' => 5,
 	'no_found_rows'  => true,
-	'date_query'     => array(
-		array(
+	'date_query'     => [
+		[
 			'after' => '3 days ago',
-		),
-	),
-);
+		],
+	],
+];
 
-$sections = array(
+$sections = [
 	'post'               => __( 'Recent Posts', 'orbis' ),
 	'orbis_company'      => __( 'Recent Companies', 'orbis' ),
 	'orbis_person'       => __( 'Recent Persons', 'orbis' ),
@@ -24,7 +24,7 @@ $sections = array(
 	'orbis_subscription' => __( 'Recent Subscriptions', 'orbis' ),
 	'orbis_keychain'     => __( 'Recent Keychains', 'orbis' ),
 	'orbis_task'         => __( 'Recent Tasks', 'orbis' ),
-);
+];
 
 ?>
 
@@ -44,7 +44,7 @@ $sections = array(
 		$query = get_transient( $transient );
 
 		if ( empty( $query ) ) {
-			$query = new WP_Query( wp_parse_args( array( 'post_type' => $post_type ), $defaults ) );
+			$query = new WP_Query( wp_parse_args( [ 'post_type' => $post_type ], $defaults ) );
 
 			set_transient( $transient, $query, 1 * HOUR_IN_SECONDS );
 		}

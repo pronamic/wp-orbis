@@ -5,6 +5,7 @@
  * Description:
  * Copyright: Copyright (c) 2005 - 2011
  * Company: Pronamic
+ *
  * @author Remco Tolsma
  * @version 1.0
  */
@@ -27,22 +28,22 @@ class Orbis_Core_Admin {
 		$this->plugin = $plugin;
 
 		// Actions
-		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
 
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 
-		add_filter( 'menu_order', array( $this, 'menu_order' ) );
-		add_filter( 'custom_menu_order', array( $this, 'custom_menu_order' ) );
+		add_filter( 'menu_order', [ $this, 'menu_order' ] );
+		add_filter( 'custom_menu_order', [ $this, 'custom_menu_order' ] );
 
-		add_action( 'wp_ajax_orbis_install_plugin', array( $this, 'orbis_install_plugin' ) );
-		add_action( 'wp_ajax_orbis_activate_plugin', array( $this, 'orbis_activate_plugin' ) );
+		add_action( 'wp_ajax_orbis_install_plugin', [ $this, 'orbis_install_plugin' ] );
+		add_action( 'wp_ajax_orbis_activate_plugin', [ $this, 'orbis_activate_plugin' ] );
 
 		// Users
-		add_action( 'show_user_profile', array( $this, 'user_profile' ) );
-		add_action( 'edit_user_profile', array( $this, 'user_profile' ) );
+		add_action( 'show_user_profile', [ $this, 'user_profile' ] );
+		add_action( 'edit_user_profile', [ $this, 'user_profile' ] );
 
-		add_action( 'personal_options_update', array( $this, 'user_update' ) );
-		add_action( 'edit_user_profile_update', array( $this, 'user_update' ) );
+		add_action( 'personal_options_update', [ $this, 'user_update' ] );
+		add_action( 'edit_user_profile_update', [ $this, 'user_update' ] );
 
 		// Settings
 		$this->settings = new Orbis_Core_Settings();
@@ -88,19 +89,19 @@ class Orbis_Core_Admin {
 			wp_enqueue_script(
 				'orbis-plugins-script',
 				$this->plugin->plugin_url( 'includes/js/orbis-plugins.js' ),
-				array( 'jquery', 'thickbox' )
+				[ 'jquery', 'thickbox' ]
 			);
 
 			wp_localize_script(
 				'orbis-plugins-script',
 				'orbis_plugins_script_strings',
-				array(
+				[
 					'install_button_text'      => __( 'Install', 'orbis' ),
 					'activate_button_text'     => __( 'Activate', 'orbis' ),
 					'active_button_text'       => __( 'Active', 'orbis' ),
 					'error_message_unknown'    => __( 'An unknown error occurred', 'orbis' ),
 					'error_message_connection' => __( 'Could not connect to the server', 'orbis' ),
-				)
+				]
 			);
 
 			wp_enqueue_style( 'thickbox' );
@@ -119,14 +120,14 @@ class Orbis_Core_Admin {
 		 */
 		global $menu;
 
-		$menu['54.orbis.1'] = array( '', 'read', 'separator-orbis', '', 'wp-menu-separator orbis' ); // WPCS: override ok.
+		$menu['54.orbis.1'] = [ '', 'read', 'separator-orbis', '', 'wp-menu-separator orbis' ]; // WPCS: override ok.
 
 		add_menu_page(
 			__( 'Orbis', 'orbis' ), // page_title
 			__( 'Orbis', 'orbis' ), // menu_title
 			'manage_orbis', // capability
 			'orbis', // menu_slug
-			array( $this, 'page' ), // function
+			[ $this, 'page' ], // function
 			// @codingStandardsIgnoreStart
 			'data:image/svg+xml;base64,' . base64_encode( file_get_contents( plugin_dir_path( $this->plugin->file ) . 'images/orbis-icon-menu.svg' ) ), // icon_url
 			// @codingStandardsIgnoreEnd
@@ -141,7 +142,7 @@ class Orbis_Core_Admin {
 			__( 'Settings', 'orbis' ), // menu_title
 			'manage_options', // capability
 			'orbis_settings', // menu_slug
-			array( $this, 'page_settings' ) // function
+			[ $this, 'page_settings' ] // function
 		);
 
 		add_submenu_page(
@@ -150,7 +151,7 @@ class Orbis_Core_Admin {
 			__( 'Stats', 'orbis' ), // menu_title
 			'manage_options', // capability
 			'orbis_stats', // menu_slug
-			array( $this, 'page_stats' ) // function
+			[ $this, 'page_stats' ] // function
 		);
 
 		add_submenu_page(
@@ -159,7 +160,7 @@ class Orbis_Core_Admin {
 			__( 'Plugins', 'orbis' ), // menu_title
 			'manage_options', // capability
 			'orbis_plugins', // menu_slug
-			array( $this, 'page_plugins' ) // function
+			[ $this, 'page_plugins' ] // function
 		);
 	}
 
@@ -171,10 +172,10 @@ class Orbis_Core_Admin {
 	 */
 	public function menu_order( $menu_order ) {
 		// Initialize our custom order array
-		$orbis_menu_order = array();
+		$orbis_menu_order = [];
 
-		$orbis_items = array();
-		$other_items = array();
+		$orbis_items = [];
+		$other_items = [];
 
 		foreach ( $menu_order as $item ) {
 			if ( false !== strpos( $item, 'orbis_' ) ) {
@@ -286,10 +287,10 @@ class Orbis_Core_Admin {
 		if ( ! $plugin_slug ) {
 			die(
 				wp_json_encode(
-					array(
+					[
 						'success' => false,
 						'message' => __( 'The plugin could not be found', 'orbis' ),
-					)
+					]
 				)
 			);
 		}
@@ -303,21 +304,21 @@ class Orbis_Core_Admin {
 		if ( is_wp_error( $result ) ) {
 			die(
 				wp_json_encode(
-					array(
+					[
 						'success'    => false,
 						'error_code' => $result->get_error_code(),
 						'message'    => $result->get_error_message(),
-					)
+					]
 				)
 			);
 		}
 
 		die(
 			wp_json_encode(
-				array(
+				[
 					'success' => true,
 					'message' => __( 'The plugin was installed and activated successfully', 'orbis' ),
-				)
+				]
 			)
 		);
 	}
@@ -331,10 +332,10 @@ class Orbis_Core_Admin {
 		if ( ! $plugin_slug ) {
 			die(
 				wp_json_encode(
-					array(
+					[
 						'success' => false,
 						'message' => __( 'The plugin could not be found', 'orbis' ),
-					)
+					]
 				)
 			);
 		}
@@ -348,21 +349,21 @@ class Orbis_Core_Admin {
 		if ( is_wp_error( $result ) ) {
 			die(
 				wp_json_encode(
-					array(
+					[
 						'success'    => false,
 						'error_code' => $result->get_error_code(),
 						'message'    => $result->get_error_message(),
-					)
+					]
 				)
 			);
 		}
 
 		die(
 			wp_json_encode(
-				array(
+				[
 					'success' => true,
 					'message' => __( 'The plugin was activated successfully', 'orbis' ),
-				)
+				]
 			)
 		);
 	}

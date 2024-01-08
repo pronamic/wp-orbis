@@ -8,11 +8,11 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$this->set_db_version( '1.3.7' );
 
 		// Actions
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'init', [ $this, 'init' ] );
 
-		add_action( 'init', array( $this, 'register_scripts' ) );
+		add_action( 'init', [ $this, 'register_scripts' ] );
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 
 		// Includes
 		$this->plugin_include( 'includes/deprecated.php' );
@@ -36,7 +36,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		//new Orbis_OrderByActiveSubscriptions();
 
 		// Shortcodes
-		add_shortcode( 'orbis_list_pages', array( $this, 'shortcode_list_pages' ) );
+		add_shortcode( 'orbis_list_pages', [ $this, 'shortcode_list_pages' ] );
 
 		// Admin
 		if ( is_admin() ) {
@@ -57,7 +57,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	 * Initialize
 	 */
 	public function init() {
-
 	}
 
 	//////////////////////////////////////////////////
@@ -75,19 +74,19 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		wp_register_script(
 			'select2',
 			$this->plugin_url( 'assets/select2/js/select2.full.js' ),
-			array(
+			[
 				'jquery',
-			),
+			],
 			$select2_version,
 			true
 		);
 
-		$names = array(
+		$names = [
 			// 'nl-NL'
 			str_replace( '_', '-', get_locale() ),
 			// 'nl'
 			substr( get_locale(), 0, 2 ),
-		);
+		];
 
 		foreach ( $names as $name ) {
 			$path = '/assets/select2/js/i18n/' . $name . '.js';
@@ -96,9 +95,9 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 				wp_register_script(
 					'select2-i18n',
 					$uri . $path,
-					array(
+					[
 						'select2',
-					),
+					],
 					$select2_version,
 					true
 				);
@@ -110,7 +109,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		wp_register_style(
 			'select2',
 			$this->plugin_url( 'assets/select2/css/select2.min.css' ),
-			array(),
+			[],
 			$select2_version
 		);
 
@@ -120,10 +119,10 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		wp_register_style(
 			'select2-bootstrap4-theme',
 			$this->plugin_url( 'assets/select2-bootstrap4-theme/select2-bootstrap4.min.css' ),
-			array(
+			[
 				'bootstrap',
 				'select2',
-			),
+			],
 			'1.5.2'
 		);
 
@@ -134,14 +133,14 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		wp_register_script(
 			'orbis',
 			$this->plugin_url( 'includes/js/orbis.js' ),
-			array( 'jquery', 'jquery-ui-datepicker' ),
+			[ 'jquery', 'jquery-ui-datepicker' ],
 			'1.0.0',
 			true
 		);
 
-		$orbis_vars = array(
+		$orbis_vars = [
 			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-		);
+		];
 
 		wp_localize_script( 'orbis', 'orbis', $orbis_vars );
 
@@ -149,12 +148,12 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		wp_register_script(
 			'orbis-autocomplete',
 			$this->plugin_url( 'includes/js/autocomplete.js' ),
-			array( 'jquery', 'jquery-ui-autocomplete', 'select2', 'orbis' ),
+			[ 'jquery', 'jquery-ui-autocomplete', 'select2', 'orbis' ],
 			'1.0.6',
 			true
 		);
 
-		$translation_array = array(
+		$translation_array = [
 			'theme'                 => \is_admin() ? null : 'bootstrap4',
 			'noMatches'             => __( 'No matches found', 'orbis' ),
 			'inputTooShort'         => sprintf( __( 'Please enter %s more characters', 'orbis' ), '{todo}' ),
@@ -162,7 +161,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'selectionTooBigPlural' => sprintf( __( 'You can only select %s items', 'orbis' ), '{limit}' ),
 			'loadMore'              => __( 'Loading more results...', 'orbis' ),
 			'searching'             => __( 'Searching...', 'orbis' ),
-		);
+		];
 
 		wp_localize_script( 'orbis-autocomplete', 'orbisl10n', $translation_array );
 	}
@@ -235,7 +234,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		// Replace old meta values
 		global $wpdb;
 
-		$replace_values = array(
+		$replace_values = [
 			'_orbis_person_twitter'       => '_orbis_twitter',
 			'_orbis_person_facebook'      => '_orbis_facebook',
 			'_orbis_person_linkedin'      => '_orbis_linkedin',
@@ -253,7 +252,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			'_orbis_company_kvk_number'   => '_orbis_kvk_number',
 			'_orbis_company_vat_number'   => '_orbis_vat_number',
 			'_orbis_company_website'      => '_orbis_website',
-		);
+		];
 
 		foreach ( $replace_values as $old_key => $new_key ) {
 			$wpdb->query(
@@ -282,66 +281,66 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	 */
 	public function get_roles() {
 		// Default roles
-		$roles = array(
-			'super_administrator' => array(
+		$roles = [
+			'super_administrator' => [
 				'manage_orbis' => true,
-			),
-			'administrator'       => array(
+			],
+			'administrator'       => [
 				'manage_orbis' => true,
-			),
-			'editor'              => array(),
-			'employee'            => array(),
-		);
+			],
+			'editor'              => [],
+			'employee'            => [],
+		];
 
 		// Roles post capabilities
-		$roles_post_cap = array(
-			'super_administrator' => array(
-				'orbis_company' => orbis_post_type_capabilities( true, array() ),
-				'orbis_project' => orbis_post_type_capabilities( true, array() ),
-			),
-			'administrator'       => array(
+		$roles_post_cap = [
+			'super_administrator' => [
+				'orbis_company' => orbis_post_type_capabilities( true, [] ),
+				'orbis_project' => orbis_post_type_capabilities( true, [] ),
+			],
+			'administrator'       => [
 				'orbis_company' => orbis_post_type_capabilities(
 					true,
-					array(
+					[
 						'delete_post' => false,
-					)
+					]
 				),
 				'orbis_project' => orbis_post_type_capabilities(
 					true,
-					array(
+					[
 						'delete_post' => false,
-					)
+					]
 				),
-			),
-			'editor'              => array(
+			],
+			'editor'              => [
 				'orbis_company' => orbis_post_type_capabilities(
 					false,
-					array(
+					[
 						'read_post' => true,
-					)
+					]
 				),
 				'orbis_project' => orbis_post_type_capabilities(
 					false,
-					array(
+					[
 						'read_post' => true,
-					)
+					]
 				),
-			),
-			'employee'            => array(
+			],
+			'employee'            => [
 				'orbis_company' => orbis_post_type_capabilities(
 					false,
-					array(
+					[
 						'read_post' => true,
-					)
-					),
+					]
+				),
 				'orbis_project' => orbis_post_type_capabilities(
 					false,
-					array(
+					[
 						'read_post' => true,
-					)
+					]
 				),
-			),
-		);
+			],
+		];
 
 		foreach ( $roles_post_cap as $role => $post_types ) {
 			foreach ( $post_types as $post_type => $capabilities ) {
@@ -354,12 +353,12 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 	public function shortcode_list_pages( $atts, $content, $tag ) {
 		$atts = shortcode_atts(
-			array(
+			[
 				'child_of'  => get_the_ID(),
 				'depth'     => 0,
 				'post_type' => 'page',
 				'title_li'  => null,
-			),
+			],
 			$atts,
 			$tag
 		);

@@ -16,11 +16,11 @@ class Orbis_ContactsExporter {
 	public function __construct( $plugin ) {
 		$this->plugin = $plugin;
 
-		add_action( 'init', array( $this, 'init' ), 0 );
+		add_action( 'init', [ $this, 'init' ], 0 );
 
-		add_filter( 'post_limits', array( $this, 'post_limits' ), 10, 2 );
+		add_filter( 'post_limits', [ $this, 'post_limits' ], 10, 2 );
 
-		add_filter( 'feed_content_type', array( $this, 'feed_content_type' ), 10, 2 );
+		add_filter( 'feed_content_type', [ $this, 'feed_content_type' ], 10, 2 );
 	}
 
 	//////////////////////////////////////////////////
@@ -31,8 +31,8 @@ class Orbis_ContactsExporter {
 	 * @see https://make.wordpress.org/plugins/2012/06/07/rewrite-endpoints-api/
 	 */
 	public function init() {
-		add_feed( 'csv', array( $this, 'feed_csv' ) );
-		add_feed( 'xls', array( $this, 'feed_xls' ) );
+		add_feed( 'csv', [ $this, 'feed_csv' ] );
+		add_feed( 'xls', [ $this, 'feed_xls' ] );
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Orbis_ContactsExporter {
 	 * @return string
 	 */
 	public function post_limits( $limits, $query ) {
-		if ( in_array( $query->get( 'feed' ), array( 'csv', 'xls' ), true ) ) {
+		if ( in_array( $query->get( 'feed' ), [ 'csv', 'xls' ], true ) ) {
 			$limits = '';
 		}
 
@@ -87,7 +87,7 @@ class Orbis_ContactsExporter {
 		$resource = fopen( 'php://output', 'w' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fopen
 
 		// Header
-		$header = array(
+		$header = [
 			__( 'ID', 'orbis' ),
 			__( 'Name', 'orbis' ),
 			__( 'Title', 'orbis' ),
@@ -103,7 +103,7 @@ class Orbis_ContactsExporter {
 			__( 'Twitter', 'orbis' ),
 			__( 'Facebook', 'orbis' ),
 			__( 'LinkedIn', 'orbis' ),
-		);
+		];
 
 		fputcsv( $resource, $header );
 
@@ -118,7 +118,7 @@ class Orbis_ContactsExporter {
 				$address = $contact->get_address();
 
 				// Row
-				$row = array(
+				$row = [
 					$post->ID,
 					$post->post_title,
 					$contact->get_title(),
@@ -134,7 +134,7 @@ class Orbis_ContactsExporter {
 					get_post_meta( $post->ID, '_orbis_twitter', true ),
 					get_post_meta( $post->ID, '_orbis_facebook', true ),
 					get_post_meta( $post->ID, '_orbis_linkedin', true ),
-				);
+				];
 
 				fputcsv( $resource, $row );
 			}
@@ -156,10 +156,10 @@ class Orbis_ContactsExporter {
 			->setSubject( 'Orbis' );
 
 		// Data
-		$data = array();
+		$data = [];
 
 		// Header
-		$header = array(
+		$header = [
 			__( 'ID', 'orbis' ),
 			__( 'Name', 'orbis' ),
 			__( 'Title', 'orbis' ),
@@ -175,7 +175,7 @@ class Orbis_ContactsExporter {
 			__( 'Twitter', 'orbis' ),
 			__( 'Facebook', 'orbis' ),
 			__( 'LinkedIn', 'orbis' ),
-		);
+		];
 
 		$data[] = $header;
 
@@ -190,7 +190,7 @@ class Orbis_ContactsExporter {
 				$address = $contact->get_address();
 
 				// Row
-				$row = array(
+				$row = [
 					$post->ID,
 					$post->post_title,
 					$contact->get_title(),
@@ -206,7 +206,7 @@ class Orbis_ContactsExporter {
 					get_post_meta( $post->ID, '_orbis_twitter', true ),
 					get_post_meta( $post->ID, '_orbis_facebook', true ),
 					get_post_meta( $post->ID, '_orbis_linkedin', true ),
-				);
+				];
 
 				$data[] = $row;
 			}

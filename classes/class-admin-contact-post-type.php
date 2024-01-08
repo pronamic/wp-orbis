@@ -12,12 +12,12 @@ class Orbis_Contacts_AdminContactPostType {
 	public function __construct( $plugin ) {
 		$this->plugin = $plugin;
 
-		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
+		add_action( 'add_meta_boxes', [ $this, 'add_meta_boxes' ] );
 
-		add_action( 'save_post_' . self::POST_TYPE, array( $this, 'save_post' ), 10, 2 );
+		add_action( 'save_post_' . self::POST_TYPE, [ $this, 'save_post' ], 10, 2 );
 
-		add_action( 'added_post_meta', array( $this, 'updated_post_meta' ), 10, 4 );
-		add_action( 'updated_post_meta', array( $this, 'updated_post_meta' ), 10, 4 );
+		add_action( 'added_post_meta', [ $this, 'updated_post_meta' ], 10, 4 );
+		add_action( 'updated_post_meta', [ $this, 'updated_post_meta' ], 10, 4 );
 	}
 
 	/**
@@ -27,7 +27,7 @@ class Orbis_Contacts_AdminContactPostType {
 		add_meta_box(
 			'orbis_person',
 			__( 'Contact information', 'orbis' ),
-			array( $this, 'meta_box' ),
+			[ $this, 'meta_box' ],
 			'orbis_person',
 			'normal',
 			'high'
@@ -67,7 +67,7 @@ class Orbis_Contacts_AdminContactPostType {
 		}
 
 		// OK
-		$definition = array(
+		$definition = [
 			'_orbis_title'             => FILTER_SANITIZE_STRING,
 			'_orbis_organization'      => FILTER_SANITIZE_STRING,
 			'_orbis_department'        => FILTER_SANITIZE_STRING,
@@ -83,7 +83,7 @@ class Orbis_Contacts_AdminContactPostType {
 			'_orbis_twitter'           => FILTER_SANITIZE_STRING,
 			'_orbis_facebook'          => FILTER_SANITIZE_STRING,
 			'_orbis_linkedin'          => FILTER_SANITIZE_STRING,
-		);
+		];
 
 		$data = filter_input_array( INPUT_POST, $definition );
 
