@@ -28,23 +28,23 @@ class Orbis_Address {
 
 	public function is_empty() {
 		$data = arra_filter(
-			array(
+			[
 				$this->address,
 				$this->postcode,
 				$this->city,
 				$this->country,
-			)
+			]
 		);
 
 		return empty( $data );
 	}
 
 	public function __toString() {
-		$data = array(
+		$data = [
 			$this->address,
 			trim( $this->postcode . ' ' . $this->city ),
 			$this->country,
-		);
+		];
 
 		$data = array_filter( $data );
 

@@ -12,10 +12,10 @@
 							<?php
 
 							$query = new WP_Query(
-								array(
+								[
 									'post_type'      => 'orbis_project',
 									'posts_per_page' => 5,
-								)
+								]
 							);
 
 							if ( $query->have_posts() ) :
@@ -82,12 +82,12 @@
 
 							wp_widget_rss_output(
 								'http://feeds.feedburner.com/pronamic',
-								array(
+								[
 									'link'  => __( 'http://www.pronamic.eu/', 'orbis' ),
 									'url'   => 'http://feeds.feedburner.com/pronamic',
 									'title' => __( 'Pronamic News', 'orbis' ),
 									'items' => 5,
-								)
+								]
 							);
 
 							?>

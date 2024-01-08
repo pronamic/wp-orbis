@@ -70,23 +70,23 @@ if ( ! function_exists( 'orbis_time' ) ) {
 		$minutes = floor( ( $seconds - ( $hours * 3600 ) ) / 60 );
 		$seconds = floor( $seconds % 60 );
 
-		$search = array(
+		$search = [
 			'HH',
 			'H',
 			'MM',
 			'M',
 			'SS',
 			'S',
-		);
+		];
 
-		$replace = array(
+		$replace = [
 			sprintf( '%02d', $hours ),
 			$hours,
 			sprintf( '%02d', $minutes ),
 			$minutes,
 			sprintf( '%02d', $seconds ),
 			$seconds,
-		);
+		];
 
 		return str_replace( $search, $replace, $format );
 	}

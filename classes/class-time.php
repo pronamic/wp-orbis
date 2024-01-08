@@ -36,14 +36,14 @@ class Orbis_Time {
 		$minutes = floor( ( $this->seconds - ( $hours * 3600 ) ) / 60 );
 		$seconds = floor( $this->seconds % 60 );
 
-		$replacements = array(
+		$replacements = [
 			'HH' => sprintf( '%02d', $hours ),
 			'H'  => $hours,
 			'MM' => sprintf( '%02d', $minutes ),
 			'M'  => $minutes,
 			'SS' => sprintf( '%02d', $seconds ),
 			'S'  => $seconds,
-		);
+		];
 
 		$string = str_replace(
 			array_keys( $replacements ),

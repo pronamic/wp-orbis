@@ -43,19 +43,19 @@ function orbis_flot_enqueue_scripts() {
 	wp_register_script(
 		'jquery-flot',
 		$orbis_plugin->plugin_url( 'includes/js/flot/jquery.flot.js' ),
-		array( 'jquery' )
+		[ 'jquery' ]
 	);
 
 	wp_register_script(
 		'jquery-flot-pie',
 		$orbis_plugin->plugin_url( 'includes/js/flot/jquery.flot.pie.js' ),
-		array( 'jquery-flot' )
+		[ 'jquery-flot' ]
 	);
 
 	wp_register_script(
 		'jquery-flot-resize',
 		$orbis_plugin->plugin_url( 'includes/js/flot/jquery.flot.resize.js' ),
-		array( 'jquery-flot' )
+		[ 'jquery-flot' ]
 	);
 
 	// Enqueue scripts

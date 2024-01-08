@@ -84,5 +84,5 @@ function orbis_install_table( $key, $columns ) {
 function orbis_is_weekend() {
 	$day = date( 'l' );
 
-	return in_array( $day, array( 'Saturday', 'Sunday' ), true );
+	return in_array( $day, [ 'Saturday', 'Sunday' ], true );
 }

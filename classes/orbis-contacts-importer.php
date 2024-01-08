@@ -5,6 +5,7 @@
  * Description:
  * Copyright: Copyright (c) 2005 - 2017
  * Company: Pronamic
+ *
  * @author Remco Tolsma
  * @version 1.0
  */
@@ -27,8 +28,8 @@ class Orbis_Core_ContactsImporter {
 		$this->plugin = $plugin;
 
 		// Actions
-		add_action( 'admin_init', array( $this, 'admin_init' ) );
-		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		add_action( 'admin_init', [ $this, 'admin_init' ] );
+		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
 	}
 
 	//////////////////////////////////////////////////
@@ -44,14 +45,14 @@ class Orbis_Core_ContactsImporter {
 	}
 
 	public function get_import_post_input() {
-		return array(
+		return [
 			'ID'         => __( 'ID', 'orbis' ),
 			'post_title' => __( 'Name', 'orbis' ),
-		);
+		];
 	}
 
 	public function get_import_meta_input() {
-		return array(
+		return [
 			'_orbis_title'         => __( 'Title', 'orbis' ),
 			'_orbis_organization'  => __( 'Organization', 'orbis' ),
 			'_orbis_department'    => __( 'Department', 'orbis' ),
@@ -65,13 +66,13 @@ class Orbis_Core_ContactsImporter {
 			'_orbis_twitter'       => __( 'Twitter', 'orbis' ),
 			'_orbis_facebook'      => __( 'Facebook', 'orbis' ),
 			'_orbis_linkedin'      => __( 'LinkedIn', 'orbis' ),
-		);
+		];
 	}
 
 	public function get_import_tax_input() {
-		return array(
+		return [
 			'orbis_person_category' => __( 'Category', 'orbis' ),
-		);
+		];
 	}
 
 	/**
@@ -127,10 +128,10 @@ class Orbis_Core_ContactsImporter {
 
 		if ( is_int( $result ) ) {
 			$url = add_query_arg(
-				array(
+				[
 					'attachment_id' => $result,
 					'step'          => 'map',
-				)
+				]
 			);
 
 			wp_safe_redirect( $url );
@@ -159,10 +160,10 @@ class Orbis_Core_ContactsImporter {
 		update_post_meta( $attachment_id, '_orbis_contacts_import_map', $map );
 
 		$url = add_query_arg(
-			array(
+			[
 				'attachment_id' => $attachment_id,
 				'step'          => 'confirm',
-			)
+			]
 		);
 
 		wp_safe_redirect( $url );
@@ -171,12 +172,12 @@ class Orbis_Core_ContactsImporter {
 	}
 
 	private function create_import_post( $map, $data ) {
-		$post = array(
+		$post = [
 			'post_type'   => 'orbis_person',
 			'post_status' => 'publish',
-			'meta_input'  => array(),
-			'tax_input'   => array(),
-		);
+			'meta_input'  => [],
+			'tax_input'   => [],
+		];
 
 		$post_input = $this->get_import_post_input();
 		$meta_input = $this->get_import_meta_input();
@@ -210,7 +211,7 @@ class Orbis_Core_ContactsImporter {
 				}
 
 				if ( ! isset( $post['tax_input'][ $key ] ) ) {
-					$post['tax_input'][ $key ] = array();
+					$post['tax_input'][ $key ] = [];
 				}
 
 				if ( isset( $result['term_id'] ) ) {
@@ -227,14 +228,14 @@ class Orbis_Core_ContactsImporter {
 	public function get_import_contacts_url( $args ) {
 		$args = wp_parse_args(
 			$args,
-			array(
+			[
 				'post_type'     => 'orbis_person',
 				'page'          => 'orbis-persons-import',
 				'step'          => 'import',
 				'attachment_id' => false,
 				'offset'        => 0,
 				'count'         => 10,
-			)
+			]
 		);
 
 		$url = add_query_arg( $args, admin_url( 'edit.php' ) );
@@ -252,9 +253,9 @@ class Orbis_Core_ContactsImporter {
 		check_admin_referer( 'orbis_contacts_import', 'orbis_contacts_import_nonce' );
 
 		$url = $this->get_import_contacts_url(
-			array(
+			[
 				'attachment_id' => filter_input( INPUT_POST, 'attachment_id', FILTER_SANITIZE_STRING ),
-			)
+			]
 		);
 
 		wp_safe_redirect( $url );
@@ -285,7 +286,7 @@ class Orbis_Core_ContactsImporter {
 		$resource = fopen( 'php://output', 'w' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fopen
 
 		// Header
-		$header = array(
+		$header = [
 			__( 'ID', 'orbis' ),
 			__( 'Name', 'orbis' ),
 			__( 'Title', 'orbis' ),
@@ -301,13 +302,13 @@ class Orbis_Core_ContactsImporter {
 			__( 'Twitter', 'orbis' ),
 			__( 'Facebook', 'orbis' ),
 			__( 'LinkedIn', 'orbis' ),
-		);
+		];
 
 		fputcsv( $resource, $header );
 
 		foreach ( $results as $result ) {
 			// Row
-			$row = array(
+			$row = [
 				$result->ID,
 				$result->post_title,
 				$result->contact_title,
@@ -323,7 +324,7 @@ class Orbis_Core_ContactsImporter {
 				$result->contact_twitter,
 				$result->contact_facebook,
 				$result->contact_linkedin,
-			);
+			];
 
 			fputcsv( $resource, $row );
 		}
@@ -343,7 +344,7 @@ class Orbis_Core_ContactsImporter {
 			__( 'Export', 'orbis' ), // menu_title
 			'export', // capability
 			'orbis-persons-export', // menu_slug
-			array( $this, 'page_contacts_export' ) // function
+			[ $this, 'page_contacts_export' ] // function
 		);
 
 		add_submenu_page(
@@ -352,7 +353,7 @@ class Orbis_Core_ContactsImporter {
 			__( 'Import', 'orbis' ), // menu_title
 			'import', // capability
 			'orbis-persons-import', // menu_slug
-			array( $this, 'page_contacts_import' ) // function
+			[ $this, 'page_contacts_import' ] // function
 		);
 	}
 

@@ -16,9 +16,9 @@ class Orbis_VCard {
 	public function __construct( $plugin ) {
 		$this->plugin = $plugin;
 
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'init', [ $this, 'init' ] );
 
-		add_action( 'template_redirect', array( $this, 'template_redirect' ) );
+		add_action( 'template_redirect', [ $this, 'template_redirect' ] );
 	}
 
 	//////////////////////////////////////////////////
@@ -45,10 +45,10 @@ class Orbis_VCard {
 		$orbis_company = new Orbis_Company( $post );
 
 		$vcard = new Sabre\VObject\Component\VCard(
-			array(
+			[
 				'FN'    => get_the_title( $post ),
 				'EMAIL' => $orbis_company->get_email(),
-			)
+			]
 		);
 
 		return $vcard;
@@ -65,10 +65,10 @@ class Orbis_VCard {
 		$contact = new Orbis_Contact( $post );
 
 		$vcard = new Sabre\VObject\Component\VCard(
-			array(
+			[
 				'FN'    => get_the_title( $post ),
 				'EMAIL' => $contact->get_email(),
-			)
+			]
 		);
 
 		return $vcard;

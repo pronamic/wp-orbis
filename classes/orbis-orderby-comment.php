@@ -9,13 +9,13 @@
 class Orbis_OrderByComment {
 	public function __construct() {
 		// Filters
-		add_filter( 'posts_fields', array( $this, 'posts_fields' ), 10, 2 );
+		add_filter( 'posts_fields', [ $this, 'posts_fields' ], 10, 2 );
 
-		add_filter( 'posts_join', array( $this, 'posts_join' ), 10, 2 );
+		add_filter( 'posts_join', [ $this, 'posts_join' ], 10, 2 );
 
-		add_filter( 'posts_orderby', array( $this, 'posts_orderby' ), 10, 2 );
+		add_filter( 'posts_orderby', [ $this, 'posts_orderby' ], 10, 2 );
 
-		add_filter( 'date_query_valid_columns', array( $this, 'date_query_valid_columns' ) );
+		add_filter( 'date_query_valid_columns', [ $this, 'date_query_valid_columns' ] );
 	}
 
 	public function query_has_last_comment_date_query( $query ) {

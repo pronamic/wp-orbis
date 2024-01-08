@@ -35,7 +35,7 @@ function orbis_get_current_person_id() {
 	$user_id   = get_current_user_id();
 	$person_id = null;
 
-	$persons = array(
+	$persons = [
 		1  => null, // pronamic
 		2  => 6, // remco
 		3  => 5, // kj
@@ -46,7 +46,7 @@ function orbis_get_current_person_id() {
 		8  => 24, // martijn duker
 		9  => 25, // stefan
 		10 => 26, // leon
-	);
+	];
 
 	if ( isset( $persons[ $user_id ] ) ) {
 		$person_id = $persons[ $user_id ];

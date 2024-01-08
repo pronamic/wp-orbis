@@ -5,6 +5,7 @@
  * Description:
  * Copyright: Copyright (c) 2005 - 2016
  * Company: Pronamic
+ *
  * @author Remco Tolsma
  * @version 1.0.0
  */
@@ -13,8 +14,8 @@ class Orbis_PostcodeFilter {
 	 * Constructs and initialize an Orbis postcode filter.
 	 */
 	public function __construct() {
-		add_filter( 'query_vars', array( $this, 'query_vars' ) );
-		add_action( 'pre_get_posts', array( $this, 'pre_get_posts' ) );
+		add_filter( 'query_vars', [ $this, 'query_vars' ] );
+		add_action( 'pre_get_posts', [ $this, 'pre_get_posts' ] );
 	}
 
 	/**
@@ -47,29 +48,29 @@ class Orbis_PostcodeFilter {
 		}
 
 		$meta_query = $query->get( 'meta_query' );
-		$meta_query = is_array( $meta_query ) ? $meta_query : array();
+		$meta_query = is_array( $meta_query ) ? $meta_query : [];
 
 		if ( '' !== $min_postcode && '' !== $max_postcode ) {
-			$meta_query[] = array(
+			$meta_query[] = [
 				'key'     => '_orbis_postcode',
-				'value'   => array( $min_postcode, $max_postcode ),
+				'value'   => [ $min_postcode, $max_postcode ],
 				'type'    => 'numeric',
 				'compare' => 'BETWEEN',
-			);
+			];
 		} elseif ( '' !== $min_postcode ) {
-			$meta_query[] = array(
+			$meta_query[] = [
 				'key'     => '_orbis_postcode',
 				'value'   => $min_postcode,
 				'type'    => 'numeric',
 				'compare' => '>=',
-			);
+			];
 		} elseif ( '' !== $max_postcode ) {
-			$meta_query[] = array(
+			$meta_query[] = [
 				'key'     => '_orbis_postcode',
 				'value'   => $max_postcode,
 				'type'    => 'numeric',
 				'compare' => '<=',
-			);
+			];
 		}
 
 		$query->set( 'meta_query', $meta_query );

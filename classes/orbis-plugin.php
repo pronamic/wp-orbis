@@ -5,6 +5,7 @@
  * Description:
  * Copyright: Copyright (c) 2005 - 2011
  * Company: Pronamic
+ *
  * @author Remco Tolsma
  * @version 1.0
  */
@@ -29,12 +30,12 @@ class Orbis_Plugin {
 		$this->dirname  = dirname( $file );
 		$this->dir_path = plugin_dir_path( $file );
 
-		add_action( 'plugins_loaded', array( $this, 'loaded' ) );
+		add_action( 'plugins_loaded', [ $this, 'loaded' ] );
 
-		add_action( 'admin_init', array( $this, 'update' ), 5 );
-		add_action( 'admin_init', array( $this, 'install_redirect' ) );
+		add_action( 'admin_init', [ $this, 'update' ], 5 );
+		add_action( 'admin_init', [ $this, 'install_redirect' ] );
 
-		add_action( 'rest_api_init', array( $this, 'rest_api_init' ) );
+		add_action( 'rest_api_init', [ $this, 'rest_api_init' ] );
 	}
 
 	//////////////////////////////////////////////////
@@ -119,7 +120,6 @@ class Orbis_Plugin {
 	 * Loaded
 	 */
 	public function loaded() {
-
 	}
 
 	//////////////////////////////////////////////////
@@ -141,7 +141,7 @@ class Orbis_Plugin {
 	 * @param string $path
 	 * @param array  $args (optional, defaults to an empty array)
 	 */
-	public function plugin_include( $path, $args = array() ) {
+	public function plugin_include( $path, $args = [] ) {
 		extract( $args ); // phpcs:ignore WordPress.Functions.DontExtract.extract_extract
 
 		include $this->dir_path . '/' . $path;
@@ -184,9 +184,9 @@ class Orbis_Plugin {
 
 	public function locate_template( $template_name ) {
 		$template = locate_template(
-			array(
+			[
 				$template_name,
-			)
+			]
 		);
 
 		if ( ! $template ) {
@@ -196,7 +196,7 @@ class Orbis_Plugin {
 		return $template;
 	}
 
-	public function get_template( $template_name, $echo = true, $args = array() ) {
+	public function get_template( $template_name, $echo = true, $args = [] ) {
 		if ( ! $echo ) {
 			ob_start();
 		}
@@ -219,15 +219,23 @@ class Orbis_Plugin {
 	 * @link https://github.com/wp-orbis/wp-orbis-accounts/blob/master/classes/orbis-accounts-plugin.php
 	 */
 	public function rest_api_init() {
-		\register_rest_route( 'orbis/v1', '/users/by', array(
-			'methods'  => 'GET',
-			'callback' => array( $this, 'rest_api_user_by' )
-		) );
+		\register_rest_route(
+			'orbis/v1',
+			'/users/by',
+			[
+				'methods'  => 'GET',
+				'callback' => [ $this, 'rest_api_user_by' ],
+			] 
+		);
 
-		\register_rest_route( 'orbis/v1', '/users/(?P<id>\d+)', array(
-			'methods'  => 'GET',
-			'callback' => array( $this, 'rest_api_user' )
-		) );
+		\register_rest_route(
+			'orbis/v1',
+			'/users/(?P<id>\d+)',
+			[
+				'methods'  => 'GET',
+				'callback' => [ $this, 'rest_api_user' ],
+			] 
+		);
 	}
 
 	/**
@@ -243,14 +251,14 @@ class Orbis_Plugin {
 		$user = \get_user_by( 'email', $email );
 
 		if ( false === $user ) {
-			return new WP_Error( 'rest_user_invalid_email', 'Invalid user email.', array( 'status' => 404 ) );
+			return new WP_Error( 'rest_user_invalid_email', 'Invalid user email.', [ 'status' => 404 ] );
 		}
 
-		$response = (object) array(
+		$response = (object) [
 			'id'    => $user->ID,
 			'name'  => $user->display_name,
 			'email' => $user->user_email,
-		);
+		];
 
 		return $response;
 	}
@@ -269,27 +277,29 @@ class Orbis_Plugin {
 		$user = \get_user_by( 'id', $user_id );
 
 		if ( false === $user ) {
-			return new WP_Error( 'rest_user_invalid_id', 'Invalid user ID.', array( 'status' => 404 ) );
+			return new WP_Error( 'rest_user_invalid_id', 'Invalid user ID.', [ 'status' => 404 ] );
 		}
 
-		$response = (object) array(
+		$response = (object) [
 			'id'            => $user->ID,
 			'name'          => $user->display_name,
 			'email'         => $user->user_email,
-			'companies'     => array(),
-			'subscriptions' => array(),
-		);
+			'companies'     => [],
+			'subscriptions' => [],
+		];
 
 		/**
 		 * Companies.
 		 */
-		$query = new \WP_Query( array(
-			'connected_type'  => 'orbis_users_to_companies',
-			'connected_items' => $user->ID,
-			'nopaging'        => true,
-		) );
+		$query = new \WP_Query(
+			[
+				'connected_type'  => 'orbis_users_to_companies',
+				'connected_items' => $user->ID,
+				'nopaging'        => true,
+			] 
+		);
 
-		$companies = array();
+		$companies = [];
 
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
@@ -308,12 +318,12 @@ class Orbis_Plugin {
 				$city     = get_post_meta( $company->post_id, '_orbis_city', true );
 				$country  = get_post_meta( $company->post_id, '_orbis_country', true );
 
-				$company->address = (object) array(
+				$company->address = (object) [
 					'line_1'       => empty( $address ) ? null : $address,
 					'postal_code'  => empty( $postcode ) ? null : $postcode,
 					'city'         => empty( $city ) ? null : $city,
 					'country_code' => empty( $country ) ? null : $country,
-				);
+				];
 
 				// Email.
 				$email = get_post_meta( $company->post_id, '_orbis_email', true );
@@ -372,7 +382,7 @@ class Orbis_Plugin {
 			$data = $wpdb->get_results( $query );
 
 			foreach ( $data as $item ) {
-				$subscription = (object) array(
+				$subscription = (object) [
 					'id'                      => \intval( $item->id ),
 					'type_id'                 => \intval( $item->type_id ),
 					'company_name'            => $item->company_name,
@@ -386,9 +396,9 @@ class Orbis_Plugin {
 					'canceled'                => \boolval( $item->canceled ),
 					'post_id'                 => \intval( $item->post_id ),
 					'current_period_end_date' => \Orbis_Subscription::get_current_period_end_date( $item->activation_date, $item->product_interval )->format( \DATE_ATOM ),
-				);				
+				];              
 
-				$response->subscriptions[] = $subscription;	
+				$response->subscriptions[] = $subscription; 
 			}
 		}
 

@@ -8,9 +8,9 @@
 class Orbis_OrderByActiveSubscriptions {
 	public function __construct() {
 		// Filters
-		add_filter( 'posts_fields', array( $this, 'posts_fields' ), 10, 2 );
+		add_filter( 'posts_fields', [ $this, 'posts_fields' ], 10, 2 );
 
-		add_filter( 'posts_orderby', array( $this, 'posts_orderby' ), 10, 2 );
+		add_filter( 'posts_orderby', [ $this, 'posts_orderby' ], 10, 2 );
 	}
 
 	public function query_has_active_subscriptions_query( $query ) {

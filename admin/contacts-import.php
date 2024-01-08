@@ -46,7 +46,7 @@ foreach ( $data as $row ) {
 	$result = wp_insert_post( $post, true );
 
 	if ( ! is_wp_error( $result ) ) {
-		$updated++;
+		++$updated;
 	}
 
 	echo '<li>';
@@ -63,10 +63,10 @@ foreach ( $data as $row ) {
 echo '</ul>';
 
 $url = $this->get_import_contacts_url(
-	array(
+	[
 		'attachment_id' => $attachment_id,
 		'offset'        => $offset + $count,
-	)
+	]
 );
 
 printf(

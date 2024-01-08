@@ -5,6 +5,7 @@
  * Description:
  * Copyright: Copyright (c) 2005 - 2014
  * Company: Pronamic
+ *
  * @author Remco Tolsma
  * @version 1.0.0
  */
@@ -27,11 +28,11 @@ class Orbis_Core_AngularJS {
 		$this->plugin = $plugin;
 
 		// Actions
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'init', [ $this, 'init' ] );
 
 		// Filters
 		if ( ! is_admin() ) {
-			add_filter( 'language_attributes', array( $this, 'ng_app_attributes' ) );
+			add_filter( 'language_attributes', [ $this, 'ng_app_attributes' ] );
 		}
 	}
 
@@ -42,7 +43,7 @@ class Orbis_Core_AngularJS {
 		wp_register_script(
 			'angular',
 			$this->plugin->plugin_url( 'assets/angular/angular.js' ),
-			array(),
+			[],
 			'1.8.2',
 			true
 		);
@@ -50,7 +51,7 @@ class Orbis_Core_AngularJS {
 		wp_register_style(
 			'angular-csp',
 			$this->plugin->plugin_url( 'assets/angular/angular-csp.css' ),
-			array(),
+			[],
 			'1.8.2',
 			true
 		);
@@ -59,7 +60,7 @@ class Orbis_Core_AngularJS {
 		wp_register_script(
 			'angular-ui-date',
 			$this->plugin->plugin_url( 'assets/angular-ui-date/date.js' ),
-			array( 'angular', 'jquery' ),
+			[ 'angular', 'jquery' ],
 			false,
 			true
 		);
@@ -68,7 +69,7 @@ class Orbis_Core_AngularJS {
 		wp_register_script(
 			'angular-ui-select',
 			$this->plugin->plugin_url( 'assets/angular-ui-select/select.js' ),
-			array(),
+			[],
 			'0.8.3',
 			true
 		);
@@ -76,7 +77,7 @@ class Orbis_Core_AngularJS {
 		wp_register_style(
 			'angular-ui-select',
 			$this->plugin->plugin_url( 'assets/angular-ui-select/select.css' ),
-			array(),
+			[],
 			'0.8.3',
 			true
 		);
@@ -85,7 +86,7 @@ class Orbis_Core_AngularJS {
 		wp_register_script(
 			'orbis-angular-app',
 			$this->plugin->plugin_url( 'src/orbis-angular/orbis-angular.js' ),
-			array( 'angular' ),
+			[ 'angular' ],
 			'1.0.0',
 			true
 		);
