@@ -1,0 +1,19 @@
+{
+	"core": null,
+	"plugins": [
+		"pronamic/wp-env-quick-login",
+		"https://downloads.wordpress.org/plugin/code-profiler.zip",
+		"https://downloads.wordpress.org/plugin/log-http-requests.zip",
+		"https://downloads.wordpress.org/plugin/one-time-login.zip",
+		"https://downloads.wordpress.org/plugin/plugin-check.0.2.1.zip",
+		"https://downloads.wordpress.org/plugin/posts-to-posts.zip",
+		"https://downloads.wordpress.org/plugin/pronamic-client.zip",
+		"https://downloads.wordpress.org/plugin/query-monitor.zip",
+		"https://downloads.wordpress.org/plugin/wp-rest-api-log.zip",
+		"https://downloads.wordpress.org/plugin/wp-plugin-dependencies.zip"
+	],
+	"mappings": {
+		"wp-content/plugins/orbis-dev": "./",
+		"wp-content/plugins/orbis": "./build/project/"
+	}
+}
