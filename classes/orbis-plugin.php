@@ -38,11 +38,12 @@ class Orbis_Plugin {
 		add_action( 'rest_api_init', [ $this, 'rest_api_init' ] );
 
 		add_filter( 'the_posts', function( $posts ) {
-			foreach ( $posts as $post ) {
-				if ( ! $this->can_user_view_post( $post->ID ) ) {
-					return [];
+			$posts = \array_filter(
+				$posts,
+				function ( $post ) {
+					return $this->can_user_view_post( $post->ID );
 				}
-			}
+			);
 
 			return $posts;
 		} );
@@ -50,6 +51,10 @@ class Orbis_Plugin {
 
 	public function can_user_view_post( $post_id ) {
 		if ( \current_user_can( 'read_post', $post_id ) ) {
+			return true;
+		}
+
+		if ( ! \current_user_can( 'freelancer' ) ) {
 			return true;
 		}
 
