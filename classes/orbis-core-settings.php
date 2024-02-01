@@ -25,39 +25,6 @@ class Orbis_Core_Settings {
 		);
 
 		register_setting( 'orbis', 'orbis_currency' );
-
-		add_settings_section(
-			'orbis_billing',
-			__( 'Billing', 'orbis' ),
-			'__return_false',
-			'orbis'
-		);
-
-		add_settings_field(
-			'orbis_invoice_header_text',
-			__( 'Invoice Header Text', 'orbis' ),
-			[ $this, 'input_text' ],
-			'orbis',
-			'orbis_billing',
-			[
-				'label_for' => 'orbis_invoice_header_text',
-			]
-		);
-
-		register_setting( 'orbis', 'orbis_invoice_header_text' );
-
-		add_settings_field(
-			'orbis_invoice_footer_text',
-			__( 'Invoice Footer Text', 'orbis' ),
-			[ $this, 'input_text' ],
-			'orbis',
-			'orbis_billing',
-			[
-				'label_for' => 'orbis_invoice_footer_text',
-			]
-		);
-
-		register_setting( 'orbis', 'orbis_invoice_footer_text' );
 	}
 
 	public function dropdown_currencies() {
