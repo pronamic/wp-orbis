@@ -99,10 +99,13 @@ $sections = [
 								<td>
 									<?php
 
-									$price = get_post_meta( get_the_ID(), '_orbis_deal_price', true );
-									$price = new Money( $price, 'EUR' );
+									$value = get_post_meta( get_the_ID(), '_orbis_deal_price', true );
 
-									echo $price->format_i18n();
+									if ( is_numeric( $value ) ) {
+										$price = new Money( $value, 'EUR' );
+
+										echo $price->format_i18n();
+									}
 
 									?>
 								</td>
