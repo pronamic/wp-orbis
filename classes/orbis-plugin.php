@@ -432,7 +432,7 @@ class Orbis_Plugin {
 					'activation_date'         => $item->activation_date,
 					'canceled'                => \boolval( $item->canceled ),
 					'post_id'                 => \intval( $item->post_id ),
-					'current_period_end_date' => \Orbis_Subscription::get_current_period_end_date( $item->activation_date, $item->product_interval )->format( \DATE_ATOM ),
+					'current_period_end_date' => \Pronamic\Orbis\Subscriptions\Subscription::get_current_period_end_date( $item->activation_date, $item->product_interval )->format( \DATE_ATOM ),
 				];              
 
 				$response->subscriptions[] = $subscription; 
