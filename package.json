@@ -34,8 +34,8 @@
 		"@ttskch/select2-bootstrap4-theme": "^1.5.2"
 	},
 	"devDependencies": {
-		"@wordpress/env": "^9.0.0",
-		"@wordpress/scripts": "^26.19.0",
+		"@wordpress/env": "^9.3.0",
+		"@wordpress/scripts": "^27.2.0",
 		"angular": "~1.8.2",
 		"angular-ui-date": "latest",
 		"angular-ui-select": "latest",
