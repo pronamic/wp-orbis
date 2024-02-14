@@ -45,8 +45,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 			$orbis_admin = new Orbis_Core_Admin( $this );
 		}
 
-		$this->angularjs = new Orbis_Core_AngularJS( $this );
-		$this->vcard     = new Orbis_VCard( $this );
+		$this->vcard = new Orbis_VCard( $this );
 
 		$this->contacts_exporter = new Orbis_ContactsExporter( $this );
 	}

@@ -36,18 +36,12 @@
 	"devDependencies": {
 		"@wordpress/env": "^9.3.0",
 		"@wordpress/scripts": "^27.2.0",
-		"angular": "~1.8.2",
-		"angular-ui-date": "latest",
-		"angular-ui-select": "latest",
 		"jquery-ui": "~1.13.2",
 		"npm-run-all": "^4.1.5",
 		"select2": "~4.1.0-rc.0"
 	},
 	"scripts": {
 		"copy": "npm-run-all --aggregate-output --parallel copy-*",
-		"copy-angular": "cp node_modules/angular/angular-csp.css node_modules/angular/angular.js node_modules/angular/angular.min.js node_modules/angular/angular.min.js.map assets/angular/",
-		"copy-angular-ui-date": "cp node_modules/angular-ui-date/src/date.js assets/angular-ui-date/",
-		"copy-angular-ui-select": "cp node_modules/angular-ui-select/select.css node_modules/angular-ui-select/select.js assets/angular-ui-select/",
 		"copy-select2": "cp -r node_modules/select2/dist/ assets/select2/",
 		"copy-select2-bootstrap4-theme": "cp -r node_modules/@ttskch/select2-bootstrap4-theme/dist/ assets/select2-bootstrap4-theme/",
 		"lint-pkg-json": "wp-scripts lint-pkg-json"
