@@ -120,11 +120,11 @@ class Orbis_AccessController {
 			return true;
 		}
 
-		if ( \current_user_can( 'read_post', $post->ID ) ) {
+		if ( \current_user_can( 'manage_options' ) ) {
 			return true;
 		}
 
-		if ( ! \current_user_can( 'freelancer' ) ) {
+		if ( ! \post_type_supports( \get_post_type( $post ), 'orbis_teams' ) ) {
 			return true;
 		}
 
@@ -135,20 +135,6 @@ class Orbis_AccessController {
 						return true;
 					}
 				}
-			}
-		}
-
-		if ( \function_exists( '\members_get_post_roles' ) ) {
-			$roles = \members_get_post_roles( $post->ID );
-
-			if ( empty( $roles ) ) {
-				return false;
-			}
-		}
-
-		if ( \function_exists( '\members_can_current_user_view_post' ) ) {
-			if ( \members_can_current_user_view_post( $post->ID ) ) {
-				return true;
 			}
 		}
 
@@ -259,6 +245,10 @@ class Orbis_AccessController {
 	 * @return void
 	 */
 	public function parse_query( $query ) {
+		if ( \wp_doing_cron() ) {
+			return;
+		}
+
 		if ( \current_user_can( 'manage_options' ) ) {
 			return;
 		}
@@ -274,7 +264,7 @@ class Orbis_AccessController {
 			}
 		);
 
-		if ( 0 === count( $post_types ) ) {
+		if ( 0 === \count( $post_types ) ) {
 			return;
 		}
 
