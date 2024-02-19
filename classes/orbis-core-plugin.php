@@ -34,6 +34,8 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		new Orbis_OrderByComment();
 		new Orbis_PostcodeFilter();
 		//new Orbis_OrderByActiveSubscriptions();
+		( new Orbis_AccessController() )->setup();
+		( new Orbis_TeamsController() )->setup();
 
 		// Shortcodes
 		add_shortcode( 'orbis_list_pages', [ $this, 'shortcode_list_pages' ] );
