@@ -72,10 +72,6 @@ class Orbis_TeamsController {
 				],
 			]
 		);
-
-		\add_post_type_support( 'page', 'orbis_teams' );
-		\add_post_type_support( 'post', 'orbis_teams' );
-		\add_post_type_support( 'orbis_project', 'orbis_teams' );
 	}
 
 	/**
