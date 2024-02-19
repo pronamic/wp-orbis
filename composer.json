@@ -41,7 +41,8 @@
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"automattic/jetpack-autoloader": true
-		}
+		},
+		"wp-slug": "orbis"
 	},
 	"require": {
 		"php": ">=8.0",
@@ -55,5 +56,16 @@
 	"require-dev": {
 		"pronamic/wp-coding-standards": "^2.1",
 		"pronamic/pronamic-cli": "^1.1"
+	},
+	"scripts": {
+		"build": "vendor/bin/pronamic wp-build",
+		"phpcs": "vendor/bin/phpcs",
+		"translate": [
+			"@build",
+			"rsync --recursive --delete --verbose ./build/project/languages/ ./languages/"
+		],
+		"qa": [
+			"@phpcs"
+		]
 	}
 }
