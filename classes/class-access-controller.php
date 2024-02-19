@@ -17,11 +17,13 @@ class Orbis_AccessController {
 	 * @return void
 	 */
 	public function setup() {
-		add_action( 'p2p_init', [ $this, 'p2p_init' ], 200 );
-		add_action( 'p2p_created_connection', [ $this, 'p2p_created_connection' ] );
-		add_action( 'p2p_delete_connections', [ $this, 'p2p_delete_connections' ] );
+		\add_action( 'init', [ $this, 'init' ], 5000 );
 
-		add_filter(
+		\add_action( 'p2p_init', [ $this, 'p2p_init' ], 200 );
+		\add_action( 'p2p_created_connection', [ $this, 'p2p_created_connection' ] );
+		\add_action( 'p2p_delete_connections', [ $this, 'p2p_delete_connections' ] );
+
+		\add_filter(
 			'the_posts',
 			function ( $posts ) {
 				$posts = \array_filter(
@@ -36,9 +38,32 @@ class Orbis_AccessController {
 			20
 		);
 
-		add_action( 'parse_query', [ $this, 'parse_query' ], 0 );
+		\add_action( 'parse_query', [ $this, 'parse_query' ], 0 );
 
-		add_action( 'save_post', [ $this, 'save_post' ] );
+		\add_action( 'save_post', [ $this, 'save_post' ] );
+	}
+
+	/**
+	 * Initialize.
+	 * 
+	 * @return void
+	 */
+	public function init() {
+		$post_types = [
+			'page',
+			'post',
+			'orbis_project',
+		];
+
+		if ( current_user_can( 'freelancer' ) ) {
+			$post_types = \get_post_types();
+		}
+
+		foreach ( $post_types as $post_type ) {
+			\add_post_type_support( $post_type, 'orbis_teams' );
+		}
+
+		\remove_post_type_support( 'nav_menu_item', 'orbis_teams' );
 	}
 
 	/**
@@ -53,7 +78,6 @@ class Orbis_AccessController {
 				'connected_type'    => 'orbis_teams_to_users',
 				'connected_items'   => \wp_get_current_user(),
 				'orbis_teams_query' => true,
-				'suppress_filters'  => false,
 				'nopaging'          => true,
 			]
 		);
@@ -243,11 +267,14 @@ class Orbis_AccessController {
 			return;
 		}
 
-		if ( 'orbis_team' === $query->get( 'post_type' ) ) {
-			return;
-		}
+		$post_types = \array_filter(
+			\wp_parse_list( $query->get( 'post_type' ) ),
+			function ( $post_type ) {
+				return \post_type_supports( $post_type, 'orbis_teams' );
+			}
+		);
 
-		if ( 'nav_menu_item' === $query->get( 'post_type' ) ) {
+		if ( 0 === count( $post_types ) ) {
 			return;
 		}
 
