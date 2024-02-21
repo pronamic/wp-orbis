@@ -56,7 +56,7 @@ jQuery( document ).ready( function( $ ) {
 			dataType: 'json',
 			data: function( params ) {
 				return {
-					_fields: 'id,select2_text',
+					_fields: 'orbis_project_id,select2_text',
 					search: params.term
 				};
 			},
@@ -64,7 +64,7 @@ jQuery( document ).ready( function( $ ) {
 				return {
 					results: data.map( function( item ) {
 						return {
-							id: item.id,
+							id: item.orbis_project_id,
 							text: item.select2_text
 						};
 					} )
