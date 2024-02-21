@@ -140,7 +140,8 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		);
 
 		$orbis_vars = [
-			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+			'ajaxUrl'         => admin_url( 'admin-ajax.php' ),
+			'restUrlProjects' => \rest_url( 'wp/v2/orbis/projects' )
 		];
 
 		wp_localize_script( 'orbis', 'orbis', $orbis_vars );

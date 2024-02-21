@@ -22,10 +22,6 @@ jQuery( document ).ready( function( $ ) {
 			return 'company_id_suggest';
 		}
 		
-		if ( item.hasClass( 'orbis-project-id-control' ) ) {
-			return 'project_id_suggest';
-		}
-		
 		if ( item.hasClass( 'orbis-subscription-id-control' ) ) {
 			return 'subscription_id_suggest';
 		}
@@ -52,7 +48,39 @@ jQuery( document ).ready( function( $ ) {
 		selectOnClose: true
 	} );
 
-	$( '.orbis-id-control' ).select2( {
+	$( '.orbis-project-id-control' ).select2( {
+		minimumInputLength: 2,
+		allowClear: true,
+		ajax: {
+			url: orbis.restUrlProjects,
+			dataType: 'json',
+			data: function( params ) {
+				return {
+					_fields: 'id,select2_text',
+					search: params.term
+				};
+			},
+			processResults: function ( data ) {
+				return {
+					results: data.map( function( item ) {
+						return {
+							id: item.id,
+							text: item.select2_text
+						};
+					} )
+				};
+			}
+		},
+		formatNoMatches: formatNoMatches,
+		formatInputTooShort: formatInputTooShort,
+		formatSelectionTooBig: formatSelectionTooBig,
+		formatLoadMore: formatLoadMore,
+		formatSearching: formatSearching,
+		width: '100%',
+		selectOnClose: true
+	} );
+
+	$( '.orbis-id-control' ).not( '.orbis-project-id-control' ).select2( {
 		minimumInputLength: 2,
 		allowClear: true,
 		ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
