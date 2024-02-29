@@ -24,18 +24,45 @@ class Orbis_AccessController {
 		\add_action( 'p2p_delete_connections', [ $this, 'p2p_delete_connections' ] );
 
 		\add_filter(
-			'the_posts',
-			function ( $posts ) {
-				$posts = \array_filter(
-					$posts,
-					function ( $post ) {
-						return $this->can_user_view_post( $post );
-					}
-				);
+			'the_content',
+			function( $content ) {
+				if ( $this->can_user_view_post( \get_post() ) ) {
+					return $content;
+				}
+				
+				$content = '⛔️';
 
-				return $posts;
-			},
-			20
+				return $content;
+			}
+		);
+
+		\add_filter(
+			'template_redirect',
+			function() {
+				if ( \is_home() ) {
+					return;
+				}
+
+				if ( \is_front_page() ) {
+					return;
+				}
+
+				if ( ! \is_singular() ) {
+					return;
+				}
+
+				if ( $this->can_user_view_post( \get_post() ) ) {
+					return;
+				}
+
+				\wp_die(
+					\__( 'You do not have access to this Orbis content.', 'orbis' ),
+					\__( 'Orbis forbidden', 'orbis' ),
+					[
+						'response' => 403,
+					]
+				);
+			}
 		);
 
 		\add_action( 'parse_query', [ $this, 'parse_query' ], 0 );
@@ -239,22 +266,22 @@ class Orbis_AccessController {
 	}
 
 	/**
-	 * Parse query.
+	 * Should filter query.
 	 * 
 	 * @param WP_Query $query WordPress posts query.
-	 * @return void
+	 * @return bool
 	 */
-	public function parse_query( $query ) {
+	private function should_filter_query( $query ) {
 		if ( \wp_doing_cron() ) {
-			return;
+			return false;
 		}
 
 		if ( \current_user_can( 'manage_options' ) ) {
-			return;
+			return false;
 		}
 
 		if ( true === $query->get( 'orbis_teams_query' ) ) {
-			return;
+			return false;
 		}
 
 		$post_types = \array_filter(
@@ -264,7 +291,21 @@ class Orbis_AccessController {
 			}
 		);
 
-		if ( 0 === \count( $post_types ) ) {
+		if ( \count( $post_types ) > 0 ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Parse query.
+	 * 
+	 * @param WP_Query $query WordPress posts query.
+	 * @return void
+	 */
+	public function parse_query( $query ) {
+		if ( ! $this->should_filter_query( $query ) ) {
 			return;
 		}
 
