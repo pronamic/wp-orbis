@@ -362,6 +362,7 @@ class Orbis_Plugin {
 					product.price,
 					subscription.name,
 					subscription.activation_date,
+					subscription.expiration_date,
 					subscription.cancel_date IS NOT NULL AS canceled,
 					subscription.post_id
 				FROM
@@ -382,6 +383,14 @@ class Orbis_Plugin {
 			$data = $wpdb->get_results( $query );
 
 			foreach ( $data as $item ) {
+				$expiration_date = \DateTimeImmutable::createFromFormat( 'Y-m-d', $item->expiration_date );
+
+				if ( false === $expiration_date ) {
+					$expiration_date = new \DateTimeImmutable( '+1 year' );
+				}
+
+				$expiration_date = $expiration_date->setTime( 0, 0 );
+
 				$subscription = (object) [
 					'id'                      => \intval( $item->id ),
 					'type_id'                 => \intval( $item->type_id ),
@@ -395,7 +404,7 @@ class Orbis_Plugin {
 					'activation_date'         => $item->activation_date,
 					'canceled'                => \boolval( $item->canceled ),
 					'post_id'                 => \intval( $item->post_id ),
-					'current_period_end_date' => \Pronamic\Orbis\Subscriptions\Subscription::get_current_period_end_date( $item->activation_date, $item->product_interval )->format( \DATE_ATOM ),
+					'current_period_end_date' => $expiration_date->format( \DATE_ATOM ),
 				];              
 
 				$response->subscriptions[] = $subscription; 
