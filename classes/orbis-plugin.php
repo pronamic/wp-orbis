@@ -367,8 +367,8 @@ class Orbis_Plugin {
 				FROM
 					$wpdb->orbis_subscriptions AS subscription
 						LEFT JOIN
-					$wpdb->orbis_subscription_products AS product
-							ON subscription.type_id = product.id
+					$wpdb->orbis_products AS product
+							ON subscription.product_id = product.id
 						LEFT JOIN
 					$wpdb->orbis_companies as company
 							ON subscription.company_id = company.id
