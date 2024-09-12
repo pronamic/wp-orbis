@@ -5,14 +5,14 @@
 ###  Clone the Repository
 Navigate to the WordPress plugin directory and clone the repository:
 ```bash
-git clone git@github.com:pronamic/wp-orbis.git .wordpress/wp-content/plugins/
+git clone git@github.com:pronamic/wp-orbis.git wordpress/wp-content/plugins/
 ```
 
 ### Navigate to the Plugin Directory
 Move into the newly created wp-orbis directory:
 
 ```bash
-cd .wordpress/wp-content/plugins/wp-orbis
+cd wordpress/wp-content/plugins/wp-orbis
 ```
 
 ### Install Composer Dependencies
