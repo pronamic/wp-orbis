@@ -33,7 +33,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		// Other
 		new Orbis_OrderByComment();
 		new Orbis_PostcodeFilter();
-		//new Orbis_OrderByActiveSubscriptions();
 		( new Orbis_AccessController() )->setup();
 		( new Orbis_TeamsController() )->setup();
 
