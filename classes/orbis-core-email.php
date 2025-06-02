@@ -243,8 +243,8 @@ class Orbis_Core_Email {
 		$user_ids = get_users(
 			[
 				'fields'     => 'ids',
-				'meta_key'   => '_orbis_user', // WPCS: slow query ok.
-				'meta_value' => 'true', // WPCS: slow query ok.
+				'meta_key'   => '_orbis_email_subscriptions', // WPCS: slow query ok.
+				'meta_value' => 'daily_update', // WPCS: slow query ok.
 			]
 		);
 

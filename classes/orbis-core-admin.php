@@ -240,6 +240,24 @@ class Orbis_Core_Admin {
 		$orbis_user = filter_input( INPUT_POST, 'orbis_user', FILTER_VALIDATE_BOOLEAN );
 
 		update_user_meta( $user_id, '_orbis_user', $orbis_user ? 'true' : 'false' );
+
+		if ( \array_key_exists( 'orbis_email_subscriptions', $_POST ) ) {
+			$current = \get_user_meta( $user_id, '_orbis_email_subscriptions', false );
+
+			$subscriptions = \array_map( 'sanitize_text_field', wp_unslash( $_POST['orbis_email_subscriptions'] ) );
+			$subscriptions = \array_filter( $subscriptions );
+
+			$added   = \array_diff( $subscriptions, $current );
+			$removed = \array_diff( $current, $subscriptions );
+
+			foreach ( $added as $subscription ) {
+				\add_user_meta( $user_id, '_orbis_email_subscriptions', $subscription );
+			}
+
+			foreach ( $removed as $subscription ) {
+				\delete_user_meta( $user_id, '_orbis_email_subscriptions', $subscription );
+			}
+		}
 	}
 
 	//////////////////////////////////////////////////
@@ -249,6 +267,8 @@ class Orbis_Core_Admin {
 	 */
 	public function user_profile( $user ) {
 		$orbis_user = get_user_meta( $user->ID, '_orbis_user', true );
+
+		$email_subscriptions = get_user_meta( $user->ID, '_orbis_email_subscriptions', false );
 
 		?>
 		<h3><?php _e( 'Orbis', 'orbis' ); ?></h3>
@@ -268,6 +288,24 @@ class Orbis_Core_Admin {
 							<input name="orbis_user" type="checkbox" id="orbis_user" value="1" <?php checked( 'true' === $orbis_user ); ?> />
 
 							<?php _e( 'Show user in Orbis.', 'orbis' ); ?>
+						</label><br />
+					</fieldset>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<?php _e( 'Email preferences', 'orbis' ); ?>
+
+					<input name="orbis_email_subscriptions[]" type="hidden" value="" />
+				</th>
+				<td>
+					<fieldset>
+						<legend class="screen-reader-text"><span><?php _e( 'Daily update', 'orbis' ); ?></span></legend>
+
+						<label for="orbis_email_subscription_daily_update">
+							<input name="orbis_email_subscriptions[]" type="checkbox" id="orbis_email_subscription_daily_update" value="daily_update" <?php checked( in_array( 'daily_update', $email_subscriptions, true ) ); ?> />
+
+							<?php _e( 'Daily update', 'orbis' ); ?>
 						</label><br />
 					</fieldset>
 				</td>
