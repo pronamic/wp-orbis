@@ -146,7 +146,7 @@ class Orbis_ContactsExporter {
 	private function get_excel() {
 
 		// PHP Excel
-		$php_excel = new PHPExcel();
+		$php_excel = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
 
 		// Set document properties
 		$php_excel->getProperties()
@@ -235,7 +235,7 @@ class Orbis_ContactsExporter {
 
 		$php_excel = $this->get_excel();
 
-		$writer = PHPExcel_IOFactory::createWriter( $php_excel, 'Excel5' );
+		$writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter( $php_excel, 'Xls' );
 		$writer->save( 'php://output' );
 
 		exit;
