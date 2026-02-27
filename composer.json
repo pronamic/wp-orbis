@@ -47,7 +47,7 @@
 	"require": {
 		"php": ">=8.0",
 		"pronamic/wp-money": "^2.4",
-		"phpoffice/phpexcel": "^1.8",
+		"phpoffice/phpspreadsheet": "^1.29",
 		"tecnickcom/tcpdf": "^6.2",
 		"sabre/vobject": "^4.1",
 		"giggsey/libphonenumber-for-php": "^8.10",
