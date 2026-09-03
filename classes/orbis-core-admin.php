@@ -341,7 +341,8 @@ class Orbis_Core_Admin {
 	 * Called through the WordPress AJAX hook. Installs a plugin that matches the slug passed through the $_POST variable.
 	 */
 	public function orbis_install_plugin() {
-		$plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_SANITIZE_STRING );
+		$plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_UNSAFE_RAW );
+		$plugin_slug = ( null === $plugin_slug ) ? '' : sanitize_text_field( wp_unslash( $plugin_slug ) );
 
 		if ( ! $plugin_slug ) {
 			die(
@@ -386,7 +387,8 @@ class Orbis_Core_Admin {
 	 * Called through the WordPress AJAX hook. Activates a plugin that matches the slug passed through the $_POST variable.
 	 */
 	public function orbis_activate_plugin() {
-		$plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_SANITIZE_STRING );
+		$plugin_slug = filter_input( INPUT_POST, 'plugin_slug', FILTER_UNSAFE_RAW );
+		$plugin_slug = ( null === $plugin_slug ) ? '' : sanitize_text_field( wp_unslash( $plugin_slug ) );
 
 		if ( ! $plugin_slug ) {
 			die(

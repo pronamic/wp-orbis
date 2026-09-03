@@ -63,7 +63,9 @@ class Orbis_Contacts_AdminContactPostType {
 		}
 
 		// Verify nonce
-		$nonce = filter_input( INPUT_POST, 'orbis_person_details_meta_box_nonce', FILTER_SANITIZE_STRING );
+		$nonce = filter_input( INPUT_POST, 'orbis_person_details_meta_box_nonce', FILTER_UNSAFE_RAW );
+		$nonce = ( null === $nonce ) ? '' : sanitize_text_field( wp_unslash( $nonce ) );
+
 		if ( ! wp_verify_nonce( $nonce, 'orbis_save_person_details' ) ) {
 			return;
 		}
@@ -75,26 +77,30 @@ class Orbis_Contacts_AdminContactPostType {
 
 		// OK
 		$definition = [
-			'_orbis_title'             => FILTER_SANITIZE_STRING,
-			'_orbis_organization'      => FILTER_SANITIZE_STRING,
-			'_orbis_department'        => FILTER_SANITIZE_STRING,
+			'_orbis_title'             => FILTER_UNSAFE_RAW,
+			'_orbis_organization'      => FILTER_UNSAFE_RAW,
+			'_orbis_department'        => FILTER_UNSAFE_RAW,
 			'_orbis_email'             => FILTER_VALIDATE_EMAIL,
-			'_orbis_phone_number'      => FILTER_SANITIZE_STRING,
-			'_orbis_mobile_number'     => FILTER_SANITIZE_STRING,
-			'_orbis_address'           => FILTER_SANITIZE_STRING,
-			'_orbis_postcode'          => FILTER_SANITIZE_STRING,
-			'_orbis_city'              => FILTER_SANITIZE_STRING,
-			'_orbis_country'           => FILTER_SANITIZE_STRING,
-			'_orbis_birth_date_string' => FILTER_SANITIZE_STRING,
-			'_orbis_iban'              => FILTER_SANITIZE_STRING,
-			'_orbis_twitter'           => FILTER_SANITIZE_STRING,
-			'_orbis_facebook'          => FILTER_SANITIZE_STRING,
-			'_orbis_linkedin'          => FILTER_SANITIZE_STRING,
+			'_orbis_phone_number'      => FILTER_UNSAFE_RAW,
+			'_orbis_mobile_number'     => FILTER_UNSAFE_RAW,
+			'_orbis_address'           => FILTER_UNSAFE_RAW,
+			'_orbis_postcode'          => FILTER_UNSAFE_RAW,
+			'_orbis_city'              => FILTER_UNSAFE_RAW,
+			'_orbis_country'           => FILTER_UNSAFE_RAW,
+			'_orbis_birth_date_string' => FILTER_UNSAFE_RAW,
+			'_orbis_iban'              => FILTER_UNSAFE_RAW,
+			'_orbis_twitter'           => FILTER_UNSAFE_RAW,
+			'_orbis_facebook'          => FILTER_UNSAFE_RAW,
+			'_orbis_linkedin'          => FILTER_UNSAFE_RAW,
 		];
 
 		$data = filter_input_array( INPUT_POST, $definition );
 
 		foreach ( $data as $key => $value ) {
+			if ( is_string( $value ) ) {
+				$value = sanitize_text_field( wp_unslash( $value ) );
+			}
+
 			if ( empty( $value ) ) {
 				delete_post_meta( $post_id, $key );
 			} else {
