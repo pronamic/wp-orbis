@@ -7,6 +7,13 @@ class Orbis_Contacts_AdminContactPostType {
 	const POST_TYPE = 'orbis_person';
 
 	/**
+	 * Plugin.
+	 *
+	 * @var Orbis_Plugin
+	 */
+	private $plugin;
+
+	/**
 	 * Construct.
 	 */
 	public function __construct( $plugin ) {

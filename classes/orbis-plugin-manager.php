@@ -220,6 +220,20 @@ class Orbis_Empty_Upgrader_Skin extends WP_Upgrader_Skin {
 	public $error;
 
 	/**
+	 * Type
+	 *
+	 * @var string
+	 */
+	public $type;
+
+	/**
+	 * API
+	 *
+	 * @var mixed
+	 */
+	public $api;
+
+	/**
 	 * Constructs and initialize an Orbis empty upgrader skin
 	 *
 	 * @param mixed $args

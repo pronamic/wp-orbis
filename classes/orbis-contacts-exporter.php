@@ -11,6 +11,13 @@
  */
 class Orbis_ContactsExporter {
 	/**
+	 * Plugin.
+	 *
+	 * @var Orbis_Plugin
+	 */
+	private $plugin;
+
+	/**
 	 * Constructs and initialize a Orbis CSV.
 	 */
 	public function __construct( $plugin ) {

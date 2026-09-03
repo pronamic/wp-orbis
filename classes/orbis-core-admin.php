@@ -17,6 +17,27 @@ class Orbis_Core_Admin {
 	 */
 	private $plugin;
 
+	/**
+	 * Settings
+	 *
+	 * @var Orbis_Core_Settings
+	 */
+	private $settings;
+
+	/**
+	 * Contact post type
+	 *
+	 * @var Orbis_Contacts_AdminContactPostType
+	 */
+	private $contact_post_type;
+
+	/**
+	 * Contacts importer
+	 *
+	 * @var Orbis_Core_ContactsImporter
+	 */
+	private $contacts_importer;
+
 	//////////////////////////////////////////////////
 
 	/**

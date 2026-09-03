@@ -1,6 +1,13 @@
 <?php
 
 class Orbis_Core_Email {
+	/**
+	 * Plugin.
+	 *
+	 * @var Orbis_Plugin
+	 */
+	private $plugin;
+
 	public function __construct( $plugin ) {
 		$this->plugin = $plugin;
 
