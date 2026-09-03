@@ -2,7 +2,7 @@
 
 check_admin_referer( 'orbis_contacts_import', 'orbis_contacts_import_nonce' );
 
-$attachment_id = filter_input( INPUT_GET, 'attachment_id', FILTER_SANITIZE_STRING );
+$attachment_id = filter_input( INPUT_GET, 'attachment_id', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE );
 $offset        = filter_input( INPUT_GET, 'offset', FILTER_VALIDATE_INT );
 $count         = filter_input( INPUT_GET, 'count', FILTER_VALIDATE_INT );
 

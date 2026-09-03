@@ -1,7 +1,8 @@
 <?php
 
 function orbis_filter_time_input( $type, $variable_name ) {
-	$value = filter_input( $type, $variable_name, FILTER_SANITIZE_STRING );
+	$value = filter_input( $type, $variable_name, FILTER_UNSAFE_RAW );
+	$value = ( null === $value ) ? '' : sanitize_text_field( wp_unslash( $value ) );
 
 	return orbis_parse_time( $value );
 }
