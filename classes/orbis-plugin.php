@@ -16,6 +16,13 @@ class Orbis_Plugin {
 
 	public $dir_path;
 
+	/**
+	 * Name of this plugin.
+	 *
+	 * @var string
+	 */
+	public $name;
+
 	public $db_version;
 
 	//////////////////////////////////////////////////

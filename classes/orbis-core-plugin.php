@@ -1,6 +1,34 @@
 <?php
 
 class Orbis_Core_Plugin extends Orbis_Plugin {
+	/**
+	 * API.
+	 *
+	 * @var Orbis_API
+	 */
+	public $api;
+
+	/**
+	 * Email.
+	 *
+	 * @var Orbis_Core_Email
+	 */
+	public $email;
+
+	/**
+	 * Orbis vCard.
+	 *
+	 * @var Orbis_VCard
+	 */
+	public $vcard;
+
+	/**
+	 * Contacts exporter.
+	 *
+	 * @var Orbis_ContactsExporter
+	 */
+	public $contacts_exporter;
+
 	public function __construct( $file ) {
 		parent::__construct( $file );
 

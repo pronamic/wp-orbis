@@ -11,6 +11,13 @@
  */
 class Orbis_VCard {
 	/**
+	 * Plugin.
+	 *
+	 * @var Orbis_Plugin
+	 */
+	private $plugin;
+
+	/**
 	 * Constructs and initialize a Orbis vCard.
 	 */
 	public function __construct( $plugin ) {
