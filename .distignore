@@ -32,6 +32,8 @@ psalm.xml
 
 /vendor/bin/
 
+/deploy.php
+
 /build/
 /deploy/
 /node_modules/
