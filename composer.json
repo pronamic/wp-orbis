@@ -1,7 +1,7 @@
 {
 	"name": "pronamic/wp-orbis",
 	"description": "Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More…",
-	"version": "1.2.0",
+	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"orbis",
 		"wordpress",
@@ -55,15 +55,27 @@
 	},
 	"require-dev": {
 		"pronamic/wp-coding-standards": "^2.1",
-		"pronamic/pronamic-cli": "^1.1"
+		"wp-cli/dist-archive-command": "*",
+		"wp-cli/wp-cli-bundle": "*"
 	},
 	"scripts": {
-		"build": "vendor/bin/pronamic wp-build",
-		"phpcs": "vendor/bin/phpcs",
-		"translate": [
-			"@build",
-			"rsync --recursive --delete --verbose ./build/project/languages/ ./languages/"
+		"build": [
+			"rm -rf ./build/stage-1",
+			"rm -rf ./build/orbis",
+			"rsync --recursive --verbose --exclude-from=.distignore --exclude=/vendor/ ./ ./build/stage-1/",
+			"composer install --no-dev --prefer-dist --optimize-autoloader --working-dir=./build/stage-1/",
+			"rsync --recursive --verbose --exclude-from=.distignore ./build/stage-1/ ./build/orbis/",
+			"vendor/bin/wp i18n make-pot ./build/orbis/ --slug=orbis",
+			"vendor/bin/wp i18n make-mo ./build/orbis/languages/",
+			"vendor/bin/wp dist-archive ./build/orbis/ --plugin-dirname=orbis --force"
 		],
+		"dist-archive": "wp dist-archive . --plugin-dirname=orbis",
+		"make-pot": [
+			"@build",
+			"rsync --recursive --delete --verbose ./build/orbis/languages/ ./languages/",
+			"vendor/bin/wp i18n update-po ./languages/orbis.pot"
+		],
+		"phpcs": "vendor/bin/phpcs",
 		"qa": [
 			"@phpcs"
 		]
