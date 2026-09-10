@@ -2,6 +2,10 @@
 
 check_admin_referer( 'orbis_contacts_import', 'orbis_contacts_import_nonce' );
 
+if ( ! current_user_can( 'import' ) ) {
+	wp_die( esc_html__( 'Sorry, you are not allowed to import contacts.', 'orbis' ) );
+}
+
 $attachment_id = filter_input( INPUT_GET, 'attachment_id', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE );
 $offset        = filter_input( INPUT_GET, 'offset', FILTER_VALIDATE_INT );
 $count         = filter_input( INPUT_GET, 'count', FILTER_VALIDATE_INT );
