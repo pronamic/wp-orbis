@@ -31,13 +31,6 @@ class Orbis_Core_Admin {
 	 */
 	private $contact_post_type;
 
-	/**
-	 * Contacts importer
-	 *
-	 * @var Orbis_Core_ContactsImporter
-	 */
-	private $contacts_importer;
-
 	//////////////////////////////////////////////////
 
 	/**
@@ -71,9 +64,6 @@ class Orbis_Core_Admin {
 
 		// Contact post type
 		$this->contact_post_type = new Orbis_Contacts_AdminContactPostType( $plugin );
-
-		// Contacts importer
-		$this->contacts_importer = new Orbis_Core_ContactsImporter( $plugin );
 	}
 
 	//////////////////////////////////////////////////
@@ -242,14 +232,6 @@ class Orbis_Core_Admin {
 
 	public function page_plugins() {
 		$this->plugin->plugin_include( 'admin/page-plugins.php' );
-	}
-
-	public function page_contacts_export() {
-		$this->plugin->plugin_include( 'admin/page-contacts-export.php' );
-	}
-
-	public function page_contacts_import() {
-		$this->plugin->plugin_include( 'admin/page-contacts-import.php' );
 	}
 
 	//////////////////////////////////////////////////
