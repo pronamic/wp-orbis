@@ -26,19 +26,6 @@ function orbis_flot( $element_id, $data, $options ) {
  */
 function orbis_flot_enqueue_scripts() {
 	global $orbis_plugin;
-	global $wp_scripts;
-
-	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-
-	// Register scripts
-	wp_register_script(
-		'excanvas',
-		$orbis_plugin->plugin_url( 'includes/js/flot/excanvas' . $suffix . '.js' )
-	);
-
-	// @see http://wordpress.stackexchange.com/a/20877
-	// @see https://github.com/flot/flot/blob/master/examples/basic.html
-	$wp_scripts->add_data( 'excanvas', 'conditional', 'lte IE 8' );
 
 	wp_register_script(
 		'jquery-flot',
