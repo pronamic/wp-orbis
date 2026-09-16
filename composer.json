@@ -57,7 +57,8 @@
 		"pronamic/wp-coding-standards": "^2.1",
 		"wp-cli/dist-archive-command": "*",
 		"wp-cli/wp-cli-bundle": "*",
-		"deployer/deployer": "^7.5"
+		"deployer/deployer": "^7.5",
+		"roots/wordpress-no-content": "^7.1"
 	},
 	"scripts": {
 		"build": [
