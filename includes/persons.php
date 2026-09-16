@@ -3,8 +3,7 @@
 function orbis_persons_suggest_person_id() {
 	global $wpdb;
 
-	$term = filter_input( INPUT_GET, 'term', FILTER_UNSAFE_RAW );
-	$term = ( null === $term ) ? '' : sanitize_text_field( wp_unslash( $term ) );
+	$term = isset( $_GET['term'] ) ? sanitize_text_field( wp_unslash( $_GET['term'] ) ) : '';
 
 	$query = "
 		SELECT
