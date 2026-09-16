@@ -702,23 +702,6 @@ msgstr ""
 msgid "Connect content"
 msgstr ""
 
-#: includes/log.php:60
-msgid "Orbis Log"
-msgstr ""
-
-#: includes/log.php:120
-msgid "Title:"
-msgstr ""
-
-#: includes/log.php:151
-msgid "Anonymous"
-msgstr ""
-
-#: includes/log.php:163
-#, php-format
-msgid "%1$s updated the \"%2$s\" post."
-msgstr ""
-
 #: includes/post.php:7
 msgid "Contacts"
 msgstr ""

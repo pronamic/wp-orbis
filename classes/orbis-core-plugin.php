@@ -49,9 +49,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$this->plugin_include( 'includes/post.php' );
 		$this->plugin_include( 'includes/template.php' );
 
-		// Tables
-		orbis_register_table( 'orbis_log' );
-
 		// API
 		$this->api = new Orbis_API();
 
@@ -243,18 +240,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	 * @see Orbis_Plugin::install()
 	 */
 	public function install() {
-		// Tables
-		orbis_install_table(
-			'orbis_log',
-			'
-			id BIGINT(16) UNSIGNED NOT NULL AUTO_INCREMENT,
-			created DATETIME NOT NULL,
-			wp_user_id BIGINT(20) UNSIGNED DEFAULT NULL,
-			message VARCHAR(512) NOT NULL,
-			PRIMARY KEY  (id)
-		'
-		);
-
 		// Roles
 		$roles = $this->get_roles();
 

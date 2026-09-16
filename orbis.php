@@ -34,7 +34,6 @@ require_once __DIR__ . '/vendor/autoload_packages.php';
  */
 require_once 'includes/functions.php';
 require_once 'includes/persons.php';
-require_once 'includes/log.php';
 require_once 'includes/flot.php';
 require_once 'admin/includes/upgrade.php';
 
