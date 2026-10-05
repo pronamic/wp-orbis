@@ -15,12 +15,11 @@ set( 'plugin_slug', 'orbis' );
 
 set( 'build_path', './build/' );
 
-host( 'orbis.pronamic.nl' )
-	->set( 'hostname', 'esm7.siteground.biz' )
-	->set( 'remote_user', 'u155-jlog1cramrrx' )
-	->set( 'port', 18765 )
-	->set( 'deploy_path', '~/projects/wp-orbis' )
-	->set( 'plugins_dir', '~/www/orbis.pronamic.nl/public_html/wp-content/plugins' );
+$deployer_import = getenv( 'DEPLOYER_IMPORT' );
+
+if ( false !== $deployer_import && '' !== $deployer_import ) {
+	import( $deployer_import );
+}
 
 /**
  * Build.

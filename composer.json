@@ -70,6 +70,10 @@
 			"vendor/bin/wp i18n make-mo ./build/orbis/languages/",
 			"vendor/bin/wp dist-archive ./build/orbis/ --plugin-dirname=orbis --force"
 		],
+		"deploy": [
+			"Composer\\Config::disableProcessTimeout",
+			"DEPLOYER_IMPORT=${DEPLOYER_IMPORT:-$HOME/deployer-orbis.php} vendor/bin/dep deploy"
+		],
 		"dist-archive": "wp dist-archive . --plugin-dirname=orbis",
 		"make-pot": [
 			"@build",
