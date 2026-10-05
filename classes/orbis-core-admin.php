@@ -24,13 +24,6 @@ class Orbis_Core_Admin {
 	 */
 	private $settings;
 
-	/**
-	 * Contact post type
-	 *
-	 * @var Orbis_Contacts_AdminContactPostType
-	 */
-	private $contact_post_type;
-
 	//////////////////////////////////////////////////
 
 	/**
@@ -61,9 +54,6 @@ class Orbis_Core_Admin {
 
 		// Settings
 		$this->settings = new Orbis_Core_Settings();
-
-		// Contact post type
-		$this->contact_post_type = new Orbis_Contacts_AdminContactPostType( $plugin );
 	}
 
 	//////////////////////////////////////////////////

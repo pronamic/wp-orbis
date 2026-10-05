@@ -22,13 +22,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	 */
 	public $vcard;
 
-	/**
-	 * Contacts exporter.
-	 *
-	 * @var Orbis_ContactsExporter
-	 */
-	public $contacts_exporter;
-
 	public function __construct( $file ) {
 		parent::__construct( $file );
 
@@ -72,8 +65,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		}
 
 		$this->vcard = new Orbis_VCard( $this );
-
-		$this->contacts_exporter = new Orbis_ContactsExporter( $this );
 	}
 
 	//////////////////////////////////////////////////
