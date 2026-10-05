@@ -85,7 +85,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$uri = plugin_dir_url( $this->file );
 
 		// Select2
-		$select2_version = '4.1.0-rc.0';
+		$select2_version = '4.1.0';
 
 		wp_register_script(
 			'select2',
@@ -133,13 +133,13 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		 * Select2
 		 */
 		wp_register_style(
-			'select2-bootstrap4-theme',
-			$this->plugin_url( 'assets/select2-bootstrap4-theme/select2-bootstrap4.min.css' ),
+			'select2-bootstrap-5-theme',
+			$this->plugin_url( 'assets/select2-bootstrap-5-theme/select2-bootstrap-5-theme.min.css' ),
 			[
 				'bootstrap',
 				'select2',
 			],
-			'1.5.2'
+			'1.3.0'
 		);
 
 		// jQuery UI datepicker
@@ -171,7 +171,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		);
 
 		$translation_array = [
-			'theme'                 => \is_admin() ? null : 'bootstrap4',
+			'theme'                 => \is_admin() ? null : 'bootstrap-5',
 			'noMatches'             => __( 'No matches found', 'orbis' ),
 			'inputTooShort'         => sprintf( __( 'Please enter %s more characters', 'orbis' ), '{todo}' ),
 			'selectionTooBigSingle' => sprintf( __( 'You can only select %s item', 'orbis' ), '{limit}' ),
@@ -195,8 +195,8 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		wp_enqueue_script( 'select2' );
 		wp_enqueue_script( 'select2-i18n' );
 
-		// Select2 Boostrap 4 theme
-		wp_enqueue_style( 'select2-bootstrap4-theme' );
+		// Select2 Bootstrap 5 theme
+		wp_enqueue_style( 'select2-bootstrap-5-theme' );
 
 		// Orbis
 		wp_enqueue_script( 'orbis' );
