@@ -21,7 +21,11 @@ jQuery( document ).ready( function( $ ) {
 		if ( item.hasClass( 'orbis_company_id_field' ) || item.hasClass( 'orbis-company-id-control' ) ) {
 			return 'company_id_suggest';
 		}
-		
+
+		if ( item.hasClass( 'orbis-organization-id-control' ) ) {
+			return 'organization_id_suggest';
+		}
+
 		if ( item.hasClass( 'orbis-subscription-id-control' ) ) {
 			return 'subscription_id_suggest';
 		}
