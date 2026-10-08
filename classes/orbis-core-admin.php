@@ -31,22 +31,22 @@ class Orbis_Core_Admin {
 		private $plugin
 	) {
 		// Actions
-		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
+		add_action( 'admin_menu', $this->admin_menu( ... ) );
 
-		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
+		add_action( 'admin_enqueue_scripts', $this->admin_enqueue_scripts( ... ) );
 
-		add_filter( 'menu_order', [ $this, 'menu_order' ] );
-		add_filter( 'custom_menu_order', [ $this, 'custom_menu_order' ] );
+		add_filter( 'menu_order', $this->menu_order( ... ) );
+		add_filter( 'custom_menu_order', $this->custom_menu_order( ... ) );
 
-		add_action( 'wp_ajax_orbis_install_plugin', [ $this, 'orbis_install_plugin' ] );
-		add_action( 'wp_ajax_orbis_activate_plugin', [ $this, 'orbis_activate_plugin' ] );
+		add_action( 'wp_ajax_orbis_install_plugin', $this->orbis_install_plugin( ... ) );
+		add_action( 'wp_ajax_orbis_activate_plugin', $this->orbis_activate_plugin( ... ) );
 
 		// Users
-		add_action( 'show_user_profile', [ $this, 'user_profile' ] );
-		add_action( 'edit_user_profile', [ $this, 'user_profile' ] );
+		add_action( 'show_user_profile', $this->user_profile( ... ) );
+		add_action( 'edit_user_profile', $this->user_profile( ... ) );
 
-		add_action( 'personal_options_update', [ $this, 'user_update' ] );
-		add_action( 'edit_user_profile_update', [ $this, 'user_update' ] );
+		add_action( 'personal_options_update', $this->user_update( ... ) );
+		add_action( 'edit_user_profile_update', $this->user_update( ... ) );
 
 		// Settings
 		$this->settings = new Orbis_Core_Settings();
@@ -124,7 +124,7 @@ class Orbis_Core_Admin {
 			__( 'Orbis', 'orbis' ), // menu_title
 			'manage_orbis', // capability
 			'orbis', // menu_slug
-			[ $this, 'page' ], // function
+			$this->page( ... ), // function
 			// @codingStandardsIgnoreStart
 			'data:image/svg+xml;base64,' . base64_encode( file_get_contents( plugin_dir_path( $this->plugin->file ) . 'images/orbis-icon-menu.svg' ) ), // icon_url
 			// @codingStandardsIgnoreEnd
@@ -139,7 +139,7 @@ class Orbis_Core_Admin {
 			__( 'Settings', 'orbis' ), // menu_title
 			'manage_options', // capability
 			'orbis_settings', // menu_slug
-			[ $this, 'page_settings' ] // function
+			$this->page_settings( ... ) // function
 		);
 
 		add_submenu_page(
@@ -148,7 +148,7 @@ class Orbis_Core_Admin {
 			__( 'Stats', 'orbis' ), // menu_title
 			'manage_options', // capability
 			'orbis_stats', // menu_slug
-			[ $this, 'page_stats' ] // function
+			$this->page_stats( ... ) // function
 		);
 
 		add_submenu_page(
@@ -157,7 +157,7 @@ class Orbis_Core_Admin {
 			__( 'Plugins', 'orbis' ), // menu_title
 			'manage_options', // capability
 			'orbis_plugins', // menu_slug
-			[ $this, 'page_plugins' ] // function
+			$this->page_plugins( ... ) // function
 		);
 	}
 
@@ -233,7 +233,7 @@ class Orbis_Core_Admin {
 		if ( \array_key_exists( 'orbis_email_subscriptions', $_POST ) ) {
 			$current = \get_user_meta( $user_id, '_orbis_email_subscriptions', false );
 
-			$subscriptions = \array_map( 'sanitize_text_field', wp_unslash( $_POST['orbis_email_subscriptions'] ) );
+			$subscriptions = \array_map( sanitize_text_field( ... ), wp_unslash( $_POST['orbis_email_subscriptions'] ) );
 			$subscriptions = \array_filter( $subscriptions );
 
 			$added   = \array_diff( $subscriptions, $current );

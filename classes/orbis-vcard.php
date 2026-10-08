@@ -21,9 +21,9 @@ class Orbis_VCard {
 		 */
 		private $plugin
 	) {
-		add_action( 'init', [ $this, 'init' ] );
+		add_action( 'init', $this->init( ... ) );
 
-		add_action( 'template_redirect', [ $this, 'template_redirect' ] );
+		add_action( 'template_redirect', $this->template_redirect( ... ) );
 	}
 
 	//////////////////////////////////////////////////

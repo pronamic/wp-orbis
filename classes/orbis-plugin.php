@@ -34,12 +34,12 @@ class Orbis_Plugin {
 		$this->dirname  = dirname( $this->file );
 		$this->dir_path = plugin_dir_path( $this->file );
 
-		add_action( 'plugins_loaded', [ $this, 'loaded' ] );
+		add_action( 'plugins_loaded', $this->loaded( ... ) );
 
-		add_action( 'admin_init', [ $this, 'update' ], 5 );
-		add_action( 'admin_init', [ $this, 'install_redirect' ] );
+		add_action( 'admin_init', $this->update( ... ), 5 );
+		add_action( 'admin_init', $this->install_redirect( ... ) );
 
-		add_action( 'rest_api_init', [ $this, 'rest_api_init' ] );
+		add_action( 'rest_api_init', $this->rest_api_init( ... ) );
 	}
 
 	//////////////////////////////////////////////////

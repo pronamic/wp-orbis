@@ -17,11 +17,11 @@ class Orbis_AccessController {
 	 * @return void
 	 */
 	public function setup() {
-		\add_action( 'init', [ $this, 'init' ], 5000 );
+		\add_action( 'init', $this->init( ... ), 5000 );
 
-		\add_action( 'p2p_init', [ $this, 'p2p_init' ], 200 );
-		\add_action( 'p2p_created_connection', [ $this, 'p2p_created_connection' ] );
-		\add_action( 'p2p_delete_connections', [ $this, 'p2p_delete_connections' ] );
+		\add_action( 'p2p_init', $this->p2p_init( ... ), 200 );
+		\add_action( 'p2p_created_connection', $this->p2p_created_connection( ... ) );
+		\add_action( 'p2p_delete_connections', $this->p2p_delete_connections( ... ) );
 
 		\add_filter(
 			'the_content',
@@ -65,9 +65,9 @@ class Orbis_AccessController {
 			}
 		);
 
-		\add_action( 'parse_query', [ $this, 'parse_query' ], 0 );
+		\add_action( 'parse_query', $this->parse_query( ... ), 0 );
 
-		\add_action( 'save_post', [ $this, 'save_post' ] );
+		\add_action( 'save_post', $this->save_post( ... ) );
 	}
 
 	/**

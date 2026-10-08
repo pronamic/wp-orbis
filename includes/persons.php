@@ -1,6 +1,6 @@
 <?php
 
-function orbis_persons_suggest_person_id() {
+function orbis_persons_suggest_person_id(): never {
 	global $wpdb;
 
 	$term = isset( $_GET['term'] ) ? sanitize_text_field( wp_unslash( $_GET['term'] ) ) : '';

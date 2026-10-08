@@ -14,9 +14,9 @@ class Orbis_API {
 	 * Constructs and initialize an Orbis API
 	 */
 	public function __construct() {
-		add_filter( 'generate_rewrite_rules', [ $this, 'generate_rewrite_rules' ] );
+		add_filter( 'generate_rewrite_rules', $this->generate_rewrite_rules( ... ) );
 
-		add_filter( 'query_vars', [ $this, 'query_vars' ] );
+		add_filter( 'query_vars', $this->query_vars( ... ) );
 	}
 
 	public function generate_rewrite_rules( $wp_rewrite ) {

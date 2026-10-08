@@ -14,8 +14,8 @@ class Orbis_PostcodeFilter {
 	 * Constructs and initialize an Orbis postcode filter.
 	 */
 	public function __construct() {
-		add_filter( 'query_vars', [ $this, 'query_vars' ] );
-		add_action( 'pre_get_posts', [ $this, 'pre_get_posts' ] );
+		add_filter( 'query_vars', $this->query_vars( ... ) );
+		add_action( 'pre_get_posts', $this->pre_get_posts( ... ) );
 	}
 
 	/**

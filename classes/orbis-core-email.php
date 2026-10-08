@@ -12,14 +12,14 @@ class Orbis_Core_Email {
 		 */
 		private $plugin
 	) {
-		add_action( 'admin_init', [ $this, 'admin_init' ] );
-		add_action( 'admin_init', [ $this, 'maybe_email_manually' ] );
+		add_action( 'admin_init', $this->admin_init( ... ) );
+		add_action( 'admin_init', $this->maybe_email_manually( ... ) );
 
-		add_action( 'orbis_email', [ $this, 'maybe_send_email' ] );
+		add_action( 'orbis_email', $this->maybe_send_email( ... ) );
 	}
 
 	public function admin_init() {
-		add_filter( sprintf( 'pre_update_option_%s', 'orbis_email_frequency' ), [ $this, 'update_option_frequency' ], 10, 2 );
+		add_filter( sprintf( 'pre_update_option_%s', 'orbis_email_frequency' ), $this->update_option_frequency( ... ), 10, 2 );
 
 		// E-mail
 		add_settings_section(
@@ -37,7 +37,7 @@ class Orbis_Core_Email {
 		add_settings_field(
 			'orbis_email_frequency', // id
 			__( 'Frequency', 'orbis' ), // title
-			[ $this, 'input_select' ], // callback
+			$this->input_select( ... ), // callback
 			'orbis', // page
 			'orbis_email', // section
 			[
@@ -49,7 +49,7 @@ class Orbis_Core_Email {
 		add_settings_field(
 			'orbis_email_time', // id
 			__( 'Time', 'orbis' ), // title
-			[ $this, 'input_text' ], // callback
+			$this->input_text( ... ), // callback
 			'orbis', // page
 			'orbis_email', // section
 			[
@@ -61,7 +61,7 @@ class Orbis_Core_Email {
 		add_settings_field(
 			'orbis_email_next_schedule', // id
 			__( 'Next Schedule', 'orbis' ), // title
-			[ $this, 'next_schedule' ], // callback
+			$this->next_schedule( ... ), // callback
 			'orbis', // page
 			'orbis_email' // section
 		);
@@ -69,7 +69,7 @@ class Orbis_Core_Email {
 		add_settings_field(
 			'orbis_email_subject', // id
 			__( 'Subject', 'orbis' ), // title
-			[ $this, 'input_text' ], // callback
+			$this->input_text( ... ), // callback
 			'orbis', // page
 			'orbis_email', // section
 			[
@@ -80,7 +80,7 @@ class Orbis_Core_Email {
 		add_settings_field(
 			'orbis_email_subject_date_format', // id
 			__( 'Subject Date Format', 'orbis' ), // title
-			[ $this, 'input_text' ], // callback
+			$this->input_text( ... ), // callback
 			'orbis', // page
 			'orbis_email', // section
 			[
@@ -91,7 +91,7 @@ class Orbis_Core_Email {
 		add_settings_field(
 			'orbis_email_manually', // id
 			__( 'E-mail Manually', 'orbis' ), // title
-			[ $this, 'button_email_manually' ], // callback
+			$this->button_email_manually( ... ), // callback
 			'orbis', // page
 			'orbis_email' // section
 		);

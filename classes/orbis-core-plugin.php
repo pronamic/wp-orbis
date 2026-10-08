@@ -29,11 +29,11 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		$this->set_db_version( '1.3.7' );
 
 		// Actions
-		add_action( 'init', [ $this, 'init' ] );
+		add_action( 'init', $this->init( ... ) );
 
-		add_action( 'init', [ $this, 'register_scripts' ] );
+		add_action( 'init', $this->register_scripts( ... ) );
 
-		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+		add_action( 'wp_enqueue_scripts', $this->enqueue_scripts( ... ) );
 
 		// Includes
 		$this->plugin_include( 'includes/deprecated.php' );
@@ -55,7 +55,7 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 		( new Orbis_TeamsController() )->setup();
 
 		// Shortcodes
-		add_shortcode( 'orbis_list_pages', [ $this, 'shortcode_list_pages' ] );
+		add_shortcode( 'orbis_list_pages', $this->shortcode_list_pages( ... ) );
 
 		// Admin
 		if ( is_admin() ) {

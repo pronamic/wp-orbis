@@ -5,7 +5,7 @@ use Pronamic\WordPress\Money\Money;
 class Orbis_Core_Settings {
 	public function __construct() {
 		// Actions
-		add_action( 'admin_init', [ $this, 'admin_init' ] );
+		add_action( 'admin_init', $this->admin_init( ... ) );
 	}
 
 	public function admin_init() {
@@ -19,7 +19,7 @@ class Orbis_Core_Settings {
 		add_settings_field(
 			'orbis_currency',
 			__( 'Currency', 'orbis' ),
-			[ $this, 'dropdown_currencies' ],
+			$this->dropdown_currencies( ... ),
 			'orbis',
 			'orbis_currency'
 		);

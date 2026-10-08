@@ -10,9 +10,9 @@ class Orbis_TeamsController {
 	 * @return void
 	 */
 	public function setup() {
-		\add_action( 'init', [ $this, 'init' ], 300 );
+		\add_action( 'init', $this->init( ... ), 300 );
 
-		\add_action( 'p2p_init', [ $this, 'p2p_init' ] );
+		\add_action( 'p2p_init', $this->p2p_init( ... ) );
 	}
 
 	/**
