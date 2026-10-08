@@ -12,8 +12,8 @@
  * Plugin URI:        https://wp.pronamic.directory/plugins/orbis/
  * Description:       Orbis is a powerful, extendable plugin to boost up your business. Project Management, Customer Relation Management & More…
  * Version:           1.3.3
- * Requires at least: 5.2
- * Requires PHP:      7.2
+ * Requires at least: 7.1
+ * Requires PHP:      8.3
  * Author:            Pronamic
  * Author URI:        https://www.pronamic.eu/
  * Text Domain:       orbis
