@@ -10,8 +10,6 @@
  * @version 1.0
  */
 class Orbis_Plugin {
-	public $file;
-
 	public $dirname;
 
 	public $dir_path;
@@ -32,10 +30,9 @@ class Orbis_Plugin {
 	 *
 	 * @param string $file
 	 */
-	public function __construct( $file ) {
-		$this->file     = $file;
-		$this->dirname  = dirname( $file );
-		$this->dir_path = plugin_dir_path( $file );
+	public function __construct( public $file ) {
+		$this->dirname  = dirname( $this->file );
+		$this->dir_path = plugin_dir_path( $this->file );
 
 		add_action( 'plugins_loaded', [ $this, 'loaded' ] );
 

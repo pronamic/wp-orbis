@@ -10,13 +10,6 @@
  * @version 1.0
  */
 class Orbis_Plugin_Manager {
-	/**
-	 * Plugin
-	 *
-	 * @var Orbis_Plugin
-	 */
-	private $plugin;
-
 	//////////////////////////////////////////////////
 
 	/**
@@ -44,8 +37,12 @@ class Orbis_Plugin_Manager {
 	 *
 	 * @param Orbis_Plugin $plugin
 	 */
-	public function __construct( $plugin ) {
-		$this->plugin = $plugin;
+	public function __construct(
+		/**
+		 * Plugin
+		 */
+		private $plugin
+	) {
 	}
 
 	//////////////////////////////////////////////////
@@ -250,7 +247,7 @@ class Orbis_Empty_Upgrader_Skin extends WP_Upgrader_Skin {
 		$args = wp_parse_args( $args, $defaults );
 
 		$this->type = $args['type'];
-		$this->api  = isset( $args['api'] ) ? $args['api'] : [];
+		$this->api  = $args['api'] ?? [];
 
 		parent::__construct( $args );
 	}

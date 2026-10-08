@@ -9,14 +9,11 @@
  * @author Remco Tolsma
  * @version 1.0
  */
-class Orbis_Time {
-	private $seconds;
-
+class Orbis_Time implements \Stringable {
 	/**
 	 * Construct.
 	 */
-	public function __construct( $seconds = null ) {
-		$this->seconds = $seconds;
+	public function __construct( private $seconds = null ) {
 	}
 
 	/**
@@ -54,7 +51,7 @@ class Orbis_Time {
 		return $string;
 	}
 
-	public function __toString() {
-		return $this->format();
+	public function __toString(): string {
+		return (string) $this->format();
 	}
 }

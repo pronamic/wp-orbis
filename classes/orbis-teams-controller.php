@@ -107,9 +107,7 @@ class Orbis_TeamsController {
 
 		$post_types = \array_filter(
 			\get_post_types(),
-			function ( $post_type ) {
-				return \post_type_supports( $post_type, 'orbis_teams' );
-			}
+			fn( $post_type ) => \post_type_supports( $post_type, 'orbis_teams' )
 		);
 
 		if ( count( $post_types ) > 0 ) {

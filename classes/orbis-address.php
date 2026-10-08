@@ -9,7 +9,7 @@
  * @author Remco Tolsma
  * @version 1.0
  */
-class Orbis_Address {
+class Orbis_Address implements \Stringable {
 	public function get_address() {
 		return $this->address;
 	}
@@ -39,7 +39,7 @@ class Orbis_Address {
 		return empty( $data );
 	}
 
-	public function __toString() {
+	public function __toString(): string {
 		$data = [
 			$this->address,
 			trim( $this->postcode . ' ' . $this->city ),

@@ -25,7 +25,7 @@ class Orbis_AccessController {
 
 		\add_filter(
 			'the_content',
-			function( $content ) {
+			function ( $content ) {
 				if ( $this->can_user_view_post( \get_post() ) ) {
 					return $content;
 				}
@@ -38,7 +38,7 @@ class Orbis_AccessController {
 
 		\add_filter(
 			'template_redirect',
-			function() {
+			function (): void {
 				if ( \is_home() ) {
 					return;
 				}
@@ -286,9 +286,7 @@ class Orbis_AccessController {
 
 		$post_types = \array_filter(
 			\wp_parse_list( $query->get( 'post_type' ) ),
-			function ( $post_type ) {
-				return \post_type_supports( $post_type, 'orbis_teams' );
-			}
+			fn( $post_type ) => \post_type_supports( $post_type, 'orbis_teams' )
 		);
 
 		if ( \count( $post_types ) > 0 ) {

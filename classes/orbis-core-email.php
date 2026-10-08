@@ -2,15 +2,16 @@
 
 class Orbis_Core_Email {
 	/**
-	 * Plugin.
+	 * Construct.
 	 *
-	 * @var Orbis_Plugin
+	 * @param \Orbis_Plugin $plugin Plugin.
 	 */
-	private $plugin;
-
-	public function __construct( $plugin ) {
-		$this->plugin = $plugin;
-
+	public function __construct(
+		/**
+		 * Plugin.
+		 */
+		private $plugin
+	) {
 		add_action( 'admin_init', [ $this, 'admin_init' ] );
 		add_action( 'admin_init', [ $this, 'maybe_email_manually' ] );
 

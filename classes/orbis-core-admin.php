@@ -11,13 +11,6 @@
  */
 class Orbis_Core_Admin {
 	/**
-	 * Plugin
-	 *
-	 * @var Orbis_Plugin
-	 */
-	private $plugin;
-
-	/**
 	 * Settings
 	 *
 	 * @var Orbis_Core_Settings
@@ -31,9 +24,12 @@ class Orbis_Core_Admin {
 	 *
 	 * @param Orbis_Plugin $plugin
 	 */
-	public function __construct( $plugin ) {
-		$this->plugin = $plugin;
-
+	public function __construct(
+		/**
+		 * Plugin
+		 */
+		private $plugin
+	) {
 		// Actions
 		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
 
@@ -65,7 +61,7 @@ class Orbis_Core_Admin {
 		$screen = get_current_screen();
 
 		// Orbis screen
-		if ( false !== strpos( $screen->id, 'orbis' ) ) {
+		if ( str_contains( $screen->id, 'orbis' ) ) {
 			// Select2
 			wp_enqueue_style( 'select2' );
 
@@ -179,7 +175,7 @@ class Orbis_Core_Admin {
 		$other_items = [];
 
 		foreach ( $menu_order as $item ) {
-			if ( false !== strpos( $item, 'orbis_' ) ) {
+			if ( str_contains( $item, 'orbis_' ) ) {
 				$orbis_items[] = $item;
 			} else {
 				$other_items[] = $item;

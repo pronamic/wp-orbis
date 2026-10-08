@@ -44,7 +44,7 @@ if ( ! function_exists( 'orbis_price' ) ) {
 		// @see https://github.com/woocommerce/woocommerce/blob/v2.2.3/includes/wc-formatting-functions.php#L136-L144
 		global $wp_locale;
 
-		if ( '00' === substr( $return, -2 ) ) {
+		if ( str_ends_with( $return, '00' ) ) {
 			$return = substr( $return, 0, -3 );
 		}
 

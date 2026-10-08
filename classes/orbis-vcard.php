@@ -11,18 +11,16 @@
  */
 class Orbis_VCard {
 	/**
-	 * Plugin.
-	 *
-	 * @var Orbis_Plugin
-	 */
-	private $plugin;
-
-	/**
 	 * Constructs and initialize a Orbis vCard.
+	 *
+	 * @param \Orbis_Plugin $plugin
 	 */
-	public function __construct( $plugin ) {
-		$this->plugin = $plugin;
-
+	public function __construct(
+		/**
+		 * Plugin.
+		 */
+		private $plugin
+	) {
 		add_action( 'init', [ $this, 'init' ] );
 
 		add_action( 'template_redirect', [ $this, 'template_redirect' ] );
