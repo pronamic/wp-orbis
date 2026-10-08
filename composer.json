@@ -58,7 +58,7 @@
 		"wp-cli/wp-cli-bundle": "*",
 		"deployer/deployer": "^7.5",
 		"roots/wordpress-no-content": "^7.1",
-		"rector/rector": "^2.6"
+		"rector/rector": "^2.7"
 	},
 	"scripts": {
 		"build": [
