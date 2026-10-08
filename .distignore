@@ -30,6 +30,8 @@ phpstan.neon
 
 psalm.xml
 
+/rector.php
+
 /vendor/bin/
 
 /deploy.php

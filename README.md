@@ -144,6 +144,8 @@ npx wp-env start
 | Command             | Description                                                     |
 | ------------------- | --------------------------------------------------------------- |
 | `composer phpcs`    | Check the code against the Pronamic coding standards.           |
+| `composer phpcbf`   | Automatically fix coding standard violations.                   |
+| `composer rector`   | Refactor the code with [Rector](https://getrector.com/).        |
 | `composer build`    | Build the plugin and create a distribution archive in `build/`. |
 | `composer make-pot` | Update the `.pot` and `.po` translation files.                  |
 | `composer deploy`   | Deploy the plugin with [Deployer](https://deployer.org/).       |

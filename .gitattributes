@@ -10,3 +10,4 @@
 /.wp-env.json        export-ignore
 /phpcs.xml.dist      export-ignore
 /phpmd.ruleset.xml   export-ignore
+/rector.php         export-ignore
