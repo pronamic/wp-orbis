@@ -288,41 +288,39 @@ class Orbis_Plugin {
 			'id'            => $user->ID,
 			'name'          => $user->display_name,
 			'email'         => $user->user_email,
-			'companies'     => [],
+			'organizations' => [],
 			'subscriptions' => [],
 		];
 
 		/**
-		 * Companies.
+		 * Organizations.
 		 */
 		$query = new \WP_Query(
 			[
-				'connected_type'  => 'orbis_users_to_companies',
+				'connected_type'  => 'orbis_users_to_organizations',
 				'connected_items' => $user->ID,
 				'nopaging'        => true,
 			] 
 		);
 
-		$companies = [];
-
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
 
-				$company = new stdClass();
+				$organization = new stdClass();
 
-				$company->id    = get_the_ID();
-				$company->title = get_the_title();
+				$organization->id    = get_the_ID();
+				$organization->title = get_the_title();
 
-				$company->post_id = \get_the_ID();
+				$organization->post_id = \get_the_ID();
 
 				// Address.
-				$address  = get_post_meta( $company->post_id, '_orbis_address', true );
-				$postcode = get_post_meta( $company->post_id, '_orbis_postcode', true );
-				$city     = get_post_meta( $company->post_id, '_orbis_city', true );
-				$country  = get_post_meta( $company->post_id, '_orbis_country', true );
+				$address  = get_post_meta( $organization->post_id, '_orbis_address', true );
+				$postcode = get_post_meta( $organization->post_id, '_orbis_postcode', true );
+				$city     = get_post_meta( $organization->post_id, '_orbis_city', true );
+				$country  = get_post_meta( $organization->post_id, '_orbis_country', true );
 
-				$company->address = (object) [
+				$organization->address = (object) [
 					'line_1'       => empty( $address ) ? null : $address,
 					'postal_code'  => empty( $postcode ) ? null : $postcode,
 					'city'         => empty( $city ) ? null : $city,
@@ -330,28 +328,29 @@ class Orbis_Plugin {
 				];
 
 				// Email.
-				$email = get_post_meta( $company->post_id, '_orbis_email', true );
+				$email = get_post_meta( $organization->post_id, '_orbis_email', true );
 
-				$company->email = empty( $email ) ? null : $email;
+				$organization->email = empty( $email ) ? null : $email;
 
-				$accounting_email = get_post_meta( $company->post_id, '_orbis_accounting_email', true );
+				$accounting_email = get_post_meta( $organization->post_id, '_orbis_accounting_email', true );
 
-				$company->accounting_email = empty( $accounting_email ) ? null : $accounting_email;
+				$organization->accounting_email = empty( $accounting_email ) ? null : $accounting_email;
 
-				$invoice_email = get_post_meta( $company->post_id, '_orbis_invoice_email', true );
+				$invoice_email = get_post_meta( $organization->post_id, '_orbis_invoice_email', true );
 
-				$company->invoice_email = empty( $invoice_email ) ? null : $invoice_email;
+				$organization->invoice_email = empty( $invoice_email ) ? null : $invoice_email;
 
-
-				$response->companies[] = $company;
+				$response->organizations[] = $organization;
 			}
+
+			\wp_reset_postdata();
 		}
 
 		/**
 		 * Subscriptions.
 		 */
-		if ( \count( $response->companies ) > 0 ) {
-			$ids = wp_list_pluck( $response->companies, 'id' );
+		if ( \count( $response->organizations ) > 0 ) {
+			$ids = wp_list_pluck( $response->organizations, 'id' );
 
 			$list = implode( ',', $ids );
 
@@ -359,7 +358,7 @@ class Orbis_Plugin {
 				SELECT
 					subscription.id, 
 					subscription.type_id,
-					company.name AS company_name,
+					customer.name AS customer_name,
 					product.post_id AS product_post_id,
 					product.name AS product_name,
 					product.interval AS product_interval,
@@ -375,10 +374,10 @@ class Orbis_Plugin {
 					$wpdb->orbis_products AS product
 							ON subscription.product_id = product.id
 						LEFT JOIN
-					$wpdb->orbis_companies as company
-							ON subscription.company_id = company.id
+					{$wpdb->prefix}orbis_contacts AS customer
+							ON subscription.customer_id = customer.id
 				WHERE
-					company.post_id IN ( $list )
+					customer.post_id IN ( $list )
 				ORDER BY
 					activation_date ASC
 				;
@@ -398,7 +397,7 @@ class Orbis_Plugin {
 				$subscription = (object) [
 					'id'                      => \intval( $item->id ),
 					'type_id'                 => \intval( $item->type_id ),
-					'company_name'            => $item->company_name,
+					'customer_name'           => $item->customer_name,
 					'product_name'            => $item->product_name,
 					'product_description'     => \get_post_meta( $item->product_post_id, '_orbis_subscription_product_description', true ),
 					'product_link'            => \get_post_meta( $item->product_post_id, '_orbis_subscription_product_link', true ),
