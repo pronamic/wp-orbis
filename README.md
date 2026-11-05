@@ -51,9 +51,8 @@ The core plugin provides the foundation that all Orbis plugins build on:
 - **Access control** that limits content to the members of the connected teams.
 - **Roles and capabilities** such as `manage_orbis` to control who can use Orbis.
 - **Email updates** on a configurable schedule, with hooks to add your own content.
-- **vCards** for organizations and contacts via the `/vcard/` endpoint.
 - **Currency settings** and money formatting via [`pronamic/wp-money`](https://github.com/pronamic/wp-money).
-- **Autocomplete** for persons and organizations in the admin, powered by Select2.
+- **Autocomplete** for organizations in the admin, powered by Select2.
 - **Posts 2 Posts integration** to connect Orbis content to each other.
 
 ## Orbis plugins

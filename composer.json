@@ -48,7 +48,6 @@
 		"php": ">=8.3",
 		"pronamic/wp-money": "^2.4",
 		"tecnickcom/tcpdf": "^6.2",
-		"sabre/vobject": "^4.1",
 		"giggsey/libphonenumber-for-php": "^8.10",
 		"automattic/jetpack-autoloader": "^3.0"
 	},

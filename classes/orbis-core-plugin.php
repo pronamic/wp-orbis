@@ -15,13 +15,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 	 */
 	public $email;
 
-	/**
-	 * Orbis vCard.
-	 *
-	 * @var Orbis_VCard
-	 */
-	public $vcard;
-
 	public function __construct( $file ) {
 		parent::__construct( $file );
 
@@ -63,8 +56,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 			$orbis_admin = new Orbis_Core_Admin( $this );
 		}
-
-		$this->vcard = new Orbis_VCard( $this );
 	}
 
 	//////////////////////////////////////////////////
