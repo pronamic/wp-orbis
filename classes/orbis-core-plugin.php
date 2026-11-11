@@ -227,43 +227,6 @@ class Orbis_Core_Plugin extends Orbis_Plugin {
 
 		$this->update_roles( $roles );
 
-		// Replace old meta values
-		global $wpdb;
-
-		$replace_values = [
-			'_orbis_person_twitter'       => '_orbis_twitter',
-			'_orbis_person_facebook'      => '_orbis_facebook',
-			'_orbis_person_linkedin'      => '_orbis_linkedin',
-			'_orbis_person_email_address' => '_orbis_email',
-			'_orbis_person_phone_number'  => '_orbis_phone_number',
-			'_orbis_person_mobile_number' => '_orbis_mobile_number',
-			'_orbis_company_twitter'      => '_orbis_twitter',
-			'_orbis_company_facebook'     => '_orbis_facebook',
-			'_orbis_company_linkedin'     => '_orbis_linkedin',
-			'_orbis_company_email'        => '_orbis_email',
-			'_orbis_company_address'      => '_orbis_address',
-			'_orbis_company_postcode'     => '_orbis_postcode',
-			'_orbis_company_city'         => '_orbis_city',
-			'_orbis_company_country'      => '_orbis_country',
-			'_orbis_company_kvk_number'   => '_orbis_kvk_number',
-			'_orbis_company_vat_number'   => '_orbis_vat_number',
-			'_orbis_company_website'      => '_orbis_website',
-		];
-
-		foreach ( $replace_values as $old_key => $new_key ) {
-			$wpdb->query(
-				$wpdb->prepare(
-					"
-					UPDATE $wpdb->postmeta
-						SET meta_key = %s
-						WHERE meta_key = %s
-					",
-					$new_key,
-					$old_key
-				)
-			);
-		}
-
 		// Install
 		parent::install();
 	}
